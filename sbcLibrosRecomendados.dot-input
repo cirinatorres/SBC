@@ -1,0 +1,11 @@
+digraph "sbcLibrosRecomendados" {
+
+"Persona" [shape=box, label="Persona", color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0"]
+"Escritor" [shape=box, label="Escritor", color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0"]
+"Persona"->"Escritor" [dir=back, label=isa, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0"]
+"Genero" [shape=box, label="Genero", color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0"]
+"Lector" [shape=box, label="Lector", color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0"]
+"Persona"->"Lector" [dir=back, label=isa, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0"]
+"SubGenero" [shape=box, label="SubGenero", color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0"]
+"Libro" [shape=box, label="Libro", color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0"]
+}
