@@ -1,13 +1,13 @@
 (defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
 	(is-a USER)
 	(role abstract)
-	(single-slot apellidos
-		(type STRING)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
 	(single-slot Titulo
 		(type STRING)
 ;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot apellidos
+		(type STRING)
+;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot ISBN
 ;+		(comment "Intenational serialized book number")
@@ -76,7 +76,6 @@
 	(single-slot paginas
 ;+		(comment "numero de paginas totales del libro")
 		(type INTEGER)
-		(range 1 %3FVARIABLE)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot KB_307601_Class25
@@ -103,7 +102,6 @@
 	(single-slot paginas
 ;+		(comment "numero de paginas totales del libro")
 		(type INTEGER)
-		(range 1 %3FVARIABLE)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(multislot categorias
@@ -199,58 +197,72 @@
 		(create-accessor read-write)))
 
 (definstances instancies
-    ([KB_307601_Class28] of  Lector
+	([KB_307601_Class28] of  Lector
 
-    	(apellidos "de los palotes")
-    	(email "pepito@gmail.com")
-    	(fechaNacimiento "24/11/2019")
-    	(horasLecturaSemanales 40)
-    	(intervaloLectura 2)
-    	(nombre "Pepito")
-    	(sexo FALSE))
+		(apellidos "de los palotes")
+		(email "pepito@gmail.com")
+		(fechaNacimiento "24/11/2019")
+		(horasLecturaSemanales 40)
+		(intervaloLectura 2)
+		(nombre "Pepito")
+		(sexo FALSE))
 
-    ([KB_307601_Class29] of  Escritor
+	([KB_307601_Class29] of  Escritor
 
-    	(apellidos "Geroge Walton")
-    	(fechaNacimiento "14/06/1944")
-    	(haEscrito [KB_307601_Class30])
-    	(nombre "Lucas Jr")
-    	(sexo TRUE))
+		(apellidos "Geroge Walton")
+		(fechaNacimiento "14/06/1944")
+		(haEscrito [KB_307601_Class30])
+		(nombre "Lucas Jr")
+		(sexo TRUE))
 
-    ([KB_307601_Class30] of  Libro
+	([KB_307601_Class30] of  Libro
 
-    	(autor [KB_307601_Class29])
-    	(categorias
-    		[KB_307601_Class32]
-    		[KB_307601_Class33])
-    	(ISBN "978-84-9173-683-7")
-    	(paginas 200)
-    	(Titulo "Una nueva esperanza"))
+		(autor [KB_307601_Class29])
+		(categorias
+			[KB_307601_Class32]
+			[KB_307601_Class33])
+		(ISBN "978-84-9173-683-7")
+		(paginas 200)
+		(Titulo "Una nueva esperanza"))
 
-    ([KB_307601_Class31] of  Libro
+	([KB_307601_Class31] of  Libro
 
-    	(autor [KB_307601_Class29])
-    	(categorias
-    		[KB_307601_Class32]
-    		[KB_307601_Class33])
-    	(ISBN "978-84-9173-799-5")
-    	(paginas 192)
-    	(Titulo "El retorno del Jedi"))
+		(autor [KB_307601_Class29])
+		(categorias
+			[KB_307601_Class32]
+			[KB_307601_Class33])
+		(ISBN "978-84-9173-799-5")
+		(paginas 192)
+		(Titulo "El retorno del Jedi"))
 
-    ([KB_307601_Class32] of  SubGenero
+	([KB_307601_Class32] of  SubGenero
 
-    	(categoria "espacial")
-    	(esGenero [KB_307601_Class34]))
+		(categoria "espacial")
+		(esGenero [KB_307601_Class34]))
 
-    ([KB_307601_Class33] of  SubGenero
+	([KB_307601_Class33] of  SubGenero
 
-    	(categoria "futurista")
-    	(esGenero [KB_307601_Class34]))
+		(categoria "futurista")
+		(esGenero [KB_307601_Class34]))
 
-    ([KB_307601_Class34] of  Genero
+	([KB_307601_Class34] of  Genero
 
-    	(genero "ciencia ficción")
-    	(subGenero
-    		[KB_307601_Class32]
-    		[KB_307601_Class33]))
+		(genero "ciencia ficción")
+		(subGenero
+			[KB_307601_Class32]
+			[KB_307601_Class33]))
+)
+
+
+(defmodule MAIN (export ?ALL))
+
+(defrule start "primera regla"
+	(initial-fact)
+	=>
+	(printout t crlf)
+	(printout t "------------------------------------------------" crlf)
+	(printout t "------ Sistema de Recomendacion de Libros ------" crlf)
+	(printout t "------------------------------------------------" crlf)
+	(printout t crlf)
+	(assert (nuevo_lector))
 )
