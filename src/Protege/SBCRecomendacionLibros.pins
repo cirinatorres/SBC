@@ -1,64 +1,58 @@
-; Sat Dec 14 16:07:31 CET 2019
+; Sat Dec 14 16:49:49 CET 2019
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
 
-([SBCRecomendacionLibros_Class33] of  %3APAL-CONSTRAINT
-)
+([SBCRecomendacionLibros_Class25] of  Libro
 
-([SBCRecomendacionLibros_Class34] of  Libro
-
-	(autor [SBCRecomendacionLibros_Class35])
+	(autor [SBCRecomendacionLibros_Class26])
 	(generos
-		[SBCRecomendacionLibros_Class36]
-		[SBCRecomendacionLibros_Class37])
+		[SBCRecomendacionLibros_Class27]
+		[SBCRecomendacionLibros_Class28])
 	(idLibro "1")
 	(nPag 328)
 	(publicacion 2010)
-	(titulo "Me cago en IA")
+	(titulo "Buenos dias")
 	(url "www.google.com"))
 
-([SBCRecomendacionLibros_Class35] of  Autor
+([SBCRecomendacionLibros_Class26] of  Autor
 
 	(idAutor "1")
-	(nombreAutor "Paco"))
+	(nombreAutor "Paco")
+	(sexo Male))
 
-([SBCRecomendacionLibros_Class36] of  Genero
+([SBCRecomendacionLibros_Class27] of  Genero
 
-	(generosSimilares [SBCRecomendacionLibros_Class37])
-	(nombreGenero "Ciencia Ficcion"))
+	(generosSimilares [SBCRecomendacionLibros_Class28])
+	(nombreGenero "ciencia ficcion"))
 
-([SBCRecomendacionLibros_Class37] of  Genero
+([SBCRecomendacionLibros_Class28] of  Genero
 
-	(nombreGenero "Aventura"))
+	(generosSimilares [SBCRecomendacionLibros_Class27])
+	(nombreGenero "aventura"))
 
-([SBCRecomendacionLibros_Class41] of  Recomendacion
-
-	(gradoRecomendacion 0)
-	(libro [SBCRecomendacionLibros_Class36]))
-
-([SBCRecomendacionLibros_Class42] of  Recomendacion
-
-	(gradoRecomendacion 0)
-	(libro [SBCRecomendacionLibros_Class37]))
-
-([SBCRecomendacionLibros_Class43] of  Perfil
+([SBCRecomendacionLibros_Class30] of  Perfil
 
 	(curable TRUE)
-	(psicologico B)
+	(psicologico C)
 	(rangoEdad Juvenil)
 	(terminal FALSE))
 
-([SBCRecomendacionLibros_Class44] of  Perfil
+([SBCRecomendacionLibros_Class31] of  Perfil
 
 	(curable FALSE)
 	(psicologico D)
 	(rangoEdad Adulto)
 	(terminal TRUE))
 
-([SBCRecomendacionLibros_Class45] of  Perfil
+([SBCRecomendacionLibros_Class32] of  Perfil
 
 	(curable TRUE)
 	(psicologico A)
 	(rangoEdad Infantil)
 	(terminal TRUE))
+
+([SBCRecomendacionLibros_Class33] of  Recomendacion
+
+	(gradoRecomendacion 0)
+	(libro [SBCRecomendacionLibros_Class25]))

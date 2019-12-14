@@ -1,4 +1,4 @@
-; Sat Dec 14 16:07:31 CET 2019
+; Sat Dec 14 16:49:49 CET 2019
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -26,13 +26,13 @@
 		(type INTEGER)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot perfilPaciente
-		(type INSTANCE)
-;+		(allowed-classes Perfil)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
 	(single-slot titulo
 		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot sexo
+		(type SYMBOL)
+		(allowed-values Female Male)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot gradoRecomendacion
@@ -57,18 +57,6 @@
 ;+		(allowed-classes Autor)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot generosFavoritos
-;+		(comment "Generos favoritos del usuario")
-		(type INSTANCE)
-;+		(allowed-classes Genero)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot librosFavoritos
-;+		(comment "Libros favoritos del usuario")
-		(type INSTANCE)
-;+		(allowed-classes Libro)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
 	(single-slot curable
 		(type SYMBOL)
 		(allowed-values FALSE TRUE)
@@ -80,7 +68,7 @@
 		(create-accessor read-write))
 	(single-slot libro
 		(type INSTANCE)
-;+		(allowed-classes Genero)
+;+		(allowed-classes Libro)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot nombreAutor
@@ -91,25 +79,14 @@
 		(type STRING)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot autoresFavoritos
-;+		(comment "Autores favoritos del usuario")
-		(type INSTANCE)
-;+		(allowed-classes Autor)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
 	(multislot generos
 		(type INSTANCE)
 ;+		(allowed-classes Genero)
-		(cardinality 1 ?VARIABLE)
 		(create-accessor read-write))
 	(single-slot rangoEdad
 		(type SYMBOL)
 		(allowed-values Infantil Juvenil Adulto)
 ;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot edad
-		(type INTEGER)
-;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot publicacion
 		(type INTEGER)
@@ -130,15 +107,14 @@
 	(multislot generos
 		(type INSTANCE)
 ;+		(allowed-classes Genero)
-		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(single-slot idLibro
+		(type STRING)
+;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot autor
 		(type INSTANCE)
 ;+		(allowed-classes Autor)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot idLibro
-		(type STRING)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot titulo
@@ -147,18 +123,6 @@
 		(create-accessor read-write))
 	(single-slot publicacion
 		(type INTEGER)
-;+		(cardinality 1 1)
-		(create-accessor read-write)))
-
-(defclass Autor
-	(is-a USER)
-	(role concrete)
-	(single-slot nombreAutor
-		(type STRING)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot idAutor
-		(type STRING)
 ;+		(cardinality 1 1)
 		(create-accessor read-write)))
 
@@ -174,17 +138,34 @@
 ;+		(allowed-classes Genero)
 		(create-accessor read-write)))
 
+(defclass Autor
+	(is-a USER)
+	(role concrete)
+	(single-slot sexo
+		(type SYMBOL)
+		(allowed-values Female Male)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot nombreAutor
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot idAutor
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
 (defclass Perfil
 	(is-a USER)
 	(role concrete)
-	(single-slot psicologico
-		(type SYMBOL)
-		(allowed-values A B C D)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
 	(single-slot rangoEdad
 		(type SYMBOL)
 		(allowed-values Infantil Juvenil Adulto)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot psicologico
+		(type SYMBOL)
+		(allowed-values A B C D)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot terminal
@@ -203,7 +184,7 @@
 	(role concrete)
 	(single-slot libro
 		(type INSTANCE)
-;+		(allowed-classes Genero)
+;+		(allowed-classes Libro)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(multislot justificacionesSistema
