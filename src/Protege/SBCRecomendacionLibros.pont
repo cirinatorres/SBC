@@ -1,4 +1,4 @@
-; Sat Dec 14 18:37:17 CET 2019
+; Sat Dec 14 20:56:49 CET 2019
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -171,16 +171,6 @@
 	(single-slot psicologico
 		(type SYMBOL)
 		(allowed-values A B C D)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot terminal
-		(type SYMBOL)
-		(allowed-values FALSE TRUE)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot curable
-		(type SYMBOL)
-		(allowed-values FALSE TRUE)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(multislot generosRecomendados

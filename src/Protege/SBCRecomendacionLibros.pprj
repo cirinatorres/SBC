@@ -1,4 +1,4 @@
-; Sat Dec 14 18:37:17 CET 2019
+; Sat Dec 14 20:56:49 CET 2019
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -20,9 +20,9 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[SBCRecomendacionLibros_ProjectKB_Class187]
-		[SBCRecomendacionLibros_ProjectKB_Class188]
-		[SBCRecomendacionLibros_ProjectKB_Class189]))
+		[SBCRecomendacionLibros_ProjectKB_Class190]
+		[SBCRecomendacionLibros_ProjectKB_Class191]
+		[SBCRecomendacionLibros_ProjectKB_Class192]))
 
 ([CLSES_TAB] of  Widget
 
@@ -610,6 +610,34 @@
 
 	(name "SearchTab_Query"))
 
+([SBCRecomendacionLibros_ProjectKB_Class154] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "terminal")
+	(property_list [SBCRecomendacionLibros_ProjectKB_Class155])
+	(widget_class_name "edu.stanford.smi.protege.widget.CheckBoxWidget")
+	(width 200)
+	(x 0)
+	(y 60))
+
+([SBCRecomendacionLibros_ProjectKB_Class155] of  Property_List
+)
+
+([SBCRecomendacionLibros_ProjectKB_Class156] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "curable")
+	(property_list [SBCRecomendacionLibros_ProjectKB_Class157])
+	(widget_class_name "edu.stanford.smi.protege.widget.CheckBoxWidget")
+	(width 200)
+	(x 0)
+	(y 0))
+
+([SBCRecomendacionLibros_ProjectKB_Class157] of  Property_List
+)
+
 ([SBCRecomendacionLibros_ProjectKB_Class177] of  Widget
 
 	(height 60)
@@ -651,17 +679,17 @@
 	(boolean_value FALSE)
 	(name "ButtonDisplayed-Delete Instance"))
 
-([SBCRecomendacionLibros_ProjectKB_Class187] of  String
+([SBCRecomendacionLibros_ProjectKB_Class190] of  String
 
 	(name ":INSTANCE-ANNOTATION")
 	(string_value "%3AANNOTATION-TEXT"))
 
-([SBCRecomendacionLibros_ProjectKB_Class188] of  String
+([SBCRecomendacionLibros_ProjectKB_Class191] of  String
 
 	(name ":META-CLASS")
 	(string_value "%3ANAME"))
 
-([SBCRecomendacionLibros_ProjectKB_Class189] of  String
+([SBCRecomendacionLibros_ProjectKB_Class192] of  String
 
 	(name ":PAL-CONSTRAINT")
 	(string_value "%3APAL-NAME"))
