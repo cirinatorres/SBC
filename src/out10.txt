@@ -242,601 +242,113 @@
      ([Profile_0] of Perfil
       
       (generosRecomendados
-          [Genres_0]
-          [Genres_6]
-          [Genres_4]
-          [Genres_7])
-      (curable TRUE)
+          [Genres_3]
+          [Genres_4])
       (psicologico A)
-      (rangoEdad Infantil)
-      (terminal TRUE))
+      (rangoEdad Infantil))
 
      ([Profile_1] of Perfil
       
       (generosRecomendados
-          [Genres_4]
+          [Genres_1]
           [Genres_0]
+          [Genres_2]
           [Genres_5]
+          [Genres_7]
           [Genres_3])
-      (curable TRUE)
       (psicologico A)
-      (rangoEdad Infantil)
-      (terminal FALSE))
+      (rangoEdad Joven))
 
      ([Profile_2] of Perfil
       
       (generosRecomendados
-          [Genres_0]
-          [Genres_1]
-          [Genres_5]
-          [Genres_6]
-          [Genres_3])
-      (curable TRUE)
+          [Genres_5])
       (psicologico A)
-      (rangoEdad Joven)
-      (terminal TRUE))
+      (rangoEdad Adulto))
 
      ([Profile_3] of Perfil
       
       (generosRecomendados
-          [Genres_7]
-          [Genres_5]
-          [Genres_4]
-          [Genres_3]
-          [Genres_1]
-          [Genres_0]
-          [Genres_2])
-      (curable TRUE)
-      (psicologico A)
-      (rangoEdad Joven)
-      (terminal FALSE))
+          [Genres_6])
+      (psicologico B)
+      (rangoEdad Infantil))
 
      ([Profile_4] of Perfil
       
       (generosRecomendados
-          [Genres_0]
-          [Genres_5])
-      (curable TRUE)
-      (psicologico A)
-      (rangoEdad Adulto)
-      (terminal TRUE))
+          [Genres_1]
+          [Genres_2]
+          [Genres_3])
+      (psicologico B)
+      (rangoEdad Joven))
 
      ([Profile_5] of Perfil
       
       (generosRecomendados
-          [Genres_2]
-          [Genres_5])
-      (curable TRUE)
-      (psicologico A)
-      (rangoEdad Adulto)
-      (terminal FALSE))
+          [Genres_1])
+      (psicologico B)
+      (rangoEdad Adulto))
 
      ([Profile_6] of Perfil
       
       (generosRecomendados
-          [Genres_3]
-          [Genres_4]
-          [Genres_7]
+          [Genres_0]
           [Genres_1])
-      (curable TRUE)
-      (psicologico B)
-      (rangoEdad Infantil)
-      (terminal TRUE))
+      (psicologico C)
+      (rangoEdad Infantil))
 
      ([Profile_7] of Perfil
       
       (generosRecomendados
-          [Genres_1])
-      (curable TRUE)
-      (psicologico B)
-      (rangoEdad Infantil)
-      (terminal FALSE))
+          [Genres_4]
+          [Genres_6]
+          [Genres_7])
+      (psicologico C)
+      (rangoEdad Joven))
 
      ([Profile_8] of Perfil
       
       (generosRecomendados
-          [Genres_1]
-          [Genres_2]
-          [Genres_0]
           [Genres_7]
-          [Genres_4]
-          [Genres_5]
-          [Genres_6]
-          [Genres_3])
-      (curable TRUE)
-      (psicologico B)
-      (rangoEdad Joven)
-      (terminal TRUE))
+          [Genres_3]
+          [Genres_0]
+          [Genres_2]
+          [Genres_1])
+      (psicologico C)
+      (rangoEdad Adulto))
 
      ([Profile_9] of Perfil
       
       (generosRecomendados
-          [Genres_7]
-          [Genres_0]
-          [Genres_1]
-          [Genres_6]
-          [Genres_5]
+          [Genres_2]
           [Genres_3]
-          [Genres_2])
-      (curable TRUE)
-      (psicologico B)
-      (rangoEdad Joven)
-      (terminal FALSE))
+          [Genres_1]
+          [Genres_5]
+          [Genres_6]
+          [Genres_0]
+          [Genres_7])
+      (psicologico D)
+      (rangoEdad Infantil))
 
      ([Profile_10] of Perfil
       
       (generosRecomendados
-          [Genres_7]
+          [Genres_3]
           [Genres_0]
-          [Genres_6]
+          [Genres_5]
+          [Genres_1]
           [Genres_2]
-          [Genres_3])
-      (curable TRUE)
-      (psicologico B)
-      (rangoEdad Adulto)
-      (terminal TRUE))
+          [Genres_6])
+      (psicologico D)
+      (rangoEdad Joven))
 
      ([Profile_11] of Perfil
       
       (generosRecomendados
-          [Genres_1]
-          [Genres_6]
-          [Genres_3]
-          [Genres_4]
-          [Genres_2])
-      (curable TRUE)
-      (psicologico B)
-      (rangoEdad Adulto)
-      (terminal FALSE))
-
-     ([Profile_12] of Perfil
-      
-      (generosRecomendados
-          [Genres_1]
-          [Genres_5]
-          [Genres_3]
-          [Genres_6]
-          [Genres_4]
           [Genres_0]
-          [Genres_2]
-          [Genres_7])
-      (curable TRUE)
-      (psicologico C)
-      (rangoEdad Infantil)
-      (terminal TRUE))
-
-     ([Profile_13] of Perfil
-      
-      (generosRecomendados
+          [Genres_4]
+          [Genres_5]
           [Genres_3])
-      (curable TRUE)
-      (psicologico C)
-      (rangoEdad Infantil)
-      (terminal FALSE))
-
-     ([Profile_14] of Perfil
-      
-      (generosRecomendados
-          [Genres_2]
-          [Genres_0]
-          [Genres_1]
-          [Genres_6]
-          [Genres_4]
-          [Genres_3]
-          [Genres_5])
-      (curable TRUE)
-      (psicologico C)
-      (rangoEdad Joven)
-      (terminal TRUE))
-
-     ([Profile_15] of Perfil
-      
-      (generosRecomendados
-          [Genres_4])
-      (curable TRUE)
-      (psicologico C)
-      (rangoEdad Joven)
-      (terminal FALSE))
-
-     ([Profile_16] of Perfil
-      
-      (generosRecomendados
-          [Genres_4]
-          [Genres_3]
-          [Genres_1]
-          [Genres_2]
-          [Genres_0]
-          [Genres_7]
-          [Genres_5])
-      (curable TRUE)
-      (psicologico C)
-      (rangoEdad Adulto)
-      (terminal TRUE))
-
-     ([Profile_17] of Perfil
-      
-      (generosRecomendados
-          [Genres_7]
-          [Genres_4]
-          [Genres_1]
-          [Genres_6]
-          [Genres_0]
-          [Genres_3]
-          [Genres_5])
-      (curable TRUE)
-      (psicologico C)
-      (rangoEdad Adulto)
-      (terminal FALSE))
-
-     ([Profile_18] of Perfil
-      
-      (generosRecomendados
-          [Genres_1]
-          [Genres_3]
-          [Genres_6]
-          [Genres_4]
-          [Genres_5])
-      (curable TRUE)
       (psicologico D)
-      (rangoEdad Infantil)
-      (terminal TRUE))
-
-     ([Profile_19] of Perfil
-      
-      (generosRecomendados
-          [Genres_3]
-          [Genres_2]
-          [Genres_0]
-          [Genres_4])
-      (curable TRUE)
-      (psicologico D)
-      (rangoEdad Infantil)
-      (terminal FALSE))
-
-     ([Profile_20] of Perfil
-      
-      (generosRecomendados
-          [Genres_2]
-          [Genres_7]
-          [Genres_0]
-          [Genres_6])
-      (curable TRUE)
-      (psicologico D)
-      (rangoEdad Joven)
-      (terminal TRUE))
-
-     ([Profile_21] of Perfil
-      
-      (generosRecomendados
-          [Genres_0])
-      (curable TRUE)
-      (psicologico D)
-      (rangoEdad Joven)
-      (terminal FALSE))
-
-     ([Profile_22] of Perfil
-      
-      (generosRecomendados
-          [Genres_7]
-          [Genres_3]
-          [Genres_4]
-          [Genres_5]
-          [Genres_6]
-          [Genres_1])
-      (curable TRUE)
-      (psicologico D)
-      (rangoEdad Adulto)
-      (terminal TRUE))
-
-     ([Profile_23] of Perfil
-      
-      (generosRecomendados
-          [Genres_1]
-          [Genres_2]
-          [Genres_3]
-          [Genres_4]
-          [Genres_5]
-          [Genres_0]
-          [Genres_7])
-      (curable TRUE)
-      (psicologico D)
-      (rangoEdad Adulto)
-      (terminal FALSE))
-
-     ([Profile_24] of Perfil
-      
-      (generosRecomendados
-          [Genres_7]
-          [Genres_4])
-      (curable FALSE)
-      (psicologico A)
-      (rangoEdad Infantil)
-      (terminal TRUE))
-
-     ([Profile_25] of Perfil
-      
-      (generosRecomendados
-          [Genres_2]
-          [Genres_5]
-          [Genres_7]
-          [Genres_4]
-          [Genres_1]
-          [Genres_3]
-          [Genres_0]
-          [Genres_6])
-      (curable FALSE)
-      (psicologico A)
-      (rangoEdad Infantil)
-      (terminal FALSE))
-
-     ([Profile_26] of Perfil
-      
-      (generosRecomendados
-          [Genres_5]
-          [Genres_4]
-          [Genres_3]
-          [Genres_2]
-          [Genres_7])
-      (curable FALSE)
-      (psicologico A)
-      (rangoEdad Joven)
-      (terminal TRUE))
-
-     ([Profile_27] of Perfil
-      
-      (generosRecomendados
-          [Genres_5]
-          [Genres_2]
-          [Genres_6])
-      (curable FALSE)
-      (psicologico A)
-      (rangoEdad Joven)
-      (terminal FALSE))
-
-     ([Profile_28] of Perfil
-      
-      (generosRecomendados
-          [Genres_6]
-          [Genres_2]
-          [Genres_0]
-          [Genres_3]
-          [Genres_1]
-          [Genres_4])
-      (curable FALSE)
-      (psicologico A)
-      (rangoEdad Adulto)
-      (terminal TRUE))
-
-     ([Profile_29] of Perfil
-      
-      (generosRecomendados
-          [Genres_7]
-          [Genres_6]
-          [Genres_0]
-          [Genres_2])
-      (curable FALSE)
-      (psicologico A)
-      (rangoEdad Adulto)
-      (terminal FALSE))
-
-     ([Profile_30] of Perfil
-      
-      (generosRecomendados
-          [Genres_2])
-      (curable FALSE)
-      (psicologico B)
-      (rangoEdad Infantil)
-      (terminal TRUE))
-
-     ([Profile_31] of Perfil
-      
-      (generosRecomendados
-          [Genres_7]
-          [Genres_5]
-          [Genres_4]
-          [Genres_2]
-          [Genres_6]
-          [Genres_0]
-          [Genres_1]
-          [Genres_3])
-      (curable FALSE)
-      (psicologico B)
-      (rangoEdad Infantil)
-      (terminal FALSE))
-
-     ([Profile_32] of Perfil
-      
-      (generosRecomendados
-          [Genres_0])
-      (curable FALSE)
-      (psicologico B)
-      (rangoEdad Joven)
-      (terminal TRUE))
-
-     ([Profile_33] of Perfil
-      
-      (generosRecomendados
-          [Genres_4])
-      (curable FALSE)
-      (psicologico B)
-      (rangoEdad Joven)
-      (terminal FALSE))
-
-     ([Profile_34] of Perfil
-      
-      (generosRecomendados
-          [Genres_6]
-          [Genres_5]
-          [Genres_2]
-          [Genres_1])
-      (curable FALSE)
-      (psicologico B)
-      (rangoEdad Adulto)
-      (terminal TRUE))
-
-     ([Profile_35] of Perfil
-      
-      (generosRecomendados
-          [Genres_1]
-          [Genres_0]
-          [Genres_5]
-          [Genres_3]
-          [Genres_6]
-          [Genres_2])
-      (curable FALSE)
-      (psicologico B)
-      (rangoEdad Adulto)
-      (terminal FALSE))
-
-     ([Profile_36] of Perfil
-      
-      (generosRecomendados
-          [Genres_5]
-          [Genres_4]
-          [Genres_3]
-          [Genres_1]
-          [Genres_6]
-          [Genres_2]
-          [Genres_0])
-      (curable FALSE)
-      (psicologico C)
-      (rangoEdad Infantil)
-      (terminal TRUE))
-
-     ([Profile_37] of Perfil
-      
-      (generosRecomendados
-          [Genres_3]
-          [Genres_1]
-          [Genres_6]
-          [Genres_2]
-          [Genres_0]
-          [Genres_5]
-          [Genres_4]
-          [Genres_7])
-      (curable FALSE)
-      (psicologico C)
-      (rangoEdad Infantil)
-      (terminal FALSE))
-
-     ([Profile_38] of Perfil
-      
-      (generosRecomendados
-          [Genres_0]
-          [Genres_5]
-          [Genres_4]
-          [Genres_7])
-      (curable FALSE)
-      (psicologico C)
-      (rangoEdad Joven)
-      (terminal TRUE))
-
-     ([Profile_39] of Perfil
-      
-      (generosRecomendados
-          [Genres_1]
-          [Genres_6]
-          [Genres_4]
-          [Genres_5]
-          [Genres_2]
-          [Genres_7]
-          [Genres_0])
-      (curable FALSE)
-      (psicologico C)
-      (rangoEdad Joven)
-      (terminal FALSE))
-
-     ([Profile_40] of Perfil
-      
-      (generosRecomendados
-          [Genres_2]
-          [Genres_3]
-          [Genres_6]
-          [Genres_7]
-          [Genres_0]
-          [Genres_5]
-          [Genres_1]
-          [Genres_4])
-      (curable FALSE)
-      (psicologico C)
-      (rangoEdad Adulto)
-      (terminal TRUE))
-
-     ([Profile_41] of Perfil
-      
-      (generosRecomendados
-          [Genres_3]
-          [Genres_6]
-          [Genres_7]
-          [Genres_0]
-          [Genres_2])
-      (curable FALSE)
-      (psicologico C)
-      (rangoEdad Adulto)
-      (terminal FALSE))
-
-     ([Profile_42] of Perfil
-      
-      (generosRecomendados
-          [Genres_4]
-          [Genres_3]
-          [Genres_2]
-          [Genres_6])
-      (curable FALSE)
-      (psicologico D)
-      (rangoEdad Infantil)
-      (terminal TRUE))
-
-     ([Profile_43] of Perfil
-      
-      (generosRecomendados
-          [Genres_4])
-      (curable FALSE)
-      (psicologico D)
-      (rangoEdad Infantil)
-      (terminal FALSE))
-
-     ([Profile_44] of Perfil
-      
-      (generosRecomendados
-          [Genres_6]
-          [Genres_7]
-          [Genres_0]
-          [Genres_4]
-          [Genres_3]
-          [Genres_5])
-      (curable FALSE)
-      (psicologico D)
-      (rangoEdad Joven)
-      (terminal TRUE))
-
-     ([Profile_45] of Perfil
-      
-      (generosRecomendados
-          [Genres_2]
-          [Genres_0])
-      (curable FALSE)
-      (psicologico D)
-      (rangoEdad Joven)
-      (terminal FALSE))
-
-     ([Profile_46] of Perfil
-      
-      (generosRecomendados
-          [Genres_7]
-          [Genres_1]
-          [Genres_5])
-      (curable FALSE)
-      (psicologico D)
-      (rangoEdad Adulto)
-      (terminal TRUE))
-
-     ([Profile_47] of Perfil
-      
-      (generosRecomendados
-          [Genres_6])
-      (curable FALSE)
-      (psicologico D)
-      (rangoEdad Adulto)
-      (terminal FALSE))
+      (rangoEdad Adulto))
 
