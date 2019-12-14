@@ -1,202 +1,212 @@
-; Sat Dec 14 16:57:27 CET 2019
-; 
+; Sat Dec 14 18:37:17 CET 2019
+;
 ;+ (version "3.5")
 ;+ (build "Build 663")
 
 
 (defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
-     (is-a USER)
-     (role abstract)
-     (single-slot nombreGenero
-          (type STRING)
-;+        (cardinality 1 1)
-          (create-accessor read-write))
-     (multislot generosSimilares
-          (type INSTANCE)
-;+        (allowed-classes Genero)
-          (create-accessor read-write))
-     (single-slot idLibro
-          (type STRING)
-;+        (cardinality 1 1)
-          (create-accessor read-write))
-     (multislot justificacionesSistema
-          (type STRING)
-          (create-accessor read-write))
-     (single-slot nPag
-          (type INTEGER)
-;+        (cardinality 1 1)
-          (create-accessor read-write))
-     (single-slot titulo
-          (type STRING)
-;+        (cardinality 1 1)
-          (create-accessor read-write))
-     (single-slot sexo
-          (type SYMBOL)
-          (allowed-values male female)
-;+        (cardinality 1 1)
-          (create-accessor read-write))
-     (single-slot gradoRecomendacion
-          (type INTEGER)
-;+        (cardinality 1 1)
-          (create-accessor read-write))
-     (multislot justificacionesUsuario
-          (type STRING)
-          (create-accessor read-write))
-     (single-slot psicologico
-          (type SYMBOL)
-          (allowed-values A B C D)
-;+        (cardinality 1 1)
-          (create-accessor read-write))
-     (single-slot terminal
-          (type SYMBOL)
-          (allowed-values FALSE TRUE)
-;+        (cardinality 1 1)
-          (create-accessor read-write))
-     (single-slot autor
-          (type INSTANCE)
-;+        (allowed-classes Autor)
-;+        (cardinality 1 1)
-          (create-accessor read-write))
-     (single-slot curable
-          (type SYMBOL)
-          (allowed-values FALSE TRUE)
-;+        (cardinality 1 1)
-          (create-accessor read-write))
-     (single-slot url
-          (type STRING)
-;+        (cardinality 0 1)
-          (create-accessor read-write))
-     (single-slot libro
-          (type INSTANCE)
-;+        (allowed-classes Libro)
-;+        (cardinality 1 1)
-          (create-accessor read-write))
-     (single-slot nombreAutor
-          (type STRING)
-;+        (cardinality 1 1)
-          (create-accessor read-write))
-     (single-slot idAutor
-          (type STRING)
-;+        (cardinality 1 1)
-          (create-accessor read-write))
-     (multislot generos
-          (type INSTANCE)
-;+        (allowed-classes Genero)
-          (create-accessor read-write))
-     (single-slot rangoEdad
-          (type SYMBOL)
-          (allowed-values Infantil Juvenil Adulto)
-;+        (cardinality 1 1)
-          (create-accessor read-write))
-     (single-slot publicacion
-          (type INTEGER)
-;+        (cardinality 1 1)
-          (create-accessor read-write)))
+	(is-a USER)
+	(role abstract)
+	(single-slot nombreGenero
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot generosSimilares
+		(type INSTANCE)
+;+		(allowed-classes Genero)
+		(create-accessor read-write))
+	(single-slot idLibro
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot justificacionesSistema
+		(type STRING)
+		(create-accessor read-write))
+	(single-slot nPag
+		(type INTEGER)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot titulo
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot sexo
+		(type SYMBOL)
+		(allowed-values male female)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot gradoRecomendacion
+		(type INTEGER)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot justificacionesUsuario
+		(type STRING)
+		(create-accessor read-write))
+	(single-slot psicologico
+		(type SYMBOL)
+		(allowed-values A B C D)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot terminal
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot autor
+		(type INSTANCE)
+;+		(allowed-classes Autor)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot curable
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot url
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot libro
+		(type INSTANCE)
+;+		(allowed-classes Libro)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot nombreAutor
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot idAutor
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot generos
+		(type INSTANCE)
+;+		(allowed-classes Genero)
+		(create-accessor read-write))
+	(multislot generosRecomendados
+		(type INSTANCE)
+;+		(allowed-classes Genero)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(single-slot rangoEdad
+		(type SYMBOL)
+		(allowed-values Infantil Juvenil Adulto)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot publicacion
+		(type INTEGER)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
 
 (defclass Libro
-     (is-a USER)
-     (role concrete)
-     (single-slot nPag
-          (type INTEGER)
-;+        (cardinality 1 1)
-          (create-accessor read-write))
-     (single-slot url
-          (type STRING)
-;+        (cardinality 0 1)
-          (create-accessor read-write))
-     (multislot generos
-          (type INSTANCE)
-;+        (allowed-classes Genero)
-          (create-accessor read-write))
-     (single-slot idLibro
-          (type STRING)
-;+        (cardinality 1 1)
-          (create-accessor read-write))
-     (single-slot autor
-          (type INSTANCE)
-;+        (allowed-classes Autor)
-;+        (cardinality 1 1)
-          (create-accessor read-write))
-     (single-slot titulo
-          (type STRING)
-;+        (cardinality 1 1)
-          (create-accessor read-write))
-     (single-slot publicacion
-          (type INTEGER)
-;+        (cardinality 1 1)
-          (create-accessor read-write)))
+	(is-a USER)
+	(role concrete)
+	(single-slot nPag
+		(type INTEGER)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot url
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot generos
+		(type INSTANCE)
+;+		(allowed-classes Genero)
+		(create-accessor read-write))
+	(single-slot idLibro
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot autor
+		(type INSTANCE)
+;+		(allowed-classes Autor)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot titulo
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot publicacion
+		(type INTEGER)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
 
 (defclass Genero
-     (is-a USER)
-     (role concrete)
-     (single-slot nombreGenero
-          (type STRING)
-;+        (cardinality 1 1)
-          (create-accessor read-write))
-     (multislot generosSimilares
-          (type INSTANCE)
-;+        (allowed-classes Genero)
-          (create-accessor read-write)))
+	(is-a USER)
+	(role concrete)
+	(single-slot nombreGenero
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot generosSimilares
+		(type INSTANCE)
+;+		(allowed-classes Genero)
+		(create-accessor read-write)))
 
 (defclass Autor
-     (is-a USER)
-     (role concrete)
-     (single-slot sexo
-          (type SYMBOL)
-          (allowed-values male female)
-;+        (cardinality 1 1)
-          (create-accessor read-write))
-     (single-slot nombreAutor
-          (type STRING)
-;+        (cardinality 1 1)
-          (create-accessor read-write))
-     (single-slot idAutor
-          (type STRING)
-;+        (cardinality 1 1)
-          (create-accessor read-write)))
+	(is-a USER)
+	(role concrete)
+	(single-slot sexo
+		(type SYMBOL)
+		(allowed-values male female)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot nombreAutor
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot idAutor
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
 
 (defclass Perfil
-     (is-a USER)
-     (role concrete)
-     (single-slot rangoEdad
-          (type SYMBOL)
-          (allowed-values Infantil Juvenil Adulto)
-;+        (cardinality 1 1)
-          (create-accessor read-write))
-     (single-slot psicologico
-          (type SYMBOL)
-          (allowed-values A B C D)
-;+        (cardinality 1 1)
-          (create-accessor read-write))
-     (single-slot terminal
-          (type SYMBOL)
-          (allowed-values FALSE TRUE)
-;+        (cardinality 1 1)
-          (create-accessor read-write))
-     (single-slot curable
-          (type SYMBOL)
-          (allowed-values FALSE TRUE)
-;+        (cardinality 1 1)
-          (create-accessor read-write)))
+	(is-a USER)
+	(role concrete)
+	(single-slot rangoEdad
+		(type SYMBOL)
+		(allowed-values Infantil Juvenil Adulto)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot psicologico
+		(type SYMBOL)
+		(allowed-values A B C D)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot terminal
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot curable
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot generosRecomendados
+		(type INSTANCE)
+;+		(allowed-classes Genero)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write)))
 
 (defclass Recomendacion
-     (is-a USER)
-     (role concrete)
-     (single-slot libro
-          (type INSTANCE)
-;+        (allowed-classes Libro)
-;+        (cardinality 1 1)
-          (create-accessor read-write))
-     (multislot justificacionesSistema
-          (type STRING)
-          (create-accessor read-write))
-     (single-slot gradoRecomendacion
-          (type INTEGER)
-;+        (cardinality 1 1)
-          (create-accessor read-write))
-     (multislot justificacionesUsuario
-          (type STRING)
-          (create-accessor read-write)))
+	(is-a USER)
+	(role concrete)
+	(single-slot libro
+		(type INSTANCE)
+;+		(allowed-classes Libro)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot justificacionesSistema
+		(type STRING)
+		(create-accessor read-write))
+	(single-slot gradoRecomendacion
+		(type INTEGER)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot justificacionesUsuario
+		(type STRING)
+		(create-accessor read-write)))
 
 (definstances Instancies
      ([Book_0] of Libro
@@ -441,7 +451,7 @@
       (libro [Book_9]))
 
      ([Profile_0] of Perfil
-      
+
       (generosRecomendados
           [Genres_0]
           [Genres_6]
@@ -453,7 +463,7 @@
       (terminal TRUE))
 
      ([Profile_1] of Perfil
-      
+
       (generosRecomendados
           [Genres_4]
           [Genres_0]
@@ -465,7 +475,7 @@
       (terminal FALSE))
 
      ([Profile_2] of Perfil
-      
+
       (generosRecomendados
           [Genres_0]
           [Genres_1]
@@ -478,7 +488,7 @@
       (terminal TRUE))
 
      ([Profile_3] of Perfil
-      
+
       (generosRecomendados
           [Genres_7]
           [Genres_5]
@@ -493,7 +503,7 @@
       (terminal FALSE))
 
      ([Profile_4] of Perfil
-      
+
       (generosRecomendados
           [Genres_0]
           [Genres_5])
@@ -503,7 +513,7 @@
       (terminal TRUE))
 
      ([Profile_5] of Perfil
-      
+
       (generosRecomendados
           [Genres_2]
           [Genres_5])
@@ -513,7 +523,7 @@
       (terminal FALSE))
 
      ([Profile_6] of Perfil
-      
+
       (generosRecomendados
           [Genres_3]
           [Genres_4]
@@ -525,7 +535,7 @@
       (terminal TRUE))
 
      ([Profile_7] of Perfil
-      
+
       (generosRecomendados
           [Genres_1])
       (curable TRUE)
@@ -534,7 +544,7 @@
       (terminal FALSE))
 
      ([Profile_8] of Perfil
-      
+
       (generosRecomendados
           [Genres_1]
           [Genres_2]
@@ -550,7 +560,7 @@
       (terminal TRUE))
 
      ([Profile_9] of Perfil
-      
+
       (generosRecomendados
           [Genres_7]
           [Genres_0]
@@ -565,7 +575,7 @@
       (terminal FALSE))
 
      ([Profile_10] of Perfil
-      
+
       (generosRecomendados
           [Genres_7]
           [Genres_0]
@@ -578,7 +588,7 @@
       (terminal TRUE))
 
      ([Profile_11] of Perfil
-      
+
       (generosRecomendados
           [Genres_1]
           [Genres_6]
@@ -591,7 +601,7 @@
       (terminal FALSE))
 
      ([Profile_12] of Perfil
-      
+
       (generosRecomendados
           [Genres_1]
           [Genres_5]
@@ -607,7 +617,7 @@
       (terminal TRUE))
 
      ([Profile_13] of Perfil
-      
+
       (generosRecomendados
           [Genres_3])
       (curable TRUE)
@@ -616,7 +626,7 @@
       (terminal FALSE))
 
      ([Profile_14] of Perfil
-      
+
       (generosRecomendados
           [Genres_2]
           [Genres_0]
@@ -631,7 +641,7 @@
       (terminal TRUE))
 
      ([Profile_15] of Perfil
-      
+
       (generosRecomendados
           [Genres_4])
       (curable TRUE)
@@ -640,7 +650,7 @@
       (terminal FALSE))
 
      ([Profile_16] of Perfil
-      
+
       (generosRecomendados
           [Genres_4]
           [Genres_3]
@@ -655,7 +665,7 @@
       (terminal TRUE))
 
      ([Profile_17] of Perfil
-      
+
       (generosRecomendados
           [Genres_7]
           [Genres_4]
@@ -670,7 +680,7 @@
       (terminal FALSE))
 
      ([Profile_18] of Perfil
-      
+
       (generosRecomendados
           [Genres_1]
           [Genres_3]
@@ -683,7 +693,7 @@
       (terminal TRUE))
 
      ([Profile_19] of Perfil
-      
+
       (generosRecomendados
           [Genres_3]
           [Genres_2]
@@ -695,7 +705,7 @@
       (terminal FALSE))
 
      ([Profile_20] of Perfil
-      
+
       (generosRecomendados
           [Genres_2]
           [Genres_7]
@@ -707,7 +717,7 @@
       (terminal TRUE))
 
      ([Profile_21] of Perfil
-      
+
       (generosRecomendados
           [Genres_0])
       (curable TRUE)
@@ -716,7 +726,7 @@
       (terminal FALSE))
 
      ([Profile_22] of Perfil
-      
+
       (generosRecomendados
           [Genres_7]
           [Genres_3]
@@ -730,7 +740,7 @@
       (terminal TRUE))
 
      ([Profile_23] of Perfil
-      
+
       (generosRecomendados
           [Genres_1]
           [Genres_2]
@@ -745,7 +755,7 @@
       (terminal FALSE))
 
      ([Profile_24] of Perfil
-      
+
       (generosRecomendados
           [Genres_7]
           [Genres_4])
@@ -755,7 +765,7 @@
       (terminal TRUE))
 
      ([Profile_25] of Perfil
-      
+
       (generosRecomendados
           [Genres_2]
           [Genres_5]
@@ -771,7 +781,7 @@
       (terminal FALSE))
 
      ([Profile_26] of Perfil
-      
+
       (generosRecomendados
           [Genres_5]
           [Genres_4]
@@ -784,7 +794,7 @@
       (terminal TRUE))
 
      ([Profile_27] of Perfil
-      
+
       (generosRecomendados
           [Genres_5]
           [Genres_2]
@@ -795,7 +805,7 @@
       (terminal FALSE))
 
      ([Profile_28] of Perfil
-      
+
       (generosRecomendados
           [Genres_6]
           [Genres_2]
@@ -809,7 +819,7 @@
       (terminal TRUE))
 
      ([Profile_29] of Perfil
-      
+
       (generosRecomendados
           [Genres_7]
           [Genres_6]
@@ -821,7 +831,7 @@
       (terminal FALSE))
 
      ([Profile_30] of Perfil
-      
+
       (generosRecomendados
           [Genres_2])
       (curable FALSE)
@@ -830,7 +840,7 @@
       (terminal TRUE))
 
      ([Profile_31] of Perfil
-      
+
       (generosRecomendados
           [Genres_7]
           [Genres_5]
@@ -846,7 +856,7 @@
       (terminal FALSE))
 
      ([Profile_32] of Perfil
-      
+
       (generosRecomendados
           [Genres_0])
       (curable FALSE)
@@ -855,7 +865,7 @@
       (terminal TRUE))
 
      ([Profile_33] of Perfil
-      
+
       (generosRecomendados
           [Genres_4])
       (curable FALSE)
@@ -864,7 +874,7 @@
       (terminal FALSE))
 
      ([Profile_34] of Perfil
-      
+
       (generosRecomendados
           [Genres_6]
           [Genres_5]
@@ -876,7 +886,7 @@
       (terminal TRUE))
 
      ([Profile_35] of Perfil
-      
+
       (generosRecomendados
           [Genres_1]
           [Genres_0]
@@ -890,7 +900,7 @@
       (terminal FALSE))
 
      ([Profile_36] of Perfil
-      
+
       (generosRecomendados
           [Genres_5]
           [Genres_4]
@@ -905,7 +915,7 @@
       (terminal TRUE))
 
      ([Profile_37] of Perfil
-      
+
       (generosRecomendados
           [Genres_3]
           [Genres_1]
@@ -921,7 +931,7 @@
       (terminal FALSE))
 
      ([Profile_38] of Perfil
-      
+
       (generosRecomendados
           [Genres_0]
           [Genres_5]
@@ -933,7 +943,7 @@
       (terminal TRUE))
 
      ([Profile_39] of Perfil
-      
+
       (generosRecomendados
           [Genres_1]
           [Genres_6]
@@ -948,7 +958,7 @@
       (terminal FALSE))
 
      ([Profile_40] of Perfil
-      
+
       (generosRecomendados
           [Genres_2]
           [Genres_3]
@@ -964,7 +974,7 @@
       (terminal TRUE))
 
      ([Profile_41] of Perfil
-      
+
       (generosRecomendados
           [Genres_3]
           [Genres_6]
@@ -977,7 +987,7 @@
       (terminal FALSE))
 
      ([Profile_42] of Perfil
-      
+
       (generosRecomendados
           [Genres_4]
           [Genres_3]
@@ -989,7 +999,7 @@
       (terminal TRUE))
 
      ([Profile_43] of Perfil
-      
+
       (generosRecomendados
           [Genres_4])
       (curable FALSE)
@@ -998,7 +1008,7 @@
       (terminal FALSE))
 
      ([Profile_44] of Perfil
-      
+
       (generosRecomendados
           [Genres_6]
           [Genres_7]
@@ -1012,7 +1022,7 @@
       (terminal TRUE))
 
      ([Profile_45] of Perfil
-      
+
       (generosRecomendados
           [Genres_2]
           [Genres_0])
@@ -1022,7 +1032,7 @@
       (terminal FALSE))
 
      ([Profile_46] of Perfil
-      
+
       (generosRecomendados
           [Genres_7]
           [Genres_1]
@@ -1033,7 +1043,7 @@
       (terminal TRUE))
 
      ([Profile_47] of Perfil
-      
+
       (generosRecomendados
           [Genres_6])
       (curable FALSE)
