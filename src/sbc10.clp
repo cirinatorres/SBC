@@ -868,7 +868,7 @@
 	)
 	(printout t crlf)
 	(printout t " Informacion inferida por el Sistema: " )
-	(bind $?justf ?self:justificacionS)
+	(bind $?justf ?self:justificacionesSistema)
 	(if (eq (length$ ?justf) 0) then (printout t "No se ha echo inferencia" crlf)
 		else (printout t crlf)
 			(loop-for-count (?i 1 (length$ ?justf)) do
