@@ -1,11 +1,5 @@
-; Sat Dec 14 16:57:27 CET 2019
-;
-;+ (version "3.5")
-;+ (build "Build 663")
-
-
-; Sat Dec 14 18:37:17 CET 2019
-;
+; Sat Dec 14 20:56:49 CET 2019
+; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
 
@@ -179,16 +173,6 @@
 		(allowed-values A B C D)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot terminal
-		(type SYMBOL)
-		(allowed-values FALSE TRUE)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot curable
-		(type SYMBOL)
-		(allowed-values FALSE TRUE)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
 	(multislot generosRecomendados
 		(type INSTANCE)
 ;+		(allowed-classes Genero)
@@ -215,7 +199,7 @@
 		(create-accessor read-write)))
 
 (definstances Instancies
-     ([Book_0] of Libro
+          ([Book_0] of Libro
       (autor [Author_0])
       (generos
           [Genres_0]
@@ -457,340 +441,117 @@
       (libro [Book_9]))
 
      ([Profile_0] of Perfil
-
-      (curable TRUE)
+      
+      (generosRecomendados
+          [Genres_3]
+          [Genres_4])
       (psicologico A)
-      (rangoEdad Infantil)
-      (terminal TRUE))
+      (rangoEdad Infantil))
 
      ([Profile_1] of Perfil
-
-      (curable TRUE)
+      
+      (generosRecomendados
+          [Genres_1]
+          [Genres_0]
+          [Genres_2]
+          [Genres_5]
+          [Genres_7]
+          [Genres_3])
       (psicologico A)
-      (rangoEdad Infantil)
-      (terminal FALSE))
+      (rangoEdad Joven))
 
      ([Profile_2] of Perfil
-
-      (curable TRUE)
+      
+      (generosRecomendados
+          [Genres_5])
       (psicologico A)
-      (rangoEdad Joven)
-      (terminal TRUE))
+      (rangoEdad Adulto))
 
      ([Profile_3] of Perfil
-
-      (curable TRUE)
-      (psicologico A)
-      (rangoEdad Joven)
-      (terminal FALSE))
+      
+      (generosRecomendados
+          [Genres_6])
+      (psicologico B)
+      (rangoEdad Infantil))
 
      ([Profile_4] of Perfil
-
-      (curable TRUE)
-      (psicologico A)
-      (rangoEdad Adulto)
-      (terminal TRUE))
+      
+      (generosRecomendados
+          [Genres_1]
+          [Genres_2]
+          [Genres_3])
+      (psicologico B)
+      (rangoEdad Joven))
 
      ([Profile_5] of Perfil
-
-      (curable TRUE)
-      (psicologico A)
-      (rangoEdad Adulto)
-      (terminal FALSE))
+      
+      (generosRecomendados
+          [Genres_1])
+      (psicologico B)
+      (rangoEdad Adulto))
 
      ([Profile_6] of Perfil
-
-      (curable TRUE)
-      (psicologico B)
-      (rangoEdad Infantil)
-      (terminal TRUE))
+      
+      (generosRecomendados
+          [Genres_0]
+          [Genres_1])
+      (psicologico C)
+      (rangoEdad Infantil))
 
      ([Profile_7] of Perfil
-
-      (curable TRUE)
-      (psicologico B)
-      (rangoEdad Infantil)
-      (terminal FALSE))
+      
+      (generosRecomendados
+          [Genres_4]
+          [Genres_6]
+          [Genres_7])
+      (psicologico C)
+      (rangoEdad Joven))
 
      ([Profile_8] of Perfil
-
-      (curable TRUE)
-      (psicologico B)
-      (rangoEdad Joven)
-      (terminal TRUE))
+      
+      (generosRecomendados
+          [Genres_7]
+          [Genres_3]
+          [Genres_0]
+          [Genres_2]
+          [Genres_1])
+      (psicologico C)
+      (rangoEdad Adulto))
 
      ([Profile_9] of Perfil
-
-      (curable TRUE)
-      (psicologico B)
-      (rangoEdad Joven)
-      (terminal FALSE))
+      
+      (generosRecomendados
+          [Genres_2]
+          [Genres_3]
+          [Genres_1]
+          [Genres_5]
+          [Genres_6]
+          [Genres_0]
+          [Genres_7])
+      (psicologico D)
+      (rangoEdad Infantil))
 
      ([Profile_10] of Perfil
-
-      (curable TRUE)
-      (psicologico B)
-      (rangoEdad Adulto)
-      (terminal TRUE))
+      
+      (generosRecomendados
+          [Genres_3]
+          [Genres_0]
+          [Genres_5]
+          [Genres_1]
+          [Genres_2]
+          [Genres_6])
+      (psicologico D)
+      (rangoEdad Joven))
 
      ([Profile_11] of Perfil
-
-      (curable TRUE)
-      (psicologico B)
-      (rangoEdad Adulto)
-      (terminal FALSE))
-
-     ([Profile_12] of Perfil
-
-      (curable TRUE)
-      (psicologico C)
-      (rangoEdad Infantil)
-      (terminal TRUE))
-
-     ([Profile_13] of Perfil
-
-      (curable TRUE)
-      (psicologico C)
-      (rangoEdad Infantil)
-      (terminal FALSE))
-
-     ([Profile_14] of Perfil
-
-      (curable TRUE)
-      (psicologico C)
-      (rangoEdad Joven)
-      (terminal TRUE))
-
-     ([Profile_15] of Perfil
-
-      (curable TRUE)
-      (psicologico C)
-      (rangoEdad Joven)
-      (terminal FALSE))
-
-     ([Profile_16] of Perfil
-
-      (curable TRUE)
-      (psicologico C)
-      (rangoEdad Adulto)
-      (terminal TRUE))
-
-     ([Profile_17] of Perfil
-
-      (curable TRUE)
-      (psicologico C)
-      (rangoEdad Adulto)
-      (terminal FALSE))
-
-     ([Profile_18] of Perfil
-
-      (curable TRUE)
+      
+      (generosRecomendados
+          [Genres_0]
+          [Genres_4]
+          [Genres_5]
+          [Genres_3])
       (psicologico D)
-      (rangoEdad Infantil)
-      (terminal TRUE))
-
-     ([Profile_19] of Perfil
-
-      (curable TRUE)
-      (psicologico D)
-      (rangoEdad Infantil)
-      (terminal FALSE))
-
-     ([Profile_20] of Perfil
-
-      (curable TRUE)
-      (psicologico D)
-      (rangoEdad Joven)
-      (terminal TRUE))
-
-     ([Profile_21] of Perfil
-
-      (curable TRUE)
-      (psicologico D)
-      (rangoEdad Joven)
-      (terminal FALSE))
-
-     ([Profile_22] of Perfil
-
-      (curable TRUE)
-      (psicologico D)
-      (rangoEdad Adulto)
-      (terminal TRUE))
-
-     ([Profile_23] of Perfil
-
-      (curable TRUE)
-      (psicologico D)
-      (rangoEdad Adulto)
-      (terminal FALSE))
-
-     ([Profile_24] of Perfil
-
-      (curable FALSE)
-      (psicologico A)
-      (rangoEdad Infantil)
-      (terminal TRUE))
-
-     ([Profile_25] of Perfil
-
-      (curable FALSE)
-      (psicologico A)
-      (rangoEdad Infantil)
-      (terminal FALSE))
-
-     ([Profile_26] of Perfil
-
-      (curable FALSE)
-      (psicologico A)
-      (rangoEdad Joven)
-      (terminal TRUE))
-
-     ([Profile_27] of Perfil
-
-      (curable FALSE)
-      (psicologico A)
-      (rangoEdad Joven)
-      (terminal FALSE))
-
-     ([Profile_28] of Perfil
-
-      (curable FALSE)
-      (psicologico A)
-      (rangoEdad Adulto)
-      (terminal TRUE))
-
-     ([Profile_29] of Perfil
-
-      (curable FALSE)
-      (psicologico A)
-      (rangoEdad Adulto)
-      (terminal FALSE))
-
-     ([Profile_30] of Perfil
-
-      (curable FALSE)
-      (psicologico B)
-      (rangoEdad Infantil)
-      (terminal TRUE))
-
-     ([Profile_31] of Perfil
-
-      (curable FALSE)
-      (psicologico B)
-      (rangoEdad Infantil)
-      (terminal FALSE))
-
-     ([Profile_32] of Perfil
-
-      (curable FALSE)
-      (psicologico B)
-      (rangoEdad Joven)
-      (terminal TRUE))
-
-     ([Profile_33] of Perfil
-
-      (curable FALSE)
-      (psicologico B)
-      (rangoEdad Joven)
-      (terminal FALSE))
-
-     ([Profile_34] of Perfil
-
-      (curable FALSE)
-      (psicologico B)
-      (rangoEdad Adulto)
-      (terminal TRUE))
-
-     ([Profile_35] of Perfil
-
-      (curable FALSE)
-      (psicologico B)
-      (rangoEdad Adulto)
-      (terminal FALSE))
-
-     ([Profile_36] of Perfil
-
-      (curable FALSE)
-      (psicologico C)
-      (rangoEdad Infantil)
-      (terminal TRUE))
-
-     ([Profile_37] of Perfil
-
-      (curable FALSE)
-      (psicologico C)
-      (rangoEdad Infantil)
-      (terminal FALSE))
-
-     ([Profile_38] of Perfil
-
-      (curable FALSE)
-      (psicologico C)
-      (rangoEdad Joven)
-      (terminal TRUE))
-
-     ([Profile_39] of Perfil
-
-      (curable FALSE)
-      (psicologico C)
-      (rangoEdad Joven)
-      (terminal FALSE))
-
-     ([Profile_40] of Perfil
-
-      (curable FALSE)
-      (psicologico C)
-      (rangoEdad Adulto)
-      (terminal TRUE))
-
-     ([Profile_41] of Perfil
-
-      (curable FALSE)
-      (psicologico C)
-      (rangoEdad Adulto)
-      (terminal FALSE))
-
-     ([Profile_42] of Perfil
-
-      (curable FALSE)
-      (psicologico D)
-      (rangoEdad Infantil)
-      (terminal TRUE))
-
-     ([Profile_43] of Perfil
-
-      (curable FALSE)
-      (psicologico D)
-      (rangoEdad Infantil)
-      (terminal FALSE))
-
-     ([Profile_44] of Perfil
-
-      (curable FALSE)
-      (psicologico D)
-      (rangoEdad Joven)
-      (terminal TRUE))
-
-     ([Profile_45] of Perfil
-
-      (curable FALSE)
-      (psicologico D)
-      (rangoEdad Joven)
-      (terminal FALSE))
-
-     ([Profile_46] of Perfil
-
-      (curable FALSE)
-      (psicologico D)
-      (rangoEdad Adulto)
-      (terminal TRUE))
-
-     ([Profile_47] of Perfil
-
-      (curable FALSE)
-      (psicologico D)
-      (rangoEdad Adulto)
-      (terminal FALSE))
+      (rangoEdad Adulto))
 )
 
 ;;;-----------------------------------------------------------------------------
@@ -798,7 +559,7 @@
 ;;;-----------------------------------------------------------------------------
 
 (deftemplate Lector
-    (slot edad (type INTEGER))
+    (slot edad (type INTEGER) (default -1))
     (slot perfilPaciente (type INSTANCE) (allowed-classes Perfil))
     (multislot generosFavoritos (type INSTANCE) (allowed-classes Genero))
     (multislot generosNegativos (type INSTANCE) (allowed-classes Genero))
@@ -843,6 +604,35 @@
 	?res
 )
 
+(deffunction rango-edad (?edad)
+    (if (< ?edad 12)
+        then (bind ?rest Infantil)
+        else ( if(< ?edad 26) 
+            then (bind ?rest Juvenil)
+            else (bind ?rest Adulto)
+        ) 
+    )
+    ?rest
+)
+
+(deffunction sumaScoreLibros(?books ?score)
+    (foreach ?book ?books
+        (bind ?ranking 
+            (nth$ 1 
+                (find-instance
+                    ((?inst Recomendacion))
+                    (eq ?book ?inst:libro) 
+                )
+            )
+        )
+        (printout t ?ranking crlf)
+       ; (active-modify-instance 
+       ;     ?ranking (gradoRecomendacion (+ ?ranking:gradoRecomendacion ?score))
+       ; )
+    
+    )
+)
+
 ;;;-----------------------------------------------------------------------------
 ;;;---------------------------------MENSAJES------------------------------------
 ;;;-----------------------------------------------------------------------------
@@ -879,13 +669,74 @@
 	(printout t "---------------------------------------------------" crlf)
 )
 
+
+;;; Declaracion de modulos ----------------------------
+
+;;; Modulo principal de utilidades, indicamos que exportamos todo
+(defmodule MAIN (export ?ALL))
+
+(defmodule nuevo-lector
+    (import MAIN ?ALL)
+    (export ?ALL)
+)
+;;; Fin declaracion de modulos ------------------------
+
+
 ;;;-----------------------------------------------------------------------------
 ;;;----------------------------------REGLAS-------------------------------------
 ;;;-----------------------------------------------------------------------------
 
-(defrule retorna_instancies
-    (not retorna_instancies ok)
+(defrule MAIN::initialRule "regla inicial"
+	(initial-fact)
+	=>
+	(printout t crlf)
+	(printout t "--------------------------------------------------------------" crlf)
+	(printout t "------ Sistema de Recomendacion de Libros de la FIB -----" crlf)
+	(printout t "--------------------------------------------------------------" crlf)
+	(printout t crlf)
+	(focus nuevo-lector)		
+)
+
+(defrule nuevo-lector::preguntar-edad "pregunta la edad"
+    (not (Lector))
     =>
-    (bind ?lista_instancias (find-all-instances ((?instancia Libro)) TRUE))
-    (assert retorna_instancies ok)
+    (bind ?edad (pregunta-general "Cuantos años tienes? "))
+    (assert (Lector (edad ?edad)))
+    (assert (edadDefinida))
+)
+
+(defrule nuevo-lector::preguntar-perfil "pregunta la edad"
+    ?l <- (Lector (edad ?e))
+    (edadDefinida)
+    (not (perfilDefinido))
+    =>
+    (bind ?psicologico (pregunta-general "perfil psicologico"))
+    (bind ?rango (rango-edad ?e))
+    (bind ?p (find-instance ((?inst Perfil))
+     (and (eq ?inst:psicologico (sym-cat ?psicologico)) (eq ?inst:rangoEdad ?rango))))
+    (modify ?l (perfilPaciente (nth$ 1 ?p)))
+    (assert (perfilDefinido))
+)
+
+(defrule propaga-genero-perfil 
+    (Lector (perfilPaciente ?p))
+    (perfilDefinido)
+    =>
+    (foreach ?gr (send ?p get-generosRecomendados)
+        (bind ?libros
+            (find-all-instances ((?l Libro))
+                (member$ ?gr ?l:generos)
+            )    
+        )
+        (sumaScoreLibros ?libros 10)
+        (foreach ?gs (send ?gr get-generosSimilares)
+            (bind ?librosSimilares
+                (find-all-instances ((?ls Libro))
+                    (member$ ?gs (send ?ls get-generos))
+                )    
+            )
+            (sumaScoreLibros ?librosSimilares 5)
+        )
+    )
+    (assert (generosPerfilPropagado))
 )
