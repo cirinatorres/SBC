@@ -5,14 +5,14 @@ import random
 authors = []
 books = []
 themes = []
-# countindex = 0
+countindex = 0
 with open('good_reads_final.csv') as csvfile:
     readCSV = csv.reader(csvfile, delimiter=',')
     printable = set(string.printable)
     count = []
     for row in readCSV:
-        # if countindex == 10:
-            # break
+        if countindex == 10:
+            break
         genre1 = ''.join(filter(lambda x: x in printable, row[13])).lower()
         genre2 = ''.join(filter(lambda x: x in printable, row[14])).lower()
         #genre1.sub('[^A-Za-z0-9]+', '', row[13]).lower()
@@ -47,7 +47,7 @@ with open('good_reads_final.csv') as csvfile:
             if author not in authors:
                 authors.append(author)
             books.append(book)
-            # countindex += 1
+            countindex += 1
 
     # l = []
     # for e in zip(count, themes):
@@ -113,7 +113,7 @@ for curable in ["TRUE","FALSE"]:
                 print("([Profile_" + str(indexperfiles) + "] of Perfil")
                 print(" ")
                 print(" (generosRecomendados")
-                numgenres = random.randint(0,len(themes))
+                numgenres = random.randint(1,len(themes))
                 listgenres = []
                 for i in range(numgenres):
                     randomgenre = random.randint(0,len(themes)-1)
