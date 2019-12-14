@@ -1,4 +1,4 @@
-; Sat Dec 14 15:17:01 CET 2019
+; Sat Dec 14 15:42:35 CET 2019
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -20,9 +20,9 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[SBCRecomendacionLibros_ProjectKB_Class120]
-		[SBCRecomendacionLibros_ProjectKB_Class121]
-		[SBCRecomendacionLibros_ProjectKB_Class122]))
+		[SBCRecomendacionLibros_ProjectKB_Class213]
+		[SBCRecomendacionLibros_ProjectKB_Class214]
+		[SBCRecomendacionLibros_ProjectKB_Class215]))
 
 ([CLSES_TAB] of  Widget
 
@@ -520,6 +520,7 @@
 	(is_hidden FALSE)
 	(label "Description")
 	(name ":PAL-DESCRIPTION")
+	(property_list [SBCRecomendacionLibros_ProjectKB_Class125])
 	(widget_class_name "edu.stanford.smi.protege.widget.TextAreaWidget")
 	(width 250)
 	(x 275)
@@ -542,6 +543,7 @@
 	(is_hidden FALSE)
 	(label "Name")
 	(name ":PAL-NAME")
+	(property_list [SBCRecomendacionLibros_ProjectKB_Class124])
 	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
 	(width 275)
 	(x 0)
@@ -553,7 +555,8 @@
 		[PAL_NAME_WIDGET]
 		[PAL_RANGE_WIDGET]
 		[PAL_DESCRIPTION_WIDGET]
-		[PAL_STATEMENT_WIDGET]))
+		[PAL_STATEMENT_WIDGET]
+		[SBCRecomendacionLibros_ProjectKB_Class123]))
 
 ([PAL_RANGE_WIDGET] of  Widget
 
@@ -561,6 +564,7 @@
 	(is_hidden FALSE)
 	(label "Range")
 	(name ":PAL-RANGE")
+	(property_list [SBCRecomendacionLibros_ProjectKB_Class126])
 	(widget_class_name "edu.stanford.smi.protegex.widget.pal.constraint.PalRangeWidget")
 	(width 250)
 	(x 275)
@@ -572,6 +576,7 @@
 	(is_hidden FALSE)
 	(label "Statement")
 	(name ":PAL-STATEMENT")
+	(property_list [SBCRecomendacionLibros_ProjectKB_Class127])
 	(widget_class_name "edu.stanford.smi.protegex.widget.pal.constraint.PalConstraintWidget")
 	(width 275)
 	(x 0)
@@ -610,17 +615,176 @@
 
 	(name "SearchTab_Query"))
 
-([SBCRecomendacionLibros_ProjectKB_Class120] of  String
+([SBCRecomendacionLibros_ProjectKB_Class123] of  Property_List
+
+	(name "layout properties"))
+
+([SBCRecomendacionLibros_ProjectKB_Class124] of  Property_List
+)
+
+([SBCRecomendacionLibros_ProjectKB_Class125] of  Property_List
+)
+
+([SBCRecomendacionLibros_ProjectKB_Class126] of  Property_List
+)
+
+([SBCRecomendacionLibros_ProjectKB_Class127] of  Property_List
+)
+
+([SBCRecomendacionLibros_ProjectKB_Class165] of  Widget
+
+	(is_hidden FALSE)
+	(name "Lector")
+	(property_list [SBCRecomendacionLibros_ProjectKB_Class166])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([SBCRecomendacionLibros_ProjectKB_Class166] of  Property_List
+
+	(properties
+		[SBCRecomendacionLibros_ProjectKB_Class167]
+		[SBCRecomendacionLibros_ProjectKB_Class168]
+		[SBCRecomendacionLibros_ProjectKB_Class172]
+		[SBCRecomendacionLibros_ProjectKB_Class176]
+		[SBCRecomendacionLibros_ProjectKB_Class180]
+		[SBCRecomendacionLibros_ProjectKB_Class184]))
+
+([SBCRecomendacionLibros_ProjectKB_Class167] of  Property_List
+
+	(name "layout properties"))
+
+([SBCRecomendacionLibros_ProjectKB_Class168] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "generosFavoritos")
+	(property_list [SBCRecomendacionLibros_ProjectKB_Class169])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 0)
+	(y 120))
+
+([SBCRecomendacionLibros_ProjectKB_Class169] of  Property_List
+
+	(properties
+		[SBCRecomendacionLibros_ProjectKB_Class170]
+		[SBCRecomendacionLibros_ProjectKB_Class171]))
+
+([SBCRecomendacionLibros_ProjectKB_Class170] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([SBCRecomendacionLibros_ProjectKB_Class171] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([SBCRecomendacionLibros_ProjectKB_Class172] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "librosFavoritos")
+	(property_list [SBCRecomendacionLibros_ProjectKB_Class173])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 200)
+	(y 0))
+
+([SBCRecomendacionLibros_ProjectKB_Class173] of  Property_List
+
+	(properties
+		[SBCRecomendacionLibros_ProjectKB_Class174]
+		[SBCRecomendacionLibros_ProjectKB_Class175]))
+
+([SBCRecomendacionLibros_ProjectKB_Class174] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([SBCRecomendacionLibros_ProjectKB_Class175] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([SBCRecomendacionLibros_ProjectKB_Class176] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "perfilPaciente")
+	(property_list [SBCRecomendacionLibros_ProjectKB_Class177])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 200)
+	(y 60))
+
+([SBCRecomendacionLibros_ProjectKB_Class177] of  Property_List
+
+	(properties
+		[SBCRecomendacionLibros_ProjectKB_Class178]
+		[SBCRecomendacionLibros_ProjectKB_Class179]))
+
+([SBCRecomendacionLibros_ProjectKB_Class178] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([SBCRecomendacionLibros_ProjectKB_Class179] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([SBCRecomendacionLibros_ProjectKB_Class180] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "autoresFavoritos")
+	(property_list [SBCRecomendacionLibros_ProjectKB_Class181])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 0)
+	(y 60))
+
+([SBCRecomendacionLibros_ProjectKB_Class181] of  Property_List
+
+	(properties
+		[SBCRecomendacionLibros_ProjectKB_Class182]
+		[SBCRecomendacionLibros_ProjectKB_Class183]))
+
+([SBCRecomendacionLibros_ProjectKB_Class182] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([SBCRecomendacionLibros_ProjectKB_Class183] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([SBCRecomendacionLibros_ProjectKB_Class184] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "edad")
+	(property_list [SBCRecomendacionLibros_ProjectKB_Class185])
+	(widget_class_name "edu.stanford.smi.protege.widget.IntegerFieldWidget")
+	(width 100)
+	(x 0)
+	(y 0))
+
+([SBCRecomendacionLibros_ProjectKB_Class185] of  Property_List
+)
+
+([SBCRecomendacionLibros_ProjectKB_Class213] of  String
 
 	(name ":INSTANCE-ANNOTATION")
 	(string_value "%3AANNOTATION-TEXT"))
 
-([SBCRecomendacionLibros_ProjectKB_Class121] of  String
+([SBCRecomendacionLibros_ProjectKB_Class214] of  String
 
 	(name ":META-CLASS")
 	(string_value "%3ANAME"))
 
-([SBCRecomendacionLibros_ProjectKB_Class122] of  String
+([SBCRecomendacionLibros_ProjectKB_Class215] of  String
 
 	(name ":PAL-CONSTRAINT")
 	(string_value "%3APAL-NAME"))
