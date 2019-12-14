@@ -1,3 +1,9 @@
+; Sat Dec 14 16:57:27 CET 2019
+;
+;+ (version "3.5")
+;+ (build "Build 663")
+
+
 ; Sat Dec 14 18:37:17 CET 2019
 ;
 ;+ (version "3.5")
@@ -452,11 +458,6 @@
 
      ([Profile_0] of Perfil
 
-      (generosRecomendados
-          [Genres_0]
-          [Genres_6]
-          [Genres_4]
-          [Genres_7])
       (curable TRUE)
       (psicologico A)
       (rangoEdad Infantil)
@@ -464,11 +465,6 @@
 
      ([Profile_1] of Perfil
 
-      (generosRecomendados
-          [Genres_4]
-          [Genres_0]
-          [Genres_5]
-          [Genres_3])
       (curable TRUE)
       (psicologico A)
       (rangoEdad Infantil)
@@ -476,12 +472,6 @@
 
      ([Profile_2] of Perfil
 
-      (generosRecomendados
-          [Genres_0]
-          [Genres_1]
-          [Genres_5]
-          [Genres_6]
-          [Genres_3])
       (curable TRUE)
       (psicologico A)
       (rangoEdad Joven)
@@ -489,14 +479,6 @@
 
      ([Profile_3] of Perfil
 
-      (generosRecomendados
-          [Genres_7]
-          [Genres_5]
-          [Genres_4]
-          [Genres_3]
-          [Genres_1]
-          [Genres_0]
-          [Genres_2])
       (curable TRUE)
       (psicologico A)
       (rangoEdad Joven)
@@ -504,9 +486,6 @@
 
      ([Profile_4] of Perfil
 
-      (generosRecomendados
-          [Genres_0]
-          [Genres_5])
       (curable TRUE)
       (psicologico A)
       (rangoEdad Adulto)
@@ -514,9 +493,6 @@
 
      ([Profile_5] of Perfil
 
-      (generosRecomendados
-          [Genres_2]
-          [Genres_5])
       (curable TRUE)
       (psicologico A)
       (rangoEdad Adulto)
@@ -524,11 +500,6 @@
 
      ([Profile_6] of Perfil
 
-      (generosRecomendados
-          [Genres_3]
-          [Genres_4]
-          [Genres_7]
-          [Genres_1])
       (curable TRUE)
       (psicologico B)
       (rangoEdad Infantil)
@@ -536,8 +507,6 @@
 
      ([Profile_7] of Perfil
 
-      (generosRecomendados
-          [Genres_1])
       (curable TRUE)
       (psicologico B)
       (rangoEdad Infantil)
@@ -545,15 +514,6 @@
 
      ([Profile_8] of Perfil
 
-      (generosRecomendados
-          [Genres_1]
-          [Genres_2]
-          [Genres_0]
-          [Genres_7]
-          [Genres_4]
-          [Genres_5]
-          [Genres_6]
-          [Genres_3])
       (curable TRUE)
       (psicologico B)
       (rangoEdad Joven)
@@ -561,14 +521,6 @@
 
      ([Profile_9] of Perfil
 
-      (generosRecomendados
-          [Genres_7]
-          [Genres_0]
-          [Genres_1]
-          [Genres_6]
-          [Genres_5]
-          [Genres_3]
-          [Genres_2])
       (curable TRUE)
       (psicologico B)
       (rangoEdad Joven)
@@ -576,12 +528,6 @@
 
      ([Profile_10] of Perfil
 
-      (generosRecomendados
-          [Genres_7]
-          [Genres_0]
-          [Genres_6]
-          [Genres_2]
-          [Genres_3])
       (curable TRUE)
       (psicologico B)
       (rangoEdad Adulto)
@@ -589,12 +535,6 @@
 
      ([Profile_11] of Perfil
 
-      (generosRecomendados
-          [Genres_1]
-          [Genres_6]
-          [Genres_3]
-          [Genres_4]
-          [Genres_2])
       (curable TRUE)
       (psicologico B)
       (rangoEdad Adulto)
@@ -602,15 +542,6 @@
 
      ([Profile_12] of Perfil
 
-      (generosRecomendados
-          [Genres_1]
-          [Genres_5]
-          [Genres_3]
-          [Genres_6]
-          [Genres_4]
-          [Genres_0]
-          [Genres_2]
-          [Genres_7])
       (curable TRUE)
       (psicologico C)
       (rangoEdad Infantil)
@@ -618,8 +549,6 @@
 
      ([Profile_13] of Perfil
 
-      (generosRecomendados
-          [Genres_3])
       (curable TRUE)
       (psicologico C)
       (rangoEdad Infantil)
@@ -627,14 +556,6 @@
 
      ([Profile_14] of Perfil
 
-      (generosRecomendados
-          [Genres_2]
-          [Genres_0]
-          [Genres_1]
-          [Genres_6]
-          [Genres_4]
-          [Genres_3]
-          [Genres_5])
       (curable TRUE)
       (psicologico C)
       (rangoEdad Joven)
@@ -642,8 +563,6 @@
 
      ([Profile_15] of Perfil
 
-      (generosRecomendados
-          [Genres_4])
       (curable TRUE)
       (psicologico C)
       (rangoEdad Joven)
@@ -651,14 +570,6 @@
 
      ([Profile_16] of Perfil
 
-      (generosRecomendados
-          [Genres_4]
-          [Genres_3]
-          [Genres_1]
-          [Genres_2]
-          [Genres_0]
-          [Genres_7]
-          [Genres_5])
       (curable TRUE)
       (psicologico C)
       (rangoEdad Adulto)
@@ -666,14 +577,6 @@
 
      ([Profile_17] of Perfil
 
-      (generosRecomendados
-          [Genres_7]
-          [Genres_4]
-          [Genres_1]
-          [Genres_6]
-          [Genres_0]
-          [Genres_3]
-          [Genres_5])
       (curable TRUE)
       (psicologico C)
       (rangoEdad Adulto)
@@ -681,12 +584,6 @@
 
      ([Profile_18] of Perfil
 
-      (generosRecomendados
-          [Genres_1]
-          [Genres_3]
-          [Genres_6]
-          [Genres_4]
-          [Genres_5])
       (curable TRUE)
       (psicologico D)
       (rangoEdad Infantil)
@@ -694,11 +591,6 @@
 
      ([Profile_19] of Perfil
 
-      (generosRecomendados
-          [Genres_3]
-          [Genres_2]
-          [Genres_0]
-          [Genres_4])
       (curable TRUE)
       (psicologico D)
       (rangoEdad Infantil)
@@ -706,11 +598,6 @@
 
      ([Profile_20] of Perfil
 
-      (generosRecomendados
-          [Genres_2]
-          [Genres_7]
-          [Genres_0]
-          [Genres_6])
       (curable TRUE)
       (psicologico D)
       (rangoEdad Joven)
@@ -718,8 +605,6 @@
 
      ([Profile_21] of Perfil
 
-      (generosRecomendados
-          [Genres_0])
       (curable TRUE)
       (psicologico D)
       (rangoEdad Joven)
@@ -727,13 +612,6 @@
 
      ([Profile_22] of Perfil
 
-      (generosRecomendados
-          [Genres_7]
-          [Genres_3]
-          [Genres_4]
-          [Genres_5]
-          [Genres_6]
-          [Genres_1])
       (curable TRUE)
       (psicologico D)
       (rangoEdad Adulto)
@@ -741,14 +619,6 @@
 
      ([Profile_23] of Perfil
 
-      (generosRecomendados
-          [Genres_1]
-          [Genres_2]
-          [Genres_3]
-          [Genres_4]
-          [Genres_5]
-          [Genres_0]
-          [Genres_7])
       (curable TRUE)
       (psicologico D)
       (rangoEdad Adulto)
@@ -756,9 +626,6 @@
 
      ([Profile_24] of Perfil
 
-      (generosRecomendados
-          [Genres_7]
-          [Genres_4])
       (curable FALSE)
       (psicologico A)
       (rangoEdad Infantil)
@@ -766,15 +633,6 @@
 
      ([Profile_25] of Perfil
 
-      (generosRecomendados
-          [Genres_2]
-          [Genres_5]
-          [Genres_7]
-          [Genres_4]
-          [Genres_1]
-          [Genres_3]
-          [Genres_0]
-          [Genres_6])
       (curable FALSE)
       (psicologico A)
       (rangoEdad Infantil)
@@ -782,12 +640,6 @@
 
      ([Profile_26] of Perfil
 
-      (generosRecomendados
-          [Genres_5]
-          [Genres_4]
-          [Genres_3]
-          [Genres_2]
-          [Genres_7])
       (curable FALSE)
       (psicologico A)
       (rangoEdad Joven)
@@ -795,10 +647,6 @@
 
      ([Profile_27] of Perfil
 
-      (generosRecomendados
-          [Genres_5]
-          [Genres_2]
-          [Genres_6])
       (curable FALSE)
       (psicologico A)
       (rangoEdad Joven)
@@ -806,13 +654,6 @@
 
      ([Profile_28] of Perfil
 
-      (generosRecomendados
-          [Genres_6]
-          [Genres_2]
-          [Genres_0]
-          [Genres_3]
-          [Genres_1]
-          [Genres_4])
       (curable FALSE)
       (psicologico A)
       (rangoEdad Adulto)
@@ -820,11 +661,6 @@
 
      ([Profile_29] of Perfil
 
-      (generosRecomendados
-          [Genres_7]
-          [Genres_6]
-          [Genres_0]
-          [Genres_2])
       (curable FALSE)
       (psicologico A)
       (rangoEdad Adulto)
@@ -832,8 +668,6 @@
 
      ([Profile_30] of Perfil
 
-      (generosRecomendados
-          [Genres_2])
       (curable FALSE)
       (psicologico B)
       (rangoEdad Infantil)
@@ -841,15 +675,6 @@
 
      ([Profile_31] of Perfil
 
-      (generosRecomendados
-          [Genres_7]
-          [Genres_5]
-          [Genres_4]
-          [Genres_2]
-          [Genres_6]
-          [Genres_0]
-          [Genres_1]
-          [Genres_3])
       (curable FALSE)
       (psicologico B)
       (rangoEdad Infantil)
@@ -857,8 +682,6 @@
 
      ([Profile_32] of Perfil
 
-      (generosRecomendados
-          [Genres_0])
       (curable FALSE)
       (psicologico B)
       (rangoEdad Joven)
@@ -866,8 +689,6 @@
 
      ([Profile_33] of Perfil
 
-      (generosRecomendados
-          [Genres_4])
       (curable FALSE)
       (psicologico B)
       (rangoEdad Joven)
@@ -875,11 +696,6 @@
 
      ([Profile_34] of Perfil
 
-      (generosRecomendados
-          [Genres_6]
-          [Genres_5]
-          [Genres_2]
-          [Genres_1])
       (curable FALSE)
       (psicologico B)
       (rangoEdad Adulto)
@@ -887,13 +703,6 @@
 
      ([Profile_35] of Perfil
 
-      (generosRecomendados
-          [Genres_1]
-          [Genres_0]
-          [Genres_5]
-          [Genres_3]
-          [Genres_6]
-          [Genres_2])
       (curable FALSE)
       (psicologico B)
       (rangoEdad Adulto)
@@ -901,14 +710,6 @@
 
      ([Profile_36] of Perfil
 
-      (generosRecomendados
-          [Genres_5]
-          [Genres_4]
-          [Genres_3]
-          [Genres_1]
-          [Genres_6]
-          [Genres_2]
-          [Genres_0])
       (curable FALSE)
       (psicologico C)
       (rangoEdad Infantil)
@@ -916,15 +717,6 @@
 
      ([Profile_37] of Perfil
 
-      (generosRecomendados
-          [Genres_3]
-          [Genres_1]
-          [Genres_6]
-          [Genres_2]
-          [Genres_0]
-          [Genres_5]
-          [Genres_4]
-          [Genres_7])
       (curable FALSE)
       (psicologico C)
       (rangoEdad Infantil)
@@ -932,11 +724,6 @@
 
      ([Profile_38] of Perfil
 
-      (generosRecomendados
-          [Genres_0]
-          [Genres_5]
-          [Genres_4]
-          [Genres_7])
       (curable FALSE)
       (psicologico C)
       (rangoEdad Joven)
@@ -944,14 +731,6 @@
 
      ([Profile_39] of Perfil
 
-      (generosRecomendados
-          [Genres_1]
-          [Genres_6]
-          [Genres_4]
-          [Genres_5]
-          [Genres_2]
-          [Genres_7]
-          [Genres_0])
       (curable FALSE)
       (psicologico C)
       (rangoEdad Joven)
@@ -959,15 +738,6 @@
 
      ([Profile_40] of Perfil
 
-      (generosRecomendados
-          [Genres_2]
-          [Genres_3]
-          [Genres_6]
-          [Genres_7]
-          [Genres_0]
-          [Genres_5]
-          [Genres_1]
-          [Genres_4])
       (curable FALSE)
       (psicologico C)
       (rangoEdad Adulto)
@@ -975,12 +745,6 @@
 
      ([Profile_41] of Perfil
 
-      (generosRecomendados
-          [Genres_3]
-          [Genres_6]
-          [Genres_7]
-          [Genres_0]
-          [Genres_2])
       (curable FALSE)
       (psicologico C)
       (rangoEdad Adulto)
@@ -988,11 +752,6 @@
 
      ([Profile_42] of Perfil
 
-      (generosRecomendados
-          [Genres_4]
-          [Genres_3]
-          [Genres_2]
-          [Genres_6])
       (curable FALSE)
       (psicologico D)
       (rangoEdad Infantil)
@@ -1000,8 +759,6 @@
 
      ([Profile_43] of Perfil
 
-      (generosRecomendados
-          [Genres_4])
       (curable FALSE)
       (psicologico D)
       (rangoEdad Infantil)
@@ -1009,13 +766,6 @@
 
      ([Profile_44] of Perfil
 
-      (generosRecomendados
-          [Genres_6]
-          [Genres_7]
-          [Genres_0]
-          [Genres_4]
-          [Genres_3]
-          [Genres_5])
       (curable FALSE)
       (psicologico D)
       (rangoEdad Joven)
@@ -1023,9 +773,6 @@
 
      ([Profile_45] of Perfil
 
-      (generosRecomendados
-          [Genres_2]
-          [Genres_0])
       (curable FALSE)
       (psicologico D)
       (rangoEdad Joven)
@@ -1033,10 +780,6 @@
 
      ([Profile_46] of Perfil
 
-      (generosRecomendados
-          [Genres_7]
-          [Genres_1]
-          [Genres_5])
       (curable FALSE)
       (psicologico D)
       (rangoEdad Adulto)
@@ -1044,10 +787,105 @@
 
      ([Profile_47] of Perfil
 
-      (generosRecomendados
-          [Genres_6])
       (curable FALSE)
       (psicologico D)
       (rangoEdad Adulto)
       (terminal FALSE))
+)
+
+;;;-----------------------------------------------------------------------------
+;;;--------------------------------TEMPLATES------------------------------------
+;;;-----------------------------------------------------------------------------
+
+(deftemplate Lector
+    (slot edad (type INTEGER))
+    (slot perfilPaciente (type INSTANCE) (allowed-classes Perfil))
+    (multislot generosFavoritos (type INSTANCE) (allowed-classes Genero))
+    (multislot generosNegativos (type INSTANCE) (allowed-classes Genero))
+    (multislot librosFavoritos (type INSTANCE) (allowed-classes Libro))
+    (multislot librosNegativos (type INSTANCE) (allowed-classes Libro))
+    (multislot autoresFavoritos (type INSTANCE) (allowed-classes Autor))
+    (multislot autoresNegativos (type INSTANCE) (allowed-classes Autor))
+)
+
+(deftemplate solucionFinal
+    (slot posicion (type INTEGER))
+    (slot recomendacion (type INSTANCE) (allowed-classes Recomendacion))
+)
+
+;;;-----------------------------------------------------------------------------
+;;;--------------------------------FUNCIONES------------------------------------
+;;;-----------------------------------------------------------------------------
+
+;;; Funcion para hacer una pregunta general
+(deffunction pregunta-general (?pregunta)
+	(format t "%s" ?pregunta)
+	(bind ?respuesta (read))
+	?respuesta
+)
+
+;;; Funcion para hacer una pregunta con respuesta en un rango dado
+(deffunction pregunta-numerica (?pregunta ?rangini ?rangfi)
+	(format t "%s [%d, %d] " ?pregunta ?rangini ?rangfi)
+	(bind ?respuesta (read))
+	(while (not(and(>= ?respuesta ?rangini)(<= ?respuesta ?rangfi))) do
+		(format t "�%s? [%d, %d] " ?pregunta ?rangini ?rangfi)
+		(bind ?respuesta (read))
+	)
+	?respuesta
+)
+
+;;; Funcion para hacer una pregunta con un conjunto definido de valores de repuesta
+(deffunction pregunta-lista (?pregunta $?valores_posibles)
+	(format t "%s" ?pregunta)
+	(bind ?resposta (readline))
+	(bind ?res (str-explode ?resposta))
+	?res
+)
+
+;;;-----------------------------------------------------------------------------
+;;;---------------------------------MENSAJES------------------------------------
+;;;-----------------------------------------------------------------------------
+
+(defmessage-handler Autor print primary ()
+    (printout t "Autor: " ?self:nombreAutor crlf)
+)
+
+(defmessage-handler Libro print primary ()
+    (printout t "Libro: " ?self:titulo crlf)
+    (send ?self:autor print)
+    (printout t "Encuentra más información aquí: " ?self:url crlf)
+)
+
+(defmessage-handler Recomendacion print primary ()
+    (send ?self:libro print)
+    (bind $?justf ?self:justificacionesUsuario)
+	(if (eq (length$ ?justf) 0) then (printout t "No hay preferencias dadas por ti" crlf)
+		else (printout t crlf)
+			(loop-for-count (?i 1 (length$ ?justf)) do
+				(printout t " --> "(nth$ ?i ?justf) ". " crlf)
+			)
+	)
+	(printout t crlf)
+	(printout t " Informacion inferida por el Sistema: " )
+	(bind $?justf ?self:justificacionS)
+	(if (eq (length$ ?justf) 0) then (printout t "No se ha echo inferencia" crlf)
+		else (printout t crlf)
+			(loop-for-count (?i 1 (length$ ?justf)) do
+				(printout t " --> "(nth$ ?i ?justf) ". " crlf)
+			)
+	)
+	(printout t crlf)
+	(printout t "---------------------------------------------------" crlf)
+)
+
+;;;-----------------------------------------------------------------------------
+;;;----------------------------------REGLAS-------------------------------------
+;;;-----------------------------------------------------------------------------
+
+(defrule retorna_instancies
+    (not retorna_instancies ok)
+    =>
+    (bind ?lista_instancias (find-all-instances ((?instancia Libro)) TRUE))
+    (assert retorna_instancies ok)
 )
