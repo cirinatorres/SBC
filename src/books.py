@@ -69,7 +69,7 @@ for book in books:
     print(" (generos")
     print("     [Genres_" + str(themes.index(book[2])) + "]")
     print("     [Genres_" + str(themes.index(book[3])) + "])")
-    print(" (idLibro \"" + book[0] + "\")")
+    print(" (idLibro \"" + str(indexbook) + "\")")
     print(" (nPag " + book[4] + ")")
     print(" (publicacion " + str(book[5]) + ")")
     print(" (url \"" + book[7] + "\")")
@@ -80,7 +80,7 @@ for book in books:
 indexauthor = 0
 for author in authors:
         print("([Author_" + str(indexauthor) + "] of Autor")
-        print(" (idAutor \"" + str(author[0]) + "\")")
+        print(" (idAutor \"" + str(indexauthor) + "\")")
         print(" (nombreAutor \"" + author[1] + "\")")
         print(" (sexo " + author[2] + "))")
         print("")
