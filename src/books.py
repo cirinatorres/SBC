@@ -90,6 +90,7 @@ for author in authors:
 indexgenre = 0
 for genre in themes:
         print("([Genres_" + str(indexgenre) + "] of Genero")
+        print(" (idGenero \""+ str(indexgenre) +"\")")
         if indexgenre != 0:
             print(" (generosSimilares [" + "Genres_" + str(indexgenre-1) + "])")
         print(" (nombreGenero \"" + genre + "\"))")
@@ -99,41 +100,35 @@ for genre in themes:
 indexrecomendacion = 0
 for book in books:
         print("([Recomendations_" + str(indexrecomendacion) + "] of Recomendacion")
-        print("")
         print(" (gradoRecomendacion " + str(0) + ")")
         print(" (libro [Book_" + str(indexrecomendacion) + "]))")
         print("")
         indexrecomendacion += 1
 
 indexperfiles = 0
-for curable in ["TRUE","FALSE"]:
-    for psicologico in ["A","B","C","D"]:
-        for rangoEdad in ["Infantil","Juvenil","Adulto"]:
-            for terminal in ["TRUE","FALSE"]:
-                print("([Profile_" + str(indexperfiles) + "] of Perfil")
-                print(" ")
-                print(" (generosRecomendados")
-                numgenres = random.randint(1,len(themes))
-                listgenres = []
-                for i in range(numgenres):
+for psicologico in ["A","B","C","D"]:
+    for rangoEdad in ["Infantil","Juvenil","Adulto"]:
+        print("([Profile_" + str(indexperfiles) + "] of Perfil")
+        print(" (generosRecomendados")
+        numgenres = random.randint(1,len(themes))
+        listgenres = []
+        for i in range(numgenres):
+            randomgenre = random.randint(0,len(themes)-1)
+            exit = False
+            while (not exit):
+                if randomgenre not in listgenres:
+                    listgenres.append(randomgenre)
+                    exit = True
+                else:
                     randomgenre = random.randint(0,len(themes)-1)
-                    exit = False
-                    while (not exit):
-                        if randomgenre not in listgenres:
-                            listgenres.append(randomgenre)
-                            exit = True
-                        else:
-                            randomgenre = random.randint(0,len(themes)-1)
-                    if i != numgenres-1:
-                        print("     [Genres_" + str(randomgenre) + "]")
-                    else:
-                        print("     [Genres_" + str(randomgenre) + "])")
-                print(" (curable " + curable + ")")
-                print(" (psicologico " + psicologico + ")")
-                print(" (rangoEdad " + rangoEdad + ")")
-                print(" (terminal " + terminal + "))")
-                print("")
-                indexperfiles += 1
+            if i != numgenres-1:
+                print("     [Genres_" + str(randomgenre) + "]")
+            else:
+                print("     [Genres_" + str(randomgenre) + "])")
+        print(" (psicologico " + psicologico + ")")
+        print(" (rangoEdad " + rangoEdad + "))")
+        print("")
+        indexperfiles += 1
 
 
 
