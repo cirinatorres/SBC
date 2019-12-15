@@ -1,4 +1,4 @@
-; Sun Dec 15 19:26:47 CET 2019
+; Sun Dec 15 21:01:20 CET 2019
 ;
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -22,8 +22,18 @@
 		(type STRING)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
+	(single-slot hasManyReviews
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
 	(single-slot nPag
 		(type INTEGER)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot goodReview
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot titulo
@@ -106,8 +116,18 @@
 (defclass Libro
 	(is-a USER)
 	(role concrete)
+	(single-slot hasManyReviews
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
 	(single-slot nPag
 		(type INTEGER)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot goodReview
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot url
@@ -218,6 +238,8 @@
      (nPag 465)
      (publicacion 2005)
      (url "https://www.goodreads.com/book/show/2429135.The_Girl_with_the_Dragon_Tattoo")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Girl with the Dragon Tattoo"))
 
     ([Book_1] of Libro
@@ -229,6 +251,8 @@
      (nPag 438)
      (publicacion 1970)
      (url "https://www.goodreads.com/book/show/382975.The_Obscene_Bird_of_Night")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Obscene Bird of Night"))
 
     ([Book_2] of Libro
@@ -240,6 +264,8 @@
      (nPag 392)
      (publicacion 2010)
      (url "https://www.goodreads.com/book/show/7260188-mockingjay")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Mockingjay"))
 
     ([Book_3] of Libro
@@ -251,6 +277,8 @@
      (nPag 354)
      (publicacion 1962)
      (url "https://www.goodreads.com/book/show/5130.Island")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Island"))
 
     ([Book_4] of Libro
@@ -262,6 +290,8 @@
      (nPag 109)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/20927491-1-27")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "127 An ICoS Anthology"))
 
     ([Book_5] of Libro
@@ -273,6 +303,8 @@
      (nPag 171)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/20803627-forget-me-not")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Forget Me Not"))
 
     ([Book_6] of Libro
@@ -284,6 +316,8 @@
      (nPag 688)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/17305049-ethan")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Ethan"))
 
     ([Book_7] of Libro
@@ -295,6 +329,8 @@
      (nPag 320)
      (publicacion 2010)
      (url "https://www.goodreads.com/book/show/7059135-inside-out")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Inside Out"))
 
     ([Book_8] of Libro
@@ -306,6 +342,8 @@
      (nPag 315)
      (publicacion 1987)
      (url "https://www.goodreads.com/book/show/104344.The_Gate_to_Women_s_Country")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Gate to Womens Country"))
 
     ([Book_9] of Libro
@@ -317,6 +355,8 @@
      (nPag 528)
      (publicacion 1961)
      (url "https://www.goodreads.com/book/show/350.Stranger_in_a_Strange_Land")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Stranger in a Strange Land"))
 
     ([Book_10] of Libro
@@ -328,6 +368,8 @@
      (nPag 326)
      (publicacion 2010)
      (url "https://www.goodreads.com/book/show/7095831-ship-breaker")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Ship Breaker"))
 
     ([Book_11] of Libro
@@ -339,6 +381,8 @@
      (nPag 149)
      (publicacion 1967)
      (url "https://www.goodreads.com/book/show/73654.Logan_s_Run")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Logans Run"))
 
     ([Book_12] of Libro
@@ -350,6 +394,8 @@
      (nPag 341)
      (publicacion 1952)
      (url "https://www.goodreads.com/book/show/9597.Player_Piano")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Player Piano"))
 
     ([Book_13] of Libro
@@ -361,6 +407,8 @@
      (nPag 629)
      (publicacion 1977)
      (url "https://www.goodreads.com/book/show/218467.Lucifer_s_Hammer")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Lucifers Hammer"))
 
     ([Book_14] of Libro
@@ -372,6 +420,8 @@
      (nPag 345)
      (publicacion 1949)
      (url "https://www.goodreads.com/book/show/93269.Earth_Abides")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Earth Abides"))
 
     ([Book_15] of Libro
@@ -383,6 +433,8 @@
      (nPag 268)
      (publicacion 1963)
      (url "https://www.goodreads.com/book/show/414895.Planet_of_the_Apes")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Planet of the Apes"))
 
     ([Book_16] of Libro
@@ -394,6 +446,8 @@
      (nPag 449)
      (publicacion 2006)
      (url "https://www.goodreads.com/book/show/10567.Cell")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Cell"))
 
     ([Book_17] of Libro
@@ -405,6 +459,8 @@
      (nPag 219)
      (publicacion 1977)
      (url "https://www.goodreads.com/book/show/14817.A_Scanner_Darkly")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "A Scanner Darkly"))
 
     ([Book_18] of Libro
@@ -416,6 +472,8 @@
      (nPag 400)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/2113260.Shades_of_Grey")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Shades of Grey"))
 
     ([Book_19] of Libro
@@ -427,6 +485,8 @@
      (nPag 499)
      (publicacion 1995)
      (url "https://www.goodreads.com/book/show/827.The_Diamond_Age")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Diamond Age Or A Young Ladys Illustrated Primer"))
 
     ([Book_20] of Libro
@@ -438,6 +498,8 @@
      (nPag 488)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/10576365-the-darkest-minds")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Darkest Minds"))
 
     ([Book_21] of Libro
@@ -449,6 +511,8 @@
      (nPag 382)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/15839976-red-rising")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Red Rising"))
 
     ([Book_22] of Libro
@@ -460,6 +524,8 @@
      (nPag 317)
      (publicacion 1982)
      (url "https://www.goodreads.com/book/show/11607.The_Running_Man")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Running Man"))
 
     ([Book_23] of Libro
@@ -471,6 +537,8 @@
      (nPag 182)
      (publicacion 1950)
      (url "https://www.goodreads.com/book/show/76778.The_Martian_Chronicles")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Martian Chronicles"))
 
     ([Book_24] of Libro
@@ -482,6 +550,8 @@
      (nPag 278)
      (publicacion 1974)
      (url "https://www.goodreads.com/book/show/21611.The_Forever_War")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Forever War"))
 
     ([Book_25] of Libro
@@ -493,6 +563,8 @@
      (nPag 956)
      (publicacion 1987)
      (url "https://www.goodreads.com/book/show/11557.Swan_Song")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Swan Song"))
 
     ([Book_26] of Libro
@@ -504,6 +576,8 @@
      (nPag 296)
      (publicacion 1957)
      (url "https://www.goodreads.com/book/show/38180.On_the_Beach")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "On the Beach"))
 
     ([Book_27] of Libro
@@ -515,6 +589,8 @@
      (nPag 321)
      (publicacion 1985)
      (url "https://www.goodreads.com/book/show/889284.The_Postman")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Postman"))
 
     ([Book_28] of Libro
@@ -526,6 +602,8 @@
      (nPag 336)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/20170404-station-eleven")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Station Eleven"))
 
     ([Book_29] of Libro
@@ -537,6 +615,8 @@
      (nPag 323)
      (publicacion 1959)
      (url "https://www.goodreads.com/book/show/38169.Alas_Babylon")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Alas Babylon"))
 
     ([Book_30] of Libro
@@ -548,6 +628,8 @@
      (nPag 200)
      (publicacion 1955)
      (url "https://www.goodreads.com/book/show/826845.The_Chrysalids")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Chrysalids"))
 
     ([Book_31] of Libro
@@ -559,6 +641,8 @@
      (nPag 259)
      (publicacion 2011)
      (url "https://www.goodreads.com/book/show/7137327-enclave")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Enclave"))
 
     ([Book_32] of Libro
@@ -570,6 +654,8 @@
      (nPag 345)
      (publicacion 1993)
      (url "https://www.goodreads.com/book/show/52397.Parable_of_the_Sower")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Parable of the Sower"))
 
     ([Book_33] of Libro
@@ -581,6 +667,8 @@
      (nPag 308)
      (publicacion 2002)
      (url "https://www.goodreads.com/book/show/169756.Feed")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Feed"))
 
     ([Book_34] of Libro
@@ -592,6 +680,8 @@
      (nPag 387)
      (publicacion 1974)
      (url "https://www.goodreads.com/book/show/13651.The_Dispossessed")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Dispossessed"))
 
     ([Book_35] of Libro
@@ -603,6 +693,8 @@
      (nPag 255)
      (publicacion 1925)
      (url "https://www.goodreads.com/book/show/17690.The_Trial")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Trial"))
 
     ([Book_36] of Libro
@@ -614,6 +706,8 @@
      (nPag 399)
      (publicacion 2011)
      (url "https://www.goodreads.com/book/show/8235178-across-the-universe")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Across the Universe"))
 
     ([Book_37] of Libro
@@ -625,6 +719,8 @@
      (nPag 380)
      (publicacion 2002)
      (url "https://www.goodreads.com/book/show/13376.The_House_of_the_Scorpion")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The House of the Scorpion"))
 
     ([Book_38] of Libro
@@ -636,6 +732,8 @@
      (nPag 1168)
      (publicacion 1957)
      (url "https://www.goodreads.com/book/show/662.Atlas_Shrugged")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Atlas Shrugged"))
 
     ([Book_39] of Libro
@@ -647,6 +745,8 @@
      (nPag 241)
      (publicacion 1992)
      (url "https://www.goodreads.com/book/show/41913.The_Children_of_Men")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Children of Men"))
 
     ([Book_40] of Libro
@@ -658,6 +758,8 @@
      (nPag 271)
      (publicacion 1984)
      (url "https://www.goodreads.com/book/show/888628.Neuromancer")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Neuromancer"))
 
     ([Book_41] of Libro
@@ -669,6 +771,8 @@
      (nPag 335)
      (publicacion 1959)
      (url "https://www.goodreads.com/book/show/164154.A_Canticle_for_Leibowitz")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "A Canticle for Leibowitz"))
 
     ([Book_42] of Libro
@@ -680,6 +784,8 @@
      (nPag 326)
      (publicacion 1995)
      (url "https://www.goodreads.com/book/show/40495148-blindness")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Blindness"))
 
     ([Book_43] of Libro
@@ -691,6 +797,8 @@
      (nPag 255)
      (publicacion 1921)
      (url "https://www.goodreads.com/book/show/76171.We")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "We"))
 
     ([Book_44] of Libro
@@ -702,6 +810,8 @@
      (nPag 337)
      (publicacion 2006)
      (url "https://www.goodreads.com/book/show/213753.Life_As_We_Knew_It")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Life As We Knew It"))
 
     ([Book_45] of Libro
@@ -713,6 +823,8 @@
      (nPag 617)
      (publicacion 1999)
      (url "https://www.goodreads.com/book/show/57891.Battle_Royale")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Battle Royale"))
 
     ([Book_46] of Libro
@@ -724,6 +836,8 @@
      (nPag 118)
      (publicacion 1895)
      (url "https://www.goodreads.com/book/show/2493.The_Time_Machine")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Time Machine"))
 
     ([Book_47] of Libro
@@ -735,6 +849,8 @@
      (nPag 509)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/13453029-wool-omnibus")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Wool Omnibus"))
 
     ([Book_48] of Libro
@@ -746,6 +862,8 @@
      (nPag 342)
      (publicacion 2006)
      (url "https://www.goodreads.com/book/show/8908.World_War_Z")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "World War Z An Oral History of the Zombie War"))
 
     ([Book_49] of Libro
@@ -757,6 +875,8 @@
      (nPag 389)
      (publicacion 2003)
      (url "https://www.goodreads.com/book/show/46756.Oryx_and_Crake")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Oryx and Crake"))
 
     ([Book_50] of Libro
@@ -768,6 +888,8 @@
      (nPag 288)
      (publicacion 2005)
      (url "https://www.goodreads.com/book/show/6334.Never_Let_Me_Go")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Never Let Me Go"))
 
     ([Book_51] of Libro
@@ -779,6 +901,8 @@
      (nPag 449)
      (publicacion 1938)
      (url "https://www.goodreads.com/book/show/17899948-rebecca")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Rebecca"))
 
     ([Book_52] of Libro
@@ -790,6 +914,8 @@
      (nPag 308)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/6048530-finger-lickin-fifteen")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Finger Lickin Fifteen"))
 
     ([Book_53] of Libro
@@ -801,6 +927,8 @@
      (nPag 453)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/3720975-handle-with-care")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Handle with Care"))
 
     ([Book_54] of Libro
@@ -812,6 +940,8 @@
      (nPag 352)
      (publicacion 2006)
      (url "https://www.goodreads.com/book/show/17204.The_Friday_Night_Knitting_Club")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Friday Night Knitting Club"))
 
     ([Book_55] of Libro
@@ -823,6 +953,8 @@
      (nPag 449)
      (publicacion 1868)
      (url "https://www.goodreads.com/book/show/1934.Little_Women")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Little Women"))
 
     ([Book_56] of Libro
@@ -834,6 +966,8 @@
      (nPag 294)
      (publicacion 2006)
      (url "https://www.goodreads.com/book/show/556602.Sarah_s_Key")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Sarahs Key"))
 
     ([Book_57] of Libro
@@ -845,6 +979,8 @@
      (nPag 496)
      (publicacion 1943)
      (url "https://www.goodreads.com/book/show/14891.A_Tree_Grows_in_Brooklyn")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "A Tree Grows in Brooklyn"))
 
     ([Book_58] of Libro
@@ -856,6 +992,8 @@
      (nPag 294)
      (publicacion 1963)
      (url "https://www.goodreads.com/book/show/6514.The_Bell_Jar")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Bell Jar"))
 
     ([Book_59] of Libro
@@ -867,6 +1005,8 @@
      (nPag 815)
      (publicacion 1996)
      (url "https://www.goodreads.com/book/show/13.The_Ultimate_Hitchhiker_s_Guide_to_the_Galaxy")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Ultimate Hitchhikers Guide to the Galaxy"))
 
     ([Book_60] of Libro
@@ -878,6 +1018,8 @@
      (nPag 288)
      (publicacion 1989)
      (url "https://www.goodreads.com/book/show/7763.The_Joy_Luck_Club")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Joy Luck Club"))
 
     ([Book_61] of Libro
@@ -889,6 +1031,8 @@
      (nPag 216)
      (publicacion 1995)
      (url "https://www.goodreads.com/book/show/101299.The_Reader")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Reader"))
 
     ([Book_62] of Libro
@@ -900,6 +1044,8 @@
      (nPag 241)
      (publicacion 2006)
      (url "https://www.goodreads.com/book/show/6288.The_Road")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Road"))
 
     ([Book_63] of Libro
@@ -911,6 +1057,8 @@
      (nPag 186)
      (publicacion 2000)
      (url "https://www.goodreads.com/book/show/22232.Stargirl")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Stargirl"))
 
     ([Book_64] of Libro
@@ -922,6 +1070,8 @@
      (nPag 490)
      (publicacion 1955)
      (url "https://www.goodreads.com/book/show/18512.The_Return_of_the_King")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Return of the King"))
 
     ([Book_65] of Libro
@@ -933,6 +1083,8 @@
      (nPag 509)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/6411961-the-lost-symbol")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Lost Symbol"))
 
     ([Book_66] of Libro
@@ -944,6 +1096,8 @@
      (nPag 973)
      (publicacion 1989)
      (url "https://www.goodreads.com/book/show/5043.The_Pillars_of_the_Earth")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Pillars of the Earth"))
 
     ([Book_67] of Libro
@@ -955,6 +1109,8 @@
      (nPag 661)
      (publicacion 2001)
      (url "https://www.goodreads.com/book/show/37470.The_Other_Boleyn_Girl")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Other Boleyn Girl"))
 
     ([Book_68] of Libro
@@ -966,6 +1122,8 @@
      (nPag 320)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/5899779-pride-and-prejudice-and-zombies")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Pride and Prejudice and Zombies"))
 
     ([Book_69] of Libro
@@ -977,6 +1135,8 @@
      (nPag 401)
      (publicacion 2005)
      (url "https://www.goodreads.com/book/show/10441.The_Memory_Keeper_s_Daughter")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Memory Keepers Daughter"))
 
     ([Book_70] of Libro
@@ -988,6 +1148,8 @@
      (nPag 370)
      (publicacion 2005)
      (url "https://www.goodreads.com/book/show/24768.Pretties")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Pretties"))
 
     ([Book_71] of Libro
@@ -999,6 +1161,8 @@
      (nPag 288)
      (publicacion 1995)
      (url "https://www.goodreads.com/book/show/227443.Bridget_Jones_s_Diary")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Bridget Joness Diary"))
 
     ([Book_72] of Libro
@@ -1010,6 +1174,8 @@
      (nPag 391)
      (publicacion 2004)
      (url "https://www.goodreads.com/book/show/854757.Bet_Me")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Bet Me"))
 
     ([Book_73] of Libro
@@ -1021,6 +1187,8 @@
      (nPag 374)
      (publicacion 2001)
      (url "https://www.goodreads.com/book/show/33724.Can_You_Keep_a_Secret_")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Can You Keep a Secret"))
 
     ([Book_74] of Libro
@@ -1032,6 +1200,8 @@
      (nPag 338)
      (publicacion 2011)
      (url "https://www.goodreads.com/book/show/10429045-shatter-me")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Shatter Me"))
 
     ([Book_75] of Libro
@@ -1043,6 +1213,8 @@
      (nPag 369)
      (publicacion 2010)
      (url "https://www.goodreads.com/book/show/7735333-matched")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Matched"))
 
     ([Book_76] of Libro
@@ -1054,6 +1226,8 @@
      (nPag 503)
      (publicacion 1997)
      (url "https://www.goodreads.com/book/show/929.Memoirs_of_a_Geisha")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Memoirs of a Geisha"))
 
     ([Book_77] of Libro
@@ -1065,6 +1239,8 @@
      (nPag 215)
      (publicacion 1999)
      (url "https://www.goodreads.com/book/show/35545737-a-walk-to-remember")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "A Walk to Remember"))
 
     ([Book_78] of Libro
@@ -1076,6 +1252,8 @@
      (nPag 334)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/20448515-bared-to-you")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Bared to You"))
 
     ([Book_79] of Libro
@@ -1087,6 +1265,8 @@
      (nPag 356)
      (publicacion 2011)
      (url "https://www.goodreads.com/book/show/10818853-fifty-shades-of-grey")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Fifty Shades of Grey"))
 
     ([Book_80] of Libro
@@ -1098,6 +1278,8 @@
      (nPag 428)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/11861715-icons")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Icons"))
 
     ([Book_81] of Libro
@@ -1109,6 +1291,8 @@
      (nPag 312)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/13425802-pods")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "PODs"))
 
     ([Book_82] of Libro
@@ -1120,6 +1304,8 @@
      (nPag 320)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/9791892-unremembered")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Unremembered"))
 
     ([Book_83] of Libro
@@ -1131,6 +1317,8 @@
      (nPag 309)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/13112869-not-a-drop-to-drink")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Not a Drop to Drink"))
 
     ([Book_84] of Libro
@@ -1142,6 +1330,8 @@
      (nPag 323)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/10859509-altered")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Altered"))
 
     ([Book_85] of Libro
@@ -1153,6 +1343,8 @@
      (nPag 292)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/13401993-dualed")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Dualed"))
 
     ([Book_86] of Libro
@@ -1164,6 +1356,8 @@
      (nPag 400)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/13188615-breaking-point")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Breaking Point"))
 
     ([Book_87] of Libro
@@ -1175,6 +1369,8 @@
      (nPag 496)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/14743784-unbreakable")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Unbreakable"))
 
     ([Book_88] of Libro
@@ -1186,6 +1382,8 @@
      (nPag 384)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/13138635-these-broken-stars")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "These Broken Stars"))
 
     ([Book_89] of Libro
@@ -1197,6 +1395,8 @@
      (nPag 360)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/11044367-taken")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Taken"))
 
     ([Book_90] of Libro
@@ -1208,6 +1408,8 @@
      (nPag 470)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/10222362-mila-2-0")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "MILA 20"))
 
     ([Book_91] of Libro
@@ -1219,6 +1421,8 @@
      (nPag 457)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/16101128-the-5th-wave")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The 5th Wave"))
 
     ([Book_92] of Libro
@@ -1230,6 +1434,8 @@
      (nPag 369)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/14290364-champion")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Champion"))
 
     ([Book_93] of Libro
@@ -1241,6 +1447,8 @@
      (nPag 307)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/10874177-etiquette-espionage")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Etiquette  Espionage"))
 
     ([Book_94] of Libro
@@ -1252,6 +1460,8 @@
      (nPag 341)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/12631512-the-essence")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Essence"))
 
     ([Book_95] of Libro
@@ -1263,6 +1473,8 @@
      (nPag 405)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/11366397-the-program")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Program"))
 
     ([Book_96] of Libro
@@ -1274,6 +1486,8 @@
      (nPag 411)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/8811139-light")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Light"))
 
     ([Book_97] of Libro
@@ -1285,6 +1499,8 @@
      (nPag 391)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/9593913-requiem")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Requiem"))
 
     ([Book_98] of Libro
@@ -1296,6 +1512,8 @@
      (nPag 371)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/12383869-sever")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Sever"))
 
     ([Book_99] of Libro
@@ -1307,6 +1525,8 @@
      (nPag 341)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/13253276-through-the-ever-night")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Through the Ever Night"))
 
     ([Book_100] of Libro
@@ -1318,6 +1538,8 @@
      (nPag 526)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/18710190-allegiant")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Allegiant"))
 
     ([Book_101] of Libro
@@ -1329,6 +1551,8 @@
      (nPag 304)
      (publicacion 2015)
      (url "https://www.goodreads.com/book/show/40963299-mechanica")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Mechanica"))
 
     ([Book_102] of Libro
@@ -1340,6 +1564,8 @@
      (nPag 456)
      (publicacion 2015)
      (url "https://www.goodreads.com/book/show/23399192-rook")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Rook"))
 
     ([Book_103] of Libro
@@ -1351,6 +1577,8 @@
      (nPag 356)
      (publicacion 2015)
      (url "https://www.goodreads.com/book/show/17316770-invaded")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Invaded"))
 
     ([Book_104] of Libro
@@ -1362,6 +1590,8 @@
      (nPag 415)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/19288043-gone-girl")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Gone Girl"))
 
     ([Book_105] of Libro
@@ -1373,6 +1603,8 @@
      (nPag 361)
      (publicacion 2010)
      (url "https://www.goodreads.com/book/show/6909544-birthmarked")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Birthmarked"))
 
     ([Book_106] of Libro
@@ -1384,6 +1616,8 @@
      (nPag 192)
      (publicacion 1961)
      (url "https://www.goodreads.com/book/show/595394.Some_of_Your_Blood")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Some of Your Blood"))
 
     ([Book_107] of Libro
@@ -1395,6 +1629,8 @@
      (nPag 496)
      (publicacion 1991)
      (url "https://www.goodreads.com/book/show/36159.Black_Sun_Rising")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Black Sun Rising"))
 
     ([Book_108] of Libro
@@ -1406,6 +1642,8 @@
      (nPag 160)
      (publicacion 1954)
      (url "https://www.goodreads.com/book/show/40940649-i-am-legend")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "I Am Legend"))
 
     ([Book_109] of Libro
@@ -1417,6 +1655,8 @@
      (nPag 766)
      (publicacion 2010)
      (url "https://www.goodreads.com/book/show/6690798-the-passage")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Passage"))
 
     ([Book_110] of Libro
@@ -1428,6 +1668,8 @@
      (nPag 403)
      (publicacion 1981)
      (url "https://www.goodreads.com/book/show/62571.The_Keep")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Keep"))
 
     ([Book_111] of Libro
@@ -1439,6 +1681,8 @@
      (nPag 296)
      (publicacion 1998)
      (url "https://www.goodreads.com/book/show/34541.Carpe_Jugulum")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Carpe Jugulum"))
 
     ([Book_112] of Libro
@@ -1450,6 +1694,8 @@
      (nPag 300)
      (publicacion 1995)
      (url "https://www.goodreads.com/book/show/33454.Bloodsucking_Fiends")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Bloodsucking Fiends"))
 
     ([Book_113] of Libro
@@ -1461,6 +1707,8 @@
      (nPag 403)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/6065215-the-strain")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Strain"))
 
     ([Book_114] of Libro
@@ -1472,6 +1720,8 @@
      (nPag 513)
      (publicacion 2004)
      (url "https://www.goodreads.com/book/show/943402.Let_the_Right_One_In")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Let the Right One In"))
 
     ([Book_115] of Libro
@@ -1483,6 +1733,8 @@
      (nPag 313)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/2227528.The_Plague_of_Doves")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Plague of Doves"))
 
     ([Book_116] of Libro
@@ -1494,6 +1746,8 @@
      (nPag 479)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/1472878.Firefly_Lane")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Firefly Lane"))
 
     ([Book_117] of Libro
@@ -1505,6 +1759,8 @@
      (nPag 400)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/3289281-when-will-there-be-good-news")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "When Will There Be Good News"))
 
     ([Book_118] of Libro
@@ -1516,6 +1772,8 @@
      (nPag 372)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/2017056.Skeletons_at_the_Feast")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Skeletons at the Feast"))
 
     ([Book_119] of Libro
@@ -1527,6 +1785,8 @@
      (nPag 530)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/1833852.A_Fraction_of_the_Whole")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "A Fraction of the Whole"))
 
     ([Book_120] of Libro
@@ -1538,6 +1798,8 @@
      (nPag 288)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/426775.Chasing_Harry_Winston")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Chasing Harry Winston"))
 
     ([Book_121] of Libro
@@ -1549,6 +1811,8 @@
      (nPag 898)
      (publicacion 2004)
      (url "https://www.goodreads.com/book/show/63032.2666")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "2666"))
 
     ([Book_122] of Libro
@@ -1560,6 +1824,8 @@
      (nPag 208)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/1840511.Snuff")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Snuff"))
 
     ([Book_123] of Libro
@@ -1571,6 +1837,8 @@
      (nPag 272)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/2112237.Betrayal_on_Orbis_2")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Betrayal on Orbis 2"))
 
     ([Book_124] of Libro
@@ -1582,6 +1850,8 @@
      (nPag 167)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/3009435-a-mercy")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "A Mercy"))
 
     ([Book_125] of Libro
@@ -1593,6 +1863,8 @@
      (nPag 332)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/3181953-the-heretic-s-daughter")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Heretics Daughter"))
 
     ([Book_126] of Libro
@@ -1604,6 +1876,8 @@
      (nPag 128)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/2556204.Unlucky_Lucky_Days")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Unlucky Lucky Days"))
 
     ([Book_127] of Libro
@@ -1615,6 +1889,8 @@
      (nPag 214)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/1605034.The_Miracle_at_Speedy_Motors")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Miracle at Speedy Motors"))
 
     ([Book_128] of Libro
@@ -1626,6 +1902,8 @@
      (nPag 416)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/2177236.Hold_Tight")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Hold Tight"))
 
     ([Book_129] of Libro
@@ -1637,6 +1915,8 @@
      (nPag 386)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/421549.Certain_Girls")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Certain Girls"))
 
     ([Book_130] of Libro
@@ -1648,6 +1928,8 @@
      (nPag 224)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/1809465.Rodrick_Rules")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Rodrick Rules"))
 
     ([Book_131] of Libro
@@ -1659,6 +1941,8 @@
      (nPag 555)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/2807199-american-wife")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "American Wife"))
 
     ([Book_132] of Libro
@@ -1670,6 +1954,8 @@
      (nPag 466)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/5941114-the-likeness")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Likeness"))
 
     ([Book_133] of Libro
@@ -1681,6 +1967,8 @@
      (nPag 269)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/2615008-netherland")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Netherland"))
 
     ([Book_134] of Libro
@@ -1692,6 +1980,8 @@
      (nPag 328)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/2138727.Mudbound")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Mudbound"))
 
     ([Book_135] of Libro
@@ -1703,6 +1993,8 @@
      (nPag 342)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/2120652.Love_the_One_You_re_With")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Love the One Youre With"))
 
     ([Book_136] of Libro
@@ -1714,6 +2006,8 @@
      (nPag 384)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/1474628.The_Monsters_of_Templeton")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Monsters of Templeton"))
 
     ([Book_137] of Libro
@@ -1725,6 +2019,8 @@
      (nPag 740)
      (publicacion 2007)
      (url "https://www.goodreads.com/book/show/3086160-the-hour-i-first-believed")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Hour I First Believed"))
 
     ([Book_138] of Libro
@@ -1736,6 +2032,8 @@
      (nPag 270)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/1736739.Olive_Kitteridge")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Olive Kitteridge"))
 
     ([Book_139] of Libro
@@ -1747,6 +2045,8 @@
      (nPag 400)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/2113410.Belong_to_Me")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Belong to Me"))
 
     ([Book_140] of Libro
@@ -1758,6 +2058,8 @@
      (nPag 258)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/1971304.City_of_Thieves")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "City of Thieves"))
 
     ([Book_141] of Libro
@@ -1769,6 +2071,8 @@
      (nPag 382)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/954674.Little_Brother")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Little Brother"))
 
     ([Book_142] of Libro
@@ -1780,6 +2084,8 @@
      (nPag 372)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/1379961.People_of_the_Book")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "People of the Book"))
 
     ([Book_143] of Libro
@@ -1791,6 +2097,8 @@
      (nPag 566)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/2731276-the-story-of-edgar-sawtelle")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Story of Edgar Sawtelle"))
 
     ([Book_144] of Libro
@@ -1802,6 +2110,8 @@
      (nPag 407)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/16168313-racing-with-the-rain")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Racing With The Rain"))
 
     ([Book_145] of Libro
@@ -1813,6 +2123,8 @@
      (nPag 280)
      (publicacion 2010)
      (url "https://www.goodreads.com/book/show/8135807-rock-me")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Rock Me"))
 
     ([Book_146] of Libro
@@ -1824,6 +2136,8 @@
      (nPag 320)
      (publicacion 2011)
      (url "https://www.goodreads.com/book/show/10647131-there-you-ll-find-me")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "There Youll Find Me"))
 
     ([Book_147] of Libro
@@ -1835,6 +2149,8 @@
      (nPag 372)
      (publicacion 2007)
      (url "https://www.goodreads.com/book/show/128029.A_Thousand_Splendid_Suns")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "A Thousand Splendid Suns"))
 
     ([Book_148] of Libro
@@ -1846,6 +2162,8 @@
      (nPag 321)
      (publicacion 2010)
      (url "https://www.goodreads.com/book/show/31685789-room")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Room"))
 
     ([Book_149] of Libro
@@ -1857,6 +2175,8 @@
      (nPag 369)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/17347634-me-before-you")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Me Before You"))
 
     ([Book_150] of Libro
@@ -1868,6 +2188,8 @@
      (nPag 525)
      (publicacion 2007)
      (url "https://www.goodreads.com/book/show/9673436-the-invention-of-hugo-cabret")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Invention of Hugo Cabret"))
 
     ([Book_151] of Libro
@@ -1879,6 +2201,8 @@
      (nPag 175)
      (publicacion 2017)
      (url "https://www.goodreads.com/book/show/35002208-maya-s-magical-adventures")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Mayas Magical Adventures"))
 
     ([Book_152] of Libro
@@ -1890,6 +2214,8 @@
      (nPag 884)
      (publicacion 1982)
      (url "https://www.goodreads.com/book/show/40605251-the-mists-of-avalon")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Mists of Avalon"))
 
     ([Book_153] of Libro
@@ -1901,6 +2227,8 @@
      (nPag 494)
      (publicacion 1970)
      (url "https://www.goodreads.com/book/show/82192.The_Crystal_Cave")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Crystal Cave"))
 
     ([Book_154] of Libro
@@ -1912,6 +2240,8 @@
      (nPag 242)
      (publicacion 1905)
      (url "https://www.goodreads.com/book/show/3008.A_Little_Princess")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "A Little Princess"))
 
     ([Book_155] of Libro
@@ -1923,6 +2253,8 @@
      (nPag 192)
      (publicacion 1976)
      (url "https://www.goodreads.com/book/show/28541.Dragonsong")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Dragonsong"))
 
     ([Book_156] of Libro
@@ -1934,6 +2266,8 @@
      (nPag 176)
      (publicacion 1999)
      (url "https://www.goodreads.com/book/show/78411.The_Bad_Beginning")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Bad Beginning"))
 
     ([Book_157] of Libro
@@ -1945,6 +2279,8 @@
      (nPag 304)
      (publicacion 1982)
      (url "https://www.goodreads.com/book/show/44659.Pawn_of_Prophecy")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Pawn of Prophecy"))
 
     ([Book_158] of Libro
@@ -1956,6 +2292,8 @@
      (nPag 240)
      (publicacion 1988)
      (url "https://www.goodreads.com/book/show/39988.Matilda")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Matilda"))
 
     ([Book_159] of Libro
@@ -1967,6 +2305,8 @@
      (nPag 814)
      (publicacion 1990)
      (url "https://www.goodreads.com/book/show/228665.The_Eye_of_the_World")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Eye of the World"))
 
     ([Book_160] of Libro
@@ -1978,6 +2318,8 @@
      (nPag 368)
      (publicacion 2005)
      (url "https://www.goodreads.com/book/show/214856.Leven_Thumps_and_the_Gateway_to_Foo")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Leven Thumps and the Gateway to Foo"))
 
     ([Book_161] of Libro
@@ -1989,6 +2331,8 @@
      (nPag 662)
      (publicacion 2007)
      (url "https://www.goodreads.com/book/show/186074.The_Name_of_the_Wind")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Name of the Wind"))
 
     ([Book_162] of Libro
@@ -2000,6 +2344,8 @@
      (nPag 398)
      (publicacion 1973)
      (url "https://www.goodreads.com/book/show/21787.The_Princess_Bride")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Princess Bride"))
 
     ([Book_163] of Libro
@@ -2011,6 +2357,8 @@
      (nPag 128)
      (publicacion 1977)
      (url "https://www.goodreads.com/book/show/40940121-bridge-to-terabithia")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Bridge to Terabithia"))
 
     ([Book_164] of Libro
@@ -2022,6 +2370,8 @@
      (nPag 384)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/6186357-the-maze-runner")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Maze Runner"))
 
     ([Book_165] of Libro
@@ -2033,6 +2383,8 @@
      (nPag 211)
      (publicacion 1962)
      (url "https://www.goodreads.com/book/show/33574273-a-wrinkle-in-time")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "A Wrinkle in Time"))
 
     ([Book_166] of Libro
@@ -2044,6 +2396,8 @@
      (nPag 336)
      (publicacion 2002)
      (url "https://www.goodreads.com/book/show/347639.What_Happened_to_Lani_Garver")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "What Happened to Lani Garver"))
 
     ([Book_167] of Libro
@@ -2055,6 +2409,8 @@
      (nPag 256)
      (publicacion 1999)
      (url "https://www.goodreads.com/book/show/790289.Hard_Love")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Hard Love"))
 
     ([Book_168] of Libro
@@ -2066,6 +2422,8 @@
      (nPag 229)
      (publicacion 2007)
      (url "https://www.goodreads.com/book/show/235466.Someday_This_Pain_Will_Be_Useful_to_You")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Someday This Pain Will Be Useful to You"))
 
     ([Book_169] of Libro
@@ -2077,6 +2435,8 @@
      (nPag 128)
      (publicacion 1989)
      (url "https://www.goodreads.com/book/show/44353.Weetzie_Bat")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Weetzie Bat"))
 
     ([Book_170] of Libro
@@ -2088,6 +2448,8 @@
      (nPag 403)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/1189878.My_Most_Excellent_Year")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "My Most Excellent Year"))
 
     ([Book_171] of Libro
@@ -2099,6 +2461,8 @@
      (nPag 384)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/16101023-proxy")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Proxy"))
 
     ([Book_172] of Libro
@@ -2110,6 +2474,8 @@
      (nPag 444)
      (publicacion 2007)
      (url "https://www.goodreads.com/book/show/2227371.The_Girl_with_No_Shadow")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Girl with No Shadow"))
 
     ([Book_173] of Libro
@@ -2121,6 +2487,8 @@
      (nPag 287)
      (publicacion 1983)
      (url "https://www.goodreads.com/book/show/4831.Shame")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Shame"))
 
     ([Book_174] of Libro
@@ -2132,6 +2500,8 @@
      (nPag 304)
      (publicacion 2011)
      (url "https://www.goodreads.com/book/show/8706185-among-others")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Among Others"))
 
     ([Book_175] of Libro
@@ -2143,6 +2513,8 @@
      (nPag 336)
      (publicacion 1997)
      (url "https://www.goodreads.com/book/show/5159.Here_on_Earth")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Here on Earth"))
 
     ([Book_176] of Libro
@@ -2154,6 +2526,8 @@
      (nPag 499)
      (publicacion 2000)
      (url "https://www.goodreads.com/book/show/14967.A_Trip_to_the_Stars")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "A Trip to the Stars"))
 
     ([Book_177] of Libro
@@ -2165,6 +2539,8 @@
      (nPag 368)
      (publicacion 1990)
      (url "https://www.goodreads.com/book/show/3394.The_War_of_Don_Emmanuel_s_Nether_Parts")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The War of Don Emmanuels Nether Parts"))
 
     ([Book_178] of Libro
@@ -2176,6 +2552,8 @@
      (nPag 352)
      (publicacion 1988)
      (url "https://www.goodreads.com/book/show/3291.The_Stories_of_Eva_Luna")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Stories of Eva Luna"))
 
     ([Book_179] of Libro
@@ -2187,6 +2565,8 @@
      (nPag 393)
      (publicacion 1988)
      (url "https://www.goodreads.com/book/show/17800.Dance_Dance_Dance")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Dance Dance Dance"))
 
     ([Book_180] of Libro
@@ -2198,6 +2578,8 @@
      (nPag 162)
      (publicacion 1962)
      (url "https://www.goodreads.com/book/show/53423.Cronopios_and_Famas")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Cronopios and Famas"))
 
     ([Book_181] of Libro
@@ -2209,6 +2591,8 @@
      (nPag 200)
      (publicacion 1967)
      (url "https://www.goodreads.com/book/show/81026.The_Magic_Toyshop")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Magic Toyshop"))
 
     ([Book_182] of Libro
@@ -2220,6 +2604,8 @@
      (nPag 288)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/13538873-mr-penumbra-s-24-hour-bookstore")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Mr Penumbras 24-Hour Bookstore"))
 
     ([Book_183] of Libro
@@ -2231,6 +2617,8 @@
      (nPag 323)
      (publicacion 2011)
      (url "https://www.goodreads.com/book/show/40940157-swamplandia")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Swamplandia"))
 
     ([Book_184] of Libro
@@ -2242,6 +2630,8 @@
      (nPag 404)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/6240758-of-bees-and-mist")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Of Bees and Mist"))
 
     ([Book_185] of Libro
@@ -2253,6 +2643,8 @@
      (nPag 416)
      (publicacion 1989)
      (url "https://www.goodreads.com/book/show/60937.The_Temple_of_My_Familiar")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Temple of My Familiar"))
 
     ([Book_186] of Libro
@@ -2264,6 +2656,8 @@
      (nPag 312)
      (publicacion 1988)
      (url "https://www.goodreads.com/book/show/33363.Mama_Day")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Mama Day"))
 
     ([Book_187] of Libro
@@ -2275,6 +2669,8 @@
      (nPag 338)
      (publicacion 1997)
      (url "https://www.goodreads.com/book/show/94669.The_Mistress_of_Spices")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Mistress of Spices"))
 
     ([Book_188] of Libro
@@ -2286,6 +2682,8 @@
      (nPag 218)
      (publicacion 1927)
      (url "https://www.goodreads.com/book/show/16631.Steppenwolf")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Steppenwolf"))
 
     ([Book_189] of Libro
@@ -2297,6 +2695,8 @@
      (nPag 338)
      (publicacion 2011)
      (url "https://www.goodreads.com/book/show/8366402-the-tiger-s-wife")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Tigers Wife"))
 
     ([Book_190] of Libro
@@ -2308,6 +2708,8 @@
      (nPag 272)
      (publicacion 1982)
      (url "https://www.goodreads.com/book/show/57736.Shoeless_Joe")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Shoeless Joe"))
 
     ([Book_191] of Libro
@@ -2319,6 +2721,8 @@
      (nPag 115)
      (publicacion 2004)
      (url "https://www.goodreads.com/book/show/760.Memories_of_My_Melancholy_Whores")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Memories of My Melancholy Whores"))
 
     ([Book_192] of Libro
@@ -2330,6 +2734,8 @@
      (nPag 576)
      (publicacion 1966)
      (url "https://www.goodreads.com/book/show/147039.Dona_Flor_and_Her_Two_Husbands")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Dona Flor and Her Two Husbands"))
 
     ([Book_193] of Libro
@@ -2341,6 +2747,8 @@
      (nPag 192)
      (publicacion 1998)
      (url "https://www.goodreads.com/book/show/129984.Big_Fish")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Big Fish"))
 
     ([Book_194] of Libro
@@ -2352,6 +2760,8 @@
      (nPag 528)
      (publicacion 2005)
      (url "https://www.goodreads.com/book/show/91289.The_Hummingbird_s_Daughter")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Hummingbirds Daughter"))
 
     ([Book_195] of Libro
@@ -2363,6 +2773,8 @@
      (nPag 456)
      (publicacion 1974)
      (url "https://www.goodreads.com/book/show/39242.The_Milagro_Beanfield_War")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Milagro Beanfield War"))
 
     ([Book_196] of Libro
@@ -2374,6 +2786,8 @@
      (nPag 531)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/5196764-the-angel-s-game")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Angels Game"))
 
     ([Book_197] of Libro
@@ -2385,6 +2799,8 @@
      (nPag 580)
      (publicacion 1959)
      (url "https://www.goodreads.com/book/show/35743.The_Tin_Drum")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Tin Drum"))
 
     ([Book_198] of Libro
@@ -2396,6 +2812,8 @@
      (nPag 128)
      (publicacion 1955)
      (url "https://www.goodreads.com/book/show/38787.Pedro_P_ramo")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Pedro Pramo"))
 
     ([Book_199] of Libro
@@ -2407,6 +2825,8 @@
      (nPag 386)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/33597976-the-snow-child")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Snow Child"))
 
     ([Book_200] of Libro
@@ -2418,6 +2838,8 @@
      (nPag 366)
      (publicacion 1976)
      (url "https://www.goodreads.com/book/show/7572.Even_Cowgirls_Get_the_Blues")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Even Cowgirls Get the Blues"))
 
     ([Book_201] of Libro
@@ -2429,6 +2851,8 @@
      (nPag 290)
      (publicacion 1972)
      (url "https://www.goodreads.com/book/show/14362.Bless_Me_Ultima")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Bless Me Ultima"))
 
     ([Book_202] of Libro
@@ -2440,6 +2864,8 @@
      (nPag 176)
      (publicacion 1987)
      (url "https://www.goodreads.com/book/show/15047.The_Passion")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Passion"))
 
     ([Book_203] of Libro
@@ -2451,6 +2877,8 @@
      (nPag 292)
      (publicacion 2010)
      (url "https://www.goodreads.com/book/show/7048800-the-particular-sadness-of-lemon-cake")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Particular Sadness of Lemon Cake"))
 
     ([Book_204] of Libro
@@ -2462,6 +2890,8 @@
      (nPag 260)
      (publicacion 1979)
      (url "https://www.goodreads.com/book/show/374233.If_on_a_Winter_s_Night_a_Traveler")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "If on a Winters Night a Traveler"))
 
     ([Book_205] of Libro
@@ -2473,6 +2903,8 @@
      (nPag 538)
      (publicacion 1981)
      (url "https://www.goodreads.com/book/show/90619.Little_Big")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Little Big"))
 
     ([Book_206] of Libro
@@ -2484,6 +2916,8 @@
      (nPag 335)
      (publicacion 2007)
      (url "https://www.goodreads.com/book/show/297673.The_Brief_Wondrous_Life_of_Oscar_Wao")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Brief Wondrous Life of Oscar Wao"))
 
     ([Book_207] of Libro
@@ -2495,6 +2929,8 @@
      (nPag 748)
      (publicacion 1983)
      (url "https://www.goodreads.com/book/show/12967.Winter_s_Tale")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Winters Tale"))
 
     ([Book_208] of Libro
@@ -2506,6 +2942,8 @@
      (nPag 460)
      (publicacion 2001)
      (url "https://www.goodreads.com/book/show/4214.Life_of_Pi")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Life of Pi"))
 
     ([Book_209] of Libro
@@ -2517,6 +2955,8 @@
      (nPag 276)
      (publicacion 2002)
      (url "https://www.goodreads.com/book/show/256566.Everything_Is_Illuminated")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Everything Is Illuminated"))
 
     ([Book_210] of Libro
@@ -2528,6 +2968,8 @@
      (nPag 273)
      (publicacion 2011)
      (url "https://www.goodreads.com/book/show/8546358-the-peach-keeper")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Peach Keeper"))
 
     ([Book_211] of Libro
@@ -2539,6 +2981,8 @@
      (nPag 174)
      (publicacion 1944)
      (url "https://www.goodreads.com/book/show/426504.Ficciones")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Ficciones"))
 
     ([Book_212] of Libro
@@ -2550,6 +2994,8 @@
      (nPag 387)
      (publicacion 2011)
      (url "https://www.goodreads.com/book/show/9361589-the-night-circus")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Night Circus"))
 
     ([Book_213] of Libro
@@ -2561,6 +3007,8 @@
      (nPag 373)
      (publicacion 1967)
      (url "https://www.goodreads.com/book/show/117833.The_Master_and_Margarita")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Master and Margarita"))
 
     ([Book_214] of Libro
@@ -2572,6 +3020,8 @@
      (nPag 224)
      (publicacion 1989)
      (url "https://www.goodreads.com/book/show/6952.Like_Water_for_Chocolate")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Like Water for Chocolate"))
 
     ([Book_215] of Libro
@@ -2583,6 +3033,8 @@
      (nPag 280)
      (publicacion 1994)
      (url "https://www.goodreads.com/book/show/53496.Walk_Two_Moons")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Walk Two Moons"))
 
     ([Book_216] of Libro
@@ -2594,6 +3046,8 @@
      (nPag 212)
      (publicacion 1962)
      (url "https://www.goodreads.com/book/show/227463.A_Clockwork_Orange")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "A Clockwork Orange"))
 
     ([Book_217] of Libro
@@ -2605,6 +3059,8 @@
      (nPag 232)
      (publicacion 1918)
      (url "https://www.goodreads.com/book/show/17150.My_ntonia")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "My ntonia"))
 
     ([Book_218] of Libro
@@ -2616,6 +3072,8 @@
      (nPag 518)
      (publicacion 1891)
      (url "https://www.goodreads.com/book/show/32261.Tess_of_the_D_Urbervilles")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Tess of the DUrbervilles"))
 
     ([Book_219] of Libro
@@ -2627,6 +3085,8 @@
      (nPag 489)
      (publicacion 1859)
      (url "https://www.goodreads.com/book/show/1953.A_Tale_of_Two_Cities")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "A Tale of Two Cities"))
 
     ([Book_220] of Libro
@@ -2638,6 +3098,8 @@
      (nPag 581)
      (publicacion 1952)
      (url "https://www.goodreads.com/book/show/16981.Invisible_Man")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Invisible Man"))
 
     ([Book_221] of Libro
@@ -2649,6 +3111,8 @@
      (nPag 1463)
      (publicacion 1862)
      (url "https://www.goodreads.com/book/show/24280.Les_Mis_rables")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Les Misrables"))
 
     ([Book_222] of Libro
@@ -2660,6 +3124,8 @@
      (nPag 461)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/39832183-the-guernsey-literary-and-potato-peel-pie-society")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Guernsey Literary and Potato Peel Pie Society"))
 
     ([Book_223] of Libro
@@ -2671,6 +3137,8 @@
      (nPag 219)
      (publicacion 1937)
      (url "https://www.goodreads.com/book/show/37415.Their_Eyes_Were_Watching_God")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Their Eyes Were Watching God"))
 
     ([Book_224] of Libro
@@ -2682,6 +3150,8 @@
      (nPag 112)
      (publicacion 1970)
      (url "https://www.goodreads.com/book/show/71728.Jonathan_Livingston_Seagull")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Jonathan Livingston Seagull"))
 
     ([Book_225] of Libro
@@ -2693,6 +3163,8 @@
      (nPag 546)
      (publicacion 1998)
      (url "https://www.goodreads.com/book/show/7244.The_Poisonwood_Bible")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Poisonwood Bible"))
 
     ([Book_226] of Libro
@@ -2704,6 +3176,8 @@
      (nPag 329)
      (publicacion 1856)
      (url "https://www.goodreads.com/book/show/2175.Madame_Bovary")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Madame Bovary"))
 
     ([Book_227] of Libro
@@ -2715,6 +3189,8 @@
      (nPag 479)
      (publicacion 1939)
      (url "https://www.goodreads.com/book/show/18114322-the-grapes-of-wrath")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Grapes of Wrath"))
 
     ([Book_228] of Libro
@@ -2726,6 +3202,8 @@
      (nPag 244)
      (publicacion 1876)
      (url "https://www.goodreads.com/book/show/24583.The_Adventures_of_Tom_Sawyer")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Adventures of Tom Sawyer"))
 
     ([Book_229] of Libro
@@ -2737,6 +3215,8 @@
      (nPag 188)
      (publicacion 1899)
      (url "https://www.goodreads.com/book/show/4900.Heart_of_Darkness")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Heart of Darkness"))
 
     ([Book_230] of Libro
@@ -2748,6 +3228,8 @@
      (nPag 336)
      (publicacion 2001)
      (url "https://www.goodreads.com/book/show/37435.The_Secret_Life_of_Bees")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Secret Life of Bees"))
 
     ([Book_231] of Libro
@@ -2759,6 +3241,8 @@
      (nPag 324)
      (publicacion 1985)
      (url "https://www.goodreads.com/book/show/375802.Ender_s_Game")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Enders Game"))
 
     ([Book_232] of Libro
@@ -2770,6 +3254,8 @@
      (nPag 209)
      (publicacion 1958)
      (url "https://www.goodreads.com/book/show/37781.Things_Fall_Apart")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Things Fall Apart"))
 
     ([Book_233] of Libro
@@ -2781,6 +3267,8 @@
      (nPag 172)
      (publicacion 1903)
      (url "https://www.goodreads.com/book/show/1852.The_Call_of_the_Wild")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Call of the Wild"))
 
     ([Book_234] of Libro
@@ -2792,6 +3280,8 @@
      (nPag 325)
      (publicacion 1962)
      (url "https://www.goodreads.com/book/show/332613.One_Flew_Over_the_Cuckoo_s_Nest")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "One Flew Over the Cuckoos Nest"))
 
     ([Book_235] of Libro
@@ -2803,6 +3293,8 @@
      (nPag 132)
      (publicacion 1952)
      (url "https://www.goodreads.com/book/show/2165.The_Old_Man_and_the_Sea")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Old Man and the Sea"))
 
     ([Book_236] of Libro
@@ -2814,6 +3306,8 @@
      (nPag 504)
      (publicacion 1390)
      (url "https://www.goodreads.com/book/show/2696.The_Canterbury_Tales")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Canterbury Tales"))
 
     ([Book_237] of Libro
@@ -2825,6 +3319,8 @@
      (nPag 252)
      (publicacion 2007)
      (url "https://www.goodreads.com/book/show/40874325-the-shack")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Shack"))
 
     ([Book_238] of Libro
@@ -2836,6 +3332,8 @@
      (nPag 478)
      (publicacion 1972)
      (url "https://www.goodreads.com/book/show/76620.Watership_Down")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Watership Down"))
 
     ([Book_239] of Libro
@@ -2847,6 +3345,8 @@
      (nPag 671)
      (publicacion 1866)
      (url "https://www.goodreads.com/book/show/7144.Crime_and_Punishment")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Crime and Punishment"))
 
     ([Book_240] of Libro
@@ -2858,6 +3358,8 @@
      (nPag 123)
      (publicacion 1942)
      (url "https://www.goodreads.com/book/show/49552.The_Stranger")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Stranger"))
 
     ([Book_241] of Libro
@@ -2869,6 +3371,8 @@
      (nPag 224)
      (publicacion 2006)
      (url "https://www.goodreads.com/book/show/39999.The_Boy_in_the_Striped_Pajamas")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Boy in the Striped Pajamas"))
 
     ([Book_242] of Libro
@@ -2880,6 +3384,8 @@
      (nPag 335)
      (publicacion 2006)
      (url "https://www.goodreads.com/book/show/43641.Water_for_Elephants")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Water for Elephants"))
 
     ([Book_243] of Libro
@@ -2891,6 +3397,8 @@
      (nPag 328)
      (publicacion 2002)
      (url "https://www.goodreads.com/book/show/12232938-the-lovely-bones")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Lovely Bones"))
 
     ([Book_244] of Libro
@@ -2902,6 +3410,8 @@
      (nPag 197)
      (publicacion 1988)
      (url "https://www.goodreads.com/book/show/865.The_Alchemist")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Alchemist"))
 
     ([Book_245] of Libro
@@ -2913,6 +3423,8 @@
      (nPag 273)
      (publicacion 1818)
      (url "https://www.goodreads.com/book/show/35031085-frankenstein")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Frankenstein"))
 
     ([Book_246] of Libro
@@ -2924,6 +3436,8 @@
      (nPag 311)
      (publicacion 1966)
      (url "https://www.goodreads.com/book/show/36576608-flowers-for-algernon")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Flowers for Algernon"))
 
     ([Book_247] of Libro
@@ -2935,6 +3449,8 @@
      (nPag 464)
      (publicacion 1847)
      (url "https://www.goodreads.com/book/show/6185.Wuthering_Heights")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Wuthering Heights"))
 
     ([Book_248] of Libro
@@ -2946,6 +3462,8 @@
      (nPag 465)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/4667024-the-help")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Help"))
 
     ([Book_249] of Libro
@@ -2957,6 +3475,8 @@
      (nPag 226)
      (publicacion 2003)
      (url "https://www.goodreads.com/book/show/1618.The_Curious_Incident_of_the_Dog_in_the_Night_Time")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Curious Incident of the Dog in the Night-Time"))
 
     ([Book_250] of Libro
@@ -2968,6 +3488,8 @@
      (nPag 279)
      (publicacion 1850)
      (url "https://www.goodreads.com/book/show/12296.The_Scarlet_Letter")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Scarlet Letter"))
 
     ([Book_251] of Libro
@@ -2979,6 +3501,8 @@
      (nPag 93)
      (publicacion 1943)
      (url "https://www.goodreads.com/book/show/157993.The_Little_Prince")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Little Prince"))
 
     ([Book_252] of Libro
@@ -2990,6 +3514,8 @@
      (nPag 552)
      (publicacion 2005)
      (url "https://www.goodreads.com/book/show/19063.The_Book_Thief")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Book Thief"))
 
     ([Book_253] of Libro
@@ -3001,6 +3527,8 @@
      (nPag 122)
      (publicacion 1945)
      (url "https://www.goodreads.com/book/show/170448.Animal_Farm")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Animal Farm"))
 
     ([Book_254] of Libro
@@ -3012,6 +3540,8 @@
      (nPag 277)
      (publicacion 1951)
      (url "https://www.goodreads.com/book/show/5107.The_Catcher_in_the_Rye")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Catcher in the Rye"))
 
     ([Book_255] of Libro
@@ -3023,6 +3553,8 @@
      (nPag 507)
      (publicacion 1847)
      (url "https://www.goodreads.com/book/show/10210.Jane_Eyre")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Jane Eyre"))
 
     ([Book_256] of Libro
@@ -3034,6 +3566,8 @@
      (nPag 182)
      (publicacion 1954)
      (url "https://www.goodreads.com/book/show/7624.Lord_of_the_Flies")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Lord of the Flies"))
 
     ([Book_257] of Libro
@@ -3045,6 +3579,8 @@
      (nPag 180)
      (publicacion 1925)
      (url "https://www.goodreads.com/book/show/4671.The_Great_Gatsby")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Great Gatsby"))
 
     ([Book_258] of Libro
@@ -3056,6 +3592,8 @@
      (nPag 324)
      (publicacion 1960)
      (url "https://www.goodreads.com/book/show/2657.To_Kill_a_Mockingbird")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "To Kill a Mockingbird"))
 
     ([Book_259] of Libro
@@ -3067,6 +3605,8 @@
      (nPag 351)
      (publicacion 2001)
      (url "https://www.goodreads.com/book/show/6867.Atonement")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Atonement"))
 
     ([Book_260] of Libro
@@ -3078,6 +3618,8 @@
      (nPag 703)
      (publicacion 2006)
      (url "https://www.goodreads.com/book/show/177076.The_Meaning_of_Night")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Meaning of Night"))
 
     ([Book_261] of Libro
@@ -3089,6 +3631,8 @@
      (nPag 515)
      (publicacion 2005)
      (url "https://www.goodreads.com/book/show/14975.Labyrinth")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Labyrinth"))
 
     ([Book_262] of Libro
@@ -3100,6 +3644,8 @@
      (nPag 362)
      (publicacion 1993)
      (url "https://www.goodreads.com/book/show/7194.The_Club_Dumas")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Club Dumas"))
 
     ([Book_263] of Libro
@@ -3111,6 +3657,8 @@
      (nPag 256)
      (publicacion 1998)
      (url "https://www.goodreads.com/book/show/61463.The_Winter_Queen")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Winter Queen"))
 
     ([Book_264] of Libro
@@ -3122,6 +3670,8 @@
      (nPag 576)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/2761171-company-of-liars")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Company of Liars"))
 
     ([Book_265] of Libro
@@ -3133,6 +3683,8 @@
      (nPag 623)
      (publicacion 1988)
      (url "https://www.goodreads.com/book/show/17841.Foucault_s_Pendulum")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Foucaults Pendulum"))
 
     ([Book_266] of Libro
@@ -3144,6 +3696,8 @@
      (nPag 263)
      (publicacion 1990)
      (url "https://www.goodreads.com/book/show/37100.Devil_in_a_Blue_Dress")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Devil in a Blue Dress"))
 
     ([Book_267] of Libro
@@ -3155,6 +3709,8 @@
      (nPag 352)
      (publicacion 2015)
      (url "https://www.goodreads.com/book/show/22874238-deception-on-sable-hill")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Deception on Sable Hill"))
 
     ([Book_268] of Libro
@@ -3166,6 +3722,8 @@
      (nPag 555)
      (publicacion 1990)
      (url "https://www.goodreads.com/book/show/41219.Possession")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Possession"))
 
     ([Book_269] of Libro
@@ -3177,6 +3735,8 @@
      (nPag 290)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/3367956-hotel-on-the-corner-of-bitter-and-sweet")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Hotel on the Corner of Bitter and Sweet"))
 
     ([Book_270] of Libro
@@ -3188,6 +3748,8 @@
      (nPag 599)
      (publicacion 2006)
      (url "https://www.goodreads.com/book/show/1278752.The_House_at_Riverton")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The House at Riverton"))
 
     ([Book_271] of Libro
@@ -3199,6 +3761,8 @@
      (nPag 582)
      (publicacion 2002)
      (url "https://www.goodreads.com/book/show/8913370-fingersmith")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Fingersmith"))
 
     ([Book_272] of Libro
@@ -3210,6 +3774,8 @@
      (nPag 424)
      (publicacion 2003)
      (url "https://www.goodreads.com/book/show/18402.The_Dante_Club")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Dante Club"))
 
     ([Book_273] of Libro
@@ -3221,6 +3787,8 @@
      (nPag 304)
      (publicacion 2003)
      (url "https://www.goodreads.com/book/show/880.Pompeii")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Pompeii"))
 
     ([Book_274] of Libro
@@ -3232,6 +3800,8 @@
      (nPag 509)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/2161733.Child_44")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Child 44"))
 
     ([Book_275] of Libro
@@ -3243,6 +3813,8 @@
      (nPag 386)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/40605285-the-sweetness-at-the-bottom-of-the-pie")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Sweetness at the Bottom of the Pie"))
 
     ([Book_276] of Libro
@@ -3254,6 +3826,8 @@
      (nPag 263)
      (publicacion 1985)
      (url "https://www.goodreads.com/book/show/343.Perfume")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Perfume The Story of a Murderer"))
 
     ([Book_277] of Libro
@@ -3265,6 +3839,8 @@
      (nPag 406)
      (publicacion 2006)
      (url "https://www.goodreads.com/book/show/40440.The_Thirteenth_Tale")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Thirteenth Tale"))
 
     ([Book_278] of Libro
@@ -3276,6 +3852,8 @@
      (nPag 84)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/22751611-liberty-belle")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Liberty Belle"))
 
     ([Book_279] of Libro
@@ -3287,6 +3865,8 @@
      (nPag 1152)
      (publicacion 1988)
      (url "https://www.goodreads.com/book/show/74404.The_Cornish_Trilogy")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Cornish Trilogy The Rebel Angels Whats Bred in the Bone The Lyre of Orpheus"))
 
     ([Book_280] of Libro
@@ -3298,6 +3878,8 @@
      (nPag 263)
      (publicacion 1976)
      (url "https://www.goodreads.com/book/show/160251.Ordinary_People")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Ordinary People"))
 
     ([Book_281] of Libro
@@ -3309,6 +3891,8 @@
      (nPag 440)
      (publicacion 1971)
      (url "https://www.goodreads.com/book/show/46917.Rabbit_Redux")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Rabbit Redux"))
 
     ([Book_282] of Libro
@@ -3320,6 +3904,8 @@
      (nPag 1774)
      (publicacion 1930)
      (url "https://www.goodreads.com/book/show/527756.The_Man_Without_Qualities")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Man Without Qualities"))
 
     ([Book_283] of Libro
@@ -3331,6 +3917,8 @@
      (nPag 475)
      (publicacion 2006)
      (url "https://www.goodreads.com/book/show/4952.What_Is_the_What")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "What Is the What"))
 
     ([Book_284] of Libro
@@ -3342,6 +3930,8 @@
      (nPag 448)
      (publicacion 2000)
      (url "https://www.goodreads.com/book/show/3711.White_Teeth")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "White Teeth"))
 
     ([Book_285] of Libro
@@ -3353,6 +3943,8 @@
      (nPag 705)
      (publicacion 2000)
      (url "https://www.goodreads.com/book/show/24800.House_of_Leaves")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "House of Leaves"))
 
     ([Book_286] of Libro
@@ -3364,6 +3956,8 @@
      (nPag 483)
      (publicacion 2001)
      (url "https://www.goodreads.com/book/show/187020.Empire_Falls")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Empire Falls"))
 
     ([Book_287] of Libro
@@ -3375,6 +3969,8 @@
      (nPag 541)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/3591262-cutting-for-stone")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Cutting for Stone"))
 
     ([Book_288] of Libro
@@ -3386,6 +3982,8 @@
      (nPag 255)
      (publicacion 2005)
      (url "https://www.goodreads.com/book/show/3867.The_History_of_Love")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The History of Love"))
 
     ([Book_289] of Libro
@@ -3397,6 +3995,8 @@
      (nPag 653)
      (publicacion 2001)
      (url "https://www.goodreads.com/book/show/3805.The_Corrections")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Corrections"))
 
     ([Book_290] of Libro
@@ -3408,6 +4008,8 @@
      (nPag 509)
      (publicacion 2004)
      (url "https://www.goodreads.com/book/show/49628.Cloud_Atlas")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Cloud Atlas"))
 
     ([Book_291] of Libro
@@ -3419,6 +4021,8 @@
      (nPag 288)
      (publicacion 2005)
      (url "https://www.goodreads.com/book/show/40873273-snow-flower-and-the-secret-fan")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Snow Flower and the Secret Fan"))
 
     ([Book_292] of Libro
@@ -3430,6 +4034,8 @@
      (nPag 639)
      (publicacion 2000)
      (url "https://www.goodreads.com/book/show/3985.The_Amazing_Adventures_of_Kavalier_Clay")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Amazing Adventures of Kavalier  Clay"))
 
     ([Book_293] of Libro
@@ -3441,6 +4047,8 @@
      (nPag 352)
      (publicacion 2001)
      (url "https://www.goodreads.com/book/show/5826.Bel_Canto")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Bel Canto"))
 
     ([Book_294] of Libro
@@ -3452,6 +4060,8 @@
      (nPag 529)
      (publicacion 2002)
      (url "https://www.goodreads.com/book/show/2187.Middlesex")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Middlesex"))
 
     ([Book_295] of Libro
@@ -3463,6 +4073,8 @@
      (nPag 754)
      (publicacion 1980)
      (url "https://www.goodreads.com/book/show/550454.Aztec")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Aztec"))
 
     ([Book_296] of Libro
@@ -3474,6 +4086,8 @@
      (nPag 835)
      (publicacion 2002)
      (url "https://www.goodreads.com/book/show/40200.The_Crimson_Petal_and_the_White")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Crimson Petal and the White"))
 
     ([Book_297] of Libro
@@ -3485,6 +4099,8 @@
      (nPag 1104)
      (publicacion 1965)
      (url "https://www.goodreads.com/book/show/12657.The_Source")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Source"))
 
     ([Book_298] of Libro
@@ -3496,6 +4112,8 @@
      (nPag 351)
      (publicacion 2004)
      (url "https://www.goodreads.com/book/show/68527.The_Last_Kingdom")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Last Kingdom"))
 
     ([Book_299] of Libro
@@ -3507,6 +4125,8 @@
      (nPag 672)
      (publicacion 1984)
      (url "https://www.goodreads.com/book/show/8716.Lincoln")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Lincoln"))
 
     ([Book_300] of Libro
@@ -3518,6 +4138,8 @@
      (nPag 958)
      (publicacion 1978)
      (url "https://www.goodreads.com/book/show/10222.The_Far_Pavilions")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Far Pavilions"))
 
     ([Book_301] of Libro
@@ -3529,6 +4151,8 @@
      (nPag 973)
      (publicacion 1985)
      (url "https://www.goodreads.com/book/show/4687.The_Cider_House_Rules")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Cider House Rules"))
 
     ([Book_302] of Libro
@@ -3540,6 +4164,8 @@
      (nPag 6576)
      (publicacion 1994)
      (url "https://www.goodreads.com/book/show/24520.The_Complete_Aubrey_Maturin_Novels")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Complete AubreyMaturin Novels 5 Volumes"))
 
     ([Book_303] of Libro
@@ -3551,6 +4177,8 @@
      (nPag 1152)
      (publicacion 1997)
      (url "https://www.goodreads.com/book/show/92160.London")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "London"))
 
     ([Book_304] of Libro
@@ -3562,6 +4190,8 @@
      (nPag 470)
      (publicacion 1969)
      (url "https://www.goodreads.com/book/show/56034.The_French_Lieutenant_s_Woman")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The French Lieutenants Woman"))
 
     ([Book_305] of Libro
@@ -3573,6 +4203,8 @@
      (nPag 972)
      (publicacion 1944)
      (url "https://www.goodreads.com/book/show/5368.Forever_Amber")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Forever Amber"))
 
     ([Book_306] of Libro
@@ -3584,6 +4216,8 @@
      (nPag 812)
      (publicacion 1982)
      (url "https://www.goodreads.com/book/show/159178.North_and_South")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "North and South"))
 
     ([Book_307] of Libro
@@ -3595,6 +4229,8 @@
      (nPag 1076)
      (publicacion 1990)
      (url "https://www.goodreads.com/book/show/480570.The_First_Man_in_Rome")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The First Man in Rome"))
 
     ([Book_308] of Libro
@@ -3606,6 +4242,8 @@
      (nPag 734)
      (publicacion 1966)
      (url "https://www.goodreads.com/book/show/42933.Tai_Pan")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Tai-Pan"))
 
     ([Book_309] of Libro
@@ -3617,6 +4255,8 @@
      (nPag 463)
      (publicacion 2007)
      (url "https://www.goodreads.com/book/show/481446.Nefertiti")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Nefertiti"))
 
     ([Book_310] of Libro
@@ -3628,6 +4268,8 @@
      (nPag 427)
      (publicacion 2003)
      (url "https://www.goodreads.com/book/show/28078.The_Birth_of_Venus")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Birth of Venus"))
 
     ([Book_311] of Libro
@@ -3639,6 +4281,8 @@
      (nPag 1006)
      (publicacion 2004)
      (url "https://www.goodreads.com/book/show/14201.Jonathan_Strange_Mr_Norrell")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Jonathan Strange  Mr Norrell"))
 
     ([Book_312] of Libro
@@ -3650,6 +4294,8 @@
      (nPag 653)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/6101138-wolf-hall")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Wolf Hall"))
 
     ([Book_313] of Libro
@@ -3661,6 +4307,8 @@
      (nPag 405)
      (publicacion 2003)
      (url "https://www.goodreads.com/book/show/3273.Moloka_i")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Molokai"))
 
     ([Book_314] of Libro
@@ -3672,6 +4320,8 @@
      (nPag 776)
      (publicacion 1958)
      (url "https://www.goodreads.com/book/show/321552.The_Agony_and_the_Ecstasy")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Agony and the Ecstasy"))
 
     ([Book_315] of Libro
@@ -3683,6 +4333,8 @@
      (nPag 416)
      (publicacion 1987)
      (url "https://www.goodreads.com/book/show/9375.Fried_Green_Tomatoes_at_the_Whistle_Stop_Cafe")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Fried Green Tomatoes at the Whistle Stop Cafe"))
 
     ([Book_316] of Libro
@@ -3694,6 +4346,8 @@
      (nPag 531)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/18143977-all-the-light-we-cannot-see")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "All the Light We Cannot See"))
 
     ([Book_317] of Libro
@@ -3705,6 +4359,8 @@
      (nPag 422)
      (publicacion 1996)
      (url "https://www.goodreads.com/book/show/27252.Pope_Joan")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Pope Joan"))
 
     ([Book_318] of Libro
@@ -3716,6 +4372,8 @@
      (nPag 608)
      (publicacion 1958)
      (url "https://www.goodreads.com/book/show/42697.Exodus")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Exodus"))
 
     ([Book_319] of Libro
@@ -3727,6 +4385,8 @@
      (nPag 500)
      (publicacion 1954)
      (url "https://www.goodreads.com/book/show/33609.Katherine")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Katherine"))
 
     ([Book_320] of Libro
@@ -3738,6 +4398,8 @@
      (nPag 320)
      (publicacion 1992)
      (url "https://www.goodreads.com/book/show/11713.The_English_Patient")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The English Patient"))
 
     ([Book_321] of Libro
@@ -3749,6 +4411,8 @@
      (nPag 468)
      (publicacion 1934)
      (url "https://www.goodreads.com/book/show/18765.I_Claudius")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "I Claudius"))
 
     ([Book_322] of Libro
@@ -3760,6 +4424,8 @@
      (nPag 625)
      (publicacion 1844)
      (url "https://www.goodreads.com/book/show/7190.The_Three_Musketeers")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Three Musketeers"))
 
     ([Book_323] of Libro
@@ -3771,6 +4437,8 @@
      (nPag 356)
      (publicacion 1997)
      (url "https://www.goodreads.com/book/show/10920.Cold_Mountain")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Cold Mountain"))
 
     ([Book_324] of Libro
@@ -3782,6 +4450,8 @@
      (nPag 945)
      (publicacion 1985)
      (url "https://www.goodreads.com/book/show/256008.Lonesome_Dove")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Lonesome Dove"))
 
     ([Book_325] of Libro
@@ -3793,6 +4463,8 @@
      (nPag 336)
      (publicacion 1997)
      (url "https://www.goodreads.com/book/show/4989.The_Red_Tent")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Red Tent"))
 
     ([Book_326] of Libro
@@ -3804,6 +4476,8 @@
      (nPag 1023)
      (publicacion 1605)
      (url "https://www.goodreads.com/book/show/3836.Don_Quixote")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Don Quixote"))
 
     ([Book_327] of Libro
@@ -3815,6 +4489,8 @@
      (nPag 438)
      (publicacion 1852)
      (url "https://www.goodreads.com/book/show/46787.Uncle_Tom_s_Cabin")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Uncle Toms Cabin"))
 
     ([Book_328] of Libro
@@ -3826,6 +4502,8 @@
      (nPag 296)
      (publicacion 1929)
      (url "https://www.goodreads.com/book/show/355697.All_Quiet_on_the_Western_Front")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "All Quiet on the Western Front"))
 
     ([Book_329] of Libro
@@ -3837,6 +4515,8 @@
      (nPag 1392)
      (publicacion 1867)
      (url "https://www.goodreads.com/book/show/656.War_and_Peace")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "War and Peace"))
 
     ([Book_330] of Libro
@@ -3848,6 +4528,8 @@
      (nPag 417)
      (publicacion 1955)
      (url "https://www.goodreads.com/book/show/7604.Lolita")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Lolita"))
 
     ([Book_331] of Libro
@@ -3859,6 +4541,8 @@
      (nPag 453)
      (publicacion 1961)
      (url "https://www.goodreads.com/book/show/168668.Catch_22")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Catch-22"))
 
     ([Book_332] of Libro
@@ -3870,6 +4554,8 @@
      (nPag 367)
      (publicacion 1890)
      (url "https://www.goodreads.com/book/show/5297.The_Picture_of_Dorian_Gray")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Picture of Dorian Gray"))
 
     ([Book_333] of Libro
@@ -3881,6 +4567,8 @@
      (nPag 230)
      (publicacion 2007)
      (url "https://www.goodreads.com/book/show/693208.The_Absolutely_True_Diary_of_a_Part_Time_Indian")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Absolutely True Diary of a Part-Time Indian"))
 
     ([Book_334] of Libro
@@ -3892,6 +4580,8 @@
      (nPag 178)
      (publicacion 1967)
      (url "https://www.goodreads.com/book/show/3980.From_the_Mixed_Up_Files_of_Mrs_Basil_E_Frankweiler")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "From the Mixed-Up Files of Mrs Basil E Frankweiler"))
 
     ([Book_335] of Libro
@@ -3903,6 +4593,8 @@
      (nPag 294)
      (publicacion 2001)
      (url "https://www.goodreads.com/book/show/452306.The_Sisterhood_of_the_Traveling_Pants")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Sisterhood of the Traveling Pants"))
 
     ([Book_336] of Libro
@@ -3914,6 +4606,8 @@
      (nPag 256)
      (publicacion 1961)
      (url "https://www.goodreads.com/book/show/378.The_Phantom_Tollbooth")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Phantom Tollbooth"))
 
     ([Book_337] of Libro
@@ -3925,6 +4619,8 @@
      (nPag 320)
      (publicacion 1908)
      (url "https://www.goodreads.com/book/show/8127.Anne_of_Green_Gables")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Anne of Green Gables"))
 
     ([Book_338] of Libro
@@ -3936,6 +4632,8 @@
      (nPag 153)
      (publicacion 1998)
      (url "https://www.goodreads.com/book/show/227651.Among_the_Hidden")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Among the Hidden"))
 
     ([Book_339] of Libro
@@ -3947,6 +4645,8 @@
      (nPag 461)
      (publicacion 1973)
      (url "https://www.goodreads.com/book/show/9654.Fear_of_Flying")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Fear of Flying"))
 
     ([Book_340] of Libro
@@ -3958,6 +4658,8 @@
      (nPag 140)
      (publicacion 1974)
      (url "https://www.goodreads.com/book/show/69880.The_Lost_Honor_of_Katharina_Blum")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Lost Honor of Katharina Blum"))
 
     ([Book_341] of Libro
@@ -3969,6 +4671,8 @@
      (nPag 567)
      (publicacion 1979)
      (url "https://www.goodreads.com/book/show/19581.Ghost_Story")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Ghost Story"))
 
     ([Book_342] of Libro
@@ -3980,6 +4684,8 @@
      (nPag 462)
      (publicacion 1973)
      (url "https://www.goodreads.com/book/show/136167.The_Other_Side_of_Midnight")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Other Side of Midnight"))
 
     ([Book_343] of Libro
@@ -3991,6 +4697,8 @@
      (nPag 1042)
      (publicacion 1978)
      (url "https://www.goodreads.com/book/show/42986.War_and_Remembrance")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "War and Remembrance"))
 
     ([Book_344] of Libro
@@ -4002,6 +4710,8 @@
      (nPag 369)
      (publicacion 1972)
      (url "https://www.goodreads.com/book/show/11507.My_Name_Is_Asher_Lev")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "My Name Is Asher Lev"))
 
     ([Book_345] of Libro
@@ -4013,6 +4723,8 @@
      (nPag 243)
      (publicacion 1973)
      (url "https://www.goodreads.com/book/show/112537.Rendezvous_with_Rama")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Rendezvous with Rama"))
 
     ([Book_346] of Libro
@@ -4024,6 +4736,8 @@
      (nPag 726)
      (publicacion 1977)
      (url "https://www.goodreads.com/book/show/15575.The_Sword_of_Shannara")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Sword of Shannara"))
 
     ([Book_347] of Libro
@@ -4035,6 +4749,8 @@
      (nPag 569)
      (publicacion 1971)
      (url "https://www.goodreads.com/book/show/292408.Angle_of_Repose")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Angle of Repose"))
 
     ([Book_348] of Libro
@@ -4046,6 +4762,8 @@
      (nPag 592)
      (publicacion 1979)
      (url "https://www.goodreads.com/book/show/78983.Kane_and_Abel")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Kane and Abel"))
 
     ([Book_349] of Libro
@@ -4057,6 +4775,8 @@
      (nPag 144)
      (publicacion 1972)
      (url "https://www.goodreads.com/book/show/37741.Tales_of_a_Fourth_Grade_Nothing")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Tales of a Fourth Grade Nothing"))
 
     ([Book_350] of Libro
@@ -4068,6 +4788,8 @@
      (nPag 288)
      (publicacion 1970)
      (url "https://www.goodreads.com/book/show/592657.Deliverance")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Deliverance"))
 
     ([Book_351] of Libro
@@ -4079,6 +4801,8 @@
      (nPag 144)
      (publicacion 1978)
      (url "https://www.goodreads.com/book/show/15779.Sideways_Stories_from_Wayside_School")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Sideways Stories from Wayside School"))
 
     ([Book_352] of Libro
@@ -4090,6 +4814,8 @@
      (nPag 313)
      (publicacion 1979)
      (url "https://www.goodreads.com/book/show/240976.The_Book_of_Laughter_and_Forgetting")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Book of Laughter and Forgetting"))
 
     ([Book_353] of Libro
@@ -4101,6 +4827,8 @@
      (nPag 776)
      (publicacion 1973)
      (url "https://www.goodreads.com/book/show/415.Gravity_s_Rainbow")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Gravitys Rainbow"))
 
     ([Book_354] of Libro
@@ -4112,6 +4840,8 @@
      (nPag 384)
      (publicacion 1971)
      (url "https://www.goodreads.com/book/show/540020.The_Day_of_the_Jackal")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Day of the Jackal"))
 
     ([Book_355] of Libro
@@ -4123,6 +4853,8 @@
      (nPag 345)
      (publicacion 1974)
      (url "https://www.goodreads.com/book/show/682804.The_Killer_Angels")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Killer Angels"))
 
     ([Book_356] of Libro
@@ -4134,6 +4866,8 @@
      (nPag 320)
      (publicacion 1975)
      (url "https://www.goodreads.com/book/show/175675.Ragtime")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Ragtime"))
 
     ([Book_357] of Libro
@@ -4145,6 +4879,8 @@
      (nPag 408)
      (publicacion 1973)
      (url "https://www.goodreads.com/book/show/120182.The_Black_Prince")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Black Prince"))
 
     ([Book_358] of Libro
@@ -4156,6 +4892,8 @@
      (nPag 379)
      (publicacion 1974)
      (url "https://www.goodreads.com/book/show/10073506-tinker-tailor-soldier-spy")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Tinker Tailor Soldier Spy"))
 
     ([Book_359] of Libro
@@ -4167,6 +4905,8 @@
      (nPag 540)
      (publicacion 1974)
      (url "https://www.goodreads.com/book/show/629.Zen_and_the_Art_of_Motorcycle_Maintenance")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Zen and the Art of Motorcycle Maintenance An Inquiry Into Values"))
 
     ([Book_360] of Libro
@@ -4178,6 +4918,8 @@
      (nPag 385)
      (publicacion 1971)
      (url "https://www.goodreads.com/book/show/179780.The_Exorcist")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Exorcist"))
 
     ([Book_361] of Libro
@@ -4189,6 +4931,8 @@
      (nPag 204)
      (publicacion 1971)
      (url "https://www.goodreads.com/book/show/7745.Fear_and_Loathing_in_Las_Vegas")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Fear and Loathing in Las Vegas"))
 
     ([Book_362] of Libro
@@ -4200,6 +4944,8 @@
      (nPag 432)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/13062488-the-lost-girl")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Lost Girl"))
 
     ([Book_363] of Libro
@@ -4211,6 +4957,8 @@
      (nPag 234)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/16098473-project-ele")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Project ELE"))
 
     ([Book_364] of Libro
@@ -4222,6 +4970,8 @@
      (nPag 325)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/12680986-timepiece")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Timepiece"))
 
     ([Book_365] of Libro
@@ -4233,6 +4983,8 @@
      (nPag 373)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/11544466-breathe")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Breathe"))
 
     ([Book_366] of Libro
@@ -4244,6 +4996,8 @@
      (nPag 308)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/10535458-glitch")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Glitch"))
 
     ([Book_367] of Libro
@@ -4255,6 +5009,8 @@
      (nPag 388)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/9859436-something-strange-and-deadly")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Something Strange and Deadly"))
 
     ([Book_368] of Libro
@@ -4266,6 +5022,8 @@
      (nPag 480)
      (publicacion 1990)
      (url "https://www.goodreads.com/book/show/40604658-jurassic-park")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Jurassic Park"))
 
     ([Book_369] of Libro
@@ -4277,6 +5035,8 @@
      (nPag 884)
      (publicacion 1960)
      (url "https://www.goodreads.com/book/show/13033.The_Alexandria_Quartet")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Alexandria Quartet"))
 
     ([Book_370] of Libro
@@ -4288,6 +5048,8 @@
      (nPag 578)
      (publicacion 1976)
      (url "https://www.goodreads.com/book/show/19821.Riddle_Master")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Riddle-Master"))
 
     ([Book_371] of Libro
@@ -4299,6 +5061,8 @@
      (nPag 944)
      (publicacion 1995)
      (url "https://www.goodreads.com/book/show/61146.The_Myst_Reader")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Myst Reader Three Books in One Volume"))
 
     ([Book_372] of Libro
@@ -4310,6 +5074,8 @@
      (nPag 1173)
      (publicacion 1959)
      (url "https://www.goodreads.com/book/show/39058.The_Gormenghast_Novels")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Gormenghast Novels"))
 
     ([Book_373] of Libro
@@ -4321,6 +5087,8 @@
      (nPag 679)
      (publicacion 1953)
      (url "https://www.goodreads.com/book/show/46654.The_Foundation_Trilogy")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Foundation Trilogy"))
 
     ([Book_374] of Libro
@@ -4332,6 +5100,8 @@
      (nPag 1224)
      (publicacion 2003)
      (url "https://www.goodreads.com/book/show/493121.Blue_is_for_Nightmares_Collections")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Blue is for Nightmares Collections"))
 
     ([Book_375] of Libro
@@ -4343,6 +5113,8 @@
      (nPag 2480)
      (publicacion 1998)
      (url "https://www.goodreads.com/book/show/43888.The_Sword_of_Truth_Boxed_Set_I")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Sword of Truth Boxed Set I Wizards First Rule Blood of the Fold Stone of Tears"))
 
     ([Book_376] of Libro
@@ -4354,6 +5126,8 @@
      (nPag 1408)
      (publicacion 1991)
      (url "https://www.goodreads.com/book/show/123544.The_Bourne_Trilogy")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Bourne Trilogy"))
 
     ([Book_377] of Libro
@@ -4365,6 +5139,8 @@
      (nPag 872)
      (publicacion 1921)
      (url "https://www.goodreads.com/book/show/103159.The_Forsyte_Saga")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Forsyte Saga"))
 
     ([Book_378] of Libro
@@ -4376,6 +5152,8 @@
      (nPag 416)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/25898833-the-almost-girl")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Almost Girl"))
 
     ([Book_379] of Libro
@@ -4387,6 +5165,8 @@
      (nPag 184)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/24034941-the-kaleidoscope")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Kaleidoscope The Gift of Madness"))
 
     ([Book_380] of Libro
@@ -4398,6 +5178,8 @@
      (nPag 372)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/22586406-experiment")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Experiment"))
 
     ([Book_381] of Libro
@@ -4409,6 +5191,8 @@
      (nPag 272)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/18000952-the-wicked-we-have-done")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Wicked We Have Done"))
 
     ([Book_382] of Libro
@@ -4420,6 +5204,8 @@
      (nPag 78)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/20761374-reasonable-doubt")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Reasonable Doubt Volume 1"))
 
     ([Book_383] of Libro
@@ -4431,6 +5217,8 @@
      (nPag 69)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/22029246-netwars")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Netwars The Code"))
 
     ([Book_384] of Libro
@@ -4442,6 +5230,8 @@
      (nPag 148)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/21538656-the-branches-of-time")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Branches of Time"))
 
     ([Book_385] of Libro
@@ -4453,6 +5243,8 @@
      (nPag 370)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/21407010-haunted")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Haunted State v Sefore 1"))
 
     ([Book_386] of Libro
@@ -4464,6 +5256,8 @@
      (nPag 372)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/43479909-broken-skies")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Broken Skies"))
 
     ([Book_387] of Libro
@@ -4475,6 +5269,8 @@
      (nPag 384)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/18774016-the-young-world")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Young World"))
 
     ([Book_388] of Libro
@@ -4486,6 +5282,8 @@
      (nPag 292)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/20830614-saving-yesterday")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Saving Yesterday"))
 
     ([Book_389] of Libro
@@ -4497,6 +5295,8 @@
      (nPag 454)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/18318651-to-honor-you-call-us")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "To Honor You Call Us"))
 
     ([Book_390] of Libro
@@ -4508,6 +5308,8 @@
      (nPag 406)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/16210411-extraction")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Extraction"))
 
     ([Book_391] of Libro
@@ -4519,6 +5321,8 @@
      (nPag 196)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/20577546-the-headhunters-race")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Headhunters Race"))
 
     ([Book_392] of Libro
@@ -4530,6 +5334,8 @@
      (nPag 324)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/17878473-the-57-lives-of-alex-wayfare")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The 57 Lives of Alex Wayfare"))
 
     ([Book_393] of Libro
@@ -4541,6 +5347,8 @@
      (nPag 372)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/20560304-stuck-in-between")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Stuck in Between"))
 
     ([Book_394] of Libro
@@ -4552,6 +5360,8 @@
      (nPag 131)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/20935363-dom-wars")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Dom Wars Round One"))
 
     ([Book_395] of Libro
@@ -4563,6 +5373,8 @@
      (nPag 398)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/13576132-the-murder-complex")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Murder Complex"))
 
     ([Book_396] of Libro
@@ -4574,6 +5386,8 @@
      (nPag 201)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/19091420-murphy")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Murphy"))
 
     ([Book_397] of Libro
@@ -4585,6 +5399,8 @@
      (nPag 230)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/22589352-precarious")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Precarious"))
 
     ([Book_398] of Libro
@@ -4596,6 +5412,8 @@
      (nPag 211)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/21863686-iron-sinners")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Iron Sinners"))
 
     ([Book_399] of Libro
@@ -4607,6 +5425,8 @@
      (nPag 279)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/17869229-loving-me-trusting-you")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Loving Me Trusting You"))
 
     ([Book_400] of Libro
@@ -4618,6 +5438,8 @@
      (nPag 300)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/17876047-defiance")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Defiance"))
 
     ([Book_401] of Libro
@@ -4629,6 +5451,8 @@
      (nPag 207)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/17370995-chief-s-angel")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Chiefs Angel"))
 
     ([Book_402] of Libro
@@ -4640,6 +5464,8 @@
      (nPag 228)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/17969685-making-the-cut")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Making the Cut"))
 
     ([Book_403] of Libro
@@ -4651,6 +5477,8 @@
      (nPag 144)
      (publicacion 1996)
      (url "https://www.goodreads.com/book/show/141372.Brian_s_Winter")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Brians Winter"))
 
     ([Book_404] of Libro
@@ -4662,6 +5490,8 @@
      (nPag 352)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/4922079-one-second-after")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "One Second After"))
 
     ([Book_405] of Libro
@@ -4673,6 +5503,8 @@
      (nPag 384)
      (publicacion 1986)
      (url "https://www.goodreads.com/book/show/266485.Last_of_the_Breed")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Last of the Breed"))
 
     ([Book_406] of Libro
@@ -4684,6 +5516,8 @@
      (nPag 729)
      (publicacion 1976)
      (url "https://www.goodreads.com/book/show/546018.Roots")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Roots The Saga of an American Family"))
 
     ([Book_407] of Libro
@@ -4695,6 +5529,8 @@
      (nPag 720)
      (publicacion 1851)
      (url "https://www.goodreads.com/book/show/153747.Moby_Dick_or_the_Whale")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Moby-Dick or the Whale"))
 
     ([Book_408] of Libro
@@ -4706,6 +5542,8 @@
      (nPag 226)
      (publicacion 1877)
      (url "https://www.goodreads.com/book/show/3685.Black_Beauty")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Black Beauty"))
 
     ([Book_409] of Libro
@@ -4717,6 +5555,8 @@
      (nPag 309)
      (publicacion 1939)
      (url "https://www.goodreads.com/book/show/51606.Johnny_Got_His_Gun")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Johnny Got His Gun"))
 
     ([Book_410] of Libro
@@ -4728,6 +5568,8 @@
      (nPag 352)
      (publicacion 1812)
      (url "https://www.goodreads.com/book/show/62111.The_Swiss_Family_Robinson")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Swiss Family Robinson"))
 
     ([Book_411] of Libro
@@ -4739,6 +5581,8 @@
      (nPag 562)
      (publicacion 1979)
      (url "https://www.goodreads.com/book/show/228560.Sophie_s_Choice")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Sophies Choice"))
 
     ([Book_412] of Libro
@@ -4750,6 +5594,8 @@
      (nPag 320)
      (publicacion 1719)
      (url "https://www.goodreads.com/book/show/2932.Robinson_Crusoe")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Robinson Crusoe"))
 
     ([Book_413] of Libro
@@ -4761,6 +5607,8 @@
      (nPag 192)
      (publicacion 1959)
      (url "https://www.goodreads.com/book/show/41667.My_Side_of_the_Mountain")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "My Side of the Mountain"))
 
     ([Book_414] of Libro
@@ -4772,6 +5620,8 @@
      (nPag 184)
      (publicacion 1960)
      (url "https://www.goodreads.com/book/show/41044096-island-of-the-blue-dolphins")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Island of the Blue Dolphins"))
 
     ([Book_415] of Libro
@@ -4783,6 +5633,8 @@
      (nPag 344)
      (publicacion 2010)
      (url "https://www.goodreads.com/book/show/8379374-backstage-pass")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Backstage Pass"))
 
     ([Book_416] of Libro
@@ -4794,6 +5646,8 @@
      (nPag 336)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/6100797-laid-bare")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Laid Bare"))
 
     ([Book_417] of Libro
@@ -4805,6 +5659,8 @@
      (nPag 287)
      (publicacion 2007)
      (url "https://www.goodreads.com/book/show/25185716-long-hard-ride")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Long Hard Ride"))
 
     ([Book_418] of Libro
@@ -4816,6 +5672,8 @@
      (nPag 128)
      (publicacion 1969)
      (url "https://www.goodreads.com/book/show/598117.Sounder")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Sounder"))
 
     ([Book_419] of Libro
@@ -4827,6 +5685,8 @@
      (nPag 240)
      (publicacion 1948)
      (url "https://www.goodreads.com/book/show/99738.The_Island_Stallion")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Island Stallion"))
 
     ([Book_420] of Libro
@@ -4838,6 +5698,8 @@
      (nPag 176)
      (publicacion 1948)
      (url "https://www.goodreads.com/book/show/423156.King_of_the_Wind")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "King of the Wind The Story of the Godolphin Arabian"))
 
     ([Book_421] of Libro
@@ -4849,6 +5711,8 @@
      (nPag 130)
      (publicacion 1983)
      (url "https://www.goodreads.com/book/show/646195.Babe")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Babe The Gallant Pig"))
 
     ([Book_422] of Libro
@@ -4860,6 +5724,8 @@
      (nPag 96)
      (publicacion 1980)
      (url "https://www.goodreads.com/book/show/817982.Stone_Fox")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Stone Fox"))
 
     ([Book_423] of Libro
@@ -4871,6 +5737,8 @@
      (nPag 210)
      (publicacion 1902)
      (url "https://www.goodreads.com/book/show/34053.Just_So_Stories")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Just So Stories"))
 
     ([Book_424] of Libro
@@ -4882,6 +5750,8 @@
      (nPag 319)
      (publicacion 2010)
      (url "https://www.goodreads.com/book/show/7723542-a-dog-s-purpose")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "A Dogs Purpose"))
 
     ([Book_425] of Libro
@@ -4893,6 +5763,8 @@
      (nPag 513)
      (publicacion 1938)
      (url "https://www.goodreads.com/book/show/159582.The_Yearling")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Yearling"))
 
     ([Book_426] of Libro
@@ -4904,6 +5776,8 @@
      (nPag 364)
      (publicacion 1985)
      (url "https://www.goodreads.com/book/show/23340.Tailchaser_s_Song")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Tailchasers Song"))
 
     ([Book_427] of Libro
@@ -4915,6 +5789,8 @@
      (nPag 145)
      (publicacion 1991)
      (url "https://www.goodreads.com/book/show/207153.Shiloh")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Shiloh"))
 
     ([Book_428] of Libro
@@ -4926,6 +5802,8 @@
      (nPag 132)
      (publicacion 1956)
      (url "https://www.goodreads.com/book/show/130580.Old_Yeller")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Old Yeller"))
 
     ([Book_429] of Libro
@@ -4937,6 +5815,8 @@
      (nPag 182)
      (publicacion 2000)
      (url "https://www.goodreads.com/book/show/357664.Because_of_Winn_Dixie")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Because of Winn-Dixie"))
 
     ([Book_430] of Libro
@@ -4948,6 +5828,8 @@
      (nPag 145)
      (publicacion 1960)
      (url "https://www.goodreads.com/book/show/231821.The_Incredible_Journey")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Incredible Journey"))
 
     ([Book_431] of Libro
@@ -4959,6 +5841,8 @@
      (nPag 256)
      (publicacion 1908)
      (url "https://www.goodreads.com/book/show/5659.The_Wind_in_the_Willows")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Wind in the Willows"))
 
     ([Book_432] of Libro
@@ -4970,6 +5854,8 @@
      (nPag 272)
      (publicacion 1961)
      (url "https://www.goodreads.com/book/show/10365.Where_the_Red_Fern_Grows")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Where the Red Fern Grows"))
 
     ([Book_433] of Libro
@@ -4981,6 +5867,8 @@
      (nPag 384)
      (publicacion 1993)
      (url "https://www.goodreads.com/book/show/40603587-the-last-wish")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Last Wish"))
 
     ([Book_434] of Libro
@@ -4992,6 +5880,8 @@
      (nPag 501)
      (publicacion 1991)
      (url "https://www.goodreads.com/book/show/185253.The_Magic_of_Recluce")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Magic of Recluce"))
 
     ([Book_435] of Libro
@@ -5003,6 +5893,8 @@
      (nPag 325)
      (publicacion 2017)
      (url "https://www.goodreads.com/book/show/35642518-for-the-love-of-armin")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "For the Love of Armin"))
 
     ([Book_436] of Libro
@@ -5014,6 +5906,8 @@
      (nPag 247)
      (publicacion 2004)
      (url "https://www.goodreads.com/book/show/68210.Gilead")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Gilead"))
 
     ([Book_437] of Libro
@@ -5025,6 +5919,8 @@
      (nPag 220)
      (publicacion 1971)
      (url "https://www.goodreads.com/book/show/189147.To_Your_Scattered_Bodies_Go")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "To Your Scattered Bodies Go"))
 
     ([Book_438] of Libro
@@ -5036,6 +5932,8 @@
      (nPag 262)
      (publicacion 1980)
      (url "https://www.goodreads.com/book/show/60211.The_Shadow_of_the_Torturer")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Shadow of the Torturer"))
 
     ([Book_439] of Libro
@@ -5047,6 +5945,8 @@
      (nPag 336)
      (publicacion 1991)
      (url "https://www.goodreads.com/book/show/61905.Barrayar")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Barrayar"))
 
     ([Book_440] of Libro
@@ -5058,6 +5958,8 @@
      (nPag 544)
      (publicacion 2002)
      (url "https://www.goodreads.com/book/show/40792913-altered-carbon")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Altered Carbon"))
 
     ([Book_441] of Libro
@@ -5069,6 +5971,8 @@
      (nPag 293)
      (publicacion 1988)
      (url "https://www.goodreads.com/book/show/18630.The_Player_of_Games")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Player of Games"))
 
     ([Book_442] of Libro
@@ -5080,6 +5984,8 @@
      (nPag 278)
      (publicacion 1977)
      (url "https://www.goodreads.com/book/show/218427.Gateway")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Gateway"))
 
     ([Book_443] of Libro
@@ -5091,6 +5997,8 @@
      (nPag 493)
      (publicacion 1998)
      (url "https://www.goodreads.com/book/show/77773.To_Say_Nothing_of_the_Dog")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "To Say Nothing of the Dog"))
 
     ([Book_444] of Libro
@@ -5102,6 +6010,8 @@
      (nPag 96)
      (publicacion 1884)
      (url "https://www.goodreads.com/book/show/433567.Flatland")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Flatland A Romance of Many Dimensions"))
 
     ([Book_445] of Libro
@@ -5113,6 +6023,8 @@
      (nPag 613)
      (publicacion 1992)
      (url "https://www.goodreads.com/book/show/77711.A_Fire_Upon_the_Deep")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "A Fire Upon the Deep"))
 
     ([Book_446] of Libro
@@ -5124,6 +6036,8 @@
      (nPag 572)
      (publicacion 1992)
      (url "https://www.goodreads.com/book/show/77507.Red_Mars")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Red Mars"))
 
     ([Book_447] of Libro
@@ -5135,6 +6049,8 @@
      (nPag 204)
      (publicacion 1961)
      (url "https://www.goodreads.com/book/show/95558.Solaris")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Solaris"))
 
     ([Book_448] of Libro
@@ -5146,6 +6062,8 @@
      (nPag 240)
      (publicacion 1864)
      (url "https://www.goodreads.com/book/show/32829.Journey_to_the_Center_of_the_Earth")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Journey to the Center of the Earth Extraordinary Voyages 3"))
 
     ([Book_449] of Libro
@@ -5157,6 +6075,8 @@
      (nPag 258)
      (publicacion 1955)
      (url "https://www.goodreads.com/book/show/333867.The_Stars_My_Destination")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Stars My Destination"))
 
     ([Book_450] of Libro
@@ -5168,6 +6088,8 @@
      (nPag 431)
      (publicacion 1996)
      (url "https://www.goodreads.com/book/show/334176.The_Sparrow")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Sparrow"))
 
     ([Book_451] of Libro
@@ -5179,6 +6101,8 @@
      (nPag 580)
      (publicacion 1985)
      (url "https://www.goodreads.com/book/show/61666.Contact")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Contact"))
 
     ([Book_452] of Libro
@@ -5190,6 +6114,8 @@
      (nPag 351)
      (publicacion 2005)
      (url "https://www.goodreads.com/book/show/36510196-old-man-s-war")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Old Mans War"))
 
     ([Book_453] of Libro
@@ -5201,6 +6127,8 @@
      (nPag 318)
      (publicacion 2018)
      (url "https://www.goodreads.com/book/show/40111371-the-nanny-song")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Nanny Song"))
 
     ([Book_454] of Libro
@@ -5212,6 +6140,8 @@
      (nPag 74)
      (publicacion 2018)
      (url "https://www.goodreads.com/book/show/40593473-finding-hope-in-the-darkness-of-grief")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Finding Hope in the Darkness of Grief Spiritual Insights Expressed Through Art Poetry and Prose"))
 
     ([Book_455] of Libro
@@ -5223,6 +6153,8 @@
      (nPag 382)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/17339738-riddle-in-stone")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Riddle in Stone"))
 
     ([Book_456] of Libro
@@ -5234,6 +6166,8 @@
      (nPag 333)
      (publicacion 2017)
      (url "https://www.goodreads.com/book/show/34521870-mistress-suffragette")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Mistress Suffragette"))
 
     ([Book_457] of Libro
@@ -5245,6 +6179,8 @@
      (nPag 384)
      (publicacion 2010)
      (url "https://www.goodreads.com/book/show/7904453-the-broken-kingdoms")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Broken Kingdoms"))
 
     ([Book_458] of Libro
@@ -5256,6 +6192,8 @@
      (nPag 312)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/3700085-marcelo-in-the-real-world")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Marcelo in the Real World"))
 
     ([Book_459] of Libro
@@ -5267,6 +6205,8 @@
      (nPag 314)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/33107825-stitch")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Stitch"))
 
     ([Book_460] of Libro
@@ -5278,6 +6218,8 @@
      (nPag 324)
      (publicacion 2010)
      (url "https://www.goodreads.com/book/show/10031259-the-emperor-s-edge")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Emperors Edge"))
 
     ([Book_461] of Libro
@@ -5289,6 +6231,8 @@
      (nPag 272)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/5711714-academy-7")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Academy 7"))
 
     ([Book_462] of Libro
@@ -5300,6 +6244,8 @@
      (nPag 418)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/9752790-burn")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Burn"))
 
     ([Book_463] of Libro
@@ -5311,6 +6257,8 @@
      (nPag 492)
      (publicacion 1991)
      (url "https://www.goodreads.com/book/show/28735.By_the_Sword")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "By the Sword"))
 
     ([Book_464] of Libro
@@ -5322,6 +6270,8 @@
      (nPag 306)
      (publicacion 2002)
      (url "https://www.goodreads.com/book/show/228333.The_Nanny_Diaries")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Nanny Diaries"))
 
     ([Book_465] of Libro
@@ -5333,6 +6283,8 @@
      (nPag 365)
      (publicacion 1999)
      (url "https://www.goodreads.com/book/show/38311414-house-of-sand-and-fog")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "House of Sand and Fog"))
 
     ([Book_466] of Libro
@@ -5344,6 +6296,8 @@
      (nPag 224)
      (publicacion 1970)
      (url "https://www.goodreads.com/book/show/73968.Love_Story")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Love Story"))
 
     ([Book_467] of Libro
@@ -5355,6 +6309,8 @@
      (nPag 304)
      (publicacion 1998)
      (url "https://www.goodreads.com/book/show/5191.The_Pilot_s_Wife")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Pilots Wife"))
 
     ([Book_468] of Libro
@@ -5366,6 +6322,8 @@
      (nPag 337)
      (publicacion 1993)
      (url "https://www.goodreads.com/book/show/7354.The_Shipping_News")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Shipping News"))
 
     ([Book_469] of Libro
@@ -5377,6 +6335,8 @@
      (nPag 248)
      (publicacion 1986)
      (url "https://www.goodreads.com/book/show/186190.Forrest_Gump")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Forrest Gump"))
 
     ([Book_470] of Libro
@@ -5388,6 +6348,8 @@
      (nPag 406)
      (publicacion 1995)
      (url "https://www.goodreads.com/book/show/37442.Wicked")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Wicked The Life and Times of the Wicked Witch of the West"))
 
     ([Book_471] of Libro
@@ -5399,6 +6361,8 @@
      (nPag 110)
      (publicacion 1984)
      (url "https://www.goodreads.com/book/show/139253.The_House_on_Mango_Street")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The House on Mango Street"))
 
     ([Book_472] of Libro
@@ -5410,6 +6374,8 @@
      (nPag 170)
      (publicacion 1895)
      (url "https://www.goodreads.com/book/show/35220.The_Red_Badge_of_Courage")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Red Badge of Courage"))
 
     ([Book_473] of Libro
@@ -5421,6 +6387,8 @@
      (nPag 304)
      (publicacion 1996)
      (url "https://www.goodreads.com/book/show/7455.Sex_and_the_City")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Sex and the City"))
 
     ([Book_474] of Libro
@@ -5432,6 +6400,8 @@
      (nPag 209)
      (publicacion 1927)
      (url "https://www.goodreads.com/book/show/59716.To_the_Lighthouse")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "To the Lighthouse"))
 
     ([Book_475] of Libro
@@ -5443,6 +6413,8 @@
      (nPag 329)
      (publicacion 1916)
      (url "https://www.goodreads.com/book/show/7588.A_Portrait_of_the_Artist_as_a_Young_Man")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "A Portrait of the Artist as a Young Man"))
 
     ([Book_476] of Libro
@@ -5454,6 +6426,8 @@
      (nPag 246)
      (publicacion 1990)
      (url "https://www.goodreads.com/book/show/133518.The_Things_They_Carried")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Things They Carried"))
 
     ([Book_477] of Libro
@@ -5465,6 +6439,8 @@
      (nPag 326)
      (publicacion 1929)
      (url "https://www.goodreads.com/book/show/10975.The_Sound_and_the_Fury")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Sound and the Fury"))
 
     ([Book_478] of Libro
@@ -5476,6 +6452,8 @@
      (nPag 416)
      (publicacion 1980)
      (url "https://www.goodreads.com/book/show/310612.A_Confederacy_of_Dunces")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "A Confederacy of Dunces"))
 
     ([Book_479] of Libro
@@ -5487,6 +6465,8 @@
      (nPag 418)
      (publicacion 1931)
      (url "https://www.goodreads.com/book/show/1078.The_Good_Earth")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Good Earth"))
 
     ([Book_480] of Libro
@@ -5498,6 +6478,8 @@
      (nPag 307)
      (publicacion 1955)
      (url "https://www.goodreads.com/book/show/70401.On_the_Road")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "On the Road"))
 
     ([Book_481] of Libro
@@ -5509,6 +6491,8 @@
      (nPag 307)
      (publicacion 1983)
      (url "https://www.goodreads.com/book/show/133454.Jhereg")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Jhereg"))
 
     ([Book_482] of Libro
@@ -5520,6 +6504,8 @@
      (nPag 534)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/2315892.Best_Served_Cold")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Best Served Cold"))
 
     ([Book_483] of Libro
@@ -5531,6 +6517,8 @@
      (nPag 296)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/4345290-the-crown-conspiracy")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Crown Conspiracy"))
 
     ([Book_484] of Libro
@@ -5542,6 +6530,8 @@
      (nPag 656)
      (publicacion 1999)
      (url "https://www.goodreads.com/book/show/261604.Rhapsody")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Rhapsody Child of Blood"))
 
     ([Book_485] of Libro
@@ -5553,6 +6543,8 @@
      (nPag 421)
      (publicacion 1987)
      (url "https://www.goodreads.com/book/show/589979.Daughter_of_the_Empire")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Daughter of the Empire"))
 
     ([Book_486] of Libro
@@ -5564,6 +6556,8 @@
      (nPag 430)
      (publicacion 1990)
      (url "https://www.goodreads.com/book/show/28481.Dragon_Wing")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Dragon Wing"))
 
     ([Book_487] of Libro
@@ -5575,6 +6569,8 @@
      (nPag 449)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/12891107-king-of-thorns")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "King of Thorns"))
 
     ([Book_488] of Libro
@@ -5586,6 +6582,8 @@
      (nPag 305)
      (publicacion 2002)
      (url "https://www.goodreads.com/book/show/77160.Across_the_Nightingale_Floor")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Across the Nightingale Floor"))
 
     ([Book_489] of Libro
@@ -5597,6 +6595,8 @@
      (nPag 325)
      (publicacion 1983)
      (url "https://www.goodreads.com/book/show/76658.On_a_Pale_Horse")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "On a Pale Horse"))
 
     ([Book_490] of Libro
@@ -5608,6 +6608,8 @@
      (nPag 1040)
      (publicacion 1992)
      (url "https://www.goodreads.com/book/show/96281.The_Deed_of_Paksenarrion")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Deed of Paksenarrion"))
 
     ([Book_491] of Libro
@@ -5619,6 +6621,8 @@
      (nPag 181)
      (publicacion 1972)
      (url "https://www.goodreads.com/book/show/30036.Elric_of_Melnibon_")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Elric of Melnibon"))
 
     ([Book_492] of Libro
@@ -5630,6 +6634,8 @@
      (nPag 319)
      (publicacion 1984)
      (url "https://www.goodreads.com/book/show/140671.The_Black_Company")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Black Company"))
 
     ([Book_493] of Libro
@@ -5641,6 +6647,8 @@
      (nPag 880)
      (publicacion 1998)
      (url "https://www.goodreads.com/book/show/45100.Ship_of_Magic")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Ship of Magic"))
 
     ([Book_494] of Libro
@@ -5652,6 +6660,8 @@
      (nPag 1160)
      (publicacion 1977)
      (url "https://www.goodreads.com/book/show/179033.The_Chronicles_of_Thomas_Covenant_the_Unbeliever")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Chronicles of Thomas Covenant the Unbeliever"))
 
     ([Book_495] of Libro
@@ -5663,6 +6673,8 @@
      (nPag 416)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/3428935-the-warded-man")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Warded Man"))
 
     ([Book_496] of Libro
@@ -5674,6 +6686,8 @@
      (nPag 666)
      (publicacion 1999)
      (url "https://www.goodreads.com/book/show/55399.Gardens_of_the_Moon")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Gardens of the Moon"))
 
     ([Book_497] of Libro
@@ -5685,6 +6699,8 @@
      (nPag 499)
      (publicacion 2006)
      (url "https://www.goodreads.com/book/show/29588376-the-lies-of-locke-lamora")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Lies of Locke Lamora"))
 
     ([Book_498] of Libro
@@ -5696,6 +6712,8 @@
      (nPag 208)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/15852756-naked")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Naked"))
 
     ([Book_499] of Libro
@@ -5707,6 +6725,8 @@
      (nPag 604)
      (publicacion 1965)
      (url "https://www.goodreads.com/book/show/234225.Dune")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Dune"))
 
     ([Book_500] of Libro
@@ -5718,6 +6738,8 @@
      (nPag 722)
      (publicacion 1990)
      (url "https://www.goodreads.com/book/show/41977.Circle_of_Friends")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Circle of Friends"))
 
     ([Book_501] of Libro
@@ -5729,6 +6751,8 @@
      (nPag 244)
      (publicacion 1952)
      (url "https://www.goodreads.com/book/show/298663.The_Killer_Inside_Me")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Killer Inside Me"))
 
     ([Book_502] of Libro
@@ -5740,6 +6764,8 @@
      (nPag 454)
      (publicacion 1986)
      (url "https://www.goodreads.com/book/show/498214.Daggerspell")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Daggerspell"))
 
     ([Book_503] of Libro
@@ -5751,6 +6777,8 @@
      (nPag 344)
      (publicacion 1993)
      (url "https://www.goodreads.com/book/show/135836.Trainspotting")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Trainspotting"))
 
     ([Book_504] of Libro
@@ -5762,6 +6790,8 @@
      (nPag 246)
      (publicacion 1925)
      (url "https://www.goodreads.com/book/show/99664.The_Painted_Veil")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Painted Veil"))
 
     ([Book_505] of Libro
@@ -5773,6 +6803,8 @@
      (nPag 230)
      (publicacion 1998)
      (url "https://www.goodreads.com/book/show/11899.The_Hours")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Hours"))
 
     ([Book_506] of Libro
@@ -5784,6 +6816,8 @@
      (nPag 360)
      (publicacion 1995)
      (url "https://www.goodreads.com/book/show/239239.The_Prestige")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Prestige"))
 
     ([Book_507] of Libro
@@ -5795,6 +6829,8 @@
      (nPag 224)
      (publicacion 1992)
      (url "https://www.goodreads.com/book/show/83674.The_Bridges_of_Madison_County")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Bridges of Madison County"))
 
     ([Book_508] of Libro
@@ -5806,6 +6842,8 @@
      (nPag 181)
      (publicacion 1953)
      (url "https://www.goodreads.com/book/show/3758.Casino_Royale")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Casino Royale"))
 
     ([Book_509] of Libro
@@ -5817,6 +6855,8 @@
      (nPag 288)
      (publicacion 2004)
      (url "https://www.goodreads.com/book/show/2152.The_Jane_Austen_Book_Club")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Jane Austen Book Club"))
 
     ([Book_510] of Libro
@@ -5828,6 +6868,8 @@
      (nPag 340)
      (publicacion 1995)
      (url "https://www.goodreads.com/book/show/285092.High_Fidelity")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "High Fidelity"))
 
     ([Book_511] of Libro
@@ -5839,6 +6881,8 @@
      (nPag 360)
      (publicacion 1910)
      (url "https://www.goodreads.com/book/show/480204.The_Phantom_of_the_Opera")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Phantom of the Opera"))
 
     ([Book_512] of Libro
@@ -5850,6 +6894,8 @@
      (nPag 410)
      (publicacion 1826)
      (url "https://www.goodreads.com/book/show/38296.The_Last_of_the_Mohicans")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Last of the Mohicans"))
 
     ([Book_513] of Libro
@@ -5861,6 +6907,8 @@
      (nPag 338)
      (publicacion 1988)
      (url "https://www.goodreads.com/book/show/23807.The_Silence_of_the_Lambs")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Silence of the Lambs"))
 
     ([Book_514] of Libro
@@ -5872,6 +6920,8 @@
      (nPag 320)
      (publicacion 1973)
      (url "https://www.goodreads.com/book/show/126232.Jaws")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Jaws"))
 
     ([Book_515] of Libro
@@ -5883,6 +6933,8 @@
      (nPag 288)
      (publicacion 2004)
      (url "https://www.goodreads.com/book/show/17231.Darkly_Dreaming_Dexter")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Darkly Dreaming Dexter"))
 
     ([Book_516] of Libro
@@ -5894,6 +6946,8 @@
      (nPag 496)
      (publicacion 2002)
      (url "https://www.goodreads.com/book/show/33482.The_Coming_of_Conan_the_Cimmerian")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Coming of Conan the Cimmerian"))
 
     ([Book_517] of Libro
@@ -5905,6 +6959,8 @@
      (nPag 345)
      (publicacion 1984)
      (url "https://www.goodreads.com/book/show/618177.Legend")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Legend"))
 
     ([Book_518] of Libro
@@ -5916,6 +6972,8 @@
      (nPag 428)
      (publicacion 2016)
      (url "https://www.goodreads.com/book/show/25897792-into-the-dim")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Into the Dim"))
 
     ([Book_519] of Libro
@@ -5927,6 +6985,8 @@
      (nPag 442)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/16117368-the-saint")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Saint"))
 
     ([Book_520] of Libro
@@ -5938,6 +6998,8 @@
      (nPag 250)
      (publicacion 2016)
      (url "https://www.goodreads.com/book/show/18280801-stripped-2")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Stripped 2 A Ferro Family Novel"))
 
     ([Book_521] of Libro
@@ -5949,6 +7011,8 @@
      (nPag 304)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/18744040-last-light")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Last Light"))
 
     ([Book_522] of Libro
@@ -5960,6 +7024,8 @@
      (nPag 212)
      (publicacion 2007)
      (url "https://www.goodreads.com/book/show/162086.Such_a_Pretty_Girl")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Such a Pretty Girl"))
 
     ([Book_523] of Libro
@@ -5971,6 +7037,8 @@
      (nPag 256)
      (publicacion 2003)
      (url "https://www.goodreads.com/book/show/253106.The_Earth_My_Butt_and_Other_Big_Round_Things")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Earth My Butt and Other Big Round Things"))
 
     ([Book_524] of Libro
@@ -5982,6 +7050,8 @@
      (nPag 172)
      (publicacion 2004)
      (url "https://www.goodreads.com/book/show/97408.Perfect")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Perfect"))
 
     ([Book_525] of Libro
@@ -5993,6 +7063,8 @@
      (nPag 384)
      (publicacion 1990)
      (url "https://www.goodreads.com/book/show/702539.Get_Shorty")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Get Shorty"))
 
     ([Book_526] of Libro
@@ -6004,6 +7076,8 @@
      (nPag 304)
      (publicacion 1975)
      (url "https://www.goodreads.com/book/show/43339.Where_Are_the_Children_")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Where Are the Children"))
 
     ([Book_527] of Libro
@@ -6015,6 +7089,8 @@
      (nPag 212)
      (publicacion 1923)
      (url "https://www.goodreads.com/book/show/192893.Whose_Body_")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Whose Body"))
 
     ([Book_528] of Libro
@@ -6026,6 +7102,8 @@
      (nPag 352)
      (publicacion 1986)
      (url "https://www.goodreads.com/book/show/104106.The_Ritual_Bath")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Ritual Bath"))
 
     ([Book_529] of Libro
@@ -6037,6 +7115,8 @@
      (nPag 116)
      (publicacion 1934)
      (url "https://www.goodreads.com/book/show/25807.The_Postman_Always_Rings_Twice")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Postman Always Rings Twice"))
 
     ([Book_530] of Libro
@@ -6048,6 +7128,8 @@
      (nPag 559)
      (publicacion 1992)
      (url "https://www.goodreads.com/book/show/29044.The_Secret_History")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Secret History"))
 
     ([Book_531] of Libro
@@ -6059,6 +7141,8 @@
      (nPag 479)
      (publicacion 1989)
      (url "https://www.goodreads.com/book/show/37301.Rules_of_Prey")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Rules of Prey"))
 
     ([Book_532] of Libro
@@ -6070,6 +7154,8 @@
      (nPag 460)
      (publicacion 1994)
      (url "https://www.goodreads.com/book/show/77142.Snow_Falling_on_Cedars")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Snow Falling on Cedars"))
 
     ([Book_533] of Libro
@@ -6081,6 +7167,8 @@
      (nPag 482)
      (publicacion 1992)
      (url "https://www.goodreads.com/book/show/32508.The_Black_Echo")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Black Echo"))
 
     ([Book_534] of Libro
@@ -6092,6 +7180,8 @@
      (nPag 201)
      (publicacion 1934)
      (url "https://www.goodreads.com/book/show/80616.The_Thin_Man")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Thin Man"))
 
     ([Book_535] of Libro
@@ -6103,6 +7193,8 @@
      (nPag 413)
      (publicacion 1988)
      (url "https://www.goodreads.com/book/show/31374.A_Great_Deliverance")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "A Great Deliverance"))
 
     ([Book_536] of Libro
@@ -6114,6 +7206,8 @@
      (nPag 320)
      (publicacion 1955)
      (url "https://www.goodreads.com/book/show/2247142.The_Talented_Mr_Ripley")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Talented Mr Ripley"))
 
     ([Book_537] of Libro
@@ -6125,6 +7219,8 @@
      (nPag 433)
      (publicacion 1981)
      (url "https://www.goodreads.com/book/show/762806.Gorky_Park")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Gorky Park"))
 
     ([Book_538] of Libro
@@ -6136,6 +7232,8 @@
      (nPag 469)
      (publicacion 1992)
      (url "https://www.goodreads.com/book/show/124509.Smilla_s_Sense_of_Snow")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Smillas Sense of Snow"))
 
     ([Book_539] of Libro
@@ -6147,6 +7245,8 @@
      (nPag 400)
      (publicacion 1992)
      (url "https://www.goodreads.com/book/show/32499.The_Pelican_Brief")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Pelican Brief"))
 
     ([Book_540] of Libro
@@ -6158,6 +7258,8 @@
      (nPag 308)
      (publicacion 1982)
      (url "https://www.goodreads.com/book/show/64863.A_is_for_Alibi")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "A is for Alibi"))
 
     ([Book_541] of Libro
@@ -6169,6 +7271,8 @@
      (nPag 144)
      (publicacion 1886)
      (url "https://www.goodreads.com/book/show/51496.The_Strange_Case_of_Dr_Jekyll_and_Mr_Hyde")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Strange Case of Dr Jekyll and Mr Hyde"))
 
     ([Book_542] of Libro
@@ -6180,6 +7284,8 @@
      (nPag 421)
      (publicacion 1986)
      (url "https://www.goodreads.com/book/show/425029.Presumed_Innocent")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Presumed Innocent"))
 
     ([Book_543] of Libro
@@ -6191,6 +7297,8 @@
      (nPag 231)
      (publicacion 1939)
      (url "https://www.goodreads.com/book/show/2052.The_Big_Sleep")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Big Sleep"))
 
     ([Book_544] of Libro
@@ -6202,6 +7310,8 @@
      (nPag 416)
      (publicacion 2001)
      (url "https://www.goodreads.com/book/show/21671.Mystic_River")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Mystic River"))
 
     ([Book_545] of Libro
@@ -6213,6 +7323,8 @@
      (nPag 448)
      (publicacion 1969)
      (url "https://www.goodreads.com/book/show/22034.The_Godfather")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Godfather"))
 
     ([Book_546] of Libro
@@ -6224,6 +7336,8 @@
      (nPag 298)
      (publicacion 2001)
      (url "https://www.goodreads.com/book/show/138202.Sloppy_Firsts")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Sloppy Firsts"))
 
     ([Book_547] of Libro
@@ -6235,6 +7349,8 @@
      (nPag 410)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/11387515-wonder")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Wonder"))
 
     ([Book_548] of Libro
@@ -6246,6 +7362,8 @@
      (nPag 444)
      (publicacion 2006)
      (url "https://www.goodreads.com/book/show/248704.It_s_Kind_of_a_Funny_Story")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Its Kind of a Funny Story"))
 
     ([Book_549] of Libro
@@ -6257,6 +7375,8 @@
      (nPag 512)
      (publicacion 2011)
      (url "https://www.goodreads.com/book/show/10996342-the-art-of-fielding")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Art of Fielding"))
 
     ([Book_550] of Libro
@@ -6268,6 +7388,8 @@
      (nPag 477)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/15796700-americanah")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Americanah"))
 
     ([Book_551] of Libro
@@ -6279,6 +7401,8 @@
      (nPag 64)
      (publicacion 2011)
      (url "https://www.goodreads.com/book/show/39291659-go-the-f-k-to-sleep")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Go the Fuck to Sleep"))
 
     ([Book_552] of Libro
@@ -6290,6 +7414,8 @@
      (nPag 150)
      (publicacion 2011)
      (url "https://www.goodreads.com/book/show/10746542-the-sense-of-an-ending")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Sense of an Ending"))
 
     ([Book_553] of Libro
@@ -6301,6 +7427,8 @@
      (nPag 359)
      (publicacion 2011)
      (url "https://www.goodreads.com/book/show/9736930-before-i-go-to-sleep")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Before I Go to Sleep"))
 
     ([Book_554] of Libro
@@ -6312,6 +7440,8 @@
      (nPag 288)
      (publicacion 2010)
      (url "https://www.goodreads.com/book/show/7331435-a-visit-from-the-goon-squad")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "A Visit from the Goon Squad"))
 
     ([Book_555] of Libro
@@ -6323,6 +7453,8 @@
      (nPag 337)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/18774964-a-man-called-ove")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "A Man Called Ove"))
 
     ([Book_556] of Libro
@@ -6334,6 +7466,8 @@
      (nPag 455)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/16160797-the-cuckoo-s-calling")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Cuckoos Calling"))
 
     ([Book_557] of Libro
@@ -6345,6 +7479,8 @@
      (nPag 297)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/16181775-the-rosie-project")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Rosie Project"))
 
     ([Book_558] of Libro
@@ -6356,6 +7492,8 @@
      (nPag 323)
      (publicacion 2015)
      (url "https://www.goodreads.com/book/show/22557272-the-girl-on-the-train")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Girl on the Train"))
 
     ([Book_559] of Libro
@@ -6367,6 +7505,8 @@
      (nPag 306)
      (publicacion 1726)
      (url "https://www.goodreads.com/book/show/7733.Gulliver_s_Travels")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Gullivers Travels"))
 
     ([Book_560] of Libro
@@ -6378,6 +7518,8 @@
      (nPag 364)
      (publicacion 1928)
      (url "https://www.goodreads.com/book/show/32049.Lady_Chatterley_s_Lover")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Lady Chatterleys Lover"))
 
     ([Book_561] of Libro
@@ -6389,6 +7531,8 @@
      (nPag 468)
      (publicacion 1913)
      (url "https://www.goodreads.com/book/show/12749.Swann_s_Way")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Swanns Way"))
 
     ([Book_562] of Libro
@@ -6400,6 +7544,8 @@
      (nPag 912)
      (publicacion 1848)
      (url "https://www.goodreads.com/book/show/5797.Vanity_Fair")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Vanity Fair"))
 
     ([Book_563] of Libro
@@ -6411,6 +7557,8 @@
      (nPag 289)
      (publicacion 1959)
      (url "https://www.goodreads.com/book/show/7437.Naked_Lunch")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Naked Lunch"))
 
     ([Book_564] of Libro
@@ -6422,6 +7570,8 @@
      (nPag 403)
      (publicacion 1991)
      (url "https://www.goodreads.com/book/show/10959.Sophie_s_World")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Sophies World"))
 
     ([Book_565] of Libro
@@ -6433,6 +7583,8 @@
      (nPag 1088)
      (publicacion 1996)
      (url "https://www.goodreads.com/book/show/6759.Infinite_Jest")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Infinite Jest"))
 
     ([Book_566] of Libro
@@ -6444,6 +7596,8 @@
      (nPag 342)
      (publicacion 1995)
      (url "https://www.goodreads.com/book/show/27523.Left_Behind")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Left Behind"))
 
     ([Book_567] of Libro
@@ -6455,6 +7609,8 @@
      (nPag 376)
      (publicacion 1995)
      (url "https://www.goodreads.com/book/show/5168.Where_the_Heart_Is")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Where the Heart Is"))
 
     ([Book_568] of Libro
@@ -6466,6 +7622,8 @@
      (nPag 501)
      (publicacion 2003)
      (url "https://www.goodreads.com/book/show/366522.P_S_I_Love_You")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "PS I Love You"))
 
     ([Book_569] of Libro
@@ -6477,6 +7635,8 @@
      (nPag 383)
      (publicacion 1996)
      (url "https://www.goodreads.com/book/show/137791.Divine_Secrets_of_the_Ya_Ya_Sisterhood")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Divine Secrets of the Ya-Ya Sisterhood"))
 
     ([Book_570] of Libro
@@ -6488,6 +7648,8 @@
      (nPag 160)
      (publicacion 1942)
      (url "https://www.goodreads.com/book/show/297249.The_Boxcar_Children")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Boxcar Children"))
 
     ([Book_571] of Libro
@@ -6499,6 +7661,8 @@
      (nPag 679)
      (publicacion 1986)
      (url "https://www.goodreads.com/book/show/16735.The_Prince_of_Tides")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Prince of Tides"))
 
     ([Book_572] of Libro
@@ -6510,6 +7674,8 @@
      (nPag 284)
      (publicacion 2010)
      (url "https://www.goodreads.com/book/show/7743801-three-daves")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Three Daves"))
 
     ([Book_573] of Libro
@@ -6521,6 +7687,8 @@
      (nPag 332)
      (publicacion 1920)
      (url "https://www.goodreads.com/book/show/53835.The_Age_of_Innocence")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Age of Innocence"))
 
     ([Book_574] of Libro
@@ -6532,6 +7700,8 @@
      (nPag 592)
      (publicacion 1957)
      (url "https://www.goodreads.com/book/show/130440.Doctor_Zhivago")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Doctor Zhivago"))
 
     ([Book_575] of Libro
@@ -6543,6 +7713,8 @@
      (nPag 119)
      (publicacion 1908)
      (url "https://www.goodreads.com/book/show/3087.A_Room_with_a_View")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "A Room with a View"))
 
     ([Book_576] of Libro
@@ -6554,6 +7726,8 @@
      (nPag 464)
      (publicacion 1991)
      (url "https://www.goodreads.com/book/show/11422.Redeeming_Love")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Redeeming Love"))
 
     ([Book_577] of Libro
@@ -6565,6 +7739,8 @@
      (nPag 521)
      (publicacion 1855)
      (url "https://www.goodreads.com/book/show/156538.North_and_South")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "North and South"))
 
     ([Book_578] of Libro
@@ -6576,6 +7752,8 @@
      (nPag 337)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/11447921-beautiful-ruins")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Beautiful Ruins"))
 
     ([Book_579] of Libro
@@ -6587,6 +7765,8 @@
      (nPag 320)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/13227454-the-unlikely-pilgrimage-of-harold-fry")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Unlikely Pilgrimage of Harold Fry"))
 
     ([Book_580] of Libro
@@ -6598,6 +7778,8 @@
      (nPag 443)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/11529868-the-orphan-master-s-son")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Orphan Masters Son"))
 
     ([Book_581] of Libro
@@ -6609,6 +7791,8 @@
      (nPag 360)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/12875258-tell-the-wolves-i-m-home")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Tell the Wolves Im Home"))
 
     ([Book_582] of Libro
@@ -6620,6 +7804,8 @@
      (nPag 421)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/11367726-defending-jacob")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Defending Jacob"))
 
     ([Book_583] of Libro
@@ -6631,6 +7817,8 @@
      (nPag 128)
      (publicacion 1973)
      (url "https://www.goodreads.com/book/show/322351.How_to_Eat_Fried_Worms")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "How to Eat Fried Worms"))
 
     ([Book_584] of Libro
@@ -6642,6 +7830,8 @@
      (nPag 144)
      (publicacion 1947)
      (url "https://www.goodreads.com/book/show/25051.Mrs_Piggle_Wiggle")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Mrs Piggle-Wiggle"))
 
     ([Book_585] of Libro
@@ -6653,6 +7843,8 @@
      (nPag 300)
      (publicacion 1964)
      (url "https://www.goodreads.com/book/show/232576.Harriet_the_Spy")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Harriet the Spy"))
 
     ([Book_586] of Libro
@@ -6664,6 +7856,8 @@
      (nPag 520)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/13518102-salvage")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Salvage"))
 
     ([Book_587] of Libro
@@ -6675,6 +7869,8 @@
      (nPag 382)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/12369550-elusion")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Elusion"))
 
     ([Book_588] of Libro
@@ -6686,6 +7882,8 @@
      (nPag 418)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/17149396-avalon")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Avalon"))
 
     ([Book_589] of Libro
@@ -6697,6 +7895,8 @@
      (nPag 310)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/17165932-independent-study")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Independent Study"))
 
     ([Book_590] of Libro
@@ -6708,6 +7908,8 @@
      (nPag 400)
      (publicacion 2003)
      (url "https://www.goodreads.com/book/show/80660.We_Need_to_Talk_About_Kevin")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "We Need to Talk About Kevin"))
 
     ([Book_591] of Libro
@@ -6719,6 +7921,8 @@
      (nPag 312)
      (publicacion 2001)
      (url "https://www.goodreads.com/book/show/227571.Peace_Like_a_River")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Peace Like a River"))
 
     ([Book_592] of Libro
@@ -6730,6 +7934,8 @@
      (nPag 204)
      (publicacion 2015)
      (url "https://www.goodreads.com/book/show/40937505")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo ""))
 
     ([Book_593] of Libro
@@ -6741,6 +7947,8 @@
      (nPag 266)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/6948436-little-bee")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Little Bee"))
 
     ([Book_594] of Libro
@@ -6752,6 +7960,8 @@
      (nPag 292)
      (publicacion 2007)
      (url "https://www.goodreads.com/book/show/2153405.Still_Alice")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Still Alice"))
 
     ([Book_595] of Libro
@@ -6763,6 +7973,8 @@
      (nPag 299)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/11706625-truth")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Truth"))
 
     ([Book_596] of Libro
@@ -6774,6 +7986,8 @@
      (nPag 339)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/11455096-tempest")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Tempest"))
 
     ([Book_597] of Libro
@@ -6785,6 +7999,8 @@
      (nPag 466)
      (publicacion 2011)
      (url "https://www.goodreads.com/book/show/9644151-ashfall")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Ashfall"))
 
     ([Book_598] of Libro
@@ -6796,6 +8012,8 @@
      (nPag 252)
      (publicacion 2004)
      (url "https://www.goodreads.com/book/show/592089.The_Bar_Code_Tattoo")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Bar Code Tattoo"))
 
     ([Book_599] of Libro
@@ -6807,6 +8025,8 @@
      (nPag 276)
      (publicacion 1993)
      (url "https://www.goodreads.com/book/show/71865.Tomorrow_When_the_War_Began")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Tomorrow When the War Began"))
 
     ([Book_600] of Libro
@@ -6818,6 +8038,8 @@
      (nPag 320)
      (publicacion 2007)
      (url "https://www.goodreads.com/book/show/1722717.The_Declaration")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Declaration"))
 
     ([Book_601] of Libro
@@ -6829,6 +8051,8 @@
      (nPag 352)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/11861062-starters")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Starters"))
 
     ([Book_602] of Libro
@@ -6840,6 +8064,8 @@
      (nPag 55)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/15759752-because-you-tempt-me")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Because You Tempt Me"))
 
     ([Book_603] of Libro
@@ -6851,6 +8077,8 @@
      (nPag 221)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/16087848-mine-to-hold")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Mine to Hold"))
 
     ([Book_604] of Libro
@@ -6862,6 +8090,8 @@
      (nPag 152)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/7573471-heidi-and-the-kaiser")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Heidi and the Kaiser"))
 
     ([Book_605] of Libro
@@ -6873,6 +8103,8 @@
      (nPag 384)
      (publicacion 2007)
      (url "https://www.goodreads.com/book/show/793003.Broken")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Broken"))
 
     ([Book_606] of Libro
@@ -6884,6 +8116,8 @@
      (nPag 231)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/17828418-fixed-on-you")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Fixed on You"))
 
     ([Book_607] of Libro
@@ -6895,6 +8129,8 @@
      (nPag 309)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/34453559-strangers")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Strangers"))
 
     ([Book_608] of Libro
@@ -6906,6 +8142,8 @@
      (nPag 199)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/41153917-honor-thy-teacher")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Honor Thy Teacher"))
 
     ([Book_609] of Libro
@@ -6917,6 +8155,8 @@
      (nPag 371)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/16099159-claim-me")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Claim Me"))
 
     ([Book_610] of Libro
@@ -6928,6 +8168,8 @@
      (nPag 350)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/6734445-masters-of-the-shadowlands")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Masters of the Shadowlands Masters of the Shadowlands 1-2"))
 
     ([Book_611] of Libro
@@ -6939,6 +8181,8 @@
      (nPag 338)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/17156015-beauty-from-pain")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Beauty from Pain"))
 
     ([Book_612] of Libro
@@ -6950,6 +8194,8 @@
      (nPag 285)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/15739921-the-reluctant-dom")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Reluctant Dom"))
 
     ([Book_613] of Libro
@@ -6961,6 +8207,8 @@
      (nPag 468)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/22091449-nobody-s-perfect")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Nobodys Perfect"))
 
     ([Book_614] of Libro
@@ -6972,6 +8220,8 @@
      (nPag 103)
      (publicacion 1928)
      (url "https://www.goodreads.com/book/show/436806.Story_of_the_Eye")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Story of the Eye"))
 
     ([Book_615] of Libro
@@ -6983,6 +8233,8 @@
      (nPag 335)
      (publicacion 2006)
      (url "https://www.goodreads.com/book/show/17866.Glasshouse")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Glasshouse"))
 
     ([Book_616] of Libro
@@ -6994,6 +8246,8 @@
      (nPag 139)
      (publicacion 1938)
      (url "https://www.goodreads.com/book/show/61549.Mr_Popper_s_Penguins")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Mr Poppers Penguins"))
 
     ([Book_617] of Libro
@@ -7005,6 +8259,8 @@
      (nPag 350)
      (publicacion 2010)
      (url "https://www.goodreads.com/book/show/6703145-spellwright")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Spellwright"))
 
     ([Book_618] of Libro
@@ -7016,6 +8272,8 @@
      (nPag 613)
      (publicacion 1998)
      (url "https://www.goodreads.com/book/show/144127.The_Runelords")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Runelords"))
 
     ([Book_619] of Libro
@@ -7027,6 +8285,8 @@
      (nPag 398)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/16160701-fire-country")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Fire Country"))
 
     ([Book_620] of Libro
@@ -7038,6 +8298,8 @@
      (nPag 610)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/35292712-forging-zero")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Forging Zero"))
 
     ([Book_621] of Libro
@@ -7049,6 +8311,8 @@
      (nPag 597)
      (publicacion 2004)
      (url "https://www.goodreads.com/book/show/278280.River_of_Gods")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "River of Gods"))
 
     ([Book_622] of Libro
@@ -7060,6 +8324,8 @@
      (nPag 432)
      (publicacion 2002)
      (url "https://www.goodreads.com/book/show/240297.The_Skinner")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Skinner"))
 
     ([Book_623] of Libro
@@ -7071,6 +8337,8 @@
      (nPag 338)
      (publicacion 2000)
      (url "https://www.goodreads.com/book/show/264950.Calculating_God")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Calculating God"))
 
     ([Book_624] of Libro
@@ -7082,6 +8350,8 @@
      (nPag 518)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/22733729-the-long-way-to-a-small-angry-planet")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Long Way to a Small Angry Planet"))
 
     ([Book_625] of Libro
@@ -7093,6 +8363,8 @@
      (nPag 746)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/3437328-the-temporal-void")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Temporal Void"))
 
     ([Book_626] of Libro
@@ -7104,6 +8376,8 @@
      (nPag 416)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/1137215.Boneshaker")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Boneshaker"))
 
     ([Book_627] of Libro
@@ -7115,6 +8389,8 @@
      (nPag 756)
      (publicacion 2003)
      (url "https://www.goodreads.com/book/show/89184.Absolution_Gap")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Absolution Gap"))
 
     ([Book_628] of Libro
@@ -7126,6 +8402,8 @@
      (nPag 460)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/13642710-nexus")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Nexus"))
 
     ([Book_629] of Libro
@@ -7137,6 +8415,8 @@
      (nPag 372)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/15062217-14")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "14"))
 
     ([Book_630] of Libro
@@ -7148,6 +8428,8 @@
      (nPag 461)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/17235026-the-girl-with-all-the-gifts")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Girl With All the Gifts"))
 
     ([Book_631] of Libro
@@ -7159,6 +8441,8 @@
      (nPag 486)
      (publicacion 2010)
      (url "https://www.goodreads.com/book/show/8488830-freedom")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Freedom"))
 
     ([Book_632] of Libro
@@ -7170,6 +8454,8 @@
      (nPag 347)
      (publicacion 2011)
      (url "https://www.goodreads.com/book/show/9634967-robopocalypse")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Robopocalypse"))
 
     ([Book_633] of Libro
@@ -7181,6 +8467,8 @@
      (nPag 195)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/17934530-annihilation")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Annihilation"))
 
     ([Book_634] of Libro
@@ -7192,6 +8480,8 @@
      (nPag 336)
      (publicacion 2010)
      (url "https://www.goodreads.com/book/show/7562764-the-quantum-thief")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Quantum Thief"))
 
     ([Book_635] of Libro
@@ -7203,6 +8493,8 @@
      (nPag 345)
      (publicacion 2011)
      (url "https://www.goodreads.com/book/show/9265453-embassytown")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Embassytown"))
 
     ([Book_636] of Libro
@@ -7214,6 +8506,8 @@
      (nPag 400)
      (publicacion 2007)
      (url "https://www.goodreads.com/book/show/20518872-the-three-body-problem")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Three-Body Problem"))
 
     ([Book_637] of Libro
@@ -7225,6 +8519,8 @@
      (nPag 384)
      (publicacion 2006)
      (url "https://www.goodreads.com/book/show/48484.Blindsight")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Blindsight"))
 
     ([Book_638] of Libro
@@ -7236,6 +8532,8 @@
      (nPag 464)
      (publicacion 2005)
      (url "https://www.goodreads.com/book/show/910863.Spin")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Spin"))
 
     ([Book_639] of Libro
@@ -7247,6 +8545,8 @@
      (nPag 386)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/17333324-ancillary-justice")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Ancillary Justice"))
 
     ([Book_640] of Libro
@@ -7258,6 +8558,8 @@
      (nPag 320)
      (publicacion 1992)
      (url "https://www.goodreads.com/book/show/25354.Bastard_Out_of_Carolina")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Bastard Out of Carolina"))
 
     ([Book_641] of Libro
@@ -7269,6 +8571,8 @@
      (nPag 290)
      (publicacion 1964)
      (url "https://www.goodreads.com/book/show/50275.Last_Exit_to_Brooklyn")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Last Exit to Brooklyn"))
 
     ([Book_642] of Libro
@@ -7280,6 +8584,8 @@
      (nPag 315)
      (publicacion 1977)
      (url "https://www.goodreads.com/book/show/293101.The_Amityville_Horror")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Amityville Horror"))
 
     ([Book_643] of Libro
@@ -7291,6 +8597,8 @@
      (nPag 272)
      (publicacion 1996)
      (url "https://www.goodreads.com/book/show/75479.The_End_of_Alice")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The End of Alice"))
 
     ([Book_644] of Libro
@@ -7302,6 +8610,8 @@
      (nPag 234)
      (publicacion 1965)
      (url "https://www.goodreads.com/book/show/18452.The_Painted_Bird")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Painted Bird"))
 
     ([Book_645] of Libro
@@ -7313,6 +8623,8 @@
      (nPag 348)
      (publicacion 1989)
      (url "https://www.goodreads.com/book/show/13872.Geek_Love")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Geek Love"))
 
     ([Book_646] of Libro
@@ -7324,6 +8636,8 @@
      (nPag 376)
      (publicacion 1785)
      (url "https://www.goodreads.com/book/show/6351885-the-120-days-of-sodom")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The 120 Days of Sodom"))
 
     ([Book_647] of Libro
@@ -7335,6 +8649,8 @@
      (nPag 370)
      (publicacion 1989)
      (url "https://www.goodreads.com/book/show/179735.The_Girl_Next_Door")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Girl Next Door"))
 
     ([Book_648] of Libro
@@ -7346,6 +8662,8 @@
      (nPag 192)
      (publicacion 1984)
      (url "https://www.goodreads.com/book/show/567678.The_Wasp_Factory")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Wasp Factory"))
 
     ([Book_649] of Libro
@@ -7357,6 +8675,8 @@
      (nPag 447)
      (publicacion 2011)
      (url "https://www.goodreads.com/book/show/9581507-don-t-breathe-a-word")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Dont Breathe a Word"))
 
     ([Book_650] of Libro
@@ -7368,6 +8688,8 @@
      (nPag 346)
      (publicacion 2011)
      (url "https://www.goodreads.com/book/show/9545064-the-story-of-beautiful-girl")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Story of Beautiful Girl"))
 
     ([Book_651] of Libro
@@ -7379,6 +8701,8 @@
      (nPag 435)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/6280118-one-day")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "One Day"))
 
     ([Book_652] of Libro
@@ -7390,6 +8714,8 @@
      (nPag 314)
      (publicacion 2011)
      (url "https://www.goodreads.com/book/show/8683812-the-paris-wife")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Paris Wife"))
 
     ([Book_653] of Libro
@@ -7401,6 +8727,8 @@
      (nPag 416)
      (publicacion 2011)
      (url "https://www.goodreads.com/book/show/8337087-possession")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Possession"))
 
     ([Book_654] of Libro
@@ -7412,6 +8740,8 @@
      (nPag 280)
      (publicacion 2011)
      (url "https://www.goodreads.com/book/show/8100422-timeless")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Timeless"))
 
     ([Book_655] of Libro
@@ -7423,6 +8753,8 @@
      (nPag 322)
      (publicacion 2017)
      (url "https://www.goodreads.com/book/show/25092254-cold-summer")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Cold Summer"))
 
     ([Book_656] of Libro
@@ -7434,6 +8766,8 @@
      (nPag 404)
      (publicacion 2017)
      (url "https://www.goodreads.com/book/show/28526192-27-hours")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "27 Hours"))
 
     ([Book_657] of Libro
@@ -7445,6 +8779,8 @@
      (nPag 384)
      (publicacion 2018)
      (url "https://www.goodreads.com/book/show/34857255-the-summer-list")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Summer List"))
 
     ([Book_658] of Libro
@@ -7456,6 +8792,8 @@
      (nPag 608)
      (publicacion 2003)
      (url "https://www.goodreads.com/book/show/301538.The_Darkness_That_Comes_Before")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Darkness That Comes Before"))
 
     ([Book_659] of Libro
@@ -7467,6 +8805,8 @@
      (nPag 402)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/6101718-the-magicians")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Magicians"))
 
     ([Book_660] of Libro
@@ -7478,6 +8818,8 @@
      (nPag 483)
      (publicacion 2006)
      (url "https://www.goodreads.com/book/show/202769.In_the_Night_Garden")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "In the Night Garden"))
 
     ([Book_661] of Libro
@@ -7489,6 +8831,8 @@
      (nPag 468)
      (publicacion 1991)
      (url "https://www.goodreads.com/book/show/51106.Tam_Lin")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Tam Lin"))
 
     ([Book_662] of Libro
@@ -7500,6 +8844,8 @@
      (nPag 339)
      (publicacion 2006)
      (url "https://www.goodreads.com/book/show/69136.The_Book_of_Lost_Things")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Book of Lost Things"))
 
     ([Book_663] of Libro
@@ -7511,6 +8857,8 @@
      (nPag 464)
      (publicacion 2000)
      (url "https://www.goodreads.com/book/show/13066.Sick_Puppy")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Sick Puppy"))
 
     ([Book_664] of Libro
@@ -7522,6 +8870,8 @@
      (nPag 286)
      (publicacion 1938)
      (url "https://www.goodreads.com/book/show/9858081-the-code-of-the-woosters")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Code of the Woosters"))
 
     ([Book_665] of Libro
@@ -7533,6 +8883,8 @@
      (nPag 379)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/15855708-diary-of-a-dieting-madhouse")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Diary of a Dieting Madhouse"))
 
     ([Book_666] of Libro
@@ -7544,6 +8896,8 @@
      (nPag 260)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/15831741-nobody-s-slave")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Nobodys Slave"))
 
     ([Book_667] of Libro
@@ -7555,6 +8909,8 @@
      (nPag 212)
      (publicacion 2011)
      (url "https://www.goodreads.com/book/show/14405931-terra-feliz")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Terra Feliz Vanity"))
 
     ([Book_668] of Libro
@@ -7566,6 +8922,8 @@
      (nPag 341)
      (publicacion 2004)
      (url "https://www.goodreads.com/book/show/15750570-just-add-water")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Just Add Water"))
 
     ([Book_669] of Libro
@@ -7577,6 +8935,8 @@
      (nPag 232)
      (publicacion 2010)
      (url "https://www.goodreads.com/book/show/13818476-heavy-duty-people")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Heavy Duty People"))
 
     ([Book_670] of Libro
@@ -7588,6 +8948,8 @@
      (nPag 286)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/13826601-found-money")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Found Money"))
 
     ([Book_671] of Libro
@@ -7599,6 +8961,8 @@
      (nPag 194)
      (publicacion 2011)
      (url "https://www.goodreads.com/book/show/12865922-the-queen-s-envoy")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Queens Envoy"))
 
     ([Book_672] of Libro
@@ -7610,6 +8974,8 @@
      (nPag 437)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/23258641-van-laven-chronicles")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Van Laven Chronicles Throne of Novoxos"))
 
     ([Book_673] of Libro
@@ -7621,6 +8987,8 @@
      (nPag 138)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/16091522-southern-mystical-moments")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Southern Mystical Moments"))
 
     ([Book_674] of Libro
@@ -7632,6 +9000,8 @@
      (nPag 388)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/19148794-evanescent")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Evanescent"))
 
     ([Book_675] of Libro
@@ -7643,6 +9013,8 @@
      (nPag 368)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/11115457-time-between-us")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Time Between Us"))
 
     ([Book_676] of Libro
@@ -7654,6 +9026,8 @@
      (nPag 254)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/12486526-the-sphinx-project")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Sphinx Project"))
 
     ([Book_677] of Libro
@@ -7665,6 +9039,8 @@
      (nPag 451)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/10852343-stormdancer")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Stormdancer"))
 
     ([Book_678] of Libro
@@ -7676,6 +9052,8 @@
      (nPag 408)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/9277339-innocent-darkness")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Innocent Darkness"))
 
     ([Book_679] of Libro
@@ -7687,6 +9065,8 @@
      (nPag 295)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/12814540-the-last-princess")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Last Princess"))
 
     ([Book_680] of Libro
@@ -7698,6 +9078,8 @@
      (nPag 224)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/11647944-destiny-s-fire")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Destinys Fire"))
 
     ([Book_681] of Libro
@@ -7709,6 +9091,8 @@
      (nPag 315)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/9554790-the-other-life")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Other Life"))
 
     ([Book_682] of Libro
@@ -7720,6 +9104,8 @@
      (nPag 284)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/12844575-gravity")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Gravity"))
 
     ([Book_683] of Libro
@@ -7731,6 +9117,8 @@
      (nPag 411)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/12367267-the-glimpse")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Glimpse"))
 
     ([Book_684] of Libro
@@ -7742,6 +9130,8 @@
      (nPag 373)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/12432229-struck")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Struck"))
 
     ([Book_685] of Libro
@@ -7753,6 +9143,8 @@
      (nPag 432)
      (publicacion 1984)
      (url "https://www.goodreads.com/book/show/19691.The_Hunt_for_Red_October")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Hunt for Red October"))
 
     ([Book_686] of Libro
@@ -7764,6 +9156,8 @@
      (nPag 446)
      (publicacion 2003)
      (url "https://www.goodreads.com/book/show/14995.Odd_Thomas")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Odd Thomas"))
 
     ([Book_687] of Libro
@@ -7775,6 +9169,8 @@
      (nPag 213)
      (publicacion 1980)
      (url "https://www.goodreads.com/book/show/529701.Side_Effects")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Side Effects"))
 
     ([Book_688] of Libro
@@ -7786,6 +9182,8 @@
      (nPag 251)
      (publicacion 1954)
      (url "https://www.goodreads.com/book/show/395182.Lucky_Jim")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Lucky Jim"))
 
     ([Book_689] of Libro
@@ -7797,6 +9195,8 @@
      (nPag 32)
      (publicacion 1963)
      (url "https://www.goodreads.com/book/show/47558.The_Gashlycrumb_Tinies")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Gashlycrumb Tinies"))
 
     ([Book_690] of Libro
@@ -7808,6 +9208,8 @@
      (nPag 396)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/36578942-the-hundred-year-old-man-who-climbed-out-of-the-window-and-disappeared")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Hundred-Year-Old Man Who Climbed Out of the Window and Disappeared"))
 
     ([Book_691] of Libro
@@ -7819,6 +9221,8 @@
      (nPag 267)
      (publicacion 2007)
      (url "https://www.goodreads.com/book/show/1802397.Smashed_Squashed_Splattered_Chewed_Chunked_and_Spewed")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Smashed Squashed Splattered Chewed Chunked and Spewed"))
 
     ([Book_692] of Libro
@@ -7830,6 +9234,8 @@
      (nPag 233)
      (publicacion 1932)
      (url "https://www.goodreads.com/book/show/92780.Cold_Comfort_Farm")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Cold Comfort Farm"))
 
     ([Book_693] of Libro
@@ -7841,6 +9247,8 @@
      (nPag 129)
      (publicacion 1759)
      (url "https://www.goodreads.com/book/show/19380.Candide")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Candide"))
 
     ([Book_694] of Libro
@@ -7852,6 +9260,8 @@
      (nPag 185)
      (publicacion 1889)
      (url "https://www.goodreads.com/book/show/4921.Three_Men_in_a_Boat")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Three Men in a Boat"))
 
     ([Book_695] of Libro
@@ -7863,6 +9273,8 @@
      (nPag 492)
      (publicacion 2011)
      (url "https://www.goodreads.com/book/show/6234910-the-iron-thorn")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Iron Thorn"))
 
     ([Book_696] of Libro
@@ -7874,6 +9286,8 @@
      (nPag 706)
      (publicacion 1924)
      (url "https://www.goodreads.com/book/show/88077.The_Magic_Mountain")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Magic Mountain"))
 
     ([Book_697] of Libro
@@ -7885,6 +9299,8 @@
      (nPag 1474)
      (publicacion 1993)
      (url "https://www.goodreads.com/book/show/50365.A_Suitable_Boy")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "A Suitable Boy"))
 
     ([Book_698] of Libro
@@ -7896,6 +9312,8 @@
      (nPag 603)
      (publicacion 1995)
      (url "https://www.goodreads.com/book/show/5211.A_Fine_Balance")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "A Fine Balance"))
 
     ([Book_699] of Libro
@@ -7907,6 +9325,8 @@
      (nPag 904)
      (publicacion 1871)
      (url "https://www.goodreads.com/book/show/19089.Middlemarch")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Middlemarch"))
 
     ([Book_700] of Libro
@@ -7918,6 +9338,8 @@
      (nPag 484)
      (publicacion 2016)
      (url "https://www.goodreads.com/book/show/23909755-city-of-blades")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "City of Blades"))
 
     ([Book_701] of Libro
@@ -7929,6 +9351,8 @@
      (nPag 322)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/6076387-a-gate-at-the-stairs")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "A Gate at the Stairs"))
 
     ([Book_702] of Libro
@@ -7940,6 +9364,8 @@
      (nPag 322)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/3851380-kiss")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Kiss"))
 
     ([Book_703] of Libro
@@ -7951,6 +9377,8 @@
      (nPag 324)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/6251222-await-your-reply")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Await Your Reply"))
 
     ([Book_704] of Libro
@@ -7962,6 +9390,8 @@
      (nPag 373)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/6335026-the-weight-of-silence")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Weight of Silence"))
 
     ([Book_705] of Libro
@@ -7973,6 +9403,8 @@
      (nPag 262)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/4954833-brooklyn")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Brooklyn"))
 
     ([Book_706] of Libro
@@ -7984,6 +9416,8 @@
      (nPag 241)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/3525895-the-girl-she-used-to-be")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Girl She Used to Be"))
 
     ([Book_707] of Libro
@@ -7995,6 +9429,8 @@
      (nPag 339)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/6224935-this-is-where-i-leave-you")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "This is Where I Leave You"))
 
     ([Book_708] of Libro
@@ -8006,6 +9442,8 @@
      (nPag 291)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/4929705-a-reliable-wife")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "A Reliable Wife"))
 
     ([Book_709] of Libro
@@ -8017,6 +9455,8 @@
      (nPag 351)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/5941033-let-the-great-world-spin")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Let the Great World Spin"))
 
     ([Book_710] of Libro
@@ -8028,6 +9468,8 @@
      (nPag 371)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/4836308-the-physick-book-of-deliverance-dane")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Physick Book of Deliverance Dane"))
 
     ([Book_711] of Libro
@@ -8039,6 +9481,8 @@
      (nPag 330)
      (publicacion 2016)
      (url "https://www.goodreads.com/book/show/28096757-innuendos")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Innuendos"))
 
     ([Book_712] of Libro
@@ -8050,6 +9494,8 @@
      (nPag 272)
      (publicacion 1809)
      (url "https://www.goodreads.com/book/show/128837.Elective_Affinities")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Elective Affinities"))
 
     ([Book_713] of Libro
@@ -8061,6 +9507,8 @@
      (nPag 244)
      (publicacion 1862)
      (url "https://www.goodreads.com/book/show/19117.Fathers_and_Sons")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Fathers and Sons"))
 
     ([Book_714] of Libro
@@ -8072,6 +9520,8 @@
      (nPag 370)
      (publicacion 1835)
      (url "https://www.goodreads.com/book/show/59145.P_re_Goriot")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Pre Goriot"))
 
     ([Book_715] of Libro
@@ -8083,6 +9533,8 @@
      (nPag 134)
      (publicacion 1890)
      (url "https://www.goodreads.com/book/show/32585.Hunger")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Hunger"))
 
     ([Book_716] of Libro
@@ -8094,6 +9546,8 @@
      (nPag 797)
      (publicacion 1881)
      (url "https://www.goodreads.com/book/show/264.The_Portrait_of_a_Lady")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Portrait of a Lady"))
 
     ([Book_717] of Libro
@@ -8105,6 +9559,8 @@
      (nPag 512)
      (publicacion 1842)
      (url "https://www.goodreads.com/book/show/28381.Dead_Souls")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Dead Souls"))
 
     ([Book_718] of Libro
@@ -8116,6 +9572,8 @@
      (nPag 608)
      (publicacion 1830)
      (url "https://www.goodreads.com/book/show/14662.The_Red_and_the_Black")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Red and the Black"))
 
     ([Book_719] of Libro
@@ -8127,6 +9585,8 @@
      (nPag 195)
      (publicacion 1899)
      (url "https://www.goodreads.com/book/show/58345.The_Awakening")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Awakening"))
 
     ([Book_720] of Libro
@@ -8138,6 +9598,8 @@
      (nPag 542)
      (publicacion 1848)
      (url "https://www.goodreads.com/book/show/337113.The_Tenant_of_Wildfell_Hall")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Tenant of Wildfell Hall"))
 
     ([Book_721] of Libro
@@ -8149,6 +9611,8 @@
      (nPag 236)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/43191522-book-one")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Sporadic Memories"))
 
     ([Book_722] of Libro
@@ -8160,6 +9624,8 @@
      (nPag 434)
      (publicacion 2007)
      (url "https://www.goodreads.com/book/show/1108884.Maledicte")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Maledicte"))
 
     ([Book_723] of Libro
@@ -8171,6 +9637,8 @@
      (nPag 314)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/20554522-dragon-dawn")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Dragon Dawn"))
 
     ([Book_724] of Libro
@@ -8182,6 +9650,8 @@
      (nPag 252)
      (publicacion 2006)
      (url "https://www.goodreads.com/book/show/30072.The_Brief_History_of_the_Dead")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Brief History of the Dead"))
 
     ([Book_725] of Libro
@@ -8193,6 +9663,8 @@
      (nPag 180)
      (publicacion 1968)
      (url "https://www.goodreads.com/book/show/458191.Escape_to_Witch_Mountain")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Escape to Witch Mountain"))
 
     ([Book_726] of Libro
@@ -8204,6 +9676,8 @@
      (nPag 288)
      (publicacion 1979)
      (url "https://www.goodreads.com/book/show/395397.Legends_of_the_Fall")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Legends of the Fall"))
 
     ([Book_727] of Libro
@@ -8215,6 +9689,8 @@
      (nPag 311)
      (publicacion 1999)
      (url "https://www.goodreads.com/book/show/215631.Pay_It_Forward")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Pay It Forward"))
 
     ([Book_728] of Libro
@@ -8226,6 +9702,8 @@
      (nPag 282)
      (publicacion 1991)
      (url "https://www.goodreads.com/book/show/38379.Ring")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Ring"))
 
     ([Book_729] of Libro
@@ -8237,6 +9715,8 @@
      (nPag 192)
      (publicacion 1987)
      (url "https://www.goodreads.com/book/show/1230853.Madame_Doubtfire")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Madame Doubtfire"))
 
     ([Book_730] of Libro
@@ -8248,6 +9728,8 @@
      (nPag 300)
      (publicacion 2005)
      (url "https://www.goodreads.com/book/show/39987.Nanny_Mcphee")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Nanny Mcphee The Collected Tales of Nurse Matilda"))
 
     ([Book_731] of Libro
@@ -8259,6 +9741,8 @@
      (nPag 166)
      (publicacion 1988)
      (url "https://www.goodreads.com/book/show/67238.Dead_Poets_Society")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Dead Poets Society"))
 
     ([Book_732] of Libro
@@ -8270,6 +9754,8 @@
      (nPag 192)
      (publicacion 1923)
      (url "https://www.goodreads.com/book/show/739840.Bambi")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Bambi"))
 
     ([Book_733] of Libro
@@ -8281,6 +9767,8 @@
      (nPag 289)
      (publicacion 2010)
      (url "https://www.goodreads.com/book/show/10031701-a-shore-thing")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "A Shore Thing"))
 
     ([Book_734] of Libro
@@ -8292,6 +9780,8 @@
      (nPag 224)
      (publicacion 2002)
      (url "https://www.goodreads.com/book/show/22188.Gossip_Girl")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Gossip Girl"))
 
     ([Book_735] of Libro
@@ -8303,6 +9793,8 @@
      (nPag 583)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/25397924-starshine")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Starshine Aurora Rising Book One"))
 
     ([Book_736] of Libro
@@ -8314,6 +9806,8 @@
      (nPag 52)
      (publicacion 2005)
      (url "https://www.goodreads.com/book/show/4303567-angelica-and-francesca")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Angelica and Francesca"))
 
     ([Book_737] of Libro
@@ -8325,6 +9819,8 @@
      (nPag 165)
      (publicacion 1925)
      (url "https://www.goodreads.com/book/show/512704.Gentlemen_Prefer_Blondes")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Gentlemen Prefer Blondes"))
 
     ([Book_738] of Libro
@@ -8336,6 +9832,8 @@
      (nPag 384)
      (publicacion 2016)
      (url "https://www.goodreads.com/book/show/25379594-the-feathered-bone")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Feathered Bone"))
 
     ([Book_739] of Libro
@@ -8347,6 +9845,8 @@
      (nPag 464)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/16160314-trust")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Trust A New Beginning"))
 
     ([Book_740] of Libro
@@ -8358,6 +9858,8 @@
      (nPag 472)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/17826638-rogue-genesis")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Rogue Genesis"))
 
     ([Book_741] of Libro
@@ -8369,6 +9871,8 @@
      (nPag 358)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/3426706-the-jewel-of-medina")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Jewel of Medina"))
 
     ([Book_742] of Libro
@@ -8380,6 +9884,8 @@
      (nPag 368)
      (publicacion 2010)
      (url "https://www.goodreads.com/book/show/21611238-in-leah-s-wake")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "In Leahs Wake"))
 
     ([Book_743] of Libro
@@ -8391,6 +9897,8 @@
      (nPag 380)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/13579274-some-are-sicker-than-others")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Some Are Sicker Than Others"))
 
     ([Book_744] of Libro
@@ -8402,6 +9910,8 @@
      (nPag 208)
      (publicacion 1974)
      (url "https://www.goodreads.com/book/show/397867.The_Rats")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Rats"))
 
     ([Book_745] of Libro
@@ -8413,6 +9923,8 @@
      (nPag 358)
      (publicacion 1988)
      (url "https://www.goodreads.com/book/show/103035.Cabal")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Cabal"))
 
     ([Book_746] of Libro
@@ -8424,6 +9936,8 @@
      (nPag 427)
      (publicacion 1989)
      (url "https://www.goodreads.com/book/show/32430.The_Bad_Place")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Bad Place"))
 
     ([Book_747] of Libro
@@ -8435,6 +9949,8 @@
      (nPag 401)
      (publicacion 1973)
      (url "https://www.goodreads.com/book/show/816085.Harvest_Home")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Harvest Home"))
 
     ([Book_748] of Libro
@@ -8446,6 +9962,8 @@
      (nPag 138)
      (publicacion 1983)
      (url "https://www.goodreads.com/book/show/37034.The_Woman_in_Black")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Woman in Black"))
 
     ([Book_749] of Libro
@@ -8457,6 +9975,8 @@
      (nPag 144)
      (publicacion 1972)
      (url "https://www.goodreads.com/book/show/52350.The_Stepford_Wives")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Stepford Wives"))
 
     ([Book_750] of Libro
@@ -8468,6 +9988,8 @@
      (nPag 272)
      (publicacion 1976)
      (url "https://www.goodreads.com/book/show/226162.The_Omen")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Omen"))
 
     ([Book_751] of Libro
@@ -8479,6 +10001,8 @@
      (nPag 319)
      (publicacion 2006)
      (url "https://www.goodreads.com/book/show/21726.The_Ruins")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Ruins"))
 
     ([Book_752] of Libro
@@ -8490,6 +10014,8 @@
      (nPag 146)
      (publicacion 1962)
      (url "https://www.goodreads.com/book/show/89724.We_Have_Always_Lived_in_the_Castle")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "We Have Always Lived in the Castle"))
 
     ([Book_753] of Libro
@@ -8501,6 +10027,8 @@
      (nPag 208)
      (publicacion 2018)
      (url "https://www.goodreads.com/book/show/34386617-the-night-masquerade")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Night Masquerade"))
 
     ([Book_754] of Libro
@@ -8512,6 +10040,8 @@
      (nPag 227)
      (publicacion 2018)
      (url "https://www.goodreads.com/book/show/35390279-the-night-child")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Night Child"))
 
     ([Book_755] of Libro
@@ -8523,6 +10053,8 @@
      (nPag 320)
      (publicacion 2018)
      (url "https://www.goodreads.com/book/show/35940516-this-i-know")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "This I Know"))
 
     ([Book_756] of Libro
@@ -8534,6 +10066,8 @@
      (nPag 390)
      (publicacion 2018)
      (url "https://www.goodreads.com/book/show/36163568-a-different-kind-of-fire")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "A Different Kind of Fire"))
 
     ([Book_757] of Libro
@@ -8545,6 +10079,8 @@
      (nPag 422)
      (publicacion 2018)
      (url "https://www.goodreads.com/book/show/35099058-gunslinger-girl")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Gunslinger Girl"))
 
     ([Book_758] of Libro
@@ -8556,6 +10092,8 @@
      (nPag 323)
      (publicacion 2018)
      (url "https://www.goodreads.com/book/show/33026565-rainbirds")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Rainbirds"))
 
     ([Book_759] of Libro
@@ -8567,6 +10105,8 @@
      (nPag 348)
      (publicacion 2018)
      (url "https://www.goodreads.com/book/show/35142025-the-queen-of-hearts")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Queen of Hearts"))
 
     ([Book_760] of Libro
@@ -8578,6 +10118,8 @@
      (nPag 312)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/20504754-transcendence")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Transcendence"))
 
     ([Book_761] of Libro
@@ -8589,6 +10131,8 @@
      (nPag 174)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/18519368-the-spice-of-life")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Spice of Life"))
 
     ([Book_762] of Libro
@@ -8600,6 +10144,8 @@
      (nPag 304)
      (publicacion 1988)
      (url "https://www.goodreads.com/book/show/142395.Samarkand")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Samarkand"))
 
     ([Book_763] of Libro
@@ -8611,6 +10157,8 @@
      (nPag 141)
      (publicacion 1991)
      (url "https://www.goodreads.com/book/show/3110969")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo ""))
 
     ([Book_764] of Libro
@@ -8622,6 +10170,8 @@
      (nPag 173)
      (publicacion 2006)
      (url "https://www.goodreads.com/book/show/2618660")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo ""))
 
     ([Book_765] of Libro
@@ -8633,6 +10183,8 @@
      (nPag 217)
      (publicacion 1967)
      (url "https://www.goodreads.com/book/show/3495961")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo ""))
 
     ([Book_766] of Libro
@@ -8644,6 +10196,8 @@
      (nPag 225)
      (publicacion 2004)
      (url "https://www.goodreads.com/book/show/5520516")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo ""))
 
     ([Book_767] of Libro
@@ -8655,6 +10209,8 @@
      (nPag 176)
      (publicacion 1966)
      (url "https://www.goodreads.com/book/show/669780.Season_of_Migration_to_the_North")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Season of Migration to the North"))
 
     ([Book_768] of Libro
@@ -8666,6 +10222,8 @@
      (nPag 385)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/16031620")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo ""))
 
     ([Book_769] of Libro
@@ -8677,6 +10235,8 @@
      (nPag 191)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/20619926-uncomplicated")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Uncomplicated"))
 
     ([Book_770] of Libro
@@ -8688,6 +10248,8 @@
      (nPag 343)
      (publicacion 1948)
      (url "https://www.goodreads.com/book/show/31122.I_Capture_the_Castle")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "I Capture the Castle"))
 
     ([Book_771] of Libro
@@ -8699,6 +10261,8 @@
      (nPag 376)
      (publicacion 1976)
      (url "https://www.goodreads.com/book/show/772888.Woman_on_the_Edge_of_Time")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Woman on the Edge of Time"))
 
     ([Book_772] of Libro
@@ -8710,6 +10274,8 @@
      (nPag 512)
      (publicacion 2003)
      (url "https://www.goodreads.com/book/show/16249.Angry_Housewives_Eating_Bon_Bons")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Angry Housewives Eating Bon Bons"))
 
     ([Book_773] of Libro
@@ -8721,6 +10287,8 @@
      (nPag 145)
      (publicacion 1972)
      (url "https://www.goodreads.com/book/show/331256.Roadside_Picnic")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Roadside Picnic"))
 
     ([Book_774] of Libro
@@ -8732,6 +10300,8 @@
      (nPag 210)
      (publicacion 1963)
      (url "https://www.goodreads.com/book/show/190999.Way_Station")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Way Station"))
 
     ([Book_775] of Libro
@@ -8743,6 +10313,8 @@
      (nPag 186)
      (publicacion 1912)
      (url "https://www.goodreads.com/book/show/40395.A_Princess_of_Mars")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "A Princess of Mars"))
 
     ([Book_776] of Libro
@@ -8754,6 +10326,8 @@
      (nPag 335)
      (publicacion 1906)
      (url "https://www.goodreads.com/book/show/41681.The_Jungle")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Jungle"))
 
     ([Book_777] of Libro
@@ -8765,6 +10339,8 @@
      (nPag 448)
      (publicacion 2000)
      (url "https://www.goodreads.com/book/show/82748.Sushi_for_Beginners")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Sushi for Beginners"))
 
     ([Book_778] of Libro
@@ -8776,6 +10352,8 @@
      (nPag 320)
      (publicacion 2004)
      (url "https://www.goodreads.com/book/show/381704.Bergdorf_Blondes")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Bergdorf Blondes"))
 
     ([Book_779] of Libro
@@ -8787,6 +10365,8 @@
      (nPag 308)
      (publicacion 2005)
      (url "https://www.goodreads.com/book/show/603398.Enchanted_Inc_")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Enchanted Inc"))
 
     ([Book_780] of Libro
@@ -8798,6 +10378,8 @@
      (nPag 406)
      (publicacion 2005)
      (url "https://www.goodreads.com/book/show/137098.The_Little_Lady_Agency")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Little Lady Agency"))
 
     ([Book_781] of Libro
@@ -8809,6 +10391,8 @@
      (nPag 368)
      (publicacion 1999)
      (url "https://www.goodreads.com/book/show/31101.Mr_Maybe")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Mr Maybe"))
 
     ([Book_782] of Libro
@@ -8820,6 +10404,8 @@
      (nPag 423)
      (publicacion 2011)
      (url "https://www.goodreads.com/book/show/9712341-a-girl-like-you")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "A Girl Like You"))
 
     ([Book_783] of Libro
@@ -8831,6 +10417,8 @@
      (nPag 214)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/24983185-love-eternally")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Love Eternally"))
 
     ([Book_784] of Libro
@@ -8842,6 +10430,8 @@
      (nPag 613)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/9766078-the-map-of-time")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Map of Time"))
 
     ([Book_785] of Libro
@@ -8853,6 +10443,8 @@
      (nPag 366)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/18108877-timebound")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Timebound"))
 
     ([Book_786] of Libro
@@ -8864,6 +10456,8 @@
      (nPag 520)
      (publicacion 1995)
      (url "https://www.goodreads.com/book/show/62992.The_Time_Ships")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Time Ships"))
 
     ([Book_787] of Libro
@@ -8875,6 +10469,8 @@
      (nPag 360)
      (publicacion 2004)
      (url "https://www.goodreads.com/book/show/12431807-a-visit-from-voltaire")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "A Visit from Voltaire"))
 
     ([Book_788] of Libro
@@ -8886,6 +10482,8 @@
      (nPag 528)
      (publicacion 1992)
      (url "https://www.goodreads.com/book/show/101599.The_Guns_of_the_South")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Guns of the South"))
 
     ([Book_789] of Libro
@@ -8897,6 +10495,8 @@
      (nPag 765)
      (publicacion 1955)
      (url "https://www.goodreads.com/book/show/261499.Time_Patrol")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Time Patrol"))
 
     ([Book_790] of Libro
@@ -8908,6 +10508,8 @@
      (nPag 174)
      (publicacion 1941)
      (url "https://www.goodreads.com/book/show/94715.Lest_Darkness_Fall")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Lest Darkness Fall"))
 
     ([Book_791] of Libro
@@ -8919,6 +10521,8 @@
      (nPag 144)
      (publicacion 1992)
      (url "https://www.goodreads.com/book/show/14376.Einstein_s_Dreams")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Einsteins Dreams"))
 
     ([Book_792] of Libro
@@ -8930,6 +10534,8 @@
      (nPag 480)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/29661618-just-one-damned-thing-after-another")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Just One Damned Thing After Another"))
 
     ([Book_793] of Libro
@@ -8941,6 +10547,8 @@
      (nPag 356)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/18853210-the-fatal-tree")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Fatal Tree"))
 
     ([Book_794] of Libro
@@ -8952,6 +10560,8 @@
      (nPag 276)
      (publicacion 1977)
      (url "https://www.goodreads.com/book/show/216177.The_City_on_the_Edge_of_Forever")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The City on the Edge of Forever The Original Teleplay"))
 
     ([Book_795] of Libro
@@ -8963,6 +10573,8 @@
      (nPag 336)
      (publicacion 1997)
      (url "https://www.goodreads.com/book/show/270490.In_the_Garden_of_Iden")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "In the Garden of Iden"))
 
     ([Book_796] of Libro
@@ -8974,6 +10586,8 @@
      (nPag 608)
      (publicacion 1998)
      (url "https://www.goodreads.com/book/show/99702.Island_in_the_Sea_of_Time")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Island in the Sea of Time"))
 
     ([Book_797] of Libro
@@ -8985,6 +10599,8 @@
      (nPag 499)
      (publicacion 1980)
      (url "https://www.goodreads.com/book/show/778990.Timescape")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Timescape"))
 
     ([Book_798] of Libro
@@ -8996,6 +10612,8 @@
      (nPag 597)
      (publicacion 2000)
      (url "https://www.goodreads.com/book/show/16967.1632")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "1632"))
 
     ([Book_799] of Libro
@@ -9007,6 +10625,8 @@
      (nPag 199)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/5310515-when-you-reach-me")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "When You Reach Me"))
 
     ([Book_800] of Libro
@@ -9018,6 +10638,8 @@
      (nPag 304)
      (publicacion 1995)
      (url "https://www.goodreads.com/book/show/72694.From_Time_to_Time")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "From Time to Time"))
 
     ([Book_801] of Libro
@@ -9029,6 +10651,8 @@
      (nPag 405)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/35066358-the-first-fifteen-lives-of-harry-august")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The First Fifteen Lives of Harry August"))
 
     ([Book_802] of Libro
@@ -9040,6 +10664,8 @@
      (nPag 303)
      (publicacion 1978)
      (url "https://www.goodreads.com/book/show/133738.The_Mirror")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Mirror"))
 
     ([Book_803] of Libro
@@ -9051,6 +10677,8 @@
      (nPag 311)
      (publicacion 1987)
      (url "https://www.goodreads.com/book/show/341735.Replay")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Replay"))
 
     ([Book_804] of Libro
@@ -9062,6 +10690,8 @@
      (nPag 896)
      (publicacion 1991)
      (url "https://www.goodreads.com/book/show/73062.Scarlett")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Scarlett"))
 
     ([Book_805] of Libro
@@ -9073,6 +10703,8 @@
      (nPag 409)
      (publicacion 2011)
      (url "https://www.goodreads.com/book/show/11106249-chasing-amanda")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Chasing Amanda"))
 
     ([Book_806] of Libro
@@ -9084,6 +10716,8 @@
      (nPag 192)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/32860040-charlie-and-pearl")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Charlie and Pearl"))
 
     ([Book_807] of Libro
@@ -9095,6 +10729,8 @@
      (nPag 293)
      (publicacion 2011)
      (url "https://www.goodreads.com/book/show/13158512-the-lion-the-lamb-the-hunted")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Lion the Lamb the Hunted"))
 
     ([Book_808] of Libro
@@ -9106,6 +10742,8 @@
      (nPag 703)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/18998714-may-day")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "May Day"))
 
     ([Book_809] of Libro
@@ -9117,6 +10755,8 @@
      (nPag 356)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/16177145-enigma-black")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Enigma Black"))
 
     ([Book_810] of Libro
@@ -9128,6 +10768,8 @@
      (nPag 275)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/22752404-wood-talc-and-mr-j")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Wood Talc and Mr J"))
 
     ([Book_811] of Libro
@@ -9139,6 +10781,8 @@
      (nPag 374)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/15774215-clovenhoof")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Clovenhoof"))
 
     ([Book_812] of Libro
@@ -9150,6 +10794,8 @@
      (nPag 220)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/12828201-winter-s-awakening")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Winters Awakening The Metahumans Emerge"))
 
     ([Book_813] of Libro
@@ -9161,6 +10807,8 @@
      (nPag 396)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/17802724-the-husband-s-secret")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Husbands Secret"))
 
     ([Book_814] of Libro
@@ -9172,6 +10820,8 @@
      (nPag 692)
      (publicacion 2004)
      (url "https://www.goodreads.com/book/show/40940631-night-fall")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Night Fall"))
 
     ([Book_815] of Libro
@@ -9183,6 +10833,8 @@
      (nPag 226)
      (publicacion 2015)
      (url "https://www.goodreads.com/book/show/26004546-lips-of-a-mastodon")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Lips of a Mastodon"))
 
     ([Book_816] of Libro
@@ -9194,6 +10846,8 @@
      (nPag 422)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/12849385-the-innocent")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Innocent"))
 
     ([Book_817] of Libro
@@ -9205,6 +10859,8 @@
      (nPag 399)
      (publicacion 1992)
      (url "https://www.goodreads.com/book/show/187650.Primal_Fear")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Primal Fear"))
 
     ([Book_818] of Libro
@@ -9216,6 +10872,8 @@
      (nPag 394)
      (publicacion 2018)
      (url "https://www.goodreads.com/book/show/35721194-brightly-burning")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Brightly Burning"))
 
     ([Book_819] of Libro
@@ -9227,6 +10885,8 @@
      (nPag 324)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/24280082-send-more-idiots")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Send More Idiots"))
 
     ([Book_820] of Libro
@@ -9238,6 +10898,8 @@
      (nPag 212)
      (publicacion 2011)
      (url "https://www.goodreads.com/book/show/10563572-steam-sorcery")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Steam  Sorcery"))
 
     ([Book_821] of Libro
@@ -9249,6 +10911,8 @@
      (nPag 292)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/6414434-binding-vows")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Binding Vows"))
 
     ([Book_822] of Libro
@@ -9260,6 +10924,8 @@
      (nPag 268)
      (publicacion 2007)
      (url "https://www.goodreads.com/book/show/5168329-highlander-s-challenge")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Highlanders Challenge"))
 
     ([Book_823] of Libro
@@ -9271,6 +10937,8 @@
      (nPag 224)
      (publicacion 1995)
      (url "https://www.goodreads.com/book/show/260014.Both_Sides_of_Time")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Both Sides of Time"))
 
     ([Book_824] of Libro
@@ -9282,6 +10950,8 @@
      (nPag 448)
      (publicacion 2007)
      (url "https://www.goodreads.com/book/show/621460.The_Reluctant_Viking")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Reluctant Viking"))
 
     ([Book_825] of Libro
@@ -9293,6 +10963,8 @@
      (nPag 47)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/22802230-the-spirit-path")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Spirit Path"))
 
     ([Book_826] of Libro
@@ -9304,6 +10976,8 @@
      (nPag 201)
      (publicacion 2010)
      (url "https://www.goodreads.com/book/show/9268202-highland-destiny")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Highland Destiny"))
 
     ([Book_827] of Libro
@@ -9315,6 +10989,8 @@
      (nPag 544)
      (publicacion 1998)
      (url "https://www.goodreads.com/book/show/495882.Reflections_in_the_Nile")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Reflections in the Nile"))
 
     ([Book_828] of Libro
@@ -9326,6 +11002,8 @@
      (nPag 426)
      (publicacion 2011)
      (url "https://www.goodreads.com/book/show/9645632-awaken-the-highland-warrior")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Awaken the Highland Warrior"))
 
     ([Book_829] of Libro
@@ -9337,6 +11015,8 @@
      (nPag 384)
      (publicacion 1993)
      (url "https://www.goodreads.com/book/show/19444805-forever-his")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Forever His"))
 
     ([Book_830] of Libro
@@ -9348,6 +11028,8 @@
      (nPag 309)
      (publicacion 1995)
      (url "https://www.goodreads.com/book/show/699179.Pirates")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Pirates"))
 
     ([Book_831] of Libro
@@ -9359,6 +11041,8 @@
      (nPag 288)
      (publicacion 2010)
      (url "https://www.goodreads.com/book/show/8698353-dustin-time")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Dustin Time"))
 
     ([Book_832] of Libro
@@ -9370,6 +11054,8 @@
      (nPag 399)
      (publicacion 2011)
      (url "https://www.goodreads.com/book/show/9368401-cascade")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Cascade"))
 
     ([Book_833] of Libro
@@ -9381,6 +11067,8 @@
      (nPag 360)
      (publicacion 1996)
      (url "https://www.goodreads.com/book/show/331975.When_There_is_Hope")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "When There is Hope"))
 
     ([Book_834] of Libro
@@ -9392,6 +11080,8 @@
      (nPag 294)
      (publicacion 2010)
      (url "https://www.goodreads.com/book/show/8122928-out-of-time")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Out of Time"))
 
     ([Book_835] of Libro
@@ -9403,6 +11093,8 @@
      (nPag 464)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/13059477-overseas")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Overseas"))
 
     ([Book_836] of Libro
@@ -9414,6 +11106,8 @@
      (nPag 421)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/15701608-the-ruby-brooch")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Ruby Brooch"))
 
     ([Book_837] of Libro
@@ -9425,6 +11119,8 @@
      (nPag 374)
      (publicacion 2001)
      (url "https://www.goodreads.com/book/show/609153.Time_After_Time")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Time After Time"))
 
     ([Book_838] of Libro
@@ -9436,6 +11132,8 @@
      (nPag 400)
      (publicacion 1996)
      (url "https://www.goodreads.com/book/show/350678.Breath_of_Magic")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Breath of Magic"))
 
     ([Book_839] of Libro
@@ -9447,6 +11145,8 @@
      (nPag 356)
      (publicacion 2007)
      (url "https://www.goodreads.com/book/show/734191.Thirty_Nights_with_a_Highland_Husband")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Thirty Nights with a Highland Husband"))
 
     ([Book_840] of Libro
@@ -9458,6 +11158,8 @@
      (nPag 252)
      (publicacion 1953)
      (url "https://www.goodreads.com/book/show/48464.A_Good_Man_is_Hard_to_Find_and_Other_Stories")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "A Good Man is Hard to Find and Other Stories"))
 
     ([Book_841] of Libro
@@ -9469,6 +11171,8 @@
      (nPag 359)
      (publicacion 1940)
      (url "https://www.goodreads.com/book/show/37380.The_Heart_Is_a_Lonely_Hunter")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Heart Is a Lonely Hunter"))
 
     ([Book_842] of Libro
@@ -9480,6 +11184,8 @@
      (nPag 316)
      (publicacion 2018)
      (url "https://www.goodreads.com/book/show/37459966-our-dark-stars")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Our Dark Stars"))
 
     ([Book_843] of Libro
@@ -9491,6 +11197,8 @@
      (nPag 426)
      (publicacion 1986)
      (url "https://www.goodreads.com/book/show/170293.The_Unlikely_Ones")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Unlikely Ones"))
 
     ([Book_844] of Libro
@@ -9502,6 +11210,8 @@
      (nPag 322)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/17615896-escape-from-paradise")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Escape from Paradise"))
 
     ([Book_845] of Libro
@@ -9513,6 +11223,8 @@
      (nPag 384)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/17402117-branded")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Branded"))
 
     ([Book_846] of Libro
@@ -9524,6 +11236,8 @@
      (nPag 308)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/18191815-storm-damages")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Storm Damages"))
 
     ([Book_847] of Libro
@@ -9535,6 +11249,8 @@
      (nPag 272)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/20486626-breach")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Breach"))
 
     ([Book_848] of Libro
@@ -9546,6 +11262,8 @@
      (nPag 512)
      (publicacion 2000)
      (url "https://www.goodreads.com/book/show/93794.The_Kill_Artist")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Kill Artist"))
 
     ([Book_849] of Libro
@@ -9557,6 +11275,8 @@
      (nPag 480)
      (publicacion 1979)
      (url "https://www.goodreads.com/book/show/1059.Shibumi")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Shibumi"))
 
     ([Book_850] of Libro
@@ -9568,6 +11288,8 @@
      (nPag 320)
      (publicacion 1998)
      (url "https://www.goodreads.com/book/show/380563.Hit_Man")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Hit Man"))
 
     ([Book_851] of Libro
@@ -9579,6 +11301,8 @@
      (nPag 363)
      (publicacion 2002)
      (url "https://www.goodreads.com/book/show/925.A_Clean_Kill_in_Tokyo")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "A Clean Kill in Tokyo"))
 
     ([Book_852] of Libro
@@ -9590,6 +11314,8 @@
      (nPag 259)
      (publicacion 2010)
      (url "https://www.goodreads.com/book/show/10365343-zone-one")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Zone One"))
 
     ([Book_853] of Libro
@@ -9601,6 +11327,8 @@
      (nPag 256)
      (publicacion 2010)
      (url "https://www.goodreads.com/book/show/15842439-warm-bodies")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Warm Bodies"))
 
     ([Book_854] of Libro
@@ -9612,6 +11340,8 @@
      (nPag 304)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/12633983-comeback-love")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Comeback Love"))
 
     ([Book_855] of Libro
@@ -9623,6 +11353,8 @@
      (nPag 1096)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/26099342-front-row-center")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Front Row Center"))
 
     ([Book_856] of Libro
@@ -9634,6 +11366,8 @@
      (nPag 497)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/21353509-the-vanishing-witch")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Vanishing Witch"))
 
     ([Book_857] of Libro
@@ -9645,6 +11379,8 @@
      (nPag 1136)
      (publicacion 1959)
      (url "https://www.goodreads.com/book/show/12658.Hawaii")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Hawaii"))
 
     ([Book_858] of Libro
@@ -9656,6 +11392,8 @@
      (nPag 368)
      (publicacion 1987)
      (url "https://www.goodreads.com/book/show/1920307.Outpassage")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Outpassage"))
 
     ([Book_859] of Libro
@@ -9667,6 +11405,8 @@
      (nPag 144)
      (publicacion 1979)
      (url "https://www.goodreads.com/book/show/306107.A_Gathering_of_Days")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "A Gathering of Days A New England Girls Journal 1830-32"))
 
     ([Book_860] of Libro
@@ -9678,6 +11418,8 @@
      (nPag 210)
      (publicacion 2011)
      (url "https://www.goodreads.com/book/show/12363622-deadly-captive")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Deadly Captive"))
 
     ([Book_861] of Libro
@@ -9689,6 +11431,8 @@
      (nPag 42)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/18522362-a-dance-for-fools")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "A Dance for Fools"))
 
     ([Book_862] of Libro
@@ -9700,6 +11444,8 @@
      (nPag 334)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/15748293-eighty-days-yellow")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Eighty Days Yellow"))
 
     ([Book_863] of Libro
@@ -9711,6 +11457,8 @@
      (nPag 212)
      (publicacion 2017)
      (url "https://www.goodreads.com/book/show/34325423-concealed-anguish")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Concealed Anguish"))
 
     ([Book_864] of Libro
@@ -9722,6 +11470,8 @@
      (nPag 160)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/24901891-hear-me")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Hear Me"))
 
     ([Book_865] of Libro
@@ -9733,6 +11483,8 @@
      (nPag 248)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/36531660-comfort-object")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Comfort Object"))
 
     ([Book_866] of Libro
@@ -9744,6 +11496,8 @@
      (nPag 351)
      (publicacion 2001)
      (url "https://www.goodreads.com/book/show/6867.Atonement")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Atonement"))
 
     ([Book_867] of Libro
@@ -9755,6 +11509,8 @@
      (nPag 166)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/26311787-storm")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Storm"))
 
     ([Book_868] of Libro
@@ -9766,6 +11522,8 @@
      (nPag 234)
      (publicacion 2011)
      (url "https://www.goodreads.com/book/show/16176693-enslaved")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Enslaved"))
 
     ([Book_869] of Libro
@@ -9777,6 +11535,8 @@
      (nPag 356)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/16177145-enigma-black")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Enigma Black"))
 
     ([Book_870] of Libro
@@ -9788,6 +11548,8 @@
      (nPag 576)
      (publicacion 2008)
      (url "https://www.goodreads.com/book/show/7171095-after")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "After"))
 
     ([Book_871] of Libro
@@ -9799,6 +11561,8 @@
      (nPag 338)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/17156015-beauty-from-pain")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Beauty from Pain"))
 
     ([Book_872] of Libro
@@ -9810,6 +11574,8 @@
      (nPag 197)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/40037485-the-erotic-dark")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Erotic Dark"))
 
     ([Book_873] of Libro
@@ -9821,6 +11587,8 @@
      (nPag 228)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/23300800-baby-girl")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Baby Girl"))
 
     ([Book_874] of Libro
@@ -9832,6 +11600,8 @@
      (nPag 118)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/17258795-beg")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Beg"))
 
     ([Book_875] of Libro
@@ -9843,6 +11613,8 @@
      (nPag 160)
      (publicacion 2014)
      (url "https://www.goodreads.com/book/show/20755739-named-and-shamed")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Named and Shamed"))
 
     ([Book_876] of Libro
@@ -9854,6 +11626,8 @@
      (nPag 199)
      (publicacion 2011)
      (url "https://www.goodreads.com/book/show/11222793-generational-sins")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Generational Sins"))
 
     ([Book_877] of Libro
@@ -9865,6 +11639,8 @@
      (nPag 296)
      (publicacion 2015)
      (url "https://www.goodreads.com/book/show/25358242-no-mercy")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "No Mercy"))
 
     ([Book_878] of Libro
@@ -9876,6 +11652,8 @@
      (nPag 272)
      (publicacion 2001)
      (url "https://www.goodreads.com/book/show/30842.Riot")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Riot"))
 
     ([Book_879] of Libro
@@ -9887,6 +11665,8 @@
      (nPag 410)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/13548075-the-angel")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Angel"))
 
     ([Book_880] of Libro
@@ -9898,6 +11678,8 @@
      (nPag 211)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/18211118-hell-s-knights")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Hells Knights"))
 
     ([Book_881] of Libro
@@ -9909,6 +11691,8 @@
      (nPag 365)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/17238419-conviction")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Conviction"))
 
     ([Book_882] of Libro
@@ -9920,6 +11704,8 @@
      (nPag 208)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/17264796-take-me-break-me")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Take Me Break Me"))
 
     ([Book_883] of Libro
@@ -9931,6 +11717,8 @@
      (nPag 195)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/15795312-white-heaven-women")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "White Heaven Women"))
 
     ([Book_884] of Libro
@@ -9942,6 +11730,8 @@
      (nPag 322)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/17615896-escape-from-paradise")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Escape from Paradise"))
 
     ([Book_885] of Libro
@@ -9953,6 +11743,8 @@
      (nPag 233)
      (publicacion 1984)
      (url "https://www.goodreads.com/book/show/18750.Beauty_s_Punishment")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Beautys Punishment"))
 
     ([Book_886] of Libro
@@ -9964,6 +11756,8 @@
      (nPag 306)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/17375956-reaper-s-property")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Reapers Property"))
 
     ([Book_887] of Libro
@@ -9975,6 +11769,8 @@
      (nPag 281)
      (publicacion 2010)
      (url "https://www.goodreads.com/book/show/30901481-willing-victim")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Willing Victim"))
 
     ([Book_888] of Libro
@@ -9986,6 +11782,8 @@
      (nPag 302)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/25136702-the-suicide-princess")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Suicide Princess"))
 
     ([Book_889] of Libro
@@ -9997,6 +11795,8 @@
      (nPag 603)
      (publicacion 2010)
      (url "https://www.goodreads.com/book/show/20758105-monsters-of-men")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Monsters of Men"))
 
     ([Book_890] of Libro
@@ -10008,6 +11808,8 @@
      (nPag 355)
      (publicacion 2010)
      (url "https://www.goodreads.com/book/show/7719355-blameless")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Blameless"))
 
     ([Book_891] of Libro
@@ -10019,6 +11821,8 @@
      (nPag 389)
      (publicacion 2010)
      (url "https://www.goodreads.com/book/show/7091370-the-carrie-diaries")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Carrie Diaries"))
 
     ([Book_892] of Libro
@@ -10030,6 +11834,8 @@
      (nPag 447)
      (publicacion 2010)
      (url "https://www.goodreads.com/book/show/6686092-lies")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Lies"))
 
     ([Book_893] of Libro
@@ -10041,6 +11847,8 @@
      (nPag 152)
      (publicacion 1988)
      (url "https://www.goodreads.com/book/show/6037288")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo ""))
 
     ([Book_894] of Libro
@@ -10052,6 +11860,8 @@
      (nPag 362)
      (publicacion 2010)
      (url "https://www.goodreads.com/book/show/7631105-the-scorch-trials")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Scorch Trials"))
 
     ([Book_895] of Libro
@@ -10063,6 +11873,8 @@
      (nPag 256)
      (publicacion 2010)
      (url "https://www.goodreads.com/book/show/6393972-this-world-we-live-in")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "This World We Live In"))
 
     ([Book_896] of Libro
@@ -10074,6 +11886,8 @@
      (nPag 104)
      (publicacion 1969)
      (url "https://www.goodreads.com/book/show/5976135")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo ""))
 
     ([Book_897] of Libro
@@ -10085,6 +11899,8 @@
      (nPag 292)
      (publicacion 2010)
      (url "https://www.goodreads.com/book/show/7880584-dark-song")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Dark Song"))
 
     ([Book_898] of Libro
@@ -10096,6 +11912,8 @@
      (nPag 528)
      (publicacion 1999)
      (url "https://www.goodreads.com/book/show/3526951")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo ""))
 
     ([Book_899] of Libro
@@ -10107,6 +11925,8 @@
      (nPag 158)
      (publicacion 1908)
      (url "https://www.goodreads.com/book/show/9658269")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo ""))
 
     ([Book_900] of Libro
@@ -10118,6 +11938,8 @@
      (nPag 141)
      (publicacion 1991)
      (url "https://www.goodreads.com/book/show/3110969")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo ""))
 
     ([Book_901] of Libro
@@ -10129,6 +11951,8 @@
      (nPag 416)
      (publicacion 2010)
      (url "https://www.goodreads.com/book/show/6555517-the-dead-tossed-waves")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Dead-Tossed Waves"))
 
     ([Book_902] of Libro
@@ -10140,6 +11964,8 @@
      (nPag 369)
      (publicacion 2010)
      (url "https://www.goodreads.com/book/show/7735333-matched")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Matched"))
 
     ([Book_903] of Libro
@@ -10151,6 +11977,8 @@
      (nPag 402)
      (publicacion 2007)
      (url "https://www.goodreads.com/book/show/3831279")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo ""))
 
     ([Book_904] of Libro
@@ -10162,6 +11990,8 @@
      (nPag 176)
      (publicacion 1966)
      (url "https://www.goodreads.com/book/show/669780.Season_of_Migration_to_the_North")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Season of Migration to the North"))
 
     ([Book_905] of Libro
@@ -10173,6 +12003,8 @@
      (nPag 354)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/6642715-the-forty-rules-of-love")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Forty Rules of Love"))
 
     ([Book_906] of Libro
@@ -10184,6 +12016,8 @@
      (nPag 256)
      (publicacion 2002)
      (url "https://www.goodreads.com/book/show/128711.The_Yacoubian_Building")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Yacoubian Building"))
 
     ([Book_907] of Libro
@@ -10195,6 +12029,8 @@
      (nPag 216)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/17413424-denali-skies")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Denali Skies"))
 
     ([Book_908] of Libro
@@ -10206,6 +12042,8 @@
      (nPag 528)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/18149927-beneath-this-man")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Beneath This Man"))
 
     ([Book_909] of Libro
@@ -10217,6 +12055,8 @@
      (nPag 345)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/16117506-beautiful-stranger")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Beautiful Stranger"))
 
     ([Book_910] of Libro
@@ -10228,6 +12068,8 @@
      (nPag 526)
      (publicacion 2013)
      (url "https://www.goodreads.com/book/show/18710190-allegiant")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Allegiant"))
 
     ([Book_911] of Libro
@@ -10239,6 +12081,8 @@
      (nPag 579)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/13536860-fifty-shades-freed")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Fifty Shades Freed"))
 
     ([Book_912] of Libro
@@ -10250,6 +12094,8 @@
      (nPag 338)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/20448515-bared-to-you")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Bared to You"))
 
     ([Book_913] of Libro
@@ -10261,6 +12107,8 @@
      (nPag 192)
      (publicacion 1927)
      (url "https://www.goodreads.com/book/show/207330.Gay_Neck")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Gay-Neck The Story of a Pigeon"))
 
     ([Book_914] of Libro
@@ -10272,6 +12120,8 @@
      (nPag 320)
      (publicacion 2017)
      (url "https://www.goodreads.com/book/show/30653713-hello-universe")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Hello Universe"))
 
     ([Book_915] of Libro
@@ -10283,6 +12133,8 @@
      (nPag 248)
      (publicacion 1959)
      (url "https://www.goodreads.com/book/show/556975.Onion_John")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Onion John"))
 
     ([Book_916] of Libro
@@ -10294,6 +12146,8 @@
      (nPag 337)
      (publicacion 2005)
      (url "https://www.goodreads.com/book/show/43475.Criss_Cross")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Criss Cross"))
 
     ([Book_917] of Libro
@@ -10305,6 +12159,8 @@
      (nPag 181)
      (publicacion 1950)
      (url "https://www.goodreads.com/book/show/254262.Amos_Fortune_Free_Man")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Amos Fortune Free Man"))
 
     ([Book_918] of Libro
@@ -10316,6 +12172,8 @@
      (nPag 146)
      (publicacion 1938)
      (url "https://www.goodreads.com/book/show/854764.Thimble_Summer")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Thimble Summer"))
 
     ([Book_919] of Libro
@@ -10327,6 +12185,8 @@
      (nPag 302)
      (publicacion 1932)
      (url "https://www.goodreads.com/book/show/1195367.Young_Fu_of_the_Upper_Yangtze")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Young Fu of the Upper Yangtze"))
 
     ([Book_920] of Libro
@@ -10338,6 +12198,8 @@
      (nPag 176)
      (publicacion 1963)
      (url "https://www.goodreads.com/book/show/818095.It_s_Like_This_Cat")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Its Like This Cat"))
 
     ([Book_921] of Libro
@@ -10349,6 +12211,8 @@
      (nPag 160)
      (publicacion 1964)
      (url "https://www.goodreads.com/book/show/1077808.Shadow_of_a_Bull")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Shadow of a Bull"))
 
     ([Book_922] of Libro
@@ -10360,6 +12224,8 @@
      (nPag 96)
      (publicacion 1937)
      (url "https://www.goodreads.com/book/show/298523.The_White_Stag")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The White Stag"))
 
     ([Book_923] of Libro
@@ -10371,6 +12237,8 @@
      (nPag 417)
      (publicacion 2006)
      (url "https://www.goodreads.com/book/show/493456.Extras")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Extras"))
 
     ([Book_924] of Libro
@@ -10382,6 +12250,8 @@
      (nPag 122)
      (publicacion 1945)
      (url "https://www.goodreads.com/book/show/170448.Animal_Farm")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Animal Farm"))
 
     ([Book_925] of Libro
@@ -10393,6 +12263,8 @@
      (nPag 63)
      (publicacion 1930)
      (url "https://www.goodreads.com/book/show/200362.The_Cat_Who_Went_to_Heaven")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Cat Who Went to Heaven"))
 
     ([Book_926] of Libro
@@ -10404,6 +12276,8 @@
      (nPag 175)
      (publicacion 1953)
      (url "https://www.goodreads.com/book/show/13079982-fahrenheit-451")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Fahrenheit 451"))
 
     ([Book_927] of Libro
@@ -10415,6 +12289,8 @@
      (nPag 256)
      (publicacion 1956)
      (url "https://www.goodreads.com/book/show/826095.Miracles_on_Maple_Hill")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Miracles on Maple Hill"))
 
     ([Book_928] of Libro
@@ -10426,6 +12302,8 @@
      (nPag 320)
      (publicacion 1942)
      (url "https://www.goodreads.com/book/show/164255.Adam_of_the_Road")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Adam of the Road"))
 
     ([Book_929] of Libro
@@ -10437,6 +12315,8 @@
      (nPag 208)
      (publicacion 1928)
      (url "https://www.goodreads.com/book/show/825546.The_Trumpeter_of_Krakow")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Trumpeter of Krakow"))
 
     ([Book_930] of Libro
@@ -10448,6 +12328,8 @@
      (nPag 182)
      (publicacion 2000)
      (url "https://www.goodreads.com/book/show/357664.Because_of_Winn_Dixie")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Because of Winn-Dixie"))
 
     ([Book_931] of Libro
@@ -10459,6 +12341,8 @@
      (nPag 331)
      (publicacion 1911)
      (url "https://www.goodreads.com/book/show/2998.The_Secret_Garden")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Secret Garden"))
 
     ([Book_932] of Libro
@@ -10470,6 +12354,8 @@
      (nPag 1040)
      (publicacion 2006)
      (url "https://www.goodreads.com/book/show/5451.Sisterhood_of_the_Traveling_Pants_Second_Summer_of_the_Sisterhood_Girls_in_Pants")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Sisterhood of the Traveling Pants  Second Summer of the Sisterhood  Girls in Pants"))
 
     ([Book_933] of Libro
@@ -10481,6 +12367,8 @@
      (nPag 144)
      (publicacion 1970)
      (url "https://www.goodreads.com/book/show/325636.The_Summer_of_the_Swans")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Summer of the Swans"))
 
     ([Book_934] of Libro
@@ -10492,6 +12380,8 @@
      (nPag 89)
      (publicacion 1992)
      (url "https://www.goodreads.com/book/show/403722.Missing_May")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Missing May Scholastic Gold"))
 
     ([Book_935] of Libro
@@ -10503,6 +12393,8 @@
      (nPag 127)
      (publicacion 1944)
      (url "https://www.goodreads.com/book/show/333735.Rabbit_Hill")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Rabbit Hill"))
 
     ([Book_936] of Libro
@@ -10514,6 +12406,8 @@
      (nPag 720)
      (publicacion 2004)
      (url "https://www.goodreads.com/book/show/227652.Shadow_Children_Boxed_Set_")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Shadow Children Boxed Set Among the Hidden Among the Impostors Among the Betrayed Among the Barons"))
 
     ([Book_937] of Libro
@@ -10525,6 +12419,8 @@
      (nPag 192)
      (publicacion 1965)
      (url "https://www.goodreads.com/book/show/847581.I_Juan_de_Pareja")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "I Juan de Pareja"))
 
     ([Book_938] of Libro
@@ -10536,6 +12432,8 @@
      (nPag 262)
      (publicacion 2005)
      (url "https://www.goodreads.com/book/show/266904.The_Penderwicks")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Penderwicks A Summer Tale of Four Sisters Two Rabbits and a Very Interesting Boy"))
 
     ([Book_939] of Libro
@@ -10547,6 +12445,8 @@
      (nPag 312)
      (publicacion 1997)
      (url "https://www.goodreads.com/book/show/89755.Tangerine")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Tangerine"))
 
     ([Book_940] of Libro
@@ -10558,6 +12458,8 @@
      (nPag 218)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/3293821-the-last-straw")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Last Straw"))
 
     ([Book_941] of Libro
@@ -10569,6 +12471,8 @@
      (nPag 256)
      (publicacion 1929)
      (url "https://www.goodreads.com/book/show/41457.Hitty_Her_First_Hundred_Years")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Hitty Her First Hundred Years"))
 
     ([Book_942] of Libro
@@ -10580,6 +12484,8 @@
      (nPag 169)
      (publicacion 2004)
      (url "https://www.goodreads.com/book/show/12930.Messenger")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Messenger"))
 
     ([Book_943] of Libro
@@ -10591,6 +12497,8 @@
      (nPag 128)
      (publicacion 1940)
      (url "https://www.goodreads.com/book/show/857528.Call_It_Courage")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Call It Courage"))
 
     ([Book_944] of Libro
@@ -10602,6 +12510,8 @@
      (nPag 197)
      (publicacion 1966)
      (url "https://www.goodreads.com/book/show/65954.Up_a_Road_Slowly")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Up a Road Slowly"))
 
     ([Book_945] of Libro
@@ -10613,6 +12523,8 @@
      (nPag 298)
      (publicacion 1954)
      (url "https://www.goodreads.com/book/show/468116.The_Wheel_on_the_School")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Wheel on the School"))
 
     ([Book_946] of Libro
@@ -10624,6 +12536,8 @@
      (nPag 120)
      (publicacion 1949)
      (url "https://www.goodreads.com/book/show/72543.The_Door_in_the_Wall")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Door in the Wall"))
 
     ([Book_947] of Libro
@@ -10635,6 +12549,8 @@
      (nPag 169)
      (publicacion 1993)
      (url "https://www.goodreads.com/book/show/8953.Freak_the_Mighty")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Freak the Mighty"))
 
     ([Book_948] of Libro
@@ -10646,6 +12562,8 @@
      (nPag 251)
      (publicacion 1955)
      (url "https://www.goodreads.com/book/show/128048.Carry_On_Mr_Bowditch")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "Carry On Mr Bowditch"))
 
     ([Book_949] of Libro
@@ -10657,6 +12575,8 @@
      (nPag 128)
      (publicacion 1969)
      (url "https://www.goodreads.com/book/show/598117.Sounder")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Sounder"))
 
     ([Book_950] of Libro
@@ -10668,6 +12588,8 @@
      (nPag 359)
      (publicacion 1982)
      (url "https://www.goodreads.com/book/show/11831.Dicey_s_Song")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Diceys Song"))
 
     ([Book_951] of Libro
@@ -10679,6 +12601,8 @@
      (nPag 176)
      (publicacion 1948)
      (url "https://www.goodreads.com/book/show/423156.King_of_the_Wind")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "King of the Wind The Story of the Godolphin Arabian"))
 
     ([Book_952] of Libro
@@ -10690,6 +12614,8 @@
      (nPag 710)
      (publicacion 1963)
      (url "https://www.goodreads.com/book/show/11841.The_Time_Trilogy")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "The Time Trilogy"))
 
     ([Book_953] of Libro
@@ -10701,6 +12627,8 @@
      (nPag 230)
      (publicacion 2007)
      (url "https://www.goodreads.com/book/show/693208.The_Absolutely_True_Diary_of_a_Part_Time_Indian")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Absolutely True Diary of a Part-Time Indian"))
 
     ([Book_954] of Libro
@@ -10712,6 +12640,8 @@
      (nPag 96)
      (publicacion 1986)
      (url "https://www.goodreads.com/book/show/11824.The_Whipping_Boy")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Whipping Boy"))
 
     ([Book_955] of Libro
@@ -10723,6 +12653,8 @@
      (nPag 149)
      (publicacion 1970)
      (url "https://www.goodreads.com/book/show/37732.Are_You_There_God_It_s_Me_Margaret")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Are You There God Its Me Margaret"))
 
     ([Book_956] of Libro
@@ -10734,6 +12666,8 @@
      (nPag 180)
      (publicacion 1947)
      (url "https://www.goodreads.com/book/show/837501.The_Twenty_One_Balloons")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The Twenty-One Balloons"))
 
     ([Book_957] of Libro
@@ -10745,6 +12679,8 @@
      (nPag 307)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/11594337-the-one-and-only-ivan")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The One and Only Ivan"))
 
     ([Book_958] of Libro
@@ -10756,6 +12692,8 @@
      (nPag 478)
      (publicacion 1972)
      (url "https://www.goodreads.com/book/show/76620.Watership_Down")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Watership Down"))
 
     ([Book_959] of Libro
@@ -10767,6 +12705,8 @@
      (nPag 392)
      (publicacion 2010)
      (url "https://www.goodreads.com/book/show/7260188-mockingjay")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Mockingjay"))
 
     ([Book_960] of Libro
@@ -10778,6 +12718,8 @@
      (nPag 145)
      (publicacion 1991)
      (url "https://www.goodreads.com/book/show/207153.Shiloh")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Shiloh"))
 
     ([Book_961] of Libro
@@ -10789,6 +12731,8 @@
      (nPag 134)
      (publicacion 1983)
      (url "https://www.goodreads.com/book/show/105999.Dear_Mr_Henshaw")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Dear Mr Henshaw"))
 
     ([Book_962] of Libro
@@ -10800,6 +12744,8 @@
      (nPag 176)
      (publicacion 1972)
      (url "https://www.goodreads.com/book/show/386286.Julie_of_the_Wolves")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Julie of the Wolves"))
 
     ([Book_963] of Libro
@@ -10811,6 +12757,8 @@
      (nPag 192)
      (publicacion 1990)
      (url "https://www.goodreads.com/book/show/139463.Maniac_Magee")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Maniac Magee"))
 
     ([Book_964] of Libro
@@ -10822,6 +12770,8 @@
      (nPag 449)
      (publicacion 1868)
      (url "https://www.goodreads.com/book/show/1934.Little_Women")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Little Women"))
 
     ([Book_965] of Libro
@@ -10833,6 +12783,8 @@
      (nPag 244)
      (publicacion 1980)
      (url "https://www.goodreads.com/book/show/337058.Jacob_Have_I_Loved")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Jacob Have I Loved"))
 
     ([Book_966] of Libro
@@ -10844,6 +12796,8 @@
      (nPag 322)
      (publicacion 1943)
      (url "https://www.goodreads.com/book/show/816870.Johnny_Tremain")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "Johnny Tremain"))
 
     ([Book_967] of Libro
@@ -10855,6 +12809,8 @@
      (nPag 176)
      (publicacion 1996)
      (url "https://www.goodreads.com/book/show/4538.The_View_from_Saturday")
+     (goodReview FALSE)
+     (hasManyReviews FALSE)
      (titulo "The View from Saturday"))
 
     ([Book_968] of Libro
@@ -10866,6 +12822,8 @@
      (nPag 176)
      (publicacion 1999)
      (url "https://www.goodreads.com/book/show/78411.The_Bad_Beginning")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "The Bad Beginning"))
 
     ([Book_969] of Libro
@@ -10877,6 +12835,8 @@
      (nPag 199)
      (publicacion 2009)
      (url "https://www.goodreads.com/book/show/5310515-when-you-reach-me")
+     (goodReview TRUE)
+     (hasManyReviews FALSE)
      (titulo "When You Reach Me"))
 
     ([Book_970] of Libro
@@ -10888,6 +12848,8 @@
      (nPag 324)
      (publicacion 1985)
      (url "https://www.goodreads.com/book/show/375802.Ender_s_Game")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Enders Game"))
 
     ([Book_971] of Libro
@@ -10899,6 +12861,8 @@
      (nPag 398)
      (publicacion 1973)
      (url "https://www.goodreads.com/book/show/21787.The_Princess_Bride")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "The Princess Bride"))
 
     ([Book_972] of Libro
@@ -10910,6 +12874,8 @@
      (nPag 280)
      (publicacion 1994)
      (url "https://www.goodreads.com/book/show/53496.Walk_Two_Moons")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Walk Two Moons"))
 
     ([Book_973] of Libro
@@ -10921,6 +12887,8 @@
      (nPag 272)
      (publicacion 1961)
      (url "https://www.goodreads.com/book/show/10365.Where_the_Red_Fern_Grows")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Where the Red Fern Grows"))
 
     ([Book_974] of Libro
@@ -10932,6 +12900,8 @@
      (nPag 315)
      (publicacion 2012)
      (url "https://www.goodreads.com/book/show/11387515-wonder")
+     (goodReview TRUE)
+     (hasManyReviews TRUE)
      (titulo "Wonder"))
 
     ([Book_975] of Libro
@@ -10943,15241 +12913,15505 @@
      (nPag 208)
      (publicacion 1986)
      (url "https://www.goodreads.com/book/show/50.Hatchet")
+     (goodReview FALSE)
+     (hasManyReviews TRUE)
      (titulo "Hatchet"))
 
     ([Author_0] of Autor
      (idAutor "0")
      (nombreAutor "Stieg Larsson")
      (autoresSimilares
-         [Author716])
+         [Author_230]
+         [Author_815]
+         [Author_799]
+         [Author_735]
+         [Author_481]
+         [Author_918]
+         [Author_115]
+         [Author584])
      (sexo male))
 
     ([Author_1] of Autor
      (idAutor "1")
      (nombreAutor "Jos Donoso")
      (autoresSimilares
-         [Author_422]
-         [Author_786]
-         [Author_255]
-         [Author_218]
-         [Author_744]
-         [Author_727]
-         [Author44])
+         [Author_397]
+         [Author_778]
+         [Author_906]
+         [Author_521]
+         [Author_468]
+         [Author_243]
+         [Author_862]
+         [Author_929]
+         [Author_712]
+         [Author_357]
+         [Author_488]
+         [Author_509]
+         [Author_247]
+         [Author_603]
+         [Author_451]
+         [Author_175]
+         [Author_240]
+         [Author941])
      (sexo male))
 
     ([Author_2] of Autor
      (idAutor "2")
      (nombreAutor "Suzanne Collins")
      (autoresSimilares
-         [Author_445]
-         [Author_596]
-         [Author_253]
-         [Author_929]
-         [Author_697]
-         [Author_897]
-         [Author_758]
-         [Author_909]
-         [Author_520]
-         [Author_378]
-         [Author_222]
-         [Author_631]
-         [Author_114]
-         [Author_853]
-         [Author_840]
-         [Author471])
+         [Author_762]
+         [Author_922]
+         [Author_932]
+         [Author_606]
+         [Author_21]
+         [Author_181]
+         [Author_686]
+         [Author_594]
+         [Author_763]
+         [Author_101]
+         [Author705])
      (sexo female))
 
     ([Author_3] of Autor
      (idAutor "3")
      (nombreAutor "Aldous Huxley")
      (autoresSimilares
-         [Author_897]
-         [Author_701]
-         [Author_642]
-         [Author_627]
-         [Author_681]
-         [Author303])
+         [Author_129]
+         [Author_177]
+         [Author_941]
+         [Author_672]
+         [Author_503]
+         [Author_7]
+         [Author_864]
+         [Author_373]
+         [Author_562]
+         [Author820])
      (sexo male))
 
     ([Author_4] of Autor
      (idAutor "4")
      (nombreAutor "Ais")
      (autoresSimilares
-         [Author_731]
-         [Author_593]
-         [Author_250]
-         [Author_9]
-         [Author_922]
-         [Author_825]
-         [Author812])
+         [Author_848]
+         [Author_658]
+         [Author_444]
+         [Author_39]
+         [Author_769]
+         [Author668])
      (sexo male))
 
     ([Author_5] of Autor
      (idAutor "5")
      (nombreAutor "Jordan Castillo Price")
      (autoresSimilares
-         [Author_874]
-         [Author_815]
-         [Author_447]
-         [Author_642]
-         [Author_410]
-         [Author_242]
-         [Author_314]
-         [Author_916]
-         [Author272])
+         [Author_867]
+         [Author_846]
+         [Author_703]
+         [Author_366]
+         [Author_843]
+         [Author_173]
+         [Author_44]
+         [Author_415]
+         [Author_715]
+         [Author_904]
+         [Author_777]
+         [Author_306]
+         [Author387])
      (sexo female))
 
     ([Author_6] of Autor
      (idAutor "6")
      (nombreAutor "Nicole Edwards")
      (autoresSimilares
-         [Author_9]
-         [Author_215]
-         [Author_799]
-         [Author_205]
-         [Author_646]
-         [Author_77]
-         [Author_755]
-         [Author_669]
-         [Author_490]
-         [Author_733]
-         [Author_72]
-         [Author_51]
-         [Author_436]
-         [Author_819]
-         [Author_114]
-         [Author_71]
-         [Author_650]
-         [Author_626]
-         [Author751])
+         [Author_934]
+         [Author_647]
+         [Author_719]
+         [Author_584]
+         [Author649])
      (sexo female))
 
     ([Author_7] of Autor
      (idAutor "7")
      (nombreAutor "Maria V Snyder")
      (autoresSimilares
-         [Author_861]
-         [Author_266]
-         [Author_814]
-         [Author_821]
-         [Author_165]
-         [Author_78]
-         [Author_590]
-         [Author_177]
-         [Author_652]
-         [Author_845]
-         [Author_637]
-         [Author_93]
-         [Author382])
+         [Author_245]
+         [Author_307]
+         [Author_318]
+         [Author_790]
+         [Author_23]
+         [Author580])
      (sexo female))
 
     ([Author_8] of Autor
      (idAutor "8")
      (nombreAutor "Sheri S Tepper")
      (autoresSimilares
-         [Author_32]
-         [Author_479]
-         [Author_604]
-         [Author_418]
-         [Author_303]
-         [Author_110]
-         [Author_690]
-         [Author309])
+         [Author_47]
+         [Author_225]
+         [Author_555]
+         [Author_708]
+         [Author_655]
+         [Author914])
      (sexo female))
 
     ([Author_9] of Autor
      (idAutor "9")
      (nombreAutor "Robert A Heinlein")
      (autoresSimilares
-         [Author_860]
-         [Author_718]
-         [Author_135]
-         [Author_244]
-         [Author466])
+         [Author_768]
+         [Author_532]
+         [Author_435]
+         [Author_475]
+         [Author_320]
+         [Author_610]
+         [Author_575]
+         [Author156])
      (sexo male))
 
     ([Author_10] of Autor
      (idAutor "10")
      (nombreAutor "Paolo Bacigalupi")
      (autoresSimilares
-         [Author_436]
-         [Author_377]
-         [Author_584]
-         [Author_366]
-         [Author_754]
-         [Author_457]
-         [Author_531]
-         [Author_689]
-         [Author_830]
-         [Author_706]
-         [Author_447]
-         [Author532])
+         [Author_549]
+         [Author_502]
+         [Author_143]
+         [Author_239]
+         [Author_225]
+         [Author_939]
+         [Author_465]
+         [Author_622]
+         [Author_382]
+         [Author_910]
+         [Author_430]
+         [Author_547]
+         [Author_224]
+         [Author_123]
+         [Author900])
      (sexo male))
 
     ([Author_11] of Autor
      (idAutor "11")
      (nombreAutor "William F Nolan")
      (autoresSimilares
-         [Author_378]
-         [Author420])
+         [Author_15]
+         [Author_513]
+         [Author_30]
+         [Author_722]
+         [Author_728]
+         [Author_217]
+         [Author_196]
+         [Author_38]
+         [Author_244]
+         [Author_785]
+         [Author_881]
+         [Author_49]
+         [Author_535]
+         [Author_846]
+         [Author670])
      (sexo male))
 
     ([Author_12] of Autor
      (idAutor "12")
      (nombreAutor "Kurt Vonnegut")
      (autoresSimilares
-         [Author_152]
-         [Author_740]
-         [Author_408]
-         [Author_920]
-         [Author_86]
-         [Author_453]
-         [Author_422]
-         [Author_445]
-         [Author176])
+         [Author_498]
+         [Author_609]
+         [Author_39]
+         [Author823])
      (sexo male))
 
     ([Author_13] of Autor
      (idAutor "13")
      (nombreAutor "Larry Niven")
      (autoresSimilares
-         [Author_909]
-         [Author_118]
-         [Author_461]
-         [Author_510]
-         [Author_304]
-         [Author_405]
-         [Author_767]
-         [Author_828]
-         [Author724])
+         [Author_141]
+         [Author_939]
+         [Author_160]
+         [Author_822]
+         [Author_293]
+         [Author_873]
+         [Author_333]
+         [Author_319]
+         [Author_232]
+         [Author_157]
+         [Author_207]
+         [Author_191]
+         [Author_682]
+         [Author_575]
+         [Author_782]
+         [Author_850]
+         [Author_829]
+         [Author235])
      (sexo male))
 
     ([Author_14] of Autor
      (idAutor "14")
      (nombreAutor "George R Stewart")
      (autoresSimilares
-         [Author_272]
-         [Author_772]
-         [Author_262]
-         [Author_581]
-         [Author_241]
-         [Author_11]
-         [Author_465]
-         [Author562])
+         [Author_942]
+         [Author_145]
+         [Author_582]
+         [Author_420]
+         [Author_683]
+         [Author_623]
+         [Author_91]
+         [Author_150]
+         [Author227])
      (sexo male))
 
     ([Author_15] of Autor
      (idAutor "15")
      (nombreAutor "Pierre Boulle")
      (autoresSimilares
-         [Author_762]
-         [Author_742]
-         [Author_709]
-         [Author_1]
-         [Author712])
+         [Author_765]
+         [Author_673]
+         [Author_934]
+         [Author_783]
+         [Author_684]
+         [Author_220]
+         [Author352])
      (sexo male))
 
     ([Author_16] of Autor
      (idAutor "16")
      (nombreAutor "Stephen King")
      (autoresSimilares
-         [Author_274]
-         [Author_626]
-         [Author_35]
-         [Author_905]
-         [Author_177]
-         [Author215])
+         [Author_824]
+         [Author697])
      (sexo male))
 
     ([Author_17] of Autor
      (idAutor "17")
      (nombreAutor "Philip K Dick")
      (autoresSimilares
-         [Author_152]
-         [Author_555]
-         [Author_87]
-         [Author_891]
-         [Author_86]
-         [Author_656]
-         [Author_184]
-         [Author_842]
+         [Author_894]
+         [Author_522]
+         [Author_849]
+         [Author_823]
+         [Author_346]
+         [Author_55]
+         [Author_878]
+         [Author_323]
+         [Author_417]
+         [Author_692]
          [Author_443]
-         [Author_715]
-         [Author_516]
-         [Author832])
+         [Author_648]
+         [Author_534]
+         [Author_801]
+         [Author_111]
+         [Author_227]
+         [Author848])
      (sexo male))
 
     ([Author_18] of Autor
      (idAutor "18")
      (nombreAutor "Jasper Fforde")
      (autoresSimilares
-         [Author_76]
-         [Author_855]
-         [Author_582]
-         [Author_247]
-         [Author_762]
-         [Author_870]
-         [Author_165]
-         [Author_496]
-         [Author_641]
-         [Author725])
+         [Author_63]
+         [Author_318]
+         [Author_901]
+         [Author_491]
+         [Author_54]
+         [Author_2]
+         [Author_451]
+         [Author_426]
+         [Author_727]
+         [Author_372]
+         [Author_458]
+         [Author_174]
+         [Author_77]
+         [Author_355]
+         [Author_139]
+         [Author_89]
+         [Author_604]
+         [Author31])
      (sexo male))
 
     ([Author_19] of Autor
      (idAutor "19")
      (nombreAutor "Neal Stephenson")
      (autoresSimilares
-         [Author_420]
-         [Author_453]
-         [Author_575]
-         [Author_370]
-         [Author_593]
-         [Author_700]
-         [Author_83]
-         [Author_615]
-         [Author_675]
-         [Author64])
+         [Author_650]
+         [Author_313]
+         [Author_901]
+         [Author_552]
+         [Author_671]
+         [Author_135]
+         [Author_92]
+         [Author_521]
+         [Author_320]
+         [Author_550]
+         [Author_326]
+         [Author_777]
+         [Author_672]
+         [Author_819]
+         [Author847])
      (sexo male))
 
     ([Author_20] of Autor
      (idAutor "20")
      (nombreAutor "Alexandra Bracken")
      (autoresSimilares
-         [Author_195]
-         [Author_796]
-         [Author_378]
-         [Author563])
+         [Author_691]
+         [Author_829]
+         [Author_368]
+         [Author_431]
+         [Author_770]
+         [Author_529]
+         [Author_183]
+         [Author_784]
+         [Author_566]
+         [Author_617]
+         [Author_558]
+         [Author37])
      (sexo male))
 
     ([Author_21] of Autor
      (idAutor "21")
      (nombreAutor "Pierce Brown")
      (autoresSimilares
-         [Author_456]
-         [Author_350]
-         [Author_757]
-         [Author_754]
-         [Author_478]
-         [Author_12]
-         [Author_56]
-         [Author_339]
-         [Author_739]
+         [Author_304]
+         [Author_455]
+         [Author_790]
+         [Author_19]
+         [Author_312]
+         [Author_401]
+         [Author_122]
          [Author_714]
-         [Author356])
+         [Author619])
      (sexo male))
 
     ([Author_22] of Autor
      (idAutor "22")
      (nombreAutor "Richard Bachman")
      (autoresSimilares
-         [Author_917]
-         [Author_192]
-         [Author_399]
-         [Author_740]
-         [Author_305]
-         [Author_160]
-         [Author_920]
-         [Author_368]
-         [Author_905]
-         [Author_207]
-         [Author_762]
-         [Author_727]
-         [Author_350]
-         [Author_665]
-         [Author_680]
-         [Author_778]
-         [Author_630]
-         [Author_788]
-         [Author457])
+         [Author_266]
+         [Author213])
      (sexo male))
 
     ([Author_23] of Autor
      (idAutor "23")
      (nombreAutor "Ray Bradbury")
      (autoresSimilares
-         [Author_2]
-         [Author_742]
-         [Author_64]
-         [Author_786]
-         [Author_751]
-         [Author_478]
-         [Author_710]
-         [Author_345]
-         [Author_227]
-         [Author27])
+         [Author_240]
+         [Author_795]
+         [Author_237]
+         [Author_537]
+         [Author_848]
+         [Author_853]
+         [Author_427]
+         [Author_343]
+         [Author_435]
+         [Author_149]
+         [Author_404]
+         [Author_858]
+         [Author_800]
+         [Author_607]
+         [Author_927]
+         [Author780])
      (sexo male))
 
     ([Author_24] of Autor
      (idAutor "24")
      (nombreAutor "Joe Haldeman")
      (autoresSimilares
-         [Author_701]
-         [Author_478]
-         [Author_467]
-         [Author_142]
-         [Author_257]
-         [Author_503]
-         [Author_264]
+         [Author_544]
+         [Author_861]
+         [Author_650]
+         [Author_779]
+         [Author_876]
+         [Author_590]
+         [Author_444]
          [Author_143]
-         [Author_817]
-         [Author800])
+         [Author_345]
+         [Author_697]
+         [Author_145]
+         [Author225])
      (sexo male))
 
     ([Author_25] of Autor
      (idAutor "25")
      (nombreAutor "Robert R McCammon")
      (autoresSimilares
-         [Author471])
+         [Author_398]
+         [Author_214]
+         [Author_944]
+         [Author_834]
+         [Author_648]
+         [Author818])
      (sexo male))
 
     ([Author_26] of Autor
      (idAutor "26")
      (nombreAutor "Nevil Shute")
      (autoresSimilares
-         [Author_675]
-         [Author_499]
-         [Author870])
+         [Author_398]
+         [Author_632]
+         [Author_179]
+         [Author_711]
+         [Author_389]
+         [Author_290]
+         [Author_510]
+         [Author_139]
+         [Author_162]
+         [Author_669]
+         [Author_395]
+         [Author_443]
+         [Author628])
      (sexo male))
 
     ([Author_27] of Autor
      (idAutor "27")
      (nombreAutor "David Brin")
      (autoresSimilares
-         [Author_29]
-         [Author_620]
-         [Author_685]
-         [Author_858]
-         [Author_207]
-         [Author_944]
-         [Author_668]
-         [Author_429]
-         [Author_228]
-         [Author_933]
-         [Author_338]
-         [Author_833]
-         [Author_183]
-         [Author_726]
-         [Author97])
+         [Author_795]
+         [Author525])
      (sexo male))
 
     ([Author_28] of Autor
      (idAutor "28")
      (nombreAutor "Emily St John Mandel")
      (autoresSimilares
-         [Author_131]
-         [Author_924]
-         [Author_3]
-         [Author_10]
-         [Author_587]
-         [Author_860]
-         [Author_138]
-         [Author316])
+         [Author_277]
+         [Author_506]
+         [Author_381]
+         [Author_782]
+         [Author_493]
+         [Author835])
      (sexo female))
 
     ([Author_29] of Autor
      (idAutor "29")
      (nombreAutor "Pat Frank")
      (autoresSimilares
-         [Author_287]
-         [Author_302]
-         [Author_926]
-         [Author_488]
-         [Author_138]
-         [Author_116]
-         [Author_610]
-         [Author_127]
-         [Author_548]
-         [Author_814]
-         [Author447])
+         [Author_464]
+         [Author_393]
+         [Author_612]
+         [Author_744]
+         [Author_747]
+         [Author_766]
+         [Author_3]
+         [Author_669]
+         [Author787])
      (sexo male))
 
     ([Author_30] of Autor
      (idAutor "30")
      (nombreAutor "John Wyndham")
      (autoresSimilares
-         [Author_893]
-         [Author_374]
-         [Author_632]
-         [Author_388]
-         [Author_79]
-         [Author_110]
-         [Author_283]
-         [Author_867]
-         [Author_569]
-         [Author305])
+         [Author_520]
+         [Author887])
      (sexo male))
 
     ([Author_31] of Autor
      (idAutor "31")
      (nombreAutor "Ann Aguirre")
      (autoresSimilares
-         [Author_294]
-         [Author_851]
-         [Author_750]
-         [Author_593]
-         [Author_369]
-         [Author_152]
-         [Author_643]
-         [Author98])
+         [Author_170]
+         [Author_803]
+         [Author_884]
+         [Author_326]
+         [Author_702]
+         [Author_331]
+         [Author_78]
+         [Author_745]
+         [Author_346]
+         [Author_901]
+         [Author_536]
+         [Author_722]
+         [Author_250]
+         [Author_324]
+         [Author_623]
+         [Author_40]
+         [Author_767]
+         [Author445])
      (sexo female))
 
     ([Author_32] of Autor
      (idAutor "32")
      (nombreAutor "Octavia E Butler")
      (autoresSimilares
-         [Author_329]
-         [Author_303]
-         [Author_333]
-         [Author_152]
-         [Author_925]
-         [Author_112]
-         [Author_154]
-         [Author_739]
-         [Author_808]
-         [Author_525]
-         [Author_768]
-         [Author_90]
-         [Author_539]
-         [Author_395]
-         [Author_261]
-         [Author_696]
-         [Author_145]
-         [Author426])
+         [Author_205]
+         [Author_788]
+         [Author_878]
+         [Author_530]
+         [Author_774]
+         [Author_861]
+         [Author_602]
+         [Author_931]
+         [Author_493]
+         [Author_503]
+         [Author33])
      (sexo female))
 
     ([Author_33] of Autor
      (idAutor "33")
      (nombreAutor "MT Anderson")
      (autoresSimilares
-         [Author_454]
-         [Author_31]
-         [Author_65]
-         [Author_313]
-         [Author_939]
-         [Author_866]
-         [Author_367]
-         [Author_605]
-         [Author435])
+         [Author_496]
+         [Author_924]
+         [Author_23]
+         [Author_378]
+         [Author_80]
+         [Author_635]
+         [Author_626]
+         [Author_284]
+         [Author_343]
+         [Author_578]
+         [Author_851]
+         [Author_837]
+         [Author_327]
+         [Author_289]
+         [Author_873]
+         [Author_772]
+         [Author_645]
+         [Author_829]
+         [Author392])
      (sexo male))
 
     ([Author_34] of Autor
      (idAutor "34")
      (nombreAutor "Ursula K Le Guin")
      (autoresSimilares
-         [Author_40]
-         [Author213])
+         [Author_533]
+         [Author_945]
+         [Author_925]
+         [Author_828]
+         [Author_5]
+         [Author_609]
+         [Author_777]
+         [Author_721]
+         [Author_191]
+         [Author_305]
+         [Author_177]
+         [Author_332]
+         [Author_68]
+         [Author_396]
+         [Author_597]
+         [Author_786]
+         [Author_36]
+         [Author_608]
+         [Author138])
      (sexo female))
 
     ([Author_35] of Autor
      (idAutor "35")
      (nombreAutor "Franz Kafka")
      (autoresSimilares
-         [Author_791]
-         [Author_469]
-         [Author_685]
-         [Author_583]
-         [Author_416]
-         [Author_621]
-         [Author_736]
-         [Author_299]
-         [Author_515]
-         [Author_614]
-         [Author19])
+         [Author_943]
+         [Author_192]
+         [Author_318]
+         [Author_336]
+         [Author_693]
+         [Author_106]
+         [Author_913]
+         [Author_930]
+         [Author_679]
+         [Author_278]
+         [Author_37]
+         [Author833])
      (sexo male))
 
     ([Author_36] of Autor
      (idAutor "36")
      (nombreAutor "Beth Revis")
      (autoresSimilares
-         [Author386])
+         [Author_684]
+         [Author_332]
+         [Author_635]
+         [Author_65]
+         [Author_330]
+         [Author_413]
+         [Author_583]
+         [Author_368]
+         [Author419])
      (sexo female))
 
     ([Author_37] of Autor
      (idAutor "37")
      (nombreAutor "Nancy Farmer")
      (autoresSimilares
-         [Author_848]
-         [Author_302]
-         [Author_858]
-         [Author373])
+         [Author_793]
+         [Author_590]
+         [Author_373]
+         [Author59])
      (sexo female))
 
     ([Author_38] of Autor
      (idAutor "38")
      (nombreAutor "Ayn Rand")
      (autoresSimilares
-         [Author_16]
-         [Author_789]
-         [Author_18]
-         [Author_781]
-         [Author_924]
-         [Author_15]
-         [Author_376]
-         [Author_560]
-         [Author_571]
-         [Author_489]
-         [Author506])
+         [Author_710]
+         [Author_850]
+         [Author_350]
+         [Author_74]
+         [Author_657]
+         [Author_741]
+         [Author_409]
+         [Author_592]
+         [Author_943]
+         [Author_706]
+         [Author_415]
+         [Author_459]
+         [Author_82]
+         [Author605])
      (sexo female))
 
     ([Author_39] of Autor
      (idAutor "39")
      (nombreAutor "PD James")
      (autoresSimilares
-         [Author_186]
-         [Author_44]
-         [Author455])
+         [Author_366]
+         [Author_409]
+         [Author_45]
+         [Author_55]
+         [Author_285]
+         [Author_197]
+         [Author_634]
+         [Author_187]
+         [Author_95]
+         [Author_251]
+         [Author_683]
+         [Author266])
      (sexo female))
 
     ([Author_40] of Autor
      (idAutor "40")
      (nombreAutor "William Gibson")
      (autoresSimilares
-         [Author_86]
-         [Author_655]
-         [Author_424]
-         [Author_704]
-         [Author_602]
-         [Author_35]
-         [Author_36]
-         [Author913])
+         [Author_801]
+         [Author_922]
+         [Author_477]
+         [Author_825]
+         [Author_252]
+         [Author_834]
+         [Author_747]
+         [Author_346]
+         [Author_116]
+         [Author_789]
+         [Author_862]
+         [Author_774]
+         [Author_694]
+         [Author_582]
+         [Author_21]
+         [Author_818]
+         [Author_244]
+         [Author_793]
+         [Author_401]
+         [Author47])
      (sexo male))
 
     ([Author_41] of Autor
      (idAutor "41")
      (nombreAutor "Walter M Miller Jr")
      (autoresSimilares
-         [Author_692]
-         [Author_917]
-         [Author_847]
-         [Author_839]
-         [Author223])
+         [Author_202]
+         [Author584])
      (sexo male))
 
     ([Author_42] of Autor
      (idAutor "42")
      (nombreAutor "Jos Saramago")
      (autoresSimilares
-         [Author_749]
-         [Author_366]
-         [Author_747]
-         [Author_895]
-         [Author_687]
-         [Author_849]
-         [Author_861]
-         [Author_133]
-         [Author_907]
-         [Author_400]
-         [Author_398]
-         [Author576])
+         [Author_646]
+         [Author_95]
+         [Author_296]
+         [Author_159]
+         [Author_32]
+         [Author_18]
+         [Author_675]
+         [Author_149]
+         [Author118])
      (sexo male))
 
     ([Author_43] of Autor
      (idAutor "43")
      (nombreAutor "Yevgeny Zamyatin")
      (autoresSimilares
-         [Author_496]
-         [Author_611]
-         [Author_680]
-         [Author_909]
-         [Author_568]
-         [Author_546]
-         [Author_925]
-         [Author_204]
-         [Author_688]
-         [Author_608]
-         [Author_903]
-         [Author_291]
-         [Author_585]
-         [Author_304]
-         [Author_319]
-         [Author_476]
-         [Author_109]
-         [Author_721]
-         [Author805])
+         [Author_492]
+         [Author_133]
+         [Author_449]
+         [Author515])
      (sexo male))
 
     ([Author_44] of Autor
      (idAutor "44")
      (nombreAutor "Susan Beth Pfeffer")
      (autoresSimilares
-         [Author_208]
-         [Author_563]
-         [Author_461]
-         [Author_644]
-         [Author_108]
-         [Author_779]
-         [Author_372]
-         [Author_422]
-         [Author_359]
-         [Author_417]
-         [Author_19]
-         [Author_65]
-         [Author796])
+         [Author_558]
+         [Author_925]
+         [Author_183]
+         [Author_450]
+         [Author_521]
+         [Author_350]
+         [Author_452]
+         [Author_944]
+         [Author_729]
+         [Author_767]
+         [Author_530]
+         [Author_814]
+         [Author_116]
+         [Author_432]
+         [Author266])
      (sexo female))
 
     ([Author_45] of Autor
      (idAutor "45")
      (nombreAutor "Koushun Takami")
      (autoresSimilares
-         [Author_509]
-         [Author_311]
-         [Author_213]
-         [Author_256]
-         [Author_89]
-         [Author_111]
-         [Author_475]
-         [Author_875]
-         [Author_870]
-         [Author_149]
-         [Author_576]
-         [Author_581]
-         [Author_605]
-         [Author_54]
-         [Author_752]
-         [Author557])
+         [Author_56]
+         [Author_849]
+         [Author_5]
+         [Author_756]
+         [Author_594]
+         [Author_600]
+         [Author_206]
+         [Author_6]
+         [Author_590]
+         [Author_476]
+         [Author879])
      (sexo male))
 
     ([Author_46] of Autor
      (idAutor "46")
      (nombreAutor "HG Wells")
      (autoresSimilares
-         [Author_102]
-         [Author_339]
-         [Author_150]
-         [Author_745]
-         [Author_168]
-         [Author_845]
-         [Author_826]
-         [Author_555]
-         [Author_751]
-         [Author689])
+         [Author_28]
+         [Author_857]
+         [Author_400]
+         [Author_470]
+         [Author_708]
+         [Author_67]
+         [Author_901]
+         [Author_328]
+         [Author_792]
+         [Author_428]
+         [Author_643]
+         [Author_839]
+         [Author255])
      (sexo male))
 
     ([Author_47] of Autor
      (idAutor "47")
      (nombreAutor "Hugh Howey")
      (autoresSimilares
-         [Author_187]
-         [Author_349]
-         [Author_753]
-         [Author_759]
-         [Author_853]
-         [Author_266]
-         [Author_17]
-         [Author_14]
-         [Author_115]
-         [Author_889]
-         [Author_553]
-         [Author_583]
-         [Author_90]
-         [Author511])
+         [Author_919]
+         [Author_355]
+         [Author_548]
+         [Author_391]
+         [Author_777]
+         [Author164])
      (sexo male))
 
     ([Author_48] of Autor
      (idAutor "48")
      (nombreAutor "Max Brooks")
      (autoresSimilares
-         [Author_915]
-         [Author_714]
-         [Author_643]
-         [Author_146]
-         [Author_102]
-         [Author_24]
-         [Author_339]
-         [Author_892]
-         [Author_937]
-         [Author_378]
-         [Author_463]
-         [Author_473]
-         [Author_76]
-         [Author_100]
-         [Author_865]
-         [Author626])
+         [Author_222]
+         [Author_203]
+         [Author_847]
+         [Author_934]
+         [Author_668]
+         [Author_742]
+         [Author_136]
+         [Author_623]
+         [Author_769]
+         [Author_490]
+         [Author_537]
+         [Author_558]
+         [Author_172]
+         [Author_342]
+         [Author_298]
+         [Author_751]
+         [Author_829]
+         [Author_857]
+         [Author644])
      (sexo male))
 
     ([Author_49] of Autor
      (idAutor "49")
      (nombreAutor "Margaret Atwood")
      (autoresSimilares
-         [Author_545]
-         [Author_499]
-         [Author_630]
-         [Author_760]
-         [Author_178]
-         [Author_322]
-         [Author_187]
-         [Author_483]
-         [Author_631]
-         [Author_731]
-         [Author127])
+         [Author280])
      (sexo female))
 
     ([Author_50] of Autor
      (idAutor "50")
      (nombreAutor "Kazuo Ishiguro")
      (autoresSimilares
-         [Author448])
+         [Author_381]
+         [Author_250]
+         [Author_867]
+         [Author_520]
+         [Author_769]
+         [Author_97]
+         [Author_440]
+         [Author_128]
+         [Author_625]
+         [Author_300]
+         [Author_832]
+         [Author_858]
+         [Author_158]
+         [Author_876]
+         [Author_694]
+         [Author_144]
+         [Author791])
      (sexo male))
 
     ([Author_51] of Autor
      (idAutor "51")
      (nombreAutor "Daphne du Maurier")
      (autoresSimilares
-         [Author_717]
-         [Author_855]
-         [Author_114]
-         [Author_283]
-         [Author_309]
-         [Author_543]
-         [Author_343]
-         [Author_229]
-         [Author_447]
-         [Author_751]
-         [Author_11]
-         [Author_626]
-         [Author_645]
-         [Author_254]
-         [Author_756]
-         [Author_393]
-         [Author_10]
-         [Author_809]
-         [Author_148]
-         [Author560])
+         [Author550])
      (sexo female))
 
     ([Author_52] of Autor
      (idAutor "52")
      (nombreAutor "Janet Evanovich")
      (autoresSimilares
-         [Author_667]
-         [Author_68]
-         [Author_452]
-         [Author_30]
-         [Author_291]
-         [Author_208]
-         [Author_845]
-         [Author_450]
-         [Author_212]
-         [Author_909]
-         [Author314])
+         [Author_320]
+         [Author_709]
+         [Author_374]
+         [Author_151]
+         [Author_161]
+         [Author_323]
+         [Author_841]
+         [Author_892]
+         [Author_230]
+         [Author_471]
+         [Author_766]
+         [Author_77]
+         [Author909])
      (sexo male))
 
     ([Author_53] of Autor
      (idAutor "53")
      (nombreAutor "Jodi Picoult")
      (autoresSimilares
-         [Author_925]
-         [Author_779]
-         [Author_646]
-         [Author_695]
-         [Author_425]
-         [Author_819]
-         [Author_123]
-         [Author_455]
-         [Author_495]
-         [Author_386]
-         [Author_944]
-         [Author_681]
-         [Author_428]
-         [Author_180]
-         [Author_723]
-         [Author_653]
-         [Author_915]
-         [Author_307]
-         [Author_907]
-         [Author557])
+         [Author_899]
+         [Author_298]
+         [Author_450]
+         [Author_560]
+         [Author_797]
+         [Author_638]
+         [Author_426]
+         [Author10])
      (sexo female))
 
     ([Author_54] of Autor
      (idAutor "54")
      (nombreAutor "Kate Jacobs")
      (autoresSimilares
-         [Author_235]
-         [Author_504]
-         [Author_683]
-         [Author_529]
-         [Author_474]
-         [Author_405]
-         [Author_393]
-         [Author_713]
-         [Author_434]
-         [Author_697]
-         [Author_638]
-         [Author_45]
-         [Author551])
+         [Author_154]
+         [Author_281]
+         [Author_943]
+         [Author_325]
+         [Author_202]
+         [Author_921]
+         [Author_784]
+         [Author_427]
+         [Author477])
      (sexo female))
 
     ([Author_55] of Autor
      (idAutor "55")
      (nombreAutor "Louisa May Alcott")
      (autoresSimilares
-         [Author_599]
-         [Author_518]
+         [Author_43]
+         [Author_456]
+         [Author_175]
+         [Author_334]
          [Author_928]
-         [Author_712]
-         [Author_840]
-         [Author_208]
-         [Author_866]
-         [Author_182]
-         [Author_582]
-         [Author_343]
-         [Author_672]
-         [Author_537]
-         [Author_554]
-         [Author_88]
-         [Author_727]
-         [Author_172]
-         [Author_633]
-         [Author_489]
-         [Author235])
+         [Author_452]
+         [Author_512]
+         [Author_648]
+         [Author_290]
+         [Author_424]
+         [Author_331]
+         [Author_189]
+         [Author_61]
+         [Author_291]
+         [Author773])
      (sexo female))
 
     ([Author_56] of Autor
      (idAutor "56")
      (nombreAutor "Tatiana de Rosnay")
      (autoresSimilares
-         [Author_744]
-         [Author_894]
-         [Author_613]
-         [Author_345]
-         [Author_683]
-         [Author_862]
-         [Author_309]
-         [Author_557]
-         [Author_754]
-         [Author_825]
-         [Author532])
+         [Author_646]
+         [Author_125]
+         [Author_239]
+         [Author_332]
+         [Author_103]
+         [Author_563]
+         [Author_27]
+         [Author_163]
+         [Author_57]
+         [Author_540]
+         [Author_110]
+         [Author_433]
+         [Author_566]
+         [Author_942]
+         [Author_693]
+         [Author_325]
+         [Author_774]
+         [Author_402]
+         [Author_308]
+         [Author741])
      (sexo female))
 
     ([Author_57] of Autor
      (idAutor "57")
      (nombreAutor "Betty  Smith")
      (autoresSimilares
-         [Author_241]
-         [Author_622]
-         [Author_889]
-         [Author_276]
-         [Author_491]
-         [Author_778]
-         [Author_698]
-         [Author_916]
-         [Author_50]
-         [Author_329]
-         [Author_335]
-         [Author_501]
-         [Author_837]
-         [Author_531]
-         [Author706])
+         [Author_384]
+         [Author_448]
+         [Author_388]
+         [Author267])
      (sexo female))
 
     ([Author_58] of Autor
      (idAutor "58")
      (nombreAutor "Sylvia Plath")
      (autoresSimilares
-         [Author_381]
-         [Author_796]
-         [Author_652]
-         [Author835])
+         [Author_656]
+         [Author_389]
+         [Author_284]
+         [Author_82]
+         [Author_590]
+         [Author_358]
+         [Author_827]
+         [Author_70]
+         [Author_747]
+         [Author220])
      (sexo female))
 
     ([Author_59] of Autor
      (idAutor "59")
      (nombreAutor "Douglas Adams")
      (autoresSimilares
-         [Author_719]
-         [Author_573]
-         [Author_875]
-         [Author_148]
-         [Author_384]
-         [Author_813]
-         [Author_497]
-         [Author_800]
-         [Author_890]
-         [Author_872]
-         [Author_515]
-         [Author_192]
-         [Author_550]
-         [Author425])
+         [Author_519]
+         [Author_179]
+         [Author_77]
+         [Author_241]
+         [Author_17]
+         [Author_63]
+         [Author_784]
+         [Author_822]
+         [Author_934]
+         [Author_624]
+         [Author_753]
+         [Author745])
      (sexo male))
 
     ([Author_60] of Autor
      (idAutor "60")
      (nombreAutor "Amy Tan")
      (autoresSimilares
-         [Author_459]
-         [Author_372]
-         [Author202])
+         [Author_577]
+         [Author_575]
+         [Author_73]
+         [Author_626]
+         [Author_756]
+         [Author_420]
+         [Author_868]
+         [Author177])
      (sexo female))
 
     ([Author_61] of Autor
      (idAutor "61")
      (nombreAutor "Bernhard Schlink")
      (autoresSimilares
-         [Author_114]
-         [Author_802]
-         [Author_249]
-         [Author_127]
-         [Author_530]
-         [Author_478]
-         [Author_421]
-         [Author_928]
-         [Author_607]
-         [Author_758]
-         [Author_0]
-         [Author_143]
-         [Author_845]
-         [Author_671]
-         [Author191])
+         [Author_78]
+         [Author_546]
+         [Author_309]
+         [Author_889]
+         [Author_275]
+         [Author_709]
+         [Author_202]
+         [Author_891]
+         [Author_409]
+         [Author_641]
+         [Author_905]
+         [Author_392]
+         [Author_876]
+         [Author_396]
+         [Author_289]
+         [Author_33]
+         [Author614])
      (sexo male))
 
     ([Author_62] of Autor
      (idAutor "62")
      (nombreAutor "Cormac McCarthy")
      (autoresSimilares
-         [Author_114]
-         [Author_533]
          [Author_323]
-         [Author_228]
-         [Author_285]
-         [Author_140]
-         [Author_128]
-         [Author_778]
-         [Author_847]
-         [Author_912]
-         [Author_773]
-         [Author241])
+         [Author_720]
+         [Author_818]
+         [Author_801]
+         [Author_756]
+         [Author_253]
+         [Author_733]
+         [Author850])
      (sexo male))
 
     ([Author_63] of Autor
      (idAutor "63")
      (nombreAutor "Jerry Spinelli")
      (autoresSimilares
-         [Author499])
+         [Author_340]
+         [Author_838]
+         [Author_342]
+         [Author_545]
+         [Author_312]
+         [Author_30]
+         [Author_538]
+         [Author_682]
+         [Author_307]
+         [Author_571]
+         [Author_919]
+         [Author716])
      (sexo male))
 
     ([Author_64] of Autor
      (idAutor "64")
      (nombreAutor "JRR Tolkien")
      (autoresSimilares
-         [Author_399]
-         [Author_31]
-         [Author_43]
-         [Author_417]
-         [Author_501]
-         [Author_241]
-         [Author_485]
-         [Author_440]
-         [Author_527]
-         [Author_573]
-         [Author_115]
-         [Author_169]
-         [Author_890]
-         [Author_439]
-         [Author_942]
-         [Author_589]
-         [Author_533]
-         [Author_790]
-         [Author_857]
-         [Author372])
+         [Author_937]
+         [Author_631]
+         [Author_419]
+         [Author_142]
+         [Author_362]
+         [Author_394]
+         [Author_351]
+         [Author_34]
+         [Author_265]
+         [Author2])
      (sexo male))
 
     ([Author_65] of Autor
      (idAutor "65")
      (nombreAutor "Dan Brown")
      (autoresSimilares
-         [Author_92]
-         [Author_292]
-         [Author_471]
-         [Author_352]
-         [Author_723]
-         [Author787])
+         [Author_273]
+         [Author_51]
+         [Author_6]
+         [Author_9]
+         [Author_14]
+         [Author_57]
+         [Author_587]
+         [Author_50]
+         [Author_594]
+         [Author_422]
+         [Author_844]
+         [Author10])
      (sexo male))
 
     ([Author_66] of Autor
      (idAutor "66")
      (nombreAutor "Ken Follett")
      (autoresSimilares
-         [Author_565]
-         [Author_454]
-         [Author_288]
-         [Author_661]
-         [Author530])
+         [Author_51]
+         [Author_316]
+         [Author_408]
+         [Author404])
      (sexo male))
 
     ([Author_67] of Autor
      (idAutor "67")
      (nombreAutor "Philippa Gregory")
      (autoresSimilares
-         [Author_558]
-         [Author_684]
-         [Author_604]
-         [Author_215]
-         [Author_899]
-         [Author_624]
-         [Author_699]
-         [Author_503]
-         [Author_367]
-         [Author139])
+         [Author_657]
+         [Author_552]
+         [Author_536]
+         [Author_866]
+         [Author_808]
+         [Author_677]
+         [Author_569]
+         [Author_861]
+         [Author_237]
+         [Author_372]
+         [Author39])
      (sexo female))
 
     ([Author_68] of Autor
      (idAutor "68")
      (nombreAutor "Seth Grahame-Smith")
      (autoresSimilares
-         [Author_350]
-         [Author_499]
-         [Author_712]
-         [Author_579]
-         [Author_490]
-         [Author865])
+         [Author_56]
+         [Author_215]
+         [Author_347]
+         [Author_617]
+         [Author_911]
+         [Author_781]
+         [Author_830]
+         [Author_23]
+         [Author_568]
+         [Author_198]
+         [Author_415]
+         [Author_518]
+         [Author_95]
+         [Author_786]
+         [Author_173]
+         [Author745])
      (sexo male))
 
     ([Author_69] of Autor
      (idAutor "69")
      (nombreAutor "Kim Edwards")
      (autoresSimilares
-         [Author_538]
-         [Author_426]
-         [Author_201]
-         [Author_622]
-         [Author_573]
-         [Author_668]
-         [Author_830]
-         [Author_286]
-         [Author_252]
-         [Author_218]
-         [Author_14]
-         [Author_419]
-         [Author_578]
-         [Author_341]
-         [Author772])
+         [Author_272]
+         [Author_343]
+         [Author_590]
+         [Author_121]
+         [Author_73]
+         [Author_642]
+         [Author568])
      (sexo female))
 
     ([Author_70] of Autor
      (idAutor "70")
      (nombreAutor "Scott Westerfeld")
      (autoresSimilares
-         [Author_66]
-         [Author_179]
-         [Author_572]
-         [Author_468]
-         [Author_313]
-         [Author_266]
-         [Author_367]
-         [Author_452]
-         [Author_733]
-         [Author130])
+         [Author_64]
+         [Author_755]
+         [Author_437]
+         [Author_187]
+         [Author_722]
+         [Author_105]
+         [Author_503]
+         [Author_314]
+         [Author_500]
+         [Author_805]
+         [Author_788]
+         [Author27])
      (sexo male))
 
     ([Author_71] of Autor
      (idAutor "71")
      (nombreAutor "Helen Fielding")
      (autoresSimilares
-         [Author_115]
-         [Author_224]
-         [Author_363]
-         [Author_656]
-         [Author_733]
-         [Author_48]
-         [Author_585]
-         [Author_288]
-         [Author_130]
-         [Author_100]
-         [Author_510]
-         [Author_902]
-         [Author_924]
-         [Author_911]
-         [Author_450]
-         [Author_777]
-         [Author_898]
-         [Author517])
+         [Author_452]
+         [Author_134]
+         [Author_124]
+         [Author_126]
+         [Author_408]
+         [Author_773]
+         [Author_637]
+         [Author_137]
+         [Author_761]
+         [Author_359]
+         [Author_536]
+         [Author_509]
+         [Author_370]
+         [Author_666]
+         [Author_791]
+         [Author_831]
+         [Author643])
      (sexo male))
 
     ([Author_72] of Autor
      (idAutor "72")
      (nombreAutor "Jennifer Crusie")
      (autoresSimilares
-         [Author647])
+         [Author_587]
+         [Author_416]
+         [Author_204]
+         [Author_389]
+         [Author_632]
+         [Author_428]
+         [Author_652]
+         [Author_746]
+         [Author_879]
+         [Author_686]
+         [Author_703]
+         [Author453])
      (sexo female))
 
     ([Author_73] of Autor
      (idAutor "73")
      (nombreAutor "Sophie Kinsella")
      (autoresSimilares
-         [Author_142]
-         [Author_339]
-         [Author_901]
-         [Author_290]
-         [Author_549]
-         [Author_728]
-         [Author_471]
-         [Author937])
+         [Author_905]
+         [Author_83]
+         [Author_916]
+         [Author_149]
+         [Author_872]
+         [Author_44]
+         [Author_753]
+         [Author_48]
+         [Author_739]
+         [Author_917]
+         [Author_853]
+         [Author_373]
+         [Author_560]
+         [Author_61]
+         [Author_62]
+         [Author_757]
+         [Author_37]
+         [Author_525]
+         [Author_146]
+         [Author420])
      (sexo female))
 
     ([Author_74] of Autor
      (idAutor "74")
      (nombreAutor "Tahereh Mafi")
      (autoresSimilares
-         [Author_293]
-         [Author_173]
-         [Author_270]
-         [Author_717]
-         [Author_673]
-         [Author_762]
-         [Author_800]
-         [Author_632]
-         [Author_23]
-         [Author_138]
-         [Author_88]
-         [Author_550]
-         [Author_772]
-         [Author_85]
-         [Author3])
+         [Author_755]
+         [Author_98]
+         [Author432])
      (sexo female))
 
     ([Author_75] of Autor
      (idAutor "75")
      (nombreAutor "Ally Condie")
      (autoresSimilares
-         [Author_68]
-         [Author_753]
-         [Author_723]
-         [Author_668]
-         [Author_796]
-         [Author_428]
-         [Author_93]
-         [Author_182]
-         [Author_568]
-         [Author_645]
-         [Author55])
+         [Author_415]
+         [Author_240]
+         [Author_628]
+         [Author_878]
+         [Author535])
      (sexo female))
 
     ([Author_76] of Autor
      (idAutor "76")
      (nombreAutor "Arthur Golden")
      (autoresSimilares
-         [Author_24]
-         [Author726])
+         [Author_730]
+         [Author_298]
+         [Author_808]
+         [Author_410]
+         [Author_162]
+         [Author_250]
+         [Author_294]
+         [Author_249]
+         [Author_170]
+         [Author_900]
+         [Author_650]
+         [Author_313]
+         [Author_877]
+         [Author481])
      (sexo male))
 
     ([Author_77] of Autor
      (idAutor "77")
      (nombreAutor "Nicholas Sparks")
      (autoresSimilares
-         [Author_619]
-         [Author_836]
-         [Author_450]
-         [Author_563]
-         [Author_466]
-         [Author_406]
-         [Author_331]
-         [Author_47]
-         [Author_695]
-         [Author_499]
-         [Author_810]
-         [Author_346]
-         [Author713])
+         [Author_666]
+         [Author_55]
+         [Author_482]
+         [Author154])
      (sexo male))
 
     ([Author_78] of Autor
      (idAutor "78")
      (nombreAutor "Sylvia Day")
      (autoresSimilares
-         [Author_150]
-         [Author_475]
-         [Author_940]
-         [Author_374]
-         [Author_186]
-         [Author_322]
-         [Author_353]
-         [Author_9]
-         [Author_163]
-         [Author_484]
-         [Author_187]
-         [Author_425]
-         [Author145])
+         [Author_887]
+         [Author_898]
+         [Author41])
      (sexo female))
 
     ([Author_79] of Autor
      (idAutor "79")
      (nombreAutor "EL James")
      (autoresSimilares
-         [Author_83]
-         [Author_432]
-         [Author_765]
-         [Author_309]
-         [Author_250]
-         [Author_553]
-         [Author_89]
-         [Author_69]
-         [Author_294]
-         [Author_180]
-         [Author_232]
-         [Author_202]
-         [Author_261]
-         [Author793])
+         [Author_445]
+         [Author_207]
+         [Author_645]
+         [Author_618]
+         [Author_161]
+         [Author_196]
+         [Author_231]
+         [Author_703]
+         [Author_904]
+         [Author_774]
+         [Author_367]
+         [Author_298]
+         [Author_779]
+         [Author_15]
+         [Author874])
      (sexo male))
 
     ([Author_80] of Autor
      (idAutor "80")
      (nombreAutor "Margaret Stohl")
      (autoresSimilares
-         [Author_470]
-         [Author_70]
-         [Author_686]
+         [Author_40]
+         [Author_410]
+         [Author_279]
          [Author_674]
-         [Author_355]
-         [Author_193]
-         [Author_51]
-         [Author_259]
-         [Author_94]
-         [Author_335]
          [Author_801]
-         [Author_387]
-         [Author_467]
-         [Author_460]
-         [Author_570]
-         [Author242])
+         [Author_757]
+         [Author_585]
+         [Author_83]
+         [Author_48]
+         [Author_933]
+         [Author_459]
+         [Author_746]
+         [Author_886]
+         [Author_765]
+         [Author_863]
+         [Author175])
      (sexo female))
 
     ([Author_81] of Autor
      (idAutor "81")
      (nombreAutor "Michelle K Pickett")
      (autoresSimilares
-         [Author_758]
-         [Author_383]
-         [Author_197]
-         [Author_767]
-         [Author_565]
-         [Author_626]
-         [Author_866]
-         [Author_356]
-         [Author_498]
-         [Author_347]
-         [Author649])
+         [Author_586]
+         [Author_259]
+         [Author_550]
+         [Author_314]
+         [Author_501]
+         [Author_756]
+         [Author_212]
+         [Author_708]
+         [Author_883]
+         [Author_252]
+         [Author_942]
+         [Author_798]
+         [Author_38]
+         [Author_613]
+         [Author_34]
+         [Author213])
      (sexo female))
 
     ([Author_82] of Autor
      (idAutor "82")
      (nombreAutor "Jessica Brody")
      (autoresSimilares
-         [Author_305]
-         [Author_329]
-         [Author_839]
-         [Author_340]
-         [Author_180]
-         [Author_811]
-         [Author_526]
-         [Author_643]
-         [Author_639]
-         [Author_421]
-         [Author_311]
-         [Author_486]
-         [Author_243]
-         [Author_16]
-         [Author_738]
-         [Author617])
+         [Author395])
      (sexo female))
 
     ([Author_83] of Autor
      (idAutor "83")
      (nombreAutor "Mindy McGinnis")
      (autoresSimilares
-         [Author_596]
-         [Author_822]
-         [Author_308]
-         [Author_390]
-         [Author_648]
-         [Author_694]
-         [Author_47]
-         [Author_504]
-         [Author_933]
-         [Author_348]
-         [Author_338]
-         [Author_359]
-         [Author_813]
-         [Author482])
+         [Author_241]
+         [Author_379]
+         [Author_20]
+         [Author_837]
+         [Author_640]
+         [Author_766]
+         [Author_545]
+         [Author_605]
+         [Author_154]
+         [Author_57]
+         [Author_262]
+         [Author_415]
+         [Author_876]
+         [Author_733]
+         [Author_539]
+         [Author_398]
+         [Author_940]
+         [Author888])
      (sexo male))
 
     ([Author_84] of Autor
      (idAutor "84")
      (nombreAutor "Jennifer Rush")
      (autoresSimilares
-         [Author_181]
-         [Author_472]
-         [Author_906]
-         [Author_931]
-         [Author_665]
-         [Author_62]
-         [Author_52]
-         [Author_150]
-         [Author_631]
-         [Author_219]
-         [Author_371]
-         [Author_508]
-         [Author_739]
-         [Author_245]
-         [Author_210]
-         [Author_115]
-         [Author_586]
-         [Author_632]
-         [Author_850]
-         [Author307])
+         [Author_510]
+         [Author_55]
+         [Author_879]
+         [Author_801]
+         [Author680])
      (sexo female))
 
     ([Author_85] of Autor
      (idAutor "85")
      (nombreAutor "Elsie Chapman")
      (autoresSimilares
-         [Author_203]
-         [Author_444]
-         [Author_927]
-         [Author_894]
-         [Author_429]
-         [Author_558]
-         [Author_943]
-         [Author68])
+         [Author_796]
+         [Author_51]
+         [Author_870]
+         [Author194])
      (sexo male))
 
     ([Author_86] of Autor
      (idAutor "86")
      (nombreAutor "Kristen Simmons")
      (autoresSimilares
-         [Author_272]
-         [Author_536]
-         [Author_296]
-         [Author_81]
-         [Author_531]
-         [Author_550]
-         [Author_528]
-         [Author_134]
-         [Author_382]
-         [Author_653]
-         [Author_62]
-         [Author_636]
-         [Author_658]
-         [Author_180]
-         [Author512])
+         [Author_751]
+         [Author_669]
+         [Author_205]
+         [Author_888]
+         [Author_72]
+         [Author_153]
+         [Author_805]
+         [Author_679]
+         [Author_140]
+         [Author_622]
+         [Author_55]
+         [Author_361]
+         [Author_152]
+         [Author_783]
+         [Author_920]
+         [Author_657]
+         [Author_904]
+         [Author_175]
+         [Author150])
      (sexo female))
 
     ([Author_87] of Autor
      (idAutor "87")
      (nombreAutor "Elizabeth Norris")
      (autoresSimilares
-         [Author_794]
-         [Author_480]
-         [Author_840]
-         [Author_777]
-         [Author_543]
-         [Author_67]
-         [Author_367]
-         [Author_259]
-         [Author557])
+         [Author_263]
+         [Author_746]
+         [Author_613]
+         [Author_677]
+         [Author_121]
+         [Author_608]
+         [Author_0]
+         [Author_804]
+         [Author_242]
+         [Author_915]
+         [Author_539]
+         [Author_6]
+         [Author_90]
+         [Author_813]
+         [Author_320]
+         [Author_841]
+         [Author_369]
+         [Author_831]
+         [Author_620]
+         [Author131])
      (sexo female))
 
     ([Author_88] of Autor
      (idAutor "88")
      (nombreAutor "Amie Kaufman")
      (autoresSimilares
-         [Author_608]
-         [Author_557]
-         [Author_422]
-         [Author_781]
-         [Author_545]
-         [Author_459]
-         [Author_290]
-         [Author_941]
-         [Author_531]
-         [Author_825]
-         [Author_888]
-         [Author_499]
+         [Author_225]
          [Author_916]
-         [Author_526]
-         [Author_215]
-         [Author_513]
-         [Author_229]
-         [Author58])
+         [Author_775]
+         [Author_164]
+         [Author_568]
+         [Author_124]
+         [Author_647]
+         [Author_360]
+         [Author_464]
+         [Author_3]
+         [Author_931]
+         [Author_316]
+         [Author_612]
+         [Author_255]
+         [Author_726]
+         [Author593])
      (sexo female))
 
     ([Author_89] of Autor
      (idAutor "89")
      (nombreAutor "Erin Bowman")
      (autoresSimilares
-         [Author_258]
-         [Author_783]
-         [Author_230]
-         [Author475])
+         [Author_641]
+         [Author_395]
+         [Author_413]
+         [Author265])
      (sexo female))
 
     ([Author_90] of Autor
      (idAutor "90")
      (nombreAutor "Debra Driza")
      (autoresSimilares
-         [Author_735]
-         [Author_285]
-         [Author_869]
-         [Author_714]
-         [Author547])
+         [Author_821]
+         [Author_529]
+         [Author319])
      (sexo male))
 
     ([Author_91] of Autor
      (idAutor "91")
      (nombreAutor "Rick Yancey")
      (autoresSimilares
-         [Author_55]
-         [Author797])
+         [Author_658]
+         [Author_61]
+         [Author_680]
+         [Author_50]
+         [Author_119]
+         [Author_555]
+         [Author_470]
+         [Author_394]
+         [Author_218]
+         [Author_790]
+         [Author_235]
+         [Author_617]
+         [Author356])
      (sexo male))
 
     ([Author_92] of Autor
      (idAutor "92")
      (nombreAutor "Marie Lu")
      (autoresSimilares
-         [Author_495]
-         [Author_240]
-         [Author90])
+         [Author_315]
+         [Author_764]
+         [Author_817]
+         [Author_399]
+         [Author_260]
+         [Author_221]
+         [Author_499]
+         [Author_251]
+         [Author541])
      (sexo male))
 
     ([Author_93] of Autor
      (idAutor "93")
      (nombreAutor "Gail Carriger")
      (autoresSimilares
-         [Author_18]
-         [Author_747]
-         [Author_923]
-         [Author_140]
-         [Author_85]
-         [Author_272]
-         [Author383])
+         [Author_681]
+         [Author_205]
+         [Author_491]
+         [Author_711]
+         [Author_469]
+         [Author_667]
+         [Author_7]
+         [Author_741]
+         [Author_940]
+         [Author_431]
+         [Author_593]
+         [Author_633]
+         [Author833])
      (sexo male))
 
     ([Author_94] of Autor
      (idAutor "94")
      (nombreAutor "Kimberly Derting")
      (autoresSimilares
-         [Author_700]
-         [Author_793]
-         [Author_226]
-         [Author_251]
-         [Author_562]
-         [Author_652]
-         [Author_792]
-         [Author_688]
-         [Author_114]
-         [Author718])
+         [Author_496]
+         [Author_348]
+         [Author_365]
+         [Author_633]
+         [Author_523]
+         [Author_363]
+         [Author_928]
+         [Author_416]
+         [Author_288]
+         [Author_355]
+         [Author_824]
+         [Author_144]
+         [Author_120]
+         [Author_443]
+         [Author_47]
+         [Author_755]
+         [Author114])
      (sexo female))
 
     ([Author_95] of Autor
      (idAutor "95")
      (nombreAutor "Suzanne Young")
      (autoresSimilares
-         [Author_639]
-         [Author_847]
-         [Author_96]
-         [Author_415]
-         [Author_452]
-         [Author_385]
-         [Author_435]
-         [Author_151]
-         [Author_131]
-         [Author_695]
-         [Author_276]
-         [Author486])
+         [Author368])
      (sexo female))
 
     ([Author_96] of Autor
      (idAutor "96")
      (nombreAutor "Michael  Grant")
      (autoresSimilares
-         [Author_206]
-         [Author21])
+         [Author_29]
+         [Author_909]
+         [Author_217]
+         [Author_518]
+         [Author_622]
+         [Author_316]
+         [Author_310]
+         [Author_471]
+         [Author_504]
+         [Author_58]
+         [Author464])
      (sexo male))
 
     ([Author_97] of Autor
      (idAutor "97")
      (nombreAutor "Lauren Oliver")
      (autoresSimilares
-         [Author_450]
-         [Author_547]
-         [Author_598]
-         [Author_184]
-         [Author246])
+         [Author_367]
+         [Author773])
      (sexo female))
 
     ([Author_98] of Autor
      (idAutor "98")
      (nombreAutor "Lauren DeStefano")
      (autoresSimilares
-         [Author_233]
-         [Author_2]
-         [Author_257]
-         [Author_113]
-         [Author_463]
-         [Author_755]
-         [Author_362]
-         [Author_369]
-         [Author232])
+         [Author_582]
+         [Author_290]
+         [Author_466]
+         [Author_430]
+         [Author_295]
+         [Author_866]
+         [Author_872]
+         [Author_250]
+         [Author616])
      (sexo male))
 
     ([Author_99] of Autor
      (idAutor "99")
      (nombreAutor "Veronica Rossi")
      (autoresSimilares
-         [Author_844]
-         [Author_696]
-         [Author_861]
-         [Author_525]
-         [Author_386]
-         [Author_184]
-         [Author_848]
-         [Author_21]
-         [Author_229]
-         [Author_233]
-         [Author_301]
-         [Author_798]
-         [Author_300]
-         [Author_307]
-         [Author_599]
-         [Author655])
+         [Author_0]
+         [Author_587]
+         [Author_545]
+         [Author_941]
+         [Author_227]
+         [Author_220]
+         [Author_213]
+         [Author_388]
+         [Author_600]
+         [Author_325]
+         [Author_736]
+         [Author_728]
+         [Author892])
      (sexo male))
 
     ([Author_100] of Autor
      (idAutor "100")
      (nombreAutor "Veronica Roth")
      (autoresSimilares
-         [Author_641]
-         [Author_66]
-         [Author_367]
-         [Author_353]
-         [Author_572]
-         [Author_335]
-         [Author_134]
-         [Author_723]
-         [Author_148]
-         [Author_259]
-         [Author_638]
-         [Author_793]
-         [Author_463]
-         [Author_444]
-         [Author_566]
-         [Author318])
+         [Author_24]
+         [Author_726]
+         [Author_474]
+         [Author346])
      (sexo female))
 
     ([Author_101] of Autor
      (idAutor "101")
      (nombreAutor "Betsy Cornwell")
      (autoresSimilares
-         [Author_552]
-         [Author_238]
-         [Author290])
+         [Author_104]
+         [Author_584]
+         [Author_128]
+         [Author_733]
+         [Author_527]
+         [Author_308]
+         [Author_585]
+         [Author_181]
+         [Author_327]
+         [Author_192]
+         [Author164])
      (sexo female))
 
     ([Author_102] of Autor
      (idAutor "102")
      (nombreAutor "Sharon Cameron")
      (autoresSimilares
-         [Author_763]
-         [Author703])
+         [Author_921]
+         [Author_255]
+         [Author_186]
+         [Author_522]
+         [Author_51]
+         [Author_238]
+         [Author_288]
+         [Author_452]
+         [Author_856]
+         [Author_593]
+         [Author_742]
+         [Author_209]
+         [Author_761]
+         [Author_714]
+         [Author156])
      (sexo female))
 
     ([Author_103] of Autor
      (idAutor "103")
      (nombreAutor "Melissa Landers")
      (autoresSimilares
-         [Author_859]
-         [Author_396]
-         [Author_350]
-         [Author_278]
-         [Author_156]
-         [Author_254]
-         [Author_471]
-         [Author_153]
-         [Author231])
+         [Author_521]
+         [Author_147]
+         [Author_212]
+         [Author_320]
+         [Author_910]
+         [Author_477]
+         [Author_328]
+         [Author_371]
+         [Author_407]
+         [Author_539]
+         [Author_645]
+         [Author_157]
+         [Author_354]
+         [Author_272]
+         [Author_891]
+         [Author_842]
+         [Author_199]
+         [Author925])
      (sexo male))
 
     ([Author_104] of Autor
      (idAutor "104")
      (nombreAutor "Gillian Flynn")
      (autoresSimilares
-         [Author_861]
-         [Author_50]
-         [Author8])
+         [Author_726]
+         [Author_633]
+         [Author23])
      (sexo female))
 
     ([Author_105] of Autor
      (idAutor "105")
      (nombreAutor "Caragh M OBrien")
      (autoresSimilares
-         [Author_145]
-         [Author_745]
-         [Author_880]
-         [Author_634]
-         [Author_519]
-         [Author_37]
+         [Author_426]
+         [Author_447]
+         [Author_203]
+         [Author_288]
+         [Author_212]
+         [Author_289]
+         [Author_885]
          [Author_377]
-         [Author_181]
-         [Author_452]
-         [Author_313]
-         [Author_323]
-         [Author_468]
-         [Author_66]
-         [Author_927]
-         [Author_209]
-         [Author_492]
-         [Author_689]
-         [Author133])
+         [Author_715]
+         [Author_766]
+         [Author_132]
+         [Author_495]
+         [Author_359]
+         [Author27])
      (sexo female))
 
     ([Author_106] of Autor
      (idAutor "106")
      (nombreAutor "Theodore Sturgeon")
      (autoresSimilares
-         [Author636])
+         [Author_449]
+         [Author_101]
+         [Author_530]
+         [Author_222]
+         [Author_636]
+         [Author_719]
+         [Author_666]
+         [Author889])
      (sexo male))
 
     ([Author_107] of Autor
      (idAutor "107")
      (nombreAutor "CS Friedman")
      (autoresSimilares
-         [Author_13]
-         [Author_289]
-         [Author_768]
-         [Author_475]
-         [Author_758]
-         [Author_835]
-         [Author_92]
-         [Author_45]
-         [Author_218]
-         [Author_584]
-         [Author829])
+         [Author_416]
+         [Author_884]
+         [Author_559]
+         [Author_785]
+         [Author_372]
+         [Author_531]
+         [Author_85]
+         [Author_792]
+         [Author_205]
+         [Author199])
      (sexo male))
 
     ([Author_108] of Autor
      (idAutor "108")
      (nombreAutor "Richard Matheson")
      (autoresSimilares
-         [Author_526]
-         [Author_727]
-         [Author_906]
-         [Author_740]
-         [Author_397]
-         [Author_489]
-         [Author_210]
-         [Author_886]
-         [Author212])
+         [Author_264]
+         [Author_863]
+         [Author_47]
+         [Author_552]
+         [Author_565]
+         [Author_792]
+         [Author_68]
+         [Author_191]
+         [Author_104]
+         [Author_892]
+         [Author_312]
+         [Author_230]
+         [Author_896]
+         [Author_841]
+         [Author_586]
+         [Author510])
      (sexo male))
 
     ([Author_109] of Autor
      (idAutor "109")
      (nombreAutor "Justin Cronin")
      (autoresSimilares
-         [Author_799]
-         [Author_253]
-         [Author_93]
-         [Author_715]
-         [Author_271]
-         [Author_385]
-         [Author_539]
-         [Author_272]
-         [Author_857]
-         [Author_944]
-         [Author_10]
-         [Author_402]
-         [Author_243]
-         [Author_62]
-         [Author_167]
-         [Author_754]
-         [Author_178]
-         [Author_95]
-         [Author710])
+         [Author_43]
+         [Author_674]
+         [Author_763]
+         [Author_75]
+         [Author_542]
+         [Author_285]
+         [Author_387]
+         [Author_796]
+         [Author152])
      (sexo male))
 
     ([Author_110] of Autor
      (idAutor "110")
      (nombreAutor "F Paul Wilson")
      (autoresSimilares
-         [Author_506]
-         [Author_162]
-         [Author_264]
-         [Author_804]
-         [Author_109]
-         [Author_741]
-         [Author_268]
+         [Author_445]
+         [Author_556]
+         [Author_378]
+         [Author_188]
+         [Author_211]
+         [Author_484]
          [Author_114]
-         [Author_509]
-         [Author567])
+         [Author_39]
+         [Author_759]
+         [Author_858]
+         [Author_442]
+         [Author_48]
+         [Author_822]
+         [Author_882]
+         [Author_313]
+         [Author_561]
+         [Author_796]
+         [Author240])
      (sexo male))
 
     ([Author_111] of Autor
      (idAutor "111")
      (nombreAutor "Terry Pratchett")
      (autoresSimilares
-         [Author_923]
-         [Author_747]
-         [Author_855]
-         [Author_760]
-         [Author_792]
-         [Author_549]
-         [Author_191]
-         [Author_666]
+         [Author_814]
+         [Author_779]
+         [Author_771]
+         [Author_323]
+         [Author_298]
+         [Author_34]
          [Author_568]
-         [Author_459]
-         [Author_609]
-         [Author_722]
-         [Author_65]
-         [Author719])
+         [Author_863]
+         [Author83])
      (sexo male))
 
     ([Author_112] of Autor
      (idAutor "112")
      (nombreAutor "Christopher Moore")
      (autoresSimilares
-         [Author_437]
-         [Author_872]
-         [Author_623]
-         [Author131])
+         [Author_245]
+         [Author_896]
+         [Author_883]
+         [Author_771]
+         [Author_196]
+         [Author_373]
+         [Author_376]
+         [Author_395]
+         [Author198])
      (sexo male))
 
     ([Author_113] of Autor
      (idAutor "113")
      (nombreAutor "Guillermo del Toro")
      (autoresSimilares
-         [Author_327]
-         [Author124])
+         [Author_668]
+         [Author_345]
+         [Author_17]
+         [Author_512]
+         [Author_569]
+         [Author_495]
+         [Author_377]
+         [Author_825]
+         [Author_217]
+         [Author_138]
+         [Author_162]
+         [Author_167]
+         [Author_449]
+         [Author_740]
+         [Author_247]
+         [Author_281]
+         [Author_216]
+         [Author_679]
+         [Author81])
      (sexo male))
 
     ([Author_114] of Autor
      (idAutor "114")
      (nombreAutor "Deborah Harkness")
      (autoresSimilares
-         [Author_697]
-         [Author_824]
-         [Author_668]
-         [Author_163]
-         [Author_751]
-         [Author890])
+         [Author_160]
+         [Author_655]
+         [Author_814]
+         [Author_625]
+         [Author_537]
+         [Author_180]
+         [Author_109]
+         [Author_535]
+         [Author_64]
+         [Author_726]
+         [Author_85]
+         [Author_244]
+         [Author_401]
+         [Author547])
      (sexo male))
 
     ([Author_115] of Autor
      (idAutor "115")
      (nombreAutor "John Ajvide Lindqvist")
      (autoresSimilares
-         [Author_116]
-         [Author_586]
-         [Author_132]
-         [Author_487]
-         [Author_257]
-         [Author_763]
-         [Author_765]
-         [Author_356]
-         [Author_134]
-         [Author_139]
-         [Author_620]
-         [Author_646]
-         [Author_798]
-         [Author_471]
-         [Author_884]
-         [Author_839]
-         [Author138])
+         [Author_12]
+         [Author_315]
+         [Author_43]
+         [Author_208]
+         [Author_509]
+         [Author_752]
+         [Author_419]
+         [Author_388]
+         [Author_909]
+         [Author_591]
+         [Author_812]
+         [Author_887]
+         [Author_693]
+         [Author625])
      (sexo male))
 
     ([Author_116] of Autor
      (idAutor "116")
      (nombreAutor "Louise Erdrich")
      (autoresSimilares
-         [Author_320]
-         [Author_540]
-         [Author_937]
-         [Author_782]
-         [Author_868]
-         [Author_763]
-         [Author_22]
-         [Author_182]
-         [Author_501]
-         [Author_729]
-         [Author_332]
-         [Author_217]
-         [Author_263]
-         [Author_62]
-         [Author_179]
-         [Author_26]
-         [Author_472]
-         [Author_361]
-         [Author_147]
-         [Author314])
+         [Author_504]
+         [Author_818]
+         [Author_556]
+         [Author_23]
+         [Author_725]
+         [Author_305]
+         [Author_831]
+         [Author_861]
+         [Author_117]
+         [Author_863]
+         [Author_338]
+         [Author_460]
+         [Author_910]
+         [Author_568]
+         [Author_762]
+         [Author_488]
+         [Author549])
      (sexo male))
 
     ([Author_117] of Autor
      (idAutor "117")
      (nombreAutor "Kristin Hannah")
      (autoresSimilares
-         [Author_729]
-         [Author_351]
-         [Author_819]
-         [Author_757]
-         [Author_530]
-         [Author_318]
-         [Author_513]
-         [Author_135]
-         [Author_566]
-         [Author_918]
-         [Author_260]
-         [Author_927]
-         [Author_212]
-         [Author_739]
-         [Author_229]
-         [Author_396]
-         [Author507])
+         [Author_924]
+         [Author730])
      (sexo male))
 
     ([Author_118] of Autor
      (idAutor "118")
      (nombreAutor "Kate Atkinson")
      (autoresSimilares
-         [Author_322]
-         [Author_131]
-         [Author_242]
-         [Author_684]
-         [Author_413]
-         [Author_162]
-         [Author_196]
-         [Author_734]
-         [Author_7]
-         [Author_926]
+         [Author_230]
          [Author_533]
-         [Author_151]
-         [Author_532]
-         [Author_445]
-         [Author_468]
-         [Author_150]
-         [Author_478]
-         [Author_514]
-         [Author_659]
-         [Author238])
+         [Author_149]
+         [Author_597]
+         [Author_653]
+         [Author_199]
+         [Author_337]
+         [Author_645]
+         [Author_19]
+         [Author_75]
+         [Author_887]
+         [Author_751]
+         [Author_639]
+         [Author_661]
+         [Author_408]
+         [Author_203]
+         [Author_696]
+         [Author_358]
+         [Author632])
      (sexo female))
 
     ([Author_119] of Autor
      (idAutor "119")
      (nombreAutor "Chris Bohjalian")
      (autoresSimilares
-         [Author_353]
-         [Author_905]
-         [Author_45]
-         [Author_224]
-         [Author_713]
-         [Author_324]
-         [Author_669]
-         [Author_164]
-         [Author_580]
-         [Author_639]
-         [Author_34]
-         [Author_707]
-         [Author_775]
-         [Author927])
+         [Author_646]
+         [Author_826]
+         [Author_514]
+         [Author_587]
+         [Author_689]
+         [Author_620]
+         [Author_665]
+         [Author_592]
+         [Author_203]
+         [Author_838]
+         [Author_819]
+         [Author_619]
+         [Author_859]
+         [Author_288]
+         [Author_303]
+         [Author_436]
+         [Author_887]
+         [Author_96]
+         [Author_336]
+         [Author313])
      (sexo male))
 
     ([Author_120] of Autor
      (idAutor "120")
      (nombreAutor "Steve Toltz")
      (autoresSimilares
-         [Author431])
+         [Author_1]
+         [Author_287]
+         [Author_154]
+         [Author_464]
+         [Author_216]
+         [Author_663]
+         [Author_759]
+         [Author_485]
+         [Author_845]
+         [Author_224]
+         [Author_483]
+         [Author_198]
+         [Author_178]
+         [Author_33]
+         [Author_703]
+         [Author_226]
+         [Author_204]
+         [Author251])
      (sexo male))
 
     ([Author_121] of Autor
      (idAutor "121")
      (nombreAutor "Lauren Weisberger")
      (autoresSimilares
-         [Author_569]
-         [Author_290]
-         [Author_810]
-         [Author_701]
-         [Author_171]
-         [Author_177]
-         [Author_139]
-         [Author_478]
-         [Author_682]
-         [Author_146]
-         [Author405])
+         [Author_421]
+         [Author_370]
+         [Author_513]
+         [Author_603]
+         [Author_489]
+         [Author_899]
+         [Author_344]
+         [Author_551]
+         [Author_247]
+         [Author_39]
+         [Author_438]
+         [Author_934]
+         [Author761])
      (sexo female))
 
     ([Author_122] of Autor
      (idAutor "122")
      (nombreAutor "Roberto Bolao")
      (autoresSimilares
-         [Author_463]
-         [Author_364]
-         [Author_577]
-         [Author_702]
-         [Author_538]
-         [Author_336]
-         [Author867])
+         [Author_158]
+         [Author_833]
+         [Author_64]
+         [Author_408]
+         [Author_616]
+         [Author_737]
+         [Author_579]
+         [Author_868]
+         [Author_660]
+         [Author816])
      (sexo male))
 
     ([Author_123] of Autor
      (idAutor "123")
      (nombreAutor "Chuck Palahniuk")
      (autoresSimilares
-         [Author_562]
-         [Author160])
+         [Author_671]
+         [Author551])
      (sexo male))
 
     ([Author_124] of Autor
      (idAutor "124")
      (nombreAutor "PJ Haarsma")
      (autoresSimilares
-         [Author_218]
-         [Author_618]
-         [Author_214]
-         [Author_147]
-         [Author_37]
-         [Author_880]
-         [Author_82]
-         [Author_237]
-         [Author_758]
-         [Author_577]
-         [Author_784]
-         [Author_782]
-         [Author_831]
-         [Author87])
+         [Author_862]
+         [Author_797]
+         [Author_895]
+         [Author_875]
+         [Author_108]
+         [Author_541]
+         [Author_716]
+         [Author_149]
+         [Author_59]
+         [Author_367]
+         [Author_262]
+         [Author_620]
+         [Author_483]
+         [Author_864]
+         [Author_265]
+         [Author_776]
+         [Author_811]
+         [Author79])
      (sexo male))
 
     ([Author_125] of Autor
      (idAutor "125")
      (nombreAutor "Toni Morrison")
      (autoresSimilares
-         [Author_31]
-         [Author462])
+         [Author_154]
+         [Author_868]
+         [Author_210]
+         [Author_840]
+         [Author_322]
+         [Author_934]
+         [Author_45]
+         [Author_484]
+         [Author166])
      (sexo female))
 
     ([Author_126] of Autor
      (idAutor "126")
      (nombreAutor "Kathleen Kent")
      (autoresSimilares
-         [Author470])
+         [Author71])
      (sexo male))
 
     ([Author_127] of Autor
      (idAutor "127")
      (nombreAutor "Daniel Grandbois")
      (autoresSimilares
-         [Author_619]
-         [Author_71]
-         [Author_22]
-         [Author_575]
-         [Author_651]
-         [Author_9]
-         [Author_903]
-         [Author_442]
-         [Author606])
+         [Author_19]
+         [Author_27]
+         [Author_174]
+         [Author_55]
+         [Author_570]
+         [Author_40]
+         [Author755])
      (sexo male))
 
     ([Author_128] of Autor
      (idAutor "128")
      (nombreAutor "Alexander McCall Smith")
      (autoresSimilares
-         [Author_259]
-         [Author_583]
-         [Author_608]
-         [Author_164]
-         [Author_924]
-         [Author_496]
-         [Author_820]
-         [Author_768]
-         [Author_526]
-         [Author_683]
-         [Author_2]
-         [Author_32]
-         [Author_78]
-         [Author_819]
-         [Author_178]
-         [Author_17]
-         [Author814])
+         [Author_443]
+         [Author_549]
+         [Author_689]
+         [Author_534]
+         [Author_237]
+         [Author_590]
+         [Author_832]
+         [Author_889]
+         [Author_536]
+         [Author_721]
+         [Author_35]
+         [Author522])
      (sexo male))
 
     ([Author_129] of Autor
      (idAutor "129")
      (nombreAutor "Harlan Coben")
      (autoresSimilares
-         [Author_853]
-         [Author_165]
-         [Author_851]
-         [Author_761]
-         [Author_342]
-         [Author_559]
-         [Author_157]
-         [Author_254]
-         [Author_871]
-         [Author_614]
-         [Author_574]
-         [Author_266]
-         [Author_549]
-         [Author_69]
-         [Author_344]
-         [Author_841]
-         [Author_593]
-         [Author781])
+         [Author_355]
+         [Author_80]
+         [Author_368]
+         [Author_862]
+         [Author_111]
+         [Author_408]
+         [Author_705]
+         [Author_620]
+         [Author_232]
+         [Author_91]
+         [Author_894]
+         [Author_627]
+         [Author_577]
+         [Author_830]
+         [Author_770]
+         [Author_28]
+         [Author_667]
+         [Author_544]
+         [Author_141]
+         [Author645])
      (sexo male))
 
     ([Author_130] of Autor
      (idAutor "130")
      (nombreAutor "Jennifer Weiner")
      (autoresSimilares
-         [Author_526]
-         [Author_943]
-         [Author_704]
-         [Author_170]
-         [Author_458]
-         [Author39])
+         [Author_594]
+         [Author_349]
+         [Author_50]
+         [Author_43]
+         [Author_487]
+         [Author_906]
+         [Author_165]
+         [Author_838]
+         [Author_629]
+         [Author_847]
+         [Author63])
      (sexo female))
 
     ([Author_131] of Autor
      (idAutor "131")
      (nombreAutor "Jeff Kinney")
      (autoresSimilares
-         [Author_561]
-         [Author_345]
-         [Author_297]
-         [Author_609]
-         [Author_394]
-         [Author_486]
-         [Author_651]
-         [Author_358]
-         [Author_908]
-         [Author_754]
-         [Author_549]
-         [Author_788]
-         [Author_50]
-         [Author_58]
-         [Author_487]
-         [Author_867]
-         [Author_92]
-         [Author_830]
-         [Author507])
+         [Author_907]
+         [Author_850]
+         [Author_102]
+         [Author_306]
+         [Author_323]
+         [Author_634]
+         [Author_275]
+         [Author_633]
+         [Author_244]
+         [Author_35]
+         [Author523])
      (sexo male))
 
     ([Author_132] of Autor
      (idAutor "132")
      (nombreAutor "Curtis Sittenfeld")
      (autoresSimilares
-         [Author_16]
-         [Author_887]
-         [Author_167]
-         [Author_121]
-         [Author_880]
-         [Author_781]
-         [Author_643]
-         [Author_552]
-         [Author_22]
-         [Author_428]
-         [Author_228]
-         [Author_224]
-         [Author_261]
-         [Author_627]
-         [Author894])
+         [Author_195]
+         [Author_400]
+         [Author_533]
+         [Author_594]
+         [Author_64]
+         [Author_264]
+         [Author_499]
+         [Author_551]
+         [Author_639]
+         [Author_700]
+         [Author_474]
+         [Author_105]
+         [Author_221]
+         [Author872])
      (sexo female))
 
     ([Author_133] of Autor
      (idAutor "133")
      (nombreAutor "Tana French")
      (autoresSimilares
-         [Author_769]
-         [Author_567]
-         [Author_154]
-         [Author_762]
-         [Author_720]
-         [Author_42]
-         [Author_86]
-         [Author_822]
-         [Author_270]
-         [Author_839]
-         [Author_867]
-         [Author_881]
-         [Author_537]
-         [Author_357]
-         [Author_728]
-         [Author_228]
-         [Author45])
+         [Author_733]
+         [Author_713]
+         [Author_51]
+         [Author_530]
+         [Author_579]
+         [Author_629]
+         [Author_628]
+         [Author_217]
+         [Author_710]
+         [Author_754]
+         [Author_847]
+         [Author_824]
+         [Author_3]
+         [Author_205]
+         [Author_709]
+         [Author_214]
+         [Author_801]
+         [Author850])
      (sexo female))
 
     ([Author_134] of Autor
      (idAutor "134")
      (nombreAutor "Joseph ONeill")
      (autoresSimilares
-         [Author_381]
-         [Author_280]
-         [Author_623]
-         [Author938])
+         [Author_442]
+         [Author_270]
+         [Author203])
      (sexo male))
 
     ([Author_135] of Autor
      (idAutor "135")
      (nombreAutor "Hillary Jordan")
      (autoresSimilares
-         [Author_54]
-         [Author_524]
-         [Author_131]
-         [Author_619]
-         [Author_520]
-         [Author_149]
-         [Author_877]
-         [Author_148]
-         [Author_625]
-         [Author_87]
-         [Author_942]
-         [Author375])
+         [Author_552]
+         [Author_471]
+         [Author_695]
+         [Author_803]
+         [Author417])
      (sexo female))
 
     ([Author_136] of Autor
      (idAutor "136")
      (nombreAutor "Emily Giffin")
      (autoresSimilares
-         [Author_374]
-         [Author_830]
-         [Author_292]
-         [Author708])
+         [Author_130]
+         [Author_922]
+         [Author_209]
+         [Author_153]
+         [Author_216]
+         [Author_605]
+         [Author_388]
+         [Author_356]
+         [Author_369]
+         [Author_684]
+         [Author2])
      (sexo female))
 
     ([Author_137] of Autor
      (idAutor "137")
      (nombreAutor "Lauren Groff")
      (autoresSimilares
-         [Author571])
+         [Author_598]
+         [Author_902]
+         [Author_627]
+         [Author_747]
+         [Author_200]
+         [Author_238]
+         [Author36])
      (sexo female))
 
     ([Author_138] of Autor
      (idAutor "138")
      (nombreAutor "Wally Lamb")
      (autoresSimilares
-         [Author_867]
-         [Author_542]
-         [Author_462]
-         [Author_427]
-         [Author_132]
-         [Author_420]
-         [Author_677]
-         [Author331])
+         [Author_381]
+         [Author_277]
+         [Author_609]
+         [Author_302]
+         [Author_128]
+         [Author328])
      (sexo male))
 
     ([Author_139] of Autor
      (idAutor "139")
      (nombreAutor "Elizabeth Strout")
      (autoresSimilares
-         [Author336])
+         [Author_431]
+         [Author_583]
+         [Author_311]
+         [Author121])
      (sexo female))
 
     ([Author_140] of Autor
      (idAutor "140")
      (nombreAutor "Marisa de los Santos")
      (autoresSimilares
-         [Author_570]
-         [Author_602]
-         [Author_31]
-         [Author_807]
-         [Author_242]
-         [Author_876]
-         [Author_621]
-         [Author_792]
-         [Author_99]
-         [Author_886]
-         [Author_397]
-         [Author_644]
-         [Author940])
+         [Author_143]
+         [Author_748]
+         [Author_906]
+         [Author_193]
+         [Author_196]
+         [Author_824]
+         [Author_236]
+         [Author_511]
+         [Author_412]
+         [Author_52]
+         [Author_175]
+         [Author_823]
+         [Author503])
      (sexo female))
 
     ([Author_141] of Autor
      (idAutor "141")
      (nombreAutor "David Benioff")
      (autoresSimilares
-         [Author_701]
-         [Author_410]
-         [Author_407]
-         [Author_597]
-         [Author_925]
-         [Author_54]
-         [Author_399]
-         [Author_197]
-         [Author_785]
-         [Author_826]
-         [Author_271]
-         [Author_125]
-         [Author541])
+         [Author_70]
+         [Author_202]
+         [Author_548]
+         [Author_421]
+         [Author_644]
+         [Author_105]
+         [Author_246]
+         [Author_750]
+         [Author_262]
+         [Author_625]
+         [Author495])
      (sexo male))
 
     ([Author_142] of Autor
      (idAutor "142")
      (nombreAutor "Cory Doctorow")
      (autoresSimilares
-         [Author_457]
-         [Author_169]
-         [Author_223]
-         [Author_428]
-         [Author_215]
-         [Author_844]
-         [Author_419]
-         [Author_545]
-         [Author_407]
-         [Author_62]
-         [Author_904]
-         [Author_616]
-         [Author560])
+         [Author_159]
+         [Author_506]
+         [Author_277]
+         [Author_633]
+         [Author_297]
+         [Author_234]
+         [Author_806]
+         [Author_482]
+         [Author_711]
+         [Author_866]
+         [Author_119]
+         [Author898])
      (sexo male))
 
     ([Author_143] of Autor
      (idAutor "143")
      (nombreAutor "Geraldine Brooks")
      (autoresSimilares
-         [Author_45]
-         [Author_590]
-         [Author586])
+         [Author_809]
+         [Author_670]
+         [Author_889]
+         [Author_624]
+         [Author_51]
+         [Author_421]
+         [Author_641]
+         [Author_204]
+         [Author_258]
+         [Author_293]
+         [Author395])
      (sexo female))
 
     ([Author_144] of Autor
      (idAutor "144")
      (nombreAutor "Jhumpa Lahiri")
      (autoresSimilares
-         [Author_514]
-         [Author_488]
-         [Author_832]
-         [Author_925]
-         [Author_326]
-         [Author_383]
-         [Author129])
+         [Author_224]
+         [Author_495]
+         [Author_787]
+         [Author_696]
+         [Author_592]
+         [Author_472]
+         [Author_760]
+         [Author_33]
+         [Author_608]
+         [Author_764]
+         [Author_901]
+         [Author_860]
+         [Author_919]
+         [Author536])
      (sexo female))
 
     ([Author_145] of Autor
      (idAutor "145")
      (nombreAutor "David Wroblewski")
      (autoresSimilares
-         [Author_763]
-         [Author_850]
-         [Author_906]
-         [Author_350]
-         [Author_34]
-         [Author_579]
-         [Author_721]
-         [Author_848]
-         [Author_50]
-         [Author_147]
-         [Author_808]
-         [Author_181]
-         [Author_796]
-         [Author_533]
-         [Author_76]
-         [Author816])
+         [Author_691]
+         [Author_561]
+         [Author_934]
+         [Author_371]
+         [Author_456]
+         [Author_18]
+         [Author_527]
+         [Author_622]
+         [Author_870]
+         [Author240])
      (sexo male))
 
     ([Author_146] of Autor
      (idAutor "146")
      (nombreAutor "Audrey Niffenegger")
      (autoresSimilares
-         [Author_623]
-         [Author_424]
-         [Author692])
+         [Author_320]
+         [Author_480]
+         [Author_178]
+         [Author_288]
+         [Author_60]
+         [Author_503]
+         [Author_52]
+         [Author_532]
+         [Author_605]
+         [Author_517]
+         [Author_369]
+         [Author_199]
+         [Author_494]
+         [Author447])
      (sexo male))
 
     ([Author_147] of Autor
      (idAutor "147")
      (nombreAutor "Ken Puddicombe")
      (autoresSimilares
-         [Author_22]
-         [Author_841]
-         [Author_335]
-         [Author_789]
-         [Author_268]
-         [Author_77]
-         [Author_722]
-         [Author_299]
-         [Author_484]
-         [Author_545]
-         [Author_442]
-         [Author_308]
-         [Author_920]
-         [Author_871]
-         [Author_851]
-         [Author_70]
-         [Author_599]
-         [Author_465]
-         [Author_598]
-         [Author822])
+         [Author_287]
+         [Author_419]
+         [Author_314]
+         [Author_591]
+         [Author_15]
+         [Author_646]
+         [Author_413]
+         [Author_657]
+         [Author_915]
+         [Author_580]
+         [Author_336]
+         [Author_126]
+         [Author_150]
+         [Author_360]
+         [Author_19]
+         [Author_274]
+         [Author114])
      (sexo male))
 
     ([Author_148] of Autor
      (idAutor "148")
      (nombreAutor "Cherrie Lynn")
      (autoresSimilares
-         [Author_729]
-         [Author_573]
-         [Author192])
+         [Author_614]
+         [Author_747]
+         [Author_105]
+         [Author_914]
+         [Author_230]
+         [Author_405]
+         [Author_135]
+         [Author_856]
+         [Author_163]
+         [Author_311]
+         [Author_302]
+         [Author_127]
+         [Author12])
      (sexo female))
 
     ([Author_149] of Autor
      (idAutor "149")
      (nombreAutor "Jenny B Jones")
      (autoresSimilares
-         [Author_513]
-         [Author_636]
-         [Author_9]
-         [Author_428]
-         [Author331])
+         [Author_736]
+         [Author_607]
+         [Author_892]
+         [Author_720]
+         [Author_261]
+         [Author_799]
+         [Author_574]
+         [Author_925]
+         [Author_485]
+         [Author_450]
+         [Author_60]
+         [Author_409]
+         [Author347])
      (sexo female))
 
     ([Author_150] of Autor
      (idAutor "150")
      (nombreAutor "Khaled Hosseini")
      (autoresSimilares
-         [Author_713]
-         [Author_135]
-         [Author_560]
-         [Author_696]
-         [Author_255]
-         [Author_677]
-         [Author_369]
-         [Author_536]
-         [Author_169]
-         [Author_371]
-         [Author_522]
-         [Author_703]
-         [Author_50]
-         [Author_655]
-         [Author_943]
-         [Author_540]
-         [Author708])
+         [Author_504]
+         [Author_508]
+         [Author_483]
+         [Author_336]
+         [Author_782]
+         [Author_121]
+         [Author_463]
+         [Author_34]
+         [Author_594]
+         [Author_93]
+         [Author_18]
+         [Author_561]
+         [Author_864]
+         [Author_263]
+         [Author_750]
+         [Author_902]
+         [Author59])
      (sexo male))
 
     ([Author_151] of Autor
      (idAutor "151")
      (nombreAutor "Emma Donoghue")
      (autoresSimilares
-         [Author_780]
-         [Author_295]
-         [Author_544]
-         [Author_365]
-         [Author_606]
-         [Author_223]
-         [Author_569]
-         [Author_855]
-         [Author_944]
-         [Author_720]
-         [Author_490]
-         [Author_376]
-         [Author_533]
-         [Author_758]
-         [Author_591]
-         [Author170])
+         [Author_848]
+         [Author_51]
+         [Author_472]
+         [Author_764]
+         [Author885])
      (sexo female))
 
     ([Author_152] of Autor
      (idAutor "152")
      (nombreAutor "Jojo Moyes")
      (autoresSimilares
-         [Author_744]
-         [Author_650]
-         [Author_648]
-         [Author_137]
-         [Author_579]
-         [Author_653]
-         [Author_623]
-         [Author_514]
-         [Author_533]
-         [Author522])
+         [Author_372]
+         [Author205])
      (sexo female))
 
     ([Author_153] of Autor
      (idAutor "153")
      (nombreAutor "Brian Selznick")
      (autoresSimilares
-         [Author_819]
-         [Author_907]
-         [Author_909]
-         [Author_255]
-         [Author_825]
-         [Author_78]
-         [Author_556]
-         [Author_861]
-         [Author_169]
-         [Author_88]
-         [Author_771]
-         [Author_367]
-         [Author_208]
-         [Author_531]
-         [Author778])
+         [Author_756]
+         [Author_739]
+         [Author_376]
+         [Author_696]
+         [Author_826]
+         [Author_546]
+         [Author_149]
+         [Author_619]
+         [Author_935]
+         [Author_717]
+         [Author_246]
+         [Author_888]
+         [Author_585]
+         [Author_857]
+         [Author_578]
+         [Author_854]
+         [Author_600]
+         [Author_94]
+         [Author_754]
+         [Author589])
      (sexo male))
 
     ([Author_154] of Autor
      (idAutor "154")
      (nombreAutor "Malcolm McCoard")
      (autoresSimilares
-         [Author_884]
-         [Author_244]
-         [Author_594]
-         [Author_149]
-         [Author_351]
-         [Author_368]
-         [Author_890]
-         [Author_490]
-         [Author_172]
-         [Author_705]
-         [Author_467]
-         [Author_477]
-         [Author_835]
-         [Author_150]
-         [Author73])
+         [Author_861]
+         [Author_68]
+         [Author311])
      (sexo male))
 
     ([Author_155] of Autor
      (idAutor "155")
      (nombreAutor "Marion Zimmer Bradley")
      (autoresSimilares
-         [Author_299]
-         [Author_152]
-         [Author_765]
-         [Author_170]
-         [Author133])
+         [Author_451]
+         [Author_331]
+         [Author_102]
+         [Author_548]
+         [Author_208]
+         [Author_741]
+         [Author_8]
+         [Author_656]
+         [Author_934]
+         [Author_480]
+         [Author_10]
+         [Author_506]
+         [Author266])
      (sexo female))
 
     ([Author_156] of Autor
      (idAutor "156")
      (nombreAutor "Mary  Stewart")
      (autoresSimilares
-         [Author_503]
-         [Author_204]
-         [Author_704]
-         [Author_423]
-         [Author_936]
-         [Author_524]
-         [Author_666]
-         [Author_761]
-         [Author_579]
-         [Author_583]
-         [Author_80]
-         [Author_377]
-         [Author_588]
-         [Author914])
+         [Author_510]
+         [Author_328]
+         [Author_837]
+         [Author_569]
+         [Author_877]
+         [Author_311]
+         [Author_733]
+         [Author_347]
+         [Author_702]
+         [Author899])
      (sexo female))
 
     ([Author_157] of Autor
      (idAutor "157")
      (nombreAutor "Frances Hodgson Burnett")
      (autoresSimilares
-         [Author_215]
-         [Author_430]
-         [Author_622]
-         [Author273])
+         [Author_654]
+         [Author_941]
+         [Author_933]
+         [Author_803]
+         [Author_871]
+         [Author_532]
+         [Author_191]
+         [Author_840]
+         [Author_358]
+         [Author_918]
+         [Author_431]
+         [Author_595]
+         [Author_678]
+         [Author_815]
+         [Author_914]
+         [Author_921]
+         [Author_119]
+         [Author427])
      (sexo female))
 
     ([Author_158] of Autor
      (idAutor "158")
      (nombreAutor "Anne McCaffrey")
      (autoresSimilares
-         [Author_503]
-         [Author_795]
-         [Author_138]
-         [Author_90]
-         [Author_147]
-         [Author_510]
-         [Author_685]
-         [Author_267]
-         [Author_228]
-         [Author_894]
-         [Author_265]
-         [Author_323]
-         [Author_732]
-         [Author_468]
-         [Author_455]
-         [Author_261]
-         [Author354])
+         [Author_216]
+         [Author_181]
+         [Author_139]
+         [Author_722]
+         [Author_909]
+         [Author_401]
+         [Author_40]
+         [Author_456]
+         [Author_143]
+         [Author_374]
+         [Author_238]
+         [Author_916]
+         [Author_797]
+         [Author_481]
+         [Author_30]
+         [Author_363]
+         [Author_587]
+         [Author_825]
+         [Author96])
      (sexo female))
 
     ([Author_159] of Autor
      (idAutor "159")
      (nombreAutor "Lemony Snicket")
      (autoresSimilares
-         [Author_295]
-         [Author_650]
-         [Author821])
+         [Author_640]
+         [Author_844]
+         [Author_147]
+         [Author_76]
+         [Author_75]
+         [Author_632]
+         [Author_803]
+         [Author_337]
+         [Author_552]
+         [Author21])
      (sexo male))
 
     ([Author_160] of Autor
      (idAutor "160")
      (nombreAutor "David Eddings")
      (autoresSimilares
+         [Author_233]
+         [Author_813]
          [Author_413]
-         [Author_420]
-         [Author_297]
-         [Author846])
+         [Author_851]
+         [Author_358]
+         [Author_177]
+         [Author_62]
+         [Author_810]
+         [Author_442]
+         [Author_830]
+         [Author_286]
+         [Author_534]
+         [Author_284]
+         [Author_361]
+         [Author_23]
+         [Author_833]
+         [Author_656]
+         [Author_217]
+         [Author843])
      (sexo male))
 
     ([Author_161] of Autor
      (idAutor "161")
      (nombreAutor "Roald Dahl")
      (autoresSimilares
-         [Author_380]
-         [Author_260]
-         [Author_377]
-         [Author_471]
-         [Author_748]
-         [Author_59]
-         [Author_360]
-         [Author_31]
-         [Author_943]
-         [Author_700]
-         [Author_466]
-         [Author493])
+         [Author_185]
+         [Author_291]
+         [Author_891]
+         [Author_101]
+         [Author_889]
+         [Author_29]
+         [Author_600]
+         [Author_610]
+         [Author_895]
+         [Author_248]
+         [Author_692]
+         [Author_770]
+         [Author_699]
+         [Author_137]
+         [Author_464]
+         [Author_812]
+         [Author742])
      (sexo male))
 
     ([Author_162] of Autor
      (idAutor "162")
      (nombreAutor "Robert Jordan")
      (autoresSimilares
-         [Author_678]
-         [Author_627]
-         [Author_628]
-         [Author_506]
-         [Author_673]
-         [Author_782]
-         [Author829])
+         [Author_193]
+         [Author_715]
+         [Author_835]
+         [Author_834]
+         [Author_856]
+         [Author_173]
+         [Author_549]
+         [Author_736]
+         [Author_160]
+         [Author_214]
+         [Author692])
      (sexo male))
 
     ([Author_163] of Autor
      (idAutor "163")
      (nombreAutor "Obert Skye")
      (autoresSimilares
-         [Author846])
+         [Author_41]
+         [Author_445]
+         [Author_229]
+         [Author_37]
+         [Author_807]
+         [Author_223]
+         [Author_657]
+         [Author_872]
+         [Author_474]
+         [Author_409]
+         [Author_239]
+         [Author_143]
+         [Author_10]
+         [Author_884]
+         [Author255])
      (sexo male))
 
     ([Author_164] of Autor
      (idAutor "164")
      (nombreAutor "Patrick Rothfuss")
      (autoresSimilares
-         [Author_484]
-         [Author_387]
-         [Author_760]
-         [Author_409]
-         [Author_675]
-         [Author_684]
-         [Author_494]
-         [Author_845]
-         [Author810])
+         [Author_234]
+         [Author_649]
+         [Author_102]
+         [Author_911]
+         [Author_704]
+         [Author_628]
+         [Author533])
      (sexo male))
 
     ([Author_165] of Autor
      (idAutor "165")
      (nombreAutor "William Goldman")
      (autoresSimilares
-         [Author_913]
-         [Author_181]
-         [Author_596]
-         [Author_768]
-         [Author_183]
-         [Author_415]
-         [Author_291]
-         [Author_314]
-         [Author_151]
-         [Author_376]
-         [Author_326]
-         [Author_99]
-         [Author_801]
-         [Author_659]
-         [Author_683]
-         [Author230])
+         [Author_290]
+         [Author_716]
+         [Author_147]
+         [Author_699]
+         [Author_835]
+         [Author_861]
+         [Author_67]
+         [Author_71]
+         [Author_119]
+         [Author_280]
+         [Author_572]
+         [Author_535]
+         [Author_122]
+         [Author_133]
+         [Author_410]
+         [Author159])
      (sexo male))
 
     ([Author_166] of Autor
      (idAutor "166")
      (nombreAutor "Katherine Paterson")
      (autoresSimilares
-         [Author_858]
-         [Author_174]
-         [Author_714]
-         [Author591])
+         [Author_111]
+         [Author_283]
+         [Author_763]
+         [Author_221]
+         [Author_199]
+         [Author_435]
+         [Author846])
      (sexo female))
 
     ([Author_167] of Autor
      (idAutor "167")
      (nombreAutor "James Dashner")
      (autoresSimilares
-         [Author_286]
-         [Author_536]
-         [Author_63]
-         [Author_586]
-         [Author_729]
-         [Author_480]
-         [Author_638]
-         [Author_46]
-         [Author_158]
-         [Author_647]
-         [Author_333]
-         [Author_940]
-         [Author_43]
-         [Author36])
+         [Author_84]
+         [Author_585]
+         [Author_310]
+         [Author_664]
+         [Author_387]
+         [Author_302]
+         [Author_561]
+         [Author_542]
+         [Author_631]
+         [Author_524]
+         [Author_144]
+         [Author_790]
+         [Author_415]
+         [Author_708]
+         [Author_727]
+         [Author_721]
+         [Author_474]
+         [Author_918]
+         [Author_76]
+         [Author439])
      (sexo male))
 
     ([Author_168] of Autor
      (idAutor "168")
      (nombreAutor "Madeleine LEngle")
      (autoresSimilares
-         [Author_358]
-         [Author_841]
-         [Author_228]
-         [Author_192]
-         [Author_545]
-         [Author_705]
-         [Author_198]
-         [Author_765]
-         [Author_236]
-         [Author_759]
-         [Author_823]
-         [Author_479]
-         [Author_783]
-         [Author_729]
-         [Author_871]
-         [Author_558]
-         [Author_486]
-         [Author_84]
-         [Author_82]
-         [Author534])
+         [Author_586]
+         [Author_567]
+         [Author_107]
+         [Author_613]
+         [Author_916]
+         [Author_919]
+         [Author_568]
+         [Author_351]
+         [Author_813]
+         [Author_619]
+         [Author_576]
+         [Author_376]
+         [Author_478]
+         [Author_341]
+         [Author_103]
+         [Author_737]
+         [Author_74]
+         [Author_827]
+         [Author_812]
+         [Author866])
      (sexo female))
 
     ([Author_169] of Autor
      (idAutor "169")
      (nombreAutor "Carol Plum-Ucci")
      (autoresSimilares
-         [Author_49]
-         [Author_816]
-         [Author_517]
-         [Author_110]
-         [Author_291]
-         [Author_250]
-         [Author_164]
-         [Author_178]
-         [Author_731]
-         [Author_745]
-         [Author_280]
-         [Author_871]
-         [Author_372]
-         [Author_730]
-         [Author_577]
-         [Author_595]
-         [Author_569]
-         [Author883])
+         [Author_119]
+         [Author_202]
+         [Author_659]
+         [Author_438]
+         [Author_215]
+         [Author_268]
+         [Author_9]
+         [Author_583]
+         [Author_934]
+         [Author_549]
+         [Author_66]
+         [Author_791]
+         [Author851])
      (sexo female))
 
     ([Author_170] of Autor
      (idAutor "170")
      (nombreAutor "Ellen Wittlinger")
      (autoresSimilares
-         [Author_440]
-         [Author_404]
-         [Author_355]
-         [Author_295]
-         [Author_834]
-         [Author_150]
-         [Author_536]
-         [Author_934]
-         [Author_912]
-         [Author_1]
-         [Author_206]
-         [Author_340]
-         [Author_772]
-         [Author_555]
-         [Author_130]
-         [Author_137]
-         [Author_854]
-         [Author_784]
-         [Author448])
+         [Author175])
      (sexo female))
 
     ([Author_171] of Autor
      (idAutor "171")
      (nombreAutor "Peter Cameron")
      (autoresSimilares
-         [Author_347]
-         [Author_284]
-         [Author_640]
-         [Author_403]
-         [Author_888]
-         [Author624])
+         [Author_698]
+         [Author_140]
+         [Author_719]
+         [Author_710]
+         [Author_662]
+         [Author616])
      (sexo male))
 
     ([Author_172] of Autor
      (idAutor "172")
      (nombreAutor "Francesca Lia Block")
      (autoresSimilares
-         [Author_335]
-         [Author_433]
-         [Author_916]
-         [Author514])
+         [Author_36]
+         [Author_35]
+         [Author315])
      (sexo female))
 
     ([Author_173] of Autor
      (idAutor "173")
      (nombreAutor "Steve Kluger")
      (autoresSimilares
-         [Author_596]
-         [Author_192]
-         [Author_542]
-         [Author_368]
-         [Author_256]
-         [Author_635]
-         [Author_202]
-         [Author_730]
-         [Author_907]
-         [Author_107]
-         [Author_515]
-         [Author608])
+         [Author_124]
+         [Author_266]
+         [Author_82]
+         [Author_76]
+         [Author_576]
+         [Author667])
      (sexo male))
 
     ([Author_174] of Autor
      (idAutor "174")
      (nombreAutor "Alex London")
      (autoresSimilares
-         [Author_230]
-         [Author_865]
-         [Author_393]
-         [Author_674]
-         [Author_524]
-         [Author_792]
-         [Author_632]
-         [Author479])
+         [Author_229]
+         [Author_641]
+         [Author_576]
+         [Author_754]
+         [Author_521]
+         [Author_292]
+         [Author_473]
+         [Author_775]
+         [Author_69]
+         [Author_856]
+         [Author_153]
+         [Author_800]
+         [Author25])
      (sexo male))
 
     ([Author_175] of Autor
      (idAutor "175")
      (nombreAutor "Joanne Harris")
      (autoresSimilares
-         [Author_781]
-         [Author_17]
-         [Author_865]
-         [Author_915]
-         [Author_499]
-         [Author_168]
-         [Author_131]
-         [Author_210]
-         [Author_285]
-         [Author_106]
-         [Author_531]
-         [Author_176]
-         [Author_495]
-         [Author_119]
-         [Author484])
+         [Author_305]
+         [Author_308]
+         [Author_663]
+         [Author_468]
+         [Author_115]
+         [Author_343]
+         [Author_237]
+         [Author_820]
+         [Author_793]
+         [Author_139]
+         [Author_462]
+         [Author_869]
+         [Author886])
      (sexo female))
 
     ([Author_176] of Autor
      (idAutor "176")
      (nombreAutor "Salman Rushdie")
      (autoresSimilares
-         [Author_33]
-         [Author_521]
-         [Author_852]
-         [Author_384]
-         [Author_791]
-         [Author412])
+         [Author_776]
+         [Author_218]
+         [Author_268]
+         [Author_54]
+         [Author_679]
+         [Author_788]
+         [Author_800]
+         [Author378])
      (sexo male))
 
     ([Author_177] of Autor
      (idAutor "177")
      (nombreAutor "Jo Walton")
      (autoresSimilares
-         [Author_722]
-         [Author_236]
-         [Author_168]
-         [Author_894]
-         [Author_739]
-         [Author_296]
-         [Author_752]
-         [Author_804]
-         [Author_221]
-         [Author_231]
-         [Author_905]
-         [Author_730]
-         [Author_107]
-         [Author_463]
-         [Author_808]
-         [Author_815]
-         [Author507])
+         [Author_204]
+         [Author_776]
+         [Author_164]
+         [Author_795]
+         [Author_942]
+         [Author_324]
+         [Author_893]
+         [Author_493]
+         [Author_823]
+         [Author_537]
+         [Author919])
      (sexo female))
 
     ([Author_178] of Autor
      (idAutor "178")
      (nombreAutor "Alice Hoffman")
      (autoresSimilares
-         [Author_137]
-         [Author_690]
-         [Author367])
+         [Author_284]
+         [Author_190]
+         [Author_120]
+         [Author_596]
+         [Author_648]
+         [Author_523]
+         [Author_189]
+         [Author_745]
+         [Author_676]
+         [Author_814]
+         [Author_506]
+         [Author_221]
+         [Author_761]
+         [Author_249]
+         [Author_20]
+         [Author_924]
+         [Author_64]
+         [Author_561]
+         [Author_287]
+         [Author289])
      (sexo male))
 
     ([Author_179] of Autor
      (idAutor "179")
      (nombreAutor "Nicholas Christopher")
      (autoresSimilares
-         [Author_357]
-         [Author_97]
-         [Author_720]
-         [Author_392]
-         [Author_659]
-         [Author_523]
-         [Author_881]
-         [Author_243]
-         [Author_145]
-         [Author_784]
-         [Author_554]
-         [Author521])
+         [Author_287]
+         [Author_673]
+         [Author_223]
+         [Author_147]
+         [Author_710]
+         [Author_333]
+         [Author_375]
+         [Author_428]
+         [Author_785]
+         [Author_763]
+         [Author_112]
+         [Author698])
      (sexo male))
 
     ([Author_180] of Autor
      (idAutor "180")
      (nombreAutor "Louis de Bernires")
      (autoresSimilares
-         [Author_330]
-         [Author_775]
-         [Author48])
+         [Author_574]
+         [Author_523]
+         [Author_360]
+         [Author_296]
+         [Author_585]
+         [Author_556]
+         [Author_398]
+         [Author_669]
+         [Author_867]
+         [Author_24]
+         [Author_926]
+         [Author_22]
+         [Author_820]
+         [Author_884]
+         [Author263])
      (sexo male))
 
     ([Author_181] of Autor
      (idAutor "181")
      (nombreAutor "Isabel Allende")
      (autoresSimilares
-         [Author_489]
-         [Author_654]
-         [Author_371]
-         [Author_37]
-         [Author_528]
-         [Author223])
+         [Author_601]
+         [Author_364]
+         [Author_901]
+         [Author_363]
+         [Author_818]
+         [Author_527]
+         [Author_56]
+         [Author_664]
+         [Author_283]
+         [Author_261]
+         [Author_83]
+         [Author559])
      (sexo female))
 
     ([Author_182] of Autor
      (idAutor "182")
      (nombreAutor "Haruki Murakami")
      (autoresSimilares
-         [Author_437]
-         [Author_556]
-         [Author_649]
-         [Author_562]
-         [Author_677]
-         [Author_131]
-         [Author_897]
-         [Author_942]
-         [Author_822]
-         [Author_585]
-         [Author_314]
-         [Author1])
+         [Author_723]
+         [Author_218]
+         [Author_432]
+         [Author_239]
+         [Author556])
      (sexo male))
 
     ([Author_183] of Autor
      (idAutor "183")
      (nombreAutor "Julio Cortzar")
      (autoresSimilares
-         [Author_106]
-         [Author_759]
-         [Author_421]
-         [Author_240]
-         [Author_694]
-         [Author_775]
-         [Author_99]
-         [Author_431]
-         [Author_42]
-         [Author_829]
-         [Author_133]
-         [Author_448]
-         [Author_633]
-         [Author_581]
-         [Author543])
+         [Author_187]
+         [Author_36]
+         [Author_6]
+         [Author_281]
+         [Author_61]
+         [Author_550]
+         [Author_546]
+         [Author_265]
+         [Author_579]
+         [Author_922]
+         [Author_590]
+         [Author_182]
+         [Author763])
      (sexo male))
 
     ([Author_184] of Autor
      (idAutor "184")
      (nombreAutor "Angela Carter")
      (autoresSimilares
-         [Author_27]
-         [Author_753]
-         [Author_73]
-         [Author_382]
-         [Author_205]
-         [Author_32]
-         [Author_689]
-         [Author_610]
-         [Author_632]
-         [Author_693]
-         [Author_688]
-         [Author_479]
-         [Author_384]
-         [Author_690]
-         [Author_684]
-         [Author_356]
-         [Author_387]
-         [Author_243]
-         [Author_439]
-         [Author372])
+         [Author_537]
+         [Author_172]
+         [Author416])
      (sexo female))
 
     ([Author_185] of Autor
      (idAutor "185")
      (nombreAutor "Robin Sloan")
      (autoresSimilares
+         [Author_612]
+         [Author_691]
+         [Author_821]
+         [Author_67]
+         [Author_392]
+         [Author_390]
+         [Author_158]
          [Author_436]
-         [Author_388]
-         [Author_880]
-         [Author_595]
-         [Author_662]
-         [Author_842]
-         [Author_40]
-         [Author_611]
-         [Author_8]
-         [Author_553]
-         [Author_77]
-         [Author_68]
-         [Author_428]
-         [Author_932]
-         [Author_299]
-         [Author_766]
-         [Author_883]
-         [Author_794]
-         [Author_372]
-         [Author674])
+         [Author_274]
+         [Author_113]
+         [Author_332]
+         [Author_887]
+         [Author_585]
+         [Author_434]
+         [Author_119]
+         [Author_260]
+         [Author_933]
+         [Author_617]
+         [Author_750]
+         [Author942])
      (sexo male))
 
     ([Author_186] of Autor
      (idAutor "186")
      (nombreAutor "Karen Russell")
      (autoresSimilares
-         [Author_603]
-         [Author_129]
-         [Author_417]
-         [Author_16]
-         [Author_716]
-         [Author_788]
-         [Author_519]
-         [Author_937]
-         [Author_109]
-         [Author_156]
-         [Author_824]
-         [Author_712]
-         [Author_922]
-         [Author_141]
-         [Author_413]
-         [Author_348]
-         [Author124])
+         [Author_179]
+         [Author_149]
+         [Author_25]
+         [Author_659]
+         [Author_585]
+         [Author908])
      (sexo female))
 
     ([Author_187] of Autor
      (idAutor "187")
      (nombreAutor "Erick Setiawan")
      (autoresSimilares
-         [Author_75]
-         [Author_134]
-         [Author_672]
-         [Author_198]
-         [Author_455]
-         [Author_786]
-         [Author_233]
-         [Author_460]
-         [Author_360]
-         [Author_146]
-         [Author_641]
-         [Author_447]
-         [Author_125]
-         [Author_491]
-         [Author_498]
-         [Author_36]
-         [Author_559]
-         [Author_255]
-         [Author_180]
-         [Author89])
+         [Author_734]
+         [Author_140]
+         [Author_715]
+         [Author_517]
+         [Author_167]
+         [Author_519]
+         [Author_270]
+         [Author_387]
+         [Author199])
      (sexo male))
 
     ([Author_188] of Autor
      (idAutor "188")
      (nombreAutor "Alice Walker")
      (autoresSimilares
-         [Author649])
+         [Author_467]
+         [Author_817]
+         [Author545])
      (sexo female))
 
     ([Author_189] of Autor
      (idAutor "189")
      (nombreAutor "Gloria Naylor")
      (autoresSimilares
-         [Author_813]
-         [Author_889]
-         [Author_26]
-         [Author_899]
-         [Author_713]
-         [Author_537]
-         [Author_87]
-         [Author_82]
-         [Author_872]
-         [Author_444]
-         [Author_209]
-         [Author_213]
-         [Author_51]
-         [Author_826]
-         [Author452])
+         [Author_30]
+         [Author_353]
+         [Author_561]
+         [Author_474]
+         [Author_246]
+         [Author_878]
+         [Author_193]
+         [Author_6]
+         [Author_472]
+         [Author_325]
+         [Author_313]
+         [Author_670]
+         [Author_397]
+         [Author_396]
+         [Author_625]
+         [Author_27]
+         [Author602])
      (sexo female))
 
     ([Author_190] of Autor
      (idAutor "190")
      (nombreAutor "Chitra Banerjee Divakaruni")
      (autoresSimilares
-         [Author_70]
-         [Author_312]
-         [Author_252]
-         [Author_81]
-         [Author_290]
-         [Author_671]
-         [Author_435]
-         [Author_884]
-         [Author_323]
-         [Author_942]
-         [Author_391]
-         [Author_740]
-         [Author_668]
-         [Author_619]
-         [Author_584]
-         [Author_309]
-         [Author_756]
-         [Author_835]
-         [Author_933]
-         [Author188])
+         [Author427])
      (sexo female))
 
     ([Author_191] of Autor
      (idAutor "191")
      (nombreAutor "Hermann Hesse")
      (autoresSimilares
+         [Author_330]
+         [Author_495]
+         [Author_94]
+         [Author_120]
          [Author_205]
-         [Author_11]
-         [Author_201]
-         [Author_503]
-         [Author_558]
-         [Author380])
+         [Author_799]
+         [Author_790]
+         [Author_621]
+         [Author_698]
+         [Author_118]
+         [Author_291]
+         [Author_866]
+         [Author_853]
+         [Author_99]
+         [Author772])
      (sexo male))
 
     ([Author_192] of Autor
      (idAutor "192")
      (nombreAutor "Ta Obreht")
      (autoresSimilares
-         [Author_125]
-         [Author_34]
-         [Author_605]
-         [Author_654]
-         [Author_78]
-         [Author_524]
-         [Author_176]
-         [Author_586]
-         [Author_634]
-         [Author_283]
-         [Author_879]
-         [Author_122]
-         [Author_213]
-         [Author_398]
-         [Author_420]
-         [Author_189]
-         [Author582])
+         [Author_857]
+         [Author_861]
+         [Author_360]
+         [Author_792]
+         [Author_315]
+         [Author_158]
+         [Author_637]
+         [Author_4]
+         [Author_704]
+         [Author_282]
+         [Author_169]
+         [Author_813]
+         [Author397])
      (sexo female))
 
     ([Author_193] of Autor
      (idAutor "193")
      (nombreAutor "WP Kinsella")
      (autoresSimilares
-         [Author_387]
-         [Author_465]
-         [Author_588]
-         [Author_151]
-         [Author_216]
-         [Author_632]
-         [Author_740]
-         [Author_806]
-         [Author_257]
-         [Author_900]
-         [Author24])
+         [Author_490]
+         [Author_850]
+         [Author_420]
+         [Author_305]
+         [Author_874]
+         [Author_783]
+         [Author_613]
+         [Author_439]
+         [Author_724]
+         [Author_575]
+         [Author_779]
+         [Author472])
      (sexo male))
 
     ([Author_194] of Autor
      (idAutor "194")
      (nombreAutor "Gabriel Garca Mrquez")
      (autoresSimilares
-         [Author_753]
-         [Author_495]
-         [Author610])
+         [Author_381]
+         [Author_103]
+         [Author_933]
+         [Author_746]
+         [Author_636]
+         [Author_407]
+         [Author_469]
+         [Author_339]
+         [Author_682]
+         [Author_207]
+         [Author_903]
+         [Author_663]
+         [Author_10]
+         [Author_148]
+         [Author409])
      (sexo male))
 
     ([Author_195] of Autor
      (idAutor "195")
      (nombreAutor "Jorge Amado")
      (autoresSimilares
-         [Author_67]
-         [Author_594]
-         [Author_605]
-         [Author_163]
-         [Author_220]
-         [Author_24]
-         [Author_818]
+         [Author_764]
+         [Author_135]
          [Author_629]
-         [Author_471]
-         [Author348])
+         [Author_332]
+         [Author_157]
+         [Author_805]
+         [Author_511]
+         [Author_873]
+         [Author_327]
+         [Author_878]
+         [Author515])
      (sexo male))
 
     ([Author_196] of Autor
      (idAutor "196")
      (nombreAutor "Daniel Wallace")
      (autoresSimilares
-         [Author_357]
-         [Author_12]
-         [Author_253]
-         [Author_463]
-         [Author_506]
-         [Author_83]
-         [Author_766]
-         [Author_207]
-         [Author_239]
-         [Author_418]
-         [Author_179]
-         [Author_746]
-         [Author_892]
-         [Author_171]
-         [Author_603]
-         [Author_493]
-         [Author_394]
-         [Author_153]
-         [Author374])
+         [Author_182]
+         [Author274])
      (sexo male))
 
     ([Author_197] of Autor
      (idAutor "197")
      (nombreAutor "Luis Alberto Urrea")
      (autoresSimilares
-         [Author_454]
-         [Author_942]
-         [Author_505]
-         [Author_798]
-         [Author_610]
-         [Author_538]
-         [Author_214]
-         [Author_824]
-         [Author539])
+         [Author_301]
+         [Author_898]
+         [Author73])
      (sexo male))
 
     ([Author_198] of Autor
      (idAutor "198")
      (nombreAutor "John     Nichols")
      (autoresSimilares
-         [Author_469]
-         [Author_502]
-         [Author_446]
-         [Author569])
+         [Author_440]
+         [Author_213]
+         [Author_538]
+         [Author_197]
+         [Author_109]
+         [Author_496]
+         [Author_61]
+         [Author_899]
+         [Author_244]
+         [Author_521]
+         [Author_888]
+         [Author_10]
+         [Author_454]
+         [Author_410]
+         [Author_891]
+         [Author375])
      (sexo male))
 
     ([Author_199] of Autor
      (idAutor "199")
      (nombreAutor "Carlos Ruiz Zafn")
      (autoresSimilares
-         [Author_391]
-         [Author_47]
-         [Author_169]
-         [Author_612]
-         [Author_877]
-         [Author_540]
-         [Author_194]
-         [Author_534]
-         [Author_902]
-         [Author_514]
-         [Author755])
+         [Author_255]
+         [Author_424]
+         [Author_343]
+         [Author_26]
+         [Author_700]
+         [Author_73]
+         [Author_20]
+         [Author_431]
+         [Author_759]
+         [Author_450]
+         [Author_318]
+         [Author355])
      (sexo male))
 
     ([Author_200] of Autor
      (idAutor "200")
      (nombreAutor "Gnter Grass")
      (autoresSimilares
-         [Author_773]
-         [Author220])
+         [Author_735]
+         [Author_733]
+         [Author_443]
+         [Author_14]
+         [Author_499]
+         [Author299])
      (sexo male))
 
     ([Author_201] of Autor
      (idAutor "201")
      (nombreAutor "Juan Rulfo")
      (autoresSimilares
-         [Author18])
+         [Author_804]
+         [Author_850]
+         [Author_104]
+         [Author_360]
+         [Author_476]
+         [Author_269]
+         [Author_495]
+         [Author_75]
+         [Author_619]
+         [Author_776]
+         [Author_851]
+         [Author_298]
+         [Author_407]
+         [Author_520]
+         [Author_59]
+         [Author_543]
+         [Author_366]
+         [Author_29]
+         [Author_126]
+         [Author658])
      (sexo male))
 
     ([Author_202] of Autor
      (idAutor "202")
      (nombreAutor "Eowyn Ivey")
      (autoresSimilares
-         [Author_468]
-         [Author_881]
-         [Author_664]
-         [Author_620]
-         [Author_654]
-         [Author_914]
-         [Author_307]
-         [Author_375]
-         [Author_863]
-         [Author_576]
-         [Author_533]
-         [Author_61]
-         [Author_488]
-         [Author_310]
-         [Author_937]
-         [Author373])
+         [Author_598]
+         [Author_448]
+         [Author_139]
+         [Author_604]
+         [Author_797]
+         [Author_553]
+         [Author152])
      (sexo female))
 
     ([Author_203] of Autor
      (idAutor "203")
      (nombreAutor "Tom Robbins")
      (autoresSimilares
-         [Author_790]
-         [Author_776]
-         [Author_411]
-         [Author_738]
-         [Author_187]
-         [Author_348]
-         [Author_596]
-         [Author_561]
-         [Author_179]
-         [Author_307]
-         [Author_841]
-         [Author_493]
-         [Author_277]
-         [Author299])
+         [Author_45]
+         [Author_285]
+         [Author_662]
+         [Author_377]
+         [Author_719]
+         [Author_875]
+         [Author_245]
+         [Author_191]
+         [Author_350]
+         [Author_320]
+         [Author_399]
+         [Author584])
      (sexo male))
 
     ([Author_204] of Autor
      (idAutor "204")
      (nombreAutor "Rudolfo Anaya")
      (autoresSimilares
-         [Author_617]
-         [Author_668]
-         [Author940])
+         [Author_420]
+         [Author_772]
+         [Author_382]
+         [Author_74]
+         [Author329])
      (sexo male))
 
     ([Author_205] of Autor
      (idAutor "205")
      (nombreAutor "Jeanette Winterson")
      (autoresSimilares
-         [Author_252]
-         [Author_748]
-         [Author_784]
-         [Author_820]
-         [Author_164]
-         [Author_887]
-         [Author_512]
-         [Author_143]
-         [Author728])
+         [Author_51]
+         [Author_544]
+         [Author_315]
+         [Author_220]
+         [Author_327]
+         [Author_894]
+         [Author_777]
+         [Author_921]
+         [Author498])
      (sexo female))
 
     ([Author_206] of Autor
      (idAutor "206")
      (nombreAutor "Aimee Bender")
      (autoresSimilares
-         [Author_727]
-         [Author_207]
-         [Author_108]
-         [Author_199]
-         [Author_56]
-         [Author_573]
-         [Author_97]
-         [Author_481]
-         [Author_928]
-         [Author_673]
-         [Author_290]
-         [Author_264]
-         [Author_116]
-         [Author_259]
-         [Author_181]
-         [Author_143]
-         [Author_319]
-         [Author_594]
-         [Author141])
+         [Author_769]
+         [Author_811]
+         [Author_757]
+         [Author_354]
+         [Author_1]
+         [Author_766]
+         [Author_490]
+         [Author_617]
+         [Author807])
      (sexo male))
 
     ([Author_207] of Autor
      (idAutor "207")
      (nombreAutor "Italo Calvino")
      (autoresSimilares
-         [Author_493]
-         [Author_200]
-         [Author_425]
-         [Author_89]
-         [Author_773]
-         [Author_193]
-         [Author_376]
-         [Author_281]
-         [Author_36]
-         [Author_282]
-         [Author_799]
-         [Author_208]
-         [Author_424]
-         [Author_815]
-         [Author_123]
-         [Author_475]
-         [Author_260]
-         [Author_227]
-         [Author364])
+         [Author_342]
+         [Author_631]
+         [Author_725]
+         [Author_115]
+         [Author_872]
+         [Author_283]
+         [Author_11]
+         [Author_857]
+         [Author_8]
+         [Author354])
      (sexo male))
 
     ([Author_208] of Autor
      (idAutor "208")
      (nombreAutor "John Crowley")
      (autoresSimilares
-         [Author_858]
-         [Author_793]
-         [Author365])
+         [Author_81]
+         [Author_294]
+         [Author_255]
+         [Author_482]
+         [Author_874]
+         [Author_217]
+         [Author_851]
+         [Author_79]
+         [Author_146]
+         [Author_314]
+         [Author_502]
+         [Author_38]
+         [Author_469]
+         [Author_925]
+         [Author_92]
+         [Author_856]
+         [Author_248]
+         [Author_666]
+         [Author812])
      (sexo male))
 
     ([Author_209] of Autor
      (idAutor "209")
      (nombreAutor "Junot Daz")
      (autoresSimilares
-         [Author_685]
-         [Author_471]
-         [Author_59]
-         [Author_411]
-         [Author_653]
-         [Author_590]
-         [Author_599]
-         [Author_819]
-         [Author_368]
-         [Author_526]
-         [Author_478]
-         [Author_593]
-         [Author_211]
-         [Author_251]
-         [Author_387]
-         [Author_891]
-         [Author_714]
-         [Author568])
+         [Author_681]
+         [Author_464]
+         [Author_489]
+         [Author_448]
+         [Author_866]
+         [Author_783]
+         [Author915])
      (sexo male))
 
     ([Author_210] of Autor
      (idAutor "210")
      (nombreAutor "Mark Helprin")
      (autoresSimilares
-         [Author_242]
-         [Author_673]
-         [Author_504]
-         [Author_285]
-         [Author390])
+         [Author_569]
+         [Author_479]
+         [Author_195]
+         [Author_123]
+         [Author_423]
+         [Author_50]
+         [Author_868]
+         [Author_356]
+         [Author_383]
+         [Author_705]
+         [Author_537]
+         [Author_689]
+         [Author_921]
+         [Author757])
      (sexo male))
 
     ([Author_211] of Autor
      (idAutor "211")
      (nombreAutor "Yann Martel")
      (autoresSimilares
-         [Author_474]
-         [Author_628]
-         [Author_884]
-         [Author_793]
-         [Author_71]
-         [Author_569]
-         [Author_266]
-         [Author_739]
-         [Author_903]
-         [Author_48]
-         [Author_372]
-         [Author_868]
-         [Author_534]
-         [Author_53]
-         [Author_84]
-         [Author_634]
-         [Author_395]
-         [Author36])
+         [Author_298]
+         [Author_309]
+         [Author_677]
+         [Author721])
      (sexo male))
 
     ([Author_212] of Autor
      (idAutor "212")
      (nombreAutor "Jonathan Safran Foer")
      (autoresSimilares
-         [Author143])
+         [Author_313]
+         [Author_643]
+         [Author_750]
+         [Author_250]
+         [Author_593]
+         [Author_568]
+         [Author_397]
+         [Author_128]
+         [Author749])
      (sexo male))
 
     ([Author_213] of Autor
      (idAutor "213")
      (nombreAutor "Sarah Addison Allen")
      (autoresSimilares
-         [Author_487]
-         [Author_328]
-         [Author_408]
-         [Author104])
+         [Author_57]
+         [Author_514]
+         [Author_591]
+         [Author_56]
+         [Author_373]
+         [Author_861]
+         [Author_717]
+         [Author_884]
+         [Author_142]
+         [Author_385]
+         [Author_130]
+         [Author_19]
+         [Author_90]
+         [Author_545]
+         [Author_185]
+         [Author_538]
+         [Author_247]
+         [Author_483]
+         [Author_371]
+         [Author584])
      (sexo female))
 
     ([Author_214] of Autor
      (idAutor "214")
      (nombreAutor "Jorge Luis Borges")
      (autoresSimilares
-         [Author_596]
-         [Author_893]
-         [Author_322]
-         [Author_134]
-         [Author_22]
-         [Author_493]
-         [Author_460]
-         [Author_721]
-         [Author_574]
-         [Author929])
+         [Author918])
      (sexo male))
 
     ([Author_215] of Autor
      (idAutor "215")
      (nombreAutor "Erin Morgenstern")
      (autoresSimilares
-         [Author_57]
-         [Author_187]
-         [Author_634]
-         [Author_784]
-         [Author_203]
-         [Author_364]
-         [Author_205]
-         [Author_414]
-         [Author_590]
-         [Author683])
+         [Author_786]
+         [Author_351]
+         [Author_685]
+         [Author_729]
+         [Author_432]
+         [Author_621]
+         [Author_754]
+         [Author_147]
+         [Author_181]
+         [Author_329]
+         [Author_638]
+         [Author_571]
+         [Author_78]
+         [Author_160]
+         [Author_150]
+         [Author289])
      (sexo female))
 
     ([Author_216] of Autor
      (idAutor "216")
      (nombreAutor "Mikhail Bulgakov")
      (autoresSimilares
-         [Author_450]
-         [Author_521]
-         [Author_0]
-         [Author_227]
-         [Author_831]
-         [Author_172]
-         [Author_832]
-         [Author_356]
-         [Author_378]
-         [Author_693]
-         [Author_703]
-         [Author_336]
-         [Author_510]
-         [Author_65]
-         [Author_427]
-         [Author375])
+         [Author_724]
+         [Author_709]
+         [Author_551]
+         [Author_257]
+         [Author_867]
+         [Author_871]
+         [Author584])
      (sexo male))
 
     ([Author_217] of Autor
      (idAutor "217")
      (nombreAutor "Laura Esquivel")
      (autoresSimilares
-         [Author_896]
-         [Author_918]
-         [Author_48]
-         [Author195])
+         [Author_548]
+         [Author_1]
+         [Author_402]
+         [Author_436]
+         [Author_703]
+         [Author_381]
+         [Author_410]
+         [Author_22]
+         [Author_270]
+         [Author_936]
+         [Author_748]
+         [Author_7]
+         [Author_267]
+         [Author_778]
+         [Author_517]
+         [Author_490]
+         [Author536])
      (sexo female))
 
     ([Author_218] of Autor
      (idAutor "218")
      (nombreAutor "Sharon Creech")
      (autoresSimilares
-         [Author_423]
-         [Author_186]
-         [Author_83]
-         [Author_467]
-         [Author_517]
-         [Author_618]
-         [Author_844]
-         [Author_155]
-         [Author_647]
-         [Author_737]
-         [Author_530]
-         [Author_529]
-         [Author_243]
-         [Author_668]
-         [Author_224]
-         [Author_527]
-         [Author260])
+         [Author_493]
+         [Author_233]
+         [Author_545]
+         [Author_669]
+         [Author_777]
+         [Author_684]
+         [Author_499]
+         [Author_707]
+         [Author_831]
+         [Author_646]
+         [Author_841]
+         [Author_111]
+         [Author_630]
+         [Author_653]
+         [Author_494]
+         [Author_14]
+         [Author_413]
+         [Author_929]
+         [Author297])
      (sexo male))
 
     ([Author_219] of Autor
      (idAutor "219")
      (nombreAutor "Anthony Burgess")
      (autoresSimilares
-         [Author891])
+         [Author_488]
+         [Author_198]
+         [Author_150]
+         [Author378])
      (sexo male))
 
     ([Author_220] of Autor
      (idAutor "220")
      (nombreAutor "Willa Cather")
      (autoresSimilares
-         [Author_5]
-         [Author_725]
-         [Author_101]
-         [Author_783]
-         [Author_856]
-         [Author_239]
-         [Author_853]
-         [Author_557]
-         [Author_394]
-         [Author809])
+         [Author_201]
+         [Author_480]
+         [Author_846]
+         [Author_738]
+         [Author_585]
+         [Author_91]
+         [Author_546]
+         [Author_402]
+         [Author_617]
+         [Author_347]
+         [Author616])
      (sexo female))
 
     ([Author_221] of Autor
      (idAutor "221")
      (nombreAutor "Thomas Hardy")
      (autoresSimilares
-         [Author_481]
-         [Author_427]
-         [Author_872]
-         [Author_161]
-         [Author_456]
-         [Author_557]
-         [Author571])
+         [Author_394]
+         [Author_740]
+         [Author_477]
+         [Author886])
      (sexo male))
 
     ([Author_222] of Autor
      (idAutor "222")
      (nombreAutor "Charles Dickens")
      (autoresSimilares
-         [Author_234]
-         [Author_696]
-         [Author_402]
-         [Author_266]
-         [Author_927]
-         [Author_138]
-         [Author_173]
-         [Author_925]
-         [Author_328]
-         [Author_472]
-         [Author_297]
-         [Author_849]
-         [Author_165]
-         [Author_508]
-         [Author_751]
-         [Author_492]
-         [Author_828]
-         [Author595])
+         [Author_468]
+         [Author745])
      (sexo male))
 
     ([Author_223] of Autor
      (idAutor "223")
      (nombreAutor "Ralph Ellison")
      (autoresSimilares
-         [Author289])
+         [Author252])
      (sexo male))
 
     ([Author_224] of Autor
      (idAutor "224")
      (nombreAutor "Victor Hugo")
      (autoresSimilares
-         [Author_505]
-         [Author_75]
-         [Author_770]
-         [Author_748]
-         [Author_432]
-         [Author_550]
-         [Author272])
+         [Author_639]
+         [Author_846]
+         [Author_819]
+         [Author_941]
+         [Author_714]
+         [Author_783]
+         [Author_11]
+         [Author_660]
+         [Author_462]
+         [Author_563]
+         [Author_849]
+         [Author_423]
+         [Author_481]
+         [Author_633]
+         [Author_908]
+         [Author_670]
+         [Author_655]
+         [Author_248]
+         [Author417])
      (sexo male))
 
     ([Author_225] of Autor
      (idAutor "225")
      (nombreAutor "Mary Ann Shaffer")
      (autoresSimilares
-         [Author_95]
-         [Author_597]
-         [Author_277]
-         [Author_698]
-         [Author_134]
-         [Author675])
+         [Author_509]
+         [Author_769]
+         [Author_236]
+         [Author_341]
+         [Author_672]
+         [Author_735]
+         [Author_461]
+         [Author_93]
+         [Author_296]
+         [Author_600]
+         [Author_346]
+         [Author785])
      (sexo female))
 
     ([Author_226] of Autor
      (idAutor "226")
      (nombreAutor "Zora Neale Hurston")
      (autoresSimilares
-         [Author_3]
-         [Author_829]
-         [Author_170]
-         [Author_593]
-         [Author_228]
-         [Author_330]
-         [Author_272]
-         [Author_753]
-         [Author_58]
-         [Author_204]
-         [Author_780]
-         [Author_267]
-         [Author_756]
-         [Author541])
+         [Author630])
      (sexo female))
 
     ([Author_227] of Autor
      (idAutor "227")
      (nombreAutor "Richard Bach")
      (autoresSimilares
-         [Author_854]
-         [Author_550]
-         [Author_315]
-         [Author_655]
-         [Author_783]
-         [Author_144]
-         [Author_816]
-         [Author_760]
-         [Author_178]
-         [Author_607]
-         [Author_912]
-         [Author_638]
-         [Author_480]
-         [Author_811]
-         [Author_896]
-         [Author84])
+         [Author_699]
+         [Author_597]
+         [Author_583]
+         [Author_915]
+         [Author_111]
+         [Author_70]
+         [Author_383]
+         [Author_276]
+         [Author_430]
+         [Author_87]
+         [Author_581]
+         [Author_911]
+         [Author275])
      (sexo male))
 
     ([Author_228] of Autor
      (idAutor "228")
      (nombreAutor "Barbara Kingsolver")
      (autoresSimilares
-         [Author_79]
-         [Author_628]
-         [Author_668]
-         [Author_344]
-         [Author_564]
-         [Author_439]
-         [Author_424]
-         [Author_697]
-         [Author_646]
-         [Author_758]
-         [Author_699]
-         [Author_31]
-         [Author_318]
-         [Author_288]
+         [Author_212]
+         [Author_222]
+         [Author_855]
+         [Author_737]
+         [Author_40]
+         [Author_293]
+         [Author_859]
          [Author_320]
-         [Author44])
+         [Author847])
      (sexo female))
 
     ([Author_229] of Autor
      (idAutor "229")
      (nombreAutor "Gustave Flaubert")
      (autoresSimilares
-         [Author_906]
-         [Author_700]
-         [Author_125]
+         [Author_649]
+         [Author_410]
+         [Author_287]
+         [Author_171]
+         [Author_248]
+         [Author_335]
+         [Author_680]
+         [Author_81]
+         [Author_846]
+         [Author_533]
          [Author_489]
-         [Author_207]
-         [Author_730]
-         [Author_339]
-         [Author_277]
-         [Author52])
+         [Author_125]
+         [Author_750]
+         [Author_453]
+         [Author_297]
+         [Author_762]
+         [Author_56]
+         [Author_261]
+         [Author324])
      (sexo male))
 
     ([Author_230] of Autor
      (idAutor "230")
      (nombreAutor "John Steinbeck")
      (autoresSimilares
-         [Author_234]
-         [Author_285]
-         [Author_20]
-         [Author_656]
-         [Author_72]
-         [Author_798]
-         [Author_360]
-         [Author696])
+         [Author_19]
+         [Author_231]
+         [Author_728]
+         [Author_435]
+         [Author_252]
+         [Author_779]
+         [Author_614]
+         [Author_666]
+         [Author_902]
+         [Author_909]
+         [Author_429]
+         [Author_110]
+         [Author_799]
+         [Author_730]
+         [Author249])
      (sexo male))
 
     ([Author_231] of Autor
      (idAutor "231")
      (nombreAutor "Mark Twain")
      (autoresSimilares
-         [Author_745]
-         [Author_868]
-         [Author_402]
-         [Author_683]
-         [Author_34]
-         [Author_134]
-         [Author233])
+         [Author_435]
+         [Author_258]
+         [Author_177]
+         [Author_211]
+         [Author_915]
+         [Author_422]
+         [Author_886]
+         [Author_464]
+         [Author_811]
+         [Author_579]
+         [Author_666]
+         [Author_463]
+         [Author_899]
+         [Author_680]
+         [Author_488]
+         [Author525])
      (sexo male))
 
     ([Author_232] of Autor
      (idAutor "232")
      (nombreAutor "Joseph Conrad")
      (autoresSimilares
-         [Author_45]
-         [Author_534]
-         [Author_687]
-         [Author_614]
-         [Author_710]
-         [Author_816]
-         [Author_702]
-         [Author_740]
-         [Author_127]
-         [Author_265]
-         [Author822])
+         [Author696])
      (sexo male))
 
     ([Author_233] of Autor
      (idAutor "233")
      (nombreAutor "Sue Monk Kidd")
      (autoresSimilares
-         [Author_923]
-         [Author_30]
-         [Author351])
+         [Author_673]
+         [Author_918]
+         [Author_480]
+         [Author_154]
+         [Author856])
      (sexo female))
 
     ([Author_234] of Autor
      (idAutor "234")
      (nombreAutor "Orson Scott Card")
      (autoresSimilares
-         [Author_731]
-         [Author_865]
-         [Author_672]
-         [Author_842]
-         [Author_738]
-         [Author_615]
-         [Author_924]
-         [Author499])
+         [Author_343]
+         [Author_795]
+         [Author_614]
+         [Author_69]
+         [Author_232]
+         [Author_918]
+         [Author_164]
+         [Author_290]
+         [Author250])
      (sexo male))
 
     ([Author_235] of Autor
      (idAutor "235")
      (nombreAutor "Chinua Achebe")
      (autoresSimilares
-         [Author_938]
-         [Author_645]
-         [Author_745]
-         [Author_34]
-         [Author_541]
-         [Author_114]
-         [Author_25]
-         [Author_866]
-         [Author_672]
-         [Author106])
+         [Author_304]
+         [Author_760]
+         [Author_42]
+         [Author_809]
+         [Author_890]
+         [Author_902]
+         [Author_352]
+         [Author_132]
+         [Author_695]
+         [Author_160]
+         [Author_424]
+         [Author_648]
+         [Author_126]
+         [Author_808]
+         [Author_873]
+         [Author_73]
+         [Author520])
      (sexo male))
 
     ([Author_236] of Autor
      (idAutor "236")
      (nombreAutor "Jack London")
      (autoresSimilares
-         [Author_761]
-         [Author_567]
-         [Author_156]
-         [Author_116]
-         [Author_862]
-         [Author_929]
-         [Author_53]
-         [Author_331]
-         [Author276])
+         [Author_289]
+         [Author_678]
+         [Author_687]
+         [Author_4]
+         [Author_543]
+         [Author_377]
+         [Author_411]
+         [Author_190]
+         [Author_892]
+         [Author_540]
+         [Author_259]
+         [Author_359]
+         [Author_109]
+         [Author_619]
+         [Author_753]
+         [Author_124]
+         [Author_375]
+         [Author_201]
+         [Author_469]
+         [Author917])
      (sexo male))
 
     ([Author_237] of Autor
      (idAutor "237")
      (nombreAutor "Ken Kesey")
      (autoresSimilares
-         [Author_485]
-         [Author_303]
-         [Author_337]
-         [Author_302]
-         [Author_360]
-         [Author_14]
-         [Author_199]
-         [Author_766]
-         [Author_12]
-         [Author671])
+         [Author_311]
+         [Author_107]
+         [Author_873]
+         [Author_500]
+         [Author_256]
+         [Author_675]
+         [Author_743]
+         [Author_521]
+         [Author_452]
+         [Author_832]
+         [Author_137]
+         [Author_245]
+         [Author370])
      (sexo male))
 
     ([Author_238] of Autor
      (idAutor "238")
      (nombreAutor "Ernest Hemingway")
      (autoresSimilares
-         [Author_617]
-         [Author_49]
-         [Author_738]
-         [Author_125]
-         [Author_565]
-         [Author_776]
-         [Author_9]
-         [Author_311]
-         [Author_837]
-         [Author_490]
-         [Author_899]
-         [Author_218]
-         [Author_832]
-         [Author_270]
-         [Author_488]
-         [Author_807]
-         [Author928])
+         [Author_524]
+         [Author891])
      (sexo male))
 
     ([Author_239] of Autor
      (idAutor "239")
      (nombreAutor "Geoffrey Chaucer")
      (autoresSimilares
-         [Author_473]
-         [Author_831]
-         [Author_380]
-         [Author_130]
-         [Author_408]
-         [Author_758]
-         [Author_773]
-         [Author_313]
-         [Author_733]
-         [Author_720]
-         [Author_785]
-         [Author_92]
-         [Author_759]
-         [Author_612]
-         [Author463])
+         [Author_347]
+         [Author_694]
+         [Author_60]
+         [Author_61]
+         [Author_827]
+         [Author_503]
+         [Author_74]
+         [Author_825]
+         [Author_331]
+         [Author_765]
+         [Author_188]
+         [Author_511]
+         [Author_65]
+         [Author_930]
+         [Author_73]
+         [Author_366]
+         [Author_913]
+         [Author_28]
+         [Author653])
      (sexo male))
 
     ([Author_240] of Autor
      (idAutor "240")
      (nombreAutor "William Paul Young")
      (autoresSimilares
-         [Author_558]
-         [Author586])
+         [Author_218]
+         [Author_424]
+         [Author_691]
+         [Author_606]
+         [Author_647]
+         [Author_431]
+         [Author_715]
+         [Author_297]
+         [Author_491]
+         [Author_531]
+         [Author_59]
+         [Author_908]
+         [Author_775]
+         [Author_54]
+         [Author471])
      (sexo male))
 
     ([Author_241] of Autor
      (idAutor "241")
      (nombreAutor "Richard  Adams")
      (autoresSimilares
-         [Author_388]
-         [Author_202]
-         [Author_154]
-         [Author463])
+         [Author_586]
+         [Author_141]
+         [Author72])
      (sexo male))
 
     ([Author_242] of Autor
      (idAutor "242")
      (nombreAutor "Fyodor Dostoyevsky")
      (autoresSimilares
-         [Author_664]
-         [Author_468]
-         [Author_63]
-         [Author_471]
-         [Author_924]
-         [Author_252]
-         [Author_86]
-         [Author_807]
-         [Author_135]
-         [Author_652]
-         [Author_597]
-         [Author_51]
-         [Author_580]
-         [Author_801]
-         [Author264])
+         [Author_219]
+         [Author_64]
+         [Author_419]
+         [Author_346]
+         [Author_542]
+         [Author_935]
+         [Author_154]
+         [Author_292]
+         [Author115])
      (sexo male))
 
     ([Author_243] of Autor
      (idAutor "243")
      (nombreAutor "Albert Camus")
      (autoresSimilares
-         [Author_357]
-         [Author_238]
-         [Author_128]
-         [Author_538]
-         [Author_373]
-         [Author_944]
-         [Author_477]
-         [Author_567]
-         [Author_46]
-         [Author_273]
-         [Author_190]
-         [Author_65]
-         [Author_432]
-         [Author_334]
-         [Author508])
+         [Author_505]
+         [Author_33]
+         [Author_866]
+         [Author_756]
+         [Author_318]
+         [Author416])
      (sexo male))
 
     ([Author_244] of Autor
      (idAutor "244")
      (nombreAutor "John Boyne")
      (autoresSimilares
-         [Author_648]
-         [Author_837]
-         [Author_546]
-         [Author_747]
-         [Author_27]
-         [Author_357]
-         [Author_500]
-         [Author_597]
-         [Author_842]
-         [Author_743]
-         [Author827])
+         [Author_844]
+         [Author_298]
+         [Author_591]
+         [Author_588]
+         [Author836])
      (sexo male))
 
     ([Author_245] of Autor
      (idAutor "245")
      (nombreAutor "Sara Gruen")
      (autoresSimilares
-         [Author_402]
-         [Author_170]
-         [Author_491]
-         [Author_519]
-         [Author_643]
-         [Author_274]
-         [Author_473]
-         [Author_358]
-         [Author_786]
-         [Author_459]
-         [Author_166]
-         [Author_395]
-         [Author_564]
-         [Author_806]
-         [Author_860]
-         [Author_122]
-         [Author168])
+         [Author_733]
+         [Author_98]
+         [Author_629]
+         [Author259])
      (sexo female))
 
     ([Author_246] of Autor
      (idAutor "246")
      (nombreAutor "Alice Sebold")
      (autoresSimilares
-         [Author_605]
-         [Author_704]
-         [Author_810]
-         [Author559])
+         [Author_111]
+         [Author_35]
+         [Author_416]
+         [Author_541]
+         [Author_74]
+         [Author_851]
+         [Author_63]
+         [Author_880]
+         [Author_875]
+         [Author_218]
+         [Author_699]
+         [Author_610]
+         [Author_706]
+         [Author_580]
+         [Author242])
      (sexo male))
 
     ([Author_247] of Autor
      (idAutor "247")
      (nombreAutor "Paulo Coelho")
      (autoresSimilares
-         [Author_468]
-         [Author_553]
-         [Author_746]
-         [Author_671]
-         [Author_676]
-         [Author_345]
-         [Author_875]
-         [Author_489]
-         [Author_695]
-         [Author_689]
-         [Author_36]
-         [Author_235]
-         [Author_922]
-         [Author_407]
-         [Author_88]
-         [Author_887]
-         [Author_854]
-         [Author64])
+         [Author530])
      (sexo male))
 
     ([Author_248] of Autor
      (idAutor "248")
      (nombreAutor "Mary Wollstonecraft Shelley")
      (autoresSimilares
-         [Author_634]
-         [Author_231]
-         [Author_312]
-         [Author_800]
-         [Author_219]
-         [Author_559]
-         [Author_168]
-         [Author_860]
-         [Author_577]
-         [Author_338]
-         [Author_450]
-         [Author92])
+         [Author_691]
+         [Author_97]
+         [Author_317]
+         [Author_361]
+         [Author_78]
+         [Author_779]
+         [Author_835]
+         [Author_326]
+         [Author_734]
+         [Author_325]
+         [Author436])
      (sexo female))
 
     ([Author_249] of Autor
      (idAutor "249")
      (nombreAutor "Daniel Keyes")
      (autoresSimilares
-         [Author_110]
-         [Author_213]
-         [Author_813]
-         [Author_887]
-         [Author_658]
-         [Author_0]
-         [Author_538]
-         [Author_531]
-         [Author_655]
-         [Author_219]
-         [Author_53]
-         [Author_134]
-         [Author_793]
-         [Author_478]
-         [Author_470]
-         [Author_466]
-         [Author872])
+         [Author124])
      (sexo male))
 
     ([Author_250] of Autor
      (idAutor "250")
      (nombreAutor "Emily Bront")
      (autoresSimilares
-         [Author_526]
-         [Author_943]
-         [Author_179]
-         [Author610])
+         [Author_712]
+         [Author_233]
+         [Author_631]
+         [Author_263]
+         [Author_905]
+         [Author_859]
+         [Author_78]
+         [Author_708]
+         [Author_751]
+         [Author_146]
+         [Author_304]
+         [Author_217]
+         [Author_432]
+         [Author_678]
+         [Author_742]
+         [Author_262]
+         [Author812])
      (sexo female))
 
     ([Author_251] of Autor
      (idAutor "251")
      (nombreAutor "Kathryn Stockett")
      (autoresSimilares
-         [Author_58]
-         [Author_712]
-         [Author_312]
-         [Author_636]
-         [Author_13]
-         [Author_423]
-         [Author_285]
-         [Author_754]
-         [Author_580]
-         [Author_930]
-         [Author246])
+         [Author_383]
+         [Author_125]
+         [Author_53]
+         [Author_396]
+         [Author_680]
+         [Author_284]
+         [Author_318]
+         [Author_159]
+         [Author_320]
+         [Author_119]
+         [Author_824]
+         [Author_481]
+         [Author_732]
+         [Author_867]
+         [Author_800]
+         [Author_230]
+         [Author930])
      (sexo female))
 
     ([Author_252] of Autor
      (idAutor "252")
      (nombreAutor "Mark Haddon")
      (autoresSimilares
-         [Author_361]
-         [Author_234]
-         [Author_204]
-         [Author_463]
-         [Author_379]
-         [Author689])
+         [Author_589]
+         [Author_935]
+         [Author_624]
+         [Author_656]
+         [Author_190]
+         [Author_321]
+         [Author_549]
+         [Author_719]
+         [Author_683]
+         [Author_453]
+         [Author442])
      (sexo male))
 
     ([Author_253] of Autor
      (idAutor "253")
      (nombreAutor "Nathaniel Hawthorne")
      (autoresSimilares
-         [Author_622]
-         [Author_21]
-         [Author_427]
-         [Author_894]
-         [Author_369]
-         [Author_389]
-         [Author_374]
-         [Author_304]
-         [Author_306]
-         [Author_892]
-         [Author_528]
-         [Author_13]
-         [Author_34]
-         [Author_919]
-         [Author_769]
-         [Author_48]
-         [Author_43]
-         [Author_864]
-         [Author_160]
-         [Author877])
+         [Author_70]
+         [Author_806]
+         [Author_363]
+         [Author_805]
+         [Author_309]
+         [Author_916]
+         [Author_147]
+         [Author_473]
+         [Author_577]
+         [Author_694]
+         [Author_667]
+         [Author_316]
+         [Author_228]
+         [Author_927]
+         [Author242])
      (sexo male))
 
     ([Author_254] of Autor
      (idAutor "254")
      (nombreAutor "Antoine de Saint-Exupry")
      (autoresSimilares
-         [Author_310]
-         [Author_375]
-         [Author_607]
-         [Author_602]
-         [Author_511]
-         [Author_572]
-         [Author235])
+         [Author_749]
+         [Author_40]
+         [Author_39]
+         [Author_51]
+         [Author_457]
+         [Author_177]
+         [Author_175]
+         [Author_391]
+         [Author_939]
+         [Author_268]
+         [Author_703]
+         [Author_77]
+         [Author_898]
+         [Author884])
      (sexo male))
 
     ([Author_255] of Autor
      (idAutor "255")
      (nombreAutor "Markus Zusak")
      (autoresSimilares
-         [Author475])
+         [Author_705]
+         [Author_174]
+         [Author_197]
+         [Author_292]
+         [Author_812]
+         [Author_756]
+         [Author_872]
+         [Author_282]
+         [Author_381]
+         [Author_925]
+         [Author_485]
+         [Author220])
      (sexo male))
 
     ([Author_256] of Autor
      (idAutor "256")
      (nombreAutor "George Orwell")
      (autoresSimilares
-         [Author_120]
-         [Author_182]
-         [Author_400]
-         [Author_757]
-         [Author_742]
-         [Author_762]
-         [Author_458]
-         [Author_699]
-         [Author_219]
-         [Author906])
+         [Author544])
      (sexo male))
 
     ([Author_257] of Autor
      (idAutor "257")
      (nombreAutor "JD Salinger")
      (autoresSimilares
-         [Author_536]
-         [Author_870]
-         [Author_911]
-         [Author_342]
-         [Author_703]
+         [Author_906]
+         [Author_213]
+         [Author_603]
+         [Author_58]
          [Author_8]
-         [Author_288]
-         [Author_863]
-         [Author_884]
-         [Author_666]
-         [Author351])
+         [Author115])
      (sexo male))
 
     ([Author_258] of Autor
      (idAutor "258")
      (nombreAutor "Charlotte Bront")
      (autoresSimilares
-         [Author_683]
-         [Author_348]
-         [Author_134]
-         [Author_255]
-         [Author_312]
-         [Author_397]
-         [Author_226]
-         [Author_94]
-         [Author_223]
-         [Author_183]
-         [Author549])
+         [Author_64]
+         [Author_542]
+         [Author_333]
+         [Author650])
      (sexo female))
 
     ([Author_259] of Autor
      (idAutor "259")
      (nombreAutor "William Golding")
      (autoresSimilares
-         [Author_522]
-         [Author_122]
-         [Author_476]
-         [Author_100]
-         [Author_854]
-         [Author_914]
-         [Author_903]
-         [Author_852]
-         [Author_114]
-         [Author_782]
-         [Author_865]
-         [Author376])
+         [Author_843]
+         [Author_792]
+         [Author_30]
+         [Author718])
      (sexo male))
 
     ([Author_260] of Autor
      (idAutor "260")
      (nombreAutor "F Scott Fitzgerald")
      (autoresSimilares
-         [Author_52]
-         [Author_536]
-         [Author_353]
-         [Author_96]
-         [Author_191]
-         [Author_445]
-         [Author_708]
-         [Author_0]
-         [Author_661]
-         [Author_561]
-         [Author_29]
-         [Author797])
+         [Author_334]
+         [Author276])
      (sexo male))
 
     ([Author_261] of Autor
      (idAutor "261")
      (nombreAutor "Harper Lee")
      (autoresSimilares
-         [Author_686]
-         [Author_553]
-         [Author_327]
-         [Author_757]
-         [Author_906]
-         [Author_815]
-         [Author_765]
-         [Author_666]
-         [Author447])
+         [Author_447]
+         [Author_389]
+         [Author_96]
+         [Author_239]
+         [Author_901]
+         [Author_398]
+         [Author_356]
+         [Author_285]
+         [Author887])
      (sexo female))
 
     ([Author_262] of Autor
      (idAutor "262")
      (nombreAutor "Ian McEwan")
      (autoresSimilares
-         [Author_410]
-         [Author_761]
-         [Author_530]
-         [Author_358]
-         [Author_287]
-         [Author_332]
-         [Author_126]
-         [Author_269]
-         [Author_860]
-         [Author_714]
-         [Author_603]
+         [Author_505]
+         [Author_380]
          [Author_596]
-         [Author_533]
-         [Author_415]
-         [Author_504]
-         [Author_625]
-         [Author_650]
-         [Author453])
+         [Author_156]
+         [Author931])
      (sexo male))
 
     ([Author_263] of Autor
      (idAutor "263")
      (nombreAutor "Michael Cox")
      (autoresSimilares
-         [Author_445]
-         [Author_481]
-         [Author814])
+         [Author_124]
+         [Author_447]
+         [Author_246]
+         [Author_807]
+         [Author_615]
+         [Author_48]
+         [Author_106]
+         [Author_924]
+         [Author_598]
+         [Author_806]
+         [Author_101]
+         [Author648])
      (sexo male))
 
     ([Author_264] of Autor
      (idAutor "264")
      (nombreAutor "Kate Mosse")
      (autoresSimilares
-         [Author_851]
-         [Author_772]
-         [Author_212]
-         [Author_135]
-         [Author_396]
-         [Author_345]
-         [Author_279]
-         [Author_25]
-         [Author_696]
-         [Author_652]
-         [Author_309]
-         [Author_270]
-         [Author_386]
-         [Author285])
+         [Author_149]
+         [Author_792]
+         [Author_369]
+         [Author_714]
+         [Author_468]
+         [Author_11]
+         [Author_943]
+         [Author_724]
+         [Author_200]
+         [Author401])
      (sexo male))
 
     ([Author_265] of Autor
      (idAutor "265")
      (nombreAutor "Arturo Prez-Reverte")
      (autoresSimilares
-         [Author_670]
-         [Author_72]
-         [Author_918]
-         [Author_309]
-         [Author_464]
-         [Author_209]
-         [Author_593]
-         [Author_311]
-         [Author_26]
-         [Author_546]
-         [Author710])
+         [Author_10]
+         [Author_49]
+         [Author_353]
+         [Author_454]
+         [Author_872]
+         [Author_229]
+         [Author_816]
+         [Author_687]
+         [Author_210]
+         [Author_787]
+         [Author_662]
+         [Author_508]
+         [Author_232]
+         [Author_58]
+         [Author_769]
+         [Author_318]
+         [Author916])
      (sexo male))
 
     ([Author_266] of Autor
      (idAutor "266")
      (nombreAutor "Boris Akunin")
      (autoresSimilares
-         [Author_622]
-         [Author_916]
-         [Author155])
+         [Author474])
      (sexo male))
 
     ([Author_267] of Autor
      (idAutor "267")
      (nombreAutor "Karen Maitland")
      (autoresSimilares
-         [Author_945]
-         [Author_921]
-         [Author42])
+         [Author_167]
+         [Author857])
      (sexo female))
 
     ([Author_268] of Autor
      (idAutor "268")
      (nombreAutor "Umberto Eco")
      (autoresSimilares
-         [Author_685]
-         [Author_610]
-         [Author_775]
-         [Author_906]
-         [Author_722]
-         [Author793])
+         [Author_672]
+         [Author_616]
+         [Author_845]
+         [Author_526]
+         [Author_895]
+         [Author_570]
+         [Author_56]
+         [Author257])
      (sexo male))
 
     ([Author_269] of Autor
      (idAutor "269")
      (nombreAutor "Walter Mosley")
      (autoresSimilares
-         [Author_242]
-         [Author_305]
-         [Author_627]
-         [Author_468]
-         [Author_124]
-         [Author_407]
-         [Author_5]
-         [Author_90]
-         [Author_162]
-         [Author_252]
-         [Author_833]
-         [Author_888]
-         [Author_525]
-         [Author721])
+         [Author_934]
+         [Author_630]
+         [Author_204]
+         [Author_32]
+         [Author_88]
+         [Author_66]
+         [Author_202]
+         [Author_94]
+         [Author_148]
+         [Author_481]
+         [Author_472]
+         [Author_496]
+         [Author902])
      (sexo male))
 
     ([Author_270] of Autor
      (idAutor "270")
      (nombreAutor "Shelley Gray")
      (autoresSimilares
-         [Author_275]
-         [Author_650]
-         [Author_78]
-         [Author_556]
-         [Author_543]
-         [Author_37]
-         [Author_699]
-         [Author_89]
-         [Author_733]
-         [Author_154]
-         [Author_511]
-         [Author_386]
-         [Author_456]
-         [Author_470]
-         [Author_79]
-         [Author_441]
-         [Author_711]
-         [Author_189]
-         [Author634])
+         [Author_428]
+         [Author513])
      (sexo male))
 
     ([Author_271] of Autor
      (idAutor "271")
      (nombreAutor "AS Byatt")
      (autoresSimilares
-         [Author_668]
-         [Author_218]
-         [Author_408]
-         [Author_297]
-         [Author_721]
-         [Author_808]
-         [Author_388]
-         [Author121])
+         [Author_142]
+         [Author_660]
+         [Author_21]
+         [Author_237]
+         [Author647])
      (sexo female))
 
     ([Author_272] of Autor
      (idAutor "272")
      (nombreAutor "Jamie Ford")
      (autoresSimilares
-         [Author_599]
-         [Author_926]
-         [Author_4]
-         [Author_855]
-         [Author_453]
-         [Author_259]
-         [Author_165]
-         [Author_179]
-         [Author574])
+         [Author_561]
+         [Author_617]
+         [Author_846]
+         [Author_815]
+         [Author240])
      (sexo male))
 
     ([Author_273] of Autor
      (idAutor "273")
      (nombreAutor "Kate Morton")
      (autoresSimilares
-         [Author_545]
-         [Author_621]
-         [Author_712]
-         [Author_632]
-         [Author_757]
-         [Author_396]
-         [Author_165]
-         [Author_489]
-         [Author_539]
-         [Author_912]
-         [Author30])
+         [Author_578]
+         [Author_692]
+         [Author_98]
+         [Author_722]
+         [Author517])
      (sexo female))
 
     ([Author_274] of Autor
      (idAutor "274")
      (nombreAutor "Sarah Waters")
      (autoresSimilares
-         [Author_593]
-         [Author_85]
-         [Author_899]
-         [Author_164]
-         [Author_517]
-         [Author_395]
-         [Author_518]
+         [Author_153]
+         [Author_297]
          [Author_815]
-         [Author_484]
-         [Author_402]
-         [Author_825]
-         [Author_786]
-         [Author777])
+         [Author_128]
+         [Author_291]
+         [Author_933]
+         [Author934])
      (sexo female))
 
     ([Author_275] of Autor
      (idAutor "275")
      (nombreAutor "Matthew Pearl")
      (autoresSimilares
-         [Author_8]
-         [Author_647]
-         [Author_228]
-         [Author_783]
-         [Author_332]
-         [Author_39]
-         [Author_174]
-         [Author_59]
-         [Author_819]
-         [Author_674]
-         [Author_900]
-         [Author_485]
-         [Author_296]
-         [Author196])
+         [Author223])
      (sexo male))
 
     ([Author_276] of Autor
      (idAutor "276")
      (nombreAutor "Robert   Harris")
      (autoresSimilares
-         [Author_270]
-         [Author_782]
-         [Author_836]
+         [Author_249]
+         [Author_518]
+         [Author_8]
+         [Author_247]
+         [Author_449]
+         [Author_109]
+         [Author_324]
+         [Author_141]
+         [Author_620]
          [Author_525]
-         [Author_819]
-         [Author_220]
-         [Author_612]
-         [Author_182]
-         [Author_76]
-         [Author_519]
-         [Author_593]
-         [Author_313]
-         [Author_261]
-         [Author419])
+         [Author_227]
+         [Author_201]
+         [Author_330]
+         [Author_695]
+         [Author_48]
+         [Author_310]
+         [Author_100]
+         [Author_116]
+         [Author_656]
+         [Author407])
      (sexo male))
 
     ([Author_277] of Autor
      (idAutor "277")
      (nombreAutor "Tom Rob Smith")
      (autoresSimilares
-         [Author_466]
-         [Author_657]
-         [Author_419]
-         [Author_128]
-         [Author_72]
-         [Author_757]
-         [Author_670]
-         [Author_574]
-         [Author543])
+         [Author_872]
+         [Author_739]
+         [Author_208]
+         [Author_662]
+         [Author_800]
+         [Author_911]
+         [Author_74]
+         [Author_731]
+         [Author_302]
+         [Author_343]
+         [Author_177]
+         [Author_190]
+         [Author_621]
+         [Author_632]
+         [Author_325]
+         [Author_784]
+         [Author885])
      (sexo male))
 
     ([Author_278] of Autor
      (idAutor "278")
      (nombreAutor "Alan Bradley")
      (autoresSimilares
-         [Author_641]
-         [Author_907]
-         [Author_454]
-         [Author_170]
-         [Author845])
+         [Author_751]
+         [Author671])
      (sexo male))
 
     ([Author_279] of Autor
      (idAutor "279")
      (nombreAutor "Patrick Sskind")
      (autoresSimilares
-         [Author_825]
-         [Author_727]
-         [Author_849]
-         [Author_605]
-         [Author_876]
-         [Author_317]
-         [Author_529]
-         [Author_313]
-         [Author_299]
-         [Author_562]
-         [Author_814]
-         [Author_624]
-         [Author_594]
-         [Author_143]
-         [Author_129]
-         [Author_132]
-         [Author_336]
-         [Author_781]
-         [Author_803]
-         [Author196])
+         [Author_798]
+         [Author_147]
+         [Author_440]
+         [Author_312]
+         [Author896])
      (sexo male))
 
     ([Author_280] of Autor
      (idAutor "280")
      (nombreAutor "Diane Setterfield")
      (autoresSimilares
-         [Author_480]
-         [Author_39]
-         [Author_792]
-         [Author_875]
-         [Author_245]
-         [Author_36]
-         [Author_287]
-         [Author_259]
-         [Author_182]
-         [Author_852]
-         [Author_803]
-         [Author_291]
+         [Author_266]
+         [Author_135]
+         [Author_385]
+         [Author_267]
+         [Author_289]
+         [Author_680]
          [Author_326]
-         [Author_647]
-         [Author_396]
-         [Author_467]
-         [Author_393]
-         [Author_854]
-         [Author_790]
-         [Author695])
+         [Author_5]
+         [Author_842]
+         [Author_691]
+         [Author_264]
+         [Author56])
      (sexo female))
 
     ([Author_281] of Autor
      (idAutor "281")
      (nombreAutor "Elizabeth Kostova")
      (autoresSimilares
-         [Author_271]
-         [Author_930]
-         [Author_891]
-         [Author_617]
-         [Author_545]
-         [Author_349]
-         [Author_425]
-         [Author_469]
-         [Author_85]
-         [Author_146]
-         [Author_737]
-         [Author_548]
-         [Author_196]
-         [Author_70]
-         [Author_932]
-         [Author_650]
-         [Author304])
+         [Author_50]
+         [Author_683]
+         [Author_520]
+         [Author_102]
+         [Author_707]
+         [Author_150]
+         [Author_77]
+         [Author_181]
+         [Author_825]
+         [Author_441]
+         [Author_318]
+         [Author_775]
+         [Author_356]
+         [Author_26]
+         [Author_567]
+         [Author_49]
+         [Author_128]
+         [Author_816]
+         [Author859])
      (sexo female))
 
     ([Author_282] of Autor
      (idAutor "282")
      (nombreAutor "Jean M Auel")
      (autoresSimilares
-         [Author_900]
-         [Author_196]
-         [Author_191]
-         [Author_846]
-         [Author_386]
-         [Author_778]
-         [Author829])
+         [Author_520]
+         [Author_440]
+         [Author_422]
+         [Author_353]
+         [Author_357]
+         [Author_881]
+         [Author_616]
+         [Author_201]
+         [Author_20]
+         [Author_214]
+         [Author_868]
+         [Author_574]
+         [Author_779]
+         [Author_922]
+         [Author_626]
+         [Author_257]
+         [Author843])
      (sexo female))
 
     ([Author_283] of Autor
      (idAutor "283")
      (nombreAutor "Max Cummings")
      (autoresSimilares
-         [Author_457]
-         [Author_669]
-         [Author_577]
-         [Author_419]
-         [Author_924]
-         [Author_898]
-         [Author_185]
-         [Author_67]
-         [Author377])
+         [Author_815]
+         [Author_147]
+         [Author_328]
+         [Author_909]
+         [Author_896]
+         [Author_112]
+         [Author_2]
+         [Author_71]
+         [Author_388]
+         [Author_938]
+         [Author_352]
+         [Author_837]
+         [Author_274]
+         [Author662])
      (sexo male))
 
     ([Author_284] of Autor
      (idAutor "284")
      (nombreAutor "Robertson Davies")
      (autoresSimilares
-         [Author_45]
-         [Author_536]
-         [Author_421]
-         [Author_471]
-         [Author_237]
-         [Author_143]
-         [Author_553]
-         [Author_418]
-         [Author_315]
-         [Author_641]
-         [Author_271]
-         [Author_875]
-         [Author_191]
-         [Author_164]
-         [Author_616]
-         [Author_844]
-         [Author_293]
-         [Author217])
+         [Author_445]
+         [Author_831]
+         [Author_397]
+         [Author_829]
+         [Author_627]
+         [Author_788]
+         [Author_420]
+         [Author_811]
+         [Author656])
      (sexo male))
 
     ([Author_285] of Autor
      (idAutor "285")
      (nombreAutor "Judith Guest")
      (autoresSimilares
-         [Author_556]
-         [Author_795]
-         [Author_708]
-         [Author_315]
-         [Author811])
+         [Author_895]
+         [Author_411]
+         [Author_930]
+         [Author817])
      (sexo male))
 
     ([Author_286] of Autor
      (idAutor "286")
      (nombreAutor "John Updike")
      (autoresSimilares
-         [Author_161]
-         [Author_64]
-         [Author_942]
-         [Author_93]
-         [Author_837]
-         [Author_304]
-         [Author_856]
-         [Author_362]
-         [Author_107]
-         [Author_721]
-         [Author_426]
-         [Author_318]
-         [Author_931]
-         [Author_667]
-         [Author_296]
-         [Author474])
+         [Author_709]
+         [Author_612]
+         [Author_281]
+         [Author_597]
+         [Author_458]
+         [Author_12]
+         [Author_483]
+         [Author_673]
+         [Author_661]
+         [Author_67]
+         [Author_758]
+         [Author_831]
+         [Author335])
      (sexo male))
 
     ([Author_287] of Autor
      (idAutor "287")
      (nombreAutor "Robert Musil")
      (autoresSimilares
-         [Author_763]
-         [Author_104]
-         [Author_653]
-         [Author_323]
-         [Author_274]
-         [Author_726]
-         [Author_85]
-         [Author175])
+         [Author_669]
+         [Author_318]
+         [Author_623]
+         [Author_648]
+         [Author_102]
+         [Author_324]
+         [Author_130]
+         [Author_252]
+         [Author398])
      (sexo male))
 
     ([Author_288] of Autor
      (idAutor "288")
      (nombreAutor "Dave Eggers")
      (autoresSimilares
-         [Author_89]
-         [Author_868]
-         [Author_149]
-         [Author_128]
-         [Author_499]
-         [Author_751]
-         [Author_770]
-         [Author_703]
-         [Author_893]
-         [Author_1]
-         [Author329])
+         [Author_578]
+         [Author_21]
+         [Author_691]
+         [Author_87]
+         [Author_792]
+         [Author_720]
+         [Author_643]
+         [Author_845]
+         [Author_479]
+         [Author_733]
+         [Author_293]
+         [Author_940]
+         [Author_625]
+         [Author_672]
+         [Author_804]
+         [Author_67]
+         [Author_532]
+         [Author_629]
+         [Author466])
      (sexo male))
 
     ([Author_289] of Autor
      (idAutor "289")
      (nombreAutor "Zadie Smith")
      (autoresSimilares
-         [Author145])
+         [Author_9]
+         [Author_232]
+         [Author_876]
+         [Author_60]
+         [Author_807]
+         [Author_174]
+         [Author_128]
+         [Author_50]
+         [Author_556]
+         [Author_693]
+         [Author_177]
+         [Author_549]
+         [Author_723]
+         [Author_49]
+         [Author_14]
+         [Author17])
      (sexo female))
 
     ([Author_290] of Autor
      (idAutor "290")
      (nombreAutor "Mark Z Danielewski")
      (autoresSimilares
-         [Author_782]
-         [Author_604]
-         [Author_554]
-         [Author_61]
-         [Author842])
+         [Author_101]
+         [Author_701]
+         [Author_932]
+         [Author_455]
+         [Author180])
      (sexo male))
 
     ([Author_291] of Autor
      (idAutor "291")
      (nombreAutor "Richard Russo")
      (autoresSimilares
-         [Author_840]
-         [Author_138]
-         [Author_208]
-         [Author_466]
-         [Author_301]
-         [Author_596]
-         [Author_225]
-         [Author_612]
-         [Author_366]
-         [Author_465]
-         [Author_509]
-         [Author_944]
-         [Author_532]
-         [Author_187]
-         [Author_374]
-         [Author_252]
-         [Author_429]
-         [Author703])
+         [Author_663]
+         [Author_694]
+         [Author_678]
+         [Author_254]
+         [Author23])
      (sexo male))
 
     ([Author_292] of Autor
      (idAutor "292")
      (nombreAutor "Gregory David Roberts")
      (autoresSimilares
-         [Author_725]
-         [Author_391]
-         [Author_599]
-         [Author_873]
-         [Author_598]
-         [Author_651]
-         [Author_50]
-         [Author_921]
-         [Author_748]
-         [Author_680]
-         [Author843])
+         [Author_903]
+         [Author_206]
+         [Author_747]
+         [Author_314]
+         [Author_620]
+         [Author_222]
+         [Author_700]
+         [Author_192]
+         [Author_463]
+         [Author_36]
+         [Author_486]
+         [Author848])
      (sexo male))
 
     ([Author_293] of Autor
      (idAutor "293")
      (nombreAutor "Abraham   Verghese")
      (autoresSimilares
-         [Author_898]
-         [Author_653]
-         [Author_118]
-         [Author342])
+         [Author_729]
+         [Author_501]
+         [Author_626]
+         [Author_647]
+         [Author_808]
+         [Author_50]
+         [Author_306]
+         [Author_447]
+         [Author_914]
+         [Author_817]
+         [Author_273]
+         [Author_493]
+         [Author_465]
+         [Author_266]
+         [Author377])
      (sexo male))
 
     ([Author_294] of Autor
      (idAutor "294")
      (nombreAutor "Nicole Krauss")
      (autoresSimilares
-         [Author_806]
-         [Author_285]
-         [Author_685]
-         [Author_486]
-         [Author_547]
-         [Author_544]
-         [Author_48]
-         [Author_765]
-         [Author690])
+         [Author_332]
+         [Author_146]
+         [Author_219]
+         [Author_431]
+         [Author_383]
+         [Author_760]
+         [Author_21]
+         [Author_769]
+         [Author_444]
+         [Author_62]
+         [Author_239]
+         [Author_637]
+         [Author_158]
+         [Author_651]
+         [Author_506]
+         [Author_222]
+         [Author_349]
+         [Author810])
      (sexo female))
 
     ([Author_295] of Autor
      (idAutor "295")
      (nombreAutor "Jonathan Franzen")
      (autoresSimilares
-         [Author_872]
-         [Author_231]
-         [Author_472]
-         [Author_795]
-         [Author_914]
-         [Author_347]
-         [Author_284]
-         [Author_924]
-         [Author_332]
-         [Author_115]
-         [Author_920]
-         [Author_923]
-         [Author_857]
-         [Author_705]
-         [Author_846]
-         [Author_943]
-         [Author_240]
-         [Author_418]
-         [Author_451]
-         [Author704])
+         [Author_471]
+         [Author_747]
+         [Author_334]
+         [Author_58]
+         [Author_939]
+         [Author_307]
+         [Author_485]
+         [Author_317]
+         [Author_253]
+         [Author_299]
+         [Author_738]
+         [Author258])
      (sexo male))
 
     ([Author_296] of Autor
      (idAutor "296")
      (nombreAutor "David Mitchell")
      (autoresSimilares
-         [Author_185]
-         [Author_320]
-         [Author822])
+         [Author_805]
+         [Author_850]
+         [Author_679]
+         [Author660])
      (sexo male))
 
     ([Author_297] of Autor
      (idAutor "297")
      (nombreAutor "Lisa See")
      (autoresSimilares
-         [Author_846]
-         [Author_580]
-         [Author_337]
-         [Author_247]
-         [Author_944]
-         [Author790])
+         [Author_125]
+         [Author_853]
+         [Author761])
      (sexo male))
 
     ([Author_298] of Autor
      (idAutor "298")
      (nombreAutor "Michael Chabon")
      (autoresSimilares
-         [Author_818]
-         [Author_557]
-         [Author_558]
+         [Author_182]
+         [Author_458]
+         [Author_338]
+         [Author_259]
          [Author_343]
-         [Author_636]
-         [Author_851]
-         [Author_315]
-         [Author_252]
-         [Author_450]
-         [Author_928]
-         [Author_404]
-         [Author_502]
-         [Author870])
+         [Author_203]
+         [Author_154]
+         [Author_39]
+         [Author_570]
+         [Author_797]
+         [Author_304]
+         [Author_30]
+         [Author239])
      (sexo male))
 
     ([Author_299] of Autor
      (idAutor "299")
      (nombreAutor "Ann Patchett")
      (autoresSimilares
-         [Author_534]
-         [Author_380]
-         [Author_82]
-         [Author_458]
-         [Author_544]
-         [Author_119]
-         [Author_151]
-         [Author389])
+         [Author_509]
+         [Author81])
      (sexo female))
 
     ([Author_300] of Autor
      (idAutor "300")
      (nombreAutor "Jeffrey Eugenides")
      (autoresSimilares
-         [Author_293]
-         [Author_794]
-         [Author_528]
-         [Author_742]
-         [Author_311]
-         [Author_855]
-         [Author749])
+         [Author_60]
+         [Author_551]
+         [Author_919]
+         [Author_590]
+         [Author_828]
+         [Author_182]
+         [Author_24]
+         [Author_281]
+         [Author_640]
+         [Author_592]
+         [Author_37]
+         [Author_313]
+         [Author_548]
+         [Author_125]
+         [Author446])
      (sexo male))
 
     ([Author_301] of Autor
      (idAutor "301")
      (nombreAutor "Gary Jennings")
      (autoresSimilares
-         [Author_283]
-         [Author_767]
-         [Author_361]
-         [Author543])
+         [Author_204]
+         [Author940])
      (sexo male))
 
     ([Author_302] of Autor
      (idAutor "302")
      (nombreAutor "Michel Faber")
      (autoresSimilares
-         [Author_826]
-         [Author_33]
-         [Author_897]
-         [Author_553]
-         [Author_421]
-         [Author_868]
-         [Author_650]
-         [Author_617]
-         [Author_327]
-         [Author_165]
-         [Author_223]
-         [Author_533]
-         [Author_808]
-         [Author_648]
-         [Author_476]
-         [Author_11]
-         [Author639])
+         [Author_742]
+         [Author_115]
+         [Author_343]
+         [Author_147]
+         [Author_179]
+         [Author_869]
+         [Author_475]
+         [Author_72]
+         [Author_593]
+         [Author_67]
+         [Author_614]
+         [Author_505]
+         [Author_9]
+         [Author_635]
+         [Author_681]
+         [Author_5]
+         [Author_131]
+         [Author564])
      (sexo male))
 
     ([Author_303] of Autor
      (idAutor "303")
      (nombreAutor "James A Michener")
      (autoresSimilares
-         [Author_349]
-         [Author_361]
-         [Author_275]
-         [Author_635]
+         [Author_204]
+         [Author_500]
+         [Author_329]
+         [Author_871]
          [Author_765]
-         [Author_532]
-         [Author_634]
-         [Author_463]
-         [Author_932]
-         [Author_114]
-         [Author_218]
-         [Author_590]
-         [Author_944]
-         [Author_21]
-         [Author190])
+         [Author332])
      (sexo male))
 
     ([Author_304] of Autor
      (idAutor "304")
      (nombreAutor "Bernard Cornwell")
      (autoresSimilares
-         [Author_609]
-         [Author_216]
-         [Author_637]
-         [Author_803]
-         [Author_899]
-         [Author_512]
-         [Author_502]
-         [Author_591]
-         [Author_220]
-         [Author_221]
-         [Author_356]
-         [Author_936]
-         [Author36])
+         [Author_482]
+         [Author_694]
+         [Author_440]
+         [Author_787]
+         [Author_348]
+         [Author_495]
+         [Author353])
      (sexo male))
 
     ([Author_305] of Autor
      (idAutor "305")
      (nombreAutor "Gore Vidal")
      (autoresSimilares
-         [Author_538]
-         [Author_824]
-         [Author_834]
-         [Author_387]
-         [Author_303]
-         [Author_744]
-         [Author_131]
-         [Author_513]
-         [Author_556]
-         [Author_422]
-         [Author268])
+         [Author_928]
+         [Author_291]
+         [Author_935]
+         [Author_765]
+         [Author_618]
+         [Author778])
      (sexo male))
 
     ([Author_306] of Autor
      (idAutor "306")
      (nombreAutor "MM Kaye")
      (autoresSimilares
-         [Author_238]
-         [Author_508]
-         [Author_861]
-         [Author_613]
-         [Author_528]
-         [Author_883]
-         [Author843])
+         [Author_806]
+         [Author_21]
+         [Author_910]
+         [Author_247]
+         [Author191])
      (sexo female))
 
     ([Author_307] of Autor
      (idAutor "307")
      (nombreAutor "John Irving")
      (autoresSimilares
-         [Author_316]
-         [Author_112]
-         [Author_358]
-         [Author_800]
-         [Author_905]
-         [Author_440]
-         [Author_828]
-         [Author_602]
-         [Author_935]
-         [Author_831]
-         [Author_564]
-         [Author_816]
-         [Author_646]
-         [Author_433]
-         [Author_207]
-         [Author_767]
-         [Author_187]
-         [Author907])
+         [Author_582]
+         [Author_66]
+         [Author_875]
+         [Author499])
      (sexo male))
 
     ([Author_308] of Autor
      (idAutor "308")
      (nombreAutor "Patrick OBrian")
      (autoresSimilares
-         [Author_749]
-         [Author_817]
-         [Author_160]
-         [Author_1]
-         [Author_828]
-         [Author_662]
-         [Author_614]
-         [Author_462]
-         [Author_653]
-         [Author_757]
-         [Author_677]
-         [Author_268]
-         [Author_64]
-         [Author_164]
-         [Author_110]
-         [Author_894]
-         [Author_471]
-         [Author_654]
-         [Author_875]
-         [Author665])
+         [Author_746]
+         [Author441])
      (sexo male))
 
     ([Author_309] of Autor
      (idAutor "309")
      (nombreAutor "Edward Rutherfurd")
      (autoresSimilares
-         [Author_819]
-         [Author_674]
-         [Author_2]
-         [Author_347]
-         [Author_870]
-         [Author_615]
-         [Author_575]
-         [Author_565]
-         [Author_552]
-         [Author_255]
-         [Author76])
+         [Author_126]
+         [Author_811]
+         [Author157])
      (sexo male))
 
     ([Author_310] of Autor
      (idAutor "310")
      (nombreAutor "John Fowles")
      (autoresSimilares
-         [Author_227]
-         [Author_332]
-         [Author_197]
-         [Author_338]
-         [Author_823]
-         [Author_581]
-         [Author_740]
-         [Author_391]
-         [Author_808]
-         [Author_881]
-         [Author59])
+         [Author_596]
+         [Author_936]
+         [Author_766]
+         [Author_655]
+         [Author_320]
+         [Author_809]
+         [Author_335]
+         [Author_589]
+         [Author86])
      (sexo male))
 
     ([Author_311] of Autor
      (idAutor "311")
      (nombreAutor "Kathleen Winsor")
      (autoresSimilares
-         [Author_442]
-         [Author_415]
-         [Author_364]
-         [Author_926]
-         [Author_478]
-         [Author_635]
-         [Author_755]
-         [Author_570]
-         [Author_476]
-         [Author_481]
-         [Author_408]
-         [Author_237]
-         [Author_273]
-         [Author_806]
-         [Author_905]
-         [Author_605]
-         [Author_807]
-         [Author3])
+         [Author_146]
+         [Author_427]
+         [Author_180]
+         [Author_580]
+         [Author_577]
+         [Author_123]
+         [Author_791]
+         [Author_284]
+         [Author_64]
+         [Author881])
      (sexo female))
 
     ([Author_312] of Autor
      (idAutor "312")
      (nombreAutor "John Jakes")
      (autoresSimilares
-         [Author_865]
-         [Author_429]
-         [Author_883]
-         [Author_870]
-         [Author_374]
-         [Author_56]
-         [Author_264]
-         [Author_683]
-         [Author_64]
-         [Author_729]
-         [Author_735]
-         [Author_738]
-         [Author_187]
-         [Author_441]
-         [Author_884]
-         [Author_75]
-         [Author_694]
-         [Author102])
+         [Author_467]
+         [Author_350]
+         [Author_656]
+         [Author_816]
+         [Author_831]
+         [Author_125]
+         [Author_608]
+         [Author_877]
+         [Author_124]
+         [Author_633]
+         [Author_145]
+         [Author_565]
+         [Author_664]
+         [Author_109]
+         [Author_761]
+         [Author_45]
+         [Author273])
      (sexo male))
 
     ([Author_313] of Autor
      (idAutor "313")
      (nombreAutor "Colleen McCullough")
      (autoresSimilares
-         [Author_798]
-         [Author_167]
-         [Author_774]
-         [Author_492]
-         [Author_668]
-         [Author_551]
-         [Author_607]
-         [Author_180]
-         [Author_213]
-         [Author_679]
-         [Author_859]
-         [Author_803]
-         [Author_771]
-         [Author_501]
-         [Author_626]
-         [Author704])
+         [Author_461]
+         [Author_920]
+         [Author_507]
+         [Author_912]
+         [Author_696]
+         [Author_470]
+         [Author_625]
+         [Author_329]
+         [Author_882]
+         [Author_634]
+         [Author_608]
+         [Author_174]
+         [Author_707]
+         [Author751])
      (sexo female))
 
     ([Author_314] of Autor
      (idAutor "314")
      (nombreAutor "James Clavell")
      (autoresSimilares
-         [Author_805]
-         [Author_584]
-         [Author_96]
-         [Author_385]
-         [Author_272]
-         [Author_933]
-         [Author_244]
-         [Author_382]
-         [Author_757]
-         [Author_412]
-         [Author_674]
-         [Author546])
+         [Author780])
      (sexo male))
 
     ([Author_315] of Autor
      (idAutor "315")
      (nombreAutor "Michelle Moran")
      (autoresSimilares
+         [Author_811]
+         [Author_178]
+         [Author_363]
+         [Author_886]
+         [Author_254]
+         [Author_900]
+         [Author_15]
+         [Author_82]
+         [Author_181]
+         [Author_504]
+         [Author_930]
+         [Author_18]
          [Author_84]
-         [Author_845]
-         [Author_858]
-         [Author_437]
-         [Author_449]
-         [Author_418]
-         [Author_664]
-         [Author_166]
-         [Author_697]
-         [Author_397]
-         [Author_203]
-         [Author_668]
-         [Author_286]
-         [Author_355]
-         [Author_485]
-         [Author_890]
-         [Author_229]
-         [Author56])
+         [Author_399]
+         [Author_747]
+         [Author_693]
+         [Author_573]
+         [Author_503]
+         [Author563])
      (sexo female))
 
     ([Author_316] of Autor
      (idAutor "316")
      (nombreAutor "Sarah Dunant")
      (autoresSimilares
-         [Author_715]
-         [Author_576]
-         [Author_604]
-         [Author_757]
-         [Author_740]
-         [Author_925]
-         [Author638])
+         [Author_268]
+         [Author_244]
+         [Author_667]
+         [Author_31]
+         [Author_802]
+         [Author387])
      (sexo male))
 
     ([Author_317] of Autor
      (idAutor "317")
      (nombreAutor "Susanna Clarke")
      (autoresSimilares
-         [Author_611]
-         [Author_199]
-         [Author_897]
-         [Author_349]
-         [Author_27]
-         [Author_733]
-         [Author_339]
-         [Author_6]
-         [Author_359]
-         [Author_911]
-         [Author_677]
-         [Author_178]
-         [Author109])
+         [Author_60]
+         [Author_247]
+         [Author_800]
+         [Author_893]
+         [Author_256]
+         [Author_633]
+         [Author_550]
+         [Author_831]
+         [Author_828]
+         [Author_205]
+         [Author_95]
+         [Author_274]
+         [Author_912]
+         [Author_883]
+         [Author_383]
+         [Author209])
      (sexo female))
 
     ([Author_318] of Autor
      (idAutor "318")
      (nombreAutor "Hilary Mantel")
      (autoresSimilares
-         [Author_226]
-         [Author_871]
-         [Author_732]
-         [Author_122]
-         [Author_555]
-         [Author_901]
-         [Author_731]
-         [Author_24]
-         [Author_660]
-         [Author_38]
-         [Author_581]
-         [Author_562]
-         [Author_213]
-         [Author_148]
-         [Author841])
+         [Author781])
      (sexo female))
 
     ([Author_319] of Autor
      (idAutor "319")
      (nombreAutor "Alan Brennert")
      (autoresSimilares
-         [Author_434]
-         [Author531])
+         [Author_504]
+         [Author_708]
+         [Author_203]
+         [Author_390]
+         [Author_667]
+         [Author_848]
+         [Author_261]
+         [Author_696]
+         [Author_221]
+         [Author_772]
+         [Author_265]
+         [Author_563]
+         [Author_821]
+         [Author_678]
+         [Author_57]
+         [Author_335]
+         [Author_559]
+         [Author_851]
+         [Author574])
      (sexo male))
 
     ([Author_320] of Autor
      (idAutor "320")
      (nombreAutor "Irving Stone")
      (autoresSimilares
-         [Author_313]
-         [Author_95]
-         [Author_16]
-         [Author_691]
-         [Author_817]
-         [Author_942]
-         [Author_91]
-         [Author_943]
-         [Author_612]
-         [Author_510]
-         [Author_216]
-         [Author_638]
-         [Author_603]
-         [Author_282]
-         [Author_600]
-         [Author340])
+         [Author_50]
+         [Author_812]
+         [Author_505]
+         [Author_195]
+         [Author_478]
+         [Author_475]
+         [Author_296]
+         [Author_303]
+         [Author_725]
+         [Author_700]
+         [Author_444]
+         [Author_662]
+         [Author_310]
+         [Author_386]
+         [Author_87]
+         [Author797])
      (sexo male))
 
     ([Author_321] of Autor
      (idAutor "321")
      (nombreAutor "Fannie Flagg")
      (autoresSimilares
-         [Author_649]
-         [Author_564]
-         [Author_806]
-         [Author38])
+         [Author_651]
+         [Author_506]
+         [Author_333]
+         [Author_32]
+         [Author_645]
+         [Author_148]
+         [Author_760]
+         [Author_595]
+         [Author28])
      (sexo male))
 
     ([Author_322] of Autor
      (idAutor "322")
      (nombreAutor "Anthony Doerr")
      (autoresSimilares
-         [Author_220]
-         [Author_247]
-         [Author_189]
-         [Author_743]
-         [Author_559]
-         [Author_501]
-         [Author_376]
-         [Author_770]
-         [Author_374]
-         [Author_261]
-         [Author_799]
-         [Author_274]
-         [Author_687]
-         [Author_363]
-         [Author_739]
-         [Author649])
+         [Author_64]
+         [Author_8]
+         [Author_640]
+         [Author333])
      (sexo male))
 
     ([Author_323] of Autor
      (idAutor "323")
      (nombreAutor "Donna Woolfolk Cross")
      (autoresSimilares
-         [Author_895]
-         [Author_800]
-         [Author_816]
-         [Author_802]
-         [Author_252]
-         [Author_511]
-         [Author_61]
-         [Author_178]
-         [Author_615]
-         [Author_542]
-         [Author_185]
-         [Author_678]
-         [Author_458]
-         [Author_526]
-         [Author_583]
-         [Author_136]
-         [Author731])
+         [Author_571]
+         [Author_815]
+         [Author_515]
+         [Author477])
      (sexo female))
 
     ([Author_324] of Autor
      (idAutor "324")
      (nombreAutor "Leon Uris")
      (autoresSimilares
-         [Author_635]
-         [Author_353]
-         [Author_698]
-         [Author_644]
-         [Author_97]
-         [Author_120]
-         [Author_871]
-         [Author_490]
-         [Author219])
+         [Author685])
      (sexo male))
 
     ([Author_325] of Autor
      (idAutor "325")
      (nombreAutor "Anya Seton")
      (autoresSimilares
-         [Author_119]
-         [Author_801]
-         [Author_449]
-         [Author_641]
-         [Author_549]
-         [Author_757]
-         [Author_40]
-         [Author_574]
-         [Author_498]
-         [Author_787]
-         [Author_512]
-         [Author_547]
-         [Author_382]
-         [Author_594]
-         [Author_645]
-         [Author_771]
-         [Author_659]
-         [Author751])
+         [Author_593]
+         [Author_134]
+         [Author365])
      (sexo female))
 
     ([Author_326] of Autor
      (idAutor "326")
      (nombreAutor "Michael Ondaatje")
      (autoresSimilares
-         [Author_291]
-         [Author740])
+         [Author_500]
+         [Author_457]
+         [Author_642]
+         [Author_834]
+         [Author_552]
+         [Author_519]
+         [Author_524]
+         [Author_464]
+         [Author_595]
+         [Author_943]
+         [Author_364]
+         [Author_379]
+         [Author_456]
+         [Author_814]
+         [Author_897]
+         [Author_407]
+         [Author_296]
+         [Author_827]
+         [Author377])
      (sexo male))
 
     ([Author_327] of Autor
      (idAutor "327")
      (nombreAutor "Robert Graves")
      (autoresSimilares
-         [Author_172]
+         [Author_24]
+         [Author_455]
+         [Author_664]
+         [Author_639]
+         [Author_253]
+         [Author_6]
+         [Author_115]
+         [Author_509]
+         [Author_477]
+         [Author_273]
+         [Author_203]
          [Author_722]
-         [Author_635]
-         [Author_890]
-         [Author_291]
-         [Author_730]
-         [Author270])
+         [Author_218]
+         [Author573])
      (sexo male))
 
     ([Author_328] of Autor
      (idAutor "328")
      (nombreAutor "Alexandre Dumas")
      (autoresSimilares
-         [Author_132]
-         [Author_744]
-         [Author_583]
-         [Author_79]
-         [Author_507]
-         [Author_542]
-         [Author468])
+         [Author_635]
+         [Author_909]
+         [Author_660]
+         [Author_938]
+         [Author_390]
+         [Author_31]
+         [Author_621]
+         [Author_918]
+         [Author_769]
+         [Author_198]
+         [Author525])
      (sexo male))
 
     ([Author_329] of Autor
      (idAutor "329")
      (nombreAutor "Charles Frazier")
      (autoresSimilares
-         [Author_171]
-         [Author_101]
-         [Author_60]
-         [Author_606]
-         [Author_457]
-         [Author_706]
-         [Author_819]
-         [Author_335]
-         [Author_850]
-         [Author_517]
-         [Author_828]
-         [Author_304]
-         [Author_622]
-         [Author_354]
-         [Author_287]
-         [Author_926]
-         [Author_596]
-         [Author_456]
-         [Author_511]
-         [Author228])
+         [Author_831]
+         [Author_206]
+         [Author_9]
+         [Author_107]
+         [Author760])
      (sexo male))
 
     ([Author_330] of Autor
      (idAutor "330")
      (nombreAutor "Larry McMurtry")
      (autoresSimilares
-         [Author_173]
-         [Author_35]
-         [Author_931]
-         [Author_352]
-         [Author_560]
-         [Author_527]
-         [Author_73]
-         [Author_546]
-         [Author_244]
-         [Author_734]
-         [Author_93]
-         [Author_87]
-         [Author_844]
-         [Author_642]
-         [Author_894]
-         [Author_601]
-         [Author_251]
-         [Author_479]
-         [Author_201]
-         [Author90])
+         [Author638])
      (sexo male))
 
     ([Author_331] of Autor
      (idAutor "331")
      (nombreAutor "Anita Diamant")
      (autoresSimilares
-         [Author_656]
-         [Author_587]
-         [Author_349]
-         [Author_909]
-         [Author_614]
-         [Author_182]
-         [Author_707]
-         [Author_364]
-         [Author_187]
-         [Author_188]
-         [Author_770]
-         [Author_384]
-         [Author_315]
-         [Author_259]
-         [Author_71]
-         [Author125])
+         [Author_836]
+         [Author_317]
+         [Author_270]
+         [Author_66]
+         [Author294])
      (sexo female))
 
     ([Author_332] of Autor
      (idAutor "332")
      (nombreAutor "Miguel de Cervantes Saavedra")
      (autoresSimilares
-         [Author_333]
-         [Author_817]
-         [Author419])
+         [Author_940]
+         [Author_560]
+         [Author_156]
+         [Author_36]
+         [Author_927]
+         [Author_433]
+         [Author_496]
+         [Author_341]
+         [Author_271]
+         [Author_283]
+         [Author_652]
+         [Author_843]
+         [Author_929]
+         [Author_659]
+         [Author_459]
+         [Author_25]
+         [Author_113]
+         [Author177])
      (sexo male))
 
     ([Author_333] of Autor
      (idAutor "333")
      (nombreAutor "Harriet Beecher Stowe")
      (autoresSimilares
-         [Author_1]
-         [Author_472]
-         [Author_528]
-         [Author_409]
-         [Author_239]
-         [Author_489]
-         [Author_203]
-         [Author_608]
-         [Author_94]
-         [Author_221]
-         [Author_867]
-         [Author_638]
-         [Author_326]
-         [Author_297]
-         [Author109])
+         [Author_7]
+         [Author_719]
+         [Author_880]
+         [Author_42]
+         [Author_151]
+         [Author_904]
+         [Author_598]
+         [Author_168]
+         [Author_114]
+         [Author_51]
+         [Author_682]
+         [Author_674]
+         [Author406])
      (sexo male))
 
     ([Author_334] of Autor
      (idAutor "334")
      (nombreAutor "Erich Maria Remarque")
      (autoresSimilares
-         [Author_593]
-         [Author_864]
+         [Author_390]
          [Author_151]
-         [Author_771]
-         [Author_565]
-         [Author_353]
-         [Author_567]
-         [Author_548]
-         [Author_319]
-         [Author_323]
-         [Author_63]
-         [Author_13]
-         [Author_265]
-         [Author_902]
-         [Author_355]
-         [Author_284]
-         [Author726])
+         [Author_601]
+         [Author_144]
+         [Author_393]
+         [Author_131]
+         [Author_904]
+         [Author_307]
+         [Author_501]
+         [Author_70]
+         [Author_938]
+         [Author_416]
+         [Author_859]
+         [Author_22]
+         [Author_500]
+         [Author_486]
+         [Author_327]
+         [Author_873]
+         [Author762])
      (sexo male))
 
     ([Author_335] of Autor
      (idAutor "335")
      (nombreAutor "Leo Tolstoy")
      (autoresSimilares
-         [Author454])
+         [Author_887]
+         [Author_555]
+         [Author_132]
+         [Author_651]
+         [Author176])
      (sexo male))
 
     ([Author_336] of Autor
      (idAutor "336")
      (nombreAutor "Vladimir Nabokov")
      (autoresSimilares
-         [Author_598]
-         [Author623])
+         [Author_668]
+         [Author_96]
+         [Author_208]
+         [Author_673]
+         [Author_450]
+         [Author_819]
+         [Author_570]
+         [Author_256]
+         [Author_178]
+         [Author_148]
+         [Author131])
      (sexo male))
 
     ([Author_337] of Autor
      (idAutor "337")
      (nombreAutor "Joseph Heller")
      (autoresSimilares
-         [Author_292]
-         [Author_35]
-         [Author_605]
-         [Author_826]
-         [Author829])
+         [Author_500]
+         [Author_384]
+         [Author_594]
+         [Author_163]
+         [Author_742]
+         [Author_281]
+         [Author_129]
+         [Author_642]
+         [Author_719]
+         [Author_206]
+         [Author_675]
+         [Author315])
      (sexo male))
 
     ([Author_338] of Autor
      (idAutor "338")
      (nombreAutor "Oscar Wilde")
      (autoresSimilares
-         [Author_89]
-         [Author_926]
-         [Author_727]
-         [Author_239]
-         [Author_533]
-         [Author_214]
-         [Author_204]
-         [Author_108]
-         [Author_897]
-         [Author_556]
-         [Author_320]
-         [Author_164]
-         [Author_838]
-         [Author_65]
-         [Author_182]
-         [Author_641]
-         [Author_681]
-         [Author_413]
-         [Author_162]
-         [Author588])
+         [Author_479]
+         [Author_795]
+         [Author_770]
+         [Author_849]
+         [Author_366]
+         [Author_699]
+         [Author_130]
+         [Author_188]
+         [Author_25]
+         [Author_357]
+         [Author_923]
+         [Author_173]
+         [Author_360]
+         [Author_352]
+         [Author_64]
+         [Author_235]
+         [Author_355]
+         [Author_558]
+         [Author605])
      (sexo male))
 
     ([Author_339] of Autor
      (idAutor "339")
      (nombreAutor "Sherman Alexie")
      (autoresSimilares
-         [Author_28]
-         [Author_88]
-         [Author_886]
-         [Author_108]
-         [Author_748]
-         [Author_122]
-         [Author_250]
-         [Author_429]
-         [Author_448]
-         [Author_101]
-         [Author_623]
-         [Author_841]
-         [Author_107]
-         [Author_224]
-         [Author_156]
-         [Author_850]
-         [Author943])
+         [Author226])
      (sexo male))
 
     ([Author_340] of Autor
      (idAutor "340")
      (nombreAutor "EL Konigsburg")
      (autoresSimilares
-         [Author_858]
-         [Author_817]
-         [Author_721]
-         [Author690])
+         [Author_142]
+         [Author_792]
+         [Author_332]
+         [Author_591]
+         [Author_758]
+         [Author391])
      (sexo female))
 
     ([Author_341] of Autor
      (idAutor "341")
      (nombreAutor "Ann Brashares")
      (autoresSimilares
-         [Author_741]
-         [Author_605]
-         [Author431])
+         [Author_271]
+         [Author_686]
+         [Author_541]
+         [Author_763]
+         [Author_704]
+         [Author_34]
+         [Author_242]
+         [Author_849]
+         [Author_220]
+         [Author517])
      (sexo female))
 
     ([Author_342] of Autor
      (idAutor "342")
      (nombreAutor "Norton Juster")
      (autoresSimilares
-         [Author_780]
-         [Author_751]
-         [Author_482]
-         [Author_723]
-         [Author_738]
-         [Author_344]
-         [Author_42]
-         [Author_740]
-         [Author_87]
-         [Author_570]
-         [Author291])
+         [Author_363]
+         [Author_436]
+         [Author_710]
+         [Author_69]
+         [Author_190]
+         [Author_171]
+         [Author_526]
+         [Author_108]
+         [Author_298]
+         [Author_711]
+         [Author_392]
+         [Author_886]
+         [Author_893]
+         [Author905])
      (sexo male))
 
     ([Author_343] of Autor
      (idAutor "343")
      (nombreAutor "LM Montgomery")
      (autoresSimilares
-         [Author_235]
-         [Author_816]
-         [Author_350]
-         [Author_362]
-         [Author_316]
-         [Author_496]
-         [Author_472]
-         [Author_120]
-         [Author_318]
-         [Author_500]
-         [Author684])
+         [Author_918]
+         [Author_294]
+         [Author_433]
+         [Author_560]
+         [Author_831]
+         [Author_693]
+         [Author_745]
+         [Author_783]
+         [Author_668]
+         [Author_508]
+         [Author_426]
+         [Author_612]
+         [Author880])
      (sexo female))
 
     ([Author_344] of Autor
      (idAutor "344")
      (nombreAutor "Margaret Peterson Haddix")
      (autoresSimilares
-         [Author_438]
-         [Author_920]
-         [Author_769]
-         [Author_407]
-         [Author_219]
-         [Author_616]
-         [Author_737]
-         [Author_93]
-         [Author_578]
-         [Author_245]
-         [Author_395]
-         [Author_493]
-         [Author_925]
-         [Author_683]
-         [Author_373]
-         [Author_469]
-         [Author_421]
-         [Author24])
+         [Author_81]
+         [Author300])
      (sexo female))
 
     ([Author_345] of Autor
      (idAutor "345")
      (nombreAutor "Erica Jong")
      (autoresSimilares
-         [Author_615]
-         [Author_195]
-         [Author_37]
-         [Author_143]
-         [Author_834]
-         [Author_595]
-         [Author_136]
-         [Author_718]
-         [Author_920]
-         [Author_618]
-         [Author_926]
-         [Author_69]
-         [Author_78]
-         [Author325])
+         [Author_652]
+         [Author_297]
+         [Author_321]
+         [Author_571]
+         [Author_881]
+         [Author_732]
+         [Author_746]
+         [Author_864]
+         [Author_640]
+         [Author_893]
+         [Author_632]
+         [Author_163]
+         [Author523])
      (sexo female))
 
     ([Author_346] of Autor
      (idAutor "346")
      (nombreAutor "Heinrich Bll")
      (autoresSimilares
-         [Author_56]
-         [Author_365]
-         [Author_291]
-         [Author_629]
-         [Author_829]
-         [Author_23]
-         [Author211])
+         [Author_483]
+         [Author_196]
+         [Author_842]
+         [Author_142]
+         [Author_316]
+         [Author827])
      (sexo male))
 
     ([Author_347] of Autor
      (idAutor "347")
      (nombreAutor "Peter Straub")
      (autoresSimilares
-         [Author_803]
-         [Author_737]
-         [Author502])
+         [Author_480]
+         [Author_575]
+         [Author_555]
+         [Author_521]
+         [Author_679]
+         [Author_106]
+         [Author_604]
+         [Author_119]
+         [Author_477]
+         [Author56])
      (sexo male))
 
     ([Author_348] of Autor
      (idAutor "348")
      (nombreAutor "Sidney Sheldon")
      (autoresSimilares
-         [Author_586]
-         [Author_319]
-         [Author_599]
-         [Author_352]
-         [Author_298]
-         [Author_103]
-         [Author_666]
-         [Author661])
+         [Author_481]
+         [Author_559]
+         [Author_250]
+         [Author_499]
+         [Author_526]
+         [Author_281]
+         [Author_576]
+         [Author_68]
+         [Author805])
      (sexo male))
 
     ([Author_349] of Autor
      (idAutor "349")
      (nombreAutor "Herman Wouk")
      (autoresSimilares
-         [Author_35]
-         [Author_391]
-         [Author_776]
-         [Author_783]
-         [Author_350]
-         [Author_142]
-         [Author_262]
-         [Author_678]
-         [Author_283]
-         [Author_46]
-         [Author_341]
-         [Author21])
+         [Author_587]
+         [Author_482]
+         [Author_409]
+         [Author_308]
+         [Author_165]
+         [Author_847]
+         [Author_717]
+         [Author_143]
+         [Author_830]
+         [Author_682]
+         [Author_480]
+         [Author939])
      (sexo male))
 
     ([Author_350] of Autor
      (idAutor "350")
      (nombreAutor "Chaim Potok")
      (autoresSimilares
-         [Author_665]
-         [Author_23]
-         [Author_285]
-         [Author_410]
-         [Author_818]
-         [Author_874]
-         [Author_391]
-         [Author_237]
-         [Author_769]
-         [Author_15]
-         [Author_888]
-         [Author58])
+         [Author_780]
+         [Author_658]
+         [Author_76]
+         [Author_224]
+         [Author_615]
+         [Author_512]
+         [Author_576]
+         [Author_899]
+         [Author_138]
+         [Author_4]
+         [Author_920]
+         [Author_111]
+         [Author_912]
+         [Author_737]
+         [Author484])
      (sexo male))
 
     ([Author_351] of Autor
      (idAutor "351")
      (nombreAutor "Arthur C Clarke")
      (autoresSimilares
-         [Author_6]
-         [Author_532]
-         [Author_242]
-         [Author_703]
-         [Author_687]
-         [Author_294]
-         [Author_548]
-         [Author_376]
-         [Author_380]
-         [Author_130]
-         [Author_721]
-         [Author_804]
-         [Author_731]
-         [Author_520]
-         [Author_55]
-         [Author_539]
-         [Author_881]
-         [Author_311]
-         [Author199])
+         [Author_768]
+         [Author_940]
+         [Author195])
      (sexo male))
 
     ([Author_352] of Autor
      (idAutor "352")
      (nombreAutor "Terry Brooks")
      (autoresSimilares
-         [Author_222]
-         [Author_363]
-         [Author_15]
-         [Author_243]
-         [Author_414]
-         [Author_680]
-         [Author_292]
-         [Author_18]
-         [Author629])
+         [Author161])
      (sexo male))
 
     ([Author_353] of Autor
      (idAutor "353")
      (nombreAutor "Wallace Stegner")
      (autoresSimilares
-         [Author925])
+         [Author_229]
+         [Author_299]
+         [Author885])
      (sexo male))
 
     ([Author_354] of Autor
      (idAutor "354")
      (nombreAutor "Jeffrey Archer")
      (autoresSimilares
-         [Author_419]
-         [Author_307]
-         [Author_551]
-         [Author_234]
-         [Author_862]
-         [Author_411]
-         [Author_128]
-         [Author_88]
-         [Author_322]
-         [Author_890]
-         [Author_568]
-         [Author437])
+         [Author_249]
+         [Author_881]
+         [Author_183]
+         [Author_422]
+         [Author549])
      (sexo male))
 
     ([Author_355] of Autor
      (idAutor "355")
      (nombreAutor "Judy Blume")
      (autoresSimilares
-         [Author_868]
-         [Author_60]
-         [Author20])
+         [Author_254]
+         [Author_824]
+         [Author_328]
+         [Author_171]
+         [Author_931]
+         [Author_39]
+         [Author_425]
+         [Author_185]
+         [Author_888]
+         [Author_419]
+         [Author_804]
+         [Author_737]
+         [Author_866]
+         [Author535])
      (sexo female))
 
     ([Author_356] of Autor
      (idAutor "356")
      (nombreAutor "James Dickey")
      (autoresSimilares
-         [Author_40]
-         [Author_328]
-         [Author_104]
-         [Author_621]
-         [Author_687]
-         [Author_803]
-         [Author_18]
-         [Author531])
+         [Author_409]
+         [Author_835]
+         [Author_436]
+         [Author_421]
+         [Author_318]
+         [Author_512]
+         [Author_306]
+         [Author_665]
+         [Author_524]
+         [Author_925]
+         [Author_5]
+         [Author_46]
+         [Author_666]
+         [Author_248]
+         [Author_456]
+         [Author_891]
+         [Author_152]
+         [Author832])
      (sexo male))
 
     ([Author_357] of Autor
      (idAutor "357")
      (nombreAutor "Louis Sachar")
      (autoresSimilares
-         [Author_597]
-         [Author_599]
-         [Author_656]
-         [Author_505]
-         [Author_212]
-         [Author_304]
-         [Author_506]
-         [Author_583]
-         [Author_839]
-         [Author_806]
-         [Author_868]
-         [Author_193]
-         [Author_890]
-         [Author_915]
-         [Author_554]
-         [Author_823]
-         [Author_405]
-         [Author_880]
-         [Author691])
+         [Author_286]
+         [Author379])
      (sexo male))
 
     ([Author_358] of Autor
      (idAutor "358")
      (nombreAutor "Milan Kundera")
      (autoresSimilares
-         [Author_90]
-         [Author_404]
-         [Author_73]
-         [Author_386]
-         [Author_798]
-         [Author_338]
-         [Author_808]
-         [Author_751]
-         [Author_727]
-         [Author_313]
-         [Author445])
+         [Author_229]
+         [Author_426]
+         [Author_888]
+         [Author_737]
+         [Author_706]
+         [Author_690]
+         [Author_354]
+         [Author_867]
+         [Author_218]
+         [Author_251]
+         [Author_841]
+         [Author_676]
+         [Author_641]
+         [Author_668]
+         [Author_768]
+         [Author846])
      (sexo male))
 
     ([Author_359] of Autor
      (idAutor "359")
      (nombreAutor "Thomas Pynchon")
      (autoresSimilares
-         [Author_115]
-         [Author_339]
-         [Author_737]
-         [Author_436]
-         [Author_867]
-         [Author_138]
-         [Author_154]
-         [Author_303]
-         [Author_944]
-         [Author_449]
-         [Author_512]
-         [Author_493]
-         [Author_314]
-         [Author_769]
-         [Author_477]
-         [Author_669]
-         [Author_749]
-         [Author_145]
-         [Author_152]
-         [Author580])
+         [Author_520]
+         [Author_687]
+         [Author_161]
+         [Author_76]
+         [Author_262]
+         [Author_690]
+         [Author_762]
+         [Author_184]
+         [Author_529]
+         [Author_649]
+         [Author_376]
+         [Author_795]
+         [Author939])
      (sexo male))
 
     ([Author_360] of Autor
      (idAutor "360")
      (nombreAutor "Frederick Forsyth")
      (autoresSimilares
-         [Author_179]
-         [Author_920]
-         [Author_87]
-         [Author_416]
-         [Author_861]
-         [Author16])
+         [Author_266]
+         [Author_703]
+         [Author_544]
+         [Author_426]
+         [Author_933]
+         [Author_48]
+         [Author734])
      (sexo male))
 
     ([Author_361] of Autor
      (idAutor "361")
      (nombreAutor "Michael Shaara")
      (autoresSimilares
-         [Author_486]
-         [Author_665]
-         [Author_46]
-         [Author_866]
-         [Author_734]
-         [Author_101]
-         [Author_533]
-         [Author_611]
-         [Author_353]
-         [Author_270]
-         [Author_901]
-         [Author_339]
-         [Author328])
+         [Author_564]
+         [Author_344]
+         [Author_367]
+         [Author_548]
+         [Author_775]
+         [Author_145]
+         [Author_129]
+         [Author649])
      (sexo male))
 
     ([Author_362] of Autor
      (idAutor "362")
      (nombreAutor "EL Doctorow")
      (autoresSimilares
-         [Author_328]
-         [Author_300]
-         [Author_179]
+         [Author_646]
+         [Author_744]
+         [Author_178]
+         [Author_544]
+         [Author_92]
+         [Author_102]
+         [Author_832]
+         [Author_573]
+         [Author_260]
+         [Author_741]
+         [Author_29]
+         [Author_916]
          [Author_889]
-         [Author_484]
-         [Author_67]
-         [Author_109]
-         [Author678])
+         [Author_215]
+         [Author_859]
+         [Author_164]
+         [Author_59]
+         [Author906])
      (sexo male))
 
     ([Author_363] of Autor
      (idAutor "363")
      (nombreAutor "Iris Murdoch")
      (autoresSimilares
-         [Author_711]
-         [Author_192]
-         [Author_30]
-         [Author_537]
-         [Author406])
+         [Author_308]
+         [Author_662]
+         [Author_718]
+         [Author_705]
+         [Author127])
      (sexo female))
 
     ([Author_364] of Autor
      (idAutor "364")
      (nombreAutor "John le Carr")
      (autoresSimilares
-         [Author_415]
-         [Author_606]
-         [Author_845]
-         [Author_416]
-         [Author200])
+         [Author_625]
+         [Author_672]
+         [Author_655]
+         [Author_730]
+         [Author_420]
+         [Author_700]
+         [Author_536]
+         [Author803])
      (sexo male))
 
     ([Author_365] of Autor
      (idAutor "365")
      (nombreAutor "Robert M Pirsig")
      (autoresSimilares
-         [Author_32]
-         [Author_487]
-         [Author_857]
-         [Author_455]
-         [Author_472]
-         [Author_658]
-         [Author_943]
-         [Author_158]
-         [Author_351]
-         [Author_631]
-         [Author467])
+         [Author_470]
+         [Author34])
      (sexo male))
 
     ([Author_366] of Autor
      (idAutor "366")
      (nombreAutor "William Peter Blatty")
      (autoresSimilares
-         [Author_620]
-         [Author_87]
-         [Author_388]
-         [Author_328]
-         [Author_76]
-         [Author_583]
-         [Author_889]
-         [Author_363]
-         [Author_224]
-         [Author_239]
-         [Author_48]
-         [Author_218]
-         [Author_465]
-         [Author_435]
-         [Author_704]
-         [Author_432]
-         [Author_341]
-         [Author559])
+         [Author_905]
+         [Author_67]
+         [Author_671]
+         [Author_467]
+         [Author824])
      (sexo male))
 
     ([Author_367] of Autor
      (idAutor "367")
      (nombreAutor "Hunter S Thompson")
      (autoresSimilares
-         [Author_154]
-         [Author_486]
-         [Author179])
+         [Author_227]
+         [Author31])
      (sexo male))
 
     ([Author_368] of Autor
      (idAutor "368")
      (nombreAutor "Sangu Mandanna")
      (autoresSimilares
-         [Author_253]
-         [Author17])
+         [Author_575]
+         [Author_686]
+         [Author_160]
+         [Author_0]
+         [Author95])
      (sexo female))
 
     ([Author_369] of Autor
      (idAutor "369")
      (nombreAutor "Rebecca Gober")
      (autoresSimilares
-         [Author_802]
-         [Author_800]
-         [Author_171]
-         [Author_249]
-         [Author_691]
-         [Author_370]
-         [Author_118]
-         [Author_306]
-         [Author_381]
-         [Author_492]
-         [Author_285]
-         [Author622])
+         [Author_819]
+         [Author_387]
+         [Author_357]
+         [Author_274]
+         [Author_358]
+         [Author_589]
+         [Author708])
      (sexo female))
 
     ([Author_370] of Autor
      (idAutor "370")
      (nombreAutor "Myra McEntire")
      (autoresSimilares
-         [Author_280]
-         [Author_109]
-         [Author_623]
-         [Author_798]
-         [Author_48]
-         [Author_845]
-         [Author_246]
-         [Author_848]
-         [Author_739]
-         [Author_944]
-         [Author_580]
-         [Author287])
+         [Author_195]
+         [Author_136]
+         [Author_283]
+         [Author_779]
+         [Author_249]
+         [Author_666]
+         [Author_400]
+         [Author_754]
+         [Author_26]
+         [Author_148]
+         [Author_357]
+         [Author204])
      (sexo male))
 
     ([Author_371] of Autor
      (idAutor "371")
      (nombreAutor "Sarah Crossan")
      (autoresSimilares
-         [Author_584]
-         [Author_761]
-         [Author_500]
-         [Author_421]
-         [Author_26]
-         [Author_249]
-         [Author900])
+         [Author_645]
+         [Author_342]
+         [Author_708]
+         [Author_347]
+         [Author_287]
+         [Author_447]
+         [Author_326]
+         [Author_835]
+         [Author268])
      (sexo female))
 
     ([Author_372] of Autor
      (idAutor "372")
      (nombreAutor "Heather Anastasiu")
      (autoresSimilares
-         [Author_506]
-         [Author_457]
-         [Author_33]
-         [Author_51]
-         [Author_132]
-         [Author_86]
-         [Author_798]
-         [Author541])
+         [Author_109]
+         [Author_547]
+         [Author_485]
+         [Author_85]
+         [Author_687]
+         [Author_607]
+         [Author_511]
+         [Author_587]
+         [Author_781]
+         [Author_713]
+         [Author_279]
+         [Author_48]
+         [Author_420]
+         [Author_332]
+         [Author_731]
+         [Author_78]
+         [Author_278]
+         [Author282])
      (sexo female))
 
     ([Author_373] of Autor
      (idAutor "373")
      (nombreAutor "Susan Dennard")
      (autoresSimilares
-         [Author_485]
-         [Author_654]
-         [Author_346]
-         [Author_472]
-         [Author_473]
-         [Author_622]
-         [Author_297]
-         [Author_810]
+         [Author_329]
+         [Author_660]
+         [Author_666]
+         [Author_708]
+         [Author_825]
+         [Author_687]
+         [Author_273]
+         [Author_555]
+         [Author_441]
+         [Author_712]
          [Author_860]
-         [Author_293]
-         [Author_289]
-         [Author_494]
-         [Author_766]
-         [Author_234]
-         [Author_777]
-         [Author_892]
-         [Author210])
+         [Author_693]
+         [Author_729]
+         [Author_401]
+         [Author_622]
+         [Author_171]
+         [Author_501]
+         [Author_928]
+         [Author_439]
+         [Author53])
      (sexo female))
 
     ([Author_374] of Autor
      (idAutor "374")
      (nombreAutor "Michael Crichton")
      (autoresSimilares
-         [Author160])
+         [Author_443]
+         [Author_333]
+         [Author_584]
+         [Author_180]
+         [Author_52]
+         [Author_508]
+         [Author_419]
+         [Author_619]
+         [Author_686]
+         [Author_258]
+         [Author_628]
+         [Author_161]
+         [Author885])
      (sexo male))
 
     ([Author_375] of Autor
      (idAutor "375")
      (nombreAutor "Lawrence Durrell")
      (autoresSimilares
-         [Author_246]
-         [Author_474]
-         [Author_580]
-         [Author_86]
-         [Author905])
+         [Author_410]
+         [Author_512]
+         [Author_807]
+         [Author358])
      (sexo male))
 
     ([Author_376] of Autor
      (idAutor "376")
      (nombreAutor "Patricia A McKillip")
      (autoresSimilares
-         [Author_685]
-         [Author_705]
-         [Author_27]
-         [Author_117]
-         [Author_285]
-         [Author_565]
-         [Author_700]
-         [Author_697]
-         [Author_341]
+         [Author_604]
          [Author_413]
-         [Author_762]
-         [Author_752]
-         [Author_28]
-         [Author_160]
-         [Author_547]
-         [Author_375]
-         [Author_321]
-         [Author_333]
-         [Author10])
+         [Author_912]
+         [Author_931]
+         [Author_594]
+         [Author_933]
+         [Author_371]
+         [Author_315]
+         [Author_372]
+         [Author_836]
+         [Author_863]
+         [Author866])
      (sexo female))
 
     ([Author_377] of Autor
      (idAutor "377")
      (nombreAutor "Paul Scott")
      (autoresSimilares
-         [Author_717]
-         [Author_637]
-         [Author_832]
-         [Author_510]
-         [Author_69]
-         [Author_530]
-         [Author_583]
-         [Author_597]
-         [Author_939]
-         [Author_93]
-         [Author_617]
-         [Author_451]
-         [Author_376]
-         [Author_287]
-         [Author_105]
-         [Author_229]
-         [Author415])
+         [Author_663]
+         [Author_894]
+         [Author_507]
+         [Author_862]
+         [Author_557]
+         [Author_634]
+         [Author_198]
+         [Author_170]
+         [Author_533]
+         [Author_132]
+         [Author213])
      (sexo male))
 
     ([Author_378] of Autor
      (idAutor "378")
      (nombreAutor "Brent Weeks")
      (autoresSimilares
-         [Author_395]
-         [Author_938]
-         [Author_915]
-         [Author_475]
-         [Author_493]
-         [Author_318]
-         [Author_809]
-         [Author_54]
-         [Author_622]
-         [Author_139]
-         [Author_425]
-         [Author_434]
-         [Author_224]
-         [Author_688]
-         [Author268])
+         [Author_466]
+         [Author_100]
+         [Author715])
      (sexo male))
 
     ([Author_379] of Autor
      (idAutor "379")
      (nombreAutor "Rand Miller")
      (autoresSimilares
-         [Author_507]
-         [Author_615]
-         [Author_673]
-         [Author_367]
-         [Author_383]
-         [Author_77]
-         [Author_163]
-         [Author_352]
-         [Author_442]
-         [Author_35]
-         [Author_524]
-         [Author_422]
-         [Author_823]
-         [Author_12]
-         [Author_653]
-         [Author_873]
-         [Author_776]
-         [Author_378]
-         [Author827])
+         [Author_129]
+         [Author_264]
+         [Author_478]
+         [Author_72]
+         [Author_657]
+         [Author_324]
+         [Author_466]
+         [Author_503]
+         [Author_571]
+         [Author_398]
+         [Author_542]
+         [Author_434]
+         [Author_268]
+         [Author_658]
+         [Author_813]
+         [Author891])
      (sexo male))
 
     ([Author_380] of Autor
      (idAutor "380")
      (nombreAutor "Mervyn Peake")
      (autoresSimilares
-         [Author_268]
-         [Author_263]
-         [Author442])
+         [Author_75]
+         [Author_447]
+         [Author_86]
+         [Author_780]
+         [Author_928]
+         [Author_60]
+         [Author_449]
+         [Author_609]
+         [Author_133]
+         [Author_844]
+         [Author_473]
+         [Author_438]
+         [Author_43]
+         [Author_224]
+         [Author_753]
+         [Author_480]
+         [Author_300]
+         [Author189])
      (sexo male))
 
     ([Author_381] of Autor
      (idAutor "381")
      (nombreAutor "Isaac Asimov")
      (autoresSimilares
-         [Author_815]
-         [Author_164]
-         [Author_763]
-         [Author_456]
-         [Author_230]
-         [Author_53]
-         [Author588])
+         [Author_500]
+         [Author_333]
+         [Author_596]
+         [Author_751]
+         [Author_748]
+         [Author_375]
+         [Author29])
      (sexo male))
 
     ([Author_382] of Autor
      (idAutor "382")
      (nombreAutor "Franklin W Dixon")
      (autoresSimilares
-         [Author_361]
-         [Author_205]
-         [Author_492]
-         [Author_318]
-         [Author_89]
-         [Author_929]
-         [Author_86]
-         [Author710])
+         [Author_548]
+         [Author_545]
+         [Author_436]
+         [Author_490]
+         [Author_520]
+         [Author_333]
+         [Author_790]
+         [Author_922]
+         [Author_541]
+         [Author_856]
+         [Author_409]
+         [Author_372]
+         [Author_368]
+         [Author_213]
+         [Author_299]
+         [Author_714]
+         [Author_194]
+         [Author_326]
+         [Author_608]
+         [Author125])
      (sexo male))
 
     ([Author_383] of Autor
      (idAutor "383")
      (nombreAutor "Laurie Faria Stolarz")
      (autoresSimilares
-         [Author_899]
-         [Author_371]
-         [Author_106]
-         [Author_889]
-         [Author_643]
-         [Author_140]
-         [Author_817]
-         [Author_470]
-         [Author_607]
-         [Author_112]
-         [Author_404]
-         [Author_833]
-         [Author_561]
-         [Author_849]
-         [Author_451]
-         [Author925])
+         [Author_40]
+         [Author_744]
+         [Author_897]
+         [Author602])
      (sexo female))
 
     ([Author_384] of Autor
      (idAutor "384")
      (nombreAutor "Terry Goodkind")
      (autoresSimilares
-         [Author106])
+         [Author_539]
+         [Author_936]
+         [Author_36]
+         [Author_184]
+         [Author_587]
+         [Author_528]
+         [Author_524]
+         [Author_403]
+         [Author_866]
+         [Author_402]
+         [Author_454]
+         [Author_246]
+         [Author_6]
+         [Author_46]
+         [Author_151]
+         [Author_789]
+         [Author_447]
+         [Author_363]
+         [Author469])
      (sexo male))
 
     ([Author_385] of Autor
      (idAutor "385")
      (nombreAutor "Robert Ludlum")
      (autoresSimilares
-         [Author_402]
-         [Author_915]
-         [Author_311]
-         [Author_198]
-         [Author_490]
-         [Author_575]
-         [Author_763]
-         [Author_42]
-         [Author_192]
-         [Author_347]
-         [Author_768]
-         [Author_897]
-         [Author_514]
-         [Author_787]
-         [Author_456]
-         [Author_574]
-         [Author_303]
-         [Author_712]
-         [Author813])
+         [Author_665]
+         [Author_138]
+         [Author_258]
+         [Author_746]
+         [Author_216]
+         [Author_37]
+         [Author_656]
+         [Author_48]
+         [Author_2]
+         [Author_136]
+         [Author641])
      (sexo male))
 
     ([Author_386] of Autor
      (idAutor "386")
      (nombreAutor "Beverly Cleary")
      (autoresSimilares
-         [Author_291]
-         [Author_73]
-         [Author_740]
-         [Author_49]
-         [Author_469]
-         [Author_206]
-         [Author_556]
-         [Author_162]
-         [Author_361]
-         [Author_294]
-         [Author_570]
-         [Author_873]
-         [Author322])
+         [Author_622]
+         [Author_236]
+         [Author_574]
+         [Author_308]
+         [Author103])
      (sexo female))
 
     ([Author_387] of Autor
      (idAutor "387")
      (nombreAutor "John Galsworthy")
      (autoresSimilares
-         [Author_453]
-         [Author_163]
-         [Author_939]
-         [Author_625]
-         [Author_320]
-         [Author_932]
-         [Author_639]
-         [Author_307]
-         [Author_644]
-         [Author432])
+         [Author808])
      (sexo male))
 
     ([Author_388] of Autor
      (idAutor "388")
      (nombreAutor "Roger Zelazny")
      (autoresSimilares
-         [Author_92]
-         [Author349])
+         [Author_189]
+         [Author_866]
+         [Author_768]
+         [Author_313]
+         [Author399])
      (sexo male))
 
     ([Author_389] of Autor
      (idAutor "389")
      (nombreAutor "Amalie Howard")
      (autoresSimilares
-         [Author_637]
-         [Author_346]
-         [Author_622]
-         [Author_262]
-         [Author_272]
-         [Author_814]
-         [Author_706]
-         [Author_40]
-         [Author_718]
-         [Author_499]
-         [Author_923]
-         [Author_39]
-         [Author_116]
-         [Author_294]
-         [Author_179]
-         [Author_245]
-         [Author647])
+         [Author_602]
+         [Author_336]
+         [Author_929]
+         [Author_207]
+         [Author_735]
+         [Author56])
      (sexo female))
 
     ([Author_390] of Autor
      (idAutor "390")
      (nombreAutor "Adrian Mendoza")
      (autoresSimilares
-         [Author_473]
-         [Author_869]
-         [Author_310]
-         [Author_606]
-         [Author_898]
-         [Author_747]
-         [Author_822]
-         [Author_809]
-         [Author_649]
-         [Author_599]
-         [Author182])
+         [Author_7]
+         [Author_607]
+         [Author_823]
+         [Author_429]
+         [Author_727]
+         [Author_343]
+         [Author_644]
+         [Author_866]
+         [Author_905]
+         [Author_295]
+         [Author_500]
+         [Author_62]
+         [Author_424]
+         [Author_523]
+         [Author_749]
+         [Author794])
      (sexo male))
 
     ([Author_391] of Autor
      (idAutor "391")
      (nombreAutor "Cyma Rizwaan Khan")
      (autoresSimilares
-         [Author_919]
-         [Author_24]
-         [Author_732]
-         [Author_248]
-         [Author_288]
-         [Author_385]
-         [Author_262]
-         [Author_48]
-         [Author_860]
-         [Author_752]
-         [Author_465]
-         [Author_474]
-         [Author212])
+         [Author_115]
+         [Author_934]
+         [Author_249]
+         [Author_769]
+         [Author_152]
+         [Author_389]
+         [Author_718]
+         [Author_593]
+         [Author_547]
+         [Author_204]
+         [Author_687]
+         [Author_571]
+         [Author_554]
+         [Author_292]
+         [Author663])
      (sexo male))
 
     ([Author_392] of Autor
      (idAutor "392")
      (nombreAutor "Sarah Harian")
      (autoresSimilares
-         [Author_441]
-         [Author_108]
-         [Author_265]
-         [Author_60]
-         [Author_59]
-         [Author_590]
-         [Author_847]
-         [Author_38]
-         [Author_163]
-         [Author_336]
-         [Author_443]
-         [Author_309]
-         [Author_893]
-         [Author_137]
-         [Author_675]
-         [Author884])
+         [Author_433]
+         [Author153])
      (sexo female))
 
     ([Author_393] of Autor
      (idAutor "393")
      (nombreAutor "Whitney G")
      (autoresSimilares
-         [Author_468]
-         [Author_757]
-         [Author_446]
-         [Author_680]
-         [Author_733]
-         [Author_128]
-         [Author_570]
-         [Author4])
+         [Author_556]
+         [Author_369]
+         [Author_525]
+         [Author_382]
+         [Author0])
      (sexo female))
 
     ([Author_394] of Autor
      (idAutor "394")
      (nombreAutor "MSean Coleman")
      (autoresSimilares
-         [Author_365]
-         [Author_292]
-         [Author_433]
-         [Author_921]
-         [Author_708]
-         [Author_750]
-         [Author_460]
-         [Author82])
+         [Author_874]
+         [Author_537]
+         [Author_830]
+         [Author_692]
+         [Author526])
      (sexo male))
 
     ([Author_395] of Autor
      (idAutor "395")
      (nombreAutor "Luca  Rossi")
      (autoresSimilares
-         [Author_457]
-         [Author291])
+         [Author_911]
+         [Author_865]
+         [Author_692]
+         [Author_757]
+         [Author_907]
+         [Author_666]
+         [Author_561]
+         [Author68])
      (sexo male))
 
     ([Author_396] of Autor
      (idAutor "396")
      (nombreAutor "Charity Tinnin")
      (autoresSimilares
-         [Author_718]
-         [Author_807]
-         [Author_494]
-         [Author941])
+         [Author_858]
+         [Author_866]
+         [Author_438]
+         [Author_669]
+         [Author581])
      (sexo female))
 
     ([Author_397] of Autor
      (idAutor "397")
      (nombreAutor "Theresa Kay")
      (autoresSimilares
-         [Author_940]
-         [Author_240]
-         [Author_111]
-         [Author_341]
-         [Author_39]
-         [Author_123]
-         [Author_23]
-         [Author_491]
+         [Author_94]
+         [Author_223]
+         [Author_939]
+         [Author_749]
+         [Author_682]
+         [Author_921]
+         [Author_175]
+         [Author_227]
+         [Author_50]
          [Author_536]
-         [Author_793]
-         [Author_703]
-         [Author139])
+         [Author_22]
+         [Author_197]
+         [Author_688]
+         [Author193])
      (sexo female))
 
     ([Author_398] of Autor
      (idAutor "398")
      (nombreAutor "Chris Weitz")
      (autoresSimilares
-         [Author_668]
-         [Author_265]
-         [Author_338]
-         [Author_162]
-         [Author_643]
-         [Author_90]
-         [Author_481]
-         [Author_614]
-         [Author_111]
-         [Author_247]
-         [Author_569]
-         [Author_850]
-         [Author_871]
-         [Author_308]
-         [Author884])
+         [Author_474]
+         [Author_583]
+         [Author_846]
+         [Author911])
      (sexo male))
 
     ([Author_399] of Autor
      (idAutor "399")
      (nombreAutor "Jessica  Keller")
      (autoresSimilares
-         [Author_244]
-         [Author_570]
-         [Author_677]
-         [Author_246]
-         [Author_388]
-         [Author_935]
-         [Author_349]
-         [Author_832]
-         [Author_836]
-         [Author_574]
-         [Author_143]
-         [Author_303]
-         [Author_791]
-         [Author_3]
-         [Author_498]
-         [Author_347]
-         [Author_670]
-         [Author_400]
-         [Author_198]
-         [Author851])
+         [Author_178]
+         [Author_359]
+         [Author_53]
+         [Author_288]
+         [Author_414]
+         [Author_191]
+         [Author_548]
+         [Author_209]
+         [Author_439]
+         [Author582])
      (sexo female))
 
     ([Author_400] of Autor
      (idAutor "400")
      (nombreAutor "H Paul Honsinger")
      (autoresSimilares
-         [Author_192]
-         [Author_258]
-         [Author_740]
-         [Author_862]
-         [Author_642]
-         [Author_56]
-         [Author_122]
-         [Author_309]
-         [Author_891]
-         [Author_408]
-         [Author_264]
-         [Author_782]
-         [Author549])
+         [Author_66]
+         [Author_201]
+         [Author_565]
+         [Author_213]
+         [Author443])
      (sexo male))
 
     ([Author_401] of Autor
      (idAutor "401")
      (nombreAutor "Stephanie  Diaz")
      (autoresSimilares
-         [Author58])
+         [Author_132]
+         [Author_646]
+         [Author_670]
+         [Author_782]
+         [Author_554]
+         [Author_532]
+         [Author_278]
+         [Author_807]
+         [Author_912]
+         [Author_876]
+         [Author570])
      (sexo female))
 
     ([Author_402] of Autor
      (idAutor "402")
      (nombreAutor "Kimberly Afe")
      (autoresSimilares
-         [Author_496]
-         [Author_427]
-         [Author_825]
-         [Author_744]
-         [Author_569]
-         [Author_943]
-         [Author_101]
-         [Author_121]
-         [Author_558]
-         [Author_220]
-         [Author_170]
+         [Author_800]
+         [Author_431]
          [Author_67]
-         [Author_723]
-         [Author_127]
-         [Author_489]
-         [Author_450]
-         [Author_114]
-         [Author_381]
-         [Author_319]
-         [Author473])
+         [Author245])
      (sexo female))
 
     ([Author_403] of Autor
      (idAutor "403")
      (nombreAutor "MG Buehrlen")
      (autoresSimilares
-         [Author_168]
-         [Author_298]
-         [Author_312]
-         [Author_783]
-         [Author_95]
-         [Author_332]
-         [Author_850]
-         [Author_269]
-         [Author752])
+         [Author_417]
+         [Author_920]
+         [Author_757]
+         [Author_434]
+         [Author_900]
+         [Author_633]
+         [Author188])
      (sexo female))
 
     ([Author_404] of Autor
      (idAutor "404")
      (nombreAutor "Blakely Bennett")
      (autoresSimilares
-         [Author_193]
-         [Author_286]
-         [Author_290]
-         [Author_236]
-         [Author_10]
-         [Author_772]
-         [Author_58]
-         [Author_712]
-         [Author_797]
-         [Author_355]
-         [Author_882]
-         [Author_888]
-         [Author_593]
-         [Author790])
+         [Author432])
      (sexo male))
 
     ([Author_405] of Autor
      (idAutor "405")
      (nombreAutor "Lucian Bane")
      (autoresSimilares
-         [Author_930]
-         [Author_495]
-         [Author_198]
-         [Author_582]
-         [Author46])
+         [Author_723]
+         [Author_719]
+         [Author_898]
+         [Author_667]
+         [Author_496]
+         [Author_556]
+         [Author_134]
+         [Author_547]
+         [Author701])
      (sexo male))
 
     ([Author_406] of Autor
      (idAutor "406")
      (nombreAutor "Lindsay Cummings")
      (autoresSimilares
-         [Author_381]
-         [Author499])
+         [Author_878]
+         [Author_814]
+         [Author_234]
+         [Author_932]
+         [Author_642]
+         [Author_831]
+         [Author_816]
+         [Author_210]
+         [Author_106]
+         [Author_394]
+         [Author_188]
+         [Author_698]
+         [Author_273]
+         [Author_736]
+         [Author_461]
+         [Author_801]
+         [Author_902]
+         [Author556])
      (sexo female))
 
     ([Author_407] of Autor
      (idAutor "407")
      (nombreAutor "Sam Crescent")
      (autoresSimilares
-         [Author_380]
-         [Author_125]
-         [Author_443]
-         [Author_424]
-         [Author_145]
-         [Author_348]
-         [Author_657]
-         [Author_273]
-         [Author_225]
-         [Author_86]
-         [Author_376]
-         [Author_188]
-         [Author_723]
-         [Author_44]
-         [Author514])
+         [Author_577]
+         [Author_299]
+         [Author_300]
+         [Author337])
      (sexo female))
 
     ([Author_408] of Autor
      (idAutor "408")
      (nombreAutor "Bella Jewel")
      (autoresSimilares
-         [Author_90]
-         [Author_370]
-         [Author_247]
-         [Author_344]
-         [Author_346]
-         [Author_372]
-         [Author_49]
-         [Author_823]
-         [Author819])
+         [Author_596]
+         [Author_195]
+         [Author_677]
+         [Author_396]
+         [Author_748]
+         [Author_658]
+         [Author_271]
+         [Author_766]
+         [Author_586]
+         [Author_647]
+         [Author_161]
+         [Author_798]
+         [Author_296]
+         [Author_371]
+         [Author_157]
+         [Author_527]
+         [Author919])
      (sexo male))
 
     ([Author_409] of Autor
      (idAutor "409")
      (nombreAutor "HJ Bellus")
      (autoresSimilares
-         [Author_615]
-         [Author_9]
-         [Author_723]
-         [Author_856]
-         [Author_283]
-         [Author_537]
-         [Author_622]
-         [Author_666]
-         [Author_472]
-         [Author_842]
-         [Author_571]
-         [Author_425]
-         [Author_306]
-         [Author_649]
-         [Author_689]
-         [Author_71]
-         [Author_881]
-         [Author_535]
-         [Author_19]
-         [Author41])
+         [Author_811]
+         [Author_693]
+         [Author_912]
+         [Author_810]
+         [Author_504]
+         [Author33])
      (sexo female))
 
     ([Author_410] of Autor
      (idAutor "410")
      (nombreAutor "CM Stunich")
      (autoresSimilares
-         [Author600])
+         [Author_630]
+         [Author_790]
+         [Author_146]
+         [Author_87]
+         [Author_936]
+         [Author_156]
+         [Author_22]
+         [Author_770]
+         [Author_915]
+         [Author_241]
+         [Author_316]
+         [Author_173]
+         [Author_537]
+         [Author_401]
+         [Author_107]
+         [Author_529]
+         [Author_773]
+         [Author_517]
+         [Author_453]
+         [Author194])
      (sexo female))
 
     ([Author_411] of Autor
      (idAutor "411")
      (nombreAutor "Stephanie Tyler")
      (autoresSimilares
-         [Author_222]
-         [Author_917]
-         [Author_798]
-         [Author_658]
-         [Author_155]
-         [Author_486]
-         [Author_828]
-         [Author215])
+         [Author_823]
+         [Author_797]
+         [Author_268]
+         [Author_474]
+         [Author_560]
+         [Author106])
      (sexo female))
 
     ([Author_412] of Autor
      (idAutor "412")
      (nombreAutor "Bec Botefuhr")
      (autoresSimilares
-         [Author_180]
-         [Author_397]
-         [Author_143]
-         [Author_514]
-         [Author_50]
-         [Author_820]
-         [Author_925]
-         [Author_680]
-         [Author_192]
-         [Author_851]
-         [Author_211]
-         [Author_418]
-         [Author_581]
-         [Author_825]
-         [Author_479]
-         [Author603])
+         [Author_404]
+         [Author_766]
+         [Author_225]
+         [Author_607]
+         [Author_471]
+         [Author_920]
+         [Author_689]
+         [Author_422]
+         [Author470])
      (sexo male))
 
     ([Author_413] of Autor
      (idAutor "413")
      (nombreAutor "Kim Jones")
      (autoresSimilares
-         [Author_616]
-         [Author_379]
-         [Author_813]
-         [Author_48]
-         [Author_925]
-         [Author_387]
-         [Author_17]
-         [Author_694]
-         [Author_521]
-         [Author_836]
-         [Author_913]
-         [Author_156]
-         [Author_446]
-         [Author_212]
-         [Author_708]
-         [Author_374]
-         [Author_87]
-         [Author270])
+         [Author_283]
+         [Author_577]
+         [Author_275]
+         [Author_419]
+         [Author_304]
+         [Author_22]
+         [Author_728]
+         [Author_842]
+         [Author_538]
+         [Author_880]
+         [Author_157]
+         [Author_704]
+         [Author_683]
+         [Author_350]
+         [Author_719]
+         [Author_4]
+         [Author494])
      (sexo female))
 
     ([Author_414] of Autor
      (idAutor "414")
      (nombreAutor "Phoenyx Slaughter")
      (autoresSimilares
-         [Author_829]
-         [Author_847]
-         [Author_372]
-         [Author_940]
-         [Author_775]
-         [Author_216]
-         [Author_94]
-         [Author_187]
-         [Author_59]
-         [Author186])
+         [Author_911]
+         [Author_253]
+         [Author_304]
+         [Author_339]
+         [Author_791]
+         [Author_147]
+         [Author_0]
+         [Author_877]
+         [Author_584]
+         [Author_612]
+         [Author_189]
+         [Author_196]
+         [Author_920]
+         [Author_199]
+         [Author_15]
+         [Author_260]
+         [Author_26]
+         [Author219])
      (sexo female))
 
     ([Author_415] of Autor
      (idAutor "415")
      (nombreAutor "Gary Paulsen")
      (autoresSimilares
-         [Author_430]
-         [Author_472]
-         [Author_717]
-         [Author_826]
-         [Author_381]
-         [Author_507]
-         [Author_10]
-         [Author_808]
-         [Author_818]
-         [Author_898]
-         [Author_271]
-         [Author_901]
-         [Author_133]
-         [Author_12]
-         [Author_19]
-         [Author_734]
-         [Author361])
+         [Author_197]
+         [Author_220]
+         [Author_909]
+         [Author_730]
+         [Author_504]
+         [Author_241]
+         [Author_257]
+         [Author_254]
+         [Author_763]
+         [Author_846]
+         [Author_902]
+         [Author_297]
+         [Author_490]
+         [Author198])
      (sexo male))
 
     ([Author_416] of Autor
      (idAutor "416")
      (nombreAutor "William R Forstchen")
      (autoresSimilares
-         [Author_457]
-         [Author370])
+         [Author_939]
+         [Author_166]
+         [Author_258]
+         [Author_668]
+         [Author_464]
+         [Author_933]
+         [Author_551]
+         [Author_265]
+         [Author_90]
+         [Author_756]
+         [Author_320]
+         [Author_783]
+         [Author_598]
+         [Author_859]
+         [Author101])
      (sexo male))
 
     ([Author_417] of Autor
      (idAutor "417")
      (nombreAutor "Louis LAmour")
      (autoresSimilares
-         [Author_565]
-         [Author_259]
-         [Author_269]
-         [Author261])
+         [Author_539]
+         [Author_6]
+         [Author_642]
+         [Author_688]
+         [Author_364]
+         [Author_194]
+         [Author_45]
+         [Author_906]
+         [Author_75]
+         [Author258])
      (sexo male))
 
     ([Author_418] of Autor
      (idAutor "418")
      (nombreAutor "Alex Haley")
      (autoresSimilares
-         [Author_227]
-         [Author_665]
-         [Author_113]
-         [Author_88]
-         [Author_919]
-         [Author_593]
-         [Author56])
+         [Author_362]
+         [Author_899]
+         [Author_697]
+         [Author_672]
+         [Author_893]
+         [Author_178]
+         [Author_769]
+         [Author_643]
+         [Author794])
      (sexo male))
 
     ([Author_419] of Autor
      (idAutor "419")
      (nombreAutor "Herman Melville")
      (autoresSimilares
-         [Author_169]
-         [Author_85]
-         [Author_131]
-         [Author_629]
-         [Author_832]
-         [Author_795]
-         [Author_530]
-         [Author_794]
-         [Author_603]
-         [Author_630]
-         [Author_29]
-         [Author695])
+         [Author_902]
+         [Author_492]
+         [Author_833]
+         [Author_485]
+         [Author_777]
+         [Author_136]
+         [Author_307]
+         [Author_119]
+         [Author_95]
+         [Author_357]
+         [Author300])
      (sexo male))
 
     ([Author_420] of Autor
      (idAutor "420")
      (nombreAutor "Anna Sewell")
      (autoresSimilares
-         [Author_878]
-         [Author_159]
-         [Author511])
+         [Author_768]
+         [Author_368]
+         [Author_534]
+         [Author_512]
+         [Author_657]
+         [Author_751]
+         [Author_863]
+         [Author_780]
+         [Author_738]
+         [Author_35]
+         [Author_186]
+         [Author_262]
+         [Author_222]
+         [Author617])
      (sexo female))
 
     ([Author_421] of Autor
      (idAutor "421")
      (nombreAutor "Dalton Trumbo")
      (autoresSimilares
-         [Author_481]
-         [Author_8]
-         [Author_384]
-         [Author_933]
-         [Author_285]
-         [Author_830]
-         [Author_784]
-         [Author_332]
-         [Author_696]
-         [Author596])
+         [Author_824]
+         [Author_414]
+         [Author_412]
+         [Author_670]
+         [Author_236]
+         [Author_327]
+         [Author_780]
+         [Author_625]
+         [Author_120]
+         [Author_309]
+         [Author_819]
+         [Author_763]
+         [Author_301]
+         [Author_942]
+         [Author72])
      (sexo male))
 
     ([Author_422] of Autor
      (idAutor "422")
      (nombreAutor "Johann David Wyss")
      (autoresSimilares
-         [Author_664]
-         [Author_7]
-         [Author_294]
-         [Author_220]
-         [Author_648]
-         [Author_931]
-         [Author_56]
-         [Author_11]
-         [Author_47]
-         [Author_351]
-         [Author_616]
-         [Author_655]
-         [Author350])
+         [Author_44]
+         [Author_854]
+         [Author_557]
+         [Author_66]
+         [Author_147]
+         [Author_59]
+         [Author_909]
+         [Author_887]
+         [Author_788]
+         [Author_566]
+         [Author_756]
+         [Author_649]
+         [Author_447]
+         [Author_678]
+         [Author_861]
+         [Author_228]
+         [Author787])
      (sexo male))
 
     ([Author_423] of Autor
      (idAutor "423")
      (nombreAutor "William Styron")
      (autoresSimilares
-         [Author_575]
-         [Author_330]
-         [Author_297]
-         [Author_363]
-         [Author_783]
-         [Author_526]
-         [Author_883]
-         [Author_824]
-         [Author_154]
-         [Author_549]
-         [Author_626]
-         [Author_324]
-         [Author_678]
-         [Author_913]
-         [Author_228]
-         [Author_541]
-         [Author_506]
-         [Author_185]
-         [Author732])
+         [Author_212]
+         [Author_385]
+         [Author_935]
+         [Author_645]
+         [Author_72]
+         [Author_328]
+         [Author_812]
+         [Author_708]
+         [Author_912]
+         [Author61])
      (sexo male))
 
     ([Author_424] of Autor
      (idAutor "424")
      (nombreAutor "Daniel Defoe")
      (autoresSimilares
-         [Author_494]
-         [Author_569]
-         [Author_825]
-         [Author_156]
-         [Author_310]
-         [Author_931]
-         [Author_460]
-         [Author_498]
-         [Author_4]
-         [Author_529]
-         [Author_611]
-         [Author_308]
-         [Author558])
+         [Author_687]
+         [Author_550]
+         [Author_161]
+         [Author_528]
+         [Author_934]
+         [Author_414]
+         [Author_903]
+         [Author_243]
+         [Author_270]
+         [Author_306]
+         [Author_839]
+         [Author_819]
+         [Author_701]
+         [Author_772]
+         [Author719])
      (sexo male))
 
     ([Author_425] of Autor
      (idAutor "425")
      (nombreAutor "Jean Craighead George")
      (autoresSimilares
-         [Author_503]
-         [Author_471]
-         [Author_28]
-         [Author_257]
-         [Author_797]
-         [Author_528]
-         [Author_162]
-         [Author_754]
-         [Author_590]
-         [Author_96]
-         [Author_614]
-         [Author487])
+         [Author_314]
+         [Author_435]
+         [Author_14]
+         [Author_596]
+         [Author_82]
+         [Author_721]
+         [Author177])
      (sexo female))
 
     ([Author_426] of Autor
      (idAutor "426")
      (nombreAutor "Scott ODell")
      (autoresSimilares
-         [Author521])
+         [Author_676]
+         [Author_13]
+         [Author_461]
+         [Author543])
      (sexo male))
 
     ([Author_427] of Autor
      (idAutor "427")
      (nombreAutor "Olivia Cunning")
      (autoresSimilares
-         [Author_450]
-         [Author_672]
-         [Author_15]
-         [Author_772]
-         [Author_858]
-         [Author_593]
-         [Author_256]
-         [Author_493]
-         [Author_406]
-         [Author_202]
-         [Author_44]
-         [Author12])
+         [Author_243]
+         [Author_370]
+         [Author_271]
+         [Author_24]
+         [Author_675]
+         [Author_633]
+         [Author_657]
+         [Author_829]
+         [Author_738]
+         [Author_334]
+         [Author_642]
+         [Author_33]
+         [Author_505]
+         [Author862])
      (sexo female))
 
     ([Author_428] of Autor
      (idAutor "428")
      (nombreAutor "Lauren Dane")
      (autoresSimilares
-         [Author_615]
-         [Author_802]
-         [Author_886]
-         [Author_113]
-         [Author_301]
-         [Author_461]
-         [Author_118]
-         [Author_721]
-         [Author_380]
-         [Author_786]
-         [Author_207]
-         [Author276])
+         [Author_168]
+         [Author_14]
+         [Author_420]
+         [Author_785]
+         [Author_489]
+         [Author_58]
+         [Author_735]
+         [Author_623]
+         [Author_451]
+         [Author_184]
+         [Author_858]
+         [Author780])
      (sexo female))
 
     ([Author_429] of Autor
      (idAutor "429")
      (nombreAutor "Lorelei James")
      (autoresSimilares
-         [Author_919]
-         [Author_612]
-         [Author_274]
-         [Author557])
+         [Author_44]
+         [Author39])
      (sexo male))
 
     ([Author_430] of Autor
      (idAutor "430")
      (nombreAutor "William H Armstrong")
      (autoresSimilares
-         [Author_514]
-         [Author_460]
-         [Author_265]
-         [Author_666]
-         [Author_533]
-         [Author_561]
-         [Author223])
+         [Author_740]
+         [Author_8]
+         [Author_394]
+         [Author_91]
+         [Author_354]
+         [Author_395]
+         [Author_808]
+         [Author_351]
+         [Author_841]
+         [Author_363]
+         [Author_874]
+         [Author275])
      (sexo male))
 
     ([Author_431] of Autor
      (idAutor "431")
      (nombreAutor "Walter Farley")
      (autoresSimilares
-         [Author_213]
-         [Author_45]
-         [Author_535]
-         [Author_866]
-         [Author_71]
-         [Author_609]
-         [Author_461]
-         [Author_463]
-         [Author_420]
-         [Author_512]
-         [Author_280]
-         [Author_103]
-         [Author_450]
-         [Author_652]
-         [Author_731]
-         [Author_384]
-         [Author_105]
-         [Author911])
+         [Author_832]
+         [Author_458]
+         [Author_524]
+         [Author_528]
+         [Author_618]
+         [Author_516]
+         [Author_201]
+         [Author_107]
+         [Author_444]
+         [Author_525]
+         [Author435])
      (sexo male))
 
     ([Author_432] of Autor
      (idAutor "432")
      (nombreAutor "Marguerite Henry")
      (autoresSimilares
-         [Author_847]
-         [Author_913]
-         [Author_72]
-         [Author_762]
-         [Author_817]
-         [Author_204]
+         [Author_508]
+         [Author_734]
+         [Author_591]
+         [Author_203]
+         [Author_647]
+         [Author_693]
+         [Author_896]
+         [Author_784]
          [Author_216]
-         [Author_782]
-         [Author_446]
-         [Author_353]
-         [Author_200]
-         [Author_372]
-         [Author583])
+         [Author158])
      (sexo female))
 
     ([Author_433] of Autor
      (idAutor "433")
      (nombreAutor "Dick King-Smith")
      (autoresSimilares
-         [Author_333]
-         [Author_231]
-         [Author_215]
-         [Author_44]
-         [Author_12]
-         [Author_768]
-         [Author_56]
-         [Author_895]
-         [Author_522]
-         [Author_897]
-         [Author_116]
-         [Author_528]
-         [Author_482]
-         [Author_680]
-         [Author_843]
-         [Author_237]
-         [Author_775]
-         [Author_414]
-         [Author_715]
-         [Author677])
+         [Author_85]
+         [Author_830]
+         [Author_732]
+         [Author_871]
+         [Author_593]
+         [Author_176]
+         [Author_317]
+         [Author_428]
+         [Author_268]
+         [Author_521]
+         [Author598])
      (sexo male))
 
     ([Author_434] of Autor
      (idAutor "434")
      (nombreAutor "John Reynolds Gardiner")
      (autoresSimilares
-         [Author630])
+         [Author_453]
+         [Author_636]
+         [Author_219]
+         [Author654])
      (sexo male))
 
     ([Author_435] of Autor
      (idAutor "435")
      (nombreAutor "Rudyard Kipling")
      (autoresSimilares
-         [Author358])
+         [Author_420]
+         [Author_557]
+         [Author_300]
+         [Author_188]
+         [Author_461]
+         [Author_210]
+         [Author_891]
+         [Author_788]
+         [Author_231]
+         [Author_96]
+         [Author_842]
+         [Author_227]
+         [Author423])
      (sexo male))
 
     ([Author_436] of Autor
      (idAutor "436")
      (nombreAutor "W Bruce Cameron")
      (autoresSimilares
-         [Author_488]
-         [Author_159]
-         [Author_175]
-         [Author_378]
-         [Author_726]
-         [Author_13]
-         [Author_81]
-         [Author_739]
-         [Author_52]
-         [Author_502]
-         [Author_705]
-         [Author_729]
-         [Author_611]
-         [Author_528]
-         [Author_269]
-         [Author_182]
-         [Author192])
+         [Author_533]
+         [Author_608]
+         [Author_480]
+         [Author_120]
+         [Author_252]
+         [Author_348]
+         [Author_831]
+         [Author_136]
+         [Author_836]
+         [Author_920]
+         [Author_922]
+         [Author931])
      (sexo female))
 
     ([Author_437] of Autor
      (idAutor "437")
      (nombreAutor "Marjorie Kinnan Rawlings")
      (autoresSimilares
-         [Author_232]
-         [Author_282]
-         [Author_102]
-         [Author_144]
-         [Author_499]
-         [Author_377]
-         [Author_691]
-         [Author_326]
-         [Author25])
+         [Author_725]
+         [Author_587]
+         [Author_324]
+         [Author_288]
+         [Author_824]
+         [Author_678]
+         [Author_489]
+         [Author_291]
+         [Author_168]
+         [Author_516]
+         [Author_91]
+         [Author_426]
+         [Author_41]
+         [Author_286]
+         [Author_708]
+         [Author_536]
+         [Author_614]
+         [Author_396]
+         [Author_230]
+         [Author844])
      (sexo male))
 
     ([Author_438] of Autor
      (idAutor "438")
      (nombreAutor "Tad Williams")
      (autoresSimilares
-         [Author_150]
-         [Author_604]
-         [Author_102]
-         [Author_522]
-         [Author_266]
-         [Author_44]
-         [Author_232]
-         [Author_259]
-         [Author_766]
-         [Author_137]
-         [Author_688]
-         [Author360])
+         [Author_97]
+         [Author_708]
+         [Author_609]
+         [Author_10]
+         [Author_250]
+         [Author_285]
+         [Author_416]
+         [Author_617]
+         [Author_204]
+         [Author_276]
+         [Author_675]
+         [Author_395]
+         [Author_474]
+         [Author_277]
+         [Author_711]
+         [Author_515]
+         [Author_72]
+         [Author_312]
+         [Author614])
      (sexo male))
 
     ([Author_439] of Autor
      (idAutor "439")
      (nombreAutor "Phyllis Reynolds Naylor")
      (autoresSimilares
-         [Author_462]
-         [Author_160]
-         [Author_716]
-         [Author_472]
-         [Author_669]
-         [Author_377]
-         [Author_301]
-         [Author_410]
-         [Author797])
+         [Author_314]
+         [Author_507]
+         [Author_93]
+         [Author_829]
+         [Author_144]
+         [Author_772]
+         [Author184])
      (sexo female))
 
     ([Author_440] of Autor
      (idAutor "440")
      (nombreAutor "Fred Gipson")
      (autoresSimilares
-         [Author_437]
-         [Author_497]
-         [Author_70]
-         [Author_736]
-         [Author_699]
-         [Author_155]
-         [Author_144]
-         [Author799])
+         [Author_617]
+         [Author_751]
+         [Author_393]
+         [Author_894]
+         [Author_37]
+         [Author_652]
+         [Author_940]
+         [Author337])
      (sexo male))
 
     ([Author_441] of Autor
      (idAutor "441")
      (nombreAutor "Kate DiCamillo")
      (autoresSimilares
-         [Author_853]
-         [Author_191]
-         [Author_546]
-         [Author_84]
-         [Author_568]
-         [Author_542]
-         [Author_866]
-         [Author_690]
-         [Author_444]
-         [Author_197]
-         [Author_395]
-         [Author_608]
-         [Author_150]
-         [Author663])
+         [Author_621]
+         [Author_229]
+         [Author_343]
+         [Author_724]
+         [Author_402]
+         [Author_454]
+         [Author_67]
+         [Author_323]
+         [Author_228]
+         [Author_246]
+         [Author_918]
+         [Author_769]
+         [Author_856]
+         [Author825])
      (sexo female))
 
     ([Author_442] of Autor
      (idAutor "442")
      (nombreAutor "Sheila Burnford")
      (autoresSimilares
-         [Author_148]
-         [Author_285]
-         [Author_830]
-         [Author_220]
-         [Author_32]
-         [Author_524]
-         [Author_134]
-         [Author_0]
-         [Author_375]
-         [Author_381]
-         [Author_893]
-         [Author_333]
-         [Author_364]
-         [Author_400]
-         [Author_25]
-         [Author_374]
-         [Author_409]
-         [Author661])
+         [Author_696]
+         [Author_940]
+         [Author_341]
+         [Author_290]
+         [Author_637]
+         [Author_861]
+         [Author86])
      (sexo female))
 
     ([Author_443] of Autor
      (idAutor "443")
      (nombreAutor "Kenneth Grahame")
      (autoresSimilares
-         [Author_515]
-         [Author_285]
-         [Author_788]
-         [Author_299]
-         [Author_823]
-         [Author_772]
-         [Author_592]
-         [Author_642]
-         [Author340])
+         [Author_120]
+         [Author_415]
+         [Author_249]
+         [Author_457]
+         [Author_676]
+         [Author_777]
+         [Author_492]
+         [Author_860]
+         [Author_304]
+         [Author_739]
+         [Author_359]
+         [Author107])
      (sexo male))
 
     ([Author_444] of Autor
      (idAutor "444")
      (nombreAutor "Wilson Rawls")
      (autoresSimilares
-         [Author_853]
-         [Author_568]
-         [Author_605]
-         [Author_447]
-         [Author667])
+         [Author_589]
+         [Author_250]
+         [Author_647]
+         [Author_157]
+         [Author_242]
+         [Author_175]
+         [Author_16]
+         [Author_75]
+         [Author_505]
+         [Author718])
      (sexo male))
 
     ([Author_445] of Autor
      (idAutor "445")
      (nombreAutor "Andrzej Sapkowski")
      (autoresSimilares
-         [Author_190]
-         [Author_613]
-         [Author_43]
-         [Author_496]
-         [Author_47]
-         [Author_546]
-         [Author_830]
-         [Author_884]
-         [Author_228]
-         [Author_353]
-         [Author_12]
-         [Author_198]
-         [Author_102]
-         [Author_701]
-         [Author_20]
-         [Author_275]
-         [Author_240]
-         [Author_589]
-         [Author147])
+         [Author_293]
+         [Author_714]
+         [Author_849]
+         [Author_100]
+         [Author_221]
+         [Author_154]
+         [Author_84]
+         [Author_771]
+         [Author_815]
+         [Author_473]
+         [Author_750]
+         [Author_669]
+         [Author_827]
+         [Author52])
      (sexo male))
 
     ([Author_446] of Autor
      (idAutor "446")
      (nombreAutor "LE Modesitt Jr")
      (autoresSimilares
-         [Author_637]
-         [Author_731]
-         [Author_662]
-         [Author_877]
-         [Author_870]
-         [Author_552]
-         [Author_734]
-         [Author_388]
-         [Author_254]
-         [Author_736]
-         [Author_828]
-         [Author678])
+         [Author_158]
+         [Author_474]
+         [Author_770]
+         [Author_510]
+         [Author_725]
+         [Author_338]
+         [Author_361]
+         [Author_21]
+         [Author_467]
+         [Author_759]
+         [Author_472]
+         [Author_803]
+         [Author_55]
+         [Author_134]
+         [Author_682]
+         [Author_45]
+         [Author_202]
+         [Author_231]
+         [Author_242]
+         [Author764])
      (sexo male))
 
     ([Author_447] of Autor
      (idAutor "447")
      (nombreAutor "Michael   Kramer")
      (autoresSimilares
-         [Author315])
+         [Author_117]
+         [Author_160]
+         [Author_614]
+         [Author_28]
+         [Author_513]
+         [Author_429]
+         [Author_134]
+         [Author_240]
+         [Author15])
      (sexo male))
 
     ([Author_448] of Autor
      (idAutor "448")
      (nombreAutor "Marilynne Robinson")
      (autoresSimilares
-         [Author930])
+         [Author_192]
+         [Author589])
      (sexo male))
 
     ([Author_449] of Autor
      (idAutor "449")
      (nombreAutor "Philip Jos Farmer")
      (autoresSimilares
-         [Author_778]
-         [Author_672]
-         [Author_539]
-         [Author_199]
-         [Author_720]
-         [Author_677]
-         [Author_51]
-         [Author_58]
-         [Author_549]
-         [Author_719]
-         [Author_178]
-         [Author_902]
-         [Author504])
+         [Author_667]
+         [Author_369]
+         [Author_396]
+         [Author_444]
+         [Author_696]
+         [Author_362]
+         [Author_829]
+         [Author_765]
+         [Author_883]
+         [Author143])
      (sexo male))
 
     ([Author_450] of Autor
      (idAutor "450")
      (nombreAutor "Gene Wolfe")
      (autoresSimilares
-         [Author_122]
-         [Author_107]
-         [Author_502]
-         [Author_940]
-         [Author_98]
-         [Author_738]
-         [Author_371]
-         [Author_585]
-         [Author_188]
+         [Author_97]
+         [Author_292]
+         [Author_282]
+         [Author_318]
+         [Author_338]
+         [Author_843]
+         [Author_281]
          [Author_810]
-         [Author_351]
+         [Author_592]
+         [Author_19]
+         [Author_726]
          [Author_681]
-         [Author_509]
-         [Author_766]
-         [Author553])
+         [Author_41]
+         [Author_910]
+         [Author31])
      (sexo male))
 
     ([Author_451] of Autor
      (idAutor "451")
      (nombreAutor "Lois McMaster Bujold")
      (autoresSimilares
-         [Author_850]
-         [Author_891]
-         [Author_37]
-         [Author_641]
-         [Author_885]
-         [Author_550]
-         [Author_502]
-         [Author_645]
-         [Author_223]
-         [Author_284]
-         [Author_500]
-         [Author747])
+         [Author_160]
+         [Author_922]
+         [Author_673]
+         [Author_942]
+         [Author_139]
+         [Author_113]
+         [Author_406]
+         [Author_919]
+         [Author_29]
+         [Author_330]
+         [Author_781]
+         [Author_443]
+         [Author_884]
+         [Author_66]
+         [Author_522]
+         [Author_499]
+         [Author_112]
+         [Author_566]
+         [Author638])
      (sexo female))
 
     ([Author_452] of Autor
      (idAutor "452")
      (nombreAutor "Richard K Morgan")
      (autoresSimilares
-         [Author_603]
-         [Author_943]
-         [Author_735]
-         [Author_801]
-         [Author_895]
-         [Author94])
+         [Author_628]
+         [Author_497]
+         [Author_295]
+         [Author_890]
+         [Author_620]
+         [Author_41]
+         [Author_508]
+         [Author_291]
+         [Author_174]
+         [Author_196]
+         [Author_472]
+         [Author_79]
+         [Author_245]
+         [Author_518]
+         [Author_858]
+         [Author290])
      (sexo male))
 
     ([Author_453] of Autor
      (idAutor "453")
      (nombreAutor "Iain M Banks")
      (autoresSimilares
-         [Author_510]
-         [Author_309]
-         [Author_706]
-         [Author_508]
-         [Author_439]
-         [Author_463]
-         [Author_808]
-         [Author_585]
-         [Author_813]
-         [Author_53]
-         [Author_269]
-         [Author_195]
-         [Author_214]
-         [Author_654]
-         [Author143])
+         [Author_442]
+         [Author_447]
+         [Author_504]
+         [Author_534]
+         [Author_305]
+         [Author_635]
+         [Author_837]
+         [Author_134]
+         [Author_854]
+         [Author_587]
+         [Author_150]
+         [Author_684]
+         [Author_141]
+         [Author_241]
+         [Author_576]
+         [Author924])
      (sexo male))
 
     ([Author_454] of Autor
      (idAutor "454")
      (nombreAutor "Frederik Pohl")
      (autoresSimilares
-         [Author_871]
-         [Author_942]
-         [Author_712]
-         [Author_935]
-         [Author_237]
-         [Author641])
+         [Author_283]
+         [Author_453]
+         [Author_786]
+         [Author_497]
+         [Author484])
      (sexo male))
 
     ([Author_455] of Autor
      (idAutor "455")
      (nombreAutor "Connie Willis")
      (autoresSimilares
-         [Author_724]
-         [Author_576]
-         [Author_146]
-         [Author_372]
-         [Author_375]
-         [Author_448]
-         [Author_863]
-         [Author_443]
-         [Author_807]
-         [Author_864]
-         [Author_682]
-         [Author_737]
-         [Author_858]
-         [Author_518]
-         [Author_93]
-         [Author_151]
-         [Author_253]
-         [Author692])
+         [Author_768]
+         [Author_298]
+         [Author_113]
+         [Author_800]
+         [Author_426]
+         [Author_928]
+         [Author_1]
+         [Author_453]
+         [Author_271]
+         [Author_556]
+         [Author_263]
+         [Author_679]
+         [Author629])
      (sexo female))
 
     ([Author_456] of Autor
      (idAutor "456")
      (nombreAutor "Edwin A Abbott")
      (autoresSimilares
-         [Author_241]
-         [Author_354]
-         [Author_196]
-         [Author_121]
-         [Author_389]
-         [Author368])
+         [Author_577]
+         [Author_771]
+         [Author_171]
+         [Author_769]
+         [Author_547]
+         [Author_757]
+         [Author_123]
+         [Author_799]
+         [Author481])
      (sexo male))
 
     ([Author_457] of Autor
      (idAutor "457")
      (nombreAutor "Vernor Vinge")
      (autoresSimilares
-         [Author_746]
-         [Author_212]
-         [Author_500]
-         [Author_925]
-         [Author_235]
-         [Author_858]
-         [Author_469]
-         [Author_652]
-         [Author21])
+         [Author_817]
+         [Author_416]
+         [Author_73]
+         [Author68])
      (sexo male))
 
     ([Author_458] of Autor
      (idAutor "458")
      (nombreAutor "Kim Stanley Robinson")
      (autoresSimilares
-         [Author_428]
-         [Author_706]
-         [Author_612]
-         [Author_205]
-         [Author_170]
-         [Author_526]
-         [Author_860]
-         [Author_871]
-         [Author_794]
-         [Author_377]
-         [Author823])
+         [Author_33]
+         [Author_891]
+         [Author_29]
+         [Author_415]
+         [Author_470]
+         [Author_0]
+         [Author_47]
+         [Author_790]
+         [Author_878]
+         [Author_151]
+         [Author_464]
+         [Author_739]
+         [Author_727]
+         [Author260])
      (sexo male))
 
     ([Author_459] of Autor
      (idAutor "459")
      (nombreAutor "Stanisaw Lem")
      (autoresSimilares
-         [Author_629]
-         [Author_879]
-         [Author_898]
-         [Author_377]
-         [Author_224]
-         [Author_497]
-         [Author_541]
-         [Author_922]
-         [Author297])
+         [Author_132]
+         [Author_890]
+         [Author_12]
+         [Author_68]
+         [Author_427]
+         [Author_58]
+         [Author_566]
+         [Author_456]
+         [Author_882]
+         [Author_13]
+         [Author_291]
+         [Author_76]
+         [Author398])
      (sexo male))
 
     ([Author_460] of Autor
      (idAutor "460")
      (nombreAutor "Jules Verne")
      (autoresSimilares
-         [Author_12]
-         [Author_310]
-         [Author_605]
-         [Author_529]
-         [Author_165]
-         [Author_418]
-         [Author_194]
-         [Author_788]
-         [Author_704]
-         [Author_532]
-         [Author_2]
-         [Author625])
+         [Author_847]
+         [Author_287]
+         [Author_645]
+         [Author_936]
+         [Author_148]
+         [Author_281]
+         [Author270])
      (sexo male))
 
     ([Author_461] of Autor
      (idAutor "461")
      (nombreAutor "Alfred Bester")
      (autoresSimilares
-         [Author_426]
-         [Author_928]
-         [Author_573]
-         [Author_499]
-         [Author_905]
-         [Author_35]
-         [Author_217]
-         [Author_72]
-         [Author_348]
-         [Author_536]
-         [Author_685]
-         [Author_533]
-         [Author_490]
-         [Author_142]
-         [Author_597]
-         [Author_350]
-         [Author_939]
-         [Author_663]
-         [Author524])
+         [Author_119]
+         [Author_933]
+         [Author_178]
+         [Author_14]
+         [Author_231]
+         [Author_288]
+         [Author_531]
+         [Author_887]
+         [Author_489]
+         [Author_455]
+         [Author_46]
+         [Author_806]
+         [Author_164]
+         [Author251])
      (sexo male))
 
     ([Author_462] of Autor
      (idAutor "462")
      (nombreAutor "Mary Doria Russell")
      (autoresSimilares
-         [Author546])
+         [Author_14]
+         [Author724])
      (sexo female))
 
     ([Author_463] of Autor
      (idAutor "463")
      (nombreAutor "Carl Sagan")
      (autoresSimilares
-         [Author_405]
-         [Author_111]
-         [Author_367]
-         [Author_14]
-         [Author_584]
-         [Author_565]
-         [Author_702]
-         [Author_38]
-         [Author_265]
-         [Author417])
+         [Author_526]
+         [Author_152]
+         [Author_662]
+         [Author_113]
+         [Author_543]
+         [Author_281]
+         [Author_806]
+         [Author_674]
+         [Author_489]
+         [Author_266]
+         [Author_376]
+         [Author_297]
+         [Author_712]
+         [Author_126]
+         [Author_402]
+         [Author_730]
+         [Author_669]
+         [Author_523]
+         [Author316])
      (sexo male))
 
     ([Author_464] of Autor
      (idAutor "464")
      (nombreAutor "John Scalzi")
      (autoresSimilares
-         [Author_124]
-         [Author_477]
-         [Author_676]
-         [Author_652]
-         [Author_629]
-         [Author_76]
-         [Author_286]
-         [Author_621]
-         [Author_764]
-         [Author_581]
-         [Author_450]
-         [Author_393]
-         [Author_679]
-         [Author_140]
-         [Author_545]
-         [Author_862]
-         [Author_693]
-         [Author_734]
-         [Author_848]
-         [Author942])
+         [Author_327]
+         [Author_619]
+         [Author_767]
+         [Author_683]
+         [Author_733]
+         [Author_317]
+         [Author_706]
+         [Author_134]
+         [Author_600]
+         [Author_599]
+         [Author_762]
+         [Author_136]
+         [Author_191]
+         [Author_576]
+         [Author_458]
+         [Author709])
      (sexo male))
 
     ([Author_465] of Autor
      (idAutor "465")
      (nombreAutor "RD Ronald")
      (autoresSimilares
-         [Author_360]
-         [Author_876]
-         [Author_233]
-         [Author_505]
-         [Author_723]
-         [Author_15]
-         [Author_200]
-         [Author_904]
-         [Author_259]
-         [Author_324]
-         [Author_158]
-         [Author_503]
-         [Author16])
+         [Author_149]
+         [Author_780]
+         [Author_734]
+         [Author_808]
+         [Author_825]
+         [Author_745]
+         [Author257])
      (sexo male))
 
     ([Author_466] of Autor
      (idAutor "466")
      (nombreAutor "Misty Mount")
      (autoresSimilares
-         [Author_606]
-         [Author_458]
-         [Author_412]
-         [Author_727]
-         [Author_231]
-         [Author_465]
-         [Author_767]
-         [Author_311]
-         [Author_150]
-         [Author_798]
-         [Author_708]
-         [Author664])
+         [Author_862]
+         [Author_904]
+         [Author_97]
+         [Author_16]
+         [Author_743]
+         [Author_492]
+         [Author_719]
+         [Author_464]
+         [Author_486]
+         [Author_326]
+         [Author_763]
+         [Author_645]
+         [Author_384]
+         [Author_633]
+         [Author_176]
+         [Author_182]
+         [Author_49]
+         [Author560])
      (sexo female))
 
     ([Author_467] of Autor
      (idAutor "467")
      (nombreAutor "Diamante Lavendar")
      (autoresSimilares
-         [Author_868]
-         [Author_915]
-         [Author_271]
-         [Author_309]
-         [Author_640]
-         [Author388])
+         [Author_199]
+         [Author_428]
+         [Author_368]
+         [Author_878]
+         [Author_828]
+         [Author_776]
+         [Author_18]
+         [Author_659]
+         [Author_114]
+         [Author_235]
+         [Author_134]
+         [Author145])
      (sexo male))
 
     ([Author_468] of Autor
      (idAutor "468")
      (nombreAutor "Robert Evert")
      (autoresSimilares
-         [Author_832]
-         [Author_588]
-         [Author_300]
-         [Author_295]
-         [Author_856]
-         [Author_862]
-         [Author_113]
-         [Author_197]
-         [Author_598]
-         [Author_790]
-         [Author_175]
-         [Author_111]
-         [Author_129]
-         [Author_20]
-         [Author_324]
-         [Author_784]
-         [Author_826]
-         [Author142])
+         [Author_327]
+         [Author_672]
+         [Author457])
      (sexo male))
 
     ([Author_469] of Autor
      (idAutor "469")
      (nombreAutor "Diana   Forbes")
      (autoresSimilares
-         [Author_718]
-         [Author_78]
-         [Author_882]
-         [Author_289]
-         [Author_325]
-         [Author_533]
-         [Author_226]
-         [Author_773]
-         [Author_863]
-         [Author_68]
-         [Author_894]
-         [Author803])
+         [Author_598]
+         [Author_307]
+         [Author_300]
+         [Author_504]
+         [Author_492]
+         [Author_926]
+         [Author_491]
+         [Author_603]
+         [Author909])
      (sexo female))
 
     ([Author_470] of Autor
      (idAutor "470")
      (nombreAutor "NK Jemisin")
      (autoresSimilares
-         [Author_53]
-         [Author_41]
-         [Author_579]
-         [Author_339]
-         [Author791])
+         [Author_429]
+         [Author_425]
+         [Author_501]
+         [Author_883]
+         [Author_109]
+         [Author_927]
+         [Author_345]
+         [Author_891]
+         [Author_228]
+         [Author_757]
+         [Author_341]
+         [Author_940]
+         [Author_583]
+         [Author_938]
+         [Author_717]
+         [Author_805]
+         [Author_374]
+         [Author270])
      (sexo male))
 
     ([Author_471] of Autor
      (idAutor "471")
      (nombreAutor "Francisco X Stork")
      (autoresSimilares
-         [Author838])
+         [Author_530]
+         [Author_164]
+         [Author_483]
+         [Author_193]
+         [Author_64]
+         [Author_673]
+         [Author_98]
+         [Author_554]
+         [Author_132]
+         [Author_440]
+         [Author_180]
+         [Author209])
      (sexo male))
 
     ([Author_472] of Autor
      (idAutor "472")
      (nombreAutor "Samantha Durante")
      (autoresSimilares
-         [Author_869]
-         [Author_115]
-         [Author_582]
-         [Author_505]
-         [Author_7]
-         [Author_221]
-         [Author_914]
-         [Author302])
+         [Author_266]
+         [Author_357]
+         [Author_816]
+         [Author_304]
+         [Author_670]
+         [Author_473]
+         [Author_33]
+         [Author738])
      (sexo female))
 
     ([Author_473] of Autor
      (idAutor "473")
      (nombreAutor "Lindsay Buroker")
      (autoresSimilares
-         [Author_568]
-         [Author_764]
-         [Author_669]
-         [Author_878]
-         [Author_352]
-         [Author_399]
-         [Author_927]
-         [Author_180]
-         [Author137])
+         [Author_873]
+         [Author_696]
+         [Author_808]
+         [Author_504]
+         [Author368])
      (sexo male))
 
     ([Author_474] of Autor
      (idAutor "474")
      (nombreAutor "Anne Osterlund")
      (autoresSimilares
-         [Author_408]
-         [Author_375]
-         [Author_169]
-         [Author_838]
-         [Author_270]
-         [Author_633]
-         [Author_480]
-         [Author_711]
-         [Author_326]
-         [Author_138]
-         [Author_677]
-         [Author_797]
-         [Author_256]
-         [Author_312]
-         [Author_839]
-         [Author_517]
-         [Author_195]
-         [Author299])
+         [Author384])
      (sexo female))
 
     ([Author_475] of Autor
      (idAutor "475")
      (nombreAutor "Julianna Baggott")
      (autoresSimilares
-         [Author_577]
-         [Author_492]
-         [Author_336]
-         [Author_464]
-         [Author_682]
-         [Author_401]
-         [Author_657]
-         [Author_321]
-         [Author_923]
-         [Author_728]
-         [Author_93]
-         [Author_50]
-         [Author_272]
-         [Author_764]
-         [Author_460]
-         [Author_538]
-         [Author_53]
-         [Author_619]
-         [Author703])
+         [Author163])
      (sexo female))
 
     ([Author_476] of Autor
      (idAutor "476")
      (nombreAutor "Mercedes Lackey")
      (autoresSimilares
-         [Author_412]
-         [Author_667]
-         [Author608])
+         [Author_931]
+         [Author_178]
+         [Author_490]
+         [Author_99]
+         [Author_190]
+         [Author_643]
+         [Author_679]
+         [Author344])
      (sexo female))
 
     ([Author_477] of Autor
      (idAutor "477")
      (nombreAutor "Emma McLaughlin")
      (autoresSimilares
-         [Author_483]
-         [Author_138]
-         [Author_740]
-         [Author643])
+         [Author_902]
+         [Author_770]
+         [Author317])
      (sexo male))
 
     ([Author_478] of Autor
      (idAutor "478")
      (nombreAutor "Andre Dubus III")
      (autoresSimilares
-         [Author_666]
-         [Author_588]
-         [Author_895]
-         [Author_178]
-         [Author_153]
-         [Author307])
+         [Author_879]
+         [Author_101]
+         [Author_453]
+         [Author_114]
+         [Author_119]
+         [Author_191]
+         [Author_917]
+         [Author_893]
+         [Author_825]
+         [Author_750]
+         [Author_670]
+         [Author_298]
+         [Author_33]
+         [Author_313]
+         [Author_740]
+         [Author741])
      (sexo male))
 
     ([Author_479] of Autor
      (idAutor "479")
      (nombreAutor "Erich Segal")
      (autoresSimilares
-         [Author_298]
-         [Author_486]
-         [Author_315]
-         [Author_503]
-         [Author_190]
-         [Author_70]
-         [Author_482]
-         [Author_907]
-         [Author_510]
-         [Author453])
+         [Author_588]
+         [Author_595]
+         [Author_340]
+         [Author_838]
+         [Author_496]
+         [Author396])
      (sexo male))
 
     ([Author_480] of Autor
      (idAutor "480")
      (nombreAutor "Anita Shreve")
      (autoresSimilares
-         [Author_77]
-         [Author_251]
-         [Author_866]
-         [Author_791]
-         [Author_157]
-         [Author_371]
-         [Author_63]
-         [Author_459]
-         [Author127])
+         [Author_781]
+         [Author_716]
+         [Author_812]
+         [Author_298]
+         [Author_255]
+         [Author_378]
+         [Author_888]
+         [Author_611]
+         [Author_470]
+         [Author_897]
+         [Author_156]
+         [Author_424]
+         [Author_210]
+         [Author837])
      (sexo female))
 
     ([Author_481] of Autor
      (idAutor "481")
      (nombreAutor "Annie Proulx")
      (autoresSimilares
-         [Author_189]
-         [Author_324]
-         [Author_452]
-         [Author_780]
-         [Author_566]
-         [Author_627]
-         [Author_159]
-         [Author_589]
-         [Author_304]
-         [Author_623]
-         [Author567])
+         [Author_342]
+         [Author_750]
+         [Author_471]
+         [Author_180]
+         [Author_89]
+         [Author_608]
+         [Author835])
      (sexo female))
 
     ([Author_482] of Autor
      (idAutor "482")
      (nombreAutor "Winston Groom")
      (autoresSimilares
-         [Author_15]
-         [Author_135]
-         [Author_624]
-         [Author_865]
-         [Author_722]
-         [Author_331]
-         [Author_400]
-         [Author22])
+         [Author762])
      (sexo male))
 
     ([Author_483] of Autor
      (idAutor "483")
      (nombreAutor "Gregory Maguire")
      (autoresSimilares
-         [Author_680]
-         [Author_550]
-         [Author_911]
-         [Author_758]
-         [Author_943]
-         [Author_817]
-         [Author_530]
-         [Author_208]
-         [Author_907]
-         [Author_130]
-         [Author700])
+         [Author_129]
+         [Author_299]
+         [Author_673]
+         [Author_486]
+         [Author_235]
+         [Author_371]
+         [Author_345]
+         [Author_128]
+         [Author_557]
+         [Author_458]
+         [Author_377]
+         [Author_656]
+         [Author_609]
+         [Author477])
      (sexo male))
 
     ([Author_484] of Autor
      (idAutor "484")
      (nombreAutor "Sandra Cisneros")
      (autoresSimilares
-         [Author_448]
-         [Author_45]
-         [Author_115]
-         [Author_503]
-         [Author_258]
-         [Author_314]
-         [Author_814]
-         [Author_41]
-         [Author_342]
-         [Author_447]
-         [Author_842]
-         [Author_50]
-         [Author_577]
-         [Author_158]
-         [Author_869]
-         [Author_126]
-         [Author516])
+         [Author149])
      (sexo female))
 
     ([Author_485] of Autor
      (idAutor "485")
      (nombreAutor "Stephen Crane")
      (autoresSimilares
-         [Author_715]
-         [Author_693]
-         [Author_583]
-         [Author_631]
-         [Author_767]
-         [Author_794]
-         [Author_86]
-         [Author_846]
-         [Author847])
+         [Author_535]
+         [Author_395]
+         [Author_657]
+         [Author670])
      (sexo male))
 
     ([Author_486] of Autor
      (idAutor "486")
      (nombreAutor "Candace Bushnell")
      (autoresSimilares
-         [Author_701]
-         [Author_551]
-         [Author_552]
-         [Author_815]
-         [Author_754]
-         [Author_270]
-         [Author_87]
-         [Author_712]
-         [Author414])
+         [Author_779]
+         [Author_241]
+         [Author_488]
+         [Author_247]
+         [Author_618]
+         [Author_46]
+         [Author_562]
+         [Author_930]
+         [Author_507]
+         [Author_749]
+         [Author_806]
+         [Author_174]
+         [Author_78]
+         [Author_160]
+         [Author_284]
+         [Author_191]
+         [Author_243]
+         [Author104])
      (sexo male))
 
     ([Author_487] of Autor
      (idAutor "487")
      (nombreAutor "Virginia Woolf")
      (autoresSimilares
-         [Author_241]
-         [Author_807]
-         [Author_927]
-         [Author_179]
-         [Author_505]
-         [Author_116]
-         [Author_787]
-         [Author_894]
-         [Author_768]
-         [Author_201]
-         [Author_583]
-         [Author_786]
-         [Author726])
+         [Author_876]
+         [Author_73]
+         [Author_466]
+         [Author_8]
+         [Author_307]
+         [Author_156]
+         [Author_39]
+         [Author_624]
+         [Author_267]
+         [Author559])
      (sexo female))
 
     ([Author_488] of Autor
      (idAutor "488")
      (nombreAutor "James Joyce")
      (autoresSimilares
-         [Author_325]
-         [Author_607]
-         [Author_6]
-         [Author_91]
-         [Author_454]
-         [Author_227]
-         [Author_140]
-         [Author_121]
-         [Author_159]
-         [Author_495]
-         [Author_196]
-         [Author_743]
-         [Author_663]
-         [Author_502]
-         [Author_384]
-         [Author_408]
-         [Author_595]
-         [Author179])
+         [Author_557]
+         [Author_574]
+         [Author_511]
+         [Author_810]
+         [Author_44]
+         [Author_756]
+         [Author_104]
+         [Author_832]
+         [Author_92]
+         [Author479])
      (sexo male))
 
     ([Author_489] of Autor
      (idAutor "489")
      (nombreAutor "Tim OBrien")
      (autoresSimilares
-         [Author_411]
-         [Author_326]
-         [Author_503]
-         [Author_98]
-         [Author_829]
-         [Author_55]
-         [Author_452]
-         [Author_205]
-         [Author_834]
-         [Author_510]
-         [Author_352]
-         [Author68])
+         [Author_491]
+         [Author_505]
+         [Author_861]
+         [Author_656]
+         [Author_362]
+         [Author_335]
+         [Author_47]
+         [Author_761]
+         [Author12])
      (sexo male))
 
     ([Author_490] of Autor
      (idAutor "490")
      (nombreAutor "William Faulkner")
      (autoresSimilares
-         [Author_605]
-         [Author_612]
-         [Author_847]
-         [Author_565]
-         [Author_269]
-         [Author_696]
-         [Author_806]
-         [Author_140]
-         [Author_719]
-         [Author_193]
-         [Author_113]
-         [Author_61]
-         [Author_385]
-         [Author_768]
-         [Author_783]
-         [Author213])
+         [Author930])
      (sexo male))
 
     ([Author_491] of Autor
      (idAutor "491")
      (nombreAutor "John Kennedy Toole")
      (autoresSimilares
-         [Author_870]
-         [Author_567]
-         [Author_136]
-         [Author_887]
-         [Author_783]
-         [Author_722]
-         [Author_468]
-         [Author_404]
-         [Author_885]
-         [Author_352]
-         [Author_522]
-         [Author548])
+         [Author_819]
+         [Author_197]
+         [Author_594]
+         [Author_57]
+         [Author684])
      (sexo male))
 
     ([Author_492] of Autor
      (idAutor "492")
      (nombreAutor "Pearl S Buck")
      (autoresSimilares
-         [Author_41]
-         [Author_615]
-         [Author_237]
-         [Author_459]
-         [Author_175]
-         [Author_789]
-         [Author_176]
-         [Author_924]
-         [Author_341]
-         [Author_447]
-         [Author_874]
-         [Author_644]
-         [Author_550]
-         [Author_518]
-         [Author_920]
-         [Author_567]
-         [Author_647]
-         [Author_258]
-         [Author_629]
-         [Author210])
+         [Author_406]
+         [Author_328]
+         [Author_847]
+         [Author_596]
+         [Author_330]
+         [Author_624]
+         [Author_702]
+         [Author_796]
+         [Author_779]
+         [Author_705]
+         [Author_681]
+         [Author_352]
+         [Author_419]
+         [Author_433]
+         [Author_304]
+         [Author_737]
+         [Author_327]
+         [Author_610]
+         [Author138])
      (sexo female))
 
     ([Author_493] of Autor
      (idAutor "493")
      (nombreAutor "Jack Kerouac")
      (autoresSimilares
-         [Author941])
+         [Author_8]
+         [Author_675]
+         [Author_375]
+         [Author_343]
+         [Author771])
      (sexo male))
 
     ([Author_494] of Autor
      (idAutor "494")
      (nombreAutor "Steven Brust")
      (autoresSimilares
-         [Author_99]
-         [Author_450]
-         [Author_380]
-         [Author_163]
-         [Author_76]
-         [Author_184]
-         [Author_510]
-         [Author_118]
-         [Author_578]
-         [Author_571]
-         [Author_117]
-         [Author_799]
-         [Author_295]
-         [Author699])
+         [Author_720]
+         [Author_232]
+         [Author_423]
+         [Author_749]
+         [Author_507]
+         [Author_835]
+         [Author_346]
+         [Author_319]
+         [Author_266]
+         [Author_365]
+         [Author_682]
+         [Author184])
      (sexo male))
 
     ([Author_495] of Autor
      (idAutor "495")
      (nombreAutor "Joe Abercrombie")
      (autoresSimilares
-         [Author_32]
-         [Author_698]
-         [Author_910]
-         [Author464])
+         [Author_716]
+         [Author_659]
+         [Author_136]
+         [Author_129]
+         [Author_501]
+         [Author_174]
+         [Author_248]
+         [Author_704]
+         [Author_217]
+         [Author_844]
+         [Author765])
      (sexo male))
 
     ([Author_496] of Autor
      (idAutor "496")
      (nombreAutor "Michael J Sullivan")
      (autoresSimilares
-         [Author_239]
-         [Author_609]
-         [Author_360]
-         [Author_762]
-         [Author_942]
-         [Author_263]
-         [Author_59]
-         [Author_266]
-         [Author_786]
-         [Author_584]
-         [Author_707]
-         [Author637])
+         [Author_404]
+         [Author_763]
+         [Author_913]
+         [Author_386]
+         [Author_539]
+         [Author197])
      (sexo male))
 
     ([Author_497] of Autor
      (idAutor "497")
      (nombreAutor "Elizabeth Haydon")
      (autoresSimilares
-         [Author_878]
-         [Author_622]
-         [Author760])
+         [Author_921]
+         [Author_559]
+         [Author_484]
+         [Author_299]
+         [Author_254]
+         [Author_530]
+         [Author_328]
+         [Author_434]
+         [Author_32]
+         [Author_82]
+         [Author131])
      (sexo male))
 
     ([Author_498] of Autor
      (idAutor "498")
      (nombreAutor "Raymond E Feist")
      (autoresSimilares
-         [Author_601]
-         [Author_854]
-         [Author_738]
-         [Author_130]
-         [Author_618]
-         [Author_400]
-         [Author1])
+         [Author_474]
+         [Author_485]
+         [Author_566]
+         [Author_570]
+         [Author_533]
+         [Author_943]
+         [Author_441]
+         [Author_489]
+         [Author_113]
+         [Author_440]
+         [Author_808]
+         [Author_342]
+         [Author_577]
+         [Author_201]
+         [Author_461]
+         [Author_815]
+         [Author845])
      (sexo male))
 
     ([Author_499] of Autor
      (idAutor "499")
      (nombreAutor "Margaret Weis")
      (autoresSimilares
-         [Author_828]
-         [Author_693]
-         [Author_400]
-         [Author_164]
-         [Author_789]
-         [Author_297]
-         [Author_653]
-         [Author_435]
-         [Author_938]
-         [Author414])
+         [Author_859]
+         [Author_527]
+         [Author_209]
+         [Author_120]
+         [Author_871]
+         [Author_929]
+         [Author_930]
+         [Author_161]
+         [Author_619]
+         [Author_185]
+         [Author_117]
+         [Author_160]
+         [Author710])
      (sexo male))
 
     ([Author_500] of Autor
      (idAutor "500")
      (nombreAutor "Mark  Lawrence")
      (autoresSimilares
-         [Author_60]
-         [Author_912]
-         [Author_144]
-         [Author_183]
-         [Author_639]
-         [Author_866]
-         [Author_926]
-         [Author_203]
-         [Author_764]
-         [Author734])
+         [Author_856]
+         [Author_348]
+         [Author626])
      (sexo male))
 
     ([Author_501] of Autor
      (idAutor "501")
      (nombreAutor "Lian Hearn")
      (autoresSimilares
-         [Author_151]
-         [Author_887]
-         [Author466])
+         [Author_101]
+         [Author_52]
+         [Author_715]
+         [Author_324]
+         [Author_95]
+         [Author_191]
+         [Author_255]
+         [Author_867]
+         [Author_497]
+         [Author_228]
+         [Author_871]
+         [Author_923]
+         [Author_146]
+         [Author_698]
+         [Author_530]
+         [Author_369]
+         [Author_328]
+         [Author_266]
+         [Author499])
      (sexo male))
 
     ([Author_502] of Autor
      (idAutor "502")
      (nombreAutor "Piers Anthony")
      (autoresSimilares
-         [Author_865]
-         [Author_308]
-         [Author702])
+         [Author_504]
+         [Author91])
      (sexo male))
 
     ([Author_503] of Autor
      (idAutor "503")
      (nombreAutor "Elizabeth Moon")
      (autoresSimilares
-         [Author_57]
-         [Author_232]
-         [Author_85]
-         [Author_358]
-         [Author_203]
-         [Author_476]
-         [Author126])
+         [Author_879]
+         [Author_59]
+         [Author_287]
+         [Author_633]
+         [Author_549]
+         [Author_145]
+         [Author_101]
+         [Author_229]
+         [Author_182]
+         [Author_730]
+         [Author_289]
+         [Author665])
      (sexo male))
 
     ([Author_504] of Autor
      (idAutor "504")
      (nombreAutor "Michael Moorcock")
      (autoresSimilares
-         [Author_194]
-         [Author_383]
-         [Author_23]
-         [Author_79]
-         [Author_336]
-         [Author_3]
-         [Author590])
+         [Author_98]
+         [Author_554]
+         [Author_645]
+         [Author_687]
+         [Author_131]
+         [Author728])
      (sexo male))
 
     ([Author_505] of Autor
      (idAutor "505")
      (nombreAutor "Glen Cook")
      (autoresSimilares
-         [Author_633]
-         [Author_167]
-         [Author_860]
-         [Author_859]
-         [Author_758]
-         [Author_817]
-         [Author641])
+         [Author_680]
+         [Author_225]
+         [Author_453]
+         [Author_359]
+         [Author_400]
+         [Author_405]
+         [Author_676]
+         [Author_83]
+         [Author_234]
+         [Author_105]
+         [Author_725]
+         [Author_743]
+         [Author_906]
+         [Author_387]
+         [Author_624]
+         [Author_273]
+         [Author_791]
+         [Author_434]
+         [Author719])
      (sexo male))
 
     ([Author_506] of Autor
      (idAutor "506")
      (nombreAutor "Robin Hobb")
      (autoresSimilares
-         [Author669])
+         [Author_482]
+         [Author_412]
+         [Author_567]
+         [Author_325]
+         [Author_230]
+         [Author_656]
+         [Author_486]
+         [Author_2]
+         [Author_478]
+         [Author_171]
+         [Author_659]
+         [Author_716]
+         [Author_297]
+         [Author_891]
+         [Author_446]
+         [Author_267]
+         [Author_64]
+         [Author_532]
+         [Author_560]
+         [Author25])
      (sexo female))
 
     ([Author_507] of Autor
      (idAutor "507")
      (nombreAutor "Stephen R Donaldson")
      (autoresSimilares
-         [Author_912]
-         [Author_567]
-         [Author814])
+         [Author_611]
+         [Author_229]
+         [Author_933]
+         [Author_471]
+         [Author_523]
+         [Author_389]
+         [Author_460]
+         [Author_666]
+         [Author_446]
+         [Author_914]
+         [Author_745]
+         [Author_839]
+         [Author_816]
+         [Author_886]
+         [Author_54]
+         [Author_119]
+         [Author375])
      (sexo male))
 
     ([Author_508] of Autor
      (idAutor "508")
      (nombreAutor "Peter V Brett")
      (autoresSimilares
-         [Author_13]
-         [Author79])
+         [Author_26]
+         [Author_252]
+         [Author_657]
+         [Author_698]
+         [Author_298]
+         [Author_36]
+         [Author_536]
+         [Author_127]
+         [Author_494]
+         [Author875])
      (sexo male))
 
     ([Author_509] of Autor
      (idAutor "509")
      (nombreAutor "Steven Erikson")
      (autoresSimilares
-         [Author_214]
-         [Author_261]
-         [Author_801]
-         [Author_522]
-         [Author_656]
-         [Author_406]
-         [Author_342]
-         [Author_396]
-         [Author_899]
-         [Author_564]
-         [Author_476]
-         [Author_631]
-         [Author386])
+         [Author_279]
+         [Author_241]
+         [Author_885]
+         [Author_530]
+         [Author_83]
+         [Author_862]
+         [Author_256]
+         [Author_165]
+         [Author_574]
+         [Author_565]
+         [Author_726]
+         [Author_226]
+         [Author_602]
+         [Author_705]
+         [Author_308]
+         [Author_495]
+         [Author_545]
+         [Author_893]
+         [Author743])
      (sexo male))
 
     ([Author_510] of Autor
      (idAutor "510")
      (nombreAutor "Scott Lynch")
      (autoresSimilares
-         [Author_37]
-         [Author_643]
-         [Author_860]
-         [Author_868]
-         [Author324])
+         [Author_77]
+         [Author_907]
+         [Author_384]
+         [Author_782]
+         [Author_513]
+         [Author_590]
+         [Author_838]
+         [Author_444]
+         [Author_512]
+         [Author_126]
+         [Author_668]
+         [Author_502]
+         [Author_825]
+         [Author_36]
+         [Author_701]
+         [Author_796]
+         [Author_272]
+         [Author695])
      (sexo male))
 
     ([Author_511] of Autor
      (idAutor "511")
      (nombreAutor "Raine Miller")
      (autoresSimilares
-         [Author_439]
-         [Author_863]
-         [Author_641]
-         [Author_667]
-         [Author_547]
-         [Author_472]
-         [Author_818]
-         [Author_897]
-         [Author_538]
-         [Author_22]
-         [Author_58]
-         [Author_654]
-         [Author_122]
-         [Author_798]
-         [Author77])
+         [Author_147]
+         [Author_356]
+         [Author_573]
+         [Author_788]
+         [Author_588]
+         [Author_83]
+         [Author_467]
+         [Author_440]
+         [Author_822]
+         [Author_808]
+         [Author_936]
+         [Author_47]
+         [Author_712]
+         [Author_801]
+         [Author_9]
+         [Author_733]
+         [Author_158]
+         [Author420])
      (sexo female))
 
     ([Author_512] of Autor
      (idAutor "512")
      (nombreAutor "Frank Herbert")
      (autoresSimilares
-         [Author_583]
-         [Author_885]
-         [Author_366]
-         [Author719])
+         [Author_31]
+         [Author_621]
+         [Author_74]
+         [Author_384]
+         [Author_624]
+         [Author_560]
+         [Author_343]
+         [Author_640]
+         [Author_105]
+         [Author_267]
+         [Author111])
      (sexo male))
 
     ([Author_513] of Autor
      (idAutor "513")
      (nombreAutor "Maeve Binchy")
      (autoresSimilares
-         [Author_52]
-         [Author_377]
-         [Author_37]
-         [Author_747]
-         [Author_814]
-         [Author_437]
-         [Author_589]
-         [Author497])
+         [Author_38]
+         [Author_711]
+         [Author_189]
+         [Author_812]
+         [Author_654]
+         [Author_112]
+         [Author_742]
+         [Author_346]
+         [Author692])
      (sexo female))
 
     ([Author_514] of Autor
      (idAutor "514")
      (nombreAutor "Jim Thompson")
      (autoresSimilares
-         [Author_497]
-         [Author_863]
-         [Author827])
+         [Author_610]
+         [Author_651]
+         [Author_909]
+         [Author_205]
+         [Author_204]
+         [Author771])
      (sexo male))
 
     ([Author_515] of Autor
      (idAutor "515")
      (nombreAutor "Katharine Kerr")
      (autoresSimilares
-         [Author_345]
-         [Author_262]
-         [Author_586]
-         [Author_873]
-         [Author_169]
-         [Author_932]
-         [Author820])
+         [Author_330]
+         [Author_830]
+         [Author_51]
+         [Author_378]
+         [Author_170]
+         [Author_868]
+         [Author_783]
+         [Author_350]
+         [Author_356]
+         [Author_144]
+         [Author_483]
+         [Author_912]
+         [Author463])
      (sexo female))
 
     ([Author_516] of Autor
      (idAutor "516")
      (nombreAutor "Irvine Welsh")
      (autoresSimilares
-         [Author_372]
-         [Author573])
+         [Author_603]
+         [Author_323]
+         [Author_196]
+         [Author_2]
+         [Author_483]
+         [Author_80]
+         [Author_829]
+         [Author_612]
+         [Author143])
      (sexo male))
 
     ([Author_517] of Autor
      (idAutor "517")
      (nombreAutor "W Somerset Maugham")
      (autoresSimilares
-         [Author_99]
-         [Author_360]
-         [Author_32]
-         [Author_880]
-         [Author_438]
-         [Author_824]
-         [Author_50]
-         [Author_915]
-         [Author480])
+         [Author_433]
+         [Author_166]
+         [Author914])
      (sexo male))
 
     ([Author_518] of Autor
      (idAutor "518")
      (nombreAutor "Michael Cunningham")
      (autoresSimilares
-         [Author_810]
-         [Author_867]
-         [Author_363]
-         [Author_301]
-         [Author_715]
-         [Author514])
+         [Author_258]
+         [Author_616]
+         [Author_300]
+         [Author_891]
+         [Author_802]
+         [Author_39]
+         [Author219])
      (sexo male))
 
     ([Author_519] of Autor
      (idAutor "519")
      (nombreAutor "Christopher Priest")
      (autoresSimilares
-         [Author_371]
-         [Author_387]
-         [Author_283]
-         [Author_29]
-         [Author_636]
-         [Author_571]
-         [Author_105]
-         [Author_869]
-         [Author_540]
-         [Author_738]
-         [Author_361]
-         [Author_386]
-         [Author_412]
-         [Author717])
+         [Author_929]
+         [Author_667]
+         [Author_847]
+         [Author_365]
+         [Author_428]
+         [Author752])
      (sexo male))
 
     ([Author_520] of Autor
      (idAutor "520")
      (nombreAutor "Robert James Waller")
      (autoresSimilares
-         [Author_866]
-         [Author_522]
-         [Author715])
+         [Author_888]
+         [Author_629]
+         [Author_226]
+         [Author_28]
+         [Author_789]
+         [Author_691]
+         [Author_335]
+         [Author_142]
+         [Author_535]
+         [Author_52]
+         [Author_82]
+         [Author_781]
+         [Author_40]
+         [Author_773]
+         [Author_99]
+         [Author_22]
+         [Author_469]
+         [Author_832]
+         [Author44])
      (sexo male))
 
     ([Author_521] of Autor
      (idAutor "521")
      (nombreAutor "Ian Fleming")
      (autoresSimilares
-         [Author_76]
-         [Author476])
+         [Author_203]
+         [Author_101]
+         [Author55])
      (sexo male))
 
     ([Author_522] of Autor
      (idAutor "522")
      (nombreAutor "Karen Joy Fowler")
      (autoresSimilares
-         [Author_59]
-         [Author_439]
-         [Author_760]
-         [Author_854]
-         [Author419])
+         [Author_734]
+         [Author_746]
+         [Author_724]
+         [Author_467]
+         [Author694])
      (sexo male))
 
     ([Author_523] of Autor
      (idAutor "523")
      (nombreAutor "Nick Hornby")
      (autoresSimilares
-         [Author_645]
-         [Author_807]
-         [Author_220]
-         [Author_114]
-         [Author_49]
-         [Author_945]
-         [Author_848]
-         [Author_810]
-         [Author448])
+         [Author_270]
+         [Author_838]
+         [Author_109]
+         [Author_861]
+         [Author_97]
+         [Author_414]
+         [Author_887]
+         [Author_900]
+         [Author_30]
+         [Author_403]
+         [Author_573]
+         [Author_136]
+         [Author281])
      (sexo male))
 
     ([Author_524] of Autor
      (idAutor "524")
      (nombreAutor "Bret Easton Ellis")
      (autoresSimilares
-         [Author_442]
-         [Author_171]
-         [Author_699]
-         [Author_411]
-         [Author_515]
-         [Author_496]
-         [Author_797]
-         [Author_461]
-         [Author_402]
-         [Author_656]
-         [Author_944]
-         [Author_406]
-         [Author_569]
-         [Author_847]
-         [Author_476]
-         [Author_291]
-         [Author_735]
-         [Author237])
+         [Author407])
      (sexo male))
 
     ([Author_525] of Autor
      (idAutor "525")
      (nombreAutor "Gaston Leroux")
      (autoresSimilares
-         [Author_433]
-         [Author_395]
-         [Author388])
+         [Author_680]
+         [Author_917]
+         [Author_629]
+         [Author_577]
+         [Author_121]
+         [Author_733]
+         [Author_742]
+         [Author_146]
+         [Author_940]
+         [Author_447]
+         [Author_415]
+         [Author_202]
+         [Author_504]
+         [Author726])
      (sexo male))
 
     ([Author_526] of Autor
      (idAutor "526")
      (nombreAutor "James Fenimore Cooper")
      (autoresSimilares
-         [Author_638]
-         [Author505])
+         [Author_476]
+         [Author_908]
+         [Author_432]
+         [Author_269]
+         [Author_396]
+         [Author_190]
+         [Author_541]
+         [Author_681]
+         [Author_2]
+         [Author_942]
+         [Author_643]
+         [Author_660]
+         [Author_467]
+         [Author_122]
+         [Author_502]
+         [Author_720]
+         [Author_797]
+         [Author15])
      (sexo male))
 
     ([Author_527] of Autor
      (idAutor "527")
      (nombreAutor "Thomas   Harris")
      (autoresSimilares
-         [Author_615]
-         [Author_484]
-         [Author_789]
-         [Author_524]
-         [Author_190]
-         [Author_411]
-         [Author_938]
-         [Author_396]
-         [Author_857]
-         [Author_811]
-         [Author_708]
-         [Author201])
+         [Author_545]
+         [Author_785]
+         [Author_880]
+         [Author_575]
+         [Author_619]
+         [Author94])
      (sexo male))
 
     ([Author_528] of Autor
      (idAutor "528")
      (nombreAutor "Peter Benchley")
      (autoresSimilares
-         [Author_924]
-         [Author_491]
-         [Author_480]
-         [Author_897]
-         [Author73])
+         [Author_470]
+         [Author_468]
+         [Author_873]
+         [Author_257]
+         [Author_922]
+         [Author_346]
+         [Author_160]
+         [Author_469]
+         [Author_774]
+         [Author_373]
+         [Author_145]
+         [Author_860]
+         [Author_622]
+         [Author_522]
+         [Author_647]
+         [Author851])
      (sexo male))
 
     ([Author_529] of Autor
      (idAutor "529")
      (nombreAutor "Jeff Lindsay")
      (autoresSimilares
-         [Author_882]
-         [Author_275]
-         [Author_350]
-         [Author_244]
-         [Author_107]
-         [Author_784]
-         [Author_54]
-         [Author_493]
-         [Author780])
+         [Author_483]
+         [Author_89]
+         [Author_92]
+         [Author_468]
+         [Author_279]
+         [Author747])
      (sexo male))
 
     ([Author_530] of Autor
      (idAutor "530")
      (nombreAutor "Robert E Howard")
      (autoresSimilares
-         [Author_686]
-         [Author_142]
-         [Author_353]
-         [Author_737]
-         [Author_312]
-         [Author_879]
-         [Author447])
+         [Author_281]
+         [Author_99]
+         [Author_462]
+         [Author_95]
+         [Author_633]
+         [Author479])
      (sexo male))
 
     ([Author_531] of Autor
      (idAutor "531")
      (nombreAutor "David Gemmell")
      (autoresSimilares
-         [Author_857]
-         [Author_748]
-         [Author_757]
-         [Author_768]
-         [Author56])
+         [Author_247]
+         [Author_243]
+         [Author_408]
+         [Author_132]
+         [Author627])
      (sexo male))
 
     ([Author_532] of Autor
      (idAutor "532")
      (nombreAutor "Janet B  Taylor")
      (autoresSimilares
-         [Author_20]
-         [Author_624]
-         [Author_306]
-         [Author_688]
-         [Author_409]
-         [Author_197]
-         [Author_650]
-         [Author_507]
-         [Author_651]
-         [Author_475]
-         [Author_589]
-         [Author_478]
-         [Author_298]
-         [Author_794]
-         [Author_703]
-         [Author_5]
-         [Author_342]
-         [Author133])
+         [Author_57]
+         [Author_505]
+         [Author_806]
+         [Author_839]
+         [Author_406]
+         [Author_107]
+         [Author_81]
+         [Author_602]
+         [Author_31]
+         [Author_371]
+         [Author612])
      (sexo female))
 
     ([Author_533] of Autor
      (idAutor "533")
      (nombreAutor "Tiffany Reisz")
      (autoresSimilares
-         [Author_351]
-         [Author_734]
-         [Author_73]
-         [Author_370]
-         [Author_400]
-         [Author_714]
-         [Author_644]
-         [Author_852]
+         [Author_221]
+         [Author_831]
+         [Author_443]
+         [Author_326]
+         [Author_196]
+         [Author_779]
+         [Author_854]
+         [Author_607]
+         [Author_901]
+         [Author_930]
+         [Author_489]
+         [Author_97]
+         [Author_637]
+         [Author_548]
+         [Author_367]
+         [Author_399]
          [Author_517]
-         [Author_868]
-         [Author_41]
-         [Author_261]
-         [Author_48]
-         [Author_692]
-         [Author384])
+         [Author_296]
+         [Author195])
      (sexo female))
 
     ([Author_534] of Autor
      (idAutor "534")
      (nombreAutor "HM Ward")
      (autoresSimilares
-         [Author_790]
-         [Author_841]
-         [Author_220]
-         [Author_494]
-         [Author_597]
-         [Author_223]
-         [Author_333]
-         [Author_865]
-         [Author_379]
-         [Author_610]
-         [Author_195]
-         [Author803])
+         [Author_358]
+         [Author_933]
+         [Author_398]
+         [Author_699]
+         [Author_84]
+         [Author_537]
+         [Author_567]
+         [Author_866]
+         [Author_889]
+         [Author222])
      (sexo female))
 
     ([Author_535] of Autor
      (idAutor "535")
      (nombreAutor "M Pierce")
      (autoresSimilares
-         [Author_387]
-         [Author_34]
-         [Author_741]
-         [Author_427]
-         [Author_719]
-         [Author_588]
-         [Author_24]
-         [Author_235]
-         [Author_412]
-         [Author_765]
-         [Author826])
+         [Author_327]
+         [Author_785]
+         [Author_63]
+         [Author_76]
+         [Author_897]
+         [Author_421]
+         [Author_471]
+         [Author_511]
+         [Author_810]
+         [Author_806]
+         [Author_787]
+         [Author_721]
+         [Author_160]
+         [Author_852]
+         [Author_190]
+         [Author_126]
+         [Author580])
      (sexo male))
 
     ([Author_536] of Autor
      (idAutor "536")
      (nombreAutor "Laura Wiess")
      (autoresSimilares
-         [Author_646]
-         [Author_9]
-         [Author_332]
-         [Author_361]
-         [Author_800]
-         [Author_592]
-         [Author_178]
-         [Author_586]
-         [Author_806]
-         [Author_369]
-         [Author_804]
-         [Author_157]
-         [Author216])
+         [Author_379]
+         [Author_491]
+         [Author_323]
+         [Author_622]
+         [Author_206]
+         [Author_783]
+         [Author_703]
+         [Author_907]
+         [Author_132]
+         [Author314])
      (sexo female))
 
     ([Author_537] of Autor
      (idAutor "537")
      (nombreAutor "Carolyn Mackler")
      (autoresSimilares
-         [Author_736]
-         [Author49])
+         [Author_507]
+         [Author23])
      (sexo female))
 
     ([Author_538] of Autor
      (idAutor "538")
      (nombreAutor "Natasha Friend")
      (autoresSimilares
-         [Author_305]
-         [Author_515]
-         [Author_402]
-         [Author_648]
-         [Author_450]
-         [Author_683]
-         [Author_502]
-         [Author_475]
-         [Author_630]
-         [Author_808]
-         [Author_267]
-         [Author_691]
-         [Author_584]
-         [Author100])
+         [Author_816]
+         [Author_297]
+         [Author_727]
+         [Author159])
      (sexo female))
 
     ([Author_539] of Autor
      (idAutor "539")
      (nombreAutor "Elmore Leonard")
      (autoresSimilares
-         [Author_507]
-         [Author774])
+         [Author_544]
+         [Author_572]
+         [Author_253]
+         [Author_143]
+         [Author_714]
+         [Author_404]
+         [Author_845]
+         [Author_499]
+         [Author338])
      (sexo male))
 
     ([Author_540] of Autor
      (idAutor "540")
      (nombreAutor "Mary Higgins Clark")
      (autoresSimilares
-         [Author_225]
-         [Author_890]
-         [Author_358]
-         [Author_728]
-         [Author444])
+         [Author_683]
+         [Author_730]
+         [Author_43]
+         [Author_791]
+         [Author_391]
+         [Author_709]
+         [Author_79]
+         [Author_612]
+         [Author_388]
+         [Author_774]
+         [Author_795]
+         [Author_743]
+         [Author_532]
+         [Author_7]
+         [Author_359]
+         [Author_446]
+         [Author_576]
+         [Author_304]
+         [Author_848]
+         [Author910])
      (sexo female))
 
     ([Author_541] of Autor
      (idAutor "541")
      (nombreAutor "Dorothy L Sayers")
      (autoresSimilares
-         [Author_378]
-         [Author_182]
-         [Author_534]
-         [Author_336]
-         [Author_439]
-         [Author_830]
-         [Author_335]
-         [Author_386]
-         [Author_507]
-         [Author_829]
-         [Author_910]
-         [Author_284]
-         [Author624])
+         [Author_134]
+         [Author_32]
+         [Author_11]
+         [Author_53]
+         [Author_730]
+         [Author_649]
+         [Author_387]
+         [Author_310]
+         [Author_347]
+         [Author_732]
+         [Author_84]
+         [Author_127]
+         [Author_10]
+         [Author_688]
+         [Author_682]
+         [Author_842]
+         [Author215])
      (sexo female))
 
     ([Author_542] of Autor
      (idAutor "542")
      (nombreAutor "Faye Kellerman")
      (autoresSimilares
-         [Author247])
+         [Author_503]
+         [Author_395]
+         [Author_167]
+         [Author_696]
+         [Author_690]
+         [Author_229]
+         [Author_931]
+         [Author_152]
+         [Author_414]
+         [Author_440]
+         [Author_693]
+         [Author_873]
+         [Author_798]
+         [Author_107]
+         [Author_902]
+         [Author_294]
+         [Author_676]
+         [Author_743]
+         [Author735])
      (sexo female))
 
     ([Author_543] of Autor
      (idAutor "543")
      (nombreAutor "James M Cain")
      (autoresSimilares
-         [Author_105]
-         [Author_730]
-         [Author_305]
-         [Author_337]
-         [Author_196]
-         [Author_378]
-         [Author_509]
-         [Author_396]
-         [Author_383]
-         [Author_855]
-         [Author452])
+         [Author_95]
+         [Author_612]
+         [Author_518]
+         [Author_872]
+         [Author_257]
+         [Author_829]
+         [Author_70]
+         [Author_570]
+         [Author_286]
+         [Author_883]
+         [Author_360]
+         [Author_549]
+         [Author_623]
+         [Author_391]
+         [Author397])
      (sexo male))
 
     ([Author_544] of Autor
      (idAutor "544")
      (nombreAutor "Donna Tartt")
      (autoresSimilares
-         [Author_673]
-         [Author_943]
-         [Author_630]
-         [Author_884]
-         [Author689])
+         [Author_543]
+         [Author_590]
+         [Author_269]
+         [Author_317]
+         [Author_771]
+         [Author_500]
+         [Author_490]
+         [Author_626]
+         [Author_17]
+         [Author_600]
+         [Author_602]
+         [Author_604]
+         [Author_185]
+         [Author_773]
+         [Author_321]
+         [Author_807]
+         [Author_863]
+         [Author_770]
+         [Author_39]
+         [Author90])
      (sexo female))
 
     ([Author_545] of Autor
      (idAutor "545")
      (nombreAutor "John Sandford")
      (autoresSimilares
-         [Author_627]
-         [Author_445]
-         [Author_293]
-         [Author_905]
-         [Author_734]
-         [Author_45]
-         [Author_939]
-         [Author_532]
-         [Author_0]
-         [Author_258]
-         [Author_755]
-         [Author_331]
-         [Author_387]
-         [Author_579]
-         [Author_334]
-         [Author_140]
-         [Author361])
+         [Author_903]
+         [Author_836]
+         [Author139])
      (sexo male))
 
     ([Author_546] of Autor
      (idAutor "546")
      (nombreAutor "David Guterson")
      (autoresSimilares
-         [Author742])
+         [Author_174]
+         [Author_517]
+         [Author_797]
+         [Author_386]
+         [Author_562]
+         [Author_326]
+         [Author_406]
+         [Author_120]
+         [Author_440]
+         [Author_555]
+         [Author_821]
+         [Author_811]
+         [Author_499]
+         [Author_413]
+         [Author_590]
+         [Author_650]
+         [Author_551]
+         [Author_307]
+         [Author_75]
+         [Author433])
      (sexo male))
 
     ([Author_547] of Autor
      (idAutor "547")
      (nombreAutor "Michael Connelly")
      (autoresSimilares
-         [Author_11]
-         [Author_297]
-         [Author_56]
-         [Author_826]
-         [Author_902]
-         [Author_699]
-         [Author_385]
-         [Author_346]
-         [Author_546]
-         [Author_816]
-         [Author_274]
-         [Author_77]
-         [Author_437]
-         [Author_777]
-         [Author632])
+         [Author_424]
+         [Author_501]
+         [Author_531]
+         [Author_796]
+         [Author_235]
+         [Author_315]
+         [Author_197]
+         [Author_837]
+         [Author_898]
+         [Author_392]
+         [Author_140]
+         [Author_125]
+         [Author_162]
+         [Author744])
      (sexo male))
 
     ([Author_548] of Autor
      (idAutor "548")
      (nombreAutor "Dashiell Hammett")
      (autoresSimilares
-         [Author_348]
-         [Author_126]
-         [Author_336]
-         [Author_594]
-         [Author_831]
-         [Author284])
+         [Author_840]
+         [Author_863]
+         [Author_512]
+         [Author_522]
+         [Author15])
      (sexo male))
 
     ([Author_549] of Autor
      (idAutor "549")
      (nombreAutor "Elizabeth  George")
      (autoresSimilares
-         [Author_101]
-         [Author_517]
-         [Author_97]
-         [Author_828]
-         [Author_226]
-         [Author_174]
-         [Author_849]
-         [Author_829]
-         [Author_594]
-         [Author_300]
-         [Author_800]
-         [Author_87]
-         [Author_427]
+         [Author_806]
+         [Author_917]
+         [Author_817]
+         [Author_339]
+         [Author_463]
+         [Author_364]
+         [Author_794]
+         [Author_13]
+         [Author_698]
+         [Author_415]
          [Author_583]
-         [Author_404]
-         [Author_855]
-         [Author_222]
-         [Author_661]
-         [Author_278]
-         [Author114])
+         [Author_807]
+         [Author_357]
+         [Author_922]
+         [Author_150]
+         [Author140])
      (sexo female))
 
     ([Author_550] of Autor
      (idAutor "550")
      (nombreAutor "Patricia Highsmith")
      (autoresSimilares
-         [Author_242]
-         [Author_772]
-         [Author_575]
-         [Author_372]
-         [Author_153]
-         [Author_869]
-         [Author_200]
-         [Author_328]
-         [Author_544]
-         [Author_854]
-         [Author_269]
-         [Author_472]
-         [Author_504]
-         [Author_612]
-         [Author_703]
-         [Author526])
+         [Author858])
      (sexo female))
 
     ([Author_551] of Autor
      (idAutor "551")
      (nombreAutor "Martin Cruz Smith")
      (autoresSimilares
-         [Author_772]
-         [Author_690]
-         [Author_412]
-         [Author_39]
-         [Author_343]
-         [Author_110]
-         [Author_333]
-         [Author_382]
-         [Author_907]
-         [Author_359]
+         [Author_316]
+         [Author_589]
+         [Author_298]
          [Author_480]
-         [Author_505]
-         [Author853])
+         [Author_123]
+         [Author_16]
+         [Author_19]
+         [Author_868]
+         [Author_137]
+         [Author_416]
+         [Author_357]
+         [Author_705]
+         [Author420])
      (sexo male))
 
     ([Author_552] of Autor
      (idAutor "552")
      (nombreAutor "Peter Heg")
      (autoresSimilares
-         [Author_893]
-         [Author_487]
-         [Author_291]
-         [Author_606]
-         [Author_483]
-         [Author_852]
-         [Author_672]
-         [Author_767]
-         [Author_209]
-         [Author_780]
-         [Author_197]
-         [Author_941]
-         [Author_652]
-         [Author_486]
-         [Author16])
+         [Author_216]
+         [Author_192]
+         [Author_735]
+         [Author_650]
+         [Author_624]
+         [Author_758]
+         [Author_693]
+         [Author_738]
+         [Author_47]
+         [Author_151]
+         [Author_596]
+         [Author_701]
+         [Author350])
      (sexo male))
 
     ([Author_553] of Autor
      (idAutor "553")
      (nombreAutor "John Grisham")
      (autoresSimilares
-         [Author_740]
-         [Author_306]
-         [Author_50]
-         [Author_673]
-         [Author_258]
-         [Author_627]
-         [Author_894]
-         [Author_443]
-         [Author_802]
-         [Author_411]
-         [Author_437]
-         [Author_193]
-         [Author_651]
-         [Author_861]
-         [Author_500]
-         [Author_883]
-         [Author723])
+         [Author_330]
+         [Author_4]
+         [Author_105]
+         [Author_864]
+         [Author_38]
+         [Author_314]
+         [Author_257]
+         [Author_803]
+         [Author_784]
+         [Author_192]
+         [Author896])
      (sexo male))
 
     ([Author_554] of Autor
      (idAutor "554")
      (nombreAutor "Sue Grafton")
      (autoresSimilares
-         [Author_317]
-         [Author_475]
-         [Author_254]
-         [Author_23]
-         [Author_470]
-         [Author_899]
-         [Author_452]
-         [Author_270]
-         [Author_417]
-         [Author_433]
-         [Author_802]
-         [Author616])
+         [Author_343]
+         [Author66])
      (sexo female))
 
     ([Author_555] of Autor
      (idAutor "555")
      (nombreAutor "Robert Louis Stevenson")
      (autoresSimilares
-         [Author_620]
-         [Author_396]
-         [Author_112]
-         [Author_766]
-         [Author_875]
-         [Author_61]
-         [Author_625]
-         [Author_252]
-         [Author755])
+         [Author788])
      (sexo male))
 
     ([Author_556] of Autor
      (idAutor "556")
      (nombreAutor "Scott Turow")
      (autoresSimilares
-         [Author_86]
-         [Author_902]
-         [Author_534]
-         [Author_754]
-         [Author_291]
-         [Author_832]
-         [Author_258]
-         [Author_596]
-         [Author_3]
-         [Author_663]
-         [Author_103]
-         [Author_901]
-         [Author_340]
-         [Author_495]
-         [Author_680]
-         [Author276])
+         [Author_306]
+         [Author_569]
+         [Author_486]
+         [Author_101]
+         [Author_329]
+         [Author_774]
+         [Author_636]
+         [Author_576]
+         [Author_195]
+         [Author_319]
+         [Author_922]
+         [Author_211]
+         [Author_894]
+         [Author_447]
+         [Author_737]
+         [Author_507]
+         [Author_481]
+         [Author_65]
+         [Author527])
      (sexo male))
 
     ([Author_557] of Autor
      (idAutor "557")
      (nombreAutor "Raymond Chandler")
      (autoresSimilares
-         [Author511])
+         [Author_643]
+         [Author_5]
+         [Author_215]
+         [Author_396]
+         [Author_797]
+         [Author_165]
+         [Author218])
      (sexo male))
 
     ([Author_558] of Autor
      (idAutor "558")
      (nombreAutor "Dennis Lehane")
      (autoresSimilares
-         [Author_157]
-         [Author_262]
-         [Author_533]
-         [Author_793]
-         [Author_591]
-         [Author_54]
-         [Author_708]
-         [Author_634]
-         [Author_359]
-         [Author_109]
+         [Author_58]
          [Author_119]
-         [Author902])
+         [Author_495]
+         [Author_625]
+         [Author_91]
+         [Author_822]
+         [Author_797]
+         [Author_663]
+         [Author_836]
+         [Author_494]
+         [Author_406]
+         [Author_510]
+         [Author414])
      (sexo male))
 
     ([Author_559] of Autor
      (idAutor "559")
      (nombreAutor "Mario Puzo")
      (autoresSimilares
-         [Author_66]
-         [Author_503]
-         [Author_276]
-         [Author_434]
-         [Author_75]
-         [Author_679]
-         [Author_188]
-         [Author_779]
-         [Author_613]
-         [Author_915]
-         [Author_42]
-         [Author457])
+         [Author_629]
+         [Author_162]
+         [Author_405]
+         [Author_151]
+         [Author_495]
+         [Author_515]
+         [Author_301]
+         [Author_121]
+         [Author_497]
+         [Author_307]
+         [Author_523]
+         [Author_96]
+         [Author_633]
+         [Author_489]
+         [Author23])
      (sexo male))
 
     ([Author_560] of Autor
      (idAutor "560")
      (nombreAutor "Megan McCafferty")
      (autoresSimilares
-         [Author_481]
-         [Author_184]
-         [Author_270]
-         [Author_729]
-         [Author_399]
-         [Author_93]
-         [Author_114]
-         [Author_459]
-         [Author_943]
-         [Author_141]
-         [Author_654]
-         [Author_536]
-         [Author_689]
-         [Author_48]
-         [Author_123]
-         [Author598])
+         [Author_387]
+         [Author_21]
+         [Author_127]
+         [Author_131]
+         [Author_173]
+         [Author_266]
+         [Author_570]
+         [Author_541]
+         [Author_432]
+         [Author_168]
+         [Author_331]
+         [Author_581]
+         [Author_645]
+         [Author577])
      (sexo male))
 
     ([Author_561] of Autor
      (idAutor "561")
      (nombreAutor "RJ Palacio")
      (autoresSimilares
-         [Author_728]
-         [Author_330]
-         [Author_247]
-         [Author_718]
-         [Author_530]
-         [Author_321]
+         [Author_631]
+         [Author_441]
+         [Author_636]
+         [Author_557]
+         [Author_63]
          [Author_930]
-         [Author_451]
-         [Author_93]
-         [Author_909]
-         [Author_761]
-         [Author_764]
-         [Author_881]
-         [Author_55]
-         [Author_563]
-         [Author_770]
-         [Author_121]
-         [Author115])
+         [Author_14]
+         [Author_67]
+         [Author_538]
+         [Author_4]
+         [Author_144]
+         [Author_504]
+         [Author_222]
+         [Author_838]
+         [Author_594]
+         [Author_320]
+         [Author551])
      (sexo female))
 
     ([Author_562] of Autor
      (idAutor "562")
      (nombreAutor "Ned Vizzini")
      (autoresSimilares
-         [Author_181]
-         [Author_741]
-         [Author_250]
-         [Author_456]
-         [Author_323]
-         [Author263])
+         [Author_386]
+         [Author_682]
+         [Author_541]
+         [Author_111]
+         [Author_337]
+         [Author_719]
+         [Author_582]
+         [Author_210]
+         [Author_667]
+         [Author_163]
+         [Author_926]
+         [Author43])
      (sexo male))
 
     ([Author_563] of Autor
      (idAutor "563")
      (nombreAutor "Chad Harbach")
      (autoresSimilares
-         [Author_290]
-         [Author616])
+         [Author_192]
+         [Author187])
      (sexo male))
 
     ([Author_564] of Autor
      (idAutor "564")
      (nombreAutor "Chimamanda Ngozi Adichie")
      (autoresSimilares
-         [Author_721]
-         [Author507])
+         [Author_437]
+         [Author_65]
+         [Author_73]
+         [Author_17]
+         [Author_666]
+         [Author_176]
+         [Author154])
      (sexo female))
 
     ([Author_565] of Autor
      (idAutor "565")
      (nombreAutor "Adam Mansbach")
      (autoresSimilares
-         [Author347])
+         [Author_624]
+         [Author_630]
+         [Author_220]
+         [Author_401]
+         [Author_165]
+         [Author_702]
+         [Author_809]
+         [Author_672]
+         [Author_421]
+         [Author_695]
+         [Author_162]
+         [Author_269]
+         [Author_161]
+         [Author_761]
+         [Author_277]
+         [Author378])
      (sexo male))
 
     ([Author_566] of Autor
      (idAutor "566")
      (nombreAutor "Julian Barnes")
      (autoresSimilares
-         [Author_620]
-         [Author_916]
-         [Author_915]
-         [Author_518]
-         [Author_789]
-         [Author_234]
-         [Author_438]
-         [Author149])
+         [Author_489]
+         [Author_260]
+         [Author_175]
+         [Author_145]
+         [Author_365]
+         [Author_741]
+         [Author_738]
+         [Author_369]
+         [Author_657]
+         [Author_65]
+         [Author_428]
+         [Author_143]
+         [Author_183]
+         [Author_210]
+         [Author271])
      (sexo male))
 
     ([Author_567] of Autor
      (idAutor "567")
      (nombreAutor "SJ Watson")
      (autoresSimilares
-         [Author_722]
-         [Author_131]
-         [Author_527]
-         [Author_768]
-         [Author_422]
-         [Author_239]
-         [Author144])
+         [Author_836]
+         [Author_911]
+         [Author_478]
+         [Author_71]
+         [Author_40]
+         [Author832])
      (sexo male))
 
     ([Author_568] of Autor
      (idAutor "568")
      (nombreAutor "Jennifer Egan")
      (autoresSimilares
-         [Author_758]
-         [Author_741]
-         [Author_707]
-         [Author_795]
-         [Author_145]
-         [Author177])
+         [Author_370]
+         [Author_233]
+         [Author_894]
+         [Author_466]
+         [Author_295]
+         [Author_157]
+         [Author_932]
+         [Author_587]
+         [Author_270]
+         [Author_400]
+         [Author_430]
+         [Author_180]
+         [Author_311]
+         [Author_337]
+         [Author_181]
+         [Author_17]
+         [Author_836]
+         [Author336])
      (sexo female))
 
     ([Author_569] of Autor
      (idAutor "569")
      (nombreAutor "Fredrik Backman")
      (autoresSimilares
-         [Author_259]
-         [Author_149]
-         [Author_152]
-         [Author209])
+         [Author_122]
+         [Author_172]
+         [Author_345]
+         [Author_276]
+         [Author_61]
+         [Author_943]
+         [Author605])
      (sexo male))
 
     ([Author_570] of Autor
      (idAutor "570")
      (nombreAutor "Robert Galbraith")
      (autoresSimilares
-         [Author_71]
-         [Author_259]
-         [Author_800]
-         [Author_888]
-         [Author_316]
-         [Author_747]
-         [Author_827]
-         [Author_900]
-         [Author_158]
-         [Author_289]
-         [Author_129]
-         [Author_7]
-         [Author_831]
-         [Author_405]
-         [Author_746]
-         [Author718])
+         [Author_776]
+         [Author_224]
+         [Author_923]
+         [Author_387]
+         [Author_473]
+         [Author_903]
+         [Author_155]
+         [Author_364]
+         [Author_613]
+         [Author578])
      (sexo female))
 
     ([Author_571] of Autor
      (idAutor "571")
      (nombreAutor "Graeme Simsion")
      (autoresSimilares
-         [Author_712]
-         [Author_888]
-         [Author_345]
-         [Author_423]
-         [Author_611]
          [Author_383]
-         [Author_253]
-         [Author685])
+         [Author_196]
+         [Author_338]
+         [Author_538]
+         [Author600])
      (sexo male))
 
     ([Author_572] of Autor
      (idAutor "572")
      (nombreAutor "Paula Hawkins")
      (autoresSimilares
-         [Author_594]
-         [Author_327]
-         [Author_344]
-         [Author_519]
-         [Author_447]
-         [Author_222]
-         [Author_357]
-         [Author_573]
-         [Author189])
+         [Author_43]
+         [Author_0]
+         [Author_161]
+         [Author_88]
+         [Author_134]
+         [Author238])
      (sexo male))
 
     ([Author_573] of Autor
      (idAutor "573")
      (nombreAutor "Jonathan Swift")
      (autoresSimilares
-         [Author_891]
-         [Author_2]
-         [Author17])
+         [Author_670]
+         [Author_462]
+         [Author_291]
+         [Author_316]
+         [Author_53]
+         [Author_108]
+         [Author_795]
+         [Author_535]
+         [Author_626]
+         [Author_765]
+         [Author_10]
+         [Author_118]
+         [Author_800]
+         [Author_136]
+         [Author_856]
+         [Author_384]
+         [Author585])
      (sexo male))
 
     ([Author_574] of Autor
      (idAutor "574")
      (nombreAutor "DH Lawrence")
      (autoresSimilares
-         [Author_838]
-         [Author_464]
-         [Author_337]
-         [Author_694]
-         [Author_72]
-         [Author_394]
-         [Author_165]
-         [Author485])
+         [Author_777]
+         [Author_548]
+         [Author_717]
+         [Author_257]
+         [Author_667]
+         [Author_127]
+         [Author_246]
+         [Author_594]
+         [Author_118]
+         [Author_201]
+         [Author_6]
+         [Author_772]
+         [Author875])
      (sexo male))
 
     ([Author_575] of Autor
      (idAutor "575")
      (nombreAutor "Marcel Proust")
      (autoresSimilares
-         [Author_716]
-         [Author_93]
-         [Author_841]
-         [Author_301]
-         [Author_51]
-         [Author673])
+         [Author_191]
+         [Author_593]
+         [Author_610]
+         [Author_102]
+         [Author_6]
+         [Author_525]
+         [Author773])
      (sexo male))
 
     ([Author_576] of Autor
      (idAutor "576")
      (nombreAutor "William Makepeace Thackeray")
      (autoresSimilares
-         [Author_694]
-         [Author_435]
-         [Author_344]
-         [Author_894]
-         [Author_567]
-         [Author_400]
-         [Author_761]
-         [Author_692]
-         [Author_749]
-         [Author_110]
-         [Author_154]
-         [Author_865]
-         [Author420])
+         [Author_450]
+         [Author_512]
+         [Author_594]
+         [Author437])
      (sexo male))
 
     ([Author_577] of Autor
      (idAutor "577")
      (nombreAutor "William S Burroughs")
      (autoresSimilares
-         [Author_31]
-         [Author_806]
-         [Author_454]
-         [Author855])
+         [Author_527]
+         [Author_762]
+         [Author_141]
+         [Author_131]
+         [Author_187]
+         [Author_233]
+         [Author_217]
+         [Author_430]
+         [Author_702]
+         [Author_690]
+         [Author_925]
+         [Author_714]
+         [Author295])
      (sexo male))
 
     ([Author_578] of Autor
      (idAutor "578")
      (nombreAutor "Jostein Gaarder")
      (autoresSimilares
-         [Author_256]
-         [Author_115]
-         [Author_622]
-         [Author_723]
-         [Author_532]
-         [Author_843]
-         [Author_898]
-         [Author271])
+         [Author_925]
+         [Author_591]
+         [Author_6]
+         [Author_650]
+         [Author_371]
+         [Author_945]
+         [Author790])
      (sexo male))
 
     ([Author_579] of Autor
      (idAutor "579")
      (nombreAutor "David Foster Wallace")
      (autoresSimilares
-         [Author_856]
-         [Author_842]
-         [Author_85]
-         [Author_410]
-         [Author_800]
-         [Author_778]
-         [Author_375]
-         [Author_194]
-         [Author_876]
-         [Author_197]
-         [Author_922]
-         [Author_841]
-         [Author_689]
-         [Author_456]
-         [Author815])
+         [Author_471]
+         [Author_546]
+         [Author_354]
+         [Author_889]
+         [Author_438]
+         [Author_38]
+         [Author_462]
+         [Author_678]
+         [Author698])
      (sexo male))
 
     ([Author_580] of Autor
      (idAutor "580")
      (nombreAutor "Tim LaHaye")
      (autoresSimilares
-         [Author_149]
-         [Author542])
+         [Author_689]
+         [Author_893]
+         [Author_215]
+         [Author_584]
+         [Author_709]
+         [Author_650]
+         [Author_755]
+         [Author_898]
+         [Author540])
      (sexo male))
 
     ([Author_581] of Autor
      (idAutor "581")
      (nombreAutor "Billie Letts")
      (autoresSimilares
-         [Author_129]
-         [Author_847]
-         [Author_110]
-         [Author_838]
-         [Author_187]
-         [Author_151]
-         [Author_884]
-         [Author366])
+         [Author306])
      (sexo male))
 
     ([Author_582] of Autor
      (idAutor "582")
      (nombreAutor "Cecelia Ahern")
      (autoresSimilares
-         [Author_376]
-         [Author_29]
-         [Author_75]
-         [Author_205]
-         [Author_912]
-         [Author_330]
-         [Author_19]
-         [Author_237]
-         [Author_467]
-         [Author_168]
-         [Author_262]
-         [Author_22]
-         [Author_99]
-         [Author527])
+         [Author275])
      (sexo female))
 
     ([Author_583] of Autor
      (idAutor "583")
      (nombreAutor "Rebecca Wells")
      (autoresSimilares
-         [Author_450]
-         [Author_325]
-         [Author_178]
-         [Author_900]
-         [Author_371]
-         [Author771])
+         [Author_289]
+         [Author_320]
+         [Author_666]
+         [Author_339]
+         [Author_165]
+         [Author_891]
+         [Author_527]
+         [Author_140]
+         [Author_739]
+         [Author_139]
+         [Author_370]
+         [Author_479]
+         [Author_180]
+         [Author_511]
+         [Author847])
      (sexo female))
 
     ([Author_584] of Autor
      (idAutor "584")
      (nombreAutor "Gertrude Chandler Warner")
      (autoresSimilares
-         [Author_557]
-         [Author_701]
-         [Author_491]
-         [Author_529]
-         [Author_490]
-         [Author_228]
-         [Author_342]
-         [Author_181]
-         [Author_257]
-         [Author_250]
-         [Author_628]
-         [Author_600]
-         [Author_246]
-         [Author_62]
-         [Author_733]
-         [Author_456]
-         [Author816])
+         [Author_220]
+         [Author_944]
+         [Author_690]
+         [Author_262]
+         [Author_810]
+         [Author_644]
+         [Author_727]
+         [Author_797]
+         [Author_685]
+         [Author_53]
+         [Author_572]
+         [Author_650]
+         [Author_153]
+         [Author_201]
+         [Author_896]
+         [Author_684]
+         [Author_627]
+         [Author_876]
+         [Author120])
      (sexo female))
 
     ([Author_585] of Autor
      (idAutor "585")
      (nombreAutor "Aesop")
      (autoresSimilares
-         [Author_902]
-         [Author_336]
-         [Author_211]
-         [Author_458]
-         [Author_409]
-         [Author_337]
-         [Author_700]
-         [Author_408]
-         [Author_493]
-         [Author_611]
-         [Author_16]
-         [Author_50]
-         [Author42])
+         [Author_71]
+         [Author_580]
+         [Author_545]
+         [Author_375]
+         [Author_398]
+         [Author_597]
+         [Author_236]
+         [Author_510]
+         [Author_712]
+         [Author_890]
+         [Author_564]
+         [Author_928]
+         [Author_243]
+         [Author_801]
+         [Author_31]
+         [Author_702]
+         [Author_308]
+         [Author_432]
+         [Author914])
      (sexo male))
 
     ([Author_586] of Autor
      (idAutor "586")
      (nombreAutor "Pat Conroy")
      (autoresSimilares
-         [Author_657]
-         [Author209])
+         [Author_222]
+         [Author_260]
+         [Author_332]
+         [Author_525]
+         [Author_184]
+         [Author_850]
+         [Author_904]
+         [Author_269]
+         [Author_547]
+         [Author_516]
+         [Author350])
      (sexo male))
 
     ([Author_587] of Autor
      (idAutor "587")
      (nombreAutor "Nicki Elson")
      (autoresSimilares
-         [Author_620]
-         [Author_333]
-         [Author_39]
-         [Author_832]
-         [Author_926]
-         [Author_429]
-         [Author_607]
-         [Author439])
+         [Author_113]
+         [Author_477]
+         [Author_833]
+         [Author_715]
+         [Author_920]
+         [Author_524]
+         [Author_518]
+         [Author_605]
+         [Author_48]
+         [Author_694]
+         [Author_904]
+         [Author26])
      (sexo female))
 
     ([Author_588] of Autor
      (idAutor "588")
      (nombreAutor "Edith Wharton")
      (autoresSimilares
-         [Author_778]
-         [Author_693]
-         [Author_92]
-         [Author_501]
-         [Author_367]
-         [Author_420]
-         [Author434])
+         [Author_308]
+         [Author_445]
+         [Author_939]
+         [Author271])
      (sexo female))
 
     ([Author_589] of Autor
      (idAutor "589")
      (nombreAutor "Boris Pasternak")
      (autoresSimilares
-         [Author_360]
-         [Author378])
+         [Author_116]
+         [Author_379]
+         [Author_100]
+         [Author_5]
+         [Author_468]
+         [Author_809]
+         [Author_138]
+         [Author_577]
+         [Author_97]
+         [Author_731]
+         [Author_137]
+         [Author_124]
+         [Author_111]
+         [Author_642]
+         [Author_541]
+         [Author_734]
+         [Author_178]
+         [Author772])
      (sexo male))
 
     ([Author_590] of Autor
      (idAutor "590")
      (nombreAutor "EM Forster")
      (autoresSimilares
-         [Author_558]
-         [Author_481]
-         [Author_164]
-         [Author_828]
-         [Author_99]
-         [Author_310]
-         [Author_646]
-         [Author_6]
-         [Author_435]
-         [Author_837]
-         [Author_305]
-         [Author_618]
-         [Author_9]
-         [Author_138]
          [Author_14]
-         [Author_381]
-         [Author_885]
-         [Author_390]
-         [Author_49]
-         [Author453])
+         [Author_674]
+         [Author_936]
+         [Author_584]
+         [Author_675]
+         [Author_527]
+         [Author_688]
+         [Author_801]
+         [Author_657]
+         [Author_457]
+         [Author_702]
+         [Author_618]
+         [Author_51]
+         [Author_303]
+         [Author_87]
+         [Author_515]
+         [Author_384]
+         [Author_497]
+         [Author_133]
+         [Author467])
      (sexo male))
 
     ([Author_591] of Autor
      (idAutor "591")
      (nombreAutor "Francine Rivers")
      (autoresSimilares
-         [Author_267]
-         [Author_172]
-         [Author798])
+         [Author_495]
+         [Author_419]
+         [Author_427]
+         [Author_585]
+         [Author_788]
+         [Author_866]
+         [Author_196]
+         [Author_831]
+         [Author_746]
+         [Author_623]
+         [Author_740]
+         [Author_676]
+         [Author_670]
+         [Author_809]
+         [Author_47]
+         [Author_201]
+         [Author_595]
+         [Author139])
      (sexo female))
 
     ([Author_592] of Autor
      (idAutor "592")
      (nombreAutor "Elizabeth Gaskell")
      (autoresSimilares
-         [Author_767]
-         [Author_911]
-         [Author_567]
-         [Author_359]
-         [Author_370]
-         [Author_522]
-         [Author_605]
-         [Author_459]
-         [Author_704]
-         [Author_515]
-         [Author_473]
-         [Author923])
+         [Author_806]
+         [Author_591]
+         [Author_644]
+         [Author_710]
+         [Author_261]
+         [Author_815]
+         [Author_203]
+         [Author_487]
+         [Author_153]
+         [Author_421]
+         [Author_142]
+         [Author879])
      (sexo female))
 
     ([Author_593] of Autor
      (idAutor "593")
      (nombreAutor "Jess Walter")
      (autoresSimilares
-         [Author_348]
-         [Author_156]
-         [Author_235]
-         [Author_921]
-         [Author_10]
-         [Author_653]
-         [Author_838]
-         [Author_208]
-         [Author_139]
-         [Author_690]
-         [Author_740]
-         [Author_76]
-         [Author_553]
-         [Author331])
+         [Author_289]
+         [Author_81]
+         [Author_228]
+         [Author687])
      (sexo male))
 
     ([Author_594] of Autor
      (idAutor "594")
      (nombreAutor "Rachel Joyce")
      (autoresSimilares
-         [Author_283]
-         [Author_587]
-         [Author_727]
-         [Author_895]
-         [Author_891]
-         [Author_617]
-         [Author_108]
-         [Author_824]
-         [Author_399]
-         [Author_689]
-         [Author_4]
-         [Author_284]
-         [Author_212]
-         [Author_335]
-         [Author_74]
-         [Author_225]
-         [Author_362]
-         [Author_316]
-         [Author_923]
-         [Author324])
+         [Author_753]
+         [Author_66]
+         [Author_662]
+         [Author_159]
+         [Author_757]
+         [Author_5]
+         [Author_344]
+         [Author_941]
+         [Author_593]
+         [Author_704]
+         [Author_511]
+         [Author_323]
+         [Author_869]
+         [Author_504]
+         [Author_842]
+         [Author_728]
+         [Author_914]
+         [Author275])
      (sexo female))
 
     ([Author_595] of Autor
      (idAutor "595")
      (nombreAutor "Adam Johnson")
      (autoresSimilares
-         [Author_110]
-         [Author_625]
-         [Author_375]
-         [Author_500]
-         [Author_584]
-         [Author_594]
-         [Author_875]
-         [Author_701]
-         [Author_107]
-         [Author_30]
-         [Author_138]
-         [Author_943]
-         [Author_742]
-         [Author_651]
-         [Author_739]
-         [Author378])
+         [Author_666]
+         [Author_845]
+         [Author_302]
+         [Author_931]
+         [Author_645]
+         [Author_381]
+         [Author_266]
+         [Author_175]
+         [Author_245]
+         [Author_437]
+         [Author_902]
+         [Author_891]
+         [Author792])
      (sexo male))
 
     ([Author_596] of Autor
      (idAutor "596")
      (nombreAutor "Carol Rifka Brunt")
      (autoresSimilares
-         [Author_881]
-         [Author_377]
-         [Author_868]
-         [Author_381]
-         [Author_852]
-         [Author_783]
-         [Author_449]
+         [Author_866]
+         [Author_560]
+         [Author_840]
+         [Author_318]
+         [Author_23]
          [Author_722]
-         [Author_21]
-         [Author_899]
-         [Author533])
+         [Author_128]
+         [Author939])
      (sexo male))
 
     ([Author_597] of Autor
      (idAutor "597")
      (nombreAutor "William Landay")
      (autoresSimilares
-         [Author_732]
-         [Author_682]
-         [Author_300]
-         [Author_801]
-         [Author_711]
-         [Author_581]
-         [Author_464]
-         [Author_645]
-         [Author_802]
-         [Author_881]
-         [Author_428]
-         [Author_688]
-         [Author_521]
-         [Author_83]
-         [Author_589]
-         [Author_585]
-         [Author_860]
-         [Author_607]
-         [Author151])
+         [Author141])
      (sexo male))
 
     ([Author_598] of Autor
      (idAutor "598")
      (nombreAutor "Thomas Rockwell")
      (autoresSimilares
-         [Author_228]
-         [Author_266]
-         [Author_510]
-         [Author_745]
-         [Author_523]
-         [Author888])
+         [Author_338]
+         [Author_758]
+         [Author_168]
+         [Author_486]
+         [Author_76]
+         [Author_146]
+         [Author_281]
+         [Author_349]
+         [Author_509]
+         [Author_740]
+         [Author479])
      (sexo male))
 
     ([Author_599] of Autor
      (idAutor "599")
      (nombreAutor "VC Andrews")
      (autoresSimilares
-         [Author_858]
-         [Author_683]
-         [Author_120]
-         [Author_787]
-         [Author_662]
-         [Author_134]
-         [Author_590]
-         [Author_571]
-         [Author770])
+         [Author_362]
+         [Author_812]
+         [Author_140]
+         [Author_523]
+         [Author_580]
+         [Author_696]
+         [Author_563]
+         [Author_839]
+         [Author_418]
+         [Author_688]
+         [Author_796]
+         [Author_468]
+         [Author_187]
+         [Author433])
      (sexo female))
 
     ([Author_600] of Autor
      (idAutor "600")
      (nombreAutor "Betty MacDonald")
      (autoresSimilares
-         [Author_608]
-         [Author_279]
-         [Author_584]
-         [Author_331]
-         [Author_638]
-         [Author_564]
-         [Author588])
+         [Author_38]
+         [Author_796]
+         [Author_201]
+         [Author_656]
+         [Author_803]
+         [Author_481]
+         [Author_914]
+         [Author_368]
+         [Author_531]
+         [Author_918]
+         [Author_315]
+         [Author_741]
+         [Author179])
      (sexo female))
 
     ([Author_601] of Autor
      (idAutor "601")
      (nombreAutor "Louise Fitzhugh")
      (autoresSimilares
-         [Author_107]
-         [Author_271]
-         [Author_475]
-         [Author_312]
-         [Author_778]
-         [Author_333]
-         [Author_73]
-         [Author_166]
-         [Author_887]
-         [Author_7]
-         [Author_222]
-         [Author_243]
-         [Author_860]
-         [Author47])
+         [Author_865]
+         [Author_593]
+         [Author831])
      (sexo female))
 
     ([Author_602] of Autor
      (idAutor "602")
      (nombreAutor "Alexandra Duncan")
      (autoresSimilares
-         [Author_341]
-         [Author_59]
-         [Author_83]
-         [Author871])
+         [Author_454]
+         [Author_177]
+         [Author_595]
+         [Author_845]
+         [Author_217]
+         [Author_418]
+         [Author_209]
+         [Author_484]
+         [Author_42]
+         [Author442])
      (sexo female))
 
     ([Author_603] of Autor
      (idAutor "603")
      (nombreAutor "Claudia Gabel")
      (autoresSimilares
-         [Author_430]
-         [Author_940]
-         [Author_67]
-         [Author_574]
-         [Author_519]
-         [Author_612]
-         [Author_207]
-         [Author_108]
-         [Author_790]
-         [Author_756]
-         [Author_20]
-         [Author_453]
-         [Author_582]
-         [Author_794]
-         [Author703])
+         [Author_515]
+         [Author_873]
+         [Author_481]
+         [Author_629]
+         [Author_933]
+         [Author_155]
+         [Author_555]
+         [Author_571]
+         [Author_97]
+         [Author_297]
+         [Author_107]
+         [Author900])
      (sexo male))
 
     ([Author_604] of Autor
      (idAutor "604")
      (nombreAutor "Mindee Arnett")
      (autoresSimilares
-         [Author_92]
-         [Author_334]
-         [Author_254]
-         [Author_328]
-         [Author_452]
-         [Author_125]
-         [Author_381]
-         [Author202])
+         [Author_745]
+         [Author523])
      (sexo male))
 
     ([Author_605] of Autor
      (idAutor "605")
      (nombreAutor "Joelle Charbonneau")
      (autoresSimilares
-         [Author_585]
-         [Author544])
+         [Author_758]
+         [Author_131]
+         [Author_255]
+         [Author_722]
+         [Author_779]
+         [Author_578]
+         [Author_100]
+         [Author_820]
+         [Author_823]
+         [Author_245]
+         [Author_903]
+         [Author_295]
+         [Author_890]
+         [Author_484]
+         [Author_493]
+         [Author_681]
+         [Author_101]
+         [Author539])
      (sexo male))
 
     ([Author_606] of Autor
      (idAutor "606")
      (nombreAutor "Lionel Shriver")
      (autoresSimilares
-         [Author_475]
-         [Author_26]
-         [Author_503]
-         [Author_394]
-         [Author369])
+         [Author_198]
+         [Author_413]
+         [Author_321]
+         [Author_196]
+         [Author_170]
+         [Author_796]
+         [Author_656]
+         [Author_59]
+         [Author_288]
+         [Author_856]
+         [Author_437]
+         [Author_681]
+         [Author_565]
+         [Author524])
      (sexo male))
 
     ([Author_607] of Autor
      (idAutor "607")
      (nombreAutor "Leif Enger")
      (autoresSimilares
-         [Author_393]
-         [Author_889]
-         [Author_364]
-         [Author_501]
-         [Author_293]
-         [Author_825]
-         [Author_80]
-         [Author_936]
-         [Author_807]
-         [Author_171]
-         [Author126])
+         [Author204])
      (sexo male))
 
     ([Author_608] of Autor
      (idAutor "608")
      (nombreAutor "")
      (autoresSimilares
-         [Author_547]
-         [Author_643]
-         [Author_562]
-         [Author_667]
-         [Author_255]
-         [Author_814]
-         [Author_283]
-         [Author_863]
-         [Author_363]
-         [Author_356]
-         [Author_709]
-         [Author_873]
-         [Author486])
+         [Author_140]
+         [Author_137]
+         [Author_752]
+         [Author_496]
+         [Author_21]
+         [Author_685]
+         [Author_573]
+         [Author_210]
+         [Author_155]
+         [Author_203]
+         [Author_246]
+         [Author_224]
+         [Author_606]
+         [Author_106]
+         [Author_169]
+         [Author_292]
+         [Author304])
      (sexo male))
 
     ([Author_609] of Autor
      (idAutor "609")
      (nombreAutor "Chris Cleave")
      (autoresSimilares
-         [Author_243]
-         [Author_570]
-         [Author_832]
-         [Author_298]
-         [Author_395]
-         [Author_893]
-         [Author_136]
-         [Author_745]
-         [Author342])
+         [Author_126]
+         [Author_175]
+         [Author_4]
+         [Author_417]
+         [Author_176]
+         [Author_150]
+         [Author_566]
+         [Author62])
      (sexo male))
 
     ([Author_610] of Autor
      (idAutor "610")
      (nombreAutor "Lisa Genova")
      (autoresSimilares
-         [Author_323]
-         [Author_139]
-         [Author_278]
-         [Author_701]
-         [Author_846]
-         [Author_567]
-         [Author_449]
-         [Author_407]
-         [Author_594]
-         [Author_819]
-         [Author_222]
-         [Author_872]
-         [Author_322]
-         [Author_287]
-         [Author_483]
-         [Author_65]
-         [Author_576]
-         [Author_923]
-         [Author856])
+         [Author_642]
+         [Author_211]
+         [Author_569]
+         [Author784])
      (sexo female))
 
     ([Author_611] of Autor
      (idAutor "611")
      (nombreAutor "Julia Karr")
      (autoresSimilares
-         [Author_346]
-         [Author_902]
-         [Author_399]
-         [Author7])
+         [Author_268]
+         [Author_84]
+         [Author_537]
+         [Author_219]
+         [Author_244]
+         [Author_569]
+         [Author_202]
+         [Author_845]
+         [Author_543]
+         [Author_923]
+         [Author_386]
+         [Author_102]
+         [Author_55]
+         [Author_871]
+         [Author_638]
+         [Author_875]
+         [Author_898]
+         [Author359])
      (sexo male))
 
     ([Author_612] of Autor
      (idAutor "612")
      (nombreAutor "Julie Cross")
      (autoresSimilares
-         [Author_37]
-         [Author_286]
-         [Author_658]
-         [Author_673]
-         [Author_158]
-         [Author_733]
-         [Author_1]
-         [Author_177]
-         [Author_168]
-         [Author_602]
-         [Author67])
+         [Author_349]
+         [Author0])
      (sexo female))
 
     ([Author_613] of Autor
      (idAutor "613")
      (nombreAutor "Mike Mullin")
      (autoresSimilares
-         [Author_68]
-         [Author_923]
-         [Author_456]
-         [Author_55]
-         [Author_740]
+         [Author_11]
+         [Author_34]
+         [Author_556]
          [Author_97]
-         [Author_61]
-         [Author_105]
-         [Author_191]
-         [Author_732]
-         [Author_197]
-         [Author567])
+         [Author_449]
+         [Author_19]
+         [Author_31]
+         [Author_628]
+         [Author604])
      (sexo male))
 
     ([Author_614] of Autor
      (idAutor "614")
      (nombreAutor "Suzanne Weyn")
      (autoresSimilares
-         [Author_754]
-         [Author_578]
-         [Author_134]
-         [Author_280]
-         [Author_190]
-         [Author_288]
-         [Author_115]
-         [Author_884]
-         [Author_565]
-         [Author153])
+         [Author_7]
+         [Author_596]
+         [Author_530]
+         [Author_738]
+         [Author_290]
+         [Author_828]
+         [Author_762]
+         [Author_630]
+         [Author_863]
+         [Author_320]
+         [Author285])
      (sexo female))
 
     ([Author_615] of Autor
      (idAutor "615")
      (nombreAutor "John Marsden")
      (autoresSimilares
-         [Author_290]
-         [Author_739]
-         [Author_850]
-         [Author265])
+         [Author_498]
+         [Author_852]
+         [Author_602]
+         [Author_140]
+         [Author_206]
+         [Author485])
      (sexo male))
 
     ([Author_616] of Autor
      (idAutor "616")
      (nombreAutor "Gemma Malley")
      (autoresSimilares
-         [Author_486]
-         [Author_131]
-         [Author485])
+         [Author_65]
+         [Author_557]
+         [Author_378]
+         [Author_812]
+         [Author_240]
+         [Author_203]
+         [Author437])
      (sexo male))
 
     ([Author_617] of Autor
      (idAutor "617")
      (nombreAutor "Lissa Price")
      (autoresSimilares
-         [Author_175]
-         [Author_384]
-         [Author_487]
-         [Author_26]
-         [Author_604]
-         [Author_499]
-         [Author433])
+         [Author_853]
+         [Author_864]
+         [Author_257]
+         [Author901])
      (sexo female))
 
     ([Author_618] of Autor
      (idAutor "618")
      (nombreAutor "Beth Kery")
      (autoresSimilares
-         [Author_811]
-         [Author_96]
-         [Author_749]
-         [Author_200]
-         [Author_706]
-         [Author863])
+         [Author_292]
+         [Author_156]
+         [Author_44]
+         [Author_25]
+         [Author_251]
+         [Author_41]
+         [Author_294]
+         [Author_686]
+         [Author_137]
+         [Author_52]
+         [Author_778]
+         [Author_271]
+         [Author_652]
+         [Author544])
      (sexo female))
 
     ([Author_619] of Autor
      (idAutor "619")
      (nombreAutor "Shayla Black")
      (autoresSimilares
-         [Author_355]
-         [Author_814]
-         [Author_883]
-         [Author_657]
-         [Author_280]
-         [Author220])
+         [Author_137]
+         [Author258])
      (sexo female))
 
     ([Author_620] of Autor
      (idAutor "620")
      (nombreAutor "Selena Kitt")
      (autoresSimilares
-         [Author_917]
-         [Author_330]
-         [Author_790]
-         [Author_585]
-         [Author_110]
-         [Author_404]
-         [Author_788]
-         [Author_691]
-         [Author_698]
-         [Author_212]
-         [Author_587]
-         [Author_571]
-         [Author_811]
-         [Author914])
+         [Author_858]
+         [Author_46]
+         [Author_512]
+         [Author_139]
+         [Author_643]
+         [Author_711]
+         [Author_140]
+         [Author_696]
+         [Author_665]
+         [Author_561]
+         [Author_527]
+         [Author_941]
+         [Author_647]
+         [Author_150]
+         [Author904])
      (sexo female))
 
     ([Author_621] of Autor
      (idAutor "621")
      (nombreAutor "Megan Hart")
      (autoresSimilares
-         [Author_95]
-         [Author_296]
-         [Author_919]
-         [Author_211]
-         [Author_382]
-         [Author658])
+         [Author_182]
+         [Author_419]
+         [Author_482]
+         [Author_741]
+         [Author_528]
+         [Author351])
      (sexo male))
 
     ([Author_622] of Autor
      (idAutor "622")
      (nombreAutor "Laurelin Paige")
      (autoresSimilares
-         [Author_861]
-         [Author_626]
-         [Author747])
+         [Author_869]
+         [Author_267]
+         [Author744])
      (sexo female))
 
     ([Author_623] of Autor
      (idAutor "623")
      (nombreAutor "Barbara Elsborg")
      (autoresSimilares
-         [Author_91]
-         [Author_109]
-         [Author_396]
-         [Author_270]
-         [Author_749]
-         [Author_420]
-         [Author_125]
-         [Author_135]
-         [Author490])
+         [Author_37]
+         [Author_597]
+         [Author_430]
+         [Author_230]
+         [Author556])
      (sexo female))
 
     ([Author_624] of Autor
      (idAutor "624")
      (nombreAutor "Teresa Mummert")
      (autoresSimilares
-         [Author_570]
-         [Author_932]
          [Author_823]
-         [Author_835]
-         [Author_694]
-         [Author_400]
-         [Author_845]
-         [Author_839]
-         [Author_156]
-         [Author_155]
-         [Author_776]
-         [Author_584]
-         [Author_415]
-         [Author_270]
-         [Author_363]
-         [Author_675]
-         [Author149])
+         [Author_200]
+         [Author289])
      (sexo female))
 
     ([Author_625] of Autor
      (idAutor "625")
      (nombreAutor "J Kenner")
      (autoresSimilares
-         [Author_243]
-         [Author_514]
-         [Author_560]
-         [Author_765]
-         [Author_894]
-         [Author_782]
-         [Author_753]
-         [Author_552]
-         [Author_427]
-         [Author_767]
-         [Author_8]
-         [Author_171]
-         [Author_884]
-         [Author_206]
-         [Author_646]
-         [Author_133]
-         [Author_643]
-         [Author_280]
-         [Author_724]
-         [Author703])
+         [Author_115]
+         [Author_205]
+         [Author_315]
+         [Author_252]
+         [Author_866]
+         [Author_754]
+         [Author_43]
+         [Author_506]
+         [Author_349]
+         [Author_847]
+         [Author_396]
+         [Author_176]
+         [Author_297]
+         [Author_715]
+         [Author_165]
+         [Author_738]
+         [Author336])
      (sexo female))
 
     ([Author_626] of Autor
      (idAutor "626")
      (nombreAutor "Cherise Sinclair")
      (autoresSimilares
-         [Author_877]
-         [Author_784]
-         [Author_796]
-         [Author230])
+         [Author_523]
+         [Author_819]
+         [Author_524]
+         [Author_731]
+         [Author_683]
+         [Author_401]
+         [Author_869]
+         [Author_341]
+         [Author_699]
+         [Author_563]
+         [Author_710]
+         [Author_792]
+         [Author_108]
+         [Author595])
      (sexo female))
 
     ([Author_627] of Autor
      (idAutor "627")
      (nombreAutor "Georgia Cates")
      (autoresSimilares
-         [Author_178]
-         [Author_664]
-         [Author_356]
-         [Author_28]
-         [Author_488]
-         [Author_842]
-         [Author_855]
+         [Author_735]
+         [Author_410]
+         [Author_176]
+         [Author_661]
+         [Author_563]
+         [Author_67]
+         [Author_929]
+         [Author_778]
+         [Author_409]
+         [Author_338]
+         [Author_199]
          [Author_853]
-         [Author749])
+         [Author748])
      (sexo male))
 
     ([Author_628] of Autor
      (idAutor "628")
      (nombreAutor "Tymber Dalton")
      (autoresSimilares
-         [Author_347]
-         [Author_246]
-         [Author_722]
-         [Author_756]
-         [Author_262]
-         [Author_343]
-         [Author_670]
-         [Author_414]
-         [Author_570]
-         [Author_8]
-         [Author_432]
-         [Author_349]
-         [Author_315]
-         [Author_285]
-         [Author_264]
-         [Author37])
+         [Author_846]
+         [Author_890]
+         [Author_244]
+         [Author_568]
+         [Author_129]
+         [Author_619]
+         [Author_415]
+         [Author_919]
+         [Author_582]
+         [Author_738]
+         [Author_36]
+         [Author_775]
+         [Author_226]
+         [Author_176]
+         [Author_613]
+         [Author331])
      (sexo female))
 
     ([Author_629] of Autor
      (idAutor "629")
      (nombreAutor "Kallypso Masters")
      (autoresSimilares
-         [Author_724]
-         [Author_810]
-         [Author_275]
-         [Author_926]
-         [Author_142]
-         [Author_887]
-         [Author_849]
-         [Author_362]
-         [Author_714]
-         [Author_94]
-         [Author_384]
-         [Author282])
+         [Author_612]
+         [Author_569]
+         [Author_306]
+         [Author_12]
+         [Author_910]
+         [Author_837]
+         [Author_130]
+         [Author_652]
+         [Author_769]
+         [Author_431]
+         [Author_873]
+         [Author_942]
+         [Author_609]
+         [Author912])
      (sexo female))
 
     ([Author_630] of Autor
      (idAutor "630")
      (nombreAutor "Georges Bataille")
      (autoresSimilares
-         [Author_271]
-         [Author_13]
-         [Author_783]
-         [Author_691]
-         [Author_252]
-         [Author_410]
-         [Author_272]
-         [Author_553]
-         [Author_695]
-         [Author_902]
-         [Author_494]
-         [Author_264]
-         [Author_889]
-         [Author_511]
-         [Author_263]
-         [Author_203]
-         [Author_915]
-         [Author762])
+         [Author_432]
+         [Author_734]
+         [Author_288]
+         [Author_497]
+         [Author_324]
+         [Author_705]
+         [Author_613]
+         [Author_531]
+         [Author795])
      (sexo male))
 
     ([Author_631] of Autor
      (idAutor "631")
      (nombreAutor "Charles Stross")
      (autoresSimilares
-         [Author_282]
-         [Author_713]
-         [Author_866]
-         [Author_903]
-         [Author_91]
-         [Author_504]
-         [Author_409]
-         [Author_226]
-         [Author_429]
-         [Author_556]
-         [Author_248]
-         [Author_1]
-         [Author_303]
-         [Author_535]
-         [Author636])
+         [Author_189]
+         [Author_791]
+         [Author_394]
+         [Author_446]
+         [Author_460]
+         [Author_77]
+         [Author_841]
+         [Author_650]
+         [Author_151]
+         [Author747])
      (sexo male))
 
     ([Author_632] of Autor
      (idAutor "632")
      (nombreAutor "Richard Atwater")
      (autoresSimilares
-         [Author_167]
-         [Author_468]
-         [Author_256]
-         [Author_426]
-         [Author_832]
-         [Author_354]
-         [Author_820]
-         [Author_630]
-         [Author_393]
-         [Author644])
+         [Author_470]
+         [Author_446]
+         [Author_438]
+         [Author_248]
+         [Author625])
      (sexo male))
 
     ([Author_633] of Autor
      (idAutor "633")
      (nombreAutor "Blake Charlton")
      (autoresSimilares
-         [Author_87]
-         [Author_127]
-         [Author_318]
-         [Author_269]
-         [Author_406]
-         [Author_522]
-         [Author_228]
-         [Author_675]
-         [Author_69]
-         [Author_657]
-         [Author_430]
-         [Author_471]
-         [Author_711]
-         [Author_170]
-         [Author_898]
-         [Author_268]
-         [Author_492]
-         [Author_558]
-         [Author821])
+         [Author556])
      (sexo male))
 
     ([Author_634] of Autor
      (idAutor "634")
      (nombreAutor "David Farland")
      (autoresSimilares
-         [Author_933]
-         [Author_205]
-         [Author_554]
-         [Author_457]
-         [Author_307]
-         [Author784])
+         [Author_922]
+         [Author_709]
+         [Author_678]
+         [Author_532]
+         [Author619])
      (sexo male))
 
     ([Author_635] of Autor
      (idAutor "635")
      (nombreAutor "David Estes")
      (autoresSimilares
-         [Author_879]
-         [Author662])
+         [Author_687]
+         [Author_237]
+         [Author_919]
+         [Author_429]
+         [Author_839]
+         [Author_342]
+         [Author_65]
+         [Author_16]
+         [Author_916]
+         [Author351])
      (sexo male))
 
     ([Author_636] of Autor
      (idAutor "636")
      (nombreAutor "Sara  King")
      (autoresSimilares
-         [Author_909]
-         [Author_640]
-         [Author_295]
-         [Author_19]
-         [Author_653]
-         [Author_549]
-         [Author_286]
-         [Author_315]
-         [Author_296]
-         [Author_343]
-         [Author_414]
-         [Author_507]
-         [Author823])
+         [Author_65]
+         [Author_446]
+         [Author_813]
+         [Author_26]
+         [Author_475]
+         [Author_485]
+         [Author355])
      (sexo male))
 
     ([Author_637] of Autor
      (idAutor "637")
      (nombreAutor "Ian McDonald")
      (autoresSimilares
-         [Author_312]
-         [Author_786]
-         [Author_274]
-         [Author_278]
-         [Author_291]
-         [Author_310]
-         [Author_904]
-         [Author_863]
-         [Author_711]
-         [Author_784]
-         [Author_730]
-         [Author_925]
-         [Author_504]
-         [Author_531]
-         [Author_540]
-         [Author_502]
-         [Author_296]
          [Author_450]
-         [Author_18]
-         [Author298])
+         [Author_533]
+         [Author_364]
+         [Author_653]
+         [Author_740]
+         [Author_211]
+         [Author_472]
+         [Author_448]
+         [Author_510]
+         [Author51])
      (sexo male))
 
     ([Author_638] of Autor
      (idAutor "638")
      (nombreAutor "Neal Asher")
      (autoresSimilares
-         [Author_486]
-         [Author_20]
-         [Author_766]
-         [Author_847]
-         [Author_764]
-         [Author_508]
-         [Author_877]
-         [Author_909]
-         [Author_681]
-         [Author_390]
-         [Author_819]
-         [Author_353]
-         [Author_841]
-         [Author_700]
-         [Author_395]
-         [Author886])
+         [Author_374]
+         [Author_472]
+         [Author_515]
+         [Author_540]
+         [Author_143]
+         [Author_653]
+         [Author_323]
+         [Author_335]
+         [Author_632]
+         [Author_923]
+         [Author_361]
+         [Author_496]
+         [Author_430]
+         [Author_127]
+         [Author_941]
+         [Author_668]
+         [Author_104]
+         [Author_362]
+         [Author108])
      (sexo male))
 
     ([Author_639] of Autor
      (idAutor "639")
      (nombreAutor "Robert J Sawyer")
      (autoresSimilares
-         [Author_451]
-         [Author_879]
-         [Author_843]
-         [Author_869]
-         [Author_395]
-         [Author_120]
-         [Author_431]
-         [Author_346]
-         [Author_582]
-         [Author_900]
-         [Author_219]
-         [Author_681]
-         [Author_735]
-         [Author_287]
-         [Author_566]
-         [Author337])
+         [Author_1]
+         [Author_581]
+         [Author_91]
+         [Author_469]
+         [Author_15]
+         [Author_445]
+         [Author_932]
+         [Author_746]
+         [Author_244]
+         [Author_867]
+         [Author_945]
+         [Author_903]
+         [Author_562]
+         [Author_794]
+         [Author201])
      (sexo male))
 
     ([Author_640] of Autor
      (idAutor "640")
      (nombreAutor "Nick Harkaway")
      (autoresSimilares
-         [Author_79]
-         [Author_8]
-         [Author_229]
-         [Author_793]
-         [Author_133]
-         [Author_408]
-         [Author_190]
-         [Author_495]
-         [Author_929]
-         [Author_137]
-         [Author_763]
-         [Author_91]
-         [Author_525]
-         [Author_852]
-         [Author_380]
-         [Author_362]
-         [Author_748]
-         [Author_804]
-         [Author383])
+         [Author_886]
+         [Author_597]
+         [Author_890]
+         [Author935])
      (sexo male))
 
     ([Author_641] of Autor
      (idAutor "641")
      (nombreAutor "Becky Chambers")
      (autoresSimilares
-         [Author_791]
-         [Author_689]
-         [Author_213]
-         [Author555])
+         [Author_837]
+         [Author_723]
+         [Author_364]
+         [Author845])
      (sexo male))
 
     ([Author_642] of Autor
      (idAutor "642")
      (nombreAutor "Peter F Hamilton")
      (autoresSimilares
-         [Author_818]
-         [Author_233]
-         [Author_214]
-         [Author_315]
-         [Author_518]
-         [Author_29]
-         [Author_522]
-         [Author_479]
-         [Author_719]
-         [Author_669]
-         [Author_943]
-         [Author_368]
-         [Author_507]
-         [Author_421]
-         [Author_155]
-         [Author562])
+         [Author_776]
+         [Author_363]
+         [Author_197]
+         [Author_215]
+         [Author_404]
+         [Author_226]
+         [Author_337]
+         [Author_219]
+         [Author_96]
+         [Author703])
      (sexo male))
 
     ([Author_643] of Autor
      (idAutor "643")
      (nombreAutor "Cherie Priest")
      (autoresSimilares
-         [Author_760]
-         [Author_100]
-         [Author_679]
-         [Author_315]
-         [Author_183]
-         [Author_697]
-         [Author_810]
-         [Author_681]
-         [Author_796]
-         [Author_458]
-         [Author_831]
-         [Author_253]
-         [Author_172]
-         [Author_14]
-         [Author_433]
-         [Author_112]
-         [Author_61]
-         [Author_234]
-         [Author712])
+         [Author_329]
+         [Author_649]
+         [Author_919]
+         [Author_739]
+         [Author_508]
+         [Author_87]
+         [Author_376]
+         [Author_432]
+         [Author_54]
+         [Author_296]
+         [Author_896]
+         [Author_510]
+         [Author_249]
+         [Author_916]
+         [Author_742]
+         [Author_153]
+         [Author833])
      (sexo female))
 
     ([Author_644] of Autor
      (idAutor "644")
      (nombreAutor "Alastair Reynolds")
      (autoresSimilares
-         [Author_302]
-         [Author234])
+         [Author_62]
+         [Author_325]
+         [Author213])
      (sexo male))
 
     ([Author_645] of Autor
      (idAutor "645")
      (nombreAutor "Ramez Naam")
      (autoresSimilares
-         [Author_183]
-         [Author_940]
-         [Author_300]
-         [Author_838]
-         [Author_27]
-         [Author_215]
-         [Author_48]
-         [Author_268]
-         [Author_547]
-         [Author_685]
-         [Author_160]
-         [Author_237]
-         [Author_891]
-         [Author_428]
-         [Author_434]
-         [Author_618]
-         [Author_379]
-         [Author_926]
-         [Author799])
+         [Author_341]
+         [Author_225]
+         [Author_942]
+         [Author_525]
+         [Author_450]
+         [Author_626]
+         [Author_350]
+         [Author_782]
+         [Author_263]
+         [Author_158]
+         [Author_131]
+         [Author_356]
+         [Author_503]
+         [Author_118]
+         [Author_550]
+         [Author_925]
+         [Author_477]
+         [Author_766]
+         [Author_459]
+         [Author358])
      (sexo male))
 
     ([Author_646] of Autor
      (idAutor "646")
      (nombreAutor "Peter Clines")
      (autoresSimilares
-         [Author_388]
-         [Author_675]
-         [Author_4]
-         [Author_926]
-         [Author_291]
-         [Author_635]
-         [Author_378]
-         [Author_162]
-         [Author_410]
-         [Author_687]
-         [Author_510]
-         [Author_38]
-         [Author_424]
-         [Author_439]
-         [Author_169]
-         [Author96])
+         [Author_886]
+         [Author_131]
+         [Author_571]
+         [Author_34]
+         [Author_204]
+         [Author_72]
+         [Author_723]
+         [Author_352]
+         [Author_813]
+         [Author_897]
+         [Author_226]
+         [Author690])
      (sexo male))
 
     ([Author_647] of Autor
      (idAutor "647")
      (nombreAutor "MR Carey")
      (autoresSimilares
-         [Author_376]
-         [Author_194]
-         [Author_73]
-         [Author356])
+         [Author_25]
+         [Author_651]
+         [Author_910]
+         [Author_493]
+         [Author_563]
+         [Author_873]
+         [Author_183]
+         [Author_875]
+         [Author_672]
+         [Author_900]
+         [Author_884]
+         [Author_766]
+         [Author894])
      (sexo male))
 
     ([Author_648] of Autor
      (idAutor "648")
      (nombreAutor "Daniel Suarez")
      (autoresSimilares
-         [Author_343]
-         [Author_738]
-         [Author_79]
-         [Author_80]
-         [Author_498]
-         [Author_153]
-         [Author_397]
-         [Author_829]
-         [Author_763]
-         [Author_636]
-         [Author_294]
-         [Author_143]
-         [Author_112]
-         [Author_353]
-         [Author_723]
-         [Author_889]
-         [Author_458]
-         [Author732])
+         [Author_52]
+         [Author_60]
+         [Author_650]
+         [Author_312]
+         [Author_169]
+         [Author_62]
+         [Author_19]
+         [Author_429]
+         [Author_666]
+         [Author_140]
+         [Author_416]
+         [Author_285]
+         [Author_669]
+         [Author_887]
+         [Author_308]
+         [Author_157]
+         [Author23])
      (sexo male))
 
     ([Author_649] of Autor
      (idAutor "649")
      (nombreAutor "Daniel H Wilson")
      (autoresSimilares
-         [Author_811]
-         [Author_920]
-         [Author_354]
-         [Author_705]
-         [Author_68]
-         [Author_677]
-         [Author_295]
-         [Author_369]
-         [Author_564]
-         [Author_940]
-         [Author_277]
-         [Author_512]
-         [Author_765]
-         [Author_7]
-         [Author_566]
-         [Author868])
+         [Author_779]
+         [Author_440]
+         [Author_330]
+         [Author_558]
+         [Author_443]
+         [Author_796]
+         [Author_53]
+         [Author_75]
+         [Author_359]
+         [Author_6]
+         [Author_324]
+         [Author_691]
+         [Author_634]
+         [Author_211]
+         [Author670])
      (sexo male))
 
     ([Author_650] of Autor
      (idAutor "650")
      (nombreAutor "Jeff VanderMeer")
      (autoresSimilares
-         [Author_641]
-         [Author_52]
-         [Author_474]
-         [Author_842]
-         [Author_556]
-         [Author_233]
-         [Author_20]
-         [Author_521]
-         [Author_698]
-         [Author_833]
-         [Author_172]
-         [Author_913]
-         [Author_105]
-         [Author317])
+         [Author_518]
+         [Author_199]
+         [Author_899]
+         [Author_10]
+         [Author_21]
+         [Author_677]
+         [Author_248]
+         [Author926])
      (sexo male))
 
     ([Author_651] of Autor
      (idAutor "651")
      (nombreAutor "Hannu Rajaniemi")
      (autoresSimilares
-         [Author_264]
-         [Author_17]
-         [Author_332]
-         [Author_151]
-         [Author_103]
-         [Author296])
+         [Author_564]
+         [Author_359]
+         [Author833])
      (sexo male))
 
     ([Author_652] of Autor
      (idAutor "652")
      (nombreAutor "China Miville")
      (autoresSimilares
-         [Author_882]
-         [Author_635]
-         [Author_104]
-         [Author_571]
-         [Author_195]
-         [Author_788]
-         [Author_797]
-         [Author_339]
-         [Author_812]
-         [Author_389]
-         [Author_599]
-         [Author_608]
-         [Author_115]
-         [Author806])
+         [Author_218]
+         [Author_376]
+         [Author622])
      (sexo male))
 
     ([Author_653] of Autor
      (idAutor "653")
      (nombreAutor "Liu Cixin")
      (autoresSimilares
-         [Author_322]
-         [Author_77]
-         [Author_53]
-         [Author_614]
-         [Author_356]
-         [Author_203]
-         [Author_608]
-         [Author_879]
-         [Author_746]
-         [Author_368]
-         [Author_243]
-         [Author_940]
-         [Author102])
+         [Author_677]
+         [Author_609]
+         [Author_6]
+         [Author_862]
+         [Author_170]
+         [Author_699]
+         [Author_649]
+         [Author_865]
+         [Author_68]
+         [Author_133]
+         [Author_429]
+         [Author_15]
+         [Author_840]
+         [Author_507]
+         [Author_250]
+         [Author872])
      (sexo male))
 
     ([Author_654] of Autor
      (idAutor "654")
      (nombreAutor "Peter Watts")
      (autoresSimilares
-         [Author_432]
-         [Author_914]
-         [Author_412]
-         [Author_636]
-         [Author_334]
-         [Author_20]
-         [Author_223]
-         [Author_201]
-         [Author_107]
-         [Author_701]
-         [Author_549]
-         [Author_893]
-         [Author_40]
-         [Author_907]
-         [Author_882]
-         [Author_681]
-         [Author_259]
-         [Author_322]
-         [Author162])
+         [Author_566]
+         [Author18])
      (sexo male))
 
     ([Author_655] of Autor
      (idAutor "655")
      (nombreAutor "Robert Charles Wilson")
      (autoresSimilares
-         [Author_14]
-         [Author_480]
-         [Author_400]
-         [Author_372]
-         [Author_228]
-         [Author_475]
-         [Author_640]
-         [Author_569]
-         [Author_280]
-         [Author_935]
-         [Author753])
+         [Author236])
      (sexo male))
 
     ([Author_656] of Autor
      (idAutor "656")
      (nombreAutor "Ann Leckie")
      (autoresSimilares
-         [Author_515]
-         [Author_686]
-         [Author_13]
-         [Author_239]
-         [Author_673]
-         [Author_871]
-         [Author_448]
-         [Author_309]
-         [Author51])
+         [Author_759]
+         [Author788])
      (sexo male))
 
     ([Author_657] of Autor
      (idAutor "657")
      (nombreAutor "Dorothy Allison")
      (autoresSimilares
-         [Author_901]
-         [Author_751]
-         [Author_892]
-         [Author644])
+         [Author_587]
+         [Author_935]
+         [Author_433]
+         [Author_589]
+         [Author_728]
+         [Author_804]
+         [Author_872]
+         [Author_705]
+         [Author_367]
+         [Author_31]
+         [Author_380]
+         [Author_661]
+         [Author_842]
+         [Author_803]
+         [Author_397]
+         [Author_103]
+         [Author_870]
+         [Author_836]
+         [Author540])
      (sexo male))
 
     ([Author_658] of Autor
      (idAutor "658")
      (nombreAutor "Hubert Selby Jr")
      (autoresSimilares
-         [Author_657]
-         [Author_187]
-         [Author_487]
-         [Author_252]
+         [Author_843]
+         [Author_58]
+         [Author_62]
+         [Author_238]
          [Author_931]
-         [Author25])
+         [Author_509]
+         [Author_161]
+         [Author_24]
+         [Author_673]
+         [Author_366]
+         [Author_935]
+         [Author_123]
+         [Author_763]
+         [Author_371]
+         [Author_104]
+         [Author_867]
+         [Author_353]
+         [Author_484]
+         [Author_798]
+         [Author671])
      (sexo male))
 
     ([Author_659] of Autor
      (idAutor "659")
      (nombreAutor "Jay Anson")
      (autoresSimilares
-         [Author_776]
-         [Author_754]
-         [Author_399]
-         [Author_911]
-         [Author_832]
-         [Author_583]
-         [Author_187]
-         [Author_104]
-         [Author_700]
-         [Author_410]
-         [Author639])
+         [Author_313]
+         [Author_714]
+         [Author_661]
+         [Author_772]
+         [Author_198]
+         [Author_933]
+         [Author_282]
+         [Author_86]
+         [Author_408]
+         [Author_730]
+         [Author_277]
+         [Author945])
      (sexo male))
 
     ([Author_660] of Autor
      (idAutor "660")
      (nombreAutor "AM Homes")
      (autoresSimilares
-         [Author_725]
-         [Author_110]
-         [Author_365]
-         [Author_523]
-         [Author_348]
-         [Author_683]
-         [Author_99]
-         [Author_19]
-         [Author515])
+         [Author_86]
+         [Author_17]
+         [Author_597]
+         [Author_151]
+         [Author_320]
+         [Author_908]
+         [Author_14]
+         [Author_21]
+         [Author_928]
+         [Author_553]
+         [Author_418]
+         [Author_587]
+         [Author_282]
+         [Author_268]
+         [Author_114]
+         [Author_795]
+         [Author_692]
+         [Author222])
      (sexo female))
 
     ([Author_661] of Autor
      (idAutor "661")
      (nombreAutor "Jerzy Kosiski")
      (autoresSimilares
-         [Author_573]
-         [Author_470]
-         [Author_416]
-         [Author_49]
-         [Author_482]
-         [Author_342]
-         [Author_484]
-         [Author_662]
-         [Author_293]
-         [Author_6]
-         [Author_706]
-         [Author_778]
-         [Author_787]
-         [Author_110]
-         [Author_37]
-         [Author_548]
-         [Author_550]
-         [Author869])
+         [Author_499]
+         [Author_308]
+         [Author_328]
+         [Author_90]
+         [Author_808]
+         [Author_355]
+         [Author_666]
+         [Author_940]
+         [Author60])
      (sexo male))
 
     ([Author_662] of Autor
      (idAutor "662")
      (nombreAutor "Katherine Dunn")
      (autoresSimilares
-         [Author_600]
-         [Author_401]
-         [Author_286]
-         [Author_63]
-         [Author373])
+         [Author_883]
+         [Author_919]
+         [Author_430]
+         [Author_620]
+         [Author_421]
+         [Author_527]
+         [Author_664]
+         [Author_141]
+         [Author_671]
+         [Author_870]
+         [Author_793]
+         [Author_440]
+         [Author_515]
+         [Author_490]
+         [Author_813]
+         [Author_272]
+         [Author_615]
+         [Author157])
      (sexo female))
 
     ([Author_663] of Autor
      (idAutor "663")
      (nombreAutor "Marquis de Sade")
      (autoresSimilares
-         [Author_24]
-         [Author_248]
-         [Author_383]
+         [Author_78]
+         [Author_29]
+         [Author_646]
+         [Author_665]
+         [Author_7]
+         [Author_346]
+         [Author_211]
+         [Author_192]
+         [Author_23]
+         [Author_117]
+         [Author_672]
+         [Author_115]
+         [Author_578]
          [Author_795]
-         [Author_900]
-         [Author_488]
-         [Author_653]
-         [Author_808]
-         [Author_314]
-         [Author_701]
-         [Author_39]
-         [Author_413]
-         [Author215])
+         [Author_929]
+         [Author_144]
+         [Author_827]
+         [Author_399]
+         [Author_265]
+         [Author28])
      (sexo male))
 
     ([Author_664] of Autor
      (idAutor "664")
      (nombreAutor "Jack Ketchum")
      (autoresSimilares
-         [Author_545]
-         [Author_229]
-         [Author_905]
-         [Author_29]
-         [Author_916]
-         [Author111])
+         [Author_44]
+         [Author_655]
+         [Author_498]
+         [Author791])
      (sexo male))
 
     ([Author_665] of Autor
      (idAutor "665")
      (nombreAutor "Iain Banks")
      (autoresSimilares
-         [Author_538]
-         [Author_918]
-         [Author_165]
-         [Author_795]
-         [Author_537]
-         [Author_210]
-         [Author_310]
-         [Author_409]
-         [Author_127]
-         [Author188])
+         [Author_86]
+         [Author_257]
+         [Author473])
      (sexo male))
 
     ([Author_666] of Autor
      (idAutor "666")
      (nombreAutor "Jennifer  McMahon")
      (autoresSimilares
-         [Author_582]
-         [Author_392]
-         [Author_6]
-         [Author_501]
-         [Author_698]
-         [Author_164]
-         [Author_579]
-         [Author_325]
-         [Author_559]
-         [Author_458]
-         [Author_173]
-         [Author_945]
-         [Author_118]
-         [Author_385]
-         [Author_184]
-         [Author_626]
-         [Author_524]
-         [Author_669]
-         [Author63])
+         [Author_314]
+         [Author_342]
+         [Author_125]
+         [Author_759]
+         [Author_256]
+         [Author_179]
+         [Author_650]
+         [Author482])
      (sexo male))
 
     ([Author_667] of Autor
      (idAutor "667")
      (nombreAutor "Rachel Simon")
      (autoresSimilares
-         [Author_64]
-         [Author_746]
-         [Author_630]
-         [Author_890]
-         [Author_304]
-         [Author_357]
-         [Author_179]
-         [Author_457]
-         [Author_882]
-         [Author_156]
-         [Author_328]
-         [Author_154]
-         [Author_896]
-         [Author_747]
-         [Author_429]
-         [Author_189]
-         [Author_935]
-         [Author_430]
-         [Author692])
+         [Author_255]
+         [Author_853]
+         [Author_302]
+         [Author_774]
+         [Author_751]
+         [Author_336]
+         [Author_860]
+         [Author_170]
+         [Author154])
      (sexo female))
 
     ([Author_668] of Autor
      (idAutor "668")
      (nombreAutor "David Nicholls")
      (autoresSimilares
-         [Author_882]
-         [Author_99]
-         [Author_368]
-         [Author_219]
-         [Author307])
+         [Author_232]
+         [Author_883]
+         [Author_851]
+         [Author_260]
+         [Author_785]
+         [Author_676]
+         [Author_893]
+         [Author_666]
+         [Author_82]
+         [Author_827]
+         [Author_404]
+         [Author_450]
+         [Author_249]
+         [Author_862]
+         [Author_73]
+         [Author_533]
+         [Author_525]
+         [Author236])
      (sexo male))
 
     ([Author_669] of Autor
      (idAutor "669")
      (nombreAutor "Paula McLain")
      (autoresSimilares
-         [Author_803]
-         [Author_217]
-         [Author_656]
-         [Author_584]
-         [Author_420]
-         [Author213])
+         [Author_561]
+         [Author_325]
+         [Author_735]
+         [Author_541]
+         [Author_658]
+         [Author_876]
+         [Author_142]
+         [Author_637]
+         [Author_896]
+         [Author_636]
+         [Author_92]
+         [Author_813]
+         [Author_470]
+         [Author740])
      (sexo female))
 
     ([Author_670] of Autor
      (idAutor "670")
      (nombreAutor "Elana Johnson")
      (autoresSimilares
-         [Author_497]
-         [Author_467]
-         [Author353])
+         [Author_532]
+         [Author_141]
+         [Author_58]
+         [Author_472]
+         [Author_771]
+         [Author_442]
+         [Author_801]
+         [Author_871]
+         [Author_609]
+         [Author349])
      (sexo male))
 
     ([Author_671] of Autor
      (idAutor "671")
      (nombreAutor "Alexandra Monir")
      (autoresSimilares
-         [Author_281]
-         [Author_542]
-         [Author_430]
-         [Author121])
+         [Author_910]
+         [Author_753]
+         [Author_183]
+         [Author_24]
+         [Author_552]
+         [Author_819]
+         [Author_631]
+         [Author_840]
+         [Author351])
      (sexo female))
 
     ([Author_672] of Autor
      (idAutor "672")
      (nombreAutor "Gwen Cole")
      (autoresSimilares
-         [Author_871]
-         [Author_701]
-         [Author_896]
-         [Author_814]
-         [Author_564]
-         [Author_649]
-         [Author_324]
-         [Author_386]
-         [Author_75]
-         [Author_583]
+         [Author_315]
+         [Author_943]
+         [Author_887]
          [Author_271]
-         [Author_6]
-         [Author_109]
-         [Author644])
+         [Author_898]
+         [Author_169]
+         [Author_132]
+         [Author_720]
+         [Author_253]
+         [Author39])
      (sexo female))
 
     ([Author_673] of Autor
      (idAutor "673")
      (nombreAutor "Tristina Wright")
      (autoresSimilares
-         [Author_477]
-         [Author333])
+         [Author_816]
+         [Author125])
      (sexo female))
 
     ([Author_674] of Autor
      (idAutor "674")
      (nombreAutor "Kat Falls")
      (autoresSimilares
-         [Author_706]
-         [Author_909]
-         [Author_817]
-         [Author_515]
-         [Author_138]
-         [Author_691]
-         [Author_661]
-         [Author_345]
-         [Author_400]
-         [Author616])
+         [Author_466]
+         [Author_283]
+         [Author_447]
+         [Author_740]
+         [Author658])
      (sexo female))
 
     ([Author_675] of Autor
      (idAutor "675")
      (nombreAutor "Amy Mason Doan")
      (autoresSimilares
-         [Author_461]
-         [Author_173]
-         [Author_388]
-         [Author_286]
-         [Author_712]
-         [Author_53]
-         [Author_144]
-         [Author_120]
+         [Author_69]
+         [Author_97]
+         [Author_134]
+         [Author_847]
+         [Author_528]
+         [Author_607]
+         [Author_284]
+         [Author_508]
+         [Author_469]
+         [Author_452]
+         [Author_13]
+         [Author_771]
+         [Author_451]
+         [Author_595]
+         [Author_336]
          [Author_324]
-         [Author_748]
-         [Author_849]
-         [Author_673]
-         [Author393])
+         [Author_537]
+         [Author_140]
+         [Author274])
      (sexo female))
 
     ([Author_676] of Autor
      (idAutor "676")
      (nombreAutor "R Scott Bakker")
      (autoresSimilares
-         [Author_220]
-         [Author_213]
-         [Author_824]
-         [Author_470]
-         [Author_98]
-         [Author_92]
-         [Author_549]
-         [Author_376]
-         [Author_929]
-         [Author_724]
-         [Author_485]
-         [Author_191]
-         [Author_193]
-         [Author_277]
-         [Author_141]
-         [Author_79]
-         [Author_81]
-         [Author_280]
-         [Author_815]
-         [Author320])
+         [Author_183]
+         [Author_271]
+         [Author_763]
+         [Author_51]
+         [Author_0]
+         [Author_101]
+         [Author_420]
+         [Author339])
      (sexo male))
 
     ([Author_677] of Autor
      (idAutor "677")
      (nombreAutor "Lev Grossman")
      (autoresSimilares
-         [Author_612]
-         [Author_907]
-         [Author_918]
-         [Author_686]
-         [Author550])
+         [Author_806]
+         [Author_809]
+         [Author_164]
+         [Author_895]
+         [Author_534]
+         [Author_25]
+         [Author_597]
+         [Author_93]
+         [Author_398]
+         [Author_942]
+         [Author_731]
+         [Author447])
      (sexo male))
 
     ([Author_678] of Autor
      (idAutor "678")
      (nombreAutor "Catherynne M Valente")
      (autoresSimilares
-         [Author_456]
-         [Author_861]
-         [Author_869]
-         [Author_164]
-         [Author_115]
-         [Author_508]
-         [Author_439]
-         [Author_910]
-         [Author_605]
-         [Author_840]
-         [Author_79]
-         [Author_113]
-         [Author_775]
-         [Author_341]
-         [Author_512]
-         [Author_852]
-         [Author_941]
-         [Author_273]
-         [Author278])
+         [Author_212]
+         [Author_567]
+         [Author_396]
+         [Author_485]
+         [Author_139]
+         [Author_817]
+         [Author_552]
+         [Author_428]
+         [Author_281]
+         [Author_63]
+         [Author_537]
+         [Author_268]
+         [Author_128]
+         [Author_471]
+         [Author_889]
+         [Author_25]
+         [Author378])
      (sexo female))
 
     ([Author_679] of Autor
      (idAutor "679")
      (nombreAutor "Pamela Dean")
      (autoresSimilares
-         [Author_358]
-         [Author_359]
-         [Author_750]
-         [Author_251]
-         [Author_504]
-         [Author_450]
-         [Author_33]
-         [Author_815]
-         [Author_721]
-         [Author_277]
-         [Author_585]
-         [Author_56]
-         [Author_501]
-         [Author_314]
-         [Author_348]
-         [Author736])
+         [Author_683]
+         [Author_73]
+         [Author_582]
+         [Author_793]
+         [Author_494]
+         [Author_367]
+         [Author_696]
+         [Author_746]
+         [Author_180]
+         [Author_237]
+         [Author_466]
+         [Author_204]
+         [Author_648]
+         [Author_26]
+         [Author797])
      (sexo male))
 
     ([Author_680] of Autor
      (idAutor "680")
      (nombreAutor "John Connolly")
      (autoresSimilares
-         [Author_265]
-         [Author_223]
-         [Author_433]
-         [Author_896]
-         [Author_558]
-         [Author_787]
-         [Author_833]
-         [Author_201]
-         [Author_843]
-         [Author_853]
-         [Author_159]
-         [Author_387]
-         [Author_452]
-         [Author_869]
-         [Author_365]
-         [Author102])
+         [Author_739]
+         [Author_488]
+         [Author_114]
+         [Author_623]
+         [Author_501]
+         [Author316])
      (sexo male))
 
     ([Author_681] of Autor
      (idAutor "681")
      (nombreAutor "Carl Hiaasen")
      (autoresSimilares
-         [Author_83]
-         [Author_625]
-         [Author_462]
-         [Author_626]
-         [Author619])
+         [Author_682]
+         [Author_731]
+         [Author_455]
+         [Author_446]
+         [Author_503]
+         [Author_675]
+         [Author_65]
+         [Author370])
      (sexo male))
 
     ([Author_682] of Autor
      (idAutor "682")
      (nombreAutor "PG Wodehouse")
      (autoresSimilares
-         [Author_8]
-         [Author_701]
-         [Author_416]
-         [Author_395]
-         [Author_310]
-         [Author_684]
-         [Author_234]
-         [Author_507]
-         [Author_69]
-         [Author_204]
-         [Author_455]
-         [Author_14]
-         [Author_217]
-         [Author_748]
-         [Author_253]
-         [Author_775]
-         [Author_35]
-         [Author_616]
-         [Author849])
+         [Author_505]
+         [Author_807]
+         [Author_556]
+         [Author_778]
+         [Author_900]
+         [Author_675]
+         [Author_178]
+         [Author870])
      (sexo male))
 
     ([Author_683] of Autor
      (idAutor "683")
      (nombreAutor "Paige Singleton")
      (autoresSimilares
-         [Author_785]
-         [Author_668]
-         [Author_187]
-         [Author_666]
-         [Author_780]
-         [Author_502]
-         [Author_769]
-         [Author730])
+         [Author_654]
+         [Author_637]
+         [Author_86]
+         [Author_747]
+         [Author757])
      (sexo male))
 
     ([Author_684] of Autor
      (idAutor "684")
      (nombreAutor "Tim Vicary")
      (autoresSimilares
-         [Author_311]
-         [Author_525]
-         [Author_358]
-         [Author_188]
-         [Author_110]
-         [Author_501]
-         [Author_529]
-         [Author_125]
-         [Author_818]
+         [Author_613]
+         [Author_660]
+         [Author_142]
+         [Author_905]
+         [Author_428]
+         [Author_20]
+         [Author_319]
+         [Author_694]
+         [Author_372]
          [Author_913]
-         [Author_140]
-         [Author_880]
-         [Author_800]
-         [Author_230]
-         [Author_277]
-         [Author_382]
-         [Author_743]
-         [Author799])
+         [Author_256]
+         [Author_683]
+         [Author_36]
+         [Author_892]
+         [Author_128]
+         [Author_70]
+         [Author_121]
+         [Author_883]
+         [Author_757]
+         [Author596])
      (sexo male))
 
     ([Author_685] of Autor
      (idAutor "685")
      (nombreAutor "Ginny Bryce")
      (autoresSimilares
-         [Author_526]
-         [Author_53]
-         [Author_513]
-         [Author_93]
-         [Author_8]
-         [Author_801]
-         [Author_430]
-         [Author_551]
-         [Author_703]
-         [Author_432]
-         [Author_668]
-         [Author_67]
-         [Author_584]
-         [Author_418]
-         [Author_101]
-         [Author_573]
-         [Author_68]
-         [Author_373]
-         [Author_752]
-         [Author181])
+         [Author_558]
+         [Author_457]
+         [Author_2]
+         [Author_938]
+         [Author_886]
+         [Author16])
      (sexo male))
 
     ([Author_686] of Autor
      (idAutor "686")
      (nombreAutor "Jinx Schwartz")
      (autoresSimilares
-         [Author_833]
-         [Author_370]
-         [Author_90]
-         [Author_386]
-         [Author166])
+         [Author_459]
+         [Author_515]
+         [Author_506]
+         [Author_316]
+         [Author_389]
+         [Author_356]
+         [Author_726]
+         [Author_68]
+         [Author_291]
+         [Author_402]
+         [Author_374]
+         [Author_933]
+         [Author_813]
+         [Author_387]
+         [Author_858]
+         [Author_232]
+         [Author_132]
+         [Author794])
      (sexo female))
 
     ([Author_687] of Autor
      (idAutor "687")
      (nombreAutor "Iain Parke")
      (autoresSimilares
-         [Author_235]
-         [Author_165]
-         [Author_314]
-         [Author_682]
-         [Author_486]
-         [Author_395]
-         [Author786])
+         [Author_29]
+         [Author_37]
+         [Author_198]
+         [Author_892]
+         [Author_63]
+         [Author_415]
+         [Author_114]
+         [Author_728]
+         [Author_719]
+         [Author_361]
+         [Author_134]
+         [Author_932]
+         [Author_878]
+         [Author606])
      (sexo male))
 
     ([Author_688] of Autor
      (idAutor "688")
      (nombreAutor "Peter Watson Jenkins")
      (autoresSimilares
-         [Author_421]
-         [Author_579]
-         [Author_481]
-         [Author_476]
-         [Author_41]
-         [Author_458]
-         [Author_626]
-         [Author_849]
-         [Author_79]
-         [Author_511]
-         [Author_83]
-         [Author_365]
-         [Author22])
+         [Author_187]
+         [Author_876]
+         [Author_944]
+         [Author_577]
+         [Author_806]
+         [Author_818]
+         [Author_941]
+         [Author_385]
+         [Author_911]
+         [Author_735]
+         [Author_2]
+         [Author_70]
+         [Author_740]
+         [Author_664]
+         [Author_489]
+         [Author_684]
+         [Author_492]
+         [Author_611]
+         [Author820])
      (sexo male))
 
     ([Author_689] of Autor
      (idAutor "689")
      (nombreAutor "David Prosser")
      (autoresSimilares
-         [Author_274]
-         [Author833])
+         [Author_840]
+         [Author867])
      (sexo male))
 
     ([Author_690] of Autor
      (idAutor "690")
      (nombreAutor "Tyler Chase")
      (autoresSimilares
+         [Author_793]
+         [Author_163]
+         [Author_725]
+         [Author_823]
+         [Author_836]
+         [Author_571]
+         [Author_850]
+         [Author_727]
+         [Author_668]
+         [Author_374]
+         [Author_752]
          [Author_166]
-         [Author_737]
-         [Author_606]
-         [Author_936]
-         [Author_812]
-         [Author_545]
-         [Author_327]
-         [Author_265]
-         [Author_183]
-         [Author_382]
-         [Author_157]
-         [Author_298]
-         [Author_881]
-         [Author_529]
-         [Author_680]
-         [Author568])
+         [Author_901]
+         [Author_784]
+         [Author_597]
+         [Author_682]
+         [Author_771]
+         [Author_78]
+         [Author86])
      (sexo male))
 
     ([Author_691] of Autor
      (idAutor "691")
      (nombreAutor "Patricia H Graham")
      (autoresSimilares
-         [Author_207]
-         [Author_123]
-         [Author_911]
-         [Author_88]
-         [Author_190]
-         [Author_943]
-         [Author49])
+         [Author_715]
+         [Author_459]
+         [Author_763]
+         [Author_283]
+         [Author_902]
+         [Author_322]
+         [Author_375]
+         [Author_4]
+         [Author_269]
+         [Author_639]
+         [Author_592]
+         [Author_488]
+         [Author_377]
+         [Author_150]
+         [Author_424]
+         [Author_77]
+         [Author_624]
+         [Author_276]
+         [Author_468]
+         [Author825])
      (sexo female))
 
     ([Author_692] of Autor
      (idAutor "692")
      (nombreAutor "Carlyle Labuschagne")
      (autoresSimilares
-         [Author_289]
-         [Author_573]
-         [Author_154]
-         [Author_738]
-         [Author_525]
-         [Author_198]
-         [Author_535]
-         [Author_256]
-         [Author_527]
-         [Author_829]
-         [Author817])
+         [Author_899]
+         [Author_681]
+         [Author26])
      (sexo female))
 
     ([Author_693] of Autor
      (idAutor "693")
      (nombreAutor "Tamara Ireland Stone")
      (autoresSimilares
-         [Author_132]
-         [Author_934]
-         [Author852])
+         [Author_275]
+         [Author_324]
+         [Author_633]
+         [Author_90]
+         [Author_72]
+         [Author_311]
+         [Author_844]
+         [Author_896]
+         [Author_678]
+         [Author_901]
+         [Author_383]
+         [Author_285]
+         [Author_905]
+         [Author_340]
+         [Author_79]
+         [Author_292]
+         [Author494])
      (sexo female))
 
     ([Author_694] of Autor
      (idAutor "694")
      (nombreAutor "Kate Hawkings")
      (autoresSimilares
-         [Author_876]
-         [Author_129]
-         [Author_848]
-         [Author_886]
-         [Author_83]
-         [Author_29]
-         [Author465])
+         [Author_135]
+         [Author_103]
+         [Author_467]
+         [Author_855]
+         [Author_883]
+         [Author_659]
+         [Author_70]
+         [Author_377]
+         [Author_321]
+         [Author591])
      (sexo male))
 
     ([Author_695] of Autor
      (idAutor "695")
      (nombreAutor "Jay Kristoff")
      (autoresSimilares
-         [Author_230]
-         [Author_880]
-         [Author_575]
-         [Author_928]
-         [Author_619]
-         [Author_886]
-         [Author_608]
-         [Author_502]
-         [Author_476]
-         [Author_512]
-         [Author_265]
-         [Author_410]
-         [Author_4]
-         [Author_163]
-         [Author_758]
-         [Author_361]
-         [Author501])
+         [Author_5]
+         [Author_142]
+         [Author_487]
+         [Author_392]
+         [Author435])
      (sexo male))
 
     ([Author_696] of Autor
      (idAutor "696")
      (nombreAutor "Suzanne Lazear")
      (autoresSimilares
-         [Author_179]
-         [Author_99]
-         [Author317])
+         [Author_841]
+         [Author_628]
+         [Author_508]
+         [Author_684]
+         [Author_636]
+         [Author_819]
+         [Author_535]
+         [Author_886]
+         [Author_193]
+         [Author_409]
+         [Author_219]
+         [Author_730]
+         [Author264])
      (sexo female))
 
     ([Author_697] of Autor
      (idAutor "697")
      (nombreAutor "Galaxy Craze")
      (autoresSimilares
-         [Author_518]
-         [Author926])
+         [Author_585]
+         [Author_686]
+         [Author_306]
+         [Author_110]
+         [Author_830]
+         [Author_648]
+         [Author_540]
+         [Author_901]
+         [Author804])
      (sexo female))
 
     ([Author_698] of Autor
      (idAutor "698")
      (nombreAutor "Trisha Wolfe")
      (autoresSimilares
-         [Author_85]
-         [Author_479]
-         [Author243])
+         [Author_932]
+         [Author_252]
+         [Author_311]
+         [Author_434]
+         [Author_205]
+         [Author_530]
+         [Author_198]
+         [Author_175]
+         [Author_435]
+         [Author_260]
+         [Author_763]
+         [Author_621]
+         [Author_517]
+         [Author_767]
+         [Author_684]
+         [Author_714]
+         [Author_139]
+         [Author_165]
+         [Author734])
      (sexo female))
 
     ([Author_699] of Autor
      (idAutor "699")
      (nombreAutor "Susanne Winnacker")
      (autoresSimilares
-         [Author_584]
-         [Author_390]
-         [Author_898]
-         [Author_76]
-         [Author_933]
-         [Author_353]
-         [Author_932]
-         [Author_373]
-         [Author_101]
-         [Author_578]
-         [Author_854]
-         [Author674])
+         [Author_228]
+         [Author_153]
+         [Author_249]
+         [Author_577]
+         [Author_520]
+         [Author_914]
+         [Author_640]
+         [Author_195]
+         [Author_150]
+         [Author_755]
+         [Author639])
      (sexo female))
 
     ([Author_700] of Autor
      (idAutor "700")
      (nombreAutor "Melissa  West")
      (autoresSimilares
-         [Author_780]
-         [Author568])
+         [Author_838]
+         [Author_220]
+         [Author_18]
+         [Author_631]
+         [Author_675]
+         [Author_71]
+         [Author_313]
+         [Author_619]
+         [Author_246]
+         [Author_938]
+         [Author_261]
+         [Author_353]
+         [Author_490]
+         [Author_100]
+         [Author_503]
+         [Author_691]
+         [Author265])
      (sexo female))
 
     ([Author_701] of Autor
      (idAutor "701")
      (nombreAutor "Claire Merle")
      (autoresSimilares
-         [Author_228]
-         [Author_165]
-         [Author_517]
-         [Author567])
+         [Author_460]
+         [Author_59]
+         [Author_616]
+         [Author_918]
+         [Author_516]
+         [Author_373]
+         [Author_354]
+         [Author_732]
+         [Author_422]
+         [Author_345]
+         [Author_719]
+         [Author_559]
+         [Author_597]
+         [Author_827]
+         [Author_633]
+         [Author_258]
+         [Author525])
      (sexo female))
 
     ([Author_702] of Autor
      (idAutor "702")
      (nombreAutor "Jennifer Bosworth")
      (autoresSimilares
-         [Author380])
+         [Author_33]
+         [Author_851]
+         [Author_585]
+         [Author_793]
+         [Author_307]
+         [Author_816]
+         [Author_650]
+         [Author_695]
+         [Author_35]
+         [Author_544]
+         [Author_789]
+         [Author_371]
+         [Author_753]
+         [Author_321]
+         [Author_5]
+         [Author_63]
+         [Author_137]
+         [Author645])
      (sexo female))
 
     ([Author_703] of Autor
      (idAutor "703")
      (nombreAutor "Tom Clancy")
      (autoresSimilares
+         [Author_916]
+         [Author_553]
+         [Author_433]
+         [Author_387]
+         [Author_461]
+         [Author_260]
          [Author_549]
-         [Author_351]
-         [Author_397]
-         [Author_243]
-         [Author_100]
-         [Author_205]
-         [Author_360]
-         [Author_589]
-         [Author_544]
-         [Author690])
+         [Author_896]
+         [Author_667]
+         [Author_933]
+         [Author_190]
+         [Author_585]
+         [Author_820]
+         [Author_298]
+         [Author_121]
+         [Author_361]
+         [Author_500]
+         [Author_944]
+         [Author380])
      (sexo male))
 
     ([Author_704] of Autor
      (idAutor "704")
      (nombreAutor "Dean Koontz")
      (autoresSimilares
-         [Author_368]
-         [Author_396]
-         [Author_511]
-         [Author_698]
-         [Author_342]
-         [Author_835]
-         [Author_206]
-         [Author_687]
-         [Author_188]
-         [Author_241]
-         [Author_633]
-         [Author_221]
-         [Author_288]
-         [Author_267]
-         [Author_157]
-         [Author_789]
-         [Author_352]
-         [Author_345]
-         [Author332])
+         [Author_363]
+         [Author_862]
+         [Author_219]
+         [Author_843]
+         [Author_361]
+         [Author_881]
+         [Author_37]
+         [Author_680]
+         [Author_465]
+         [Author_532]
+         [Author933])
      (sexo male))
 
     ([Author_705] of Autor
      (idAutor "705")
      (nombreAutor "Woody Allen")
      (autoresSimilares
-         [Author_926]
-         [Author_483]
-         [Author_829]
-         [Author_104]
-         [Author_194]
-         [Author842])
+         [Author_694]
+         [Author_413]
+         [Author_267]
+         [Author_685]
+         [Author_581]
+         [Author_679]
+         [Author_36]
+         [Author_750]
+         [Author_773]
+         [Author_747]
+         [Author455])
      (sexo male))
 
     ([Author_706] of Autor
      (idAutor "706")
      (nombreAutor "Kingsley Amis")
      (autoresSimilares
-         [Author_204]
-         [Author_224]
-         [Author_421]
-         [Author_770]
-         [Author_771]
-         [Author_842]
-         [Author_496]
-         [Author_69]
-         [Author700])
+         [Author_942]
+         [Author_440]
+         [Author_420]
+         [Author_445]
+         [Author_575]
+         [Author_477]
+         [Author_98]
+         [Author_73]
+         [Author_444]
+         [Author_210]
+         [Author_185]
+         [Author_925]
+         [Author_620]
+         [Author_279]
+         [Author_553]
+         [Author_261]
+         [Author476])
      (sexo male))
 
     ([Author_707] of Autor
      (idAutor "707")
      (nombreAutor "Edward Gorey")
      (autoresSimilares
-         [Author_212]
-         [Author_240]
-         [Author_192]
-         [Author_471]
-         [Author_21]
-         [Author_367]
-         [Author_401]
-         [Author_703]
-         [Author_915]
-         [Author_435]
-         [Author_181]
-         [Author_43]
-         [Author_271]
-         [Author_855]
-         [Author_566]
-         [Author_398]
-         [Author634])
+         [Author_85]
+         [Author_62]
+         [Author_139]
+         [Author_413]
+         [Author_37]
+         [Author_125]
+         [Author791])
      (sexo male))
 
     ([Author_708] of Autor
      (idAutor "708")
      (nombreAutor "Jonas Jonasson")
      (autoresSimilares
-         [Author_493]
-         [Author_786]
-         [Author_645]
-         [Author_672]
-         [Author_400]
-         [Author_777]
-         [Author_332]
-         [Author_933]
-         [Author_742]
-         [Author_665]
-         [Author_13]
-         [Author_603]
-         [Author_233]
-         [Author_643]
-         [Author_859]
-         [Author_357]
-         [Author_346]
-         [Author_556]
-         [Author241])
+         [Author_617]
+         [Author_39]
+         [Author_320]
+         [Author_639]
+         [Author_733]
+         [Author_876]
+         [Author_586]
+         [Author_760]
+         [Author_879]
+         [Author_151]
+         [Author678])
      (sexo male))
 
     ([Author_709] of Autor
      (idAutor "709")
      (nombreAutor "Lance Carbuncle")
      (autoresSimilares
-         [Author_825]
-         [Author_220]
-         [Author_824]
-         [Author_177]
-         [Author_547]
-         [Author_505]
-         [Author_259]
-         [Author_630]
-         [Author_37]
-         [Author566])
+         [Author_909]
+         [Author_735]
+         [Author_493]
+         [Author_612]
+         [Author_131]
+         [Author_596]
+         [Author_332]
+         [Author_745]
+         [Author_660]
+         [Author_62]
+         [Author_641]
+         [Author_207]
+         [Author_669]
+         [Author_386]
+         [Author_572]
+         [Author_263]
+         [Author373])
      (sexo male))
 
     ([Author_710] of Autor
      (idAutor "710")
      (nombreAutor "Stella Gibbons")
      (autoresSimilares
-         [Author_945]
-         [Author_601]
-         [Author_816]
-         [Author_750]
-         [Author_472]
-         [Author_146]
-         [Author_157]
+         [Author_153]
+         [Author_386]
+         [Author_213]
+         [Author_534]
+         [Author_409]
+         [Author_377]
+         [Author_236]
+         [Author_620]
+         [Author_524]
+         [Author_408]
+         [Author_427]
+         [Author_919]
+         [Author_247]
+         [Author_573]
          [Author_875]
-         [Author43])
+         [Author201])
      (sexo male))
 
     ([Author_711] of Autor
      (idAutor "711")
      (nombreAutor "Voltaire")
      (autoresSimilares
-         [Author835])
+         [Author_77]
+         [Author_182]
+         [Author_902]
+         [Author_780]
+         [Author_636]
+         [Author_366]
+         [Author_418]
+         [Author_30]
+         [Author_525]
+         [Author_99]
+         [Author_194]
+         [Author_185]
+         [Author_311]
+         [Author674])
      (sexo male))
 
     ([Author_712] of Autor
      (idAutor "712")
      (nombreAutor "Jerome K Jerome")
      (autoresSimilares
-         [Author_208]
+         [Author_532]
          [Author_496]
-         [Author_89]
-         [Author_699]
-         [Author_716]
-         [Author_757]
-         [Author_13]
-         [Author_26]
-         [Author_637]
-         [Author181])
+         [Author_688]
+         [Author_636]
+         [Author_741]
+         [Author_62]
+         [Author_425]
+         [Author_755]
+         [Author_503]
+         [Author_298]
+         [Author_685]
+         [Author_501]
+         [Author_590]
+         [Author_517]
+         [Author_54]
+         [Author_802]
+         [Author813])
      (sexo male))
 
     ([Author_713] of Autor
      (idAutor "713")
      (nombreAutor "Caitlin Kittredge")
      (autoresSimilares
-         [Author_520]
-         [Author_27]
-         [Author_621]
-         [Author_469]
-         [Author_265]
-         [Author_625]
-         [Author_779]
-         [Author_104]
-         [Author_945]
-         [Author_236]
-         [Author_608]
-         [Author_202]
-         [Author248])
+         [Author808])
      (sexo female))
 
     ([Author_714] of Autor
      (idAutor "714")
      (nombreAutor "Thomas Mann")
      (autoresSimilares
-         [Author_781]
-         [Author647])
+         [Author_868]
+         [Author_41]
+         [Author_863]
+         [Author_504]
+         [Author_249]
+         [Author_490]
+         [Author_697]
+         [Author_471]
+         [Author_663]
+         [Author_908]
+         [Author_81]
+         [Author_159]
+         [Author_331]
+         [Author_15]
+         [Author_765]
+         [Author_240]
+         [Author232])
      (sexo male))
 
     ([Author_715] of Autor
      (idAutor "715")
      (nombreAutor "Vikram Seth")
      (autoresSimilares
-         [Author630])
+         [Author_113]
+         [Author_294]
+         [Author_205]
+         [Author_117]
+         [Author431])
      (sexo male))
 
     ([Author_716] of Autor
      (idAutor "716")
      (nombreAutor "Rohinton Mistry")
      (autoresSimilares
-         [Author_326]
-         [Author_173]
-         [Author_370]
-         [Author_831]
-         [Author_907]
-         [Author422])
+         [Author_213]
+         [Author_688]
+         [Author_519]
+         [Author_898]
+         [Author_252]
+         [Author_774]
+         [Author_119]
+         [Author_62]
+         [Author_468]
+         [Author_780]
+         [Author_836]
+         [Author_336]
+         [Author_860]
+         [Author385])
      (sexo male))
 
     ([Author_717] of Autor
      (idAutor "717")
      (nombreAutor "George Eliot")
      (autoresSimilares
-         [Author_774]
-         [Author_528]
-         [Author_90]
-         [Author_287]
-         [Author_365]
-         [Author_99]
-         [Author_795]
-         [Author_841]
-         [Author_888]
-         [Author_476]
-         [Author_572]
-         [Author_302]
-         [Author868])
+         [Author_80]
+         [Author_864]
+         [Author_500]
+         [Author188])
      (sexo female))
 
     ([Author_718] of Autor
      (idAutor "718")
      (nombreAutor "Robert Jackson Bennett")
      (autoresSimilares
-         [Author_173]
-         [Author_778]
-         [Author_187]
-         [Author_938]
-         [Author_624]
-         [Author_130]
-         [Author786])
+         [Author_397]
+         [Author_202]
+         [Author_15]
+         [Author_690]
+         [Author_898]
+         [Author_53]
+         [Author_730]
+         [Author_517]
+         [Author_932]
+         [Author651])
      (sexo male))
 
     ([Author_719] of Autor
      (idAutor "719")
      (nombreAutor "Lorrie Moore")
      (autoresSimilares
-         [Author_10]
-         [Author_274]
-         [Author_878]
-         [Author372])
+         [Author_835]
+         [Author697])
      (sexo female))
 
     ([Author_720] of Autor
      (idAutor "720")
      (nombreAutor "Ted Dekker")
      (autoresSimilares
-         [Author_943]
-         [Author_888]
-         [Author697])
+         [Author_247]
+         [Author_658]
+         [Author_631]
+         [Author_400]
+         [Author_872]
+         [Author_237]
+         [Author_116]
+         [Author_143]
+         [Author_124]
+         [Author_898]
+         [Author_172]
+         [Author_348]
+         [Author_332]
+         [Author_288]
+         [Author_95]
+         [Author719])
      (sexo male))
 
     ([Author_721] of Autor
      (idAutor "721")
      (nombreAutor "Dan Chaon")
      (autoresSimilares
-         [Author_612]
-         [Author_655]
-         [Author_531]
-         [Author_714]
-         [Author_209]
-         [Author_676]
-         [Author_704]
-         [Author_434]
-         [Author_475]
-         [Author_699]
-         [Author_130]
-         [Author_275]
-         [Author_906]
-         [Author895])
+         [Author521])
      (sexo male))
 
     ([Author_722] of Autor
      (idAutor "722")
      (nombreAutor "Heather Gudenkauf")
      (autoresSimilares
-         [Author_785]
-         [Author_848]
-         [Author_363]
-         [Author_426]
-         [Author_34]
-         [Author_224]
-         [Author_227]
-         [Author_588]
-         [Author_662]
-         [Author_404]
-         [Author_923]
-         [Author_257]
-         [Author_462]
-         [Author_732]
-         [Author684])
+         [Author_568]
+         [Author_554]
+         [Author_689]
+         [Author_391]
+         [Author941])
      (sexo male))
 
     ([Author_723] of Autor
      (idAutor "723")
      (nombreAutor "Colm Tibn")
      (autoresSimilares
-         [Author293])
+         [Author_604]
+         [Author_768]
+         [Author_280]
+         [Author_664]
+         [Author_591]
+         [Author_250]
+         [Author_145]
+         [Author_85]
+         [Author_883]
+         [Author_549]
+         [Author675])
      (sexo male))
 
     ([Author_724] of Autor
      (idAutor "724")
      (nombreAutor "David Cristofano")
      (autoresSimilares
-         [Author_920]
-         [Author421])
+         [Author_871]
+         [Author_439]
+         [Author732])
      (sexo male))
 
     ([Author_725] of Autor
      (idAutor "725")
      (nombreAutor "Jonathan Tropper")
      (autoresSimilares
-         [Author_343]
-         [Author_904]
-         [Author_262]
-         [Author_364]
-         [Author_644]
-         [Author_24]
-         [Author_171]
-         [Author_19]
-         [Author_322]
-         [Author_44]
-         [Author_199]
-         [Author_632]
-         [Author_260]
-         [Author310])
+         [Author_572]
+         [Author_334]
+         [Author_267]
+         [Author_328]
+         [Author_890]
+         [Author157])
      (sexo male))
 
     ([Author_726] of Autor
      (idAutor "726")
      (nombreAutor "Robert Goolrick")
      (autoresSimilares
-         [Author_748]
-         [Author_340]
-         [Author_440]
-         [Author_255]
-         [Author_30]
-         [Author_859]
-         [Author_357]
-         [Author_831]
-         [Author_612]
-         [Author_611]
-         [Author_626]
-         [Author_505]
-         [Author_853]
-         [Author_642]
-         [Author_47]
-         [Author_526]
+         [Author_520]
+         [Author_716]
+         [Author_835]
+         [Author_515]
          [Author_436]
-         [Author_780]
-         [Author_651]
-         [Author122])
+         [Author_542]
+         [Author_621]
+         [Author_42]
+         [Author_517]
+         [Author_484]
+         [Author419])
      (sexo male))
 
     ([Author_727] of Autor
      (idAutor "727")
      (nombreAutor "Colum McCann")
      (autoresSimilares
-         [Author_553]
-         [Author_698]
-         [Author_837]
-         [Author_591]
-         [Author_914]
-         [Author_22]
-         [Author_187]
-         [Author_91]
-         [Author_306]
-         [Author_273]
-         [Author_851]
-         [Author_573]
-         [Author_315]
-         [Author_296]
-         [Author_113]
-         [Author_101]
-         [Author_68]
-         [Author_598]
-         [Author_378]
-         [Author445])
+         [Author_873]
+         [Author_858]
+         [Author_666]
+         [Author_25]
+         [Author_270]
+         [Author_206]
+         [Author_931]
+         [Author_55]
+         [Author_93]
+         [Author_703]
+         [Author_468]
+         [Author_131]
+         [Author718])
      (sexo male))
 
     ([Author_728] of Autor
      (idAutor "728")
      (nombreAutor "Katherine Howe")
      (autoresSimilares
-         [Author_235]
-         [Author_124]
-         [Author_835]
-         [Author_624]
-         [Author_170]
-         [Author_806]
-         [Author660])
+         [Author_116]
+         [Author_303]
+         [Author_434]
+         [Author_441]
+         [Author_714]
+         [Author_516]
+         [Author_635]
+         [Author_137]
+         [Author_433]
+         [Author_26]
+         [Author_193]
+         [Author_497]
+         [Author_472]
+         [Author_539]
+         [Author_251]
+         [Author_726]
+         [Author_533]
+         [Author_112]
+         [Author616])
      (sexo female))
 
     ([Author_729] of Autor
      (idAutor "729")
      (nombreAutor "V Kelly")
      (autoresSimilares
-         [Author_706]
-         [Author_514]
-         [Author_136]
-         [Author_863]
-         [Author_339]
-         [Author_287]
-         [Author_223]
-         [Author942])
+         [Author_87]
+         [Author_548]
+         [Author_121]
+         [Author_17]
+         [Author_743]
+         [Author_42]
+         [Author_303]
+         [Author_726]
+         [Author_807]
+         [Author_45]
+         [Author928])
      (sexo male))
 
     ([Author_730] of Autor
      (idAutor "730")
      (nombreAutor "Johann Wolfgang von Goethe")
      (autoresSimilares
-         [Author_160]
-         [Author_454]
-         [Author_422]
-         [Author_789]
-         [Author_25]
-         [Author_568]
+         [Author_445]
+         [Author_571]
+         [Author_545]
+         [Author_171]
+         [Author_60]
+         [Author_102]
          [Author_105]
-         [Author_534]
-         [Author_216]
-         [Author_829]
-         [Author_558]
-         [Author_124]
-         [Author_129]
-         [Author_346]
-         [Author_655]
-         [Author_634]
-         [Author_155]
-         [Author465])
+         [Author_686]
+         [Author_619]
+         [Author74])
      (sexo male))
 
     ([Author_731] of Autor
      (idAutor "731")
      (nombreAutor "Ivan Turgenev")
      (autoresSimilares
-         [Author_25]
-         [Author_125]
-         [Author_621]
-         [Author_13]
-         [Author_584]
-         [Author_451]
-         [Author_562]
-         [Author_488]
-         [Author_380]
-         [Author_557]
-         [Author439])
+         [Author_95]
+         [Author_271]
+         [Author_258]
+         [Author_892]
+         [Author_711]
+         [Author_105]
+         [Author_420]
+         [Author_603]
+         [Author_744]
+         [Author_740]
+         [Author_797]
+         [Author_198]
+         [Author_737]
+         [Author_479]
+         [Author_724]
+         [Author_939]
+         [Author_402]
+         [Author_565]
+         [Author255])
      (sexo male))
 
     ([Author_732] of Autor
      (idAutor "732")
      (nombreAutor "Honor de Balzac")
      (autoresSimilares
-         [Author_831]
+         [Author_240]
+         [Author_356]
+         [Author_688]
+         [Author_509]
+         [Author_847]
+         [Author_692]
+         [Author_487]
+         [Author_736]
+         [Author_491]
+         [Author_199]
          [Author_137]
-         [Author511])
+         [Author_573]
+         [Author_53]
+         [Author_371]
+         [Author_153]
+         [Author_277]
+         [Author_339]
+         [Author567])
      (sexo male))
 
     ([Author_733] of Autor
      (idAutor "733")
      (nombreAutor "Knut Hamsun")
      (autoresSimilares
-         [Author_367]
-         [Author777])
+         [Author_301]
+         [Author_418]
+         [Author_294]
+         [Author_77]
+         [Author_762]
+         [Author_783]
+         [Author_935]
+         [Author_578]
+         [Author629])
      (sexo male))
 
     ([Author_734] of Autor
      (idAutor "734")
      (nombreAutor "Henry James")
      (autoresSimilares
-         [Author_909]
-         [Author_91]
-         [Author_764]
-         [Author_799]
-         [Author_188]
-         [Author_258]
-         [Author_284]
-         [Author_431]
-         [Author_309]
-         [Author_601]
-         [Author_35]
-         [Author470])
+         [Author_923]
+         [Author_533]
+         [Author_55]
+         [Author_236]
+         [Author_211]
+         [Author_134]
+         [Author_389]
+         [Author_527]
+         [Author_894]
+         [Author_192]
+         [Author_250]
+         [Author_198]
+         [Author_544]
+         [Author_612]
+         [Author_438]
+         [Author_217]
+         [Author926])
      (sexo male))
 
     ([Author_735] of Autor
      (idAutor "735")
      (nombreAutor "Nikolai Gogol")
      (autoresSimilares
-         [Author_148]
-         [Author_500]
-         [Author_819]
-         [Author_915]
-         [Author_44]
-         [Author_825]
-         [Author_333]
-         [Author_343]
-         [Author_683]
-         [Author_842]
-         [Author_574]
-         [Author_750]
-         [Author_396]
-         [Author934])
+         [Author_440]
+         [Author672])
      (sexo male))
 
     ([Author_736] of Autor
      (idAutor "736")
      (nombreAutor "Stendhal")
      (autoresSimilares
-         [Author_410]
-         [Author_729]
-         [Author709])
+         [Author_188]
+         [Author_850]
+         [Author_75]
+         [Author_780]
+         [Author_326]
+         [Author_928]
+         [Author_392]
+         [Author_632]
+         [Author_122]
+         [Author_417]
+         [Author_151]
+         [Author_155]
+         [Author523])
      (sexo male))
 
     ([Author_737] of Autor
      (idAutor "737")
      (nombreAutor "Kate Chopin")
      (autoresSimilares
-         [Author_816]
-         [Author_340]
-         [Author_922]
-         [Author_711]
-         [Author_75]
-         [Author_624]
-         [Author_627]
-         [Author_212]
-         [Author157])
+         [Author_596]
+         [Author_362]
+         [Author_382]
+         [Author_817]
+         [Author_928]
+         [Author_338]
+         [Author_843]
+         [Author_429]
+         [Author323])
      (sexo female))
 
     ([Author_738] of Autor
      (idAutor "738")
      (nombreAutor "Anne Bront")
      (autoresSimilares
-         [Author_502]
+         [Author_621]
+         [Author_107]
+         [Author_376]
+         [Author_461]
+         [Author_646]
+         [Author_521]
+         [Author_944]
+         [Author_874]
+         [Author_881]
          [Author_515]
-         [Author_224]
-         [Author_930]
-         [Author_533]
-         [Author_281]
-         [Author_395]
-         [Author_287]
-         [Author_586]
-         [Author_485]
-         [Author_398]
-         [Author705])
+         [Author_358]
+         [Author_684]
+         [Author_51]
+         [Author277])
      (sexo female))
 
     ([Author_739] of Autor
      (idAutor "739")
      (nombreAutor "Ali Marsman")
      (autoresSimilares
-         [Author_317]
-         [Author_692]
-         [Author_328]
-         [Author_440]
-         [Author_414]
-         [Author_301]
-         [Author_53]
-         [Author_848]
-         [Author_908]
-         [Author_906]
-         [Author_620]
-         [Author_396]
-         [Author926])
+         [Author_351]
+         [Author_323]
+         [Author_857]
+         [Author_9]
+         [Author_199]
+         [Author_269]
+         [Author750])
      (sexo female))
 
     ([Author_740] of Autor
      (idAutor "740")
      (nombreAutor "Lane Robins")
      (autoresSimilares
-         [Author_878]
-         [Author_794]
-         [Author_227]
-         [Author_761]
-         [Author709])
+         [Author_45]
+         [Author_398]
+         [Author_101]
+         [Author_516]
+         [Author_863]
+         [Author_774]
+         [Author_248]
+         [Author_353]
+         [Author_338]
+         [Author_864]
+         [Author_105]
+         [Author_53]
+         [Author_574]
+         [Author_401]
+         [Author_424]
+         [Author_709]
+         [Author_252]
+         [Author743])
      (sexo female))
 
     ([Author_741] of Autor
      (idAutor "741")
      (nombreAutor "Deborah ONeill Cordes")
      (autoresSimilares
-         [Author_909]
-         [Author_5]
-         [Author_532]
-         [Author_320]
-         [Author_349]
-         [Author44])
+         [Author_408]
+         [Author_89]
+         [Author_168]
+         [Author_188]
+         [Author_430]
+         [Author_34]
+         [Author_337]
+         [Author_710]
+         [Author_0]
+         [Author_234]
+         [Author_292]
+         [Author_911]
+         [Author_283]
+         [Author_704]
+         [Author615])
      (sexo female))
 
     ([Author_742] of Autor
      (idAutor "742")
      (nombreAutor "Kevin Brockmeier")
      (autoresSimilares
-         [Author_452]
-         [Author_265]
-         [Author_229]
-         [Author596])
+         [Author_758]
+         [Author_331]
+         [Author_697]
+         [Author_647]
+         [Author_465]
+         [Author_724]
+         [Author370])
      (sexo male))
 
     ([Author_743] of Autor
      (idAutor "743")
      (nombreAutor "Alexander Key")
      (autoresSimilares
-         [Author_803]
-         [Author_907]
-         [Author_704]
-         [Author_797]
-         [Author_919]
-         [Author_481]
-         [Author_751]
-         [Author_490]
-         [Author_872]
-         [Author_184]
-         [Author_875]
-         [Author_758]
-         [Author_323]
-         [Author_396]
-         [Author_125]
-         [Author_21]
-         [Author_182]
-         [Author_355]
-         [Author716])
+         [Author_254]
+         [Author_326]
+         [Author_882]
+         [Author_840]
+         [Author_304]
+         [Author_407]
+         [Author_99]
+         [Author866])
      (sexo male))
 
     ([Author_744] of Autor
      (idAutor "744")
      (nombreAutor "Jim Harrison")
      (autoresSimilares
-         [Author_636]
-         [Author_250]
-         [Author_386]
-         [Author_639]
-         [Author_163]
-         [Author_931]
-         [Author_869]
-         [Author_498]
-         [Author_148]
-         [Author_165]
-         [Author_915]
-         [Author_629]
-         [Author_51]
-         [Author_706]
-         [Author_607]
-         [Author749])
+         [Author_117]
+         [Author_85]
+         [Author_717]
+         [Author_930]
+         [Author_702]
+         [Author_158]
+         [Author646])
      (sexo male))
 
     ([Author_745] of Autor
      (idAutor "745")
      (nombreAutor "Catherine Ryan Hyde")
      (autoresSimilares
-         [Author_880]
-         [Author_682]
-         [Author_845]
-         [Author_214]
-         [Author_579]
-         [Author_873]
-         [Author_73]
-         [Author338])
+         [Author_689]
+         [Author_43]
+         [Author_928]
+         [Author_776]
+         [Author_232]
+         [Author_377]
+         [Author_746]
+         [Author_748]
+         [Author_802]
+         [Author_273]
+         [Author_16]
+         [Author_296]
+         [Author_505]
+         [Author_909]
+         [Author_644]
+         [Author51])
      (sexo male))
 
     ([Author_746] of Autor
      (idAutor "746")
      (nombreAutor "Kji Suzuki")
      (autoresSimilares
-         [Author_245]
-         [Author_498]
-         [Author_885]
-         [Author_360]
-         [Author_539]
-         [Author2])
+         [Author_502]
+         [Author47])
      (sexo male))
 
     ([Author_747] of Autor
      (idAutor "747")
      (nombreAutor "Anne Fine")
      (autoresSimilares
-         [Author_633]
-         [Author_149]
-         [Author_15]
-         [Author_891]
-         [Author_512]
-         [Author_358]
-         [Author_239]
-         [Author_609]
-         [Author_764]
-         [Author_35]
-         [Author315])
+         [Author_584]
+         [Author_555]
+         [Author_611]
+         [Author_758]
+         [Author_21]
+         [Author_37]
+         [Author_369]
+         [Author_272]
+         [Author_41]
+         [Author_793]
+         [Author_182]
+         [Author_840]
+         [Author211])
      (sexo female))
 
     ([Author_748] of Autor
      (idAutor "748")
      (nombreAutor "Christianna Brand")
      (autoresSimilares
-         [Author_190]
-         [Author_87]
-         [Author_854]
-         [Author_473]
-         [Author_912]
-         [Author_589]
-         [Author_114]
-         [Author256])
+         [Author_842]
+         [Author_534]
+         [Author_715]
+         [Author_503]
+         [Author643])
      (sexo female))
 
     ([Author_749] of Autor
      (idAutor "749")
      (nombreAutor "NH Kleinbaum")
      (autoresSimilares
-         [Author_372]
-         [Author_82]
-         [Author_874]
-         [Author_98]
-         [Author463])
+         [Author_171]
+         [Author_528]
+         [Author_746]
+         [Author_285]
+         [Author_766]
+         [Author_54]
+         [Author_797]
+         [Author_699]
+         [Author_233]
+         [Author_823]
+         [Author_323]
+         [Author81])
      (sexo male))
 
     ([Author_750] of Autor
      (idAutor "750")
      (nombreAutor "Felix Salten")
      (autoresSimilares
-         [Author_326]
-         [Author_9]
-         [Author_496]
-         [Author_183]
-         [Author_605]
-         [Author432])
+         [Author_40]
+         [Author_655]
+         [Author_468]
+         [Author_443]
+         [Author_246]
+         [Author_901]
+         [Author_453]
+         [Author_59]
+         [Author_533]
+         [Author112])
      (sexo male))
 
     ([Author_751] of Autor
      (idAutor "751")
      (nombreAutor "Nicole Snooki Polizzi")
      (autoresSimilares
-         [Author_102]
-         [Author_224]
-         [Author_899]
-         [Author_742]
-         [Author_832]
-         [Author_647]
-         [Author_504]
-         [Author398])
+         [Author891])
      (sexo female))
 
     ([Author_752] of Autor
      (idAutor "752")
      (nombreAutor "Cecily von Ziegesar")
      (autoresSimilares
-         [Author_648]
-         [Author_179]
-         [Author_340]
-         [Author_421]
-         [Author_22]
-         [Author_694]
-         [Author_8]
-         [Author_592]
-         [Author_331]
-         [Author_319]
-         [Author_491]
-         [Author_73]
-         [Author_363]
-         [Author_681]
-         [Author_160]
-         [Author_894]
-         [Author_519]
-         [Author_383]
-         [Author_744]
-         [Author669])
+         [Author_734]
+         [Author_365]
+         [Author_28]
+         [Author_800]
+         [Author_887]
+         [Author_893]
+         [Author_751]
+         [Author_632]
+         [Author_200]
+         [Author_392]
+         [Author_134]
+         [Author_132]
+         [Author477])
      (sexo female))
 
     ([Author_753] of Autor
      (idAutor "753")
      (nombreAutor "GS Jennsen")
      (autoresSimilares
-         [Author_312]
-         [Author_631]
-         [Author_495]
-         [Author_588]
-         [Author_358]
-         [Author_217]
-         [Author_527]
-         [Author_909]
-         [Author_518]
-         [Author_468]
-         [Author_449]
-         [Author_276]
-         [Author_336]
-         [Author_326]
-         [Author_97]
-         [Author570])
+         [Author_773]
+         [Author_655]
+         [Author_523]
+         [Author_667]
+         [Author_315]
+         [Author_811]
+         [Author_700]
+         [Author_435]
+         [Author_14]
+         [Author_68]
+         [Author_617]
+         [Author_350]
+         [Author882])
      (sexo female))
 
     ([Author_754] of Autor
      (idAutor "754")
      (nombreAutor "Kenneth Jarrett Singleton")
      (autoresSimilares
-         [Author_643]
-         [Author_699]
-         [Author_658]
-         [Author818])
+         [Author_316]
+         [Author889])
      (sexo male))
 
     ([Author_755] of Autor
      (idAutor "755")
      (nombreAutor "Anita Loos")
      (autoresSimilares
-         [Author_309]
-         [Author_740]
-         [Author_536]
-         [Author_539]
-         [Author_406]
-         [Author_202]
-         [Author389])
+         [Author_870]
+         [Author_737]
+         [Author_273]
+         [Author_62]
+         [Author_64]
+         [Author_685]
+         [Author_292]
+         [Author_662]
+         [Author709])
      (sexo female))
 
     ([Author_756] of Autor
      (idAutor "756")
      (nombreAutor "Julie Cantrell")
      (autoresSimilares
-         [Author_397]
-         [Author_378]
-         [Author_120]
-         [Author_112]
-         [Author_693]
-         [Author_398]
-         [Author_495]
-         [Author_761]
-         [Author_589]
-         [Author96])
+         [Author_103]
+         [Author_866]
+         [Author_308]
+         [Author_277]
+         [Author_890]
+         [Author_278]
+         [Author218])
      (sexo female))
 
     ([Author_757] of Autor
      (idAutor "757")
      (nombreAutor "Cristiane Serruya")
      (autoresSimilares
-         [Author_534]
-         [Author507])
+         [Author_791]
+         [Author_387]
+         [Author_457]
+         [Author_132]
+         [Author_632]
+         [Author_510]
+         [Author_131]
+         [Author_900]
+         [Author_129]
+         [Author_859]
+         [Author191])
      (sexo female))
 
     ([Author_758] of Autor
      (idAutor "758")
      (nombreAutor "Ceri London")
      (autoresSimilares
-         [Author_23]
-         [Author_272]
-         [Author_191]
-         [Author_31]
-         [Author_740]
-         [Author_145]
-         [Author_274]
-         [Author_451]
-         [Author_638]
-         [Author_161]
-         [Author_361]
-         [Author_656]
-         [Author_684]
-         [Author732])
+         [Author_579]
+         [Author_344]
+         [Author_840]
+         [Author783])
      (sexo male))
 
     ([Author_759] of Autor
      (idAutor "759")
      (nombreAutor "Sherry Jones")
      (autoresSimilares
-         [Author_694]
-         [Author_565]
-         [Author_282]
-         [Author241])
+         [Author_485]
+         [Author_128]
+         [Author_358]
+         [Author_677]
+         [Author_28]
+         [Author_619]
+         [Author_18]
+         [Author_901]
+         [Author92])
      (sexo female))
 
     ([Author_760] of Autor
      (idAutor "760")
      (nombreAutor "Terri Giuliano Long")
      (autoresSimilares
-         [Author_469]
-         [Author_822]
-         [Author_918]
-         [Author_869]
-         [Author_936]
-         [Author570])
+         [Author_666]
+         [Author_788]
+         [Author_239]
+         [Author_324]
+         [Author_909]
+         [Author_769]
+         [Author_465]
+         [Author_16]
+         [Author_923]
+         [Author_779]
+         [Author163])
      (sexo female))
 
     ([Author_761] of Autor
      (idAutor "761")
      (nombreAutor "Andrew Seaward")
      (autoresSimilares
-         [Author_88]
-         [Author_30]
-         [Author_598]
-         [Author_0]
-         [Author_923]
-         [Author_684]
-         [Author_630]
-         [Author_751]
-         [Author_741]
-         [Author934])
+         [Author_309]
+         [Author_152]
+         [Author_360]
+         [Author_292]
+         [Author_723]
+         [Author_558]
+         [Author_410]
+         [Author_921]
+         [Author_836]
+         [Author_96]
+         [Author_348]
+         [Author_177]
+         [Author_173]
+         [Author_422]
+         [Author109])
      (sexo male))
 
     ([Author_762] of Autor
      (idAutor "762")
      (nombreAutor "James Herbert")
      (autoresSimilares
-         [Author_846]
-         [Author_579]
-         [Author_124]
-         [Author_295]
-         [Author_938]
-         [Author_497]
-         [Author_513]
-         [Author695])
+         [Author_761]
+         [Author_72]
+         [Author_109]
+         [Author666])
      (sexo male))
 
     ([Author_763] of Autor
      (idAutor "763")
      (nombreAutor "Clive Barker")
      (autoresSimilares
-         [Author_773]
-         [Author78])
+         [Author_508]
+         [Author_289]
+         [Author_827]
+         [Author_434]
+         [Author_326]
+         [Author_517]
+         [Author_837]
+         [Author_720]
+         [Author_884]
+         [Author_227]
+         [Author_27]
+         [Author_921]
+         [Author_331]
+         [Author_554]
+         [Author_0]
+         [Author_308]
+         [Author_541]
+         [Author_661]
+         [Author_747]
+         [Author521])
      (sexo male))
 
     ([Author_764] of Autor
      (idAutor "764")
      (nombreAutor "Dean R Koontz")
      (autoresSimilares
-         [Author_456]
-         [Author_616]
-         [Author_491]
-         [Author_324]
-         [Author_776]
-         [Author_165]
-         [Author_250]
-         [Author_186]
-         [Author_141]
-         [Author_578]
-         [Author_798]
-         [Author_603]
-         [Author742])
+         [Author_333]
+         [Author_742]
+         [Author_167]
+         [Author_909]
+         [Author_422]
+         [Author383])
      (sexo male))
 
     ([Author_765] of Autor
      (idAutor "765")
      (nombreAutor "Thomas Tryon")
      (autoresSimilares
-         [Author_540]
-         [Author_452]
-         [Author_141]
-         [Author_15]
-         [Author_358]
-         [Author_78]
-         [Author_71]
-         [Author_462]
-         [Author_836]
+         [Author_504]
+         [Author_479]
+         [Author_734]
          [Author_892]
-         [Author_472]
-         [Author_115]
-         [Author_332]
-         [Author_659]
-         [Author_704]
-         [Author_851]
-         [Author_430]
-         [Author861])
+         [Author_656]
+         [Author_373]
+         [Author_445]
+         [Author_395]
+         [Author_934]
+         [Author_881]
+         [Author_324]
+         [Author_805]
+         [Author_683]
+         [Author_559]
+         [Author_622]
+         [Author_643]
+         [Author_897]
+         [Author246])
      (sexo male))
 
     ([Author_766] of Autor
      (idAutor "766")
      (nombreAutor "Susan Hill")
      (autoresSimilares
-         [Author_872]
-         [Author_189]
-         [Author_827]
-         [Author_134]
-         [Author_114]
-         [Author_901]
-         [Author_497]
-         [Author_504]
-         [Author_759]
-         [Author_202]
-         [Author_814]
-         [Author_651]
-         [Author_826]
-         [Author_188]
-         [Author_47]
-         [Author_509]
-         [Author929])
+         [Author_610]
+         [Author923])
      (sexo female))
 
     ([Author_767] of Autor
      (idAutor "767")
      (nombreAutor "Ira Levin")
      (autoresSimilares
-         [Author_861]
-         [Author778])
+         [Author_615]
+         [Author_277]
+         [Author_350]
+         [Author209])
      (sexo male))
 
     ([Author_768] of Autor
      (idAutor "768")
      (nombreAutor "David Seltzer")
      (autoresSimilares
-         [Author_119]
-         [Author_430]
-         [Author_938]
-         [Author_719]
-         [Author_243]
-         [Author221])
+         [Author_291]
+         [Author_803]
+         [Author_197]
+         [Author_272]
+         [Author_155]
+         [Author_656]
+         [Author_612]
+         [Author_265]
+         [Author_421]
+         [Author_704]
+         [Author_838]
+         [Author_925]
+         [Author_581]
+         [Author_435]
+         [Author_720]
+         [Author_940]
+         [Author_630]
+         [Author323])
      (sexo male))
 
     ([Author_769] of Autor
      (idAutor "769")
      (nombreAutor "Scott B Smith")
      (autoresSimilares
-         [Author_42]
-         [Author_834]
-         [Author_65]
-         [Author_316]
-         [Author_558]
-         [Author_238]
-         [Author_20]
-         [Author_612]
-         [Author_155]
-         [Author_799]
-         [Author_450]
-         [Author_261]
-         [Author_505]
-         [Author_635]
-         [Author_633]
-         [Author_867]
-         [Author_554]
-         [Author_50]
-         [Author936])
+         [Author288])
      (sexo male))
 
     ([Author_770] of Autor
      (idAutor "770")
      (nombreAutor "Shirley Jackson")
      (autoresSimilares
-         [Author_714]
-         [Author_691]
-         [Author_685]
-         [Author153])
+         [Author_794]
+         [Author_648]
+         [Author_353]
+         [Author_236]
+         [Author_28]
+         [Author_721]
+         [Author_405]
+         [Author_399]
+         [Author_71]
+         [Author_591]
+         [Author_134]
+         [Author_231]
+         [Author_526]
+         [Author_864]
+         [Author_712]
+         [Author_79]
+         [Author527])
      (sexo female))
 
     ([Author_771] of Autor
      (idAutor "771")
      (nombreAutor "Nnedi Okorafor")
      (autoresSimilares
-         [Author_484]
-         [Author_588]
-         [Author_399]
-         [Author_273]
-         [Author297])
+         [Author_373]
+         [Author_10]
+         [Author_475]
+         [Author_243]
+         [Author_302]
+         [Author_224]
+         [Author_375]
+         [Author_189]
+         [Author_186]
+         [Author_52]
+         [Author_64]
+         [Author_457]
+         [Author_851]
+         [Author_232]
+         [Author612])
      (sexo female))
 
     ([Author_772] of Autor
      (idAutor "772")
      (nombreAutor "Anna  Quinn")
      (autoresSimilares
-         [Author_352]
-         [Author_750]
-         [Author626])
+         [Author_272]
+         [Author_496]
+         [Author_511]
+         [Author_603]
+         [Author_855]
+         [Author_922]
+         [Author_493]
+         [Author_41]
+         [Author_381]
+         [Author_540]
+         [Author_871]
+         [Author_809]
+         [Author_267]
+         [Author714])
      (sexo male))
 
     ([Author_773] of Autor
      (idAutor "773")
      (nombreAutor "Eldonna Edwards")
      (autoresSimilares
-         [Author_356]
-         [Author_776]
-         [Author_544]
-         [Author_405]
-         [Author_719]
-         [Author_123]
-         [Author_937]
-         [Author_891]
-         [Author_276]
-         [Author_775]
-         [Author_262]
-         [Author_944]
-         [Author_354]
-         [Author_762]
-         [Author_340]
-         [Author677])
+         [Author_577]
+         [Author_853]
+         [Author_270]
+         [Author_529]
+         [Author_662]
+         [Author_126]
+         [Author_830]
+         [Author_620]
+         [Author_618]
+         [Author128])
      (sexo female))
 
     ([Author_774] of Autor
      (idAutor "774")
      (nombreAutor "Suanne Schafer")
      (autoresSimilares
-         [Author_23]
-         [Author_360]
-         [Author_858]
-         [Author121])
+         [Author_75]
+         [Author_53]
+         [Author_135]
+         [Author172])
      (sexo female))
 
     ([Author_775] of Autor
      (idAutor "775")
      (nombreAutor "Lyndsay Ely")
      (autoresSimilares
-         [Author_891]
-         [Author_405]
-         [Author_716]
-         [Author_706]
-         [Author_601]
-         [Author_318]
-         [Author_900]
-         [Author923])
+         [Author_665]
+         [Author_30]
+         [Author_209]
+         [Author_663]
+         [Author_1]
+         [Author_673]
+         [Author_377]
+         [Author_435]
+         [Author_874]
+         [Author_892]
+         [Author_72]
+         [Author_115]
+         [Author_384]
+         [Author_518]
+         [Author_552]
+         [Author_375]
+         [Author_56]
+         [Author_91]
+         [Author250])
      (sexo male))
 
     ([Author_776] of Autor
      (idAutor "776")
      (nombreAutor "Clarissa Goenawan")
      (autoresSimilares
-         [Author_565]
-         [Author_188]
-         [Author_224]
-         [Author_850]
-         [Author_13]
-         [Author_521]
-         [Author_4]
-         [Author_699]
-         [Author_852]
-         [Author_558]
-         [Author_770]
-         [Author_75]
-         [Author350])
+         [Author_215]
+         [Author_607]
+         [Author_595]
+         [Author_869]
+         [Author_810]
+         [Author_491]
+         [Author_851]
+         [Author_878]
+         [Author_244]
+         [Author_474]
+         [Author_145]
+         [Author_137]
+         [Author_407]
+         [Author_619]
+         [Author_841]
+         [Author_341]
+         [Author80])
      (sexo female))
 
     ([Author_777] of Autor
      (idAutor "777")
      (nombreAutor "Kimmery Martin")
      (autoresSimilares
-         [Author_679]
-         [Author_909]
-         [Author_691]
-         [Author_27]
-         [Author_859]
-         [Author_420]
-         [Author727])
+         [Author_505]
+         [Author_451]
+         [Author_709]
+         [Author_576]
+         [Author_659]
+         [Author_170]
+         [Author_250]
+         [Author_558]
+         [Author_169]
+         [Author_553]
+         [Author791])
      (sexo female))
 
     ([Author_778] of Autor
      (idAutor "778")
      (nombreAutor "Shay Savage")
      (autoresSimilares
-         [Author_422]
-         [Author_345]
-         [Author_734]
-         [Author_915]
-         [Author_529]
-         [Author_414]
-         [Author_447]
-         [Author_149]
-         [Author_325]
-         [Author_656]
-         [Author_80]
-         [Author_730]
-         [Author_748]
-         [Author_480]
-         [Author_363]
-         [Author_893]
-         [Author_779]
-         [Author_674]
-         [Author819])
+         [Author_653]
+         [Author_136]
+         [Author_294]
+         [Author_353]
+         [Author_339]
+         [Author_96]
+         [Author_83]
+         [Author_28]
+         [Author_462]
+         [Author_352]
+         [Author858])
      (sexo female))
 
     ([Author_779] of Autor
      (idAutor "779")
      (nombreAutor "Jake Furie Lapin")
      (autoresSimilares
-         [Author_811]
-         [Author_394]
-         [Author_704]
-         [Author_688]
-         [Author_670]
-         [Author207])
+         [Author840])
      (sexo male))
 
     ([Author_780] of Autor
      (idAutor "780")
      (nombreAutor "Amin Maalouf")
      (autoresSimilares
-         [Author_454]
-         [Author_9]
-         [Author_287]
-         [Author_872]
-         [Author_762]
-         [Author_507]
-         [Author_782]
-         [Author_473]
-         [Author702])
+         [Author_583]
+         [Author_59]
+         [Author_182]
+         [Author_742]
+         [Author_80]
+         [Author871])
      (sexo male))
 
     ([Author_781] of Autor
      (idAutor "781")
      (nombreAutor "")
      (autoresSimilares
-         [Author_475]
-         [Author_500]
-         [Author_761]
-         [Author_329]
-         [Author_155]
-         [Author_377]
-         [Author_282]
-         [Author_491]
-         [Author_829]
-         [Author_504]
-         [Author_807]
-         [Author_702]
-         [Author_100]
-         [Author515])
+         [Author_232]
+         [Author_142]
+         [Author_445]
+         [Author_169]
+         [Author_394]
+         [Author_347]
+         [Author168])
      (sexo male))
 
     ([Author_782] of Autor
      (idAutor "782")
      (nombreAutor "")
      (autoresSimilares
-         [Author_700]
-         [Author_701]
-         [Author_834]
-         [Author_860]
-         [Author_589]
-         [Author_597]
-         [Author_41]
-         [Author_237]
-         [Author_298]
-         [Author_343]
-         [Author_423]
-         [Author_789]
-         [Author_239]
-         [Author_851]
-         [Author_811]
-         [Author_37]
-         [Author_621]
+         [Author_781]
+         [Author_576]
          [Author_932]
-         [Author170])
+         [Author_114]
+         [Author_578]
+         [Author_773]
+         [Author_634]
+         [Author_143]
+         [Author_274]
+         [Author_425]
+         [Author_383]
+         [Author_242]
+         [Author_70]
+         [Author_719]
+         [Author_848]
+         [Author_710]
+         [Author824])
      (sexo male))
 
     ([Author_783] of Autor
      (idAutor "783")
      (nombreAutor "")
      (autoresSimilares
-         [Author_766]
-         [Author_575]
-         [Author_376]
          [Author_341]
-         [Author_286]
-         [Author_689]
-         [Author_103]
-         [Author_287]
-         [Author_808]
-         [Author428])
+         [Author809])
      (sexo male))
 
     ([Author_784] of Autor
      (idAutor "784")
      (nombreAutor "Naguib Mahfouz")
      (autoresSimilares
-         [Author_17]
-         [Author_16]
-         [Author_407]
-         [Author_691]
-         [Author_836]
-         [Author_901]
-         [Author_415]
-         [Author729])
+         [Author_187]
+         [Author_166]
+         [Author_313]
+         [Author_2]
+         [Author_411]
+         [Author_246]
+         [Author_625]
+         [Author_218]
+         [Author_459]
+         [Author_938]
+         [Author_327]
+         [Author345])
      (sexo male))
 
     ([Author_785] of Autor
      (idAutor "785")
      (nombreAutor "Alaa Al Aswany")
      (autoresSimilares
-         [Author_272]
-         [Author_304]
-         [Author_18]
-         [Author_483]
-         [Author_709]
-         [Author_602]
-         [Author_467]
-         [Author_661]
-         [Author_663]
-         [Author_891]
-         [Author641])
+         [Author_116]
+         [Author_245]
+         [Author_377]
+         [Author_425]
+         [Author_752]
+         [Author_878]
+         [Author_887]
+         [Author_199]
+         [Author3])
      (sexo male))
 
     ([Author_786] of Autor
      (idAutor "786")
      (nombreAutor "Tayeb Salih")
      (autoresSimilares
-         [Author_15]
-         [Author_365]
-         [Author_751]
-         [Author_72]
-         [Author_339]
-         [Author_245]
-         [Author_489]
-         [Author_931]
-         [Author_909]
-         [Author_580]
-         [Author_290]
-         [Author_178]
-         [Author_92]
-         [Author_25]
-         [Author_588]
-         [Author881])
+         [Author_905]
+         [Author_632]
+         [Author409])
      (sexo male))
 
     ([Author_787] of Autor
      (idAutor "787")
      (nombreAutor "")
      (autoresSimilares
-         [Author_929]
-         [Author_245]
-         [Author_557]
-         [Author_458]
-         [Author_469]
-         [Author_431]
-         [Author503])
+         [Author_591]
+         [Author_723]
+         [Author_659]
+         [Author_491]
+         [Author_65]
+         [Author_136]
+         [Author_405]
+         [Author_96]
+         [Author822])
      (sexo male))
 
     ([Author_788] of Autor
      (idAutor "788")
      (nombreAutor "Dawn  Robertson")
      (autoresSimilares
-         [Author_920]
-         [Author_130]
-         [Author_649]
-         [Author_38]
-         [Author_132]
-         [Author_806]
-         [Author59])
+         [Author_246]
+         [Author_595]
+         [Author_629]
+         [Author_732]
+         [Author_372]
+         [Author_392]
+         [Author_142]
+         [Author_484]
+         [Author_680]
+         [Author_131]
+         [Author_469]
+         [Author_155]
+         [Author299])
      (sexo female))
 
     ([Author_789] of Autor
      (idAutor "789")
      (nombreAutor "Dodie Smith")
      (autoresSimilares
-         [Author_131]
-         [Author_26]
-         [Author_943]
-         [Author_912]
-         [Author_587]
-         [Author_608]
-         [Author35])
+         [Author_819]
+         [Author_575]
+         [Author_556]
+         [Author_872]
+         [Author_266]
+         [Author_728]
+         [Author_460]
+         [Author_495]
+         [Author_574]
+         [Author_234]
+         [Author_689]
+         [Author_426]
+         [Author795])
      (sexo female))
 
     ([Author_790] of Autor
      (idAutor "790")
      (nombreAutor "Marge Piercy")
      (autoresSimilares
-         [Author_120]
-         [Author_538]
-         [Author_390]
-         [Author_336]
-         [Author_27]
-         [Author_615]
-         [Author_424]
-         [Author_356]
-         [Author_477]
-         [Author_681]
-         [Author_318]
-         [Author_452]
-         [Author_552]
-         [Author_444]
-         [Author_723]
-         [Author_176]
-         [Author_360]
-         [Author_88]
-         [Author475])
+         [Author_227]
+         [Author_936]
+         [Author_400]
+         [Author710])
      (sexo female))
 
     ([Author_791] of Autor
      (idAutor "791")
      (nombreAutor "Lorna Landvik")
      (autoresSimilares
-         [Author_646]
-         [Author_557]
-         [Author_869]
-         [Author_725]
-         [Author_275]
-         [Author_852]
-         [Author_884]
-         [Author_308]
-         [Author_238]
-         [Author_462]
-         [Author_129]
-         [Author_419]
-         [Author_750]
-         [Author_386]
-         [Author_795]
-         [Author_640]
-         [Author_296]
-         [Author_474]
-         [Author377])
+         [Author_468]
+         [Author_510]
+         [Author_664]
+         [Author_702]
+         [Author_376]
+         [Author_922]
+         [Author_707]
+         [Author_258]
+         [Author812])
      (sexo female))
 
     ([Author_792] of Autor
      (idAutor "792")
      (nombreAutor "Lisa Lutz")
      (autoresSimilares
-         [Author102])
+         [Author_474]
+         [Author_248]
+         [Author_38]
+         [Author_255]
+         [Author_920]
+         [Author_280]
+         [Author_685]
+         [Author_345]
+         [Author_15]
+         [Author_90]
+         [Author_420]
+         [Author919])
      (sexo female))
 
     ([Author_793] of Autor
      (idAutor "793")
      (nombreAutor "Arkady Strugatsky")
      (autoresSimilares
-         [Author_0]
-         [Author_188]
-         [Author_667]
-         [Author290])
+         [Author_269]
+         [Author_891]
+         [Author_925]
+         [Author_510]
+         [Author_592]
+         [Author_179]
+         [Author_185]
+         [Author_872]
+         [Author_433]
+         [Author_766]
+         [Author_828]
+         [Author_437]
+         [Author194])
      (sexo male))
 
     ([Author_794] of Autor
      (idAutor "794")
      (nombreAutor "Clifford D Simak")
      (autoresSimilares
-         [Author_144]
-         [Author474])
+         [Author_114]
+         [Author_298]
+         [Author_393]
+         [Author_669]
+         [Author_150]
+         [Author_930]
+         [Author684])
      (sexo male))
 
     ([Author_795] of Autor
      (idAutor "795")
      (nombreAutor "Edgar Rice Burroughs")
      (autoresSimilares
-         [Author_796]
-         [Author508])
+         [Author_110]
+         [Author_483]
+         [Author_871]
+         [Author_257]
+         [Author_421]
+         [Author_157]
+         [Author_287]
+         [Author_916]
+         [Author_124]
+         [Author_545]
+         [Author_33]
+         [Author_104]
+         [Author_589]
+         [Author_81]
+         [Author107])
      (sexo male))
 
     ([Author_796] of Autor
      (idAutor "796")
      (nombreAutor "Upton Sinclair")
      (autoresSimilares
-         [Author_64]
-         [Author_114]
-         [Author_740]
-         [Author_509]
-         [Author_172]
-         [Author_916]
-         [Author_611]
-         [Author_157]
-         [Author_813]
-         [Author_875]
-         [Author_524]
-         [Author_671]
-         [Author_208]
-         [Author_495]
-         [Author103])
+         [Author_818]
+         [Author_294]
+         [Author_749]
+         [Author_534]
+         [Author_505]
+         [Author_655]
+         [Author_71]
+         [Author_252]
+         [Author_103]
+         [Author_129]
+         [Author_801]
+         [Author_62]
+         [Author_25]
+         [Author_451]
+         [Author_150]
+         [Author_697]
+         [Author_18]
+         [Author_714]
+         [Author720])
      (sexo male))
 
     ([Author_797] of Autor
      (idAutor "797")
      (nombreAutor "Marian Keyes")
      (autoresSimilares
-         [Author_120]
-         [Author_151]
-         [Author_171]
-         [Author_619]
-         [Author_121]
-         [Author_90]
-         [Author_889]
-         [Author_336]
-         [Author_86]
-         [Author_788]
-         [Author_653]
-         [Author_343]
-         [Author_539]
-         [Author_286]
-         [Author143])
+         [Author_570]
+         [Author_113]
+         [Author_260]
+         [Author_454]
+         [Author_365]
+         [Author442])
      (sexo female))
 
     ([Author_798] of Autor
      (idAutor "798")
      (nombreAutor "Plum Sykes")
      (autoresSimilares
-         [Author_134]
-         [Author_523]
-         [Author_139]
-         [Author_55]
-         [Author_597]
-         [Author_193]
-         [Author_234]
-         [Author_328]
-         [Author_419]
-         [Author_33]
-         [Author_377]
-         [Author_826]
-         [Author_926]
-         [Author_96]
-         [Author_94]
-         [Author71])
+         [Author_198]
+         [Author_4]
+         [Author_491]
+         [Author_358]
+         [Author_363]
+         [Author_53]
+         [Author_219]
+         [Author689])
      (sexo male))
 
     ([Author_799] of Autor
      (idAutor "799")
      (nombreAutor "Shanna Swendson")
      (autoresSimilares
-         [Author_897]
-         [Author_381]
-         [Author_690]
-         [Author_42]
-         [Author_392]
-         [Author_203]
-         [Author_700]
-         [Author_63]
-         [Author_132]
-         [Author_517]
-         [Author_735]
-         [Author_592]
-         [Author_71]
-         [Author_108]
-         [Author_879]
-         [Author27])
+         [Author_156]
+         [Author_17]
+         [Author_120]
+         [Author_629]
+         [Author_567]
+         [Author_450]
+         [Author247])
      (sexo female))
 
     ([Author_800] of Autor
      (idAutor "800")
      (nombreAutor "Hester Browne")
      (autoresSimilares
-         [Author_254]
-         [Author_357]
-         [Author_900]
-         [Author_808]
-         [Author_343]
-         [Author_375]
-         [Author188])
+         [Author_670]
+         [Author_837]
+         [Author_770]
+         [Author_475]
+         [Author_916]
+         [Author_338]
+         [Author_465]
+         [Author_172]
+         [Author_369]
+         [Author_878]
+         [Author_65]
+         [Author_803]
+         [Author_483]
+         [Author_709]
+         [Author_652]
+         [Author_150]
+         [Author75])
      (sexo male))
 
     ([Author_801] of Autor
      (idAutor "801")
      (nombreAutor "Jane Green")
      (autoresSimilares
-         [Author_315]
-         [Author_0]
-         [Author_181]
-         [Author_462]
-         [Author_54]
-         [Author114])
+         [Author_738]
+         [Author_645]
+         [Author_110]
+         [Author_83]
+         [Author300])
      (sexo female))
 
     ([Author_802] of Autor
      (idAutor "802")
      (nombreAutor "Gemma Burgess")
      (autoresSimilares
-         [Author_667]
-         [Author_337]
-         [Author_866]
-         [Author_765]
-         [Author_73]
-         [Author_697]
-         [Author_529]
-         [Author586])
+         [Author842])
      (sexo male))
 
     ([Author_803] of Autor
      (idAutor "803")
      (nombreAutor "Morgan ONeill")
      (autoresSimilares
-         [Author_622]
-         [Author_281]
-         [Author_401]
-         [Author_207]
-         [Author_574]
-         [Author_590]
-         [Author_398]
-         [Author_53]
-         [Author_707]
-         [Author_786]
-         [Author_353]
-         [Author_600]
-         [Author_177]
-         [Author_653]
-         [Author_659]
-         [Author_525]
-         [Author_931]
-         [Author_680]
-         [Author623])
+         [Author_204]
+         [Author_487]
+         [Author_312]
+         [Author_841]
+         [Author_191]
+         [Author_943]
+         [Author_160]
+         [Author331])
      (sexo male))
 
     ([Author_804] of Autor
      (idAutor "804")
      (nombreAutor "Flix J Palma")
      (autoresSimilares
-         [Author_291]
-         [Author_585]
-         [Author_780]
-         [Author_300]
-         [Author_492]
-         [Author_200]
-         [Author_356]
-         [Author_458]
-         [Author_450]
-         [Author404])
+         [Author227])
      (sexo male))
 
     ([Author_805] of Autor
      (idAutor "805")
      (nombreAutor "Rysa Walker")
      (autoresSimilares
-         [Author_673]
-         [Author_207]
-         [Author_132]
-         [Author591])
+         [Author_590]
+         [Author_385]
+         [Author_455]
+         [Author_726]
+         [Author_371]
+         [Author_113]
+         [Author_522]
+         [Author_943]
+         [Author_360]
+         [Author_458]
+         [Author_897]
+         [Author430])
      (sexo female))
 
     ([Author_806] of Autor
      (idAutor "806")
      (nombreAutor "Stephen Baxter")
      (autoresSimilares
-         [Author_155]
-         [Author_511]
-         [Author_370]
-         [Author_157]
-         [Author_47]
-         [Author_812]
-         [Author_736]
-         [Author_407]
-         [Author_41]
-         [Author_230]
-         [Author_48]
-         [Author_347]
-         [Author_844]
-         [Author_42]
-         [Author_693]
-         [Author_486]
-         [Author_9]
-         [Author371])
+         [Author_65]
+         [Author_610]
+         [Author_115]
+         [Author_242]
+         [Author419])
      (sexo male))
 
     ([Author_807] of Autor
      (idAutor "807")
      (nombreAutor "Dinah Lee Kng")
      (autoresSimilares
-         [Author_448]
-         [Author_714]
-         [Author_873]
-         [Author_487]
-         [Author_366]
-         [Author574])
+         [Author_839]
+         [Author_380]
+         [Author_168]
+         [Author_546]
+         [Author_152]
+         [Author_524]
+         [Author_470]
+         [Author_801]
+         [Author_906]
+         [Author_934]
+         [Author_51]
+         [Author_332]
+         [Author_148]
+         [Author_812]
+         [Author165])
      (sexo male))
 
     ([Author_808] of Autor
      (idAutor "808")
      (nombreAutor "Harry Turtledove")
      (autoresSimilares
-         [Author_435]
-         [Author_918]
-         [Author424])
+         [Author_411]
+         [Author_893]
+         [Author_454]
+         [Author_176]
+         [Author_256]
+         [Author_683]
+         [Author_619]
+         [Author_584]
+         [Author_269]
+         [Author_425]
+         [Author_941]
+         [Author_462]
+         [Author_655]
+         [Author_697]
+         [Author_749]
+         [Author_244]
+         [Author_506]
+         [Author_169]
+         [Author_233]
+         [Author548])
      (sexo male))
 
     ([Author_809] of Autor
      (idAutor "809")
      (nombreAutor "Poul Anderson")
      (autoresSimilares
-         [Author_454]
-         [Author_333]
-         [Author_580]
-         [Author_259]
-         [Author_491]
-         [Author_88]
-         [Author_945]
-         [Author_289]
-         [Author_843]
-         [Author_282]
-         [Author_198]
-         [Author_661]
-         [Author_515]
-         [Author_86]
-         [Author_406]
-         [Author_903]
-         [Author_546]
-         [Author_505]
-         [Author_110]
-         [Author446])
+         [Author_417]
+         [Author_158]
+         [Author_739]
+         [Author_509]
+         [Author_886]
+         [Author_918]
+         [Author_375]
+         [Author_342]
+         [Author_125]
+         [Author_163]
+         [Author_302]
+         [Author_623]
+         [Author_40]
+         [Author_820]
+         [Author_322]
+         [Author_611]
+         [Author_675]
+         [Author_466]
+         [Author807])
      (sexo male))
 
     ([Author_810] of Autor
      (idAutor "810")
      (nombreAutor "L Sprague de Camp")
      (autoresSimilares
-         [Author_336]
-         [Author_743]
-         [Author_281]
-         [Author_475]
-         [Author_560]
-         [Author_26]
-         [Author_364]
-         [Author_20]
-         [Author_572]
-         [Author_150]
-         [Author_879]
-         [Author_881]
-         [Author_285]
-         [Author_115]
-         [Author_313]
-         [Author590])
+         [Author_710]
+         [Author_867]
+         [Author_182]
+         [Author_849]
+         [Author_18]
+         [Author930])
      (sexo male))
 
     ([Author_811] of Autor
      (idAutor "811")
      (nombreAutor "Alan Lightman")
      (autoresSimilares
-         [Author_25]
-         [Author_275]
-         [Author_562]
-         [Author_132]
-         [Author_775]
-         [Author_239]
+         [Author_11]
+         [Author_393]
          [Author_17]
-         [Author_942]
-         [Author_682]
-         [Author_754]
-         [Author510])
+         [Author_484]
+         [Author_71]
+         [Author_21]
+         [Author_111]
+         [Author_121]
+         [Author_608]
+         [Author_787]
+         [Author_518]
+         [Author_665]
+         [Author_272]
+         [Author_128]
+         [Author_712]
+         [Author_899]
+         [Author573])
      (sexo male))
 
     ([Author_812] of Autor
      (idAutor "812")
      (nombreAutor "Jodi Taylor")
      (autoresSimilares
-         [Author15])
+         [Author_260]
+         [Author_93]
+         [Author_632]
+         [Author_556]
+         [Author_909]
+         [Author_564]
+         [Author_262]
+         [Author_486]
+         [Author_589]
+         [Author_644]
+         [Author_805]
+         [Author844])
      (sexo female))
 
     ([Author_813] of Autor
      (idAutor "813")
      (nombreAutor "Mike Chen")
      (autoresSimilares
-         [Author_126]
-         [Author_492]
-         [Author_745]
-         [Author_253]
-         [Author_53]
-         [Author_201]
-         [Author_441]
-         [Author_585]
-         [Author_645]
-         [Author_558]
-         [Author656])
+         [Author862])
      (sexo male))
 
     ([Author_814] of Autor
      (idAutor "814")
      (nombreAutor "Stephen R Lawhead")
      (autoresSimilares
-         [Author_2]
-         [Author_106]
-         [Author_214]
-         [Author_606]
-         [Author_751]
-         [Author672])
+         [Author_507]
+         [Author_853]
+         [Author_509]
+         [Author_768]
+         [Author_386]
+         [Author_221]
+         [Author_14]
+         [Author_942]
+         [Author_554]
+         [Author_172]
+         [Author_881]
+         [Author_456]
+         [Author_3]
+         [Author_628]
+         [Author_872]
+         [Author_836]
+         [Author_297]
+         [Author_166]
+         [Author_709]
+         [Author685])
      (sexo male))
 
     ([Author_815] of Autor
      (idAutor "815")
      (nombreAutor "Harlan Ellison")
      (autoresSimilares
-         [Author_567]
-         [Author_166]
-         [Author_200]
-         [Author_240]
-         [Author_85]
-         [Author_876]
-         [Author_238]
-         [Author928])
+         [Author_434]
+         [Author_316]
+         [Author_259]
+         [Author_349]
+         [Author_568]
+         [Author_312]
+         [Author_888]
+         [Author_275]
+         [Author_29]
+         [Author_521]
+         [Author_852]
+         [Author_293]
+         [Author387])
      (sexo male))
 
     ([Author_816] of Autor
      (idAutor "816")
      (nombreAutor "Kage Baker")
      (autoresSimilares
-         [Author_209]
-         [Author_850]
-         [Author_492]
-         [Author_271]
-         [Author_867]
-         [Author_428]
-         [Author_854]
-         [Author_831]
-         [Author_503]
-         [Author_126]
-         [Author885])
+         [Author_724]
+         [Author_310]
+         [Author_195]
+         [Author_676]
+         [Author_133]
+         [Author_359]
+         [Author_584]
+         [Author_95]
+         [Author832])
      (sexo male))
 
     ([Author_817] of Autor
      (idAutor "817")
      (nombreAutor "SM Stirling")
      (autoresSimilares
-         [Author_572]
-         [Author_861]
-         [Author_458]
-         [Author_451]
-         [Author_686]
-         [Author_463]
-         [Author_26]
-         [Author_929]
-         [Author_254]
-         [Author_768]
-         [Author_636]
-         [Author_590]
-         [Author_52]
-         [Author_728]
-         [Author_348]
-         [Author_627]
-         [Author605])
+         [Author_664]
+         [Author_725]
+         [Author_189]
+         [Author_611]
+         [Author_576]
+         [Author_161]
+         [Author_862]
+         [Author_876]
+         [Author_615]
+         [Author_715]
+         [Author_101]
+         [Author_242]
+         [Author_256]
+         [Author_351]
+         [Author_179]
+         [Author224])
      (sexo male))
 
     ([Author_818] of Autor
      (idAutor "818")
      (nombreAutor "Gregory Benford")
      (autoresSimilares
-         [Author_163]
-         [Author_24]
-         [Author_575]
-         [Author_358]
-         [Author_859]
-         [Author_806]
-         [Author_464]
-         [Author378])
+         [Author_145]
+         [Author_370]
+         [Author_194]
+         [Author_925]
+         [Author_371]
+         [Author_255]
+         [Author_886]
+         [Author_317]
+         [Author_631]
+         [Author_70]
+         [Author_596]
+         [Author784])
      (sexo male))
 
     ([Author_819] of Autor
      (idAutor "819")
      (nombreAutor "Eric Flint")
      (autoresSimilares
-         [Author_929]
-         [Author_445]
-         [Author_789]
-         [Author_427]
+         [Author_935]
+         [Author_630]
+         [Author_776]
+         [Author_611]
+         [Author_850]
+         [Author_766]
          [Author_881]
-         [Author_637]
-         [Author_679]
-         [Author_501]
-         [Author_267]
-         [Author_903]
-         [Author_138]
-         [Author_852]
-         [Author_248]
-         [Author_671]
-         [Author389])
+         [Author_618]
+         [Author_873]
+         [Author_100]
+         [Author_184]
+         [Author_48]
+         [Author_862]
+         [Author756])
      (sexo male))
 
     ([Author_820] of Autor
      (idAutor "820")
      (nombreAutor "Rebecca Stead")
      (autoresSimilares
-         [Author_390]
-         [Author_119]
-         [Author872])
+         [Author_215]
+         [Author_100]
+         [Author_363]
+         [Author_579]
+         [Author_154]
+         [Author814])
      (sexo male))
 
     ([Author_821] of Autor
      (idAutor "821")
      (nombreAutor "Jack Finney")
      (autoresSimilares
-         [Author_777]
-         [Author_693]
-         [Author_945]
-         [Author_3]
-         [Author_804]
-         [Author_264]
-         [Author_639]
-         [Author_133]
-         [Author_557]
-         [Author_868]
-         [Author_644]
-         [Author_613]
-         [Author_928]
-         [Author_817]
-         [Author_831]
-         [Author880])
+         [Author_742]
+         [Author_97]
+         [Author_662]
+         [Author_910]
+         [Author_209]
+         [Author_933]
+         [Author_325]
+         [Author_179]
+         [Author_211]
+         [Author_367]
+         [Author_413]
+         [Author_548]
+         [Author402])
      (sexo male))
 
     ([Author_822] of Autor
      (idAutor "822")
      (nombreAutor "Claire North")
      (autoresSimilares
-         [Author_615]
-         [Author_351]
-         [Author_693]
-         [Author_62]
-         [Author480])
+         [Author_526]
+         [Author_318]
+         [Author_104]
+         [Author_528]
+         [Author_374]
+         [Author_277]
+         [Author_46]
+         [Author_228]
+         [Author_811]
+         [Author_935]
+         [Author_413]
+         [Author_673]
+         [Author_368]
+         [Author_298]
+         [Author_448]
+         [Author_499]
+         [Author_398]
+         [Author800])
      (sexo female))
 
     ([Author_823] of Autor
      (idAutor "823")
      (nombreAutor "Marlys Millhiser")
      (autoresSimilares
-         [Author_694]
-         [Author_911]
-         [Author_69]
-         [Author438])
+         [Author_679]
+         [Author_721]
+         [Author_234]
+         [Author341])
      (sexo female))
 
     ([Author_824] of Autor
      (idAutor "824")
      (nombreAutor "Ken Grimwood")
      (autoresSimilares
-         [Author_505]
-         [Author_63]
-         [Author_185]
-         [Author_602]
-         [Author_691]
-         [Author_324]
-         [Author_2]
-         [Author_135]
-         [Author_697]
-         [Author_116]
-         [Author542])
+         [Author_554]
+         [Author_500]
+         [Author_28]
+         [Author_911]
+         [Author_448]
+         [Author93])
      (sexo male))
 
     ([Author_825] of Autor
      (idAutor "825")
      (nombreAutor "Alexandra Ripley")
      (autoresSimilares
-         [Author_404]
-         [Author_888]
-         [Author_740]
-         [Author_909]
-         [Author799])
+         [Author_147]
+         [Author_51]
+         [Author_602]
+         [Author_351]
+         [Author_132]
+         [Author_690]
+         [Author_792]
+         [Author_16]
+         [Author_6]
+         [Author_929]
+         [Author_71]
+         [Author_64]
+         [Author_603]
+         [Author_876]
+         [Author_509]
+         [Author_287]
+         [Author585])
      (sexo female))
 
     ([Author_826] of Autor
      (idAutor "826")
      (nombreAutor "Melissa Foster")
      (autoresSimilares
-         [Author_814]
-         [Author_606]
-         [Author_130]
-         [Author_889]
-         [Author_856]
-         [Author_216]
-         [Author_526]
-         [Author_415]
-         [Author_237]
-         [Author_885]
-         [Author_454]
-         [Author_207]
-         [Author_187]
-         [Author_938]
-         [Author_942]
-         [Author289])
+         [Author730])
      (sexo female))
 
     ([Author_827] of Autor
      (idAutor "827")
      (nombreAutor "Tammy Robinson")
      (autoresSimilares
-         [Author_273]
-         [Author_3]
-         [Author_85]
-         [Author_530]
-         [Author_585]
-         [Author_199]
-         [Author_410]
-         [Author_411]
-         [Author_855]
-         [Author_914]
-         [Author_443]
-         [Author_547]
-         [Author_665]
-         [Author_932]
-         [Author_943]
-         [Author_75]
-         [Author48])
+         [Author_50]
+         [Author_235]
+         [Author_790]
+         [Author69])
      (sexo female))
 
     ([Author_828] of Autor
      (idAutor "828")
      (nombreAutor "Andrew E Kaufman")
      (autoresSimilares
-         [Author_814]
-         [Author_40]
-         [Author_907]
-         [Author_566]
-         [Author_746]
-         [Author_327]
-         [Author_286]
-         [Author672])
+         [Author_71]
+         [Author_23]
+         [Author_943]
+         [Author_109]
+         [Author_847]
+         [Author_645]
+         [Author_813]
+         [Author_54]
+         [Author_708]
+         [Author_44]
+         [Author_355]
+         [Author_471]
+         [Author_499]
+         [Author_766]
+         [Author_116]
+         [Author_208]
+         [Author110])
      (sexo male))
 
     ([Author_829] of Autor
      (idAutor "829")
      (nombreAutor "Thom  Stark")
      (autoresSimilares
-         [Author_30]
-         [Author_314]
-         [Author_442]
-         [Author_590]
-         [Author_567]
-         [Author_110]
-         [Author_741]
-         [Author_93]
-         [Author_423]
          [Author_827]
-         [Author_672]
-         [Author_289]
-         [Author446])
+         [Author_643]
+         [Author_559]
+         [Author_788]
+         [Author_325]
+         [Author_648]
+         [Author_122]
+         [Author_616]
+         [Author_91]
+         [Author_873]
+         [Author_409]
+         [Author_712]
+         [Author_743]
+         [Author862])
      (sexo male))
 
     ([Author_830] of Autor
      (idAutor "830")
      (nombreAutor "Sara Furlong Burr")
      (autoresSimilares
-         [Author_865]
-         [Author_503]
-         [Author_433]
-         [Author_310]
-         [Author497])
+         [Author_740]
+         [Author_519]
+         [Author_892]
+         [Author_651]
+         [Author_646]
+         [Author417])
      (sexo female))
 
     ([Author_831] of Autor
      (idAutor "831")
      (nombreAutor "Chris   Rose")
      (autoresSimilares
-         [Author_356]
-         [Author_892]
-         [Author_659]
-         [Author_77]
-         [Author_694]
-         [Author_523]
-         [Author_757]
-         [Author_730]
-         [Author675])
+         [Author_868]
+         [Author_403]
+         [Author_36]
+         [Author_457]
+         [Author_465]
+         [Author_54]
+         [Author_540]
+         [Author_833]
+         [Author_121]
+         [Author_355]
+         [Author_95]
+         [Author_553]
+         [Author_104]
+         [Author_863]
+         [Author_752]
+         [Author184])
      (sexo female))
 
     ([Author_832] of Autor
      (idAutor "832")
      (nombreAutor "Heide Goody")
      (autoresSimilares
-         [Author_117]
-         [Author_868]
-         [Author_153]
-         [Author_316]
-         [Author_660]
-         [Author_793]
-         [Author800])
+         [Author_30]
+         [Author_72]
+         [Author_699]
+         [Author_402]
+         [Author_189]
+         [Author_38]
+         [Author_662]
+         [Author_456]
+         [Author_518]
+         [Author_726]
+         [Author_112]
+         [Author_428]
+         [Author_781]
+         [Author_427]
+         [Author_251]
+         [Author888])
      (sexo male))
 
     ([Author_833] of Autor
      (idAutor "833")
      (nombreAutor "Karen Luellen")
      (autoresSimilares
-         [Author_40]
-         [Author_763]
-         [Author_520]
-         [Author_411]
-         [Author_638]
-         [Author_911]
-         [Author_576]
-         [Author130])
+         [Author_548]
+         [Author_893]
+         [Author_702]
+         [Author_900]
+         [Author_260]
+         [Author854])
      (sexo female))
 
     ([Author_834] of Autor
      (idAutor "834")
      (nombreAutor "Liane Moriarty")
      (autoresSimilares
-         [Author_590]
-         [Author_208]
-         [Author_15]
-         [Author_154]
-         [Author_4]
-         [Author_776]
-         [Author_458]
-         [Author_266]
-         [Author_655]
-         [Author_568]
-         [Author_301]
-         [Author_370]
-         [Author139])
+         [Author_649]
+         [Author_903]
+         [Author_943]
+         [Author_361]
+         [Author_567]
+         [Author170])
      (sexo female))
 
     ([Author_835] of Autor
      (idAutor "835")
      (nombreAutor "Nelson DeMille")
      (autoresSimilares
-         [Author_678]
-         [Author_15]
-         [Author336])
+         [Author843])
      (sexo male))
 
     ([Author_836] of Autor
      (idAutor "836")
      (nombreAutor "Ted Bernal Guevara")
      (autoresSimilares
-         [Author_468]
-         [Author_388]
-         [Author_423]
-         [Author_437]
-         [Author579])
+         [Author_483]
+         [Author_694]
+         [Author_643]
+         [Author_654]
+         [Author_138]
+         [Author_786]
+         [Author_344]
+         [Author_911]
+         [Author_441]
+         [Author294])
      (sexo male))
 
     ([Author_837] of Autor
      (idAutor "837")
      (nombreAutor "David Baldacci")
      (autoresSimilares
-         [Author_9]
-         [Author_498]
-         [Author_183]
-         [Author_136]
-         [Author_323]
-         [Author68])
+         [Author_55]
+         [Author_728]
+         [Author_260]
+         [Author_482]
+         [Author_179]
+         [Author_517]
+         [Author_526]
+         [Author_68]
+         [Author_597]
+         [Author_810]
+         [Author_440]
+         [Author_218]
+         [Author_220]
+         [Author_833]
+         [Author_767]
+         [Author_106]
+         [Author_65]
+         [Author472])
      (sexo male))
 
     ([Author_838] of Autor
      (idAutor "838")
      (nombreAutor "William Diehl")
      (autoresSimilares
-         [Author_383]
-         [Author_644]
-         [Author_606]
-         [Author_556]
-         [Author_608]
-         [Author_339]
-         [Author54])
+         [Author_149]
+         [Author690])
      (sexo male))
 
     ([Author_839] of Autor
      (idAutor "839")
      (nombreAutor "Alexa Donne")
      (autoresSimilares
-         [Author_580]
-         [Author_398]
-         [Author_400]
-         [Author_920]
-         [Author_349]
-         [Author_73]
-         [Author_224]
-         [Author_753]
-         [Author_894]
-         [Author_65]
-         [Author_786]
-         [Author_844]
-         [Author_888]
-         [Author_249]
-         [Author800])
+         [Author_91]
+         [Author_808]
+         [Author_592]
+         [Author_459]
+         [Author505])
      (sexo male))
 
     ([Author_840] of Autor
      (idAutor "840")
      (nombreAutor "Tony Perez-Giese")
      (autoresSimilares
-         [Author_833]
-         [Author609])
+         [Author_692]
+         [Author_906]
+         [Author_264]
+         [Author_640]
+         [Author_733]
+         [Author_744]
+         [Author_76]
+         [Author_743]
+         [Author_272]
+         [Author_139]
+         [Author_732]
+         [Author_56]
+         [Author_880]
+         [Author_646]
+         [Author_655]
+         [Author_207]
+         [Author70])
      (sexo male))
 
     ([Author_841] of Autor
      (idAutor "841")
      (nombreAutor "Cindy Spencer Pape")
      (autoresSimilares
-         [Author_182]
-         [Author_807]
-         [Author_144]
-         [Author_822]
-         [Author_545]
-         [Author_838]
-         [Author_233]
-         [Author_513]
-         [Author_435]
-         [Author_819]
-         [Author_22]
-         [Author_9]
-         [Author829])
+         [Author_735]
+         [Author_732]
+         [Author_615]
+         [Author_760]
+         [Author_521]
+         [Author_63]
+         [Author_452]
+         [Author_230]
+         [Author_147]
+         [Author_179]
+         [Author_423]
+         [Author_101]
+         [Author_15]
+         [Author_319]
+         [Author_42]
+         [Author_486]
+         [Author_456]
+         [Author208])
      (sexo female))
 
     ([Author_842] of Autor
      (idAutor "842")
      (nombreAutor "Catherine Bybee")
      (autoresSimilares
-         [Author_550]
-         [Author_40]
-         [Author_472]
-         [Author_605]
-         [Author_178]
-         [Author_126]
-         [Author_607]
-         [Author_136]
-         [Author_270]
-         [Author_211]
-         [Author_722]
-         [Author_47]
-         [Author_15]
-         [Author_29]
-         [Author_121]
-         [Author_422]
-         [Author_115]
-         [Author_664]
-         [Author_201]
-         [Author480])
+         [Author_428]
+         [Author_669]
+         [Author_235]
+         [Author_727]
+         [Author470])
      (sexo female))
 
     ([Author_843] of Autor
      (idAutor "843")
      (nombreAutor "Jo Barrett")
      (autoresSimilares
-         [Author_926]
-         [Author624])
+         [Author_870]
+         [Author_190]
+         [Author_297]
+         [Author_567]
+         [Author644])
      (sexo female))
 
     ([Author_844] of Autor
      (idAutor "844")
      (nombreAutor "Caroline B Cooney")
      (autoresSimilares
-         [Author_896]
-         [Author_66]
-         [Author_412]
-         [Author_284]
-         [Author_762]
-         [Author209])
+         [Author_341]
+         [Author_737]
+         [Author_75]
+         [Author_887]
+         [Author_697]
+         [Author_340]
+         [Author_660]
+         [Author_944]
+         [Author_101]
+         [Author_707]
+         [Author759])
      (sexo female))
 
     ([Author_845] of Autor
      (idAutor "845")
      (nombreAutor "Sandra Hill")
      (autoresSimilares
-         [Author_854]
-         [Author_26]
-         [Author_258]
-         [Author_407]
-         [Author_189]
-         [Author_806]
-         [Author_939]
-         [Author_668]
-         [Author_712]
-         [Author_246]
-         [Author_610]
-         [Author176])
+         [Author_761]
+         [Author_108]
+         [Author_149]
+         [Author_12]
+         [Author_287]
+         [Author_271]
+         [Author_471]
+         [Author_46]
+         [Author_154]
+         [Author253])
      (sexo female))
 
     ([Author_846] of Autor
      (idAutor "846")
      (nombreAutor "Tammy Tate")
      (autoresSimilares
-         [Author_529]
-         [Author_815]
-         [Author_395]
-         [Author_87]
-         [Author_48]
-         [Author718])
+         [Author_526]
+         [Author_559]
+         [Author_254]
+         [Author_215]
+         [Author_831]
+         [Author_617]
+         [Author_808]
+         [Author_352]
+         [Author876])
      (sexo female))
 
     ([Author_847] of Autor
      (idAutor "847")
      (nombreAutor "Brenda Joyce")
      (autoresSimilares
-         [Author_763]
-         [Author_307]
-         [Author_472]
-         [Author_481]
-         [Author_465]
-         [Author_478]
-         [Author_630]
+         [Author_50]
+         [Author_711]
+         [Author_188]
+         [Author_611]
+         [Author_639]
+         [Author_591]
+         [Author_78]
+         [Author_529]
          [Author_687]
-         [Author_83]
-         [Author_413]
-         [Author_225]
-         [Author_189]
-         [Author_84]
-         [Author239])
+         [Author_569]
+         [Author398])
      (sexo female))
 
     ([Author_848] of Autor
      (idAutor "848")
      (nombreAutor "Laura Hunsaker")
      (autoresSimilares
-         [Author_394]
-         [Author_729]
-         [Author82])
+         [Author_176]
+         [Author_116]
+         [Author_250]
+         [Author_447]
+         [Author_65]
+         [Author_324]
+         [Author_715]
+         [Author_712]
+         [Author_492]
+         [Author_668]
+         [Author_137]
+         [Author_417]
+         [Author_105]
+         [Author_561]
+         [Author_603]
+         [Author_490]
+         [Author_918]
+         [Author856])
      (sexo male))
 
     ([Author_849] of Autor
      (idAutor "849")
      (nombreAutor "Suzanne Frank")
      (autoresSimilares
-         [Author_738]
-         [Author_675]
-         [Author_845]
-         [Author_166]
-         [Author_257]
-         [Author_790]
-         [Author36])
+         [Author161])
      (sexo female))
 
     ([Author_850] of Autor
      (idAutor "850")
      (nombreAutor "Anita Clenney")
      (autoresSimilares
-         [Author_844]
-         [Author_151]
-         [Author_521]
-         [Author_587]
-         [Author_863]
-         [Author_656]
-         [Author_814]
-         [Author_471]
+         [Author_415]
+         [Author_114]
+         [Author_389]
+         [Author_258]
+         [Author_661]
          [Author_143]
-         [Author404])
+         [Author_419]
+         [Author_737]
+         [Author806])
      (sexo female))
 
     ([Author_851] of Autor
      (idAutor "851")
      (nombreAutor "Shelly Thacker")
      (autoresSimilares
-         [Author_410]
-         [Author103])
+         [Author_696]
+         [Author_549]
+         [Author_507]
+         [Author_313]
+         [Author_758]
+         [Author_243]
+         [Author611])
      (sexo female))
 
     ([Author_852] of Autor
      (idAutor "852")
      (nombreAutor "Linda Lael Miller")
      (autoresSimilares
-         [Author_141]
-         [Author_197]
-         [Author_442]
-         [Author_638]
-         [Author_241]
-         [Author_559]
-         [Author_108]
-         [Author315])
+         [Author_245]
+         [Author81])
      (sexo female))
 
     ([Author_853] of Autor
      (idAutor "853")
      (nombreAutor "June Kramin")
      (autoresSimilares
-         [Author_386]
-         [Author_520]
-         [Author_234]
-         [Author_24]
-         [Author830])
+         [Author_719]
+         [Author_216]
+         [Author_199]
+         [Author_125]
+         [Author_391]
+         [Author_400]
+         [Author_706]
+         [Author_484]
+         [Author_279]
+         [Author_943]
+         [Author_552]
+         [Author_634]
+         [Author_128]
+         [Author231])
      (sexo female))
 
     ([Author_854] of Autor
      (idAutor "854")
      (nombreAutor "Lisa Tawn Bergren")
      (autoresSimilares
-         [Author_393]
-         [Author_7]
-         [Author_116]
-         [Author_669]
-         [Author_649]
-         [Author_240]
-         [Author_814]
-         [Author_856]
-         [Author_351]
-         [Author_146]
+         [Author_267]
+         [Author_321]
+         [Author_657]
+         [Author_639]
+         [Author_550]
+         [Author_367]
+         [Author_433]
+         [Author_908]
+         [Author_805]
          [Author_877]
-         [Author_413]
-         [Author85])
+         [Author_350]
+         [Author211])
      (sexo male))
 
     ([Author_855] of Autor
      (idAutor "855")
      (nombreAutor "Jane Goodger")
      (autoresSimilares
-         [Author_863]
-         [Author_862]
-         [Author583])
+         [Author_158]
+         [Author_872]
+         [Author_903]
+         [Author_359]
+         [Author588])
      (sexo male))
 
     ([Author_856] of Autor
      (idAutor "856")
      (nombreAutor "Monique Martin")
      (autoresSimilares
-         [Author_22]
-         [Author_893]
-         [Author_731]
-         [Author_215]
-         [Author_666]
+         [Author_759]
+         [Author_186]
+         [Author_860]
+         [Author_916]
+         [Author_722]
+         [Author_567]
          [Author_891]
-         [Author_239]
-         [Author_672]
-         [Author_119]
-         [Author_934]
-         [Author_928]
-         [Author_253]
-         [Author_280]
-         [Author_650]
-         [Author_62]
-         [Author8])
+         [Author_276]
+         [Author_607]
+         [Author_74]
+         [Author_322]
+         [Author_621]
+         [Author_370]
+         [Author_143]
+         [Author886])
      (sexo female))
 
     ([Author_857] of Autor
      (idAutor "857")
      (nombreAutor "Beatriz Williams")
      (autoresSimilares
-         [Author_132]
-         [Author_492]
-         [Author_818]
-         [Author_381]
-         [Author_544]
-         [Author_604]
-         [Author488])
+         [Author_613]
+         [Author_671]
+         [Author_407]
+         [Author_285]
+         [Author_676]
+         [Author_794]
+         [Author_828]
+         [Author_70]
+         [Author_611]
+         [Author_496]
+         [Author_326]
+         [Author_803]
+         [Author_607]
+         [Author_692]
+         [Author_572]
+         [Author240])
      (sexo male))
 
     ([Author_858] of Autor
      (idAutor "858")
      (nombreAutor "Katherine Lowry Logan")
      (autoresSimilares
-         [Author_364]
-         [Author_394]
-         [Author_516]
-         [Author_155]
-         [Author_131]
-         [Author_883]
-         [Author_465]
-         [Author_735]
-         [Author_226]
-         [Author_401]
-         [Author_725]
-         [Author_701]
-         [Author587])
+         [Author_425]
+         [Author_291]
+         [Author_913]
+         [Author_384]
+         [Author_884]
+         [Author_938]
+         [Author_563]
+         [Author_830]
+         [Author_669]
+         [Author_537]
+         [Author_541]
+         [Author_499]
+         [Author_615]
+         [Author_127]
+         [Author_368]
+         [Author_92]
+         [Author314])
      (sexo female))
 
     ([Author_859] of Autor
      (idAutor "859")
      (nombreAutor "Constance ODay-Flannery")
      (autoresSimilares
-         [Author_285]
-         [Author_315]
-         [Author_18]
-         [Author_739]
-         [Author_583]
-         [Author772])
+         [Author_520]
+         [Author_911]
+         [Author_790]
+         [Author_195]
+         [Author_495]
+         [Author_447]
+         [Author_411]
+         [Author_303]
+         [Author_767]
+         [Author_516]
+         [Author_174]
+         [Author400])
      (sexo female))
 
     ([Author_860] of Autor
      (idAutor "860")
      (nombreAutor "Teresa Medeiros")
      (autoresSimilares
-         [Author_54]
-         [Author_625]
-         [Author_510]
-         [Author_227]
-         [Author_877]
-         [Author_370]
-         [Author_132]
-         [Author_737]
-         [Author_945]
-         [Author_545]
-         [Author721])
+         [Author_36]
+         [Author_928]
+         [Author_794]
+         [Author_584]
+         [Author_254]
+         [Author_497]
+         [Author_425]
+         [Author_579]
+         [Author_249]
+         [Author_554]
+         [Author_755]
+         [Author725])
      (sexo female))
 
     ([Author_861] of Autor
      (idAutor "861")
      (nombreAutor "Melissa Mayhue")
      (autoresSimilares
-         [Author_626]
-         [Author_254]
-         [Author_938]
-         [Author_362]
-         [Author_231]
-         [Author_567]
-         [Author_377]
-         [Author_635]
-         [Author_523]
-         [Author_122]
-         [Author646])
+         [Author_156]
+         [Author_762]
+         [Author_153]
+         [Author_235]
+         [Author_941]
+         [Author_617]
+         [Author_101]
+         [Author_656]
+         [Author_245]
+         [Author_591]
+         [Author_390]
+         [Author_856]
+         [Author_23]
+         [Author_765]
+         [Author_519]
+         [Author_106]
+         [Author_267]
+         [Author_784]
+         [Author119])
      (sexo female))
 
     ([Author_862] of Autor
      (idAutor "862")
      (nombreAutor "Arundhati Roy")
      (autoresSimilares
-         [Author_192]
-         [Author_528]
-         [Author_23]
-         [Author_315]
-         [Author_209]
-         [Author_183]
-         [Author_273]
-         [Author_695]
-         [Author_538]
-         [Author_522]
-         [Author_445]
-         [Author_99]
-         [Author_51]
-         [Author_412]
-         [Author_205]
-         [Author_200]
-         [Author902])
+         [Author_68]
+         [Author681])
      (sexo female))
 
     ([Author_863] of Autor
      (idAutor "863")
      (nombreAutor "Flannery OConnor")
      (autoresSimilares
-         [Author_137]
-         [Author_900]
-         [Author_305]
-         [Author_500]
-         [Author_653]
-         [Author_910]
-         [Author_316]
-         [Author_382]
-         [Author_586]
-         [Author113])
+         [Author_391]
+         [Author_921]
+         [Author_536]
+         [Author_607]
+         [Author_266]
+         [Author_841]
+         [Author_455]
+         [Author_678]
+         [Author_501]
+         [Author_309]
+         [Author_345]
+         [Author_855]
+         [Author_83]
+         [Author_85]
+         [Author_912]
+         [Author488])
      (sexo female))
 
     ([Author_864] of Autor
      (idAutor "864")
      (nombreAutor "Carson McCullers")
      (autoresSimilares
-         [Author571])
+         [Author_897]
+         [Author_5]
+         [Author_739]
+         [Author186])
      (sexo female))
 
     ([Author_865] of Autor
      (idAutor "865")
      (nombreAutor "Audrey Grey")
      (autoresSimilares
-         [Author_396]
-         [Author_472]
-         [Author_616]
-         [Author_850]
-         [Author_246]
-         [Author_332]
-         [Author_709]
-         [Author_919]
-         [Author_386]
-         [Author_324]
-         [Author_1]
-         [Author566])
+         [Author_521]
+         [Author_106]
+         [Author_238]
+         [Author_559]
+         [Author_74]
+         [Author_649]
+         [Author_217]
+         [Author_173]
+         [Author_857]
+         [Author270])
      (sexo male))
 
     ([Author_866] of Autor
      (idAutor "866")
      (nombreAutor "Mary Brown")
      (autoresSimilares
-         [Author_268]
-         [Author_73]
-         [Author291])
+         [Author_391]
+         [Author_619]
+         [Author_381]
+         [Author_454]
+         [Author_708]
+         [Author_638]
+         [Author_810]
+         [Author_781]
+         [Author_636]
+         [Author_122]
+         [Author_413]
+         [Author_251]
+         [Author_364]
+         [Author_193]
+         [Author_312]
+         [Author_757]
+         [Author219])
      (sexo male))
 
     ([Author_867] of Autor
      (idAutor "867")
      (nombreAutor "Gwendolyn Field")
      (autoresSimilares
-         [Author_790]
-         [Author_698]
-         [Author_733]
-         [Author_814]
-         [Author884])
+         [Author_279]
+         [Author_675]
+         [Author43])
      (sexo male))
 
     ([Author_868] of Autor
      (idAutor "868")
      (nombreAutor "Abi Ketner")
      (autoresSimilares
-         [Author_787]
-         [Author_316]
-         [Author_620]
-         [Author_622]
-         [Author_350]
-         [Author_402]
-         [Author_61]
-         [Author_78]
-         [Author204])
+         [Author_155]
+         [Author_374]
+         [Author_153]
+         [Author_518]
+         [Author_682]
+         [Author_795]
+         [Author_147]
+         [Author_261]
+         [Author_836]
+         [Author_577]
+         [Author_520]
+         [Author621])
      (sexo female))
 
     ([Author_869] of Autor
      (idAutor "869")
      (nombreAutor "Magda Alexander")
      (autoresSimilares
-         [Author_326]
-         [Author925])
+         [Author942])
      (sexo male))
 
     ([Author_870] of Autor
      (idAutor "870")
      (nombreAutor "KI Lynn")
      (autoresSimilares
-         [Author351])
+         [Author_587]
+         [Author_698]
+         [Author_758]
+         [Author928])
      (sexo female))
 
     ([Author_871] of Autor
      (idAutor "871")
      (nombreAutor "Daniel Silva")
      (autoresSimilares
-         [Author_90]
-         [Author_390]
-         [Author_785]
-         [Author_269]
-         [Author_203]
-         [Author_857]
-         [Author_34]
-         [Author_692]
-         [Author_701]
-         [Author_205]
-         [Author_662]
-         [Author_869]
-         [Author_370]
-         [Author_82]
-         [Author_47]
-         [Author_632]
-         [Author_897]
-         [Author149])
+         [Author_892]
+         [Author_53]
+         [Author_630]
+         [Author_333]
+         [Author_387]
+         [Author_501]
+         [Author_506]
+         [Author_834]
+         [Author_314]
+         [Author_847]
+         [Author_549]
+         [Author_253]
+         [Author_904]
+         [Author_855]
+         [Author_193]
+         [Author_680]
+         [Author_206]
+         [Author_305]
+         [Author931])
      (sexo male))
 
     ([Author_872] of Autor
      (idAutor "872")
      (nombreAutor "Trevanian")
      (autoresSimilares
-         [Author_551]
-         [Author_735]
-         [Author_51]
-         [Author_405]
-         [Author_751]
-         [Author_709]
-         [Author_871]
-         [Author_627]
-         [Author_465]
-         [Author_476]
-         [Author_213]
-         [Author_10]
-         [Author_459]
-         [Author_506]
-         [Author942])
+         [Author_800]
+         [Author_288]
+         [Author_519]
+         [Author_333]
+         [Author_371]
+         [Author529])
      (sexo male))
 
     ([Author_873] of Autor
      (idAutor "873")
      (nombreAutor "Lawrence Block")
      (autoresSimilares
-         [Author_390]
-         [Author_600]
-         [Author_490]
-         [Author_547]
-         [Author_933]
-         [Author_34]
-         [Author_90]
-         [Author_821]
-         [Author_883]
-         [Author_630]
-         [Author_488]
-         [Author_691]
-         [Author_423]
-         [Author_710]
-         [Author_287]
-         [Author_812]
          [Author_807]
-         [Author_244]
-         [Author_365]
-         [Author288])
+         [Author_362]
+         [Author_338]
+         [Author_256]
+         [Author_53]
+         [Author_182]
+         [Author_168]
+         [Author_678]
+         [Author_482]
+         [Author_565]
+         [Author_536]
+         [Author_549]
+         [Author50])
      (sexo male))
 
     ([Author_874] of Autor
      (idAutor "874")
      (nombreAutor "Barry Eisler")
      (autoresSimilares
-         [Author_295]
-         [Author_610]
-         [Author_801]
-         [Author_851]
-         [Author_298]
-         [Author_155]
-         [Author250])
+         [Author_229]
+         [Author642])
      (sexo male))
 
     ([Author_875] of Autor
      (idAutor "875")
      (nombreAutor "Colson Whitehead")
      (autoresSimilares
-         [Author_450]
-         [Author_578]
-         [Author_929]
-         [Author_219]
-         [Author_757]
-         [Author544])
+         [Author_502]
+         [Author_162]
+         [Author_606]
+         [Author_863]
+         [Author_138]
+         [Author_916]
+         [Author_792]
+         [Author_865]
+         [Author_458]
+         [Author_187]
+         [Author_457]
+         [Author_39]
+         [Author654])
      (sexo male))
 
     ([Author_876] of Autor
      (idAutor "876")
      (nombreAutor "Isaac Marion")
      (autoresSimilares
-         [Author_35]
-         [Author_402]
-         [Author606])
+         [Author_533]
+         [Author_764]
+         [Author_576]
+         [Author_27]
+         [Author_148]
+         [Author_536]
+         [Author_886]
+         [Author_360]
+         [Author_657]
+         [Author_8]
+         [Author_532]
+         [Author_65]
+         [Author_393]
+         [Author_742]
+         [Author_837]
+         [Author_231]
+         [Author_938]
+         [Author_469]
+         [Author_520]
+         [Author556])
      (sexo male))
 
     ([Author_877] of Autor
      (idAutor "877")
      (nombreAutor "Peter Golden")
      (autoresSimilares
-         [Author_396]
-         [Author_668]
-         [Author_881]
-         [Author_544]
-         [Author_687]
-         [Author_847]
-         [Author_151]
-         [Author_98]
-         [Author_372]
-         [Author73])
+         [Author_354]
+         [Author_850]
+         [Author_653]
+         [Author_775]
+         [Author_944]
+         [Author_506]
+         [Author_413]
+         [Author_170]
+         [Author_376]
+         [Author_132]
+         [Author_554]
+         [Author_225]
+         [Author_123]
+         [Author_748]
+         [Author_804]
+         [Author_304]
+         [Author_452]
+         [Author_823]
+         [Author574])
      (sexo male))
 
     ([Author_878] of Autor
      (idAutor "878")
      (nombreAutor "Cynthia B Ainsworthe")
      (autoresSimilares
-         [Author_684]
-         [Author_785]
-         [Author_691]
-         [Author459])
+         [Author_191]
+         [Author_61]
+         [Author489])
      (sexo female))
 
     ([Author_879] of Autor
      (idAutor "879")
      (nombreAutor "Janet E Morris")
      (autoresSimilares
-         [Author_294]
-         [Author_524]
-         [Author_371]
-         [Author_592]
-         [Author_441]
-         [Author_712]
-         [Author_96]
-         [Author_242]
-         [Author_414]
-         [Author_540]
-         [Author_162]
-         [Author927])
+         [Author_160]
+         [Author_104]
+         [Author_485]
+         [Author_398]
+         [Author_628]
+         [Author_439]
+         [Author_798]
+         [Author_270]
+         [Author181])
      (sexo female))
 
     ([Author_880] of Autor
      (idAutor "880")
      (nombreAutor "Joan W Blos")
      (autoresSimilares
-         [Author_469]
-         [Author_747]
-         [Author_686]
-         [Author_252]
-         [Author_540]
-         [Author_70]
-         [Author_911]
-         [Author936])
+         [Author_530]
+         [Author_340]
+         [Author_676]
+         [Author_369]
+         [Author_839]
+         [Author_612]
+         [Author_92]
+         [Author_691]
+         [Author_49]
+         [Author_182]
+         [Author_582]
+         [Author_514]
+         [Author_494]
+         [Author_875]
+         [Author_822]
+         [Author_647]
+         [Author_630]
+         [Author_65]
+         [Author_161]
+         [Author895])
      (sexo male))
 
     ([Author_881] of Autor
      (idAutor "881")
      (nombreAutor "Bianca Sommerland")
      (autoresSimilares
-         [Author_707]
-         [Author_558]
-         [Author_774]
-         [Author_657]
-         [Author_864]
-         [Author_73]
-         [Author_554]
-         [Author_654]
-         [Author_570]
-         [Author_494]
-         [Author_540]
-         [Author_330]
-         [Author_584]
-         [Author_350]
-         [Author_458]
-         [Author_536]
-         [Author_192]
-         [Author_444]
-         [Author_201]
-         [Author172])
+         [Author_403]
+         [Author_153]
+         [Author_226]
+         [Author_907]
+         [Author_353]
+         [Author_746]
+         [Author_580]
+         [Author_240]
+         [Author_857]
+         [Author806])
      (sexo female))
 
     ([Author_882] of Autor
      (idAutor "882")
      (nombreAutor "Julieanne Lynch")
      (autoresSimilares
-         [Author_203]
-         [Author_5]
-         [Author_831]
-         [Author_602]
-         [Author_65]
-         [Author_660]
-         [Author_363]
-         [Author_836]
-         [Author485])
+         [Author_633]
+         [Author_883]
+         [Author_243]
+         [Author_207]
+         [Author_868]
+         [Author_650]
+         [Author801])
      (sexo female))
 
     ([Author_883] of Autor
      (idAutor "883")
      (nombreAutor "Vina Jackson")
      (autoresSimilares
-         [Author_828]
-         [Author_560]
-         [Author_571]
-         [Author_835]
-         [Author_396]
-         [Author_664]
-         [Author_675]
-         [Author763])
+         [Author_161]
+         [Author_168]
+         [Author_325]
+         [Author503])
      (sexo male))
 
     ([Author_884] of Autor
      (idAutor "884")
      (nombreAutor "Ashley S Clancy")
      (autoresSimilares
-         [Author_104]
-         [Author_32]
-         [Author_24]
-         [Author_654]
-         [Author_784]
-         [Author_52]
-         [Author_416]
-         [Author_619]
-         [Author_346]
-         [Author_579]
-         [Author_692]
-         [Author_162]
-         [Author_15]
-         [Author_302]
-         [Author_290]
-         [Author_718]
-         [Author_708]
-         [Author_857]
-         [Author660])
+         [Author_236]
+         [Author_839]
+         [Author_534]
+         [Author_799]
+         [Author_371]
+         [Author_659]
+         [Author_558]
+         [Author_96]
+         [Author_357]
+         [Author_764]
+         [Author_138]
+         [Author_391]
+         [Author651])
      (sexo male))
 
     ([Author_885] of Autor
      (idAutor "885")
      (nombreAutor "Skye Warren")
      (autoresSimilares
-         [Author_483]
-         [Author_102]
-         [Author_434]
-         [Author_445]
-         [Author_585]
-         [Author_890]
-         [Author_5]
-         [Author554])
+         [Author_20]
+         [Author_886]
+         [Author_857]
+         [Author_550]
+         [Author_692]
+         [Author_249]
+         [Author_162]
+         [Author_429]
+         [Author_935]
+         [Author_574]
+         [Author251])
      (sexo male))
 
     ([Author_886] of Autor
      (idAutor "886")
      (nombreAutor "Annabel Joseph")
      (autoresSimilares
-         [Author_361]
-         [Author159])
+         [Author_386]
+         [Author_126]
+         [Author538])
      (sexo female))
 
     ([Author_887] of Autor
      (idAutor "887")
      (nombreAutor "Nina  Levine")
      (autoresSimilares
-         [Author_465]
-         [Author_546]
-         [Author_618]
-         [Author_406]
-         [Author_585]
-         [Author_679]
-         [Author_126]
-         [Author_8]
-         [Author_18]
-         [Author_492]
-         [Author_220]
-         [Author_586]
-         [Author_510]
-         [Author_900]
-         [Author_179]
-         [Author_921]
-         [Author_587]
-         [Author_402]
-         [Author_647]
-         [Author535])
+         [Author_433]
+         [Author_766]
+         [Author_592]
+         [Author_741]
+         [Author_855]
+         [Author_268]
+         [Author_526]
+         [Author_489]
+         [Author_683]
+         [Author_707]
+         [Author_410]
+         [Author_199]
+         [Author_202]
+         [Author_295]
+         [Author_119]
+         [Author_561]
+         [Author_693]
+         [Author_530]
+         [Author504])
      (sexo female))
 
     ([Author_888] of Autor
      (idAutor "888")
      (nombreAutor "Claire Thompson")
      (autoresSimilares
-         [Author_389]
-         [Author_899]
-         [Author_582]
-         [Author_740]
-         [Author_751]
-         [Author_855]
-         [Author_252]
-         [Author_656]
-         [Author_919]
-         [Author_274]
-         [Author_655]
-         [Author_87]
-         [Author_859]
-         [Author_154]
-         [Author_778]
-         [Author227])
+         [Author_939]
+         [Author_367]
+         [Author_692]
+         [Author_91]
+         [Author_429]
+         [Author_267]
+         [Author_695]
+         [Author_430]
+         [Author_594]
+         [Author_627]
+         [Author_879]
+         [Author_789]
+         [Author_471]
+         [Author_288]
+         [Author_671]
+         [Author_943]
+         [Author242])
      (sexo female))
 
     ([Author_889] of Autor
      (idAutor "889")
      (nombreAutor "Varian Krylov")
      (autoresSimilares
-         [Author_257]
-         [Author_522]
-         [Author_12]
-         [Author_618]
-         [Author_191]
-         [Author_782]
-         [Author_107]
-         [Author_222]
-         [Author_40]
-         [Author198])
+         [Author_158]
+         [Author_741]
+         [Author_891]
+         [Author_873]
+         [Author_747]
+         [Author_297]
+         [Author_371]
+         [Author_359]
+         [Author_105]
+         [Author_542]
+         [Author_288]
+         [Author_739]
+         [Author_399]
+         [Author_596]
+         [Author_941]
+         [Author_907]
+         [Author778])
      (sexo male))
 
     ([Author_890] of Autor
      (idAutor "890")
      (nombreAutor "Nina Lane")
      (autoresSimilares
-         [Author_731]
-         [Author_810]
-         [Author_780]
-         [Author_670]
-         [Author_712]
-         [Author_124]
-         [Author_619]
-         [Author_910]
-         [Author_371]
-         [Author_666]
-         [Author_356]
-         [Author_792]
-         [Author_434]
-         [Author_58]
-         [Author_431]
-         [Author_909]
-         [Author_365]
-         [Author_528]
-         [Author_874]
-         [Author200])
+         [Author_50]
+         [Author92])
      (sexo female))
 
     ([Author_891] of Autor
      (idAutor "891")
      (nombreAutor "Scott Hildreth")
      (autoresSimilares
-         [Author284])
+         [Author_34]
+         [Author_874]
+         [Author_460]
+         [Author_925]
+         [Author311])
      (sexo male))
 
     ([Author_892] of Autor
      (idAutor "892")
      (nombreAutor "CD Reiss")
      (autoresSimilares
-         [Author_871]
-         [Author_481]
-         [Author_774]
-         [Author_739]
-         [Author_643]
-         [Author_230]
-         [Author_40]
-         [Author_545]
-         [Author_299]
-         [Author_699]
-         [Author_813]
-         [Author_766]
-         [Author_528]
-         [Author_390]
-         [Author_805]
-         [Author_572]
-         [Author_376]
-         [Author_160]
-         [Author_926]
-         [Author405])
+         [Author_851]
+         [Author_543]
+         [Author_831]
+         [Author_596]
+         [Author_619]
+         [Author_650]
+         [Author_567]
+         [Author_76]
+         [Author_105]
+         [Author_391]
+         [Author_234]
+         [Author_752]
+         [Author_554]
+         [Author273])
      (sexo female))
 
     ([Author_893] of Autor
      (idAutor "893")
      (nombreAutor "CP Mandara")
      (autoresSimilares
-         [Author_870]
-         [Author_721]
-         [Author_37]
-         [Author_283]
-         [Author_797]
-         [Author_26]
-         [Author_818]
-         [Author_883]
-         [Author_48]
-         [Author_871]
-         [Author_21]
-         [Author_337]
-         [Author_679]
-         [Author251])
+         [Author_198]
+         [Author_523]
+         [Author_251]
+         [Author_419]
+         [Author_669]
+         [Author_571]
+         [Author_527]
+         [Author_243]
+         [Author_450]
+         [Author_772]
+         [Author_208]
+         [Author_203]
+         [Author_701]
+         [Author31])
      (sexo female))
 
     ([Author_894] of Autor
      (idAutor "894")
      (nombreAutor "Samantha Blair")
      (autoresSimilares
-         [Author_885]
-         [Author_826]
-         [Author_73]
-         [Author_716]
-         [Author_474]
-         [Author_387]
-         [Author_291]
-         [Author_229]
-         [Author_469]
-         [Author_620]
-         [Author_899]
-         [Author_311]
-         [Author_916]
-         [Author_58]
-         [Author_426]
-         [Author_37]
-         [Author_612]
-         [Author_190]
-         [Author593])
+         [Author_760]
+         [Author_767]
+         [Author_162]
+         [Author_943]
+         [Author_891]
+         [Author_779]
+         [Author_208]
+         [Author_113]
+         [Author_563]
+         [Author_689]
+         [Author_631]
+         [Author198])
      (sexo female))
 
     ([Author_895] of Autor
      (idAutor "895")
      (nombreAutor "Shashi Tharoor")
      (autoresSimilares
-         [Author_697]
-         [Author_5]
-         [Author_39]
-         [Author_298]
-         [Author_210]
-         [Author863])
+         [Author_330]
+         [Author_401]
+         [Author_240]
+         [Author_258]
+         [Author_812]
+         [Author_654]
+         [Author_687]
+         [Author_137]
+         [Author_346]
+         [Author_517]
+         [Author_77]
+         [Author_629]
+         [Author134])
      (sexo male))
 
     ([Author_896] of Autor
      (idAutor "896")
      (nombreAutor "Cari Silverwood")
      (autoresSimilares
-         [Author420])
+         [Author_25]
+         [Author_238]
+         [Author_702]
+         [Author_470]
+         [Author_214]
+         [Author_250]
+         [Author_113]
+         [Author_328]
+         [Author_834]
+         [Author_285]
+         [Author_540]
+         [Author_551]
+         [Author_458]
+         [Author_907]
+         [Author_73]
+         [Author_71]
+         [Author_920]
+         [Author_797]
+         [Author_826]
+         [Author883])
      (sexo female))
 
     ([Author_897] of Autor
      (idAutor "897")
      (nombreAutor "Jessie B Tyson")
      (autoresSimilares
-         [Author_925]
-         [Author_677]
-         [Author_660]
-         [Author_443]
-         [Author_942]
-         [Author839])
+         [Author_251]
+         [Author_439]
+         [Author_409]
+         [Author227])
      (sexo female))
 
     ([Author_898] of Autor
      (idAutor "898")
      (nombreAutor "AN Roquelaure")
      (autoresSimilares
-         [Author_281]
-         [Author_198]
-         [Author_407]
-         [Author_462]
-         [Author_161]
-         [Author_42]
-         [Author_580]
-         [Author_311]
-         [Author587])
+         [Author_922]
+         [Author_747]
+         [Author_734]
+         [Author_286]
+         [Author_656]
+         [Author_58]
+         [Author_815]
+         [Author_132]
+         [Author_136]
+         [Author_364]
+         [Author252])
      (sexo male))
 
     ([Author_899] of Autor
      (idAutor "899")
      (nombreAutor "Joanna Wylde")
      (autoresSimilares
-         [Author_236]
-         [Author_637]
-         [Author_803]
-         [Author_847]
-         [Author382])
+         [Author_659]
+         [Author_942]
+         [Author_699]
+         [Author_432]
+         [Author945])
      (sexo female))
 
     ([Author_900] of Autor
      (idAutor "900")
      (nombreAutor "Cara McKenna")
      (autoresSimilares
-         [Author_445]
-         [Author_368]
-         [Author_122]
-         [Author_712]
-         [Author_631]
-         [Author_251]
-         [Author_891]
-         [Author_600]
-         [Author_688]
-         [Author_709]
-         [Author_379]
-         [Author_474]
-         [Author_131]
-         [Author_540]
-         [Author_18]
-         [Author_45]
-         [Author_566]
-         [Author245])
+         [Author_931]
+         [Author_349]
+         [Author_151]
+         [Author_446]
+         [Author_163]
+         [Author_489]
+         [Author_243]
+         [Author_834]
+         [Author_682]
+         [Author_594]
+         [Author_138]
+         [Author_400]
+         [Author273])
      (sexo female))
 
     ([Author_901] of Autor
      (idAutor "901")
      (nombreAutor "Anthony  Bryan")
      (autoresSimilares
-         [Author_480]
-         [Author_626]
-         [Author_793]
-         [Author_319]
-         [Author_943]
-         [Author_780]
-         [Author_359]
-         [Author_469]
-         [Author_293]
-         [Author_82]
-         [Author_622]
-         [Author_502]
-         [Author_428]
-         [Author645])
+         [Author_703]
+         [Author_316]
+         [Author_135]
+         [Author_252]
+         [Author_355]
+         [Author_237]
+         [Author_679]
+         [Author_139]
+         [Author_865]
+         [Author_198]
+         [Author_120]
+         [Author_807]
+         [Author_736]
+         [Author_561]
+         [Author_600]
+         [Author_476]
+         [Author707])
      (sexo male))
 
     ([Author_902] of Autor
      (idAutor "902")
      (nombreAutor "Patrick Ness")
      (autoresSimilares
-         [Author_462]
-         [Author_187]
-         [Author_318]
-         [Author_385]
-         [Author_607]
-         [Author_551]
-         [Author_331]
-         [Author_518]
-         [Author_9]
-         [Author_262]
-         [Author_759]
-         [Author_503]
-         [Author255])
+         [Author_249]
+         [Author_701]
+         [Author_532]
+         [Author_277]
+         [Author_584]
+         [Author_217]
+         [Author_457]
+         [Author_509]
+         [Author939])
      (sexo male))
 
     ([Author_903] of Autor
      (idAutor "903")
      (nombreAutor "")
      (autoresSimilares
-         [Author_626]
-         [Author_609]
-         [Author_578]
-         [Author_791]
-         [Author_817]
-         [Author_153]
-         [Author_928]
-         [Author_226]
-         [Author_909]
-         [Author_359]
-         [Author_135]
-         [Author_29]
-         [Author_812]
-         [Author_283]
-         [Author_222]
-         [Author69])
+         [Author_124]
+         [Author_240]
+         [Author_896]
+         [Author_723]
+         [Author_432]
+         [Author_146]
+         [Author_898]
+         [Author_608]
+         [Author_212]
+         [Author_453]
+         [Author763])
      (sexo male))
 
     ([Author_904] of Autor
      (idAutor "904")
      (nombreAutor "Gail Giles")
      (autoresSimilares
-         [Author_640]
-         [Author_839]
-         [Author_170]
-         [Author_466]
-         [Author_823]
-         [Author_706]
-         [Author841])
+         [Author_836]
+         [Author750])
      (sexo female))
 
     ([Author_905] of Autor
      (idAutor "905")
      (nombreAutor "")
      (autoresSimilares
-         [Author_726]
-         [Author_241]
-         [Author_245]
-         [Author_224]
-         [Author_112]
-         [Author_98]
-         [Author_568]
-         [Author_490]
-         [Author_662]
-         [Author_36]
-         [Author_296]
-         [Author910])
+         [Author_680]
+         [Author_378]
+         [Author_206]
+         [Author_384]
+         [Author_451]
+         [Author_591]
+         [Author_101]
+         [Author28])
      (sexo male))
 
     ([Author_906] of Autor
      (idAutor "906")
      (nombreAutor "Kahlil Gibran")
      (autoresSimilares
-         [Author_672]
-         [Author_455]
-         [Author_413]
-         [Author_842]
-         [Author_728]
-         [Author_365]
-         [Author_871]
-         [Author_152]
-         [Author_165]
-         [Author2])
+         [Author_372]
+         [Author_645]
+         [Author_599]
+         [Author_597]
+         [Author_381]
+         [Author_458]
+         [Author_823]
+         [Author_197]
+         [Author_444]
+         [Author_304]
+         [Author_255]
+         [Author_119]
+         [Author_789]
+         [Author325])
      (sexo male))
 
     ([Author_907] of Autor
      (idAutor "907")
      (nombreAutor "Carrie Ryan")
      (autoresSimilares
-         [Author265])
+         [Author_436]
+         [Author_31]
+         [Author_266]
+         [Author_397]
+         [Author_534]
+         [Author_228]
+         [Author_937]
+         [Author267])
      (sexo female))
 
     ([Author_908] of Autor
      (idAutor "908")
      (nombreAutor "Elif Shafak")
      (autoresSimilares
-         [Author_145]
-         [Author_344]
-         [Author_937]
-         [Author_770]
-         [Author_241]
-         [Author_132]
-         [Author_477]
-         [Author_895]
-         [Author_227]
-         [Author_750]
-         [Author_639]
-         [Author_726]
-         [Author_868]
-         [Author_897]
-         [Author_69]
-         [Author683])
+         [Author646])
      (sexo female))
 
     ([Author_909] of Autor
      (idAutor "909")
      (nombreAutor "Danielle Rohr")
      (autoresSimilares
-         [Author_477]
-         [Author_805]
-         [Author_315]
-         [Author_925]
-         [Author_379]
-         [Author_242]
-         [Author414])
+         [Author_430]
+         [Author_118]
+         [Author_555]
+         [Author_630]
+         [Author_142]
+         [Author_595]
+         [Author_322]
+         [Author_799]
+         [Author_601]
+         [Author_111]
+         [Author_480]
+         [Author_345]
+         [Author_6]
+         [Author_518]
+         [Author_942]
+         [Author_793]
+         [Author_362]
+         [Author331])
      (sexo male))
 
     ([Author_910] of Autor
      (idAutor "910")
      (nombreAutor "Jodi Ellen Malpas")
      (autoresSimilares
-         [Author_456]
-         [Author_293]
-         [Author_558]
-         [Author_233]
-         [Author_25]
-         [Author_806]
-         [Author_236]
-         [Author_620]
-         [Author_118]
-         [Author_231]
-         [Author_903]
-         [Author_79]
-         [Author_871]
-         [Author_600]
-         [Author692])
+         [Author_232]
+         [Author_940]
+         [Author_694]
+         [Author_66]
+         [Author_691]
+         [Author_405]
+         [Author_721]
+         [Author_396]
+         [Author_8]
+         [Author_664]
+         [Author_783]
+         [Author_524]
+         [Author_704]
+         [Author_117]
+         [Author_355]
+         [Author_687]
+         [Author_831]
+         [Author255])
      (sexo female))
 
     ([Author_911] of Autor
      (idAutor "911")
      (nombreAutor "Christina Lauren")
      (autoresSimilares
-         [Author_140]
-         [Author_737]
-         [Author_894]
-         [Author_230]
-         [Author_121]
-         [Author_461]
-         [Author_288]
-         [Author_333]
-         [Author_273]
-         [Author_526]
-         [Author_753]
-         [Author_163]
-         [Author_815]
-         [Author_630]
-         [Author635])
+         [Author_439]
+         [Author_606]
+         [Author_926]
+         [Author_684]
+         [Author_882]
+         [Author531])
      (sexo male))
 
     ([Author_912] of Autor
      (idAutor "912")
      (nombreAutor "Dhan Gopal Mukerji")
      (autoresSimilares
-         [Author83])
+         [Author_60]
+         [Author_11]
+         [Author_544]
+         [Author_720]
+         [Author_249]
+         [Author_396]
+         [Author_442]
+         [Author_131]
+         [Author_317]
+         [Author677])
      (sexo male))
 
     ([Author_913] of Autor
      (idAutor "913")
      (nombreAutor "Erin Entrada Kelly")
      (autoresSimilares
-         [Author_806]
-         [Author_334]
-         [Author_284]
-         [Author_744]
-         [Author_513]
-         [Author_794]
-         [Author_246]
-         [Author_549]
-         [Author_286]
-         [Author_839]
-         [Author_817]
-         [Author504])
+         [Author_836]
+         [Author_160]
+         [Author_454]
+         [Author_256]
+         [Author_943]
+         [Author125])
      (sexo male))
 
     ([Author_914] of Autor
      (idAutor "914")
      (nombreAutor "Joseph Krumgold")
      (autoresSimilares
-         [Author_740]
-         [Author_762]
-         [Author_586]
-         [Author_355]
-         [Author_342]
-         [Author_125]
-         [Author_389]
-         [Author_674]
-         [Author_431]
-         [Author_239]
-         [Author_95]
-         [Author_92]
-         [Author_663]
-         [Author_525]
-         [Author_77]
-         [Author722])
+         [Author_278]
+         [Author_933]
+         [Author_191]
+         [Author_753]
+         [Author_335]
+         [Author_345]
+         [Author_641]
+         [Author_418]
+         [Author_703]
+         [Author517])
      (sexo male))
 
     ([Author_915] of Autor
      (idAutor "915")
      (nombreAutor "Lynne Rae Perkins")
      (autoresSimilares
-         [Author_680]
-         [Author_39]
-         [Author_791]
-         [Author_51]
-         [Author_518]
-         [Author_506]
-         [Author_232]
-         [Author_702]
-         [Author_852]
-         [Author_115]
-         [Author_614]
-         [Author_145]
-         [Author_776]
-         [Author_83]
-         [Author_509]
-         [Author_16]
-         [Author_846]
-         [Author_379]
-         [Author_745]
-         [Author735])
+         [Author_313]
+         [Author_786]
+         [Author_481]
+         [Author_316]
+         [Author_354]
+         [Author_314]
+         [Author_359]
+         [Author_30]
+         [Author_490]
+         [Author_564]
+         [Author_459]
+         [Author_697]
+         [Author_75]
+         [Author_437]
+         [Author_374]
+         [Author_624]
+         [Author_675]
+         [Author_844]
+         [Author472])
      (sexo female))
 
     ([Author_916] of Autor
      (idAutor "916")
      (nombreAutor "Elizabeth Yates")
      (autoresSimilares
-         [Author_585]
-         [Author_478]
-         [Author_514]
-         [Author_314]
-         [Author_539]
-         [Author_324]
-         [Author_222]
-         [Author_461]
-         [Author_884]
-         [Author_689]
-         [Author_322]
-         [Author_659]
-         [Author908])
+         [Author_396]
+         [Author_856]
+         [Author_793]
+         [Author_444]
+         [Author_301]
+         [Author_629]
+         [Author_728]
+         [Author_280]
+         [Author_132]
+         [Author_638]
+         [Author_840]
+         [Author_498]
+         [Author_494]
+         [Author_231]
+         [Author_330]
+         [Author451])
      (sexo female))
 
     ([Author_917] of Autor
      (idAutor "917")
      (nombreAutor "Elizabeth Enright")
      (autoresSimilares
-         [Author_55]
-         [Author_863]
-         [Author_509]
-         [Author_890]
-         [Author_65]
-         [Author_130]
-         [Author_642]
-         [Author_189]
-         [Author_924]
-         [Author_637]
-         [Author479])
+         [Author_394]
+         [Author_241]
+         [Author_523]
+         [Author_275]
+         [Author_158]
+         [Author_916]
+         [Author_287]
+         [Author_161]
+         [Author_912]
+         [Author_716]
+         [Author_377]
+         [Author_134]
+         [Author_780]
+         [Author_89]
+         [Author_208]
+         [Author_477]
+         [Author343])
      (sexo female))
 
     ([Author_918] of Autor
      (idAutor "918")
      (nombreAutor "Elizabeth Foreman Lewis")
      (autoresSimilares
-         [Author_776]
-         [Author_377]
-         [Author_921]
-         [Author_508]
-         [Author_153]
-         [Author_595]
-         [Author_887]
-         [Author_715]
-         [Author181])
+         [Author68])
      (sexo male))
 
     ([Author_919] of Autor
      (idAutor "919")
      (nombreAutor "Emily Cheney Neville")
      (autoresSimilares
-         [Author_367]
-         [Author_593]
-         [Author_430]
-         [Author_149]
-         [Author_658]
-         [Author_599]
-         [Author_204]
-         [Author_258]
-         [Author_376]
-         [Author_239]
-         [Author_920]
-         [Author_207]
-         [Author_373]
-         [Author319])
+         [Author_255]
+         [Author_902]
+         [Author368])
      (sexo female))
 
     ([Author_920] of Autor
      (idAutor "920")
      (nombreAutor "Maia Wojciechowska")
      (autoresSimilares
-         [Author_160]
-         [Author_424]
-         [Author_448]
-         [Author622])
+         [Author_8]
+         [Author_69]
+         [Author_47]
+         [Author_268]
+         [Author_31]
+         [Author43])
      (sexo female))
 
     ([Author_921] of Autor
      (idAutor "921")
      (nombreAutor "Kate Seredy")
      (autoresSimilares
-         [Author_721]
-         [Author_491]
-         [Author_478]
-         [Author_217]
-         [Author_466]
-         [Author_588]
-         [Author_648]
-         [Author698])
+         [Author_369]
+         [Author_501]
+         [Author_237]
+         [Author_727]
+         [Author_403]
+         [Author_637]
+         [Author_774]
+         [Author_506]
+         [Author_638]
+         [Author_390]
+         [Author_144]
+         [Author_18]
+         [Author_574]
+         [Author_697]
+         [Author_305]
+         [Author_151]
+         [Author_339]
+         [Author_184]
+         [Author435])
      (sexo female))
 
     ([Author_922] of Autor
      (idAutor "922")
      (nombreAutor "Elizabeth Coatsworth")
      (autoresSimilares
-         [Author_824]
-         [Author_449]
-         [Author_357]
-         [Author_676]
-         [Author_557]
-         [Author_163]
-         [Author_384]
-         [Author_539]
-         [Author_724]
-         [Author_409]
-         [Author_239]
-         [Author_860]
-         [Author_167]
-         [Author_798]
-         [Author_245]
-         [Author_823]
-         [Author_819]
-         [Author_64]
-         [Author_663]
-         [Author480])
+         [Author_712]
+         [Author_640]
+         [Author_270]
+         [Author_136]
+         [Author_339]
+         [Author_836]
+         [Author_91]
+         [Author_250]
+         [Author_187]
+         [Author_862]
+         [Author_509]
+         [Author_573]
+         [Author_276]
+         [Author_600]
+         [Author_70]
+         [Author_834]
+         [Author854])
      (sexo female))
 
     ([Author_923] of Autor
      (idAutor "923")
      (nombreAutor "Virginia Sorensen")
      (autoresSimilares
-         [Author_584]
-         [Author_158]
-         [Author_109]
-         [Author_377]
-         [Author507])
+         [Author_275]
+         [Author_6]
+         [Author_638]
+         [Author_904]
+         [Author_213]
+         [Author_73]
+         [Author_855]
+         [Author_690]
+         [Author_104]
+         [Author30])
      (sexo female))
 
     ([Author_924] of Autor
      (idAutor "924")
      (nombreAutor "Eleanor Estes")
      (autoresSimilares
-         [Author_205]
-         [Author_685]
-         [Author_12]
-         [Author_334]
-         [Author_513]
-         [Author805])
+         [Author_462]
+         [Author_128]
+         [Author_448]
+         [Author_593]
+         [Author_728]
+         [Author_860]
+         [Author_333]
+         [Author_792]
+         [Author_236]
+         [Author_238]
+         [Author_114]
+         [Author_259]
+         [Author_49]
+         [Author_299]
+         [Author408])
      (sexo female))
 
     ([Author_925] of Autor
      (idAutor "925")
      (nombreAutor "Elizabeth Gray Vining")
      (autoresSimilares
-         [Author_405]
-         [Author_411]
-         [Author_474]
-         [Author_645]
-         [Author_839]
-         [Author871])
+         [Author_347]
+         [Author_726]
+         [Author399])
      (sexo female))
 
     ([Author_926] of Autor
      (idAutor "926")
      (nombreAutor "Eric P Kelly")
      (autoresSimilares
-         [Author_802]
-         [Author_407]
-         [Author_702]
-         [Author_432]
-         [Author_197]
-         [Author_23]
-         [Author_79]
-         [Author_770]
-         [Author_234]
-         [Author_54]
-         [Author_560]
-         [Author_426]
-         [Author_846]
-         [Author_478]
-         [Author_840]
-         [Author_301]
-         [Author_887]
-         [Author874])
+         [Author_514]
+         [Author_839]
+         [Author182])
      (sexo male))
 
     ([Author_927] of Autor
      (idAutor "927")
      (nombreAutor "Betsy Byars")
      (autoresSimilares
-         [Author_936]
-         [Author_708]
-         [Author_7]
-         [Author_10]
-         [Author_128]
-         [Author_547]
-         [Author_494]
-         [Author_351]
-         [Author_613]
-         [Author_673]
-         [Author_105]
-         [Author_722]
-         [Author_853]
-         [Author_173]
-         [Author_170]
-         [Author_542]
-         [Author_836]
-         [Author_858]
-         [Author_677]
-         [Author876])
+         [Author_540]
+         [Author_275]
+         [Author_427]
+         [Author265])
      (sexo female))
 
     ([Author_928] of Autor
      (idAutor "928")
      (nombreAutor "Cynthia Rylant")
      (autoresSimilares
-         [Author_685]
-         [Author_24]
-         [Author_132]
-         [Author_775]
-         [Author_694]
-         [Author_315]
-         [Author_733]
-         [Author_703]
-         [Author_917]
-         [Author_810]
-         [Author_901]
-         [Author737])
+         [Author_870]
+         [Author_182]
+         [Author_321]
+         [Author_459]
+         [Author_753]
+         [Author_855]
+         [Author_112]
+         [Author_516]
+         [Author_345]
+         [Author_761]
+         [Author_565]
+         [Author_850]
+         [Author_164]
+         [Author_787]
+         [Author_235]
+         [Author_245]
+         [Author_563]
+         [Author_533]
+         [Author_846]
+         [Author113])
      (sexo female))
 
     ([Author_929] of Autor
      (idAutor "929")
      (nombreAutor "Robert Lawson")
      (autoresSimilares
-         [Author_74]
-         [Author_394]
-         [Author_115]
-         [Author_867]
-         [Author_108]
-         [Author_272]
-         [Author_779]
-         [Author_899]
-         [Author_506]
-         [Author_501]
-         [Author_182]
-         [Author_233]
-         [Author_619]
-         [Author_292]
-         [Author_192]
-         [Author_837]
-         [Author_858]
-         [Author_601]
-         [Author_38]
-         [Author20])
+         [Author_446]
+         [Author_803]
+         [Author_177]
+         [Author_475]
+         [Author_635]
+         [Author_607]
+         [Author_34]
+         [Author_535]
+         [Author_398]
+         [Author_327]
+         [Author_360]
+         [Author_592]
+         [Author_581]
+         [Author_660]
+         [Author_302]
+         [Author_762]
+         [Author_923]
+         [Author_322]
+         [Author_364]
+         [Author694])
      (sexo male))
 
     ([Author_930] of Autor
      (idAutor "930")
      (nombreAutor "Elizabeth Borton de Trevio")
      (autoresSimilares
-         [Author_438]
-         [Author_461]
-         [Author_321]
-         [Author_10]
-         [Author_342]
-         [Author_74]
-         [Author_364]
-         [Author_675]
-         [Author_660]
-         [Author_326]
-         [Author_601]
-         [Author_742]
-         [Author584])
+         [Author_384]
+         [Author896])
      (sexo female))
 
     ([Author_931] of Autor
      (idAutor "931")
      (nombreAutor "Jeanne Birdsall")
      (autoresSimilares
-         [Author_95]
-         [Author_890]
-         [Author_431]
-         [Author_133]
-         [Author_534]
-         [Author_170]
-         [Author_877]
-         [Author_485]
-         [Author_405]
-         [Author_317]
-         [Author386])
+         [Author113])
      (sexo female))
 
     ([Author_932] of Autor
      (idAutor "932")
      (nombreAutor "Edward Bloor")
      (autoresSimilares
-         [Author_893]
-         [Author_271]
-         [Author_934]
-         [Author_567]
-         [Author580])
+         [Author_907]
+         [Author_869]
+         [Author134])
      (sexo male))
 
     ([Author_933] of Autor
      (idAutor "933")
      (nombreAutor "Rachel Field")
      (autoresSimilares
-         [Author_5]
-         [Author246])
+         [Author_164]
+         [Author_895]
+         [Author_568]
+         [Author346])
      (sexo female))
 
     ([Author_934] of Autor
      (idAutor "934")
      (nombreAutor "Lois Lowry")
      (autoresSimilares
-         [Author_0]
-         [Author_90]
-         [Author_486]
-         [Author_340]
-         [Author_106]
-         [Author_921]
-         [Author_497]
-         [Author_95]
-         [Author_350]
-         [Author_401]
+         [Author_882]
+         [Author_333]
+         [Author_420]
+         [Author_697]
+         [Author_655]
+         [Author_583]
+         [Author_621]
+         [Author_298]
+         [Author_466]
+         [Author_4]
+         [Author_724]
+         [Author_856]
+         [Author_70]
          [Author_694]
-         [Author_598]
-         [Author_919]
-         [Author_499]
-         [Author85])
+         [Author_305]
+         [Author_639]
+         [Author_411]
+         [Author_727]
+         [Author409])
      (sexo male))
 
     ([Author_935] of Autor
      (idAutor "935")
      (nombreAutor "Armstrong Sperry")
      (autoresSimilares
-         [Author_215]
-         [Author_50]
-         [Author_386]
-         [Author_627]
-         [Author_877]
-         [Author_374]
-         [Author_692]
-         [Author_586]
-         [Author_555]
-         [Author_11]
-         [Author_495]
-         [Author_119]
-         [Author332])
+         [Author_927]
+         [Author_943]
+         [Author_315]
+         [Author365])
      (sexo male))
 
     ([Author_936] of Autor
      (idAutor "936")
      (nombreAutor "Irene Hunt")
      (autoresSimilares
-         [Author_613]
-         [Author_653]
-         [Author_416]
-         [Author_126]
-         [Author_773]
-         [Author_204]
-         [Author645])
+         [Author_772]
+         [Author_830]
+         [Author_696]
+         [Author_700]
+         [Author_513]
+         [Author_685]
+         [Author_213]
+         [Author_385]
+         [Author_88]
+         [Author_396]
+         [Author_723]
+         [Author_116]
+         [Author_591]
+         [Author_920]
+         [Author_706]
+         [Author_548]
+         [Author872])
      (sexo female))
 
     ([Author_937] of Autor
      (idAutor "937")
      (nombreAutor "Meindert DeJong")
      (autoresSimilares
-         [Author_405]
-         [Author_96]
-         [Author_21]
-         [Author_270]
-         [Author_260]
-         [Author_684]
-         [Author_785]
-         [Author_905]
+         [Author_583]
+         [Author_243]
          [Author_227]
-         [Author_360]
-         [Author781])
+         [Author_404]
+         [Author_653]
+         [Author_100]
+         [Author_806]
+         [Author_670]
+         [Author_526]
+         [Author_547]
+         [Author_812]
+         [Author_102]
+         [Author_157]
+         [Author_260]
+         [Author451])
      (sexo male))
 
     ([Author_938] of Autor
      (idAutor "938")
      (nombreAutor "Marguerite de Angeli")
      (autoresSimilares
-         [Author_725]
-         [Author_45]
-         [Author818])
+         [Author_488]
+         [Author_8]
+         [Author_595]
+         [Author_459]
+         [Author_932]
+         [Author_367]
+         [Author_225]
+         [Author_593]
+         [Author_623]
+         [Author_379]
+         [Author_333]
+         [Author_748]
+         [Author_13]
+         [Author_193]
+         [Author739])
      (sexo female))
 
     ([Author_939] of Autor
      (idAutor "939")
      (nombreAutor "Rodman Philbrick")
      (autoresSimilares
-         [Author_388]
-         [Author_383]
-         [Author_323]
-         [Author_403]
-         [Author_687]
-         [Author_606]
-         [Author_615]
-         [Author_847]
-         [Author_826]
-         [Author79])
+         [Author353])
      (sexo male))
 
     ([Author_940] of Autor
      (idAutor "940")
      (nombreAutor "Jean Lee Latham")
      (autoresSimilares
-         [Author_908]
-         [Author_47]
-         [Author_481]
-         [Author_863]
-         [Author_751]
-         [Author_65]
-         [Author_847]
-         [Author_428]
-         [Author_767]
-         [Author_86]
-         [Author_450]
-         [Author204])
+         [Author_370]
+         [Author_459]
+         [Author_159]
+         [Author_23]
+         [Author_622]
+         [Author_798]
+         [Author_421]
+         [Author_673]
+         [Author_792]
+         [Author_435]
+         [Author_470]
+         [Author_942]
+         [Author_20]
+         [Author_261]
+         [Author_249]
+         [Author_399]
+         [Author_19]
+         [Author670])
      (sexo female))
 
     ([Author_941] of Autor
      (idAutor "941")
      (nombreAutor "Cynthia Voigt")
      (autoresSimilares
-         [Author_546]
-         [Author_824]
-         [Author_230]
-         [Author_314]
-         [Author_87]
-         [Author_498]
-         [Author_522]
-         [Author_381]
-         [Author_132]
-         [Author_607]
-         [Author_694]
-         [Author_592]
-         [Author_243]
-         [Author_242]
-         [Author_408]
-         [Author_922]
-         [Author_218]
-         [Author493])
+         [Author_761]
+         [Author_48]
+         [Author_510]
+         [Author_306]
+         [Author_704]
+         [Author_708]
+         [Author_716]
+         [Author_380]
+         [Author_139]
+         [Author_906]
+         [Author361])
      (sexo male))
 
     ([Author_942] of Autor
      (idAutor "942")
      (nombreAutor "Sid Fleischman")
      (autoresSimilares
-         [Author_937]
-         [Author_321]
-         [Author_288]
-         [Author_365]
-         [Author_707]
-         [Author_293]
-         [Author_790]
-         [Author_318]
-         [Author_633]
-         [Author_219]
-         [Author_502]
-         [Author_176]
-         [Author_750]
-         [Author_400]
-         [Author310])
+         [Author_792]
+         [Author_235]
+         [Author_380]
+         [Author_80]
+         [Author_556]
+         [Author_287]
+         [Author_394]
+         [Author_906]
+         [Author_557]
+         [Author116])
      (sexo male))
 
     ([Author_943] of Autor
      (idAutor "943")
      (nombreAutor "William Pne du Bois")
      (autoresSimilares
-         [Author_506]
-         [Author_537]
-         [Author_2]
-         [Author_733]
-         [Author_700]
-         [Author_476]
-         [Author_732]
-         [Author304])
+         [Author_0]
+         [Author167])
      (sexo male))
 
     ([Author_944] of Autor
      (idAutor "944")
      (nombreAutor "Katherine Applegate")
      (autoresSimilares
-         [Author_338]
-         [Author_909]
-         [Author_217]
-         [Author_516]
-         [Author_794]
-         [Author_461]
-         [Author_776]
-         [Author_234]
-         [Author_672]
-         [Author_351]
-         [Author_896]
-         [Author_24]
-         [Author_539]
-         [Author_452]
-         [Author_171]
-         [Author_941]
-         [Author182])
+         [Author_561]
+         [Author_799]
+         [Author_638]
+         [Author_281]
+         [Author_912]
+         [Author_108]
+         [Author_450]
+         [Author_243]
+         [Author_227]
+         [Author_253]
+         [Author_372]
+         [Author_864]
+         [Author_471]
+         [Author_725]
+         [Author_506]
+         [Author_395]
+         [Author_779]
+         [Author_892]
+         [Author922])
      (sexo female))
 
     ([Author_945] of Autor
      (idAutor "945")
      (nombreAutor "Esther Forbes")
      (autoresSimilares
-         [Author_239]
-         [Author_434]
-         [Author940])
+         [Author_501]
+         [Author_869]
+         [Author_123]
+         [Author_112]
+         [Author_671]
+         [Author_639]
+         [Author_72]
+         [Author_584]
+         [Author_460]
+         [Author_623]
+         [Author_166]
+         [Author_638]
+         [Author_926]
+         [Author_525]
+         [Author_510]
+         [Author_657]
+         [Author_620]
+         [Author_372]
+         [Author463])
      (sexo female))
 
     ([Genres_0] of Genero
@@ -30325,127 +32559,112 @@
 
     ([Profile_0] of Perfil
      (generosRecomendados
-         [Genres_9])
+         [Genres_10]
+         [Genres_26]
+         [Genres_39]
+         [Genres_37]
+         [Genres_28]
+         [Genres_17]
+         [Genres_25])
      (psicologico A)
      (rangoEdad Infantil))
 
     ([Profile_1] of Perfil
      (generosRecomendados
-         [Genres_27]
-         [Genres_9]
-         [Genres_3]
-         [Genres_16]
-         [Genres_14])
+         [Genres_5]
+         [Genres_6]
+         [Genres_18]
+         [Genres_33]
+         [Genres_34])
      (psicologico A)
      (rangoEdad Juvenil))
 
     ([Profile_2] of Perfil
      (generosRecomendados
-         [Genres_32]
-         [Genres_5]
-         [Genres_18]
-         [Genres_10]
-         [Genres_46]
+         [Genres_42]
          [Genres_16]
-         [Genres_24])
+         [Genres_15]
+         [Genres_40]
+         [Genres_33])
      (psicologico A)
      (rangoEdad Adulto))
 
     ([Profile_3] of Perfil
      (generosRecomendados
-         [Genres_7]
-         [Genres_4]
-         [Genres_16]
-         [Genres_11]
-         [Genres_5]
-         [Genres_38])
+         [Genres_6]
+         [Genres_18]
+         [Genres_27]
+         [Genres_19]
+         [Genres_2]
+         [Genres_46])
      (psicologico B)
      (rangoEdad Infantil))
 
     ([Profile_4] of Perfil
      (generosRecomendados
-         [Genres_22]
-         [Genres_18]
-         [Genres_23]
-         [Genres_27]
-         [Genres_42])
+         [Genres_32])
      (psicologico B)
      (rangoEdad Juvenil))
 
     ([Profile_5] of Perfil
      (generosRecomendados
-         [Genres_6]
-         [Genres_26]
-         [Genres_12]
-         [Genres_8]
-         [Genres_33]
-         [Genres_18]
-         [Genres_19]
-         [Genres_37]
-         [Genres_31])
+         [Genres_24]
+         [Genres_28]
+         [Genres_23]
+         [Genres_38]
+         [Genres_27])
      (psicologico B)
      (rangoEdad Adulto))
 
     ([Profile_6] of Perfil
      (generosRecomendados
-         [Genres_15]
-         [Genres_36]
-         [Genres_14]
-         [Genres_3]
-         [Genres_17]
-         [Genres_12]
-         [Genres_39])
+         [Genres_46]
+         [Genres_38]
+         [Genres_9]
+         [Genres_0])
      (psicologico C)
      (rangoEdad Infantil))
 
     ([Profile_7] of Perfil
      (generosRecomendados
-         [Genres_27]
-         [Genres_30]
-         [Genres_29]
-         [Genres_3]
-         [Genres_45]
-         [Genres_25]
-         [Genres_32])
+         [Genres_14])
      (psicologico C)
      (rangoEdad Juvenil))
 
     ([Profile_8] of Perfil
      (generosRecomendados
+         [Genres_13]
+         [Genres_3]
+         [Genres_22]
+         [Genres_46]
+         [Genres_30]
          [Genres_38]
-         [Genres_29])
+         [Genres_20]
+         [Genres_26])
      (psicologico C)
      (rangoEdad Adulto))
 
     ([Profile_9] of Perfil
      (generosRecomendados
-         [Genres_44]
-         [Genres_22]
-         [Genres_18]
-         [Genres_43]
-         [Genres_25]
-         [Genres_5]
-         [Genres_14]
-         [Genres_41])
+         [Genres_47]
+         [Genres_38])
      (psicologico D)
      (rangoEdad Infantil))
 
     ([Profile_10] of Perfil
      (generosRecomendados
-         [Genres_23]
+         [Genres_20]
+         [Genres_5]
          [Genres_34]
-         [Genres_30]
-         [Genres_16]
-         [Genres_42]
-         [Genres_18]
-         [Genres_7])
+         [Genres_33]
+         [Genres_47])
      (psicologico D)
      (rangoEdad Juvenil))
 
     ([Profile_11] of Perfil
      (generosRecomendados
-         [Genres_25]
-         [Genres_37])
+         [Genres_28]
+         [Genres_4])
      (psicologico D)
      (rangoEdad Adulto))
 )
@@ -30457,6 +32676,8 @@
 (deftemplate Lector
     (slot edad (type INTEGER) (default -1))
     (slot perfilPaciente (type INSTANCE) (allowed-classes Perfil))
+    (slot popularidad (type SYMBOL) (allowed-values FALSE TRUE))
+    (slot habitual (type SYMBOL) (allowed-values FALSE TRUE))
 )
 
 (deftemplate autorFavorito
@@ -30545,6 +32766,12 @@
             (case 10 then (bind ?just "Es un libro del mismo género que el de un libro favorito tuyo."))
             (case 2 then (bind ?just "Es un libro de un género similar al de un libro de tus favoritos."))
             (case 15 then (bind ?just "Es un libro de un autor similar a uno de tus autores favoritos."))
+            (case 40 then (bind ?just "Este libro tiene muchos ratings."))
+            (case 30 then (bind ?just "Este libro tiene una buena valoración media."))
+            (case 80 then (bind ?just "Este libro es ligero de leer."))
+            (case -20 then (bind ?just "Aunque este género es similar a uno que no te gusta."))
+            (case -12 then (bind ?just "Aunque este autor es similar a uno que no te gusta."))
+            (case -2 then (bind ?just "Pese a que este libro es de un género similar al de un libro que no te gusta."))
         )
         (send ?ranking put-gradoRecomendacion (+ (send ?ranking get-gradoRecomendacion) ?score))
         (bind ?jr (send ?ranking get-justificaciones))
@@ -30606,6 +32833,7 @@
 (defmessage-handler Libro print primary ()
     (printout t "Libro: " ?self:titulo crlf)
     (send ?self:autor print)
+    (printout t "Número de páginas: " ?self:nPag crlf)
     (printout t "Encuentra más información aquí: " ?self:url crlf)
 )
 
@@ -30696,7 +32924,7 @@
     (foreach ?a ?autorIds
         (bind ?autor (nth$ 1 (find-instance ((?inst Autor)) (eq (str-cat ?a) ?inst:idAutor))))
         (if (neq ?autor nil)
-            then (assert (autorNegativo (autor ?autor)))
+            then (assert (autorFavorito (autor ?autor)))
         )
     )
     (assert (autoresFavoritosDefinidos))
@@ -30724,7 +32952,7 @@
     (foreach ?g ?generoIds
         (bind ?genero (nth$ 1 (find-instance ((?inst Genero)) (eq (str-cat ?g) ?inst:idGenero))))
         (if (neq ?genero nil)
-            then (assert (generoNegativo (genero ?genero)))
+            then (assert (generoFavorito (genero ?genero)))
         )
     )
     (assert (generosFavoritosDefinidos))
@@ -30766,10 +32994,50 @@
     (foreach ?l ?libroIds
         (bind ?libro (nth$ 1 (find-instance ((?inst Libro)) (eq (str-cat ?l) ?inst:idLibro))))
         (if (neq ?libro nil)
-            then (assert (libroFavorito (libro ?libro)))
+            then (assert (libroNegativo (libro ?libro)))
         )
     )
     (assert (librosNegativosDefinidos))
+)
+
+(defrule pregunta-popularidad
+    (not (popularidadDefinida))
+    (perfilDefinido)
+    ?l <- (Lector (edad ?e) (perfilPaciente ?p))
+    =>
+    (bind ?popu (pregunta-general "Te importan las review del libro? (s/n) "))
+    (if (member$ ?popu (create$ s n))
+        then
+            (if (eq ?popu s)
+                then (modify ?l (popularidad TRUE))
+                else (modify ?l (popularidad FALSE))
+            )
+            (assert (popularidadDefinida))
+        else
+            (printout t "Respuesta no válida." crlf)
+            (retract ?l)
+            (assert (Lector (edad ?e) (perfilPaciente ?p)))
+    )
+)
+
+(defrule pregunta-habitual
+    (not (habitualDefinido))
+    (popularidadDefinida)
+    ?l <- (Lector (edad ?e) (perfilPaciente ?p) (popularidad ?popu))
+    =>
+    (bind ?habi (pregunta-general "Eres un lector frecuente? (s/n) "))
+    (if (member$ ?habi (create$ s n))
+        then
+            (if (eq ?habi s)
+                then (modify ?l (habitual TRUE))
+                else (modify ?l (habitual FALSE))
+            )
+            (assert (habitualDefinido))
+        else
+            (printout t "Respuesta no válida." crlf)
+            (retract ?l)
+            (assert (Lector (edad ?e) (perfilPaciente ?p) (popularidad ?popu)))
+    )
 )
 
 (defrule preguntasAcabadas
@@ -30780,6 +33048,8 @@
     (generosNegativosDefinidos)
     (librosFavoritosDefinidos)
     (librosNegativosDefinidos)
+    (popularidadDefinida)
+    (habitualDefinido)
     =>
     (focus inferir_datos)
 )
@@ -30857,6 +33127,30 @@
     (retract ?l)
 )
 
+(defrule propaga-popularidad
+    (Lector (popularidad ?p))
+    =>
+    (if (eq ?p TRUE)
+        then
+            (bind ?librosMany (find-all-instances ((?inst Libro)) (eq ?inst:hasManyReviews TRUE)))
+            (sumaScoreLibros ?librosMany 40)
+            (bind ?librosGood (find-all-instances ((?inst Libro)) (eq ?inst:goodReview TRUE)))
+            (sumaScoreLibros ?librosGood 30)
+    )
+    (assert (popularidadPropagada))
+)
+
+(defrule propaga-habitual
+    (Lector (habitual ?h))
+    =>
+    (if (eq ?h FALSE)
+        then
+            (bind ?libros (find-all-instances ((?inst Libro)) (< ?inst:nPag 150)))
+            (sumaScoreLibros ?libros 80)
+    )
+    (assert (habitualPropagado))
+)
+
 (defrule seleccion-resultados
     (perfilPropagado)
     (not (autorFavorito (autor ?a)))
@@ -30865,6 +33159,7 @@
     (not (generoNegativo (genero ?g)))
     (not (libroFavorito (libro ?l)))
     (not (libroNegativo (libro ?l)))
+    (habitualPropagado)
     =>
     (bind ?allRecomendaciones (find-all-instances ((?r Recomendacion)) TRUE))
     (bind ?sortedRecoms (sort criteriaRecomByMaxScore ?allRecomendaciones))

@@ -21,7 +21,7 @@ with open('../good_reads_final.csv') as csvfile:
         #genre2.sub('[^A-Za-z0-9]+', '', row[14]).lower()
         if (("nonfiction" not in genre1) and ("nonfiction" not in genre2)) \
          and (("fiction" in genre1) or ("fiction" in genre2)):
-            book = [None]*8
+            book = [None]*10
             book[0] = row[11]
             book[1] = re.sub('[^A-Za-z0-9 -]+', '', row[12]).strip()
             book[2] = row[13]
@@ -44,6 +44,14 @@ with open('../good_reads_final.csv') as csvfile:
                 ruido = True
             book[6] = row[3]
             book[7] = row[10]
+            if re.match(r'^-?\d+(?:\.\d+)?$', row[9]) is None:
+                ruido = True
+            else:
+                book[8] = (float(row[9]) > 4.0) #goodReview
+            if not row[15].isdigit():
+                ruido = True
+            else:
+                book[9] = (int(row[15]) > 100000) #hasManyReviews
             author = [None]*3
             author[0] = row[3]
             author[1] = re.sub('[^A-Za-z0-9 -]+', '', row[4]).strip()
@@ -78,6 +86,8 @@ for book in books:
     print(" (nPag " + book[4] + ")")
     print(" (publicacion " + str(book[5]) + ")")
     print(" (url \"" + book[7] + "\")")
+    print(" (goodReview " + str(book[8]).upper() + ")")
+    print(" (hasManyReviews " + str(book[9]).upper() + ")")
     print(" (titulo \"" + book[1] + "\"))")
     print("")
     indexbook += 1
