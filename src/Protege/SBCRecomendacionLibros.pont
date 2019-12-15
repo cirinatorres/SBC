@@ -1,4 +1,4 @@
-; Sun Dec 15 19:26:47 CET 2019
+; Sun Dec 15 21:01:20 CET 2019
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -22,8 +22,18 @@
 		(type STRING)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
+	(single-slot hasManyReviews
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
 	(single-slot nPag
 		(type INTEGER)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot goodReview
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot titulo
@@ -106,8 +116,18 @@
 (defclass Libro
 	(is-a USER)
 	(role concrete)
+	(single-slot hasManyReviews
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
 	(single-slot nPag
 		(type INTEGER)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot goodReview
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot url
