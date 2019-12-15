@@ -1,5 +1,4 @@
 ; Sun Dec 15 13:54:19 CET 2019
-; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
 
@@ -717,7 +716,56 @@
     (assert (perfilDefinido))
 )
 
-(defrule propaga-genero-perfil 
+(defrule pregunta-autor-favorito "pregunta al usuario autores favoritos"
+    (not (autoresFavoritosDefinidos))
+    =>
+    (bind ?autorIds (pregunta-lista "Si tienes autores favoritos indica sus id separados por espacios: "))
+    (foreach ?a ?autorIds
+        (bind ?autor (nth$ 1 (find-instance ((?inst Autor)) (eq (str-cat ?a) ?inst:idAutor))))
+        (assert (autorFavorito (autor ?autor)))
+    )
+    (assert (autoresFavoritosDefinidos))
+)
+
+(defrule pregunta-autor-favorito "pregunta al usuario autores favoritos"
+    (not (autoresNegativosDefinidos))
+    =>
+    (bind ?autorIds (pregunta-lista "Si tienes autores que no te gustan indica sus id separados por espacios: "))
+    (foreach ?a ?autorIds
+        (bind ?autor (nth$ 1 (find-instance ((?inst Autor)) (eq (str-cat ?a) ?inst:idAutor))))
+        (assert (autorNegativo (autor ?autor)))
+    )
+    (assert (autoresNegativosDefinidos))
+)
+
+(defrule pregunta-autor-favorito "pregunta al usuario autores favoritos"
+    (not (generosFavoritosDefinidos))
+    =>
+    (bind ?generoIds (pregunta-lista "Si tienes generos favoritos indica sus id separados por espacios: "))
+    (foreach ?g ?generoIds
+        (bind ?genero (nth$ 1 (find-instance ((?inst Genero)) (eq (str-cat ?g) ?inst:nombreGenero))))
+        (assert (autorNegativo (autor ?autor)))
+    )
+    (assert (generosFavoritosDefinidos))
+)
+
+(defrule preguntasAcabadas
+    (edadDefinida)
+    (perfilDefinido )
+    (autoresFavoritosDefinidos)
+    (autoresNegativosDefinidos)
+    (generosFavoritosDefinidos)
+    =>
+    (focus inferir_datos)
+)
+
+(defmodule inferir_datos
+    (import MAIN ?ALL)
+    (import preguntas ?ALL)
+    (export ?ALL)
+)
+
+(defrule propaga-genero-perfil
     (Lector (perfilPaciente ?p))
     (perfilDefinido)
     =>
