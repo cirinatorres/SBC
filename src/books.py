@@ -6,15 +6,15 @@ import re
 authors = []
 books = []
 themes = []
-# countindex = 0
+countindex = 0
 with open('../good_reads_final.csv') as csvfile:
     readCSV = csv.reader(csvfile, delimiter=',')
     printable = set(string.printable)
     count = []
     for row in readCSV:
         ruido = False
-        # if countindex == 10:
-            # break
+        if countindex == 1000:
+            break
         genre1 = ''.join(filter(lambda x: x in printable, row[13])).lower()
         genre2 = ''.join(filter(lambda x: x in printable, row[14])).lower()
         #genre1.sub('[^A-Za-z0-9]+', '', row[13]).lower()
@@ -37,6 +37,8 @@ with open('../good_reads_final.csv') as csvfile:
             else:
                 count[themes.index(row[14])] += 1
             book[4] = re.sub("[^0-9]", "", row[17])
+            if int(book[4]) < 10:
+                ruido = True
             book[5] = row[18][-4:]
             if not book[5].isdigit():
                 ruido = True
@@ -50,7 +52,7 @@ with open('../good_reads_final.csv') as csvfile:
                 authors.append(author)
             if not ruido:
                 books.append(book)
-            # countindex += 1
+            countindex += 1
 
     # l = []
     # for e in zip(count, themes):
@@ -85,6 +87,22 @@ for author in authors:
         print("([Author_" + str(indexauthor) + "] of Autor")
         print(" (idAutor \"" + str(indexauthor) + "\")")
         print(" (nombreAutor \"" + author[1] + "\")")
+        print(" (autoresSimilares")
+        numauthors = random.randint(1,20)
+        listauthors = []
+        for i in range(numauthors):
+            randomauthor = random.randint(0,len(authors)-1)
+            exit = False
+            while (not exit):
+                if randomauthor not in listauthors and indexauthor != randomauthor:
+                    listauthors.append(randomauthor)
+                    exit = True
+                else:
+                    randomauthor = random.randint(0, len(authors) - 1)
+            if i != numauthors-1:
+                print("     [Author_" + str(randomauthor) + "]")
+            else:
+                print("     [Author" + str(randomauthor) + "])")
         print(" (sexo " + author[2] + "))")
         print("")
         indexauthor += 1
@@ -113,13 +131,13 @@ for psicologico in ["A","B","C","D"]:
     for rangoEdad in ["Infantil","Juvenil","Adulto"]:
         print("([Profile_" + str(indexperfiles) + "] of Perfil")
         print(" (generosRecomendados")
-        numgenres = random.randint(1,len(themes))
+        numgenres = random.randint(1,10)
         listgenres = []
         for i in range(numgenres):
             randomgenre = random.randint(0,len(themes)-1)
             exit = False
             while (not exit):
-                if randomgenre not in listgenres:
+                if randomgenre not in listgenres and indexperfiles != randomgenre:
                     listgenres.append(randomgenre)
                     exit = True
                 else:
