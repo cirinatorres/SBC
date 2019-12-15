@@ -1,4 +1,4 @@
-; Sat Dec 14 20:56:49 CET 2019
+; Sun Dec 15 13:54:19 CET 2019
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -41,6 +41,10 @@
 		(create-accessor read-write))
 	(multislot justificacionesUsuario
 		(type STRING)
+		(create-accessor read-write))
+	(single-slot idGenero
+		(type STRING)
+;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot psicologico
 		(type SYMBOL)
@@ -141,6 +145,10 @@
 	(multislot generosSimilares
 		(type INSTANCE)
 ;+		(allowed-classes Genero)
+		(create-accessor read-write))
+	(single-slot idGenero
+		(type STRING)
+;+		(cardinality 1 1)
 		(create-accessor read-write)))
 
 (defclass Autor
