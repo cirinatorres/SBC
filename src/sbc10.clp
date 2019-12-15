@@ -1,4 +1,4 @@
-; Sat Dec 14 20:56:49 CET 2019
+; Sun Dec 15 13:54:19 CET 2019
 ;
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -41,6 +41,10 @@
 		(create-accessor read-write))
 	(multislot justificacionesUsuario
 		(type STRING)
+		(create-accessor read-write))
+	(single-slot idGenero
+		(type STRING)
+;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot psicologico
 		(type SYMBOL)
@@ -141,6 +145,10 @@
 	(multislot generosSimilares
 		(type INSTANCE)
 ;+		(allowed-classes Genero)
+		(create-accessor read-write))
+	(single-slot idGenero
+		(type STRING)
+;+		(cardinality 1 1)
 		(create-accessor read-write)))
 
 (defclass Autor
@@ -739,10 +747,34 @@
     (assert (autoresFavoritosDefinidos))
 )
 
+(defrule pregunta-autor-favorito "pregunta al usuario autores favoritos"
+    (not (autoresNegativosDefinidos))
+    =>
+    (bind ?autorIds (pregunta-lista "Si tienes autores que no te gustan indica sus id separados por espacios: "))
+    (foreach ?a ?autorIds
+        (bind ?autor (nth$ 1 (find-instance ((?inst Autor)) (eq (str-cat ?a) ?inst:idAutor))))
+        (assert (autorNegativo (autor ?autor)))
+    )
+    (assert (autoresNegativosDefinidos))
+)
+
+(defrule pregunta-autor-favorito "pregunta al usuario autores favoritos"
+    (not (generosFavoritosDefinidos))
+    =>
+    (bind ?generoIds (pregunta-lista "Si tienes generos favoritos indica sus id separados por espacios: "))
+    (foreach ?g ?generoIds
+        (bind ?genero (nth$ 1 (find-instance ((?inst Genero)) (eq (str-cat ?g) ?inst:nombreGenero))))
+        (assert (autorNegativo (autor ?autor)))
+    )
+    (assert (generosFavoritosDefinidos))
+)
+
 (defrule preguntasAcabadas
     (edadDefinida)
     (perfilDefinido )
     (autoresFavoritosDefinidos)
+    (autoresNegativosDefinidos)
+    (generosFavoritosDefinidos)
     =>
     (focus inferir_datos)
 )
