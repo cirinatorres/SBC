@@ -747,7 +747,7 @@
     (assert (autoresFavoritosDefinidos))
 )
 
-(defrule pregunta-autor-favorito "pregunta al usuario autores favoritos"
+(defrule pregunta-autor-negativo "pregunta al usuario autores negativos"
     (not (autoresNegativosDefinidos))
     =>
     (bind ?autorIds (pregunta-lista "Si tienes autores que no te gustan indica sus id separados por espacios: "))
@@ -758,13 +758,13 @@
     (assert (autoresNegativosDefinidos))
 )
 
-(defrule pregunta-autor-favorito "pregunta al usuario autores favoritos"
+(defrule pregunta-genero-favorito "pregunta al usuario generos favoritos"
     (not (generosFavoritosDefinidos))
     =>
     (bind ?generoIds (pregunta-lista "Si tienes generos favoritos indica sus id separados por espacios: "))
     (foreach ?g ?generoIds
         (bind ?genero (nth$ 1 (find-instance ((?inst Genero)) (eq (str-cat ?g) ?inst:nombreGenero))))
-        (assert (autorNegativo (autor ?autor)))
+        (assert (generoFavorito (genero ?genero)))
     )
     (assert (generosFavoritosDefinidos))
 )
