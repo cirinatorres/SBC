@@ -1,5 +1,5 @@
 ; Sat Dec 14 20:56:49 CET 2019
-; 
+;
 ;+ (version "3.5")
 ;+ (build "Build 663")
 
@@ -441,7 +441,7 @@
       (libro [Book_9]))
 
      ([Profile_0] of Perfil
-      
+
       (generosRecomendados
           [Genres_3]
           [Genres_4])
@@ -449,7 +449,7 @@
       (rangoEdad Infantil))
 
      ([Profile_1] of Perfil
-      
+
       (generosRecomendados
           [Genres_1]
           [Genres_0]
@@ -461,21 +461,21 @@
       (rangoEdad Joven))
 
      ([Profile_2] of Perfil
-      
+
       (generosRecomendados
           [Genres_5])
       (psicologico A)
       (rangoEdad Adulto))
 
      ([Profile_3] of Perfil
-      
+
       (generosRecomendados
           [Genres_6])
       (psicologico B)
       (rangoEdad Infantil))
 
      ([Profile_4] of Perfil
-      
+
       (generosRecomendados
           [Genres_1]
           [Genres_2]
@@ -484,14 +484,14 @@
       (rangoEdad Joven))
 
      ([Profile_5] of Perfil
-      
+
       (generosRecomendados
           [Genres_1])
       (psicologico B)
       (rangoEdad Adulto))
 
      ([Profile_6] of Perfil
-      
+
       (generosRecomendados
           [Genres_0]
           [Genres_1])
@@ -499,7 +499,7 @@
       (rangoEdad Infantil))
 
      ([Profile_7] of Perfil
-      
+
       (generosRecomendados
           [Genres_4]
           [Genres_6]
@@ -508,7 +508,7 @@
       (rangoEdad Joven))
 
      ([Profile_8] of Perfil
-      
+
       (generosRecomendados
           [Genres_7]
           [Genres_3]
@@ -519,7 +519,7 @@
       (rangoEdad Adulto))
 
      ([Profile_9] of Perfil
-      
+
       (generosRecomendados
           [Genres_2]
           [Genres_3]
@@ -532,7 +532,7 @@
       (rangoEdad Infantil))
 
      ([Profile_10] of Perfil
-      
+
       (generosRecomendados
           [Genres_3]
           [Genres_0]
@@ -544,7 +544,7 @@
       (rangoEdad Joven))
 
      ([Profile_11] of Perfil
-      
+
       (generosRecomendados
           [Genres_0]
           [Genres_4]
@@ -561,12 +561,27 @@
 (deftemplate Lector
     (slot edad (type INTEGER) (default -1))
     (slot perfilPaciente (type INSTANCE) (allowed-classes Perfil))
-    (multislot generosFavoritos (type INSTANCE) (allowed-classes Genero))
-    (multislot generosNegativos (type INSTANCE) (allowed-classes Genero))
-    (multislot librosFavoritos (type INSTANCE) (allowed-classes Libro))
-    (multislot librosNegativos (type INSTANCE) (allowed-classes Libro))
-    (multislot autoresFavoritos (type INSTANCE) (allowed-classes Autor))
-    (multislot autoresNegativos (type INSTANCE) (allowed-classes Autor))
+)
+
+(deftemplate autorFavorito
+    (slot autor (type INSTANCE) (allowed-classes Autor))
+)
+(deftemplate autorNegativo
+    (slot autor (type INSTANCE) (allowed-classes Autor))
+)
+
+(deftemplate generoFavorito
+    (slot genero (type INSTANCE) (allowed-classes Genero))
+)
+(deftemplate generoNegativo
+    (slot genero (type INSTANCE) (allowed-classes Genero))
+)
+
+(deftemplate libroFavorito
+    (slot libro (type INSTANCE) (allowed-classes Libro))
+)
+(deftemplate libroNegativo
+    (slot libro (type INSTANCE) (allowed-classes Libro))
 )
 
 (deftemplate solucionFinal
@@ -607,29 +622,25 @@
 (deffunction rango-edad (?edad)
     (if (< ?edad 12)
         then (bind ?rest Infantil)
-        else ( if(< ?edad 26) 
+        else ( if(< ?edad 26)
             then (bind ?rest Juvenil)
             else (bind ?rest Adulto)
-        ) 
+        )
     )
     ?rest
 )
 
 (deffunction sumaScoreLibros(?books ?score)
     (foreach ?book ?books
-        (bind ?ranking 
-            (nth$ 1 
+        (bind ?ranking
+            (nth$ 1
                 (find-instance
                     ((?inst Recomendacion))
-                    (eq ?book ?inst:libro) 
+                    (eq ?book ?inst:libro)
                 )
             )
         )
-        (printout t ?ranking crlf)
-       ; (active-modify-instance 
-       ;     ?ranking (gradoRecomendacion (+ ?ranking:gradoRecomendacion ?score))
-       ; )
-    
+        (send ?ranking put-gradoRecomendacion (+ (send ?ranking get-gradoRecomendacion) ?score))
     )
 )
 
@@ -670,23 +681,16 @@
 )
 
 
-;;; Declaracion de modulos ----------------------------
-
-;;; Modulo principal de utilidades, indicamos que exportamos todo
-(defmodule MAIN (export ?ALL))
-
-(defmodule nuevo-lector
-    (import MAIN ?ALL)
-    (export ?ALL)
-)
-;;; Fin declaracion de modulos ------------------------
-
-
 ;;;-----------------------------------------------------------------------------
 ;;;----------------------------------REGLAS-------------------------------------
 ;;;-----------------------------------------------------------------------------
 
-(defrule MAIN::initialRule "regla inicial"
+;;; Modulo principal de utilidades, indicamos que exportamos todo
+(defmodule MAIN
+    (export ?ALL)
+)
+
+(defrule initialRule "regla inicial"
 	(initial-fact)
 	=>
 	(printout t crlf)
@@ -694,10 +698,16 @@
 	(printout t "------ Sistema de Recomendacion de Libros de la FIB -----" crlf)
 	(printout t "--------------------------------------------------------------" crlf)
 	(printout t crlf)
-	(focus nuevo-lector)		
+	(focus preguntas)
 )
 
-(defrule nuevo-lector::preguntar-edad "pregunta la edad"
+;;; Modulo de preguntas al usuario
+(defmodule preguntas
+    (import MAIN ?ALL)
+    (export ?ALL)
+)
+
+(defrule preguntar-edad "pregunta la edad"
     (not (Lector))
     =>
     (bind ?edad (pregunta-general "Cuantos años tienes? "))
@@ -705,7 +715,7 @@
     (assert (edadDefinida))
 )
 
-(defrule nuevo-lector::preguntar-perfil "pregunta la edad"
+(defrule preguntar-perfil "pregunta perfil psicologico"
     ?l <- (Lector (edad ?e))
     (edadDefinida)
     (not (perfilDefinido))
@@ -718,22 +728,46 @@
     (assert (perfilDefinido))
 )
 
-(defrule propaga-genero-perfil 
+(defrule pregunta-autor-favorito "pregunta al usuario autores favoritos"
+    (not (autoresFavoritosDefinidos))
+    =>
+    (bind ?autorIds (pregunta-lista "Si tienes autores favoritos indica sus id separados por espacios: "))
+    (foreach ?a ?autorIds
+        (bind ?autor (nth$ 1 (find-instance ((?inst Autor)) (eq (str-cat ?a) ?inst:idAutor))))
+        (assert (autorFavorito (autor ?autor)))
+    )
+    (assert (autoresFavoritosDefinidos))
+)
+
+(defrule preguntasAcabadas
+    (edadDefinida)
+    (perfilDefinido )
+    (autoresFavoritosDefinidos)
+    =>
+    (focus inferir_datos)
+)
+
+(defmodule inferir_datos
+    (import MAIN ?ALL)
+    (import preguntas ?ALL)
+    (export ?ALL)
+)
+
+(defrule propaga-genero-perfil
     (Lector (perfilPaciente ?p))
-    (perfilDefinido)
     =>
     (foreach ?gr (send ?p get-generosRecomendados)
         (bind ?libros
             (find-all-instances ((?l Libro))
                 (member$ ?gr ?l:generos)
-            )    
+            )
         )
         (sumaScoreLibros ?libros 10)
         (foreach ?gs (send ?gr get-generosSimilares)
             (bind ?librosSimilares
                 (find-all-instances ((?ls Libro))
                     (member$ ?gs (send ?ls get-generos))
-                )    
+                )
             )
             (sumaScoreLibros ?librosSimilares 5)
         )
