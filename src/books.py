@@ -6,7 +6,7 @@ authors = []
 books = []
 themes = []
 countindex = 0
-with open('good_reads_final.csv') as csvfile:
+with open('../good_reads_final.csv') as csvfile:
     readCSV = csv.reader(csvfile, delimiter=',')
     printable = set(string.printable)
     count = []
@@ -108,7 +108,7 @@ for book in books:
 indexperfiles = 0
 for curable in ["TRUE","FALSE"]:
     for psicologico in ["A","B","C","D"]:
-        for rangoEdad in ["Infantil","Joven","Adulto"]:
+        for rangoEdad in ["Infantil","Juvenil","Adulto"]:
             for terminal in ["TRUE","FALSE"]:
                 print("([Profile_" + str(indexperfiles) + "] of Perfil")
                 print(" ")
