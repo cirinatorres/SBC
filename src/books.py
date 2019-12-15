@@ -90,6 +90,7 @@ for author in authors:
 indexgenre = 0
 for genre in themes:
         print("([Genres_" + str(indexgenre) + "] of Genero")
+        print(" (idGenero \""+ str(indexgenre) +"\")")
         if indexgenre != 0:
             print(" (generosSimilares [" + "Genres_" + str(indexgenre-1) + "])")
         print(" (nombreGenero \"" + genre + "\"))")
@@ -99,7 +100,6 @@ for genre in themes:
 indexrecomendacion = 0
 for book in books:
         print("([Recomendations_" + str(indexrecomendacion) + "] of Recomendacion")
-        print("")
         print(" (gradoRecomendacion " + str(0) + ")")
         print(" (libro [Book_" + str(indexrecomendacion) + "]))")
         print("")
@@ -109,7 +109,6 @@ indexperfiles = 0
 for psicologico in ["A","B","C","D"]:
     for rangoEdad in ["Infantil","Juvenil","Adulto"]:
         print("([Profile_" + str(indexperfiles) + "] of Perfil")
-        print(" ")
         print(" (generosRecomendados")
         numgenres = random.randint(1,len(themes))
         listgenres = []
