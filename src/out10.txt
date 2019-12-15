@@ -3,7 +3,7 @@
  (generos
      [Genres_0]
      [Genres_1])
- (idLibro "2429135")
+ (idLibro "0")
  (nPag 465)
  (publicacion 2005)
  (url "https://www.goodreads.com/book/show/2429135.The_Girl_with_the_Dragon_Tattoo")
@@ -14,7 +14,7 @@
  (generos
      [Genres_0]
      [Genres_2])
- (idLibro "382975")
+ (idLibro "1")
  (nPag 438)
  (publicacion 1970)
  (url "https://www.goodreads.com/book/show/382975.The_Obscene_Bird_of_Night")
@@ -25,7 +25,7 @@
  (generos
      [Genres_3]
      [Genres_4])
- (idLibro "7260188")
+ (idLibro "2")
  (nPag 392)
  (publicacion 2010)
  (url "https://www.goodreads.com/book/show/7260188-mockingjay")
@@ -36,7 +36,7 @@
  (generos
      [Genres_0]
      [Genres_5])
- (idLibro "5130")
+ (idLibro "3")
  (nPag 354)
  (publicacion 1962)
  (url "https://www.goodreads.com/book/show/5130.Island")
@@ -47,7 +47,7 @@
  (generos
      [Genres_6]
      [Genres_4])
- (idLibro "20927491")
+ (idLibro "4")
  (nPag 109)
  (publicacion 2014)
  (url "https://www.goodreads.com/book/show/20927491-1-27")
@@ -58,7 +58,7 @@
  (generos
      [Genres_6]
      [Genres_4])
- (idLibro "20803627")
+ (idLibro "5")
  (nPag 171)
  (publicacion 2014)
  (url "https://www.goodreads.com/book/show/20803627-forget-me-not")
@@ -69,7 +69,7 @@
  (generos
      [Genres_6]
      [Genres_7])
- (idLibro "17305049")
+ (idLibro "6")
  (nPag 688)
  (publicacion 2014)
  (url "https://www.goodreads.com/book/show/17305049-ethan")
@@ -80,7 +80,7 @@
  (generos
      [Genres_3]
      [Genres_4])
- (idLibro "7059135")
+ (idLibro "7")
  (nPag 320)
  (publicacion 2010)
  (url "https://www.goodreads.com/book/show/7059135-inside-out")
@@ -91,7 +91,7 @@
  (generos
      [Genres_4]
      [Genres_0])
- (idLibro "104344")
+ (idLibro "8")
  (nPag 315)
  (publicacion 1987)
  (url "https://www.goodreads.com/book/show/104344.The_Gate_to_Women_s_Country")
@@ -102,59 +102,59 @@
  (generos
      [Genres_4]
      [Genres_0])
- (idLibro "350")
+ (idLibro "9")
  (nPag 528)
  (publicacion 1961)
  (url "https://www.goodreads.com/book/show/350.Stranger_in_a_Strange_Land")
  (titulo "Stranger in a Strange Land"))
 
 ([Author_0] of Autor
- (idAutor "706255")
+ (idAutor "0")
  (nombreAutor "Stieg Larsson")
  (sexo male))
 
 ([Author_1] of Autor
- (idAutor "37871")
+ (idAutor "1")
  (nombreAutor "José Donoso")
  (sexo male))
 
 ([Author_2] of Autor
- (idAutor "153394")
+ (idAutor "2")
  (nombreAutor "Suzanne Collins")
  (sexo female))
 
 ([Author_3] of Autor
- (idAutor "3487")
+ (idAutor "3")
  (nombreAutor "Aldous Huxley")
  (sexo male))
 
 ([Author_4] of Autor
- (idAutor "5821204")
+ (idAutor "4")
  (nombreAutor "Ais")
  (sexo male))
 
 ([Author_5] of Autor
- (idAutor "268722")
+ (idAutor "5")
  (nombreAutor "Jordan Castillo Price")
  (sexo female))
 
 ([Author_6] of Autor
- (idAutor "4318269")
+ (idAutor "6")
  (nombreAutor "Nicole Edwards")
  (sexo female))
 
 ([Author_7] of Autor
- (idAutor "445303")
+ (idAutor "7")
  (nombreAutor "Maria V. Snyder")
  (sexo female))
 
 ([Author_8] of Autor
- (idAutor "20560")
+ (idAutor "8")
  (nombreAutor "Sheri S. Tepper")
  (sexo female))
 
 ([Author_9] of Autor
- (idAutor "205")
+ (idAutor "9")
  (nombreAutor "Robert A. Heinlein")
  (sexo male))
 
@@ -239,107 +239,122 @@
 
 ([Profile_0] of Perfil
  (generosRecomendados
-     [Genres_4]
-     [Genres_2])
+     [Genres_5]
+     [Genres_3]
+     [Genres_2]
+     [Genres_1]
+     [Genres_6]
+     [Genres_7]
+     [Genres_0]
+     [Genres_4])
  (psicologico A)
  (rangoEdad Infantil))
 
 ([Profile_1] of Perfil
  (generosRecomendados
-     [Genres_5])
+     [Genres_4]
+     [Genres_1]
+     [Genres_5]
+     [Genres_0]
+     [Genres_6]
+     [Genres_2])
  (psicologico A)
  (rangoEdad Juvenil))
 
 ([Profile_2] of Perfil
  (generosRecomendados
-     [Genres_7]
-     [Genres_1]
-     [Genres_3]
-     [Genres_2]
-     [Genres_5])
+     [Genres_3])
  (psicologico A)
  (rangoEdad Adulto))
 
 ([Profile_3] of Perfil
  (generosRecomendados
-     [Genres_2]
-     [Genres_5]
-     [Genres_4]
-     [Genres_0]
-     [Genres_3]
      [Genres_6]
-     [Genres_7])
+     [Genres_5]
+     [Genres_3]
+     [Genres_1]
+     [Genres_7]
+     [Genres_2]
+     [Genres_4]
+     [Genres_0])
  (psicologico B)
  (rangoEdad Infantil))
 
 ([Profile_4] of Perfil
  (generosRecomendados
-     [Genres_4]
-     [Genres_0]
-     [Genres_1]
      [Genres_2]
+     [Genres_0]
+     [Genres_4]
+     [Genres_5]
+     [Genres_3]
+     [Genres_6]
      [Genres_7])
  (psicologico B)
  (rangoEdad Juvenil))
 
 ([Profile_5] of Perfil
  (generosRecomendados
-     [Genres_7]
-     [Genres_1]
      [Genres_3])
  (psicologico B)
  (rangoEdad Adulto))
 
 ([Profile_6] of Perfil
  (generosRecomendados
-     [Genres_2]
-     [Genres_5]
-     [Genres_4]
-     [Genres_3]
-     [Genres_0]
      [Genres_7]
-     [Genres_6])
+     [Genres_2]
+     [Genres_3]
+     [Genres_1]
+     [Genres_5]
+     [Genres_6]
+     [Genres_0]
+     [Genres_4])
  (psicologico C)
  (rangoEdad Infantil))
 
 ([Profile_7] of Perfil
  (generosRecomendados
-     [Genres_5]
-     [Genres_7]
-     [Genres_1])
+     [Genres_6])
  (psicologico C)
  (rangoEdad Juvenil))
 
 ([Profile_8] of Perfil
  (generosRecomendados
-     [Genres_5])
+     [Genres_4]
+     [Genres_6])
  (psicologico C)
  (rangoEdad Adulto))
 
 ([Profile_9] of Perfil
  (generosRecomendados
+     [Genres_7]
+     [Genres_2]
+     [Genres_4]
+     [Genres_5]
+     [Genres_0]
      [Genres_1]
-     [Genres_4])
+     [Genres_3]
+     [Genres_6])
  (psicologico D)
  (rangoEdad Infantil))
 
 ([Profile_10] of Perfil
  (generosRecomendados
+     [Genres_7]
+     [Genres_3]
+     [Genres_2]
+     [Genres_4]
      [Genres_0]
-     [Genres_5]
-     [Genres_1])
+     [Genres_6]
+     [Genres_5])
  (psicologico D)
  (rangoEdad Juvenil))
 
 ([Profile_11] of Perfil
  (generosRecomendados
-     [Genres_2]
-     [Genres_1]
+     [Genres_7]
      [Genres_6]
-     [Genres_4]
-     [Genres_0]
-     [Genres_3]
-     [Genres_5])
+     [Genres_2]
+     [Genres_3])
  (psicologico D)
  (rangoEdad Adulto))
 
