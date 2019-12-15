@@ -1,6 +1,7 @@
 import csv
 import string
 import random
+import re
 
 authors = []
 books = []
@@ -11,6 +12,7 @@ with open('../good_reads_final.csv') as csvfile:
     printable = set(string.printable)
     count = []
     for row in readCSV:
+        ruido = False
         # if countindex == 10:
             # break
         genre1 = ''.join(filter(lambda x: x in printable, row[13])).lower()
@@ -21,7 +23,7 @@ with open('../good_reads_final.csv') as csvfile:
          and (("fiction" in genre1) or ("fiction" in genre2)):
             book = [None]*8
             book[0] = row[11]
-            book[1] = row[12].strip()
+            book[1] = re.sub('[^A-Za-z0-9 -]+', '', row[12]).strip()
             book[2] = row[13]
             if row[13] not in themes:
                 themes.append(row[13])
@@ -34,19 +36,20 @@ with open('../good_reads_final.csv') as csvfile:
                 count.append(1)
             else:
                 count[themes.index(row[14])] += 1
-            book[4] = row[17]
+            book[4] = re.sub("[^0-9]", "", row[17])
             book[5] = row[18][-4:]
-            if book[5] == ("" or "by"):
-                book[5] = 0
+            if not book[5].isdigit():
+                ruido = True
             book[6] = row[3]
             book[7] = row[10]
             author = [None]*3
-            author[0] = row[3]  
-            author[1] = row[4].strip()
+            author[0] = row[3]
+            author[1] = re.sub('[^A-Za-z0-9 -]+', '', row[4]).strip()
             author[2] = row[1]
             if author not in authors:
                 authors.append(author)
-            books.append(book)
+            if not ruido:
+                books.append(book)
             # countindex += 1
 
     # l = []
@@ -129,6 +132,3 @@ for psicologico in ["A","B","C","D"]:
         print(" (rangoEdad " + rangoEdad + "))")
         print("")
         indexperfiles += 1
-
-
-
