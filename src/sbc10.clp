@@ -126540,7 +126540,7 @@
     (assert (Lector (edad ?edad)))
     (if (not (and (eq (type ?edad) INTEGER) (> ?edad 0)))
         then
-        (printout t "Formato edad incorrecto. Vuelve a intentar con un entero positivo." crlf)
+        (printout t "Edad incorrecta. Vuelve a intentar con un entero positivo." crlf)
     )
 )
 
@@ -126563,6 +126563,7 @@
             (modify ?l (perfilPaciente (nth$ 1 ?p)))
             (assert (perfilDefinido))
         else
+            (printout t "Perfil psicológico no válido." crlf)
             (retract ?l)
             (assert (Lector (edad ?e)))
     )
