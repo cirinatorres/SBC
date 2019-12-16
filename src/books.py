@@ -7,6 +7,7 @@ authors = []
 books = []
 themes = []
 bookTitles = []
+notWantedGenres = ["erotica"]
 countindex = 0
 with open('../good_reads_final.csv') as csvfile:
     readCSV = csv.reader(csvfile, delimiter=',')
@@ -14,14 +15,15 @@ with open('../good_reads_final.csv') as csvfile:
     count = []
     for row in readCSV:
         ruido = False
-        if countindex == 1000:
+        if countindex == 1500:
             break
         genre1 = ''.join(filter(lambda x: x in printable, row[13])).lower()
         genre2 = ''.join(filter(lambda x: x in printable, row[14])).lower()
         #genre1.sub('[^A-Za-z0-9]+', '', row[13]).lower()
         #genre2.sub('[^A-Za-z0-9]+', '', row[14]).lower()
         if (("nonfiction" not in genre1) and ("nonfiction" not in genre2)) \
-         and (("fiction" in genre1) or ("fiction" in genre2)):
+         and (("fiction" in genre1) or ("fiction" in genre2)) \
+         and ("erotica" not in genre1) and ("erotica" not in genre2):
             book = [None]*10
             book[0] = row[11]
             book[1] = re.sub('[^A-Za-z0-9 -]+', '', row[12]).strip()
@@ -61,7 +63,7 @@ with open('../good_reads_final.csv') as csvfile:
             author[0] = row[3]
             author[1] = re.sub('[^A-Za-z0-9 -]+', '', row[4]).strip()
             author[2] = row[1]
-            if author not in authors:
+            if author not in authors and not ruido:
                 authors.append(author)
             if not ruido:
                 books.append(book)
@@ -70,7 +72,7 @@ with open('../good_reads_final.csv') as csvfile:
     # l = []
     # for e in zip(count, themes):
     #     l.append(e)
-
+    #
     # l.sort(key=lambda tup: tup[0], reverse = True)
     # for e in l:
     #     print(e[1])
