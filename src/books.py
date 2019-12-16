@@ -6,6 +6,7 @@ import re
 authors = []
 books = []
 themes = []
+bookTitles = []
 countindex = 0
 with open('../good_reads_final.csv') as csvfile:
     readCSV = csv.reader(csvfile, delimiter=',')
@@ -24,6 +25,10 @@ with open('../good_reads_final.csv') as csvfile:
             book = [None]*10
             book[0] = row[11]
             book[1] = re.sub('[^A-Za-z0-9 -]+', '', row[12]).strip()
+            if book[1] in bookTitles:
+                ruido = True
+            else:
+                bookTitles.append(book[1])
             book[2] = row[13]
             if row[13] not in themes:
                 themes.append(row[13])
@@ -58,7 +63,7 @@ with open('../good_reads_final.csv') as csvfile:
             author[2] = row[1]
             if author not in authors:
                 authors.append(author)
-            if not ruido and book not in books:
+            if not ruido:
                 books.append(book)
             countindex += 1
 
