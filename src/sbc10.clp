@@ -32679,6 +32679,7 @@
     (slot popularidad (type SYMBOL) (allowed-values FALSE TRUE))
     (slot habitual (type SYMBOL) (allowed-values FALSE TRUE))
 	(slot sexoAutor (type SYMBOL) (allowed-values HOMBRE MUJER INDIF))
+	(slot lugarLectura (type SYMBOL) (allowed-values CASA FUERA AMBOS))
 )
 
 (deftemplate autorFavorito
@@ -32729,6 +32730,17 @@
 	?respuesta
 )
 
+;;; Funcion para hacer una pregunta con valor minimo de respuesta
+(deffunction pregunta-numerica-minimo (?pregunta ?rangini)
+	(format t "%s [%d<] " ?pregunta ?rangini)
+	(bind ?respuesta (read))
+	(while (not(and (eq (type ?respuesta) INTEGER) (> ?respuesta ?rangini))) do
+		(format t "Respuesta no válida. %s [%d<] " ?pregunta ?rangini)
+		(bind ?respuesta (read))
+	)
+	?respuesta
+)
+
 ;;; Funcion para hacer una pregunta con un conjunto definido de valores de repuesta
 (deffunction pregunta-lista (?pregunta $?valores_posibles)
 	(format t "%s" ?pregunta)
@@ -32760,20 +32772,22 @@
         )
         (switch ?score
             (case 100 then (bind ?just "Es un libro de género recomendado a gente de tu perfil."))
-            (case 50 then (bind ?just "Es un libro de género similar al recomendado a gente de tu perfil."))
-            (case 60 then (bind ?just "Es un libro escrito por un de tus autores favoritos."))
+			(case 95 then (bind ?just "Este libro es apropiado para tu edad."))
+			(case 80 then (bind ?just "Este libro es ligero de leer."))
             (case 70 then (bind ?just "Es un libro de un género favorito tuyo."))
-            (case 20 then (bind ?just "Es un libro de un género similar a tus favoritos."))
+			(case 65 then (bind ?just "El sexo del autor de este libro es acorde a tus preferencias."))
+			(case 60 then (bind ?just "Es un libro escrito por un de tus autores favoritos."))
+			(case 55 then (bind ?just "Libro corto y ligero perfecto para leer fuera de casa."))
+			(case 50 then (bind ?just "Es un libro de género similar al recomendado a gente de tu perfil."))
+			(case 40 then (bind ?just "Este libro tiene muchos ratings."))
+            (case 30 then (bind ?just "Este libro tiene una buena valoración media."))
+			(case 20 then (bind ?just "Es un libro de un género similar a tus favoritos."))
+			(case 15 then (bind ?just "Es un libro de un autor similar a uno de tus autores favoritos."))
             (case 10 then (bind ?just "Es un libro del mismo género que el de un libro favorito tuyo."))
             (case 2 then (bind ?just "Es un libro de un género similar al de un libro de tus favoritos."))
-            (case 15 then (bind ?just "Es un libro de un autor similar a uno de tus autores favoritos."))
-            (case 40 then (bind ?just "Este libro tiene muchos ratings."))
-            (case 30 then (bind ?just "Este libro tiene una buena valoración media."))
-            (case 80 then (bind ?just "Este libro es ligero de leer."))
-			(case 65 then (bind ?just "El sexo del autor de este libro es acorde a tus preferencias."))
-            (case -20 then (bind ?just "Aunque este género es similar a uno que no te gusta."))
-            (case -12 then (bind ?just "Aunque este autor es similar a uno que no te gusta."))
             (case -2 then (bind ?just "Pese a que este libro es de un género similar al de un libro que no te gusta."))
+			(case -12 then (bind ?just "Aunque este autor es similar a uno que no te gusta."))
+			(case -20 then (bind ?just "Aunque este género es similar a uno que no te gusta."))
         )
         (send ?ranking put-gradoRecomendacion (+ (send ?ranking get-gradoRecomendacion) ?score))
         (bind ?jr (send ?ranking get-justificaciones))
@@ -33027,7 +33041,7 @@
     (popularidadDefinida)
     ?l <- (Lector (edad ?e) (perfilPaciente ?p) (popularidad ?popu))
     =>
-    (bind ?habi (pregunta-general "Eres un lector frecuente? (s/n) "))
+    (bind ?habi (pregunta-general "Lees con frecuencia? (s/n) "))
     (if (member$ ?habi (create$ s n))
         then
             (if (eq ?habi s)
@@ -33042,17 +33056,35 @@
     )
 )
 
+(defrule pregunta-lugar-lectura
+	(not (lugarLecturaDefinido))
+	(habitualDefinido)
+	?l <- (Lector)
+	=>
+	(printout t "Donde sueles leer: " crlf)
+    (printout t "[1] En casa" crlf)
+    (printout t "[2] Fuera de casa (transporte público, etc)" crlf)
+    (printout t "[3] Ambos" crlf)
+    (bind ?lugar (pregunta-numerica "Indica tu preferencia: " 1 3))
+	(switch ?lugar
+		(case 1 then (modify ?l (lugarLectura CASA)))
+		(case 2 then (modify ?l (lugarLectura FUERA)))
+		(case 3 then (modify ?l (lugarLectura AMBOS)))
+	)
+	(assert (lugarLecturaDefinido))
+)
+
 (defrule pregunta-sexo-autor
 	(not (sexoAutorDefinido))
 	(habitualDefinido)
 	?l <- (Lector)
 	=>
 	(printout t "Sexo del escritor: " crlf)
-    (printout t "[1] Prefiero mujeres" crlf)
-    (printout t "[2] Prefiero hombres" crlf)
+    (printout t "[1] Prefiero autoras" crlf)
+    (printout t "[2] Prefiero autores" crlf)
     (printout t "[3] Me es indiferente" crlf)
-    (bind ?psicologico (pregunta-numerica "Indica tu preferencia: " 1 3))
-	(switch ?psicologico
+    (bind ?s (pregunta-numerica "Indica tu preferencia: " 1 3))
+	(switch ?s
 		(case 1 then (modify ?l (sexoAutor MUJER)))
 		(case 2 then (modify ?l (sexoAutor HOMBRE)))
 		(case 3 then (modify ?l (sexoAutor INDIF)))
@@ -33070,6 +33102,7 @@
     (librosNegativosDefinidos)
     (popularidadDefinida)
     (habitualDefinido)
+	(lugarLecturaDefinido)
 	(sexoAutorDefinido)
     =>
     (focus inferir_datos)
@@ -33194,6 +33227,28 @@
 	(assert (sexoAutorPropagado))
 )
 
+(defrule propaga-lugar-lectura
+	(Lector (lugarLectura ?l))
+	=>
+	(if (or (eq ?l FUERA) (eq ?l AMBOS))
+		then
+			(bind ?libros (find-all-instances ((?inst Libro)) (< ?inst:nPag 250)))
+			(sumaScoreLibros ?libros 55)
+	)
+	(assert (lugarLecturaPropagado))
+)
+
+(defrule propaga-edad-lector
+	(Lector (edad ?e))
+	=>
+	(if (< ?e 12)
+		then
+			(bind ?libros (find-all-instances ((?inst Libro)) (< ?inst:nPag 150)))
+			(sumaScoreLibros ?libros 95)
+	)
+	(assert (edadLectorPropagada))
+)
+
 (defrule seleccion-resultados
     (perfilPropagado)
     (not (autorFavorito (autor ?a)))
@@ -33205,6 +33260,8 @@
 	(popularidadPropagada)
     (habitualPropagado)
 	(sexoAutorPropagado)
+	(lugarLecturaPropagado)
+	(edadLectorPropagada)
     =>
     (bind ?allRecomendaciones (find-all-instances ((?r Recomendacion)) TRUE))
     (bind ?sortedRecoms (sort criteriaRecomByMaxScore ?allRecomendaciones))
