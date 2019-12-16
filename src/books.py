@@ -58,7 +58,7 @@ with open('../good_reads_final.csv') as csvfile:
             author[2] = row[1]
             if author not in authors:
                 authors.append(author)
-            if not ruido:
+            if not ruido and book not in books:
                 books.append(book)
             countindex += 1
 
