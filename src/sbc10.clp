@@ -32678,6 +32678,7 @@
     (slot perfilPaciente (type INSTANCE) (allowed-classes Perfil))
     (slot popularidad (type SYMBOL) (allowed-values FALSE TRUE))
     (slot habitual (type SYMBOL) (allowed-values FALSE TRUE))
+	(slot sexoAutor (type SYMBOL) (allowed-values HOMBRE MUJER INDIF))
 )
 
 (deftemplate autorFavorito
@@ -32721,8 +32722,8 @@
 (deffunction pregunta-numerica (?pregunta ?rangini ?rangfi)
 	(format t "%s [%d, %d] " ?pregunta ?rangini ?rangfi)
 	(bind ?respuesta (read))
-	(while (not(and(>= ?respuesta ?rangini)(<= ?respuesta ?rangfi))) do
-		(format t "�%s? [%d, %d] " ?pregunta ?rangini ?rangfi)
+	(while (not(and (eq (type ?respuesta) INTEGER) (and (>= ?respuesta ?rangini) (<= ?respuesta ?rangfi)))) do
+		(format t "Respuesta no válida. %s [%d, %d] " ?pregunta ?rangini ?rangfi)
 		(bind ?respuesta (read))
 	)
 	?respuesta
@@ -32769,6 +32770,7 @@
             (case 40 then (bind ?just "Este libro tiene muchos ratings."))
             (case 30 then (bind ?just "Este libro tiene una buena valoración media."))
             (case 80 then (bind ?just "Este libro es ligero de leer."))
+			(case 65 then (bind ?just "El sexo del autor de este libro es acorde a tus preferencias."))
             (case -20 then (bind ?just "Aunque este género es similar a uno que no te gusta."))
             (case -12 then (bind ?just "Aunque este autor es similar a uno que no te gusta."))
             (case -2 then (bind ?just "Pese a que este libro es de un género similar al de un libro que no te gusta."))
@@ -32920,7 +32922,7 @@
     (not (autoresFavoritosDefinidos))
     (perfilDefinido)
     =>
-    (bind ?autorIds (pregunta-lista "Si tienes autores favoritos indica sus id separados por espacios: "))
+    (bind ?autorIds (pregunta-lista "Si tienes autores favoritos indica sus ID separados por espacios: "))
     (foreach ?a ?autorIds
         (bind ?autor (nth$ 1 (find-instance ((?inst Autor)) (eq (str-cat ?a) ?inst:idAutor))))
         (if (neq ?autor nil)
@@ -32934,7 +32936,7 @@
     (not (autoresNegativosDefinidos))
     (perfilDefinido)
     =>
-    (bind ?autorIds (pregunta-lista "Si tienes autores que no te gustan indica sus id separados por espacios: "))
+    (bind ?autorIds (pregunta-lista "Si tienes autores que no te gustan indica sus ID separados por espacios: "))
     (foreach ?a ?autorIds
         (bind ?autor (nth$ 1 (find-instance ((?inst Autor)) (eq (str-cat ?a) ?inst:idAutor))))
         (if (neq ?autor nil)
@@ -32948,7 +32950,7 @@
     (not (generosFavoritosDefinidos))
     (perfilDefinido)
     =>
-    (bind ?generoIds (pregunta-lista "Si tienes generos favoritos indica sus id separados por espacios: "))
+    (bind ?generoIds (pregunta-lista "Si tienes generos favoritos indica sus ID separados por espacios: "))
     (foreach ?g ?generoIds
         (bind ?genero (nth$ 1 (find-instance ((?inst Genero)) (eq (str-cat ?g) ?inst:idGenero))))
         (if (neq ?genero nil)
@@ -32962,7 +32964,7 @@
     (not (generosNegativosDefinidos))
     (perfilDefinido)
     =>
-    (bind ?generoIds (pregunta-lista "Si tienes generos que no te gustan indica sus id separados por espacios: "))
+    (bind ?generoIds (pregunta-lista "Si tienes generos que no te gustan indica sus ID separados por espacios: "))
     (foreach ?g ?generoIds
         (bind ?genero (nth$ 1 (find-instance ((?inst Genero)) (eq (str-cat ?g) ?inst:idGenero))))
         (if (neq ?genero nil)
@@ -32976,7 +32978,7 @@
     (not (librosFavoritosDefinidos))
     (perfilDefinido)
     =>
-    (bind ?libroIds (pregunta-lista "Si tienes libros favoritos indica sus id separados por espacios: "))
+    (bind ?libroIds (pregunta-lista "Si tienes libros favoritos indica sus ID separados por espacios: "))
     (foreach ?l ?libroIds
         (bind ?libro (nth$ 1 (find-instance ((?inst Libro)) (eq (str-cat ?l) ?inst:idLibro))))
         (if (neq ?libro nil)
@@ -32990,7 +32992,7 @@
     (not (librosNegativosDefinidos))
     (perfilDefinido)
     =>
-    (bind ?libroIds (pregunta-lista "Si tienes libros que no te gustan indica sus id separados por espacios: "))
+    (bind ?libroIds (pregunta-lista "Si tienes libros que no te gustan indica sus ID separados por espacios: "))
     (foreach ?l ?libroIds
         (bind ?libro (nth$ 1 (find-instance ((?inst Libro)) (eq (str-cat ?l) ?inst:idLibro))))
         (if (neq ?libro nil)
@@ -33005,7 +33007,7 @@
     (perfilDefinido)
     ?l <- (Lector (edad ?e) (perfilPaciente ?p))
     =>
-    (bind ?popu (pregunta-general "Te importan las review del libro? (s/n) "))
+    (bind ?popu (pregunta-general "Te importa la opinión de otros lectores? (s/n) "))
     (if (member$ ?popu (create$ s n))
         then
             (if (eq ?popu s)
@@ -33040,6 +33042,24 @@
     )
 )
 
+(defrule pregunta-sexo-autor
+	(not (sexoAutorDefinido))
+	(habitualDefinido)
+	?l <- (Lector)
+	=>
+	(printout t "Sexo del escritor: " crlf)
+    (printout t "[1] Prefiero mujeres" crlf)
+    (printout t "[2] Prefiero hombres" crlf)
+    (printout t "[3] Me es indiferente" crlf)
+    (bind ?psicologico (pregunta-numerica "Indica tu preferencia: " 1 3))
+	(switch ?psicologico
+		(case 1 then (modify ?l (sexoAutor MUJER)))
+		(case 2 then (modify ?l (sexoAutor HOMBRE)))
+		(case 3 then (modify ?l (sexoAutor INDIF)))
+	)
+	(assert (sexoAutorDefinido))
+)
+
 (defrule preguntasAcabadas
     (perfilDefinido)
     (autoresFavoritosDefinidos)
@@ -33050,6 +33070,7 @@
     (librosNegativosDefinidos)
     (popularidadDefinida)
     (habitualDefinido)
+	(sexoAutorDefinido)
     =>
     (focus inferir_datos)
 )
@@ -33151,6 +33172,28 @@
     (assert (habitualPropagado))
 )
 
+(defrule propaga-sexo-autor
+	(Lector (sexoAutor ?s))
+	=>
+	(if (eq ?s MUJER)
+		then
+		(bind ?autoras (find-all-instances ((?a Autor)) (eq female ?a:sexo)))
+		(foreach ?a ?autoras
+			(bind ?libros (find-all-instances ((?inst Libro)) (eq ?inst:autor ?a)))
+			(sumaScoreLibros ?libros 65)
+		)
+	)
+	(if (eq ?s HOMBRE)
+		then
+		(bind ?autoras (find-all-instances ((?a Autor)) (eq male ?a:sexo)))
+		(foreach ?a ?autoras
+			(bind ?libros (find-all-instances ((?inst Libro)) (eq ?inst:autor ?a)))
+			(sumaScoreLibros ?libros 65)
+		)
+	)
+	(assert (sexoAutorPropagado))
+)
+
 (defrule seleccion-resultados
     (perfilPropagado)
     (not (autorFavorito (autor ?a)))
@@ -33159,7 +33202,9 @@
     (not (generoNegativo (genero ?g)))
     (not (libroFavorito (libro ?l)))
     (not (libroNegativo (libro ?l)))
+	(popularidadPropagada)
     (habitualPropagado)
+	(sexoAutorPropagado)
     =>
     (bind ?allRecomendaciones (find-all-instances ((?r Recomendacion)) TRUE))
     (bind ?sortedRecoms (sort criteriaRecomByMaxScore ?allRecomendaciones))
